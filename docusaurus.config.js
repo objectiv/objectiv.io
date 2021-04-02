@@ -114,5 +114,22 @@ module.exports = {
         },
       },
     ],
+    [
+      'redocusaurus',
+      {
+        //https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-plugin-redoc
+        specs: [{
+          specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
+          routePath: '/docs/api/',
+          layout: {
+            title: "Objectiv API docs",
+            description: "The API docs for Objectiv",
+          }
+        }],
+        //https://github.com/rohit-gohri/redocusaurus/tree/main/packages/docusaurus-theme-redoc
+        theme: {
+        }
+      }
+    ],
   ],
 };
