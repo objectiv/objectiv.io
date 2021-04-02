@@ -34,8 +34,14 @@ module.exports = {
       items: [
         {
           to: 'docs/',
-          activeBasePath: 'docs',
+          activeBaseRegex: '^(?!.*(docs/api)).*docs',
           label: 'Docs',
+          position: 'right',
+        },
+        {
+          to: 'docs/api/',
+          activeBasePath: 'docs/api/',
+          label: 'API Docs',
           position: 'right',
         },
         {
