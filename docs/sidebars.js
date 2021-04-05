@@ -2,7 +2,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Docusaurus Tutorial',
+      label: 'Objectiv Tutorial',
       items: [
         'getting-started',
         'markdown-features',
