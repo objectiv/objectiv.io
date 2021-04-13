@@ -67,7 +67,7 @@ export default function Home() {
           <GitHubButton 
             href={"https://github.com/" + siteConfig.organizationName}
             data-size="large" 
-            data-show-count="true" 
+            data-show-count="false" 
             aria-label={"Follow @" + siteConfig.organizationName + " on GitHub"}>
               View GitHub
           </GitHubButton>
