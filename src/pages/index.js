@@ -22,7 +22,7 @@ if (ExecutionEnvironment.canUseDOM) {
     debug: true
   });
 
-  // Extend the basic tracker with a default Section representing the Docs
+  // Extend the basic tracker with a default Section representing the page
   pagesSectionTracker = tracker.withStack([
     {
       _context_type: 'SectionContext',
@@ -94,7 +94,6 @@ export default function Home() {
             </IconHeader>
             <p>In order to get the best possible data right at the beginning of the pipeline, Our tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for deep modeling on the data science side.</p>
             <p>The taxonomy enables validation through the pipeline and is extensible to allow your not-so-typical events to be tracked as well. It is consistent by nature, making your tracking instrumentation less prone to errors when your product changes over time. Tools that enable you to easily set up and test your instrumentation are included.</p>
-            <p>For more details on our tracker and taxonomy, have a look at <Link to="/docs">the docs</Link>.</p>
           </div>
         </div>
 
