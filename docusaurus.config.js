@@ -27,6 +27,17 @@ module.exports = {
         src: 'img/logo-objectiv.svg',
       },
       items: [
+        // {
+        //   to: 'docs/',
+        //   activeBasePath: 'docs',
+        //   label: 'Docs',
+        //   position: 'right',
+        // },
+        // {
+        //   to: 'blog', 
+        //   label: 'Blog', 
+        //   position: 'right'
+        // },
         {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
@@ -36,7 +47,39 @@ module.exports = {
     },
     footer: {
       style: 'light',
-      links: [],
+      links: [
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Getting Started',
+        //       to: 'docs/',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'GitHub',
+        //       href: 'https://github.com/objectiv',
+        //     },
+        //     {
+        //       label: 'Twitter',
+        //       href: 'https://twitter.com/objectivhq',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'More',
+        //   items: [
+        //     {
+        //       label: 'Blog',
+        //       to: 'blog',
+        //     },
+        //   ],
+        // },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
     },
   },
