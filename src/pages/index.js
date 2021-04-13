@@ -92,7 +92,7 @@ export default function Home() {
               subTitle="Tracking"
               iconName="diamond">
             </IconHeader>
-            <p>In order to get the best possible data right at the beginning of the pipeline, Our tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for deep modeling on the data science side.</p>
+            <p>In order to get the best possible data right at the beginning of the pipeline, Our tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for effective modeling on the data science side.</p>
             <p>The taxonomy enables validation through the pipeline and is extensible to allow your not-so-typical events to be tracked as well. It is consistent by nature, making your tracking instrumentation less prone to errors when your product changes over time. Tools that enable you to easily set up and test your instrumentation are included.</p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function Home() {
               title="Slice and dice however you want"
               iconName="slice-dice">
             </IconHeader>
-            <p>The use of our standardized taxonomy means that all events belong to a class. This enables a level of modeling that normally is only available to those who built their own taxonomy from scratch. You can aggregate your data on a very granular level without doing any gruntwork. The classes enable you to build deep, reusable models for specific parts of your product.</p>
+            <p>The use of our standardized taxonomy means that all events belong to a class. This enables a level of modeling that normally is only available to those who built their own taxonomy from scratch. You can aggregate your data on a very granular level without doing any gruntwork. The classes enable you to build effective, reusable models for specific parts of your product.</p>
             <IconHeader 
               title="Take, build on, and run models off the shelf"
               iconName="lego">
