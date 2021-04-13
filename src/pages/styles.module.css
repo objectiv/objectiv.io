@@ -44,6 +44,9 @@
   .homeContainer {
     max-width: 960px;
   }
+  .heroContainer {
+    max-width: 840px;
+  }  
 }
 
 .sectionHome {
