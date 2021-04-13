@@ -28,17 +28,6 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'right',
-        },
-        {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'right'
-        },
-        {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
@@ -47,39 +36,7 @@ module.exports = {
     },
     footer: {
       style: 'light',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: 'docs/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/objectiv',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/objectivhq',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-          ],
-        },
-      ],
+      links: [],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
     },
   },
@@ -90,18 +47,8 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        docs: {
-          path: 'docs',
-          routeBasePath: '/docs',
-          sidebarPath: require.resolve('./docs/sidebars.js'),
-          editUrl:
-            'https://github.com/objectiv/objectiv.io/edit/master/docs/',
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
+        docs: false,
+        blog: false,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,

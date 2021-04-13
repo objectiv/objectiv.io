@@ -127,9 +127,7 @@ export default function Home() {
             </IconHeader>
             <p>An initial release that includes event taxonomy, validation of event data against that taxonomy
                and the first tooling for data scientists to explore &amp; query the data easily. See the 
-               source on <Link to="https://github.com/objectiv">GitHub</Link>, 
-               the <Link to="/docs">Documentation</Link>, 
-               and our <Link to="/blog">Blog</Link>.</p>
+               source on <Link to="https://github.com/objectiv">GitHub</Link>.</p>
           </div>
         </div>
       </main>
