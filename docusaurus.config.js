@@ -48,7 +48,8 @@ module.exports = {
     footer: {
       style: 'light',
       links: [
-        // {
+        // Removed for initial public test
+        {
         //   title: 'Docs',
         //   items: [
         //     {
