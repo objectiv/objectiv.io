@@ -13,7 +13,9 @@
 }
 
 .heroTitle {
+  font-family: 'Bungee';
   font-size: 32px;
+  letter-spacing: 0.2em;
   margin-bottom: 40px;
 }
 

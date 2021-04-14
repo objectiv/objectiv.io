@@ -3,6 +3,7 @@
  * Any CSS included here will be global.
  */
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
  
 /* Override the default Infima variables here. */
@@ -29,7 +30,8 @@
   --ifm-footer-color: black;
   --ifm-footer-link-hover-color: black;
   --ifm-h1-font-size: 18px;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 14px;
+  --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
 
   --obj-primary-one: rgba(255, 87, 34, 0.1);
@@ -63,23 +65,43 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bungee';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
   line-height: 150%;
-  letter-spacing: 0.2em;
 }
 
 h1, .main-docs-wrapper h1 {
+  font-size: 32px;
+  margin: 16px 0;
+}
+
+h2, .main-docs-wrapper h2 {
   font-size: 24px;
+  margin: 16px 0;
 }
 
-h2 {
+h3, .main-docs-wrapper h3 {
   font-size: 18px;
+  margin: 16px 0;
 }
 
-h3 {
+h4, .main-docs-wrapper h4 {
+  font-family: 'Bungee';
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  margin: 16px 0;
+}
+
+h5, .main-docs-wrapper h5 {
+  font-family: 'Bungee';
   font-size: 14px;
+  letter-spacing: 0.1em;
+  margin: 16px 0;
+}
+
+p, .markdown p {
+  margin-bottom: 16px;
 }
 
 .button {
@@ -101,4 +123,28 @@ h3 {
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.body-extra-large {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 40px;
+}
+
+.body-large {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 32px;
+}
+
+.body-small {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 24px;
+}
+
+.body-extra-small {
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
 }

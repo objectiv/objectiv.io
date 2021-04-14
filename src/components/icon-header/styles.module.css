@@ -11,10 +11,16 @@
 }
 
 :local(.title h2) {
-  margin-bottom: 0;
+    font-family: 'Bungee';
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    margin-bottom: 0;
 }
 
 :local(.subTitle h3) {
+    font-family: 'Bungee';
+    font-size: 14px;
+    letter-spacing: 0.2em;
     margin-bottom: 20px;
 }
 

@@ -3,6 +3,20 @@ title: Getting Started with Objectiv
 slug: /
 ---
 
+<p class="body-large">
+If you’re a data scientist and have ever developed models on existing product analytics data, you’ve probably ran into the same problems we did: the data is incomplete, lacks context and needs a lot of work to become usable, if you get there at all. We believe the main cause of this is that tracking instrumentation is not built with the data scientist in mind. 
+</p>
+
+##### Step 1
+
+## Create a BigQuery project
+First off, you need to make a choice:
+* Cofee with two sugars
+* Tea without any caffeine
+* Fristi for me please
+
+### Code example
+
 <!-- TODO: make the live coder work in static builds -->
 ```jsx live
 function TestObjectivTracker(props) {
@@ -30,27 +44,15 @@ function TestObjectivTracker(props) {
 ```
 <div id="consoleLog"></div>
 
+### FAQ
 
-## Step 1: Generate a new Docusaurus site
+* [How do I use this?](/docs)
+* [What is this?](/docs)
 
-If you haven't already, generate a new Docusaurus site using the classic template:
+<div class="body-small">
+  disclaimer: small text is still readable but only if you have good eyes
+</div>
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Step 2: Start your Docusaurus site
-
-Run the development server in the newly created `my-website` folder:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Open `docs/getting-started.md` and edit some lines. The site reloads automatically and display your changes.
-
-## That's it!
-
-Congratulations! You've successfully run and modified your Docusaurus project.
+<div class="body-extra-small">
+  tiny disclaimer: it doesn’t get any smaller than this. pinky promise
+</div>
