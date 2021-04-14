@@ -27,7 +27,8 @@ module.exports = {
         src: 'img/logo-objectiv.svg',
       },
       items: [
-        // {
+        // Removed for initial public test 
+        {
         //   to: 'docs/',
         //   activeBasePath: 'docs',
         //   label: 'Docs',
