@@ -94,7 +94,7 @@ export default function Home() {
               <li>A tracker for web &amp; native platforms with a standardized event taxonomy</li>
               <li>Tools to support front-end instrumentation &amp; maintenance</li>
               <li>Data vs taxonomy validation at runtime and in back-end</li>
-              <li>Python &amp; Postgres backend to process, enrich and report dat</li>
+              <li>Python &amp; Postgres backend to process, enrich and report data</li>
               <li>Notebook tooling to effectively explore data &amp; build models</li>
               <li>Building blocks and templates for common models</li>
             </ul>
