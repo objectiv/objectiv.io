@@ -38,7 +38,7 @@ export default function Home() {
           </GitHubButton>
         </div>
       </header>
-      <main>
+      <main className={clsx('body-large')}>
         <div className={clsx(styles.pageSection,styles.pageSectionPink)}>
           <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 

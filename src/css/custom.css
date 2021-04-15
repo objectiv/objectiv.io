@@ -43,6 +43,16 @@
   --obj-primary-four: rgba(254, 242, 132, 0.1);
 }
 
+@media (min-width: 960px) {
+  :root {
+    --ifm-spacing-horizontal: 0;
+  }
+}
+
+body {
+  line-height: 150%;
+}
+
 .navbar {
   border-bottom: 1px solid #C4C4C4;
   box-shadow: none;
@@ -129,29 +139,25 @@ p, .markdown p {
 }
 
 .body-extra-large {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 20px;
   margin-bottom: 40px;
   text-align: left;
 }
 
 .body-large {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 18px;
   margin-bottom: 32px;
   text-align: left;
 }
 
 .body-small {
   font-size: 14px;
-  line-height: 21px;
   margin-bottom: 24px;
   text-align: left;
 }
 
 .body-extra-small {
   font-size: 12px;
-  line-height: 18px;
   margin-bottom: 20px;
   text-align: left;
 }

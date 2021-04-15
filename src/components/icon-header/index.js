@@ -12,7 +12,7 @@ function IconHeader({children, iconName, title, subTitle, description}) {
         </div>
         <div className={styles.title}>
           <h2>{title}</h2>
-          {description && <div>{description}</div>}
+          {description && <div class={styles.description}>{description}</div>}
         </div>
       </div>
     </div>
