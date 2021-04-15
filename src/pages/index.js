@@ -98,11 +98,6 @@ export default function Home() {
               <li>Notebook tooling to effectively explore data &amp; build models</li>
               <li>Building blocks and templates for common models</li>
             </ul>
-            <p>
-              See the source on <Link to="https://github.com/objectiv">GitHub</Link>, 
-              the <Link to="/docs">Documentation</Link>, 
-              and our <Link to="/blog">Blog</Link>.
-            </p>
           </div>
         </div>
       </main>
