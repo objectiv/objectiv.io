@@ -57,6 +57,7 @@ body {
   border-bottom: 1px solid #C4C4C4;
   box-shadow: none;
   height: 80px;
+  padding: 8px 16px;
 }
 
 .navbar__link {
