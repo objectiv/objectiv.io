@@ -32,7 +32,7 @@
   max-width: 840px;
 }
 
-.headerImage {
+.heroImage {
   padding-bottom: 50px;
 }
 
@@ -43,7 +43,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .homeContainer {
+  .contentContainer {
     max-width: 960px;
   }
   .heroContainer {
@@ -51,32 +51,83 @@
   }  
 }
 
-.sectionHome {
+.pageSection {
   padding: 80px 0 70px 0;
 }
 
-.sectionHomeFirst {
+.pageSectionPink {
   background-color: var(--obj-primary-one);
   padding: 60px 0;
 }
 
 @media screen and (max-width: 966px) {
-  .sectionHome {
+  .pageSection {
     padding: 60px 0 50px 0;
   }
-  .sectionHomeFirst {
+  .pageSectionPink {
     padding: 40px 0 60px 0;
   }
 }
 
-.sectionHomeSecond {
+.pageSectionGreen {
   background-color: var(--obj-primary-two);
 }
 
-.sectionHomeThird {
+.pageSectionPurple {
   background-color: var(--obj-primary-three);
 }
 
-.sectionHomeFourth {
+.pageSectionYellow {
   background-color: var(--obj-primary-four);;
+}
+
+.pageTitle {
+  font-family: 'Bungee';
+  font-size: 32px;
+  line-height: 150%;
+  letter-spacing: 0.2em;
+  margin: 0 0 80px 0;
+}
+
+.aboutUsBanner {
+  padding: 65px 0 0 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  --ifm-hero-text-color: black;
+}
+
+.aboutUsHeading4 {
+  margin-bottom: 50px;
+}
+
+.aboutUsPageSection {
+  padding: 30px 0 120px 0;
+}
+
+.contributorCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contributorCard {
+  width: calc(25% - 20px);
+  margin: 16px 20px 0 0;
+  text-align: center;
+}
+
+.contributorAvatar {
+  display: block;
+}
+
+.contributorAvatarSubtitle a {
+  color: black;
+}
+
+.contributorName {
+  color: #999999;
+}
+
+.contributorFooter {
+  padding-top: 16px;
 }

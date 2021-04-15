@@ -30,6 +30,9 @@
   --ifm-footer-color: black;
   --ifm-footer-link-hover-color: black;
   --ifm-h1-font-size: 18px;
+  --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
+  --ifm-card-border-radius: 4px;
+  --ifm-card-vertical-spacing: 32px;
   --ifm-code-font-size: 14px;
   --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
@@ -129,22 +132,26 @@ p, .markdown p {
   font-size: 24px;
   line-height: 36px;
   margin-bottom: 40px;
+  text-align: left;
 }
 
 .body-large {
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 32px;
+  text-align: left;
 }
 
 .body-small {
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .body-extra-small {
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 20px;
+  text-align: left;
 }

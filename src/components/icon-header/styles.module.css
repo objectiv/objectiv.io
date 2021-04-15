@@ -14,7 +14,7 @@
     font-family: 'Bungee';
     font-size: 18px;
     letter-spacing: 0.2em;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 :local(.subTitle h3) {

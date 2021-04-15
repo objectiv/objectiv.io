@@ -2,7 +2,7 @@ import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-function IconHeader({children, iconName, title, subTitle}) {
+function IconHeader({children, iconName, title, subTitle, description}) {
   return (
     <div>
       {subTitle && <div className={styles.subTitle}><h3>{subTitle}</h3></div>}
@@ -12,6 +12,7 @@ function IconHeader({children, iconName, title, subTitle}) {
         </div>
         <div className={styles.title}>
           <h2>{title}</h2>
+          {description && <div>{description}</div>}
         </div>
       </div>
     </div>

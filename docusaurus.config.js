@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   baseUrl: '/',
-  favicon: 'img/favicon-300x300.png',
+  favicon: 'img/favicon/favicon.ico',
   title: 'Objectiv: a product analytics pipeline for deep, reusable modelling',
   titleDelimiter: '|',
   tagline: 'Collect high quality data with a standardized taxonomy.\nTake, build on and run advanced models ' 
@@ -38,6 +38,11 @@ module.exports = {
         //   label: 'Blog', 
         //   position: 'right'
         // },
+        {
+          to: 'about-us', 
+          label: 'About Us', 
+          position: 'right'
+        },
         {
           href: 'https://github.com/objectiv',
           label: 'GitHub',

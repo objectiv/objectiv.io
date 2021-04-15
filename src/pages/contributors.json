@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Bob Jansen",
+    "gitHubUsername": "jansenbob"
+  },
+  {
+    "name": "Hendrik Koekoek",
+    "gitHubUsername": "hendrik-obj"
+  },
+  {
+    "name": "Ivar Pruijn",
+    "gitHubUsername": "ivarpruijn"
+  },
+  {
+    "name": "Michael Niblett",
+    "gitHubUsername": "borft"
+  },
+  {
+    "name": "Roald Hacquebord",
+    "gitHubUsername": "afroald"
+  },
+  {
+    "name": "Surai di Rosa",
+    "gitHubUsername": "sdirosa"
+  },
+  {
+    "name": "Thijs ten Hoeve",
+    "gitHubUsername": "thijs-obj"
+  },
+  {
+    "name": "Thomas Husken",
+    "gitHubUsername": "thomashusken"
+  },
+  {
+    "name": "Tom Jansen",
+    "gitHubUsername": "jansentom"
+  },
+  {
+    "name": "Vincent Hoogsteder",
+    "gitHubUsername": "vincenthoogsteder"
+  }
+]
