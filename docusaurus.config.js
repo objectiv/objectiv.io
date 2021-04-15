@@ -27,7 +27,8 @@ module.exports = {
         src: 'img/logo-objectiv.svg',
       },
       items: [
-        // {
+        // Removed for initial public test 
+        {
         //   to: 'docs/',
         //   activeBasePath: 'docs',
         //   label: 'Docs',
@@ -53,7 +54,8 @@ module.exports = {
     footer: {
       style: 'light',
       links: [
-        // {
+        // Removed for initial public test
+        {
         //   title: 'Docs',
         //   items: [
         //     {
