@@ -30,6 +30,7 @@
   --ifm-footer-color: black;
   --ifm-footer-link-hover-color: black;
   --ifm-h1-font-size: 18px;
+  --ifm-line-height-base: 150%;
   --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
   --ifm-card-border-radius: 4px;
   --ifm-card-vertical-spacing: 32px;
@@ -141,24 +142,28 @@ p, .markdown p {
 
 .body-extra-large {
   font-size: 20px;
+  line-height: 150%;
   margin-bottom: 40px;
   text-align: left;
 }
 
 .body-large {
   font-size: 18px;
+  line-height: 150%;
   margin-bottom: 32px;
   text-align: left;
 }
 
 .body-small {
   font-size: 14px;
+  line-height: 150%;
   margin-bottom: 24px;
   text-align: left;
 }
 
 .body-extra-small {
   font-size: 12px;
+  line-height: 150%;
   margin-bottom: 20px;
   text-align: left;
 }
