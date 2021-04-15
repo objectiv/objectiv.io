@@ -83,7 +83,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={clsx(styles.pageSection,styles.pageSectionYellow)}>
+        <div className={clsx(styles.pageSection, styles.pageSectionYellow, styles.pageSectionNoSubHeader)}>
           <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 
               title="Try the latest build"

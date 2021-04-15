@@ -52,7 +52,11 @@
 }
 
 .pageSection {
-  padding: 80px 0 70px 0;
+  padding: 80px 0 80px 0;
+}
+
+.pageSectionNoSubHeader {
+  padding-top: 30px;
 }
 
 .pageSectionPink {
@@ -114,6 +118,23 @@
   width: calc(25% - 20px);
   margin: 16px 20px 0 0;
   text-align: center;
+}
+
+@media screen and (max-width: 966px) {
+  .contributorCard {
+    width: calc(33.33% - 20px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .contributorCard {
+    width: calc(50% - 20px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .contributorCard {
+    width: 80%;
+    margin: 8px 10%;
+  }
 }
 
 .contributorAvatar {
