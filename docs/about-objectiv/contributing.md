@@ -182,7 +182,7 @@ Once you’re ready to submit your contribution, please open up a [GitHub Pull R
 3. Links to any Issues you’re solving with this.
 4. Pointers on how to test the changes.
 
-When you send a pull request, we will love you forever if you include tests. We can always use more test coverage. TODO: Read here how to write tests.
+When you send a pull request, we highly appreciate including tests. We can always use more test coverage. 
 
 Please also follow our coding conventions and make sure all of your commits are atomic (one feature per commit).
 
