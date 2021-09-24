@@ -1,22 +1,25 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {
-  ReactTracker,
-  TrackerContextProvider,
-  useTrackApplicationLoaded
-} from "@objectiv/tracker-react";
-import React from 'react';
+import { configureTracker } from "@objectiv/tracker-browser";
+import React, { useEffect } from 'react';
 
 function Root({children}) {
   const { siteConfig = {} } = useDocusaurusContext();
   const { trackerApplicationId, trackerEndPoint } = siteConfig.customFields;
-  const tracker = new ReactTracker({ applicationId: trackerApplicationId, endpoint: trackerEndPoint });
 
-  useTrackApplicationLoaded(tracker);
-
+  useEffect(
+    () => {
+      configureTracker({
+        applicationId: trackerApplicationId,
+        endpoint: trackerEndPoint
+      });
+    },
+    [] // no dependencies => no side effects on re-render
+  )
+  
   return (
-    <TrackerContextProvider tracker={tracker}>
+    <>
       {children}
-    </TrackerContextProvider>
+    </>
   );
 }
 

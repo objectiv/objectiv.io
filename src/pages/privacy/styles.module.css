@@ -1,0 +1,40 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix are treated as CSS modules and scoped locally.
+ */
+
+ .heroBanner {
+  padding: 80px 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  --ifm-hero-text-color: black;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.cookiesContainer {
+  margin-top: 0;
+  text-align: left;
+  max-width: 960px;
+}
+
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 24px;
+  margin: 24px 0;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+  font-family: 'Roboto';
+}

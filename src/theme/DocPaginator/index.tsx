@@ -9,23 +9,14 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import type {Props} from '@theme/DocPaginator';
-import { 
-  ReactTracker,
-  useTracker,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick,
-} from "@objectiv/tracker-react";
+import { trackLink, trackNavigation } from "@objectiv/tracker-browser";
 
 function DocPaginator(props: Props): JSX.Element {
   const {metadata} = props;
-  const tracker = useTracker();
-  const docPaginatorTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'doc-pagination' })],
-  });
 
   return (
     <nav
+      {...trackNavigation({id: 'blog-post-navigation'})}
       className="pagination-nav docusaurus-mt-lg"
       aria-label={translate({
         id: 'theme.docs.paginator.navAriaLabel',
@@ -37,11 +28,7 @@ function DocPaginator(props: Props): JSX.Element {
           <Link
             className="pagination-nav__link"
             to={metadata.previous.permalink}
-            onClick={() => trackLinkClick(makeLinkContext({ 
-              id: 'previous', 
-              text: metadata.previous.title, 
-              href: metadata.previous.permalink 
-            }), docPaginatorTracker)}
+            {...trackLink({ id: 'previous', text: metadata.previous.title, href: metadata.previous.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -61,11 +48,7 @@ function DocPaginator(props: Props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={metadata.next.permalink}
-            onClick={() => trackLinkClick(makeLinkContext({ 
-              id: 'next', 
-              text: metadata.next.title, 
-              href: metadata.next.permalink 
-            }), docPaginatorTracker)}
+            {...trackLink({ id: 'next', text: metadata.next.title, href: metadata.next.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate

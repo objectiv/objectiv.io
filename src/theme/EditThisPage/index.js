@@ -8,16 +8,14 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-import {
-  useTracker,
-  makeLinkContext,
-  trackLinkClick
-} from '@objectiv/tracker-react';
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}) {
-  const tracker = useTracker();
   return (
-    <div className={styles.docItemFooter}>
+    <div 
+      {...trackElement({id: 'edit-this-page'})}
+      className={styles.docItemFooter}
+    >
       <div className={styles.docItemFooterPage}>
         <p className={styles.docItemFooterHeading}>
           This page
@@ -36,7 +34,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              onClick={() => trackLinkClick(makeLinkContext({ id: 'discuss', href: 'https://discourse.objectiv.io', text: "Discuss" }), tracker)}
+              {...trackLink({ id: 'discuss', text: 'Discuss', href: 'https://discourse.objectiv.io' })}
             >
               Discuss
             </Link>
@@ -50,7 +48,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              onClick={() => trackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://discourse.objectiv.io', text: "Get help" }), tracker)}
+              {...trackLink({ id: 'get-help', text: 'Get help', href: 'https://discourse.objectiv.io' })}
             >
               Get help
             </Link>
@@ -59,7 +57,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://github.com/objectiv/objectiv-analytics'}
               target="_blank"
-              onClick={() => trackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://github.com/objectiv/objectiv-analytics', text: "Submit idea or bug report" }), tracker)}
+              {...trackLink({ id: 'submit-idea-or-bug-report', text: 'Submit idea or bug report', href: 'https://github.com/objectiv/objectiv-analytics' })}
             >
               Submit idea or bug report
             </Link>

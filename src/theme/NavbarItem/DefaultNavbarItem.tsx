@@ -6,31 +6,34 @@
  */
 
 import React, {useState, useRef, useEffect} from 'react';
-import { 
-  ReactTracker,
-  useTracker,
-  makeOverlayContext,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick,
-} from "@objectiv/tracker-react";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
+import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
+import type { NavLinkProps } from '@theme-original/NavbarItem/DefaultNavbarItem';
+import { trackLink } from "@objectiv/tracker-browser";
 
 export function DefaultNavbarItem({mobile = false, ...props}: Props): JSX.Element {
-  const tracker = useTracker();
-  const mobileNavbarTracker = new ReactTracker(tracker, {
-    location_stack: [makeOverlayContext({ id: 'hamburger-menu' })],
-  });
-  const desktopNavbarTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'desktop-menu' })],
-  });
-
-  if(mobile) {
-    return <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href ? props.href : props.to }), mobileNavbarTracker)} />
-  }
-
   return (
-    <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href ? props.href : props.to }), desktopNavbarTracker)} />
+    <OriginalDefaultNavbarItem 
+      {...props} 
+    />
+  )
+}
+
+export function NavLink({
+  activeBasePath,
+  activeBaseRegex,
+  to,
+  href,
+  label,
+  activeClassName = '',
+  prependBaseUrlToHref,
+  ...props
+}: NavLinkProps): JSX.Element {
+  return (
+    <OriginalNavLink 
+      {...props} 
+      {...trackLink({ id: label, text: label, href: href ? href : to })}
+    />
   )
 }
 

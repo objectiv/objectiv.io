@@ -7,6 +7,7 @@ const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark
 const environment = process.env.OBJECTIV_ENVIRONMENT;
 const objectiv_tracker_endpoint = (environment == 'dev') ? 'http://localhost:5000' : 'https://collector.objectiv.io';
 console.log("USING OBJECTIV TRACKER ENDPOINT:", objectiv_tracker_endpoint);
+const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 // TBD: https://github.com/rehypejs/rehype-meta
 
 module.exports = {
@@ -20,8 +21,10 @@ module.exports = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
+  trailingSlash: false,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
+  trailingSlash: false,
   
   themes: ['@docusaurus/theme-live-codeblock'],
 
@@ -38,15 +41,9 @@ module.exports = {
       },
       items: [
         {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'left'
-        },
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: 'about',
+          label: 'About Us',
+          position: 'right',
         },
         {
           href: 'https://github.com/objectiv',
@@ -55,10 +52,10 @@ module.exports = {
           className: 'navItem navGitHub',
         },
         {
-          href: 'https://discourse.objectiv.io',
-          label: 'Discourse',
+          href: slackJoinLink,
+          label: 'Slack',
           position: 'right',
-          className: 'navItem navDiscourse',
+          className: 'navItem navSlack',
         },
         {
           href: 'https://twitter.com/objectiv_io',
@@ -94,6 +91,10 @@ module.exports = {
               href: 'https://github.com/objectiv',
             },
             {
+              label: 'Slack',
+              href: slackJoinLink,
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/objectivhq',
             },
@@ -105,6 +106,10 @@ module.exports = {
             {
               label: 'Blog',
               to: 'blog',
+            },
+            {
+              label: 'Jobs',
+              to: 'jobs',
             },
           ],
         },
@@ -122,6 +127,7 @@ module.exports = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
+          sidebarCollapsible: true,
           sidebarPath: require.resolve('./docs/sidebars.js'),
           sidebarCollapsible: true,
           editUrl:
@@ -133,18 +139,10 @@ module.exports = {
             [remarkLint, {plugins: ['remark-preset-lint-recommended', 'remark-preset-lint-markdown-style-guide']}],
           ],
         },
-        blog: {
-          blogTitle: 'Objectiv Blog',
-          blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 5,
-          showReadingTime: false,
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
+        blog: false,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
         },
       },
     ],
@@ -152,14 +150,21 @@ module.exports = {
   plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
+    // TODO: enable cookiebot once tracker can be enabled/disabled programmatically
+    // {
+    //   src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
+    //   'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
+    //   'data-blockingmode': 'auto',
+    //   id: 'Cookiebot'
+    // },
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerApplicationId: 'objectiv-website',
     trackerDocsApplicationId: 'objectiv-docs',
-    trackerEndPoint: objectiv_tracker_endpoint
+    trackerEndPoint: objectiv_tracker_endpoint, 
+    slackJoinLink: slackJoinLink
   }
 };

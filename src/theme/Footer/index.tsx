@@ -15,13 +15,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import {
-  ReactTracker,
-  useTracker,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick
-} from '@objectiv/tracker-react';
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 function FooterLink({
   to,
@@ -33,15 +27,10 @@ function FooterLink({
   const toUrl = useBaseUrl(to);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
 
-  const tracker = useTracker();
-  const footerTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'footer' })],
-  });
-
   return (
     <Link
       className="footer__link-item"
-      onClick={() => trackLinkClick(makeLinkContext({ id: label, href: toUrl, text: label }), footerTracker)}
+      {...trackLink({ id: label, text: label, href: toUrl })}
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -72,11 +61,6 @@ const FooterLogo = ({
 function Footer(): JSX.Element | null {
   const {footer} = useThemeConfig();
 
-  const tracker = useTracker();
-  const footerTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'footer' })],
-  });
-
   const {copyright, links = [], logo = {}} = footer || {};
   const sources = {
     light: useBaseUrl(logo.src),
@@ -89,6 +73,7 @@ function Footer(): JSX.Element | null {
 
   return (
     <footer
+      {...trackElement({id: 'footer'})}
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>
@@ -134,7 +119,7 @@ function Footer(): JSX.Element | null {
                 {logo.href ? (
                   <Link 
                     href={logo.href} 
-                    onClick={() => trackLinkClick(makeLinkContext({ id: logo.alt, href: logo.href, text: logo.alt }), footerTracker)}
+                    {...trackLink({ id: logo.alt, text: logo.alt, href: logo.href })}
                     className={styles.footerLogoLink}
                   >
                     <FooterLogo alt={logo.alt} sources={sources} />
