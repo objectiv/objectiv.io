@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sql_models.model &#8212; BuhTuh  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.e1d10f7563df45715c86914749a6789c.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.baa8d61b9335871b5b4b.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">BuhTuh</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/objectiv-analytics/buhtuh/" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/objectiv" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for sql_models.model</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Copyright 2021 Objectiv B.V.</span>
+
+<span class="sd">Models:</span>
+<span class="sd">- SqlModel         - Actual sql-model. Instances of this class form the nodes in the model graph</span>
+<span class="sd">- SqlModelSpec     - Specification class, that specifies basic properties of an SqlModel instance</span>
+<span class="sd">- SqlModelBuilder  - Helper class to instantiate the (immutable) SqlModel objects. Generally models should</span>
+<span class="sd">                     extend this class and not the SqlModel class.</span>
+<span class="sd">- CustomSqlModel   - Utility child of SqlModelSpec that can be used to add a node with custom sql to a</span>
+<span class="sd">                     model graph.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span><span class="p">,</span> <span class="n">ABCMeta</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">sql_models.util</span> <span class="kn">import</span> <span class="n">extract_format_fields</span>
+
+
+<div class="viewcode-block" id="Materialization"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.Materialization">[docs]</a><span class="k">class</span> <span class="nc">Materialization</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">CTE</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">VIEW</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<span class="c1"># special reference-level format string that will be filled in at sql-generation time with a per-model</span>
+<span class="c1"># unique string</span>
+<span class="n">REFERENCE_UNIQUE_FIELD</span> <span class="o">=</span> <span class="s1">&#39;id&#39;</span>
+
+
+<span class="n">RefPath</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;SqlModelSpec&#39;</span><span class="p">)</span>
+<span class="n">TB</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;TB&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;SqlModelBuilder&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SqlModelSpec"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelSpec">[docs]</a><span class="k">class</span> <span class="nc">SqlModelSpec</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Abstract immutable class that specifies the sql, properties, and references that a</span>
+<span class="sd">    SqlModel instance should have.</span>
+
+<span class="sd">    Child classes need to define the actual template by implementing the sql, properties, and reference</span>
+<span class="sd">    functions.</span>
+
+<span class="sd">    Generally it&#39;s better to actually extend of the subclass ComposableSqlModel, as that has some methods</span>
+<span class="sd">    to make it easier to instantiate an SqlModel based on the Template.</span>
+<span class="sd">    </span>
+<span class="sd">    .. ipython::</span>
+<span class="sd">        </span>
+<span class="sd">        # Example:</span>
+<span class="sd">        In [1]: bar = 2</span>
+<span class="sd">        </span>
+<span class="sd">        @doctest</span>
+<span class="sd">        In [2]: bar</span>
+<span class="sd">        Out[2]: 2</span>
+<span class="sd">        </span>
+<span class="sd">        In [3]: from matplotlib import pyplot as plt</span>
+<span class="sd">        </span>
+<span class="sd">        @savefig plot_simple.png width=4in</span>
+<span class="sd">        In [4]: plt.plot([1,2,3, bar, 1], [4,3,2,1,4])</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Basic check on the child-classes implementation of spec_references and spec_properties</span>
+        <span class="n">overlap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_references</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spec_properties</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">overlap</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Specified reference names and specified property names of class overlap.&#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;This indicates an error in the implementation of the&#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> class. Overlap: </span><span class="si">{</span><span class="n">overlap</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">generic_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Generic name. Can be overridden by subclasses. Must be a constant. &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Must be implemented by child class. Return value should typically be a constant. &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">spec_references</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; Must be implemented by child class. Return value should typically be a constant. &quot;&quot;&quot;</span>
+        <span class="c1"># TODO: add type information</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">spec_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; Must be implemented by child class. Return value should typically be a constant. &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SqlModelSpec.properties_to_sql"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelSpec.properties_to_sql">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">properties_to_sql</span><span class="p">(</span><span class="n">properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Child classes can override this function if some of the properties require conversion before being</span>
+<span class="sd">        used in format(). Should be a constant, pure, and immutable function.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Override for non-default behaviour</span>
+        <span class="c1"># If we switch to jinja templates, then we won&#39;t need this function anymore.</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+<div class="viewcode-block" id="SqlModelSpec.assert_adheres_to_spec"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelSpec.assert_adheres_to_spec">[docs]</a>    <span class="k">def</span> <span class="nf">assert_adheres_to_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                               <span class="n">references</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">],</span>
+                               <span class="n">properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify that the references and properties adhere to the specifications of self.</span>
+<span class="sd">        :raise Exception: If a reference or property is missing</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">spec</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">reference_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">references</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">property_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">reference_keys</span> <span class="o">!=</span> <span class="n">spec</span><span class="o">.</span><span class="n">spec_references</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Provided references for model </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;do not match required references: &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">reference_keys</span><span class="p">)</span><span class="si">}</span><span class="s1"> != </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">spec_references</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">reference_key</span><span class="p">,</span> <span class="n">reference_value</span> <span class="ow">in</span> <span class="n">references</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference_value</span><span class="p">,</span> <span class="n">SqlModel</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Provided reference for model </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> is not an &#39;</span>
+                                <span class="sa">f</span><span class="s1">&#39;instance of SqlModel. &#39;</span>
+                                <span class="sa">f</span><span class="s1">&#39;Reference: </span><span class="si">{</span><span class="n">reference_key</span><span class="si">}</span><span class="s1">, type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">reference_value</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">property_keys</span> <span class="o">!=</span> <span class="n">spec</span><span class="o">.</span><span class="n">spec_properties</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Provided properties for model </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;do not match required properties: &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">property_keys</span><span class="p">)</span><span class="si">}</span><span class="s1"> != </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">spec_properties</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="SqlModelBuilder"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder">[docs]</a><span class="k">class</span> <span class="nc">SqlModelBuilder</span><span class="p">(</span><span class="n">SqlModelSpec</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extension of SqlModelSpec that adds functions to easily build an instance of</span>
+<span class="sd">    SqlModel that uses the SqlModelSpec</span>
+
+<span class="sd">    There are multiple ways to create an instance of a SqlModel:</span>
+<span class="sd">        1) use build() on this class</span>
+<span class="sd">        2.1) use instantiate_recursively() on an instance of this class</span>
+<span class="sd">        2.2) use instantiate() on an instance of this class</span>
+<span class="sd">        2.3) user __call__() on an instance of this class</span>
+
+<span class="sd">    A single SqlModelBuilder can be used to instantiate multiple SqlModel models. If this</span>
+<span class="sd">    class is used multiple times to create an instance with the same properties, references,</span>
+<span class="sd">    and materialization, then the same instance is returned each time.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="c1"># initialize values first, so any indirect calls to references and properties</span>
+        <span class="c1"># in super.__init__() will work</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">SqlModelBuilder</span><span class="p">,</span> <span class="n">SqlModel</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="o">**</span><span class="n">values</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">materialization</span> <span class="o">=</span> <span class="n">Materialization</span><span class="o">.</span><span class="n">CTE</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cache_created_instances</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spec_references</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Automatically determine the reference names from the sql property.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># get all format strings that are formatted as {{x}}, but explicitly remove the</span>
+        <span class="c1"># REFERENCE_UNIQUE_FIELD, as it is a magic value that will be filled in later.</span>
+        <span class="k">return</span> <span class="n">extract_format_fields</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sql</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">REFERENCE_UNIQUE_FIELD</span><span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">spec_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Automatically determine the property names from the sql property.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">extract_format_fields</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sql</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">references</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># return shallow-copy of the dictionary.</span>
+        <span class="c1"># keys are strings and thus immutable, values are included uncopied.</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># return deepcopy of the dictionary</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SqlModelBuilder.build"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder.build">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[TB]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Class method that instantiates this SqlModelBuilder class, and uses it to</span>
+<span class="sd">        recursively instantiate SqlModel[T].</span>
+
+<span class="sd">        This might mutate referenced SqlModelBuilder objects, see instantiate_recursively()</span>
+<span class="sd">        for more information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder_instance</span><span class="p">:</span> <span class="n">TB</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+        <span class="k">return</span> <span class="n">builder_instance</span><span class="o">.</span><span class="n">instantiate_recursively</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="SqlModelBuilder.instantiate_recursively"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder.instantiate_recursively">[docs]</a>    <span class="k">def</span> <span class="nf">instantiate_recursively</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">TB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[TB]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates an instance of SqlModel[T] like instantiate(), but unlike instantiate()</span>
+<span class="sd">        this will convert references that are SqlModelBuilder to SqlModel too.</span>
+<span class="sd">        And this is done in a recursive manner. Note that this might thus recursively instantiate</span>
+<span class="sd">        references and thus modify the .references of (indirectly) referenced SqlModelBuilder</span>
+<span class="sd">        instances.</span>
+
+<span class="sd">        :raise Exception: If there are cyclic references between the recursively referenced</span>
+<span class="sd">            SqlBuilderModels</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Note: Although it is not possible to create cycles in the SqlModel graph (see docstring</span>
+        <span class="c1">#   SqlModel), it is possible to create cycles between SqlModelBuilder instances. Python will raise</span>
+        <span class="c1">#   an error when it sees unbounded recursion, so we actually don&#39;t need to check for that here.</span>
+        <span class="k">for</span> <span class="n">reference_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">reference_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="p">[</span><span class="n">reference_name</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference_value</span><span class="p">,</span> <span class="n">SqlModel</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reference_value</span><span class="p">,</span> <span class="n">SqlModelBuilder</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="p">[</span><span class="n">reference_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">reference_value</span><span class="o">.</span><span class="n">instantiate_recursively</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;In class </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> the reference </span><span class="si">{</span><span class="n">reference_name</span><span class="si">}</span><span class="s1"> &#39;</span>
+                                    <span class="sa">f</span><span class="s1">&#39;is not an SqlModel, but of &#39;</span>
+                                    <span class="sa">f</span><span class="s1">&#39;type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">reference_value</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">TB</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[TB]&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="o">**</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SqlModelBuilder.instantiate"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder.instantiate">[docs]</a>    <span class="k">def</span> <span class="nf">instantiate</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">TB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[TB]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an instance of SqlModel[T] based on the properties, references,</span>
+<span class="sd">        materialization, and properties_to_sql of self.</span>
+
+<span class="sd">        If the exact same instance (as determined by result.hash) has been created already by this class,</span>
+<span class="sd">        then that instance is returned and the newly created instance is discarded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_check_is_complete</span><span class="p">()</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="n">SqlModel</span><span class="p">(</span><span class="n">model_spec</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                            <span class="n">properties</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">,</span>
+                            <span class="n">references</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">references</span><span class="p">,</span>
+                            <span class="n">materialization</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">materialization</span><span class="p">)</span>
+        <span class="c1"># If we already once created the exact same instance, then we&#39;ll return that one and discard the</span>
+        <span class="c1"># newly created instance.</span>
+        <span class="k">if</span> <span class="n">instance</span><span class="o">.</span><span class="n">hash</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache_created_instances</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cache_created_instances</span><span class="p">[</span><span class="n">instance</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span> <span class="o">=</span> <span class="n">instance</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache_created_instances</span><span class="p">[</span><span class="n">instance</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="SqlModelBuilder.set_values"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder.set_values">[docs]</a>    <span class="k">def</span> <span class="nf">set_values</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">TB</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TB</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set values that can either be references or properties</span>
+<span class="sd">        :param values:</span>
+<span class="sd">        :return: self</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># todo: check that values are of the correct types</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_references</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_properties</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Provided parameter </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> is not a valid property nor reference for &#39;</span>
+                                 <span class="sa">f</span><span class="s1">&#39;class </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">. &#39;</span>
+                                 <span class="sa">f</span><span class="s1">&#39;Valid references: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">spec_references</span><span class="si">}</span><span class="s1">. &#39;</span>
+                                 <span class="sa">f</span><span class="s1">&#39;Valid properties: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">spec_properties</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="SqlModelBuilder.set_materialization"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModelBuilder.set_materialization">[docs]</a>    <span class="k">def</span> <span class="nf">set_materialization</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">TB</span><span class="p">,</span> <span class="n">materialization</span><span class="p">:</span> <span class="n">Materialization</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TB</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the materialization</span>
+<span class="sd">        :return: self</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">materialization</span> <span class="o">=</span> <span class="n">materialization</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="k">def</span> <span class="nf">_check_is_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Raises an Exception if either references or properties are missing</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_adheres_to_spec</span><span class="p">(</span><span class="n">references</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">references</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SqlModel"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel">[docs]</a><span class="k">class</span> <span class="nc">SqlModel</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    An Immutable Sql Model consists of a sql select query, properties and references to other Sql models.</span>
+
+<span class="sd">    # Graphs of models</span>
+<span class="sd">    The references to other models make it is possible to use the output of the sql queries of other models</span>
+<span class="sd">    as the input for a new model. References link models in an directed-acyclic-graph, with the current</span>
+<span class="sd">    model as starting point. If a model is referenced by other models, then its part of the graph of those</span>
+<span class="sd">    models. A model will not be aware that it is part of another model&#39;s graph.</span>
+
+<span class="sd">    # Immutability</span>
+<span class="sd">    Instances of this class are immutable. This has a few desirable consequences:</span>
+<span class="sd">        * A model can safely be used in another model&#39;s graph, as that other model can rely on the fact</span>
+<span class="sd">            that the model won&#39;t change.</span>
+<span class="sd">        * Each model calculates an md5-hash at initialization based on its own attributes and recursively</span>
+<span class="sd">            referenced attributes. This hash only has to be calculated once, since all those (recursive)</span>
+<span class="sd">            attributes are immutable. The hash can be used to identify identical models and used for</span>
+<span class="sd">            optimizations when generating sql.</span>
+<span class="sd">        * All references have to be set at initialization, the referenced objects have to be already</span>
+<span class="sd">            initialized models, and references are unidirectional, therefore it is not possible to create</span>
+<span class="sd">            cycles in the graph.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">model_spec</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span>
+                 <span class="n">properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                 <span class="n">references</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">],</span>
+                 <span class="n">materialization</span><span class="p">:</span> <span class="n">Materialization</span>
+                 <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param model_spec: ModelSpec class defining the sql, and the names of the properties and references</span>
+<span class="sd">            that this class must have.</span>
+<span class="sd">        :param properties: Dictionary mapping property names to property values</span>
+<span class="sd">        :param references: Dictionary mapping reference names to instances of SqlModels.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model_spec</span> <span class="o">=</span> <span class="n">model_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_generic_name</span> <span class="o">=</span> <span class="n">model_spec</span><span class="o">.</span><span class="n">generic_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sql</span> <span class="o">=</span> <span class="n">model_spec</span><span class="o">.</span><span class="n">sql</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">references</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">properties</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_materialization</span> <span class="o">=</span> <span class="n">materialization</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_property_formatter</span> <span class="o">=</span> <span class="n">model_spec</span><span class="o">.</span><span class="n">properties_to_sql</span>
+
+        <span class="c1"># Verify completeness of this object: references and properties</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model_spec</span><span class="o">.</span><span class="n">assert_adheres_to_spec</span><span class="p">(</span><span class="n">references</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">references</span><span class="p">,</span>
+                                                <span class="n">properties</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">properties</span><span class="p">)</span>
+        <span class="c1"># Calculate unique hash for this model&#39;s sql, properties, materialization and references</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_hash</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_calculate_hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate md5 hash of the immutable data of this model that will be used for sql generation by the</span>
+<span class="sd">        sql_generator. The hash is unique for the combination of the following attributes, and as such is</span>
+<span class="sd">        unique for the sql that will be generated.</span>
+<span class="sd">        Attributes considered in hash:</span>
+<span class="sd">            1. generic_name</span>
+<span class="sd">            2. sql</span>
+<span class="sd">            3. properties</span>
+<span class="sd">            4. materialization</span>
+<span class="sd">            5. references, and recursively their sql, properties, materialization, and their references</span>
+<span class="sd">        :return: 32 character string representation of md5 hash</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;generic_name&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">generic_name</span><span class="p">,</span>
+            <span class="s1">&#39;sql&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties_formatted</span><span class="p">,</span>
+            <span class="s1">&#39;materialization&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">materialization</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="s1">&#39;references&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="n">ref_name</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">hash</span> <span class="k">for</span> <span class="n">ref_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">data_bytes</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">data_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">generic_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sql</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">references</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">]:</span>
+        <span class="c1"># return shallow-copy of the dictionary.</span>
+        <span class="c1"># keys are strings and thus immutable, values are included uncopied.</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_references</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">properties</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="c1"># return deepcopy of the dictionary</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">materialization</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Materialization</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_materialization</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unique 32 character hash based on this object&#39;s attributes and attributes of referenced models.</span>
+<span class="sd">        If two instances have the same hash, they are equal for all intents and purposes,</span>
+<span class="sd">        see _calculate_hash() for more information.</span>
+
+<span class="sd">        This is different from the __hash__() function, which returns an integer, and is much more likely</span>
+<span class="sd">        to collide.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hash</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">properties_formatted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_formatter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SqlModel.copy_set"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.copy_set">[docs]</a>    <span class="k">def</span> <span class="nf">copy_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a copy with the given properties of this model updated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">references</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">references</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span>
+        <span class="k">for</span> <span class="n">new_key</span><span class="p">,</span> <span class="n">new_val</span> <span class="ow">in</span> <span class="n">new_properties</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">new_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Trying to update non-existing property key: </span><span class="si">{</span><span class="n">new_key</span><span class="si">}</span><span class="s1">. &#39;</span>
+                                 <span class="sa">f</span><span class="s1">&#39;Property keys: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">properties</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_val</span>
+        <span class="k">return</span> <span class="n">SqlModel</span><span class="p">(</span>
+            <span class="n">model_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model_spec</span><span class="p">,</span>
+            <span class="n">references</span><span class="o">=</span><span class="n">references</span><span class="p">,</span>
+            <span class="n">properties</span><span class="o">=</span><span class="n">properties</span><span class="p">,</span>
+            <span class="n">materialization</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">materialization</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlModel.copy_link"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.copy_link">[docs]</a>    <span class="k">def</span> <span class="nf">copy_link</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                  <span class="n">new_references</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;SqlModel&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a copy with the given references of this model updated.</span>
+
+<span class="sd">        Take care to not create cycles in the reference graph when using this function. Generally when</span>
+<span class="sd">        working with a full graph of models its best to use the wrapper methods in graph_operations.py</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">references</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">references</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span>
+        <span class="k">for</span> <span class="n">new_key</span><span class="p">,</span> <span class="n">new_val</span> <span class="ow">in</span> <span class="n">new_references</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">new_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">references</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Trying to update non-existing references key: </span><span class="si">{</span><span class="n">new_key</span><span class="si">}</span><span class="s1">. &#39;</span>
+                                 <span class="sa">f</span><span class="s1">&#39;Reference keys: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">references</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">references</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_val</span>
+        <span class="k">return</span> <span class="n">SqlModel</span><span class="p">(</span>
+            <span class="n">model_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model_spec</span><span class="p">,</span>
+            <span class="n">references</span><span class="o">=</span><span class="n">references</span><span class="p">,</span>
+            <span class="n">properties</span><span class="o">=</span><span class="n">properties</span><span class="p">,</span>
+            <span class="n">materialization</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">materialization</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlModel.copy_set_materialization"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.copy_set_materialization">[docs]</a>    <span class="k">def</span> <span class="nf">copy_set_materialization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">materialization</span><span class="p">:</span> <span class="n">Materialization</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a copy with the given materialization of this model updated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">materialization</span> <span class="o">==</span> <span class="n">materialization</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="n">references</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">references</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">properties</span>
+        <span class="k">return</span> <span class="n">SqlModel</span><span class="p">(</span>
+            <span class="n">model_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model_spec</span><span class="p">,</span>
+            <span class="n">references</span><span class="o">=</span><span class="n">references</span><span class="p">,</span>
+            <span class="n">properties</span><span class="o">=</span><span class="n">properties</span><span class="p">,</span>
+            <span class="n">materialization</span><span class="o">=</span><span class="n">materialization</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlModel.set"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">reference_path</span><span class="p">:</span> <span class="n">RefPath</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">properties</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a (partial) copy of the graph that can be reached from self, with the properties of the</span>
+<span class="sd">        referenced node updated.</span>
+
+<span class="sd">        The node identified by the reference_path is copied and updated, as are all nodes that</span>
+<span class="sd">        (indirectly) refer that node. The updated version of self is returned.</span>
+
+<span class="sd">        This instance, and all nodes that it refers recursively are unchanged.</span>
+<span class="sd">        :param reference_path: references to traverse to get to the node that has to be updated</span>
+<span class="sd">        :param properties: properties to update</span>
+<span class="sd">        :return: an updated copy of this node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># import locally to prevent cyclic imports</span>
+        <span class="kn">from</span> <span class="nn">sql_models.graph_operations</span> <span class="kn">import</span> <span class="n">get_node</span><span class="p">,</span> <span class="n">replace_node_in_graph</span>
+        <span class="n">replacement_model</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">)</span><span class="o">.</span><span class="n">copy_set</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">replace_node_in_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">,</span> <span class="n">replacement_model</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlModel.link"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.link">[docs]</a>    <span class="k">def</span> <span class="nf">link</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">reference_path</span><span class="p">:</span> <span class="n">RefPath</span><span class="p">,</span>
+             <span class="o">**</span><span class="n">references</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a (partial) copy of the graph that can be reached from self, with the references of the</span>
+<span class="sd">        referenced node updated.</span>
+
+<span class="sd">        The node identified by the reference_path is copied and updated, as are all nodes that</span>
+<span class="sd">        (indirectly) refer that node. The updated version of self is returned.</span>
+
+<span class="sd">        This instance, and all nodes that it refers recursively are unchanged.</span>
+<span class="sd">        :param reference_path: references to traverse to get to the node that has to be updated</span>
+<span class="sd">        :param references: references to update</span>
+<span class="sd">        :return: an updated copy of this node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># import locally to prevent cyclic imports</span>
+        <span class="kn">from</span> <span class="nn">sql_models.graph_operations</span> <span class="kn">import</span> <span class="n">get_node</span><span class="p">,</span> <span class="n">replace_node_in_graph</span>
+        <span class="n">replacement_model</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">)</span><span class="o">.</span><span class="n">copy_link</span><span class="p">(</span><span class="n">references</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">replace_node_in_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">,</span> <span class="n">replacement_model</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="SqlModel.set_materialization"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.SqlModel.set_materialization">[docs]</a>    <span class="k">def</span> <span class="nf">set_materialization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                            <span class="n">reference_path</span><span class="p">:</span> <span class="n">RefPath</span><span class="p">,</span>
+                            <span class="n">materialization</span><span class="p">:</span> <span class="n">Materialization</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SqlModel[T]&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a (partial) copy of the graph that can be reached from self, with the materialization of the</span>
+<span class="sd">        referenced node updated.</span>
+
+<span class="sd">        The node identified by the reference_path is copied and updated, as are all nodes that</span>
+<span class="sd">        (indirectly) refer that node. The updated version of self is returned.</span>
+
+<span class="sd">        This instance, and all nodes that it refers recursively are unchanged.</span>
+<span class="sd">        :param reference_path: references to traverse to get to the node that has to be updated</span>
+<span class="sd">        :param materialization: materialization value</span>
+<span class="sd">        :return: an updated copy of this node</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># import locally to prevent cyclic imports</span>
+        <span class="kn">from</span> <span class="nn">sql_models.graph_operations</span> <span class="kn">import</span> <span class="n">get_node</span><span class="p">,</span> <span class="n">replace_node_in_graph</span>
+        <span class="n">replacement_model</span> <span class="o">=</span> <span class="n">get_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">)</span><span class="o">.</span><span class="n">copy_set_materialization</span><span class="p">(</span><span class="n">materialization</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">replace_node_in_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_path</span><span class="p">,</span> <span class="n">replacement_model</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Two SqlModels are equal if they have the same unique hash, and the same property_formatter.</span>
+<span class="sd">        This means the SqlModels effectively will lead to the same sql code when compiled. And</span>
+<span class="sd">        additionally, derived models (e.g. through .set()) will be equal too if they are derived in the</span>
+<span class="sd">        same way.</span>
+
+<span class="sd">        This equality check does not take into account whether the classes are of the same (sub)class</span>
+<span class="sd">        type, or whether the model_spec is the same type. As that ultimately won&#39;t affect the generated</span>
+<span class="sd">        sql.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SqlModel</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># There is one edge-case (other than incredible unlikely md5 hash-collisions) where comparing the</span>
+        <span class="c1"># hash to determine equality is not satisfactory. If a model has a non-standard</span>
+        <span class="c1"># self._property_formatter. Then the following scenario is possible:</span>
+        <span class="c1">#   a.hash == b.hash</span>
+        <span class="c1">#   c, d = a.set(tuple(), property=&#39;new value&#39;), b.set(tuple(), property=&#39;new value&#39;)</span>
+        <span class="c1">#   c.hash != d.hash</span>
+        <span class="c1"># The same operation on two equal objects should render two equal objects again. By also including</span>
+        <span class="c1"># the _property_formatter in the comparison we can guarantee that.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">hash</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_property_formatter</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_property_formatter</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; python hash. Must not be confused with the unique hash that is self.hash &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CustomSqlModel"><a class="viewcode-back" href="../../api/sql_models.model.html#sql_models.model.CustomSqlModel">[docs]</a><span class="k">class</span> <span class="nc">CustomSqlModel</span><span class="p">(</span><span class="n">SqlModelBuilder</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model that can run custom sql and refer custom tables.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sql</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param sql: sql of the model</span>
+<span class="sd">        :param name: optional override of the generic name (default: &#39;CustomSqlModel&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sql</span> <span class="o">=</span> <span class="n">sql</span>
+        <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_generic_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_generic_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sql</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">generic_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_name</span></div>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.baa8d61b9335871b5b4b.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, bt.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

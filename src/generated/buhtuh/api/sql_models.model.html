@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>sql_models.model &#8212; BuhTuh  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.e1d10f7563df45715c86914749a6789c.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.baa8d61b9335871b5b4b.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../index.html">
+<p class="title">BuhTuh</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/objectiv-analytics/buhtuh/" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/objectiv" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.model">
+<span id="sql-models-model"></span><h1>sql_models.model<a class="headerlink" href="#module-sql_models.model" title="Permalink to this headline">¶</a></h1>
+<p>Copyright 2021 Objectiv B.V.</p>
+<p>Models:
+- SqlModel         - Actual sql-model. Instances of this class form the nodes in the model graph
+- SqlModelSpec     - Specification class, that specifies basic properties of an SqlModel instance
+- SqlModelBuilder  - Helper class to instantiate the (immutable) SqlModel objects. Generally models should</p>
+<blockquote>
+<div><p>extend this class and not the SqlModel class.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>CustomSqlModel   - Utility child of SqlModelSpec that can be used to add a node with custom sql to a</dt><dd><p>model graph.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.model.CustomSqlModel" title="sql_models.model.CustomSqlModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomSqlModel</span></code></a>(sql[, name])</p></td>
+<td><p>Model that can run custom sql and refer custom tables.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Materialization</span></code></a>(value)</p></td>
+<td><p>An enumeration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SqlModel</span></code></a>(model_spec, properties, references, ...)</p></td>
+<td><p>An Immutable Sql Model consists of a sql select query, properties and references to other Sql models.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.model.SqlModelBuilder" title="sql_models.model.SqlModelBuilder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SqlModelBuilder</span></code></a>(**values)</p></td>
+<td><p>Extension of SqlModelSpec that adds functions to easily build an instance of SqlModel that uses the SqlModelSpec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.model.SqlModelSpec" title="sql_models.model.SqlModelSpec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SqlModelSpec</span></code></a>()</p></td>
+<td><p>Abstract immutable class that specifies the sql, properties, and references that a SqlModel instance should have.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.model.</span></span><span class="sig-name descname"><span class="pre">CustomSqlModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L533-L556"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#CustomSqlModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model that can run custom sql and refer custom tables.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.assert_adheres_to_spec">
+<span class="sig-name descname"><span class="pre">assert_adheres_to_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L106-L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.assert_adheres_to_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the references and properties adhere to the specifications of self.
+:raise Exception: If a reference or property is missing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.build">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L184-L194"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class method that instantiates this SqlModelBuilder class, and uses it to
+recursively instantiate SqlModel[T].</p>
+<p>This might mutate referenced SqlModelBuilder objects, see instantiate_recursively()
+for more information.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><a class="headerlink" href="#sql_models.model.CustomSqlModel.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic name. Can be overridden by subclasses. Must be a constant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.instantiate">
+<span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L225-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an instance of SqlModel[T] based on the properties, references,
+materialization, and properties_to_sql of self.</p>
+<p>If the exact same instance (as determined by result.hash) has been created already by this class,
+then that instance is returned and the newly created instance is discarded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.instantiate_recursively">
+<span class="sig-name descname"><span class="pre">instantiate_recursively</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L196-L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.instantiate_recursively" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an instance of SqlModel[T] like instantiate(), but unlike instantiate()
+this will convert references that are SqlModelBuilder to SqlModel too.
+And this is done in a recursive manner. Note that this might thus recursively instantiate
+references and thus modify the .references of (indirectly) referenced SqlModelBuilder
+instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there are cyclic references between the recursively referenced
+SqlBuilderModels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#sql_models.model.CustomSqlModel.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.properties_to_sql">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">properties_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L96-L104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.properties_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes can override this function if some of the properties require conversion before being
+used in format(). Should be a constant, pure, and immutable function.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">references</span></span><a class="headerlink" href="#sql_models.model.CustomSqlModel.references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.set_materialization">
+<span class="sig-name descname"><span class="pre">set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sql_models.model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L263-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the materialization
+:return: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.set_values">
+<span class="sig-name descname"><span class="pre">set_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sql_models.model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L244-L261"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.CustomSqlModel.set_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set values that can either be references or properties
+:param values:
+:return: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.spec_properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.CustomSqlModel.spec_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the property names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.spec_references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.CustomSqlModel.spec_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the reference names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.CustomSqlModel.sql">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><a class="headerlink" href="#sql_models.model.CustomSqlModel.sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.model.Materialization">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.model.</span></span><span class="sig-name descname"><span class="pre">Materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L21-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#Materialization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.Materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.model.Materialization.CTE">
+<span class="sig-name descname"><span class="pre">CTE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#sql_models.model.Materialization.CTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.model.Materialization.VIEW">
+<span class="sig-name descname"><span class="pre">VIEW</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#sql_models.model.Materialization.VIEW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.model.</span></span><span class="sig-name descname"><span class="pre">SqlModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_spec</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">sql_models.model.T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L278-L530"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>An Immutable Sql Model consists of a sql select query, properties and references to other Sql models.</p>
+<p># Graphs of models
+The references to other models make it is possible to use the output of the sql queries of other models
+as the input for a new model. References link models in an directed-acyclic-graph, with the current
+model as starting point. If a model is referenced by other models, then its part of the graph of those
+models. A model will not be aware that it is part of another model’s graph.</p>
+<p># Immutability
+Instances of this class are immutable. This has a few desirable consequences:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>A model can safely be used in another model’s graph, as that other model can rely on the fact</dt><dd><p>that the model won’t change.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Each model calculates an md5-hash at initialization based on its own attributes and recursively</dt><dd><p>referenced attributes. This hash only has to be calculated once, since all those (recursive)
+attributes are immutable. The hash can be used to identify identical models and used for
+optimizations when generating sql.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>All references have to be set at initialization, the referenced objects have to be already</dt><dd><p>initialized models, and references are unidirectional, therefore it is not possible to create
+cycles in the graph.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.copy_link">
+<span class="sig-name descname"><span class="pre">copy_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L408-L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.copy_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.copy_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy with the given references of this model updated.</p>
+<p>Take care to not create cycles in the reference graph when using this function. Generally when
+working with a full graph of models its best to use the wrapper methods in graph_operations.py</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.copy_set">
+<span class="sig-name descname"><span class="pre">copy_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L390-L406"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.copy_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.copy_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy with the given properties of this model updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.copy_set_materialization">
+<span class="sig-name descname"><span class="pre">copy_set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L430-L443"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.copy_set_materialization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.copy_set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy with the given materialization of this model updated.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#sql_models.model.SqlModel.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.hash">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#sql_models.model.SqlModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique 32 character hash based on this object’s attributes and attributes of referenced models.
+If two instances have the same hash, they are equal for all intents and purposes,
+see _calculate_hash() for more information.</p>
+<p>This is different from the __hash__() function, which returns an integer, and is much more likely
+to collide.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.link">
+<span class="sig-name descname"><span class="pre">link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">references</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L465-L483"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the references of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param references: references to update
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.materialization">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">materialization</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></em><a class="headerlink" href="#sql_models.model.SqlModel.materialization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModel.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.properties_formatted">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties_formatted</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModel.properties_formatted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModel.references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">properties</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L445-L463"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the properties of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param properties: properties to update
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.set_materialization">
+<span class="sig-name descname"><span class="pre">set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L485-L503"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModel.set_materialization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModel.set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the materialization of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param materialization: materialization value
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModel.sql">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#sql_models.model.SqlModel.sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.model.</span></span><span class="sig-name descname"><span class="pre">SqlModelBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L131-L275"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extension of SqlModelSpec that adds functions to easily build an instance of
+SqlModel that uses the SqlModelSpec</p>
+<dl class="simple">
+<dt>There are multiple ways to create an instance of a SqlModel:</dt><dd><p>1) use build() on this class
+2.1) use instantiate_recursively() on an instance of this class
+2.2) use instantiate() on an instance of this class
+2.3) user __call__() on an instance of this class</p>
+</dd>
+</dl>
+<p>A single SqlModelBuilder can be used to instantiate multiple SqlModel models. If this
+class is used multiple times to create an instance with the same properties, references,
+and materialization, then the same instance is returned each time.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.assert_adheres_to_spec">
+<span class="sig-name descname"><span class="pre">assert_adheres_to_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L106-L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.assert_adheres_to_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the references and properties adhere to the specifications of self.
+:raise Exception: If a reference or property is missing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.build">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L184-L194"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class method that instantiates this SqlModelBuilder class, and uses it to
+recursively instantiate SqlModel[T].</p>
+<p>This might mutate referenced SqlModelBuilder objects, see instantiate_recursively()
+for more information.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><a class="headerlink" href="#sql_models.model.SqlModelBuilder.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic name. Can be overridden by subclasses. Must be a constant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.instantiate">
+<span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L225-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder.instantiate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an instance of SqlModel[T] based on the properties, references,
+materialization, and properties_to_sql of self.</p>
+<p>If the exact same instance (as determined by result.hash) has been created already by this class,
+then that instance is returned and the newly created instance is discarded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.instantiate_recursively">
+<span class="sig-name descname"><span class="pre">instantiate_recursively</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L196-L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder.instantiate_recursively"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.instantiate_recursively" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an instance of SqlModel[T] like instantiate(), but unlike instantiate()
+this will convert references that are SqlModelBuilder to SqlModel too.
+And this is done in a recursive manner. Note that this might thus recursively instantiate
+references and thus modify the .references of (indirectly) referenced SqlModelBuilder
+instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If there are cyclic references between the recursively referenced
+SqlBuilderModels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#sql_models.model.SqlModelBuilder.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.properties_to_sql">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">properties_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L96-L104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.properties_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes can override this function if some of the properties require conversion before being
+used in format(). Should be a constant, pure, and immutable function.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">references</span></span><a class="headerlink" href="#sql_models.model.SqlModelBuilder.references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.set_materialization">
+<span class="sig-name descname"><span class="pre">set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sql_models.model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L263-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder.set_materialization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the materialization
+:return: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.set_values">
+<span class="sig-name descname"><span class="pre">set_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sql_models.model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L244-L261"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelBuilder.set_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelBuilder.set_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set values that can either be references or properties
+:param values:
+:return: self</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.spec_properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModelBuilder.spec_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the property names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.spec_references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModelBuilder.spec_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the reference names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelBuilder.sql">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><a class="headerlink" href="#sql_models.model.SqlModelBuilder.sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.model.</span></span><span class="sig-name descname"><span class="pre">SqlModelSpec</span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L37-L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelSpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract immutable class that specifies the sql, properties, and references that a
+SqlModel instance should have.</p>
+<p>Child classes need to define the actual template by implementing the sql, properties, and reference
+functions.</p>
+<p>Generally it’s better to actually extend of the subclass ComposableSqlModel, as that has some methods
+to make it easier to instantiate an SqlModel based on the Template.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># Example:</span>
+<span class="gp">In [1]: </span><span class="n">bar</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="gp">In [2]: </span><span class="n">bar</span>
+<span class="gh">Out[2]: </span><span class="go">2</span>
+
+<span class="gp">In [3]: </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="gp">In [4]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">bar</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="gh">Out[4]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7fc86e65c310&gt;]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/plot_simple.png"><img alt="../_images/plot_simple.png" src="../_images/plot_simple.png" style="width: 4in;" /></a>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.assert_adheres_to_spec">
+<span class="sig-name descname"><span class="pre">assert_adheres_to_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L106-L128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelSpec.assert_adheres_to_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelSpec.assert_adheres_to_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the references and properties adhere to the specifications of self.
+:raise Exception: If a reference or property is missing</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><a class="headerlink" href="#sql_models.model.SqlModelSpec.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic name. Can be overridden by subclasses. Must be a constant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.properties_to_sql">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">properties_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/model.py#L96-L104"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/model.html#SqlModelSpec.properties_to_sql"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.model.SqlModelSpec.properties_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Child classes can override this function if some of the properties require conversion before being
+used in format(). Should be a constant, pure, and immutable function.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.spec_properties">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModelSpec.spec_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.spec_references">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.model.SqlModelSpec.spec_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="sql_models.model.SqlModelSpec.sql">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><a class="headerlink" href="#sql_models.model.SqlModelSpec.sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.baa8d61b9335871b5b4b.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, bt.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

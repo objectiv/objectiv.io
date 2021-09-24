@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sql_models.sql_generator &#8212; BuhTuh  documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.e1d10f7563df45715c86914749a6789c.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.baa8d61b9335871b5b4b.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">BuhTuh</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/objectiv-analytics/buhtuh/" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/objectiv" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for sql_models.sql_generator</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Copyright 2021 Objectiv B.V.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="kn">from</span> <span class="nn">sql_models.model</span> <span class="kn">import</span> <span class="n">SqlModel</span><span class="p">,</span> <span class="n">REFERENCE_UNIQUE_FIELD</span>
+<span class="kn">from</span> <span class="nn">sql_models.sql_query_parser</span> <span class="kn">import</span> <span class="n">raw_sql_to_selects</span>
+
+
+<div class="viewcode-block" id="to_sql"><a class="viewcode-back" href="../../api/sql_models.sql_generator.html#sql_models.sql_generator.to_sql">[docs]</a><span class="k">def</span> <span class="nf">to_sql</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">SqlModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Give the sql to query the given model</span>
+<span class="sd">    :param model: model to convert to sql</span>
+<span class="sd">    :return: executable select query</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">compiler_cache</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">queries</span> <span class="o">=</span> <span class="n">_to_cte_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="o">=</span><span class="n">compiler_cache</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">queries</span> <span class="o">=</span> <span class="n">_filter_duplicate_ctes</span><span class="p">(</span><span class="n">queries</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">queries</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># _to_cte_sql should never return an empty list, but this make it clear we have a len &gt; 0 below.</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Internal error. No models to compile&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">queries</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">queries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sql</span>
+
+    <span class="c1"># case: len(result) &gt; 1</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;with &#39;</span>
+    <span class="n">sql</span> <span class="o">+=</span> <span class="s1">&#39;,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">cte_name</span><span class="si">}</span><span class="s1"> as (</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">sql</span><span class="si">}</span><span class="s1">)&#39;</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sql</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">queries</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sql</span>
+    <span class="k">return</span> <span class="n">sql</span></div>
+
+
+<div class="viewcode-block" id="SemiCompiledTuple"><a class="viewcode-back" href="../../api/sql_models.sql_generator.html#sql_models.sql_generator.SemiCompiledTuple">[docs]</a><span class="k">class</span> <span class="nc">SemiCompiledTuple</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Object representing a single CTE select statement from a big select statement</span>
+<span class="sd">    with common table expressions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># This is very similar to the CteTuple in sql_query_parser. However here cte_name is mandatory.</span>
+    <span class="n">cte_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">sql</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<span class="k">def</span> <span class="nf">_filter_duplicate_ctes</span><span class="p">(</span><span class="n">queries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filter duplicate CTEs from the list</span>
+<span class="sd">    If a cte occurs multiple times, then only keep the first occurrence.</span>
+<span class="sd">    Throw an error if not all of the occurrences are the same.</span>
+<span class="sd">    :param queries:</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">seen</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">cte_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+            <span class="n">seen</span><span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">cte_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">sql</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">seen</span><span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">cte_name</span><span class="p">]</span> <span class="o">!=</span> <span class="n">query</span><span class="o">.</span><span class="n">sql</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Encountered the CTE </span><span class="si">{</span><span class="n">query</span><span class="o">.</span><span class="n">cte_name</span><span class="si">}</span><span class="s1"> multiple times, but with different &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;definitions. HINT: use &quot;</span><span class="se">{{</span><span class="s1">REFERENCE_UNIQUE_FIELD</span><span class="se">}}</span><span class="s1">&quot; in the sql definition &#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;to make CTE names unique between different instances of the same model.</span><span class="se">\n</span><span class="s1">&#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;first: </span><span class="si">{</span><span class="n">seen</span><span class="p">[</span><span class="n">query</span><span class="o">.</span><span class="n">cte_name</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+                            <span class="sa">f</span><span class="s1">&#39;second: </span><span class="si">{</span><span class="n">query</span><span class="o">.</span><span class="n">sql</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">_to_cte_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]],</span>
+                <span class="n">model</span><span class="p">:</span> <span class="n">SqlModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recursively build the list of all common table expressions that are needed to generate the sql for</span>
+<span class="sd">    the given model</span>
+<span class="sd">    :param compiler_cache: Dictionary mapping model hashes to already compiled results</span>
+<span class="sd">    :param model: model to convert to a list of SemiCompiledTuple</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">hash</span> <span class="ow">in</span> <span class="n">compiler_cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">compiler_cache</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">references</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_single_model_to_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="o">=</span><span class="n">compiler_cache</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">reference_names</span><span class="o">=</span><span class="p">{})</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">reference_names</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">model_to_cte_name</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">reference</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">for</span> <span class="n">ref_name</span><span class="p">,</span> <span class="n">reference</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">references</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">_to_cte_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="o">=</span><span class="n">compiler_cache</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">reference</span><span class="p">))</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+        <span class="n">_single_model_to_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="o">=</span><span class="n">compiler_cache</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">reference_names</span><span class="o">=</span><span class="n">reference_names</span><span class="p">))</span>
+
+    <span class="n">compiler_cache</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<div class="viewcode-block" id="model_to_cte_name"><a class="viewcode-back" href="../../api/sql_models.sql_generator.html#sql_models.sql_generator.model_to_cte_name">[docs]</a><span class="k">def</span> <span class="nf">model_to_cte_name</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="c1"># max length of an identifier name in Postgres is normally 63 characters. We&#39;ll use that as a cutoff</span>
+    <span class="c1"># here.</span>
+    <span class="c1"># TODO: two compilation phases:</span>
+    <span class="c1">#  1) get all cte names</span>
+    <span class="c1">#  2) generate actual sql. Only for CTEs with conflicting names add the hash</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">generic_name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">28</span><span class="p">]</span><span class="si">}</span><span class="s1">___</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">hash</span><span class="si">}</span><span class="s1">&#39;</span></div>
+
+
+<span class="k">def</span> <span class="nf">_single_model_to_sql</span><span class="p">(</span><span class="n">compiler_cache</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]],</span>
+                         <span class="n">model</span><span class="p">:</span> <span class="n">SqlModel</span><span class="p">,</span>
+                         <span class="n">reference_names</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Split the sql for a given model into a list of separate CTEs.</span>
+<span class="sd">    :param compiler_cache: Dictionary mapping model hashes to already compiled results</span>
+<span class="sd">    :param model:</span>
+<span class="sd">    :param reference_names: mapping of references in the raw sql, to the names of the CTEs that they refer</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">hash</span> <span class="ow">in</span> <span class="n">compiler_cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">compiler_cache</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">sql</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="n">_format_sql</span><span class="p">(</span><span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">properties_formatted</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+    <span class="c1"># {{id}} (==REFERENCE_UNIQUE_FIELD) is a special placeholder that gets the unique model identifier,</span>
+    <span class="c1"># which can be used in templates to make sure that if a model gets used multiple times,</span>
+    <span class="c1"># the cte-names are still unique.</span>
+    <span class="n">_reference_names</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="o">**</span><span class="n">reference_names</span><span class="p">)</span>
+    <span class="n">_reference_names</span><span class="p">[</span><span class="n">REFERENCE_UNIQUE_FIELD</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">hash</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="n">_format_sql</span><span class="p">(</span><span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">_reference_names</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+    <span class="n">ctes</span> <span class="o">=</span> <span class="n">raw_sql_to_selects</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">SemiCompiledTuple</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cte</span> <span class="ow">in</span> <span class="n">ctes</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="c1"># For all CTEs the name should be set. Only for the final select (== cte[-1]) it will be None.</span>
+        <span class="k">assert</span> <span class="n">cte</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SemiCompiledTuple</span><span class="p">(</span><span class="n">cte_name</span><span class="o">=</span><span class="n">cte</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">sql</span><span class="o">=</span><span class="n">cte</span><span class="o">.</span><span class="n">select_sql</span><span class="p">))</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SemiCompiledTuple</span><span class="p">(</span><span class="n">cte_name</span><span class="o">=</span><span class="n">model_to_cte_name</span><span class="p">(</span><span class="n">model</span><span class="p">),</span> <span class="n">sql</span><span class="o">=</span><span class="n">ctes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">select_sql</span><span class="p">))</span>
+
+    <span class="n">compiler_cache</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">hash</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">_format_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; execute sql.format(**values), and if that fails raise a clear exception. &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sql</span> <span class="o">=</span> <span class="n">sql</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Failed to format sql for model </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">generic_name</span><span class="si">}</span><span class="s1">. </span><span class="se">\n</span><span class="s1">&#39;</span>
+                        <span class="sa">f</span><span class="s1">&#39;Format values: </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s1">. </span><span class="se">\n</span><span class="s1">&#39;</span>
+                        <span class="sa">f</span><span class="s1">&#39;Sql: </span><span class="si">{</span><span class="n">sql</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">exc</span>
+    <span class="k">return</span> <span class="n">sql</span>
+</pre></div>
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.baa8d61b9335871b5b4b.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, bt.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
