@@ -25,9 +25,6 @@ for url in glob.glob(f"{buhtuh_root}/**/*.html", recursive=True):
 
     title = path.basename(url).replace('.html', '')
     mdx = f"""
----
-title: {title}
----
 
 
 import SphinxPage from '@site/src/components/sphinx-page'
