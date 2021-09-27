@@ -11,7 +11,7 @@ import clsx from 'clsx';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import type {TOCProps, TOCHeadingsProps} from '@theme/TOC';
 import styles from './styles.module.css';
-import { trackElement, trackLink } from "@objectiv/tracker-browser";
+import { trackElement, trackLink, trackClick } from "@objectiv/tracker-browser";
 
 const LINK_CLASS_NAME = 'table-of-contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
@@ -34,7 +34,7 @@ export function TOCHeadings({toc, isChild}: TOCHeadingsProps) {
           <a
             href={`#${heading.id}`}
             className={LINK_CLASS_NAME}
-            onClick={() => trackLink({id: heading.id, href: '#'+heading.id, text: heading.value})}
+            {...trackLink({id: heading.id, href: "#"+heading.id, text: heading.value})}
         
             // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger
