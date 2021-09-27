@@ -5,26 +5,38 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import OriginalDocSidebarItems from '@theme-original/DocSidebarItem';
 import OriginalDocSidebarItem from '@theme-original/DocSidebarItem';
 import React, {memo} from 'react';
-import { trackLink } from "@objectiv/tracker-browser";
- 
+import { trackLink, trackClick } from "@objectiv/tracker-browser";
 import type {Props, DocSidebarItemsProps} from '@theme/DocSidebarItem';
 
 export const DocSidebarItems = memo(function DocSidebarItems({
   items,
   ...props
 }: DocSidebarItemsProps): JSX.Element {
-    return (
+  return (
     <>
       {items.map((item, index) => (
-        <OriginalDocSidebarItem
+        <DocSidebarItem
           key={index} // sidebar is static, the index does not change
           item={item}
-          onItemClick={trackLink({id: item.label, href: item.href, text: item.label})}
           {...props}
         />
       ))}
     </>
   );
 });
+
+export default function DocSidebarItem({
+  item,
+  ...props
+}: Props): JSX.Element | null {
+  return (
+    <OriginalDocSidebarItem 
+      item={item} 
+      onItemClick={(event) => trackClick({element: event.target})}
+      {...props} 
+    />
+  )
+}
