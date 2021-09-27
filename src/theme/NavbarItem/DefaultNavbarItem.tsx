@@ -11,12 +11,17 @@ import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
 import type { NavLinkProps } from '@theme-original/NavbarItem/DefaultNavbarItem';
 import { trackLink } from "@objectiv/tracker-browser";
 
-export function DefaultNavbarItem({mobile = false, ...props}: Props): JSX.Element {
+export default function DefaultNavbarItem({
+  mobile = false,
+  position: _position, // Need to destructure position from props so that it doesn't get passed on.
+  ...props
+}: Props): JSX.Element {
   return (
     <OriginalDefaultNavbarItem 
-      {...props} 
+      {...props}
+      {...trackLink({ id: props.label, text: props.label, href: props.href ? props.href : props.to })}
     />
-  )
+  );
 }
 
 export function NavLink({
@@ -32,9 +37,6 @@ export function NavLink({
   return (
     <OriginalNavLink 
       {...props} 
-      {...trackLink({ id: label, text: label, href: href ? href : to })}
     />
   )
 }
-
-export default DefaultNavbarItem;
