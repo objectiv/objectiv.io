@@ -9,24 +9,15 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import type {Props} from '@theme/BlogListPaginator';
-import { 
-  ReactTracker,
-  useTracker,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick,
-} from "@objectiv/tracker-react";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 function BlogListPaginator(props: Props): JSX.Element {
   const {metadata} = props;
   const {previousPage, nextPage} = metadata;
-  const tracker = useTracker();
-  const blogListPaginatorTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'blog-list-pagination' })],
-  });
 
   return (
     <nav
+      {...tagElement({id: 'blog-list-paginator'})}
       className="pagination-nav"
       aria-label={translate({
         id: 'theme.blog.paginator.navAriaLabel',
@@ -38,11 +29,7 @@ function BlogListPaginator(props: Props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={previousPage}
-            onClick={() => trackLinkClick(makeLinkContext({ 
-              id: 'previous', 
-              text: 'Newer', 
-              href: previousPage
-            }), blogListPaginatorTracker)}
+            {...tagLink({ id: 'previous', text: 'Newer', href: previousPage })}
           >
             <div className="pagination-nav__label">
               &laquo;{' '}
@@ -60,11 +47,7 @@ function BlogListPaginator(props: Props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={nextPage}
-            onClick={() => trackLinkClick(makeLinkContext({ 
-              id: 'next', 
-              text: 'Older', 
-              href: nextPage
-            }), blogListPaginatorTracker)}
+            {...tagLink({ id: 'next', text: 'Older', href: nextPage })}
           >
             <div className="pagination-nav__label">
               <Translate

@@ -24,6 +24,7 @@ module.exports = {
   trailingSlash: false,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
+  trailingSlash: false,
   
   themes: ['@docusaurus/theme-live-codeblock'],
 
@@ -40,15 +41,9 @@ module.exports = {
       },
       items: [
         {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'left'
-        },
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: 'about',
+          label: 'About Us',
+          position: 'right',
         },
         {
           href: 'https://github.com/objectiv',
@@ -132,6 +127,7 @@ module.exports = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
+          sidebarCollapsible: true,
           sidebarPath: require.resolve('./docs/sidebars.js'),
           sidebarCollapsible: true,
           editUrl:
@@ -143,14 +139,7 @@ module.exports = {
             [remarkLint, {plugins: ['remark-preset-lint-recommended', 'remark-preset-lint-markdown-style-guide']}],
           ],
         },
-        blog: {
-          blogTitle: 'Objectiv Blog',
-          blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 5,
-          showReadingTime: false,
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
+        blog: false,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,

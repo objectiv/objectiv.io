@@ -15,14 +15,7 @@ import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
 import type {Props} from '@theme/BlogPostItem';
-import { 
-  ReactTracker,
-  useTracker,
-  makeOverlayContext,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick,
-} from "@objectiv/tracker-react";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -65,10 +58,6 @@ function BlogPostItem(props: Props): JSX.Element {
     editUrl,
   } = metadata;
   const {author, image, keywords} = frontMatter;
-  const tracker = useTracker();
-  const blogPostItemTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'blog-post-item' })],
-  });
 
   const authorURL = frontMatter.author_url || frontMatter.authorURL;
   const authorTitle = frontMatter.author_title || frontMatter.authorTitle;
@@ -77,14 +66,11 @@ function BlogPostItem(props: Props): JSX.Element {
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
-    const blogPostItemHeaderTracker = new ReactTracker(tracker, {
-      location_stack: [makeSectionContext({ id: 'blog-post-item-header' })],
-    });
 
     return (
-      <header>
+      <header {...tagElement({id: 'header'})}>
         <TitleHeading className={styles.blogPostTitle}>
-          {isBlogPostPage ? title : <Link to={permalink} onClick={() => trackLinkClick(makeLinkContext({ id: permalink, text: title, href: permalink }), blogPostItemHeaderTracker)}>{title}</Link>}
+          {isBlogPostPage ? title : <Link to={permalink} {...tagLink({ id: permalink, text: title, href: permalink })}>{title}</Link>}            
         </TitleHeading>
         <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
           <time dateTime={date}>{formattedDate}</time>
@@ -101,7 +87,7 @@ function BlogPostItem(props: Props): JSX.Element {
             <Link 
               className="avatar__photo-link avatar__photo" 
               href={authorURL}
-              onClick={() => trackLinkClick(makeLinkContext({ id: 'authorAvatar', text: author, href: authorURL }), blogPostItemHeaderTracker)}
+              {...tagLink({ id: 'authorAvatar', text: author, href: authorURL })}
             >
               <img src={authorImageURL} alt={author} />
             </Link>
@@ -112,7 +98,7 @@ function BlogPostItem(props: Props): JSX.Element {
                 <div className="avatar__name">
                   <Link 
                     href={authorURL}
-                    onClick={() => trackLinkClick(makeLinkContext({ id: 'authorName', text: author, href: authorURL }), blogPostItemHeaderTracker)}
+                    {...tagLink({ id: 'authorName', text: author, href: authorURL })}
                   >
                     {author}
                   </Link>
@@ -130,13 +116,19 @@ function BlogPostItem(props: Props): JSX.Element {
     <>
       <Seo {...{keywords, image}} />
 
-      <article className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}>
+      <article 
+        {...tagElement({id: 'article'})}
+        className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
+      >
         {renderPostHeader()}
-        <div className="markdown">
+        <div 
+          {...tagElement({id: 'content'})}
+          className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </div>
         {(tags.length > 0 || truncated) && (
           <footer
+            {...tagElement({id: 'footer'})}
             className={clsx('row docusaurus-mt-lg', {
               [styles.blogPostDetailsFull]: isBlogPostPage,
             })}>
@@ -153,7 +145,7 @@ function BlogPostItem(props: Props): JSX.Element {
                   <Link
                     key={tagPermalink}
                     className="margin-horiz--sm"
-                    onClick={() => trackLinkClick(makeLinkContext({ id: 'tags', text: label, href: tagPermalink }), blogPostItemTracker)}
+                    {...tagLink({ id: 'tags', text: label, href: tagPermalink })}
                     to={tagPermalink}>
                     {label}
                   </Link>
@@ -168,10 +160,12 @@ function BlogPostItem(props: Props): JSX.Element {
             )}
 
             {!isBlogPostPage && truncated && (
-              <div className="col text--right">
+              <div 
+                {...tagElement({id: 'read-more'})}
+                className="col text--right">
                 <Link
                   to={metadata.permalink}
-                  onClick={() => trackLinkClick(makeLinkContext({ id: 'read-more', text: 'Read More', href: metadata.permalink }), blogPostItemTracker)}
+                  {...tagLink({ id: 'read-more', text: 'Read More', href: metadata.permalink })}
                   aria-label={`Read more about ${title}`}>
                   <b>
                     <Translate

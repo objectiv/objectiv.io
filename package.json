@@ -14,13 +14,11 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.6",
-    "@docusaurus/preset-classic": "^2.0.0-beta.6",
-    "@docusaurus/theme-classic": "^2.0.0-beta.6",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.6",
+    "@docusaurus/core": "2.0.0-beta.4",
+    "@docusaurus/preset-classic": "^2.0.0-beta.4",
+    "@docusaurus/theme-classic": "^2.0.0-beta.4",
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.4",
     "@mdx-js/react": "^1.6.21",
-    "@objectiv/schema": "^0.0.1",
-    "@objectiv/tracker-react": "^0.0.1",
     "@octokit/rest": "^18.5.3",
     "clsx": "^1.1.1",
     "emailjs-com": "^3.1.0",
@@ -31,7 +29,6 @@
     "react-dom": "^17.0.1",
     "react-github-btn": "^1.2.0",
     "react-hook-form": "^7.9.0",
-    "react-markdown": "^7.0.1",
     "react-medium-image-zoom": "4.3.3",
     "reactjs-popup": "^2.0.4",
     "remark-footnotes": "^3.0.0",
@@ -39,8 +36,7 @@
     "remark-jargon": "^2.15.2",
     "remark-license": "^5.2.0",
     "remark-lint": "^8.0.0",
-    "styled-components": "^5.2.3",
-    "zero-md": "^2.3.0"
+    "styled-components": "^5.2.3"
   },
   "browserslist": {
     "production": [

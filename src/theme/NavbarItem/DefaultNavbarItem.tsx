@@ -6,32 +6,37 @@
  */
 
 import React, {useState, useRef, useEffect} from 'react';
-import { 
-  ReactTracker,
-  useTracker,
-  makeOverlayContext,
-  makeSectionContext,
-  makeLinkContext,
-  trackLinkClick,
-} from "@objectiv/tracker-react";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
+import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
+import type { NavLinkProps } from '@theme-original/NavbarItem/DefaultNavbarItem';
+import { tagLink } from "@objectiv/tracker-browser";
 
-export function DefaultNavbarItem({mobile = false, ...props}: Props): JSX.Element {
-  const tracker = useTracker();
-  const mobileNavbarTracker = new ReactTracker(tracker, {
-    location_stack: [makeOverlayContext({ id: 'hamburger-menu' })],
-  });
-  const desktopNavbarTracker = new ReactTracker(tracker, {
-    location_stack: [makeSectionContext({ id: 'desktop-menu' })],
-  });
-
-  if(mobile) {
-    return <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href ? props.href : props.to }), mobileNavbarTracker)} />
-  }
-
+export default function DefaultNavbarItem({
+  mobile = false,
+  position: _position, // Need to destructure position from props so that it doesn't get passed on.
+  ...props
+}: Props): JSX.Element {
   return (
-    <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href ? props.href : props.to }), desktopNavbarTracker)} />
-  )
+    <OriginalDefaultNavbarItem 
+      {...props}
+      {...tagLink({ id: props.label, text: props.label, href: props.href ? props.href : props.to })}
+    />
+  );
 }
 
-export default DefaultNavbarItem;
+export function NavLink({
+  activeBasePath,
+  activeBaseRegex,
+  to,
+  href,
+  label,
+  activeClassName = '',
+  prependBaseUrlToHref,
+  ...props
+}: NavLinkProps): JSX.Element {
+  return (
+    <OriginalNavLink 
+      {...props} 
+    />
+  )
+}

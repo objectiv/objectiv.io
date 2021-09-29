@@ -5,30 +5,32 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
+import KeepMePosted from '../components/keep-me-posted'
 import styles from './styles.module.css';
-import {
-  makeLinkContext,
-  useTrackLinkClick
-} from '@objectiv/tracker-react';
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const customFields = siteConfig.customFields;
+
   return (
     <Layout
       title=''
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <AnnouncementBar 
         title="We're Hiring!"
-        content="Join our mission crew as a Senior Data Engineer."
+        content="Join our mission crew as a Data Scientist / Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       >
       </AnnouncementBar>
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header 
+        className={clsx('hero hero--primary', styles.heroBanner)}
+        {...tagElement({id: 'header'})}
+      >
         <div className={clsx('container', styles.heroContainer)}>
-          <img 
+          <img
             className={clsx(styles.heroImage)}
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
@@ -79,18 +81,30 @@ export default function Home() {
           </div>
           <div className={clsx(styles.heroOutro)}>
             Objectiv is open source and we’re building it in public. Check out&nbsp; 
-            <Link to="https://github.com/objectiv/">
+            <Link 
+              to="https://github.com/objectiv/"
+              {...tagLink({id: 'repo', href: 'https://github.com/objectiv/', text: 'GitHub'})}
+            >
               GitHub
             </Link> for the latest release, or join our&nbsp;
-            <Link to={customFields.slackJoinLink}>
+            <Link 
+              to={customFields.slackJoinLink}
+              {...tagLink({id: 'slack', href: customFields.slackJoinLink, text: 'Slack channel'})}
+            >
               Slack channel
             </Link> to stay in the loop.
           </div>
         </div>
       </header>
 
-      <main className={clsx('body-large')}>
-        <div className={clsx(styles.pageSection,styles.pageSectionBlue)}>
+      <main 
+        className={clsx('body-large')}
+        {...tagElement({id: 'main'})}
+      >
+        <div 
+          className={clsx(styles.pageSection,styles.pageSectionBlue)}
+          {...tagElement({id: 'intro'})}
+        >
           <div className={clsx("container", styles.intro)}>
             <img
               className={clsx(styles.introTitleIcon)}
@@ -120,7 +134,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={clsx(styles.pageSection)}>
+        <div 
+          className={clsx(styles.pageSection)}
+          {...tagElement({id: 'solution-taxonomy'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>1.</div>
@@ -142,14 +159,22 @@ export default function Home() {
               We strive for the adoption of an open standard taxonomy for analytics that enables models to be 
               shared, reused, stacked and interchanged. Check out our repo to learn more.
             </p>
-            <a href="https://github.com/objectiv/objectiv-analytics" className={clsx("button", styles.ctaButton)}>
+            <Link 
+              to="https://github.com/objectiv/objectiv-analytics" 
+              className={clsx("button", styles.ctaButton)}
+              {...tagLink({id: 'github-taxonomy', href: 'https://github.com/objectiv/objectiv-analytics', 
+                text: 'Taxonomy - Objectiv on GitHub'})}
+            >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
               Taxonomy - Objectiv on GitHub
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
+        <div 
+          className={clsx(styles.pageSection, styles.pageSectionLightBlue)}
+          {...tagElement({id: 'solution-tracking'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>2.</div>
@@ -172,16 +197,22 @@ export default function Home() {
               We’re working on debuggable tracking instrumentation that enables software engineers to collect
               clean, model-ready data with validation at the first stage of the pipeline.
             </p>
-            <a 
-              href="https://github.com/objectiv/objectiv-analytics" 
-              className={clsx("button", styles.ctaButton)}>
+            <Link 
+              to="https://github.com/objectiv/objectiv-analytics" 
+              className={clsx("button", styles.ctaButton)}
+              {...tagLink({id: 'github-tracking', href: 'https://github.com/objectiv/objectiv-analytics', 
+                text: 'Tracking - Objectiv on GitHub'})}
+            >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
               Tracking - Objectiv on GitHub
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className={clsx(styles.pageSection, styles.pageSection)}>
+        <div 
+          className={clsx(styles.pageSection, styles.pageSection)}
+          {...tagElement({id: 'solution-modeling'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>3.</div>
@@ -203,25 +234,30 @@ export default function Home() {
               We want to close the gap between experimentation and production by enabling data scientists to 
               run experiments on the full data set straight from their notebooks.
             </p>
-            <a 
-              href="https://github.com/objectiv/objectiv-analytics" 
-              className={clsx("button", styles.ctaButton)}>
+            <Link  
+              to="https://github.com/objectiv/objectiv-analytics" 
+              className={clsx("button", styles.ctaButton)}
+              {...tagLink({id: 'github-modeling', href: 'https://github.com/objectiv/objectiv-analytics', 
+                text: 'Modeling - Objectiv on GitHub'})}
+            >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
               Modeling - Objectiv on GitHub
-            </a>
+            </Link>
           </div>
         </div>
 
-        <footer>
+        <footer {...tagElement({id: 'footer'})}>
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv is open source and we’re building it in public.</h2>
             <p>Have opinions on where we should take this or want to stay in the loop?</p>
-            <a 
-              href={customFields.slackJoinLink}
-              className={clsx("button", styles.ctaButton)}>
+            <Link 
+              to={customFields.slackJoinLink}
+              className={clsx("button", styles.ctaButton)}
+              {...tagLink({id: 'slack', href: customFields.slackJoinLink, text: 'Join us on Slack'})}
+            >
               <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
               Join us on Slack
-            </a>
+            </Link>
           </div>
         </footer>
 

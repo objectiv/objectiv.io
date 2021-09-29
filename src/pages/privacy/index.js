@@ -4,10 +4,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {
-  useTrackLinkClick,
-  makeLinkContext,
-} from '@objectiv/tracker-react';
+import { tagElement } from '@objectiv/tracker-browser';
 
 export default function PrivacyPolicy() {
   const context = useDocusaurusContext();
@@ -16,7 +13,10 @@ export default function PrivacyPolicy() {
     <Layout
       title='Privacy Policy'
       description={siteConfig.tagline}>
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header 
+        className={clsx('hero hero--primary', styles.heroBanner)}
+        {...tagElement({id: 'header'})}
+      >
         <div className={clsx('container', styles.cookiesContainer)}>
           <h1>Privacy Policy</h1>
           <em>Last Updated 2021-08-18</em>

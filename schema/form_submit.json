@@ -1,0 +1,15 @@
+{
+  "name": "form_submit_extension",
+  "version": {"form_submit_extension": "0.0.1"},
+  "comment": "Objectiv schema From Submit extension",
+  "events": {
+    "FormSubmitEvent": {
+      "parents": [
+        "NonInteractiveEvent"
+      ],
+      "requiresContext": [
+        "SectionContext"
+      ]
+    }
+  }
+}
