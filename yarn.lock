@@ -1952,23 +1952,23 @@
 
 "@objectiv/plugin-web-device-context@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#570e06f60a3b2c4878a9e0761c7b06fd18ac3b8c"
-  integrity sha512-9n4syWFE57npT01ko0pIhWJQpC77egoqTlSwzluBxGsFkuIU1xqwctIkjx1dvgjNnqjEug+J1xpS0S/xUOa7jQ==
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#a272fc554737000b2f878626c5bf9490a7f49d07"
+  integrity sha512-PsRAxkQCO8+01v9uv5qa/KuU0ZM+e7zRkICvxNZBjkABDKMUzj6SfXauAM1VnG4jS7weyrgRywMBRk26SF21KA==
 
 "@objectiv/plugin-web-document-context@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#57e0879e182e84c904551eb05da035f78e13091f"
-  integrity sha512-BXJ8bjF7pIRQGGOFN5zjrN2Rfn59Nkj1imaI4MEiNgPZxdPpmD/WssaO4C9aWf3NIz02m5IDHIUozjn1BbkkwQ==
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#4b19bcb86746cbf63a2dcc0f8dd91f92c5a87746"
+  integrity sha512-ya0+CyqXlfL29ZiImFc9NJyqbZSY8zd+/nroCeQ7v2U6ZDKv1eZYLdcTCw5iPVlUWIZTLnEM1QgpN0xsjbYQDQ==
 
 "@objectiv/schema@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#d72e281d19590b6d8c409240e719125763629484"
-  integrity sha512-fD/PvAIMccFGSwaPyBBJ6vLMuTv7WSMWgO68WaH9i6wDhv1+QSSwAf+YTbJMyGu34ep5wyHon7Ohfi6N6GA+RA==
+  resolved "http://localhost:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#35a4b46ec7a2001b3419d9660379e51c7d08f7ee"
+  integrity sha512-pNKaYL9KxmiWJGAvT2btSlWvQsBi0NqBsrLIXtP/fWZYULmfAW648Cln6cBAakTXAmddXkkpT9kEwuDpm+k/VA==
 
 "@objectiv/tracker-browser@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.1.tgz#97df586144e0c14f407b3aa4fdf92266dfca038c"
-  integrity sha512-27N66ACQDQWUipTQMSC+flHdvXO2dJy79cLiQXL6fuK5AQoYcdS/F/uXBhXOvuFcvulibRQO7DXLR+ecExJDgA==
+  resolved "http://localhost:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.1.tgz#dfa045401a63d624290840f8350c20a5485d4637"
+  integrity sha512-L2t5CaChKxltPcGN3j3bVjQRiCtKuAvTwouJbFwW1IwrwCcK5ExGVdo46R2MIkNNjedhIm+EzYoRBo5eQ9mBCw==
   dependencies:
     "@objectiv/plugin-web-device-context" "~0.0.1"
     "@objectiv/plugin-web-document-context" "~0.0.1"
@@ -1978,8 +1978,8 @@
 
 "@objectiv/tracker-core@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#2428d05d624f5e29631e49a6ad5911fb1409f8c3"
-  integrity sha512-vimxd5DloxUYCNC1ANFCWjwE2M589zG2iQ2xsgw4DgLymuP7wM8MBjWzFxIdxSpTqusshdP3VwA1eKsukzofHg==
+  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#a241eeddf263038609c13c773d9bd3dfc6070a32"
+  integrity sha512-5CcmMwiWMw2IBF+VtYrixoTWYZqj1EoaKsjZp6ALHJ9vDXNahUMLyhZ8bI5DKfwYnD4ynap3vJeGiPNgf1GRnQ==
   dependencies:
     es6-error "^4.1.1"
     uuid-random "^1.3.2"
@@ -2113,6 +2113,22 @@
     "@octokit/types" "^6.13.1"
     deprecation "^2.3.1"
 
+"@octokit/plugin-retry@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-retry/-/plugin-retry-3.0.7.tgz#174516f2b80b7140aee71ebc2b506db2c5c1d3d6"
+  integrity sha512-n08BPfVeKj5wnyH7IaOWnuKbx+e9rSJkhDHMJWXLPv61625uWjsN8G7sAW3zWm9n9vnS4friE7LL/XLcyGeG8Q==
+  dependencies:
+    "@octokit/types" "^6.0.3"
+    bottleneck "^2.15.3"
+
+"@octokit/plugin-throttling@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-throttling/-/plugin-throttling-3.4.1.tgz#586aaa01ea653019380b137872c6256b0e2f2e5d"
+  integrity sha512-qCQ+Z4AnL9OrXvV59EH3GzPxsB+WyqufoCjiCJXJxTbnt3W+leXbXw5vHrMp4NG9ltw00McFWIxIxNQAzLNoTA==
+  dependencies:
+    "@octokit/types" "^6.0.1"
+    bottleneck "^2.15.3"
+
 "@octokit/request-error@^2.0.0", "@octokit/request-error@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-2.0.5.tgz#72cc91edc870281ad583a42619256b380c600143"
@@ -2144,7 +2160,7 @@
     "@octokit/plugin-request-log" "^1.0.2"
     "@octokit/plugin-rest-endpoint-methods" "5.0.1"
 
-"@octokit/types@^6.0.3", "@octokit/types@^6.11.0", "@octokit/types@^6.13.1", "@octokit/types@^6.7.1":
+"@octokit/types@^6.0.1", "@octokit/types@^6.0.3", "@octokit/types@^6.11.0", "@octokit/types@^6.13.1", "@octokit/types@^6.7.1":
   version "6.14.2"
   resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.14.2.tgz#64c9457f38fb8522bdbba3c8cc814590a2d61bf5"
   integrity sha512-wiQtW9ZSy4OvgQ09iQOdyXYNN60GqjCL/UdMsepDr1Gr0QzpW6irIKbH3REuAHXAhxkEk9/F2a3Gcs1P6kW5jA==
@@ -2771,15 +2787,10 @@ ansi-escapes@^4.2.1, ansi-escapes@^4.3.1:
   dependencies:
     type-fest "^0.21.3"
 
-ansi-html-community@^0.0.8:
+ansi-html-community@0.0.8, ansi-html@0.0.7, "ansi-html@https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41"
   integrity sha512-1APHAyr3+PCamwNw3bXCPp4HFLONZt/yIH0sZp0/469KWNTEy+qN5jQ3GVX6DMZ1UXAi34yVwtTeaG/HpBuuzw==
-
-ansi-html@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
-  integrity sha1-gTWEAhliqenm/QOflA0S9WynhZ4=
 
 ansi-regex@^2.0.0, ansi-regex@^3.0.0, ansi-regex@^4.1.0, ansi-regex@^5.0.0, ansi-regex@^5.0.1:
   version "5.0.1"
@@ -8619,6 +8630,11 @@ rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-async@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/react-async/-/react-async-10.0.1.tgz#575c083f808303d2f6ca52d11ec7554dbdbd9fcd"
+  integrity sha512-ORUz5ca0B57QgBIzEZM5SuhJ6xFjkvEEs0gylLNlWf06vuVcLZsjIw3wx58jJkZG38p+0nUAxRgFW2b7mnVZzA==
+
 react-avatar@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/react-avatar/-/react-avatar-3.10.0.tgz#d8801aef167129fc87bdade82c0f7f5bfb064bf2"
@@ -10022,9 +10038,9 @@ stylis@^4.0.10, stylis@^4.0.6:
   integrity sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==
 
 superstruct@^0.15.2:
-  version "0.15.2"
-  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.2.tgz#ab7fb84c455a9d7da84c11cfd82c85a4fee9dfff"
-  integrity sha512-OsJI8lv6/PsInwCf4ultejmsJYseYshKhkcbDendqNwj3MeGXENajl3ujMGMU4FDDSSeJTOwFn9T6pnfsS9DYA==
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.3.tgz#07edfc715259ebfe3b4b2e4cb53e8e45b51674a4"
+  integrity sha512-wilec1Rg3FtKuRjRyCt70g5W29YUEuaLnybdVQUI+VQ7m0bw8k7TzrRv5iYmo6IpjLVrwxP5t3RgjAVqhYh4Fg==
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"

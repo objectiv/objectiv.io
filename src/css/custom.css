@@ -22,6 +22,7 @@
   --ifm-heading-color: black;
   --ifm-heading-font-weight: normal;
   --ifm-hero-text-color: black;
+  --ifm-hero-background-color: transparent;
   --ifm-container-width: 960px;
   --ifm-link-color: #06A5FA;
   --ifm-link-hover-color: #06A5FA;
@@ -149,6 +150,12 @@ div[role=banner] img {
   .footer .container {
     max-width: 960px;
   }
+}
+
+.footer__item {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0.8em;
 }
 
 .footer__copyright {

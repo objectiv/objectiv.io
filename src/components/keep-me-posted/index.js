@@ -4,8 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
-import { tagButton, tagElement } from "@objectiv/tracker-browser";
-import { makeNonInteractiveEvent, makeSectionContext, makeActionContext } from "@objectiv/tracker-core";
+import { getTracker, tagButton, tagElement, trackClick } from "@objectiv/tracker-browser";
+import { makeCompletedEvent, makeAbortedEvent, makeSectionContext, makeErrorContext } from "@objectiv/tracker-core";
 
 function KeepMePosted({children, name}) {
   const {siteConfig} = useDocusaurusContext();
@@ -22,14 +22,10 @@ function KeepMePosted({children, name}) {
     sendForm('keep_me_posted', 'template_keep_me_posted', '#keep-me-posted')
       .then(function(response) {
         var successMessage = "Thanks for subscribing, we'll notify you when we release!";
-        getTracker().trackEvent(makeNonInteractiveEvent({
+        getTracker().trackEvent(makeCompletedEvent({
           location_stack: [
             makeSectionContext({
               id: 'keep-me-posted-form'
-            }),
-            makeActionContext({
-              id: "keep-me-posted", 
-              text: successMessage
             })
           ]
         }));
@@ -38,7 +34,7 @@ function KeepMePosted({children, name}) {
         form.reset();
       }, function(error) {
         var failedMessage = "Whoops, we could not register your email address. Please try again (later).";
-        getTracker().trackEvent(makeNonInteractiveEvent({
+        getTracker().trackEvent(makeAbortedEvent({
           location_stack: [
             makeSectionContext({
               id: 'keep-me-posted-form'

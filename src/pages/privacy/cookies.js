@@ -29,7 +29,7 @@ export default function Cookies() {
           </ul>
 
           <h1>Who sets Cookies?</h1>
-          <p>The cookies are sometimes placed by Objectiv and sometimes they are placed by our service providers. When cookies are placed by service providers, they are providing a service or function to Objectiv, but Objectiv cannot control how those service provider cookies are used. To see a complete list of the cookies placed by Objectiv and our service providers you may view the list below.</p>
+          <p>The cookies are sometimes placed by Objectiv and sometimes they are placed by our service providers. When cookies are placed by service providers, they are providing a service or function to Objectiv, but Objectiv cannot control how those service provider cookies are used.</p>
 
           <h1>How do I manage my Cookies?</h1>
           <p>You have the option to opt-out and disable most cookies that we use on our website. However, the disabling of cookies may cause certain features of the website not to function properly. Any cookies that are considered strictly necessary, which are those that are essential for the website to operate, cannot be disabled.</p>
@@ -38,10 +38,11 @@ export default function Cookies() {
 
           <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
           <p>Service providers may participate in self-regulatory programs that provide ways to opt out of analytics and interest-based advertising, which you can access at:</p>
-
-          United States: NAI (<Link to="http://optout.networkadvertising.org">http://optout.networkadvertising.org/</Link>) and DAA (<Link to="http://optout.aboutads.info/">http://optout.aboutads.info/</Link>)<br />
-          Canada: Digital Advertising Alliance of Canada (<Link to="https://youradchoices.ca/">https://youradchoices.ca/</Link>)<br />
-          Europe: European Digital Advertising Alliance (<Link to="http://www.youronlinechoices.com/">http://www.youronlinechoices.com/</Link>)<br />
+          <ul>
+            <li>United States: NAI (<Link to="http://optout.networkadvertising.org">http://optout.networkadvertising.org/</Link>) and DAA (<Link to="http://optout.aboutads.info/">http://optout.aboutads.info/</Link>).</li>
+            <li>Canada: Digital Advertising Alliance of Canada (<Link to="https://youradchoices.ca/">https://youradchoices.ca/</Link>).</li>
+            <li>Europe: European Digital Advertising Alliance (<Link to="http://www.youronlinechoices.com/">http://www.youronlinechoices.com/</Link>).</li>
+          </ul>
 
           <h1>How do I manage mobile advertising IDs?</h1>
           <p>On mobile devices, advertising IDs provided by the platform may be collected and used similar to cookie IDs. You may use the controls on iOS and Android operating systems that allow you to limit tracking and/or reset the advertising IDs.</p>
