@@ -22,9 +22,9 @@ Below a concise overview of the various areas in Objectiv, with click-throughs t
     Tracking --- Taxonomy;
     Modeling --- Taxonomy;
     linkStyle 0,1 stroke:#000,anything;
-    click Tracking "tracking" "See more details" _self;
-    click Modeling "modeling" "See more details" _self;
-    click Taxonomy "taxonomy" "See more details" _self;
+    click Tracking "/tracking" "See more details" _self;
+    click Modeling "/modeling" "See more details" _self;
+    click Taxonomy "/taxonomy" "See more details" _self;
     class Tracking,Modeling,Taxonomy diagramBlocks;
 `} caption="Figure: Diagram of all Objectiv Areas" baseColor="basic" />
 
