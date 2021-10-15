@@ -7,20 +7,20 @@ sidebar_position: 4
 
 import Mermaid from '@theme/Mermaid';
 
-First off, thank you for considering to contribute to Objectiv! Please feel welcome - we need volunteer developers like yourself to help this project be a success. We’re here to help you find things to work on that you're excited about.
+First off, thank you for considering to contribute to Objectiv! Please feel welcome - we need volunteer developers like yourself to help this project be a success. We're here to help you find things to work on that you're excited about.
 
 ## Where to start?
 
-There are many ways to contribute, from improving [the documentation](https://objectiv.io/docs/), helping people on our [Discourse forums](https://discourse.objectiv.io/), or submitting [bug reports & feature requests](https://github.com/objectiv/objectiv-analytics/issues), to writing code for the Objectiv [Taxonomy](https://github.com/objectiv/objectiv-analytics/tree/main/tracker/core/schema), [trackers](https://github.com/objectiv/objectiv-analytics/tree/main/tracker) and [tracker plugins](https://github.com/objectiv/objectiv-analytics/tree/main/tracker/plugins), or the [backend](https://github.com/objectiv/objectiv-analytics/tree/main/backend). 
+There are many ways to contribute, from improving [the documentation](https://objectiv.io/docs/), submitting [bug reports & feature requests](https://github.com/objectiv/objectiv-analytics/issues), to [writing code ](https://github.com/objectiv/objectiv-analytics/). 
 
 See our [public roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for areas we plan to work on next.
 
-To jump straight to what you’re looking for, see Objectiv’s contribution map below:
+To jump straight to what you're looking for, see Objectiv's contribution map below:
 
 <Mermaid chart={`
 	graph LR
     SecurityIssue["Security Issue"] ----> SecurityPolicy["See Security Policy"];
-    Question --> Docs["See Documentation"] ---> Discourse["Discourse Forums"]
+    Question --> Docs["See Documentation"]
 		Bug ---> CheckIssues["Check GitHub Issues"];
     CheckIssues --> Comment["Comment/+1"];
     CheckIssues --> GitHubIssue["Create GitHub Issue"];
@@ -28,18 +28,17 @@ To jump straight to what you’re looking for, see Objectiv’s contribution map
     CheckRoadmap --> CheckIssues;
     Contribution ----> PR["Create a Pull Request"];
     LabelUpdate["GitHub Label update"] ----> PR["Create a Pull Request"];
-    StayUpToDate["Receive Updates"] ----> DiscourseUpdates["See Discourse 'Updates' Forum"];
+    StayUpToDate["Receive Updates"] ----> GitHubReleases["Follow Releases on GitHub"];
     click SecurityPolicy "https://github.com/objectiv/objectiv-analytics/blob/main/SECURITY.md" "See Security Policy" _blank;
     click Docs "https://objectiv.io/docs" "See Objectiv Documentation" _blank;
-    click Discourse "https://discourse.objectiv.io/" "See Objectiv Discourse Forums" _blank;
     click CheckIssues "https://github.com/objectiv/objectiv-analytics/issues" "Go to GitHub Issues" _blank;
     click GitHubIssue "https://github.com/objectiv/objectiv-analytics/issues" "Go to GitHub Issues" _blank;
     click CheckRoadmap "https://github.com/objectiv/objectiv-analytics/projects/2" "Go to Public Roadmap" _blank;
     click PR "https://github.com/objectiv/objectiv-analytics/pulls" "Go to GitHub Pull Requests" _blank;
-    click DiscourseUpdates "https://discourse.objectiv.io/" "See Objectiv Discourse Forums" _blank;
+    click GitHubReleases "https://github.com/objectiv/objectiv-analytics" "Follow Releases on GitHub" _blank;
 `} caption="Figure: How To Contribute" baseColor="basic" />
 
-The following is a set of guidelines for contributing that help communicate respect for each other’s time & contributions. These are mostly guidelines, not rules; simply use your best judgment, and feel free to propose changes to this document in a pull request. 
+The following is a set of guidelines for contributing that help communicate respect for each other's time & contributions. These are mostly guidelines, not rules; simply use your best judgment, and feel free to propose changes to this document in a pull request. 
 
 ## Code of Conduct {#code-of-conduct}
 
@@ -59,10 +58,6 @@ Please don't file an issue to ask a question. You'll get faster results by using
 
 :::
 
-We have an official Discourse forum with a detailed FAQ, where the team & community chime in with helpful advice if you have questions: 
-
-[Objectiv Discourse Forum](https://discourse.objectiv.io/)
-
 
 ## Reporting Bugs {#reporting-bugs}
 
@@ -72,7 +67,6 @@ Following the guidelines below helps maintainers and the community understand yo
 
 If you find a security vulnerability, please do NOT open an issue; instead, refer to our [security policy](https://github.com/objectiv/objectiv-analytics/blob/main/SECURITY.md).
 
-
 :::
 
 
@@ -80,18 +74,15 @@ If you find a security vulnerability, please do NOT open an issue; instead, refe
 
 Before creating bug reports, please check the list below, as you might find out that you don't need to create one:
 
-
-
 1. Check if you can reproduce the problem in the latest version of Objectiv.
-2. Check the [FAQs on the Discourse forum](https://discourse.objectiv.io/) for a list of common questions and problems.
-3. Perform a cursory search in the GitHub repo to see if the problem has already been reported. 
+2. Perform a cursory search in the GitHub repo to see if the problem has already been reported. 
     1. If it has and the issue is still Open, please use that issue for any comments (if needed), instead of opening a new one. 
     2. If you find a Closed issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 
 
 ### Submitting A New Bug Report
 
-If you haven’t found any related issues in the previous step, create a new issue on the repository, using the Bug Report template. When you are creating a bug report, please include as many details as possible. Fill out the required fields in the template, the information it asks for helps resolve issues faster.
+If you haven't found any related issues in the previous step, create a new issue on the repository, using the Bug Report template. When you are creating a bug report, please include as many details as possible. Fill out the required fields in the template, the information it asks for helps resolve issues faster.
 
 
 ## Making A Feature Request
@@ -103,10 +94,8 @@ This section guides you through submitting a new feature suggestion for Objectiv
 
 Before creating a feature request, please check the list below, as you might find out that you don't need to create one:
 
-
-
 1. Use the latest version of Objectiv to check if the request has already been made.
-2. Search [our public roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) to see if it’s already in the plans.
+2. Search [our public roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) to see if it's already in the plans.
 3. Perform a cursory search to see if the request has already been made. If it has, either:
     1. Vote on it using GitHub Reactions; or
     2. Add any relevant comments to the existing issue instead of opening a new one.
@@ -126,16 +115,12 @@ fully documented below. Here are some of the ones that are most relevant to find
 
 **Issues available for community contribution**:
 
-
-
 * _Status: Help Wanted_: Open to participation from the community. Not necessarily beginner-friendly.
 * _Status: Good First Issue_: Open to participation from the community, and friendly towards new contributors.
 
-You do not need our permission to work on one of these issues. You may work on an issue labeled ‘Good First Issue’ even if it's not your first issue.
+You do not need our permission to work on one of these issues. You may work on an issue labeled 'Good First Issue' even if it's not your first issue.
 
 **Issues not ready for work**:
-
-
 
 * _Status: Blocked_: Blocked by something else that needs to be done first.
 * _Status: Wontfix_: Decided not to fix for now, either because it works as intended or for some other reason.
@@ -163,7 +148,7 @@ Please refer to our [README](https://github.com/objectiv/objectiv-analytics/blob
 
 ### If You Are A First-Time Contributor
 
-Feel free to ask for help on our [Discourse Forums](https://discourse.objectiv.io/); everyone is a beginner at first. You can learn how to open a Pull Request from this free series: [How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request), or from [FirstTimersOnly](https://www.firsttimersonly.com/).
+Feel free to ask for help on the respective GitHub issue; everyone is a beginner at first. You can learn how to open a Pull Request from this free series: [How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request), or from [FirstTimersOnly](https://www.firsttimersonly.com/).
 
 
 ### WIP PRs
@@ -175,11 +160,9 @@ Contributors can ask for a review on any PR, without this PR being done and/or r
 
 Once you’re ready to submit your contribution, please open up a [GitHub Pull Request](https://github.com/objectiv/objectiv-analytics/pulls) with a clear list of:
 
-
-
 1. What you've done.
-2. Why you’ve done it.
-3. Links to any Issues you’re solving with this.
+2. Why you've done it.
+3. Links to any Issues you're solving with this.
 4. Pointers on how to test the changes.
 
 When you send a pull request, we highly appreciate including tests. We can always use more test coverage. 
@@ -212,11 +195,9 @@ Please open an Issue if you have suggestions for new Labels.
 
 The Labels we use:
 
-
-
 * Type: 
     * _Epic_: Collection of User Stories and Bugs.
-    * _Story_: User Story
+    * _Story_: User Story.
     * _Enhancement_: Small improvement that is not a feature or bug.
     * _Bug_: Broken functionality
     * _Task_: Small item of work that is not functionality
@@ -224,7 +205,7 @@ The Labels we use:
     * _Taxonomy_: The Objectiv Taxonomy.
     * _Tracker_: Product trackers.
     * _Backend_: The Backend.
-    * _Modeling_: Models & Orchestration.
+    * _Modeling_: DS tools & Models.
     * _Project_: Overall Project related.
 * Priority: Based on impact, a product of urgency (e.g. occurrence) and importance.
     * _1. Critical_: High Urgency and High Importance.
@@ -241,11 +222,3 @@ The Labels we use:
 * Community:
     * _Status: Help Wanted_: Open to participation from the community, not necessarily beginner-friendly.
     * _Status: Good First Issue_: Open to participation from the community, and friendly towards new contributors.
-
-
-
-## License: MIT
-
-Objectiv is licensed under the [MIT license](https://opensource.org/licenses/MIT). 
-
-By contributing to Objectiv, you agree that your contributions will also be licensed under the MIT license.
