@@ -31,7 +31,9 @@ function Root({children}) {
   // This Effect is responsible for creating our Tracker Instances. It runs only once on mount
   useEffect(
     () => {
-      if (trackerEndPoint) {
+      // In DEV Mode Fast Refresh may rerun this hook regardless of its deps. This does not happen in production mode.
+      const trackersExist = getTrackerRepository().trackersMap.size !== 0;
+      if (trackerEndPoint && !trackersExist) {
         const trackerOptions = {
           endpoint: trackerEndPoint as string,
           console: trackerConsoleEnabled ? console : undefined
