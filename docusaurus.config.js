@@ -89,14 +89,7 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        docs: {
-          path: 'docs',
-          routeBasePath: '/docs',
-          sidebarPath: require.resolve('./docs/sidebars.js'),
-          sidebarCollapsible: true,
-          editUrl:
-            'https://github.com/objectiv/objectiv.io/edit/master/docs/',
-        },
+        docs: false,
         blog: false,
         sitemap: {
           changefreq: 'weekly',
