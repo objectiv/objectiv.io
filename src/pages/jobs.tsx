@@ -18,13 +18,13 @@ export default function Jobs() {
         {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.jobsContainer)}>
-          <h1>Currently Hiring: Data Scientist / Engineer</h1>
+          <h1>Currently Hiring: Senior Software Engineer</h1>
         </div>
       </header>
       <main {...tagElement({id: 'main'})}>
         <div className={clsx('container', styles.jobsContainer)}>
           <h2> <img width="32px" src='/img/startup.svg' alt='Our mission' />  Our mission</h2>
-          <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
+          <p>It's our mission to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
 
           <p>Building a great model as a data scientist happens in experimental iterations. That’s why so many of us live in Notebooks. The analytics data that you work on clearly does not fit a local machine, so it’s either working with samples, or spinning up complex data lakes. We believe there is so much development going on in the SQL space, that today it’s possible to create a single interactive &amp; experimental environment for the data scientist to build models, while iterating on the full dataset.</p>
 
@@ -32,18 +32,19 @@ export default function Jobs() {
 
           <p>To make this all happen, we have started our journey in the space of product analytics. Creating a standardized taxonomy and validation that carries through a whole pipeline that ends all the way in the notebook. We see product analytics as a stepping stone in a much larger ambition. To create the dream experimental modelling workflow for data science.</p>
 
-          <h2> <img width="32px" src='/img/cake.svg' alt='So, where is the product?'/>  So, where is the product?</h2>
-          In a repository near you this fall. Our team is working hard to get the initial version ready. Then we will continue to develop in public.
+          <h2> <img width="32px" src='/img/cake.svg' alt='The project'/> The project</h2>
+          Objectiv is open-source and we are developing the project in public. Our initial version was just released, to showcase how we think about solving the hard parts of this challenge. It's early days and there is so much to do, there is where you possibly come in :-).
 
-          <h2> <img width="32px" src='/img/cap.svg' alt='About the role' />  About the role</h2>
+          <h2> <img width="32px" src='/img/cap.svg' alt='About the role' />  The team</h2>
           <p>You will be joining an early team of 10 analytics enthusiasts that are together building a great product. The lines between data science, data engineering, frontend and ops are quite blurry in our team, as everyone is taking multiple parts of that.</p>
 
           <h2> <img width="32px" src='/img/id-card.svg' alt='About you' />  About you</h2>
-          <p>This role is at the intersection of data science and data engineering. What we are looking for in this role:</p>
+          <p>This role is at the intersection of engineering &amp; data science. What we are looking for in this role:</p>
           <ul>
-            <li>You speak Python and SQL fluently, and get excited about data engineering tech like dbt.</li>
-            <li>You have at least 3 years of working experience in a data science or engineering role and ideally worked with analytics data.</li>
-            <li>You have a master's degree in software engineering, math or something related.</li>
+            <li>You have at least 5 years of working experience in a software engineering role and are an expert in Python.</li>
+            <li>You have strong affinity with the data science side of things; worked actively in notebooks, set up analytics pipelines, created models from scratch, etc.</li>
+            <li>You get excited about data engineering tech like dbt or Meltano.</li>
+            <li>You have a master's degree in software engineering, math, physics, data science, or something related.</li>
             <li>You have a can-do attitude. Even when the problem seems huge, you're able to chop it up and solve the chunks.</li>
             <li>You are fluent in English.</li>
             <li>This is a remote role in EU timezone with regular team offsites in The Netherlands.</li>
