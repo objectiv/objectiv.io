@@ -194,7 +194,10 @@ const SphinxPage = (props) => {
                     }
                 }
 
-                const data = tempDiv.innerHTML;
+                // Extract the main section only, we don't need the wrapping <div>s and <main> tags
+                const mainSection = tempDiv.querySelector('section');
+
+                const data = mainSection.innerHTML;
                 setData(data)
             })
           .then(() => {
