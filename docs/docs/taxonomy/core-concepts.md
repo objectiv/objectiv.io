@@ -6,6 +6,8 @@ title: Core Concepts
 
 import Mermaid from '@theme/Mermaid';
 
+With Objectiv, you map your application to the open taxonomy, creating a contextual layer that's used for data collection & validation.
+
 The open taxonomy consists of:
 * Classes for each common analytics event type (e.g. a button click), called **Events**.
 * The contexts in which they can happen, e.g. the device, called **Contexts**. There are two types: Location 
@@ -99,8 +101,3 @@ A snippet of a potential set of GlobalContexts for an Event:
 
 In this example, the Event carries `GlobalContext`s that identify the application (`my-app`) and the web 
 context of the user, in this case their referer, user agent, and IP address.
-
-
-## Mapping to your application
-The taxonomy is designed to cover a wide range of common analytics use cases, and should be mapped to your 
-application by [instrumenting it with the Objectiv trackers](/tracking/introduction.md).

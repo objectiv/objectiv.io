@@ -6,18 +6,17 @@ title: Introduction
 
 # Introduction
 
-The open Taxonomy is [our](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
-validate analytics data. It is designed to cover a wide range of common analytics use cases. It provides:
-* An initial set of classes for common event types for analytics, and the context in which they can happen; and
-* Their properties, requirements, and relationships.
+Objectiv is built around the open taxonomy of analytics, which is our proposal for a common way to collect, structure and validate data.
 
-Objectiv also provides [tracking](/tracking/introduction.md), 
-[collecting](/tracking/core-concepts/collector.md), and 
-[modeling](/modeling) implementations that fully build on the taxonomy.
+Using the open taxonomy ensures models & data can be reused, and data scientists can build on the knowledge and practices of others. In most cases you can skip the discussion on what to track, because it is designed to cover a wide range of common analytics use cases.
 
-**We're actively looking for feedback**: Just like the rest of the code, the taxonomy is open source and 
+Based on this taxonomy, we're developing [tracking](/tracking/introduction.md), [validation](/tracking/core-concepts/collector.md) and [modeling](/modeling) libraries:
+
+[IMAGE BOB]
+
+Just like the rest of the code, the taxonomy is open source and 
 we're building it in public. If you have any ideas or opinions on where to take it next, please see our 
-[Contribution Guide](/the-project/contributing.md).
+[Contribution Guide](/the-project/contributing.md) and join us on [Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
 
 ## Core Concepts
 To understand in more detail how the Taxonomy works, read about the underlying core concepts.
