@@ -16,10 +16,10 @@ import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
 
 export default function EditThisPage({editUrl}: Props): JSX.Element {
   const context = useDocusaurusContext();
-  const {customFields} = context.siteConfig;
+  const {baseUrl, customFields} = context.siteConfig;
 
   // if in the 'modeling' section, edit the source code that is used to auto-generate the docs instead
-  let editThisPageUrl = useRouteMatch("/modeling") !== null ? 
+  let editThisPageUrl = useRouteMatch(`${baseUrl}modeling`) !== null ? 
     useBaseUrl('/the-project/update-the-docs') : editUrl;
 
   return (

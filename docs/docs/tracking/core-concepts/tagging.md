@@ -3,6 +3,9 @@ sidebar_position: 2
 title: Tagging
 slug: tagging
 ---
+:::info why tagging?
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).
+:::
 
 To understand **tagging**, we first need to know what we mean by **Elements**. 
 

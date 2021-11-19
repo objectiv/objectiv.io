@@ -15,7 +15,17 @@ function AnnouncementBar({title, content, ctaLink, ctaText}) {
         {content}&nbsp;
         <Link 
           to={ctaLink}
-          {...tagLink({ id: 'announcement-cta', text: ctaText, href: ctaLink })}
+          {...tagLink({ 
+              id: 'announcement', 
+              text: ctaText, 
+              href: ctaLink, 
+              options: {
+                trackClicks: {
+                  waitUntilTracked: true
+                }
+              }
+            })
+          }
         >
           {ctaText}
         </Link>

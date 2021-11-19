@@ -46,7 +46,7 @@ export default function Home() {
               <Link 
                 to="https://github.com/objectiv/objectiv-analytics" 
                 {...tagLink({
-                    id: 'cta-repo-button', 
+                    id: 'github', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
                     text: 'Objectiv on GitHub',
                     options: {
@@ -143,8 +143,8 @@ export default function Home() {
                     <Link 
                       to={url + "docs/taxonomy/"}
                       {...tagLink({
-                          id: 'cta-docs-taxonomy', 
-                          href: '/docs/taxonomy/', 
+                          id: 'docs', 
+                          href: '/docs/taxonomy/',
                           text: 'Docs - Taxonomy',
                           options: {
                             trackClicks: {
@@ -187,7 +187,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/tracking/"}
                       {...tagLink({
-                          id: 'cta-docs-tracking', 
+                          id: 'docs', 
                           href: '/docs/tracking/', 
                           text: 'Docs - Tracking',
                           options: {
@@ -239,7 +239,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/tracking/core-concepts/locations"} 
                       {...tagLink({
-                          id: 'cta-docs-location-stack', 
+                          id: 'docs', 
                           href: '/docs/taxonomy', 
                           text: 'Docs - Location Stack',
                           options: {
@@ -280,7 +280,7 @@ export default function Home() {
                     <Link 
                       to="https://notebook.objectiv.io/lab?path=product_analytics.ipynb" 
                       {...tagLink({
-                          id: 'cta-docs-demo-notebook', 
+                          id: 'demo-notebook', 
                           href: 'https://notebook.objectiv.io/lab?path=product_analytics.ipynb', 
                           text: 'Live Demo Notebook',
                           options: {
@@ -334,7 +334,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/modeling/"} 
                       {...tagLink({
-                          id: 'cta-docs-reuse', 
+                          id: 'docs', 
                           href: '/docs/modeling/', 
                           text: 'Docs - Modeling',
                           options: {

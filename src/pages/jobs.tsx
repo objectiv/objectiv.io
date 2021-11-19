@@ -46,9 +46,9 @@ export default function Jobs() {
                 <Link
                   to="https://github.com/objectiv/objectiv-analytics" 
                   {...tagLink({
-                      id: 'github-repo', 
+                      id: 'github', 
                       href: 'https://github.com/objectiv/objectiv-analytics', 
-                      text: 'Docs - Taxonomy',
+                      text: 'GitHub repo',
                       options: {
                         trackClicks: {
                           waitUntilTracked: true

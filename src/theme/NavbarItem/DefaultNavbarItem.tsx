@@ -20,7 +20,17 @@ export default function DefaultNavbarItem({
   return (
     <OriginalDefaultNavbarItem 
       {...props}
-      {...tagLink({ id: props.label, text: props.label, href: props.href ? props.href : props.to })}
+      {...tagLink({ 
+          id: props.label.toLowerCase(), 
+          text: props.label, 
+          href: props.href ? props.href : props.to,
+          options: {
+            trackClicks: {
+              waitUntilTracked: true
+            }
+          }
+        })
+      }
     />
   );
 }

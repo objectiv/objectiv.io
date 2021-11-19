@@ -6,6 +6,10 @@ sidebar_position: 3
 
 Now that the [Tracker is up and running](/tracking/how-to-guides/angular/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/tagging.md#elements) as [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).  
 
+:::info why tagging?
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).
+:::
+
 ## Tagging Interactive Elements
 A good rule of thumb is to start by identifying all interactive Elements in the Application. 
 
