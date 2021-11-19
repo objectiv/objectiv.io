@@ -21,7 +21,7 @@ export default function DefaultNavbarItem({
     <OriginalDefaultNavbarItem 
       {...props}
       {...tagLink({ 
-          id: props.label.toLowerCase(), 
+          id: props.label, 
           text: props.label, 
           href: props.href ? props.href : props.to,
           options: {

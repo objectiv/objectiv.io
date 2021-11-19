@@ -46,7 +46,7 @@ export default function Home() {
               <Link 
                 to="https://github.com/objectiv/objectiv-analytics" 
                 {...tagLink({
-                    id: 'github', 
+                    id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
                     text: 'Objectiv on GitHub',
                     options: {
@@ -143,7 +143,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/taxonomy/"}
                       {...tagLink({
-                          id: 'docs', 
+                          id: 'cta-docs-taxonomy', 
                           href: '/docs/taxonomy/',
                           text: 'Docs - Taxonomy',
                           options: {
@@ -187,7 +187,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/tracking/"}
                       {...tagLink({
-                          id: 'docs', 
+                          id: 'cta-docs-tracking', 
                           href: '/docs/tracking/', 
                           text: 'Docs - Tracking',
                           options: {
@@ -239,7 +239,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/tracking/core-concepts/locations"} 
                       {...tagLink({
-                          id: 'docs', 
+                          id: 'cta-docs-location-stack', 
                           href: '/docs/taxonomy', 
                           text: 'Docs - Location Stack',
                           options: {
@@ -334,7 +334,7 @@ export default function Home() {
                     <Link 
                       to={url + "docs/modeling/"} 
                       {...tagLink({
-                          id: 'docs', 
+                          id: 'cta-docs-reuse', 
                           href: '/docs/modeling/', 
                           text: 'Docs - Modeling',
                           options: {

@@ -16,7 +16,7 @@ function AnnouncementBar({title, content, ctaLink, ctaText}) {
         <Link 
           to={ctaLink}
           {...tagLink({ 
-              id: 'announcement', 
+              id: 'announcement-cta', 
               text: ctaText, 
               href: ctaLink, 
               options: {

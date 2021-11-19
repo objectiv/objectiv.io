@@ -46,7 +46,7 @@ export default function Jobs() {
                 <Link
                   to="https://github.com/objectiv/objectiv-analytics" 
                   {...tagLink({
-                      id: 'github', 
+                      id: 'github-repo', 
                       href: 'https://github.com/objectiv/objectiv-analytics', 
                       text: 'GitHub repo',
                       options: {

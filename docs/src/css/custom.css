@@ -135,22 +135,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   color: rgb(100, 100, 100);
 }
 
-/** DOCS **/
-
-/* Hide/show anchors on auto-generated modeling docs */
-.sphinxAnchor:hover > a.headerlink {
-  display: inline-block;
-  margin-left: 5px;
-}
-.sphinxAnchor .headerlink {
-  display: none;
-}
-.reference:hover > a.headerlink {
-  display: inline-block;
-}
-.reference .headerlink {
-  display: none;
-}
+/** DOCS - Overall **/
 
 div.docs-wrapper footer {
   padding: 20px 0;
@@ -191,7 +176,27 @@ div.docs-wrapper footer {
   } 
 }
 
-/** DOCS - API Reference **/
+/** DOCS - Modeling **/
+
+/* Hide/show anchors on auto-generated modeling docs */
+.sphinxAnchor:hover > a.headerlink {
+  display: inline-block;
+  margin-left: 5px;
+}
+.sphinxAnchor .headerlink {
+  display: none;
+}
+.reference:hover > a.headerlink {
+  display: inline-block;
+}
+.reference .headerlink {
+  display: none;
+}
+
+/* Remove bottom margin for content in auto-generated admonitions */
+.admonition>:last-child {
+  margin-bottom: 0;
+}
 
 /* Summary table */
 .autosummary {
