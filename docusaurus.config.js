@@ -3,10 +3,21 @@
 
 const path = require('path');
 
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
 const nodeEnv = process.env.NODE_ENV;
-const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
-const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
+// Ensure that production builds are not run on local machines, and vice versa
+if (nodeEnv !== objectivEnvironment) {
+  throw new Error("WARNING: NODE_ENV ("+nodeEnv+") and OBJECTIV_ENVIRONMENT (" + objectivEnvironment + ") "
+    + "are not equal");
+}
+const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
+const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
+const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+const baseUrl = '/';
+const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev';
+const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
+const trackerConsoleEnabled = !isProductionEnv;
+const postBuildPlugin = !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null });
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -15,8 +26,8 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: '/',
-  url: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
+  baseUrl: baseUrl,
+  url: websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -51,7 +62,7 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null }),
+    postBuildPlugin,
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
@@ -63,10 +74,10 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev',
-    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: trackerApplicationId,
+    trackerEndPoint: trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: !isProductionEnv
+    trackerConsoleEnabled: trackerConsoleEnabled
   },
 
   themeConfig:
@@ -85,7 +96,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: isStagingEnv ? 'https://staging.objectiv.io/docs' : 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
+          to: websiteUrl + 'docs', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
