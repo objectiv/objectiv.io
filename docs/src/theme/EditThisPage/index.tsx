@@ -39,7 +39,7 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
           <Link
             to={customFields.slackJoinLink as string}
             target="_blank"
-            {...tagLink({ id: 'get-help', text: 'Get help', href: 'https://discourse.objectiv.io' })}
+            {...tagLink({ id: 'get-help', text: 'Get help', href: customFields.slackJoinLink as string })}
           >
             Get help on Slack
           </Link>
