@@ -1,0 +1,31 @@
+<div>
+                
+  <section id="bach-open-taxonomy-featureframe-from-data-frame">
+<h1>bach_open_taxonomy.FeatureFrame.from_data_frame<a class="headerlink" href="#bach-open-taxonomy-featureframe-from-data-frame" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach_open_taxonomy.FeatureFrame.from_data_frame">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">FeatureFrame.</span></span><span class="sig-name descname"><span class="pre">from_data_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_stack_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'objectiv_tmp_feature_data'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.FeatureFrame.from_data_frame" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Instantiates a Feature Frame from an original Bach Data Frame. The Bach Data Frame should contain
+a location stack column and an event column. The database will be queried to create a table with
+all unique features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<a class="reference internal" href="../dataframe/bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame"><em>bach.dataframe.DataFrame</em></a>) &#8211; The original Bach DataFrame</p></li>
+<li><p><strong>location_stack_column</strong> (<em>str</em>) &#8211; The name of the column that contains the location stack.</p></li>
+<li><p><strong>event_column</strong> (<em>str</em>) &#8211; The name of the column that contains the event type.</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em>) &#8211; If True, the temporary table to store the feature data will be overwritten if it
+exists</p></li>
+<li><p><strong>temp_table_name</strong> (<em>str</em>) &#8211; The name of the temporary table that will be used to store the feature data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

@@ -17,18 +17,18 @@ Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/core-conc
 
 <img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" class="img-l" />
 
-## Core Principles
-To help ensure that the open taxonomy will meet its goals, we’ve created a set of core principles.
+## Principles
+To help ensure that the open taxonomy will meet its goals, we’ve created a set of principles to guide our development decisions.
 
-[Read up on the Core Principles](./core-principles.md)
+[Read up on the Principles](./core-principles.md)
 
 ## Core Concepts
 To understand in more detail how the Taxonomy works, read about the underlying core concepts.
 
 [Read up on the Core Concepts](./core-concepts.md)
 
-## Reference
-To implement the taxonomy, all Contexts and Events are open and documented. 
+## Taxonomy Reference
+Find out everything about the taxonomy: all Contexts and Events are open and documented. 
 
 [Check out the Reference](./reference/overview.md)
 

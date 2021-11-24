@@ -99,6 +99,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "copy",
+                                        "id": "modeling/dataframe/bach.DataFrame.copy"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "count",
                                         "id": "modeling/dataframe/bach.DataFrame.count"
                                     },
@@ -343,6 +348,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "from_pandas",
                                         "id": "modeling/dataframe/bach.DataFrame.from_pandas"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "copy",
+                                        "id": "modeling/dataframe/bach.DataFrame.copy"
                                     }
                                 ]
                             },
@@ -615,6 +625,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "copy",
+                                        "id": "modeling/series/bach.Series.copy"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "count",
                                         "id": "modeling/series/bach.Series.count"
                                     },
@@ -692,6 +707,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "to_pandas",
                                         "id": "modeling/series/bach.Series.to_pandas"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "unique",
+                                        "id": "modeling/series/bach.Series.unique"
                                     },
                                     {
                                         "type": "doc",
@@ -878,6 +898,22 @@ module.exports = [
                             },
                             {
                                 "type": "category",
+                                "label": "SeriesAbstractDateTime",
+                                "items": [
+                                    {
+                                        "type": "doc",
+                                        "label": "Overview",
+                                        "id": "modeling/series/bach.SeriesAbstractDateTime"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "dt",
+                                        "id": "modeling/series/bach.SeriesAbstractDateTime.dt"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "category",
                                 "label": "SeriesString",
                                 "items": [
                                     {
@@ -942,6 +978,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "to_frame",
                                         "id": "modeling/series/bach.Series.to_frame"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "copy",
+                                        "id": "modeling/series/bach.Series.copy"
                                     }
                                 ]
                             },
@@ -1127,7 +1168,7 @@ module.exports = [
             },
             {
                 "type": "category",
-                "label": "Objectiv Bach",
+                "label": "Objectiv Bach Open Taxonomy",
                 "items": [
                     {
                         "type": "doc",
@@ -1150,12 +1191,12 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/objectiv_bach.ObjectivStack"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.ObjectivStack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "get_from_context_with_type_series",
-                                        "id": "modeling/objectiv/objectiv_bach.ObjectivStack.get_from_context_with_type_series"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.ObjectivStack.get_from_context_with_type_series"
                                     }
                                 ]
                             },
@@ -1166,27 +1207,27 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesGlobalContexts"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "gc",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesGlobalContexts.gc"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.gc"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "global_contexts",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesGlobalContexts.global_contexts"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.global_contexts"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "obj",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesGlobalContexts.obj"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.obj"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "objectiv",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesGlobalContexts.objectiv"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.objectiv"
                                     }
                                 ]
                             },
@@ -1197,27 +1238,27 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesLocationStack"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "location_stack",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesLocationStack.location_stack"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.location_stack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "ls",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesLocationStack.ls"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.ls"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "obj",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesLocationStack.obj"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.obj"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "objectiv",
-                                        "id": "modeling/objectiv/objectiv_bach.SeriesLocationStack.objectiv"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.objectiv"
                                     }
                                 ]
                             },
@@ -1228,42 +1269,42 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "check_supported",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.check_supported"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.check_supported"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "copy_override",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.copy_override"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.copy_override"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "display_sankey",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.display_sankey"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.display_sankey"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_data_frame",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.from_data_frame"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.from_data_frame"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "hash_features",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.hash_features"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.hash_features"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "stack_flows_from_feature_df",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.stack_flows_from_feature_df"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.stack_flows_from_feature_df"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "write_to_full_frame",
-                                        "id": "modeling/objectiv/objectiv_bach.FeatureFrame.write_to_full_frame"
+                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.write_to_full_frame"
                                     }
                                 ]
                             }

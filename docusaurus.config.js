@@ -45,14 +45,7 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: false,
-        blog: {
-          blogTitle: 'Objectiv Blog',
-          blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 5,
-          showReadingTime: false,
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
+        blog: false,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,

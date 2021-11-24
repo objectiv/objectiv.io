@@ -15,6 +15,11 @@
       label: 'Introduction',
     },
     {
+      type: 'doc',
+      id: 'quickstart-guide',
+      label: 'Quickstart Guide',
+    },
+    {
       type: 'category',
       label: 'The Project',
       collapsed: false,
