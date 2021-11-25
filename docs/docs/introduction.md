@@ -28,7 +28,6 @@ Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 1. [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) in our Live Demo Notebook
 2. [Test drive Objectiv locally](/quickstart-guide) with a fully functional demo pipeline
-3. [Spin up a local development setup](/how-to-guides/collector/getting-started) with just the essentials and no demo data
 
 ## Running Objectiv in production
 A detailed How-to guide is coming soon. 
