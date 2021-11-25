@@ -4,10 +4,14 @@ slug: /how-to-guides/collector/getting-started
 title: Getting Started
 ---
 
+:::caution 
+This guide is outdated and may not work properly. An update is coming soon. In the meanwhile, check out our [Quickstart Guide](/quickstart-guide) if you want to try Objectiv locally.
+:::
+
 Follow the step-by-step Guide below to get started with the Objectiv Collector to receive and process 
 tracking data on your local environment.
 
-To just run a quick demo, see [Running Objectiv Dockerized](/introduction.md#running-objectiv-dockerized).
+To just run a quick demo, see [Running Objectiv Dockerized](/quickstart-guide).
 
 ## Build container images
 
