@@ -46,7 +46,7 @@ When providing only `endpoint`, the Tracker will automatically create a Transpor
 ## Usage example
 
 ```typescript jsx
-import { makeTracker } from '@objectiv-analytics/tracker-browser';
+import { makeTracker } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

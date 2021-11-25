@@ -8,7 +8,7 @@ A [TrackerTransport](/tracking/api-reference/core/TrackerConsole.md) based on [X
 In the following example we swap the default XMLHttpRequest implementation with an entirely custom one.
 
 ```typescript
-import { XMLHttpRequestTransport } from '@objectiv-analytics/tracker-browser';
+import { XMLHttpRequestTransport } from '@objectiv/tracker-browser';
 
 const COLLECTOR_ENDPOINT = 'https://collector.application.dev';
 

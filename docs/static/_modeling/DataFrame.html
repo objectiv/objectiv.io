@@ -95,6 +95,9 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.from_pandas.html#bach.DataFrame.from_pandas" title="bach.DataFrame.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_pandas</span></code></a>(engine,&#160;df,&#160;...[,&#160;...])</p></td>
 <td><p>Instantiate a new DataFrame based on the content of a Pandas DataFrame.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.copy.html#bach.DataFrame.copy" title="bach.DataFrame.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.copy</span></code></a>()</p></td>
+<td><p>Return a copy of this DataFrame.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -243,18 +246,18 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <td><p>Group by any of the series currently in this DataDrame, both from index as well as data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.rollup.html#bach.DataFrame.rollup" title="bach.DataFrame.rollup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rollup</span></code></a>(by)</p></td>
-<td><p>Group by and roll up over the column(s) <cite>by</cite>.</p></td>
+<td><p>Group by and roll up over the column(s) <cite>by</cite>, replacing any current grouping.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.cube.html#bach.DataFrame.cube" title="bach.DataFrame.cube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.cube</span></code></a>(by)</p></td>
 <td><p>Group by and cube over the column(s) <cite>by</cite>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.window.html#bach.DataFrame.window" title="bach.DataFrame.window"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.window</span></code></a>([by])</p></td>
-<td><p>Create a window on the current dataframe and its sorting.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.window.html#bach.DataFrame.window" title="bach.DataFrame.window"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.window</span></code></a>(**frame_args)</p></td>
+<td><p>Create a window on the current dataframe grouping and its sorting.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.rolling.html#bach.DataFrame.rolling" title="bach.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rolling</span></code></a>(window[,&#160;min_periods,&#160;...])</p></td>
 <td><p>A rolling window of size 'window', by default right aligned.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.expanding.html#bach.DataFrame.expanding" title="bach.DataFrame.expanding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.expanding</span></code></a>([min_periods,&#160;center,&#160;on])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="dataframe/bach.DataFrame.expanding.html#bach.DataFrame.expanding" title="bach.DataFrame.expanding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.expanding</span></code></a>([min_periods,&#160;center])</p></td>
 <td><p>Create an expanding window starting with the first row in the group, with at least <cite>min_period</cite> observations.</p></td>
 </tr>
 </tbody>

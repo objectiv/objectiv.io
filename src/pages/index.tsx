@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement, tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";

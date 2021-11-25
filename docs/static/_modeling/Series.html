@@ -6,7 +6,7 @@
 <p>It can be used as a separate object to just deal with a single list of values. There are many standard
 operations on Series available to do operations like add or subtract, to create aggregations like
 <a class="reference internal" href="series/bach.Series.nunique.html#bach.Series.nunique" title="bach.Series.nunique"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.nunique()</span></code></a> or <a class="reference internal" href="series/bach.Series.count.html#bach.Series.count" title="bach.Series.count"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.count()</span></code></a>, or to create new sub-Series,
-like <code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.unique()</span></code>.</p>
+like <a class="reference internal" href="series/bach.Series.unique.html#bach.Series.unique" title="bach.Series.unique"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.unique()</span></code></a>.</p>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">&#182;</a></h2>
 <p>Almost every operation on a Series will return a Series with the operation set-up, allowing for complex
@@ -88,13 +88,16 @@ is okay, while a comparison operation is not.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="series/bach.SeriesAbstractNumeric.html#bach.SeriesAbstractNumeric" title="bach.SeriesAbstractNumeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric</span></code></a>(engine,&#160;base_node,&#160;...)</p></td>
 <td><p>A Series that represents the base numeric types and its specific operations</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.SeriesString.html#bach.SeriesString" title="bach.SeriesString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesString</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.SeriesAbstractDateTime.html#bach.SeriesAbstractDateTime" title="bach.SeriesAbstractDateTime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractDateTime</span></code></a>(engine,&#160;base_node,&#160;...)</p></td>
+<td><p>A Series that represents the generic date/time type and its specific operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.SeriesString.html#bach.SeriesString" title="bach.SeriesString"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesString</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
 <td><p>A Series that represents the string type and its specific operations</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.SeriesJsonb.html#bach.SeriesJsonb" title="bach.SeriesJsonb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesJsonb</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.SeriesJsonb.html#bach.SeriesJsonb" title="bach.SeriesJsonb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesJsonb</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
 <td><p>A Series that represents the postgres jsonb type and its specific operations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.SeriesJson.html#bach.SeriesJson" title="bach.SeriesJson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesJson</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.SeriesJson.html#bach.SeriesJson" title="bach.SeriesJson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesJson</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
 <td><p>A Series that represents the json type.</p></td>
 </tr>
 </tbody>
@@ -115,6 +118,9 @@ is okay, while a comparison operation is not.</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.to_frame.html#bach.Series.to_frame" title="bach.Series.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.to_frame</span></code></a>()</p></td>
 <td><p>Create a DataFrame with the index and data from this Series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.copy.html#bach.Series.copy" title="bach.Series.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.copy</span></code></a>()</p></td>
+<td><p>Return a copy of this Series.</p></td>
 </tr>
 </tbody>
 </table>
@@ -339,37 +345,37 @@ is okay, while a comparison operation is not.</p>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_first_value.html#bach.Series.window_first_value" title="bach.Series.window_first_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_first_value</span></code></a>(window)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_first_value.html#bach.Series.window_first_value" title="bach.Series.window_first_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_first_value</span></code></a>([window])</p></td>
 <td><p>Returns value evaluated at the row that is the first row of the window frame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_lag.html#bach.Series.window_lag" title="bach.Series.window_lag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_lag</span></code></a>(window[,&#160;offset,&#160;default])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_lag.html#bach.Series.window_lag" title="bach.Series.window_lag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_lag</span></code></a>([offset,&#160;default,&#160;window])</p></td>
 <td><p>Returns value evaluated at the row that is offset rows before the current row within the window</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_nth_value.html#bach.Series.window_nth_value" title="bach.Series.window_nth_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_nth_value</span></code></a>(window,&#160;n)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_nth_value.html#bach.Series.window_nth_value" title="bach.Series.window_nth_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_nth_value</span></code></a>(n[,&#160;window])</p></td>
 <td><p>Returns value evaluated at the row that is the n'th row of the window frame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_lead.html#bach.Series.window_lead" title="bach.Series.window_lead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_lead</span></code></a>(window[,&#160;offset,&#160;default])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_lead.html#bach.Series.window_lead" title="bach.Series.window_lead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_lead</span></code></a>([offset,&#160;default,&#160;window])</p></td>
 <td><p>Returns value evaluated at the row that is offset rows after the current row within the window.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_last_value.html#bach.Series.window_last_value" title="bach.Series.window_last_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_last_value</span></code></a>(window)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_last_value.html#bach.Series.window_last_value" title="bach.Series.window_last_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_last_value</span></code></a>([window])</p></td>
 <td><p>Returns value evaluated at the row that is the last row of the window frame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_row_number.html#bach.Series.window_row_number" title="bach.Series.window_row_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_row_number</span></code></a>(window)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_row_number.html#bach.Series.window_row_number" title="bach.Series.window_row_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_row_number</span></code></a>([window])</p></td>
 <td><p>Returns the number of the current row within its window, counting from 1.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_rank.html#bach.Series.window_rank" title="bach.Series.window_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_rank</span></code></a>(window)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_rank.html#bach.Series.window_rank" title="bach.Series.window_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_rank</span></code></a>([window])</p></td>
 <td><p>Returns the rank of the current row, with gaps; that is, the row_number of the first row in its peer group.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_dense_rank.html#bach.Series.window_dense_rank" title="bach.Series.window_dense_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_dense_rank</span></code></a>(window)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_dense_rank.html#bach.Series.window_dense_rank" title="bach.Series.window_dense_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_dense_rank</span></code></a>([window])</p></td>
 <td><p>Returns the rank of the current row, without gaps; this function effectively counts peer groups.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_percent_rank.html#bach.Series.window_percent_rank" title="bach.Series.window_percent_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_percent_rank</span></code></a>(window)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_percent_rank.html#bach.Series.window_percent_rank" title="bach.Series.window_percent_rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_percent_rank</span></code></a>([window])</p></td>
 <td><p>Returns the relative rank of the current row, that is (rank - 1) / (total partition rows - 1).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_ntile.html#bach.Series.window_ntile" title="bach.Series.window_ntile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_ntile</span></code></a>(window[,&#160;num_buckets])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="series/bach.Series.window_ntile.html#bach.Series.window_ntile" title="bach.Series.window_ntile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_ntile</span></code></a>([num_buckets,&#160;window])</p></td>
 <td><p>Returns an integer ranging from 1 to the argument value, dividing the partition as equally as possible.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_cume_dist.html#bach.Series.window_cume_dist" title="bach.Series.window_cume_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_cume_dist</span></code></a>(window)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="series/bach.Series.window_cume_dist.html#bach.Series.window_cume_dist" title="bach.Series.window_cume_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window_cume_dist</span></code></a>([window])</p></td>
 <td><p>Returns the cumulative distribution, that is (number of partition rows preceding or peers with current row) / (total partition rows).</p></td>
 </tr>
 </tbody>

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
-import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 export default function Jobs() {
   const context = useDocusaurusContext();

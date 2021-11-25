@@ -7,7 +7,7 @@
 
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
-import { tagElement, tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import React from 'react';
 
 function BlogListPaginator(props): JSX.Element {

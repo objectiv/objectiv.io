@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
-import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 

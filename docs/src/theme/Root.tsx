@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, getLocationHref, windowExists } from "@objectiv-analytics/tracker-browser";
+import { getOrMakeTracker, getTrackerRepository, getLocationHref, windowExists } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 
@@ -29,7 +29,7 @@ const cookiebotConsentStatistics = (): boolean => {
     return false;
   }
 
-  return Cookiebot.consent.statistics ?? false;
+  return Cookiebot?.consent?.statistics ?? false;
 }
 
 function Root({children}) {

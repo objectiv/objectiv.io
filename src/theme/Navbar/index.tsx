@@ -25,7 +25,7 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
-import { tagElement, tagOverlay } from "@objectiv-analytics/tracker-browser";
+import { tagElement, tagOverlay } from "@objectiv/tracker-browser";
 
 const DefaultNavItemPosition = 'right';
 

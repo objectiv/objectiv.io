@@ -23,9 +23,9 @@ The open taxonomy consists of:
   caption="Diagram: open taxonomy Events and related Contexts" 
   baseColor="basic" 
   links={[
-    { name: 'Event', to: '/taxonomy/events/' }, 
-    { name: 'GlobalContext', to: '/taxonomy/global-contexts/' }, 
-    { name: 'LocationContext', to: '/taxonomy/location-contexts/' }, 
+    { name: 'Event', to: '/taxonomy/events' }, 
+    { name: 'GlobalContext', to: '/taxonomy/global-contexts' }, 
+    { name: 'LocationContext', to: '/taxonomy/location-contexts' }, 
   ]}
 />
 

@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 import React, {useMemo} from 'react';
 import {
   useThemeConfig,

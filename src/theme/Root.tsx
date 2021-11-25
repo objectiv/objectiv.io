@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv-analytics/tracker-browser";
+import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
 import React, { useEffect, useState } from 'react';
 
 declare namespace cookiebot {
@@ -28,7 +28,7 @@ const cookiebotConsentStatistics = (): boolean => {
     return false;
   }
 
-  return Cookiebot.consent.statistics ?? false;
+  return Cookiebot?.consent?.statistics ?? false;
 }
 
 function Root({children}) {

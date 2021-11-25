@@ -25,7 +25,7 @@ If not `trackerId` is specified, the default [BrowserTracker](/tracking/api-refe
 ## Usage example
 
 ```typescript jsx
-import { getTracker } from '@objectiv-analytics/tracker-browser';
+import { getTracker } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

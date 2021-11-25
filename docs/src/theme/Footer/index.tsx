@@ -15,7 +15,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 function FooterLink({
   to,

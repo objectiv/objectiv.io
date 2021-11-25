@@ -27,7 +27,7 @@ trackVideoStart = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackVideoStart } from '@objectiv-analytics/tracker-browser';
+import { trackVideoStart } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

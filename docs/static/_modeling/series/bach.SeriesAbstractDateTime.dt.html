@@ -1,0 +1,44 @@
+<div>
+                
+  <section id="bach-seriesabstractdatetime-dt">
+<h1>bach.SeriesAbstractDateTime.dt<a class="headerlink" href="#bach-seriesabstractdatetime-dt" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.SeriesAbstractDateTime.dt">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SeriesAbstractDateTime.</span></span><span class="sig-name descname"><span class="pre">dt</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bach.series.series_datetime.DateTimeOperation</span></em><a class="headerlink" href="#bach.SeriesAbstractDateTime.dt" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Get access to date operations.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.series.series_datetime.SeriesAbstractDateTime.DateTimeOperation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DateTimeOperation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bach.series.series_datetime.SeriesAbstractDateTime.DateTimeOperation" title="Permalink to this definition">&#182;</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.series.series_datetime.SeriesAbstractDateTime.DateTimeOperation.DateTimeOperation.sql_format">
+<span class="sig-prename descclassname"><span class="pre">DateTimeOperation.</span></span><span class="sig-name descname"><span class="pre">sql_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bach.series.series_datetime.SeriesAbstractDateTime.DateTimeOperation.DateTimeOperation.sql_format" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Allow formatting of this Series (to a string type).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>format_str</strong> &#8211; The format to apply to the date/time column.
+Currently, this uses Postgres&#8217; data format string syntax:
+<a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a></p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">some_date_series</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">sql_format</span><span class="p">(</span><span class="s1">'YYYY'</span><span class="p">)</span>  <span class="c1"># return year</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">some_date_series</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">sql_format</span><span class="p">(</span><span class="s1">'YYYYMMDD'</span><span class="p">)</span>  <span class="c1"># return date</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a SeriesString containing the formatted date.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

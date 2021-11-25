@@ -1,4 +1,4 @@
-import { tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 import React, { useEffect, useState } from 'react';
 import { scrollToAnchor } from "../scroll-to-anchor/scrollToAnchor";
 import baseUrl from "@generated/docusaurus.config"

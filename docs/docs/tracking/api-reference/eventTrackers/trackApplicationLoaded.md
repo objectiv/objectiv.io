@@ -31,7 +31,7 @@ trackApplicationLoaded = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackApplicationLoaded } from '@objectiv-analytics/tracker-browser';
+import { trackApplicationLoaded } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

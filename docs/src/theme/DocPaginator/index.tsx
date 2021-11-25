@@ -8,7 +8,7 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
-import { tagLink, tagNavigation } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function DocPaginator(props): JSX.Element {
   const {metadata} = props;

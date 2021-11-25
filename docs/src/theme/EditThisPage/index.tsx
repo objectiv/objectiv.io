@@ -12,7 +12,7 @@ import { useRouteMatch } from "@docusaurus/router";
 import type {Props} from '@theme/EditThisPage';
 
 import Link from '@docusaurus/Link';
-import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}: Props): JSX.Element {
   const context = useDocusaurusContext();

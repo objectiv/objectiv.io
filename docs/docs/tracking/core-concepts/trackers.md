@@ -17,7 +17,7 @@ core tracking methods out of the box.
 
 Example usage:
 ```js
-import { trackClick } from '@objectiv-analytics/tracker-browser';
+import { trackClick } from '@objectiv/tracker-browser';
 ```
 ```js
 <div
@@ -37,7 +37,7 @@ core tracking methods out of the box, and provides added shorthands for React co
 
 Example usage:
 ```js
-import { tagButton } from '@objectiv-analytics/tracker-browser';
+import { tagButton } from '@objectiv/tracker-browser';
 ```
 ```js
 <Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
