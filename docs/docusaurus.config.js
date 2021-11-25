@@ -144,9 +144,9 @@ const config = {
         disableSwitch: true
       },
       algolia: {
-        appId: 'BH4D9OD16A',
+        appId: 'P9B1J55TMB',
           // Public API key, safe to commit
-        apiKey: 'bd5e6d3621d6506eb80485738c90a674',
+        apiKey: '57e02ab0593f5338e36b7bff8235a505',
         indexName: 'objectiv',
         container: 'main'
       },
