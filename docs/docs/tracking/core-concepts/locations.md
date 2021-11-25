@@ -126,7 +126,7 @@ Tagging Sections can/should also be applied to pages/screens, see section
 :::
 
 ### Solving collisions
-See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
+See below for a simplified example taken from [our website's About page](https://objectiv.io/about/), which 
 lists the contributors to Objectiv. It renders a link to each Contributor's profile:
 
 ```js

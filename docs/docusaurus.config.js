@@ -126,11 +126,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: websiteUrl + '/privacy'
+                to: websiteUrl + '/privacy/'
               },
               {
                 label: 'Cookies',
-                to: websiteUrl + '/privacy/cookies'
+                to: websiteUrl + '/privacy/cookies/'
               },
             ],
           },
