@@ -5,16 +5,16 @@ title: Getting Started
 ---
 
 
-Follow the step-by-step Guide below to get started with the Objectiv Collector to receive and process 
-tracking data on your local environment.
+This guide will help you with set up a dockerized Objectiv Collector with a Postgres data store that you can use for local development purposes.
 
-To just run a quick demo, see [Running Objectiv Dockerized](/quickstart-guide).
+:::info just want to test Objectiv?
+To quickly spin up a fully functional demo pipeline locally, follow the [Quickstart Guide](/quickstart-guide).
+:::
 
-## Start local collector
 
-Requirements:
-* docker / docker-compose
-* git
+### 1. Starting the local Collector
+
+Assuming you have [Docker](https://www.docker.com/) and [Git](https://git-scm.com/) installed, run the following commands:
 
 ```bash
 # create a checkout of the git repo
@@ -36,22 +36,25 @@ This will spin up two images:
 * `objectiv_collector` - Endpoint that the Objectiv-tracker can send events to (http://localhost:5000).
 * `objectiv_postgres` - Database to store data.
 
-:::warning
+:::caution
 The above docker-compose command starts a postgres container that allows connections without verifying
  passwords. Do not use this in production or on a shared system!
 :::
 
-:::tip
-The Postgres container tries to bind to port 5432 to enable local access. This won't work if something else is already
-using that port.
-:::
+### 2. Querying the database directly
+To connect to the running DB, simply execute:
 
-:::info
-The opened ports are only exposed on localhost (`127.0.0.1`). So to access over the network, or ipv6, additional 
-configuration may be necessary.
-:::
+```console
+docker exec -ti objectiv_postgres psql -U objectiv
+```
 
-## Stop and cleanup
+or by using a local client:
+
+```
+psql -U objectiv -h 127.0.0.1
+```
+
+### 3. Stopping and cleanup
 To stop the running containers run:
 ```bash
 # stop containers
@@ -71,29 +74,15 @@ To force a recreation of the database, simply stopping the containers, removing 
 trick.
 :::
 
-## Query the data
+- - - 
 
-### Query the database directly
-To connect to the running DB, simply execute:
+## Troubleshooting / FAQ
 
-```console
-docker exec -ti objectiv_postgres psql -U objectiv
-```
-
-or by using a local client:
-
-```
-psql -U objectiv -h 127.0.0.1
-```
-
-
-## Database notes
-
-### What about PG configuration and permissions?
+### Where are Postgres' permissions configured?
 As this is a demo environment, permissions are pretty simple; the credentials are set defined at the top of the
 `docker-compose-dev.yaml` file, and imported by the containers that need them.
 
-### Database initialisation / persistence
+### My database changed and it no longer works
 At the first start-up, Postgres will be initialised. This means a database will be created. As this is 
 persisted on disk (in a docker volume), on subsequent startups, the persisted database will be loaded. In 
 case of database changes, this may cause problems. 
@@ -110,3 +99,13 @@ The volume used by Postgres is called `pgdata`. To remove it, lookup the name fr
 ```console
 docker volume rm <volumename>
 ```
+
+### The Postgres container is not starting properly
+
+The Postgres container tries to bind to port 5432 to enable local access. This won't work if something else is already
+using that port. To solve this, stop the application that's running on port 5432 and re-run step 1.
+
+### Can I access the Collector over a network connection?
+
+The opened ports are only exposed on localhost (`127.0.0.1`). So to access over the network, or ipv6, additional 
+configuration may be necessary.
