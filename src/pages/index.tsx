@@ -328,8 +328,8 @@ export default function Home() {
                 <div>
                   <p>By embracing the open taxonomy, you can <strong>reuse your own models</strong> for other 
                     projects and <strong>quickly build models</strong> reusing parts of others.</p>
-                  <p>That retention model you’ve built for your campaign site? You can likely reuse that for 
-                    your main site by changing a single line of code.</p>
+                  <p>That behaviour pattern you've created to exactly identify the heavy users of your website? 
+                    You can likely reuse that for your mobile app by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to={url + "docs/modeling/"} 
