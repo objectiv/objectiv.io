@@ -23,11 +23,11 @@ git clone https://github.com/objectiv/objectiv-analytics.git
 ```bash
 # enter the repo and spin up the docker containers
 cd objectiv-analytics 
-docker-compose -f docker-compose-dev.yaml up
+docker-compose -f docker-compose-dev.yaml up -d
 ```
 
 ```bash
-# Verify the status (in another terminal):
+# Verify the status:
 docker-compose -f docker-compose-dev.yaml ps
 ```
 
@@ -69,12 +69,6 @@ docker volume rm objectiv-analytics_pgdata
 Removing the docker volume will also remove any data in the database.
 :::
 
-:::tip
-To force a recreation of the database, simply stopping the containers, removing the volume and restarting will do the
-trick.
-:::
-
-- - - 
 
 ## Troubleshooting / FAQ
 
@@ -85,19 +79,16 @@ As this is a demo environment, permissions are pretty simple; the credentials ar
 ### My database changed and it no longer works
 At the first start-up, Postgres will be initialised. This means a database will be created. As this is 
 persisted on disk (in a docker volume), on subsequent startups, the persisted database will be loaded. In 
-case of database changes, this may cause problems. 
+case of database changes, this may cause problems (as they are also persisted). 
 
-Use the following to check if there are any existing volumes on disk, and remove them before starting up the 
-stack with database changes, to make sure the database is properly initialised. 
-
-```console
-docker volume list
-```
-
-The volume used by Postgres is called `pgdata`. To remove it, lookup the name from the list and run:
-
-```console
-docker volume rm <volumename>
+To reset the database, simply do the following:
+```bash
+# stop the containers
+docker-compose -f docker-compose-dev.yaml down
+# remove the volume
+docker volume rm objectiv-analytics_pgdata
+# restart the containers
+docker-compose -f docker-compose-dev.yaml up -d
 ```
 
 ### The Postgres container is not starting properly
