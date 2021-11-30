@@ -5,14 +5,13 @@ const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
 const nodeEnv = process.env.NODE_ENV;
-// Ensure that production builds are not run on local machines, and vice versa
-if (nodeEnv !== objectivEnvironment) {
-  throw new Error("WARNING: NODE_ENV ("+nodeEnv+") and OBJECTIV_ENVIRONMENT (" + objectivEnvironment + ") "
-    + "are not equal");
+// only allow yarn start (dev) in dev mode
+if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
+  throw new Error(`Not allowed to use 'yarn start' on non dev build (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
 }
-const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
+const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
 const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io' : 'https://objectiv.io';
 const baseUrl = (isProductionEnv) ? '/docs/' : '/';
 const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev';
 const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
@@ -123,11 +122,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: websiteUrl + '/privacy'
+                to: websiteUrl + '/privacy/'
               },
               {
                 label: 'Cookies',
-                to: websiteUrl + '/privacy/cookies'
+                to: websiteUrl + '/privacy/cookies/'
               },
             ],
           },
@@ -139,7 +138,7 @@ const config = {
       },
       colorMode: {
         disableSwitch: true
-      }
+      },
     }),
 };
 
