@@ -36,17 +36,6 @@
   --ifm-navbar-height: 80px; /* Fixes issue with internal links hiding under navbar */
 }
 
-/**
- * Hide the "See all ## results" link at the bottom of the search widget. 
- * See https://github.com/facebook/docusaurus/issues/5084 for context.
- */
- .DocSearch-Dropdown-Container .DocSearch-HitsFooter {
-  display: none;
-}
-.DocSearch-Dropdown-Container {
-  padding-bottom: var(--docsearch-spacing);
-}
-
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
