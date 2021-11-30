@@ -11,7 +11,7 @@ if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
 }
 const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
 const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io' : 'https://objectiv.io';
 const baseUrl = '/';
 const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev';
 const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
