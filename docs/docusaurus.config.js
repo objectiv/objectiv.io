@@ -107,6 +107,10 @@ const config = {
             to: '/taxonomy//',
           },
           {
+            type: 'search',
+            position: 'right',
+          },
+          {
             label: 'Objectiv.io',
             position: 'right',
             to: websiteUrl,
@@ -139,6 +143,13 @@ const config = {
       },
       colorMode: {
         disableSwitch: true
+      },
+      algolia: {
+        appId: 'P9B1J55TMB',
+          // Public API key, safe to commit
+        apiKey: '57e02ab0593f5338e36b7bff8235a505',
+        indexName: 'objectiv',
+        container: 'main'
       },
     }),
 };
