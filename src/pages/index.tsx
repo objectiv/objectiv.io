@@ -48,7 +48,7 @@ export default function Home() {
                 {...tagLink({
                     id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
-                    text: 'Objectiv on GitHub',
+                    text: 'Find us on GitHub',
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -59,11 +59,11 @@ export default function Home() {
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-                Objectiv on GitHub
+                Find us on GitHub
               </Link> 
             </div>
             <div className={clsx(styles.heroOutro)}>
-              Objectiv is open source and we’re building it in public.
+              The project is open-source and we’re building it in public.
             </div>
           </div>
         </header>
