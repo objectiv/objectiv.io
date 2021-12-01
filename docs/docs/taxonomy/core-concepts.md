@@ -50,7 +50,7 @@ For more details about Event triggers, properties, requirements, etc., see the
 [Tracking Core Concepts](/tracking/core-concepts/events.md).
 
 ## Location Contexts
-Locations in the taxonomy describe the exact position in an application's UI from where an Event was 
+Locations in the taxonomy describe the exact position in an application's UI where an Event was 
 triggered, e.g. Sections, Menus, etc. It is composed of a hierarchical stack of UI elements, meaning that the 
 order in the stack is the order in the UI as well.
 
@@ -104,4 +104,4 @@ context of the user, in this case their referer, user agent, and IP address.
 
 
 ## Taxonomy Mapping
-In order to enable Objectiv's tracker to collect data that embraces the Open Taxonomy, you need to map your application to it. You can find step-by-step instructions on how to do that in [our Tracking instrumentation guides](/tracking/introduction.md).
+In order to enable Objectiv's tracker to collect data that embraces the open taxonomy, you need to map your application to it. You can find step-by-step instructions on how to do that in [our Tracking instrumentation guides](/tracking/introduction.md).
