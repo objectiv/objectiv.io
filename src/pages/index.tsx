@@ -76,18 +76,24 @@ export default function Home() {
             <div 
               {...tagElement({id: 'intro'})}
               className={clsx("container", styles.intro)}>
-              <img
-                className={clsx(styles.introTitleIcon)}
-                src={useBaseUrl("img/icons/icon-data-scientist-thinking.svg")}
-                alt="Data Scientist thinking..." /><br />
+              <h2 className={clsx(styles.introHeading)}>
+                Objectiv proposes the adoption of an open, common taxonomy for analytics <br />
+                to unify the way data scientists collect &amp; model data.
+              </h2>
+              <img 
+                className={clsx(styles.introDiagram)}
+                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics.svg")}
+                alt="The open taxonomy for analytics" />
+              {/* Show below diagram with larger font instead on smaller devices */}
+              <img 
+                className={clsx(styles.introDiagramLargeFont)}
+                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics-large-font.svg")}
+                alt="The open taxonomy for analytics" />
               <p>
-                Most data scientists spend a significant amount of their time on prepwork to ensure their data 
-                is ready for modeling, and while data teams often have very similar goals, models are usually 
-                built from scratch because there is no common way to structure data.
-              </p>
-              <p>
-                <strong>Objectiv proposes the adoption of a common taxonomy for analytics so models &amp; data 
-                  can be reused and data scientists can build on knowledge and practises of others.</strong>
+                It enables a shared way to collect <strong>well-structured</strong>,&nbsp;
+                <strong>pre-validated</strong> data that is ready to model on without significant gruntwork. 
+                Models &amp; datasets become <strong>reusable</strong> and <strong>interchangeable</strong>, 
+                enabling data scientists to build on knowledge &amp; practises of others.
               </p>
               <p className={clsx(styles.introTeaser)}>
                 <img
@@ -113,8 +119,10 @@ export default function Home() {
               </div>
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
-                  <p>Objectiv is built around the <strong><em>open taxonomy of analytics</em></strong>, which 
-                    is our proposal for a common way to collect, structure and validate data.</p>
+                  <p>
+                    <strong><em>The open taxonomy of analytics</em></strong> is our proposal for a common 
+                    way to collect, structure and validate data.
+                  </p>
                   <p>It defines <strong>classes for each common event type</strong> and the contexts in which 
                     they can happen. It describes their properties, requirements and their relationships with 
                     other classes.</p>
@@ -141,7 +149,7 @@ export default function Home() {
                   </p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/taxonomy/"}
+                      to={useBaseUrl(url + "/docs/taxonomy/")}
                       {...tagLink({
                           id: 'cta-docs-taxonomy', 
                           href: '/docs/taxonomy/',
@@ -185,7 +193,7 @@ export default function Home() {
                     you to catch errors before data starts flowing in.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/tracking/"}
+                      to={useBaseUrl(url + "/docs/tracking/")}
                       {...tagLink({
                           id: 'cta-docs-tracking', 
                           href: '/docs/tracking/', 
@@ -237,7 +245,7 @@ export default function Home() {
                     modeling with minimal additional gruntwork.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/tracking/core-concepts/locations"} 
+                      to={useBaseUrl(url + "/docs/tracking/core-concepts/locations")} 
                       {...tagLink({
                           id: 'cta-docs-location-stack', 
                           href: '/docs/taxonomy', 
@@ -332,7 +340,7 @@ export default function Home() {
                     your main site by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/modeling/"} 
+                      to={useBaseUrl(url + "/docs/modeling/")} 
                       {...tagLink({
                           id: 'cta-docs-reuse', 
                           href: '/docs/modeling/', 

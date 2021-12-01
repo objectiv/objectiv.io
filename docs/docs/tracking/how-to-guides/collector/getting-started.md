@@ -4,60 +4,44 @@ slug: /how-to-guides/collector/getting-started
 title: Getting Started
 ---
 
-:::caution 
-This guide is outdated and may not work properly. An update is coming soon. In the meanwhile, check out our [Quickstart Guide](/quickstart-guide) if you want to try Objectiv locally.
+
+This guide will help you set up a dockerized Objectiv Collector with a Postgres data store that you can use for local development purposes.
+
+:::info just want to test Objectiv?
+To quickly spin up a fully functional demo pipeline locally, follow the [Quickstart Guide](/quickstart-guide).
 :::
 
-Follow the step-by-step Guide below to get started with the Objectiv Collector to receive and process 
-tracking data on your local environment.
 
-To just run a quick demo, see [Running Objectiv Dockerized](/quickstart-guide).
+### 1. Starting the local Collector
 
-## Build container images
+Assuming you have [Docker](https://www.docker.com/) and [Git](https://git-scm.com/) installed, run the following commands:
 
-Requirements:
-* make
-* docker
-
-Run the following to build the images:
-```console
-make all
+```bash
+# create a checkout of the git repo
+git clone https://github.com/objectiv/objectiv-analytics.git
+```
+```bash
+# enter the repo and spin up the docker containers
+cd objectiv-analytics 
+docker-compose -f docker-compose-dev.yaml up -d
 ```
 
-By default all images will be tagged with `latest`.
-
-## Run container images locally
-By default the `docker-compose` file will try to get images from our container registry. By setting 
-`OBJECTIV_CONTAINER_URL` we can tell it to use local images.
-
-### Run the full stack
-```console
-OBJECTIV_CONTAINER_URL=objectiv
-docker-compose up
+```bash
+# Verify the status:
+docker-compose -f docker-compose-dev.yaml ps
 ```
 
-This will spin up three images:
+This will spin up two images:
 
 * `objectiv_collector` - Endpoint that the Objectiv-tracker can send events to (http://localhost:5000).
 * `objectiv_postgres` - Database to store data.
-* `objectiv_notebook` - Jupyter notebook that can be used to query the data (http://localhost:8888).
 
-:::warning
-SECURITY WARNING: The above docker-compose commands start a postgres container that allows connections without verifying passwords. Do not use this in production or on a shared system!
+:::caution
+The above docker-compose command starts a postgres container that allows connections without verifying
+ passwords. Do not use this in production or on a shared system!
 :::
 
-### Run part of the stack
-It's also possible to only start parts of the stack. For example, to only run the collector, run:
-
-```
-docker-compose up objectiv_collector
-```
-
-This will start the collector, and any dependencies it has, e.g. Postgres.
-
-## Query the data
-
-### Query the database directly
+### 2. Querying the database directly
 To connect to the running DB, simply execute:
 
 ```console
@@ -70,35 +54,49 @@ or by using a local client:
 psql -U objectiv -h 127.0.0.1
 ```
 
-### Query from a Notebook
-
-By default, you need a token to connect to the Jupyter Notebook. You can find it in the logs like so:
-
+### 3. Stopping and cleanup
+To stop the running containers run:
+```bash
+# stop containers
+docker-compose -f docker-compose-dev.yaml down
 ```
-docker logs objectiv_notebook 2>&1|grep http.*token\=
+
+```bash
+# clean up PG volume
+docker volume rm objectiv-analytics_pgdata
 ```
+:::caution
+Removing the docker volume will also remove any data in the database.
+:::
 
 
-## Database notes
+## Troubleshooting / FAQ
 
-### What about PG configuration and permissions?
-As this is a demo environment, permissions are pretty simple; the credentials are set in `docker/pg_env` and 
-imported into the containers that need them.
+### Where are Postgres' permissions configured?
+As this is a demo environment, permissions are pretty simple; the credentials are set defined at the top of the
+`docker-compose-dev.yaml` file, and imported by the containers that need them.
 
-### Database initialisation / persistence
+### My database changed and it no longer works
 At the first start-up, Postgres will be initialised. This means a database will be created. As this is 
 persisted on disk (in a docker volume), on subsequent startups, the persisted database will be loaded. In 
-case of database changes, this may cause problems. 
+case of database changes, this may cause problems (as they are also persisted). 
 
-Use the following to check if there are any existing volumes on disk, and remove them before starting up the 
-stack with database changes, to make sure the database is properly initialised. 
-
-```console
-docker volume list
+To reset the database, simply do the following:
+```bash
+# stop the containers
+docker-compose -f docker-compose-dev.yaml down
+# remove the volume
+docker volume rm objectiv-analytics_pgdata
+# restart the containers
+docker-compose -f docker-compose-dev.yaml up -d
 ```
 
-The volume used by Postgres is called `pgdata`. To remove it, lookup the name from the list and run:
+### The Postgres container is not starting properly
 
-```console
-docker volume rm <volumename>
-```
+The Postgres container tries to bind to port 5432 to enable local access. This won't work if something else is already
+using that port. To solve this, stop the application that's running on port 5432 and re-run step 1.
+
+### Can I access the Collector over a network connection?
+
+The opened ports are only exposed on localhost (`127.0.0.1`). So to access over the network, or ipv6, additional 
+configuration may be necessary.

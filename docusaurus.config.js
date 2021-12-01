@@ -88,7 +88,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: websiteUrl + 'docs', // ensure Docusaurus redirects to standalone docs
+          to: websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
