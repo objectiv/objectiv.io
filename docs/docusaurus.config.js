@@ -107,10 +107,11 @@ const config = {
             to: '/taxonomy//',
           },
           {
-            label: 'Objectiv.io \u{1F855}',
+            label: 'Objectiv.io',
             position: 'right',
             to: websiteUrl,
             target: '_self',
+            class: 'navbar__item navbar__link go-homepage'
           }
         ],
       },
