@@ -9,7 +9,7 @@ title: Introduction
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The open taxonomy of analytics is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
-validate analytics data. Adoption of the open axonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
+validate analytics data. Adoption of the open taxonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
 
 Each common event type and the contexts in which they can happen are defined in a class, which describes their properties, requirements and relationships with other classes.
 
