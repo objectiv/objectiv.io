@@ -4,7 +4,6 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import AnnouncementBar from '../components/announcement-bar'
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
 import { tagLink, tagElement } from "@objectiv/tracker-browser";
@@ -84,13 +83,6 @@ export default function AboutUs() {
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
-
-        <AnnouncementBar
-          title="We're Hiring!"
-          content="Join our mission crew as a Senior Software Engineer."
-          ctaLink='/jobs'
-          ctaText='Check the vacancy'
-        />
 
         <header
           className={clsx('hero hero--primary', styles.aboutUsBanner)}
