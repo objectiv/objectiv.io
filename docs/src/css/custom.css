@@ -61,6 +61,11 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin: 16px 0 16px 16px;
 }
 
+.navbar__item.navbar__link.go-homepage::after {
+  content: '\29C9';
+  margin: 0 3px 0 5px;
+}
+
 .footer {
   padding: 10px;
   text-align: center;
