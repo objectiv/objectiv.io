@@ -93,7 +93,7 @@ export default function Home() {
                 It enables a shared way to collect <strong>well-structured</strong>,&nbsp;
                 <strong>pre-validated</strong> data that is ready to model on without significant gruntwork. 
                 Models &amp; datasets become <strong>reusable</strong> and <strong>interchangeable</strong>, 
-                enabling data scientists to build on knowledge &amp; practises of others.
+                enabling data scientists to build on knowledge &amp; practices of others.
               </p>
               <p className={clsx(styles.introTeaser)}>
                 <img
