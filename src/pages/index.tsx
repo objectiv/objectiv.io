@@ -41,7 +41,7 @@ export default function Home() {
                 {...tagLink({
                     id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
-                    text: 'Objectiv on GitHub',
+                    text: 'Find us on GitHub',
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -52,11 +52,11 @@ export default function Home() {
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-                Objectiv on GitHub
+                Find us on GitHub
               </Link> 
             </div>
             <div className={clsx(styles.heroOutro)}>
-              Objectiv is open source and we’re building it in public.
+              The project is open-source and we’re building it in public.
             </div>
           </div>
         </header>
@@ -86,7 +86,7 @@ export default function Home() {
                 It enables a shared way to collect <strong>well-structured</strong>,&nbsp;
                 <strong>pre-validated</strong> data that is ready to model on without significant gruntwork. 
                 Models &amp; datasets become <strong>reusable</strong> and <strong>interchangeable</strong>, 
-                enabling data scientists to build on knowledge &amp; practises of others.
+                enabling data scientists to build on knowledge &amp; practices of others.
               </p>
               <p className={clsx(styles.introTeaser)}>
                 <img
@@ -329,8 +329,8 @@ export default function Home() {
                 <div>
                   <p>By embracing the open taxonomy, you can <strong>reuse your own models</strong> for other 
                     projects and <strong>quickly build models</strong> reusing parts of others.</p>
-                  <p>That retention model you’ve built for your campaign site? You can likely reuse that for 
-                    your main site by changing a single line of code.</p>
+                  <p>That behaviour pattern you've created to exactly identify the heavy users of your website? 
+                    You can likely reuse that for your mobile app by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to={useBaseUrl(url + "/docs/modeling/")} 
