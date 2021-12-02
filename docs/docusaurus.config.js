@@ -115,7 +115,7 @@ const config = {
             position: 'right',
             to: websiteUrl,
             target: '_self',
-            class: 'navbar__item navbar__link go-homepage'
+            className: 'navbar__item navbar__link go-homepage'
           }
         ],
       },
