@@ -1,0 +1,34 @@
+/* EditThisPage footer */
+.editLinks {
+  padding: 0 0 0 16px;
+  margin: 0;
+}
+.editLinks li {
+  list-style-type: none;
+  margin-bottom: 6px;
+}
+.editLinks a {
+  color: #606770;
+  text-decoration: none;
+}
+.editLinks a:hover {
+  text-decoration: underline;
+}
+.icon {
+  width: 16px!important; 
+  height: 16px!important; 
+  padding: 0px 8px;
+  margin: 0 21px 0 0;
+}
+.iconSuggestEdit {
+  background:  url('/img/icons/icon-edit.svg') 50% 50% no-repeat; 
+}
+.iconGetHelp {
+  background:  url('/img/icons/icon-help.svg') 50% 50% no-repeat; 
+}
+.iconTriangle {
+  background:  url('/img/icons/icon-triangle.svg') 50% 50% no-repeat; 
+}
+.iconFlag {
+  background:  url('/img/icons/icon-flag.svg') 50% 50% no-repeat; 
+}
