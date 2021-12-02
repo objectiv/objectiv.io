@@ -236,14 +236,7 @@ export default function AboutUs() {
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv's Core Team</h2>
               <p>
-                Meet the mission crew. Also,&nbsp;
-                <Link
-                  to="/jobs"
-                  {...tagLink({ id: 'hiring', text: "we're hiring a Senior Software Engineer. Join us!", 
-                  href: '/jobs' })}
-                >
-                  we're hiring a Senior Software Engineer. Join us!
-                </Link>
+                Meet the mission crew.
               </p>
             </div>
             <div 
