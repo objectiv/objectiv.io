@@ -1,17 +1,21 @@
 /* EditThisPage footer */
 .editLinks {
-  padding: 0 0 0 16px;
+  padding: 0 0 0 24px;
   margin: 0;
 }
 .editLinks li {
   list-style-type: none;
   margin-bottom: 6px;
 }
+.editLinks li:last-child {
+  margin-bottom: 0;
+}
 .editLinks a {
   color: #606770;
   text-decoration: none;
 }
 .editLinks a:hover {
+  color: var(--ifm-footer-link-hover-color);;
   text-decoration: underline;
 }
 .icon {
