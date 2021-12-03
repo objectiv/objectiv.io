@@ -2,21 +2,20 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const path = require('path');
+const fs = require('fs')
+const dotenv = require('dotenv')
 
-const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
+// helps to determine whether we are running yarn start (development) or yarn build (production)
 const nodeEnv = process.env.NODE_ENV;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
+// read env config from .env file
+const envConfig = dotenv.parse(fs.readFileSync(`.env.${objectivEnvironment}`));
+
 // only allow yarn start (dev) in dev mode
 if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
-  throw new Error(`Not allowed to use 'yarn start' on non dev build (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
+  throw new Error(`Not allowed to use 'yarn start' (${nodeEnv}) on non dev build 
+    (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
 }
-const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io' : 'https://objectiv.io';
-const baseUrl = '/';
-const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev';
-const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
-const trackerConsoleEnabled = !isProductionEnv;
-const postBuildPlugin = !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null });
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -25,15 +24,15 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: baseUrl,
-  url: websiteUrl,
+  baseUrl: envConfig.baseUrl,
+  url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'throw',
-  trailingSlash: true,
+  onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'error',
+  // trailingSlash: true,
 
   presets: [
     [
@@ -54,7 +53,6 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    postBuildPlugin,
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
@@ -66,10 +64,10 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: trackerApplicationId,
-    trackerEndPoint: trackerEndPoint,
+    trackerApplicationId: envConfig.trackerApplicationId,
+    trackerEndPoint: envConfig.trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: trackerConsoleEnabled
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled
   },
 
   themeConfig:
@@ -88,7 +86,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
+          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
@@ -149,6 +147,11 @@ const config = {
     }    
   })
 };
+
+// only load the post-build plugin when creating a production build
+if ( objectivEnvironment === 'production' ){
+  config.plugins.push(path.resolve(__dirname, 'src/plugins/post-build/'));
+}
 
 module.exports = config;
 
