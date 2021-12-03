@@ -14,6 +14,4 @@ COPY build/ $WEBROOT/
 # COPY docs
 COPY docs/build/ $WEBROOT/docs/
 
-RUN ls -la $WEBROOT
-
 
