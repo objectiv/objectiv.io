@@ -39,7 +39,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagElement } from '@objectiv-analytics/tracker-browser';
+import { tagElement } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

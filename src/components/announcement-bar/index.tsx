@@ -1,5 +1,5 @@
 import Link from '@docusaurus/Link';
-import { tagElement, tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import clsx from 'clsx';
 import React from 'react';
 import styles from './styles.module.css';

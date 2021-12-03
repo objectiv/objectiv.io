@@ -31,7 +31,7 @@ trackURLChange = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackURLChange } from '@objectiv-analytics/tracker-browser';
+import { trackURLChange } from '@objectiv/tracker-browser';
 ```
 
 ```typescript

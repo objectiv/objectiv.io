@@ -14,7 +14,7 @@ import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
-import { tagLink, tagElement } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 

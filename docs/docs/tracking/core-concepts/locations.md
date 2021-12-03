@@ -98,7 +98,7 @@ tagging Elements is useful in two main ways:
 An example of tagging Sections and Links in your UI:
 ```js
 ...
-import { tagElement, tagLink } from '@objectiv-analytics/tracker-browser';
+import { tagElement, tagLink } from '@objectiv/tracker-browser';
 
 export default function Test() {
   return (
@@ -126,7 +126,7 @@ Tagging Sections can/should also be applied to pages/screens, see section
 :::
 
 ### Solving collisions
-See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
+See below for a simplified example taken from [our website's About page](https://objectiv.io/about/), which 
 lists the contributors to Objectiv. It renders a link to each Contributor's profile:
 
 ```js

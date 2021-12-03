@@ -1,11 +1,10 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement, tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
 import React from 'react';
-import AnnouncementBar from '../components/announcement-bar'
 import styles from './styles.module.css';
 
 export default function Home() {
@@ -18,12 +17,6 @@ export default function Home() {
         title=''
         description={tagline}
         >
-        <AnnouncementBar 
-          title="We're Hiring!"
-          content="Join our mission crew as a Senior Software Engineer."
-          ctaLink='/jobs'
-          ctaText='Check the vacancy'
-        />
 
         <header 
           className={clsx('hero hero--primary', styles.heroBanner)}
@@ -48,7 +41,7 @@ export default function Home() {
                 {...tagLink({
                     id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
-                    text: 'Objectiv on GitHub',
+                    text: 'Find us on GitHub',
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -59,11 +52,11 @@ export default function Home() {
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-                Objectiv on GitHub
+                Find us on GitHub
               </Link> 
             </div>
             <div className={clsx(styles.heroOutro)}>
-              Objectiv is open source and we’re building it in public.
+              The project is open-source and we’re building it in public.
             </div>
           </div>
         </header>
@@ -76,18 +69,24 @@ export default function Home() {
             <div 
               {...tagElement({id: 'intro'})}
               className={clsx("container", styles.intro)}>
-              <img
-                className={clsx(styles.introTitleIcon)}
-                src={useBaseUrl("img/icons/icon-data-scientist-thinking.svg")}
-                alt="Data Scientist thinking..." /><br />
+              <h2 className={clsx(styles.introHeading)}>
+                Objectiv proposes the adoption of an open, common taxonomy for analytics <br />
+                to unify the way data scientists collect &amp; model data.
+              </h2>
+              <img 
+                className={clsx(styles.introDiagram)}
+                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics.svg")}
+                alt="The open taxonomy for analytics" />
+              {/* Show below diagram with larger font instead on smaller devices */}
+              <img 
+                className={clsx(styles.introDiagramLargeFont)}
+                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics-large-font.svg")}
+                alt="The open taxonomy for analytics" />
               <p>
-                Most data scientists spend a significant amount of their time on prepwork to ensure their data 
-                is ready for modeling, and while data teams often have very similar goals, models are usually 
-                built from scratch because there is no common way to structure data.
-              </p>
-              <p>
-                <strong>Objectiv proposes the adoption of a common taxonomy for analytics so models &amp; data 
-                  can be reused and data scientists can build on knowledge and practises of others.</strong>
+                It enables a shared way to collect <strong>well-structured</strong>,&nbsp;
+                <strong>pre-validated</strong> data that is ready to model on without significant gruntwork. 
+                Models &amp; datasets become <strong>reusable</strong> and <strong>interchangeable</strong>, 
+                enabling data scientists to build on knowledge &amp; practices of others.
               </p>
               <p className={clsx(styles.introTeaser)}>
                 <img
@@ -113,8 +112,10 @@ export default function Home() {
               </div>
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
-                  <p>Objectiv is built around the <strong><em>open taxonomy of analytics</em></strong>, which 
-                    is our proposal for a common way to collect, structure and validate data.</p>
+                  <p>
+                    <strong><em>The open taxonomy of analytics</em></strong> is our proposal for a common 
+                    way to collect, structure and validate data.
+                  </p>
                   <p>It defines <strong>classes for each common event type</strong> and the contexts in which 
                     they can happen. It describes their properties, requirements and their relationships with 
                     other classes.</p>
@@ -141,7 +142,7 @@ export default function Home() {
                   </p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/taxonomy/"}
+                      to={useBaseUrl(url + "/docs/taxonomy/")}
                       {...tagLink({
                           id: 'cta-docs-taxonomy', 
                           href: '/docs/taxonomy/',
@@ -185,7 +186,7 @@ export default function Home() {
                     you to catch errors before data starts flowing in.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/tracking/"}
+                      to={useBaseUrl(url + "/docs/tracking/")}
                       {...tagLink({
                           id: 'cta-docs-tracking', 
                           href: '/docs/tracking/', 
@@ -237,7 +238,7 @@ export default function Home() {
                     modeling with minimal additional gruntwork.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/tracking/core-concepts/locations"} 
+                      to={useBaseUrl(url + "/docs/tracking/core-concepts/locations")} 
                       {...tagLink({
                           id: 'cta-docs-location-stack', 
                           href: '/docs/taxonomy', 
@@ -328,11 +329,11 @@ export default function Home() {
                 <div>
                   <p>By embracing the open taxonomy, you can <strong>reuse your own models</strong> for other 
                     projects and <strong>quickly build models</strong> reusing parts of others.</p>
-                  <p>That retention model you’ve built for your campaign site? You can likely reuse that for 
-                    your main site by changing a single line of code.</p>
+                  <p>That behaviour pattern you've created to exactly identify the heavy users of your website? 
+                    You can likely reuse that for your mobile app by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to={url + "docs/modeling/"} 
+                      to={useBaseUrl(url + "/docs/modeling/")} 
                       {...tagLink({
                           id: 'cta-docs-reuse', 
                           href: '/docs/modeling/', 

@@ -31,7 +31,7 @@ trackSectionVisible = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackSectionVisible } from '@objectiv-analytics/tracker-browser';
+import { trackSectionVisible } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

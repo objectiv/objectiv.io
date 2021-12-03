@@ -9,7 +9,7 @@ import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import OriginalLogo from '@theme-original/Logo';
-import { tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 
 const Logo = (props): JSX.Element  => {
   const {

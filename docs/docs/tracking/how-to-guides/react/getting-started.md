@@ -9,11 +9,11 @@ Follow the step-by-step Guide below to get started with tracking on your React a
 ## Install Tracker from NPM
 
 ```bash
-yarn add @objectiv-analytics/tracker-browser
+yarn add @objectiv/tracker-browser
 
 # or 
 
-npm install @objectiv-analytics/tracker-browser
+npm install @objectiv/tracker-browser
 ```
 
 ## Configure the Tracker
@@ -28,7 +28,7 @@ Ideally, the tracker should be configured as early as possible. Best before the 
 Here is how that can be achieved in the `index` of the Application, right before rendering the App.
 
 ```typescript
-import { makeTracker } from "@objectiv-analytics/tracker-browser";
+import { makeTracker } from "@objectiv/tracker-browser";
 
 makeTracker({
   applicationId: 'app-id',
@@ -48,7 +48,7 @@ In such cases it's necessary to stabilize `makeTracker` by wrapping it in a [use
 
 ```typescript
 const App = () => {
-  import { makeTracker } from "@objectiv-analytics/tracker-browser";
+  import { makeTracker } from "@objectiv/tracker-browser";
   ...
   useEffect(
     () => {

@@ -9,7 +9,7 @@
 }
 
 .heroBanner {
-  padding: 50px 0;
+  padding: 80px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
-    padding: 2rem;
+    padding: 3rem 2rem;
   }
   .heroTitle br, .heroSubTitle br {
     display: none
@@ -73,6 +73,7 @@
 .intro, .container.intro {
   /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
   max-width: 746px !important;
+  padding: 0;
   text-align: center;
 }
 @media (min-width: 1440px) {
@@ -80,18 +81,50 @@
     /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
     max-width: 746px !important;
     text-align: center;
+    padding: 0;
   }
 }
-
-.introTitleIcon {
-  float: none;
-  margin: 23px 0 29px 0;
+@media (max-width: 966px) {
+  .intro, .container.intro {
+    padding: 0 5%;
+  }
 }
 
 .introTeaser {
   font-weight: bold;
   font-size: 14px;
   margin: 60px 0 -18px 0;
+}
+
+.introHeading {
+  font-size: 20px;
+  margin: 30px 0;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .introHeading br {
+    display: none;
+  }
+}
+
+.introDiagram, .introDiagramLargeFont {
+  margin: 0 0 48px 0;
+}
+.introDiagramLargeFont {
+  display: none;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .introDiagram, .introDiagramLargeFont {
+    margin: 42px 0;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile/tablet all */
+  .introDiagram {
+    display: none;
+  }
+  .introDiagramLargeFont {
+    display: inline-block;
+    width: 95%;
+  }
 }
 
 .introCaretDown {
@@ -458,35 +491,4 @@ footer h2 {
 
 .contributorFooter {
   padding-top: 16px;
-}
-
-/**************
- JOBS PAGE 
-***************/
-
-.jobsHeader {
-  padding: 80px 0 0 0;
-}
-
-.jobsContainer {
-  margin-top: 0;
-  text-align: left;
-  max-width: 960px;
-}
-
-.jobsContainer h2 {
-  display: flex;
-  align-items:center;
-  margin-top: 30px;
-}
-
-.jobsContainer h1 img, .jobsContainer h2 img {
-  vertical-align: middle;
-  margin: 0 18px 0 0;
-}
-
-.jobsContainer {
-  margin-top: 0;
-  text-align: left;
-  max-width: 960px;
 }

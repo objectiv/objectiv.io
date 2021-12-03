@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagOverlay } from '@objectiv-analytics/tracker-browser';
+import { tagOverlay } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

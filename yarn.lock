@@ -1606,24 +1606,24 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv-analytics/plugin-web-document-context@^0.0.1":
+"@objectiv/plugin-web-document-context@^0.0.1":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@objectiv-analytics/plugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#2a0f1326ec745bd26672834b0574f50a24546c45"
-  integrity sha512-KQXCI+w/qVc1n0+Jer2TfJBIx6f2WD3gj0RtUSHAEy8Gr9XgkVFD3SUFaeaTsCiaMukj6g0q+GnrlUSxuW3cnQ==
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#b4452f9422e869bcd19047c28035d5467186d4c8"
+  integrity sha512-2I+ZNtwMbUfbiCMpFBfBh+23XaVWyDkhraM9SSo9f18IBN39PGKPfIU4OiZudHYeFc4dpHlTl8ynmVaWj95bSA==
 
-"@objectiv-analytics/tracker-browser@^0.0.1":
+"@objectiv/tracker-browser@^0.0.1":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@objectiv-analytics/tracker-browser/-/tracker-browser-0.0.1.tgz#b310478e24702d30da6f4384ee2e3e0e3a7d1aab"
-  integrity sha512-cY72Y4IObLSlMzHss0cnBhQHsTI5gZCw/2CnDBvU3B4+nUgytX3QR3HsetyojWBV9rTBkoHF2iwK2S31iD2ngw==
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-browser/-/tracker-browser-0.0.1.tgz#9d5f6ba656c10657a87368103230c2bfba3f26fb"
+  integrity sha512-fDDzJZq433QwX3yaKy0ESgN4N9cvku4rL5OwRf9RfRSCwiFkS4SmTrjaAuk7i/YXGojxkMoaoTIZ+l9vzvYODQ==
   dependencies:
-    "@objectiv-analytics/plugin-web-document-context" "^0.0.1"
-    "@objectiv-analytics/tracker-core" "^0.0.1"
+    "@objectiv/plugin-web-document-context" "^0.0.1"
+    "@objectiv/tracker-core" "^0.0.1"
     superstruct "^0.15.3"
 
-"@objectiv-analytics/tracker-core@^0.0.1":
+"@objectiv/tracker-core@^0.0.1":
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@objectiv-analytics/tracker-core/-/tracker-core-0.0.1.tgz#f9de7affdbc9e4ffd0574918f05a208c6ce593ab"
-  integrity sha512-7dh1RrzhWfxQfa2o8qC00gu9XtfQ32c4KUQDcxyZoDvvbHmjInlUQecKWV8uiW60oRL8D6kLvbg+VIdQyw9BBA==
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.1.tgz#e70c2b54caa82e89bd310307b610dbb6006b3ead"
+  integrity sha512-ibOoPBNdS4BVXUfROVTwgLmkzHagEtuFhVtNtiKdv6M10blJVElkJSbopcZ/lKoTir5q4opRWhbLN8gsynRPWQ==
   dependencies:
     es6-error "^4.1.1"
     uuid-random "^1.3.2"

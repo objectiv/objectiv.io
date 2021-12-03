@@ -8,7 +8,7 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
-import { tagLink, tagNavigation } from "@objectiv-analytics/tracker-browser";
+import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function BlogPostPaginator(props): JSX.Element {
   const {nextItem, prevItem} = props;

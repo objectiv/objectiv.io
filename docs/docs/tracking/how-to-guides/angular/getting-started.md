@@ -11,11 +11,11 @@ We provide an extra package for Angular with a Module and a set of Directives to
 ## Install Tracker from NPM
 
 ```bash
-yarn add @objectiv-analytics/tracker-browser @objectiv-analytics/tracker-angular
+yarn add @objectiv/tracker-browser @objectiv/tracker-angular
 
 # or 
 
-npm install @objectiv-analytics/tracker-browser @objectiv-analytics/tracker-angular
+npm install @objectiv/tracker-browser @objectiv/tracker-angular
 ```
 
 ## Configure the Tracker
@@ -27,7 +27,7 @@ Ideally, the tracker should be configured as early as possible. A good place is 
 :::
 
 ```typescript
-import { ObjectivTrackerModule } from '@objectiv-analytics/tracker-angular';
+import { ObjectivTrackerModule } from '@objectiv/tracker-angular';
 
 ...
 
@@ -59,7 +59,7 @@ How to do so varies widely depending on the architecture of the target Applicati
 Assuming the Application has a shared module accessible to all UI templates:
 
 ```typescript
-import { ObjectivTrackerModule } from '@objectiv-analytics/tracker-angular';
+import { ObjectivTrackerModule } from '@objectiv/tracker-angular';
 
 @NgModule({
   imports: [

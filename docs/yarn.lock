@@ -1468,7 +1468,7 @@
     tslib "^2.3.1"
     utility-types "^3.10.0"
 
-"@docusaurus/theme-search-algolia@2.0.0-beta.9":
+"@docusaurus/theme-search-algolia@2.0.0-beta.9", "@docusaurus/theme-search-algolia@^2.0.0-beta.9":
   version "2.0.0-beta.9"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-search-algolia/-/theme-search-algolia-2.0.0-beta.9.tgz#ccece22535b91e83757c21d895817c5f577fcc36"
   integrity sha512-pbpA18kqr5H7A7snmHf4dzMYV+3nsTDYMhV9f2Tms7yP9cxW7ZMHJwaEKXh1myE58Nbkv84AF734TR1UgYrziw==
@@ -1633,24 +1633,24 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv-analytics/plugin-web-document-context@^0.0.1":
+"@objectiv/plugin-web-document-context@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv-analytics%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#0f82acd32e733e81fb3ea3ed7c1f570fc8d68091"
-  integrity sha512-OSn6LmV4kWxDE32P0Cn4+wcgmx4DwFcs2DVFw0KfcpC5ymfR0q+wSH6yULpPUSqKq4HKKiYmWB4BQKoA1yoXvA==
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#b4452f9422e869bcd19047c28035d5467186d4c8"
+  integrity sha512-2I+ZNtwMbUfbiCMpFBfBh+23XaVWyDkhraM9SSo9f18IBN39PGKPfIU4OiZudHYeFc4dpHlTl8ynmVaWj95bSA==
 
-"@objectiv-analytics/tracker-browser@^0.0.1":
+"@objectiv/tracker-browser@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv-analytics%2ftracker-browser/-/tracker-browser-0.0.1.tgz#bc7d6aa3a72947e35549bb93de527c393f2423af"
-  integrity sha512-3gdE76CSHcpdc4yG7/InJLyu78B2xwkU1k/OKfn2UrocX2BW9zD5ipO42KUQY/eTujBj71qHPcBtIO9mIcZWKw==
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-browser/-/tracker-browser-0.0.1.tgz#9d5f6ba656c10657a87368103230c2bfba3f26fb"
+  integrity sha512-fDDzJZq433QwX3yaKy0ESgN4N9cvku4rL5OwRf9RfRSCwiFkS4SmTrjaAuk7i/YXGojxkMoaoTIZ+l9vzvYODQ==
   dependencies:
-    "@objectiv-analytics/plugin-web-document-context" "^0.0.1"
-    "@objectiv-analytics/tracker-core" "^0.0.1"
+    "@objectiv/plugin-web-document-context" "^0.0.1"
+    "@objectiv/tracker-core" "^0.0.1"
     superstruct "^0.15.3"
 
-"@objectiv-analytics/tracker-core@^0.0.1":
+"@objectiv/tracker-core@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv-analytics%2ftracker-core/-/tracker-core-0.0.1.tgz#ee817a1bd03f810077fa419e0fe710ff8ba9cb86"
-  integrity sha512-JhIwSScAjciTLm905Q7nG5KOLJfUojGXZMfH0oXTVlCkeFyW/sx2czpy2symt89T40Nq5ZF7pQ4RPBDyfIQ4eg==
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.1.tgz#e70c2b54caa82e89bd310307b610dbb6006b3ead"
+  integrity sha512-ibOoPBNdS4BVXUfROVTwgLmkzHagEtuFhVtNtiKdv6M10blJVElkJSbopcZ/lKoTir5q4opRWhbLN8gsynRPWQ==
   dependencies:
     es6-error "^4.1.1"
     uuid-random "^1.3.2"

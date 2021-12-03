@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { tagLink } from "@objectiv-analytics/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
 import React from 'react';

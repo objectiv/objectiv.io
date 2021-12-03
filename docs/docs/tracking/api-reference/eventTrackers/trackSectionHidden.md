@@ -31,7 +31,7 @@ trackSectionHidden = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackSectionHidden } from '@objectiv-analytics/tracker-browser';
+import { trackSectionHidden } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

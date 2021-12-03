@@ -30,7 +30,7 @@ trackVisibility = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackVisibility } from '@objectiv-analytics/tracker-browser';
+import { trackVisibility } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

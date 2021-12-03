@@ -21,7 +21,7 @@ setDefaultTracker = (trackerId: string) => void
 ## Usage example
 
 ```typescript jsx
-import { setDefaultTracker } from '@objectiv-analytics/tracker-browser';
+import { setDefaultTracker } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

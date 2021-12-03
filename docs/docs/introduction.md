@@ -12,11 +12,9 @@ import Mermaid from '@theme/Mermaid';
 ![Objectiv Logo](/img/logo-objectiv-large.svg "Objectiv Logo")
 
 ## Welcome to the official Objectiv documentation
-Objectiv is a data collection & modeling library that puts the data scientist first. It is built around 
-[the open taxonomy of analytics](/taxonomy/introduction.md), which is our proposal for a common way to collect, 
-structure and validate data. With Objectiv, you create a 
-[contextual layer for your application](tracking/core-concepts/overview.md) by mapping it to the taxonomy, 
-with the goal of collecting better data and more effective modeling.
+Objectiv is a data collection & modeling library that puts the data scientist first. 
+
+It proposes the adoption of [a common taxonomy for analytics](/taxonomy), enabling a shared way to collect well-structured, pre-validated data that is ready to model on without significant gruntwork. Models & datasets embracing the taxonomy are reusable and interchangeable, allowing data scientists to build on knowledge and practices of others.
 
 <img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
 
@@ -28,7 +26,7 @@ Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 1. [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) in our Live Demo Notebook
 2. [Test drive Objectiv locally](/quickstart-guide) with a fully functional demo pipeline
-3. [Spin up a local development setup](/how-to-guides/collector/getting-started) with just the essentials and no demo data
+3. [Spin up a collector and data store](/how-to-guides/collector/getting-started) for local development without any demo data
 
 ## Running Objectiv in production
 A detailed How-to guide is coming soon. 

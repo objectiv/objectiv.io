@@ -26,6 +26,11 @@ make sense for very large expressions, or for non-deterministic expressions (e.g
 <dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a></p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calling materialize() resets the order of the dataframe. Call <a class="reference internal" href="bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code></a> again on
+the result if order is important.</p>
+</div>
 </dd></dl>
 
 </section>

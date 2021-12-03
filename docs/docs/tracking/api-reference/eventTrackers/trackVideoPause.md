@@ -27,7 +27,7 @@ trackVideoPause = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackVideoPause } from '@objectiv-analytics/tracker-browser';
+import { trackVideoPause } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

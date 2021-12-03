@@ -31,7 +31,7 @@ trackInputChange = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackInputChange } from '@objectiv-analytics/tracker-browser';
+import { trackInputChange } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

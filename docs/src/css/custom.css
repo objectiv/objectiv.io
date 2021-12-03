@@ -21,10 +21,10 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary: #06A5FA;
+  --ifm-color-primary-dark: #008fdb;
+  --ifm-color-primary-darker: #0068a0;
+  --ifm-color-primary-darkest: #00507a;
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
@@ -47,6 +47,58 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+html[data-theme='light'] .DocSearch {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  /* --docsearch-text-color: var(--ifm-font-color-base); */
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(94, 100, 112, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-white);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-color-white);
+}
+
+html[data-theme='dark'] .DocSearch {
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: var(--ifm-color-secondary-darkest);
+  --docsearch-container-background: rgba(47, 55, 69, 0.7);
+  /* Modal */
+  --docsearch-modal-background: var(--ifm-background-color);
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-background-color);
+  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  /* Hit */
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-hit-active-color: var(--ifm-color-white);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+}
+
+/**
+ * Hide the "See all ## results" link at the bottom of the search widget. 
+ * See https://github.com/facebook/docusaurus/issues/5084 for context.
+ */
+ .DocSearch-Dropdown-Container .DocSearch-HitsFooter {
+  display: none;
+}
+.DocSearch-Dropdown-Container {
+  padding-bottom: var(--docsearch-spacing);
+}
+
 @media (max-width: 996px) {
   .navbar-sidebar .navbar__item {
     display: block !important;
@@ -59,6 +111,11 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .navbar-sidebar h2.activeDocsSection {
   font-size: 18px;
   margin: 16px 0 16px 16px;
+}
+
+.navbar__item.navbar__link.go-homepage::after {
+  content: '\29C9';
+  margin: 0 3px 0 5px;
 }
 
 .footer {

@@ -31,7 +31,7 @@ trackEvent = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackEvent, makeClickEvent } from '@objectiv-analytics/tracker-browser';
+import { trackEvent, makeClickEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

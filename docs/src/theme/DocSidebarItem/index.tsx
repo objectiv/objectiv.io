@@ -8,7 +8,7 @@ import {
   tagExpandableElement,
   tagLink,
   trackClick
-} from "@objectiv-analytics/tracker-browser";
+} from "@objectiv/tracker-browser";
 import React, {useEffect, memo} from 'react';
 import clsx from 'clsx';
 import {

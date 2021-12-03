@@ -17,7 +17,7 @@ If you just want the Collector and a data store without the demo data, website a
 Assuming you have [Docker](https://www.docker.com/) and [Curl](https://curl.se) installed, run the following commands:
 
 ```bash
-curl https://raw.githubusercontent.com/objectiv/objectiv-analytics/main/docker-compose.yaml
+curl -o docker-compose.yaml https://raw.githubusercontent.com/objectiv/objectiv-analytics/main/docker-compose.yaml
 ```
 ```bash
 docker-compose up

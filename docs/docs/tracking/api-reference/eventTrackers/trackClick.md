@@ -31,7 +31,7 @@ trackClick = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackClick } from '@objectiv-analytics/tracker-browser';
+import { trackClick } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx

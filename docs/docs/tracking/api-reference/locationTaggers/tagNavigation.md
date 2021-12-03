@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagNavigation } from '@objectiv-analytics/tracker-browser';
+import { tagNavigation } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
