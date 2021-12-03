@@ -128,6 +128,7 @@ const SphinxPage = (props) => {
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
+
                     // a link is internal if the first part matches the current location,
                     // or if it's a relative URL
                     const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
@@ -142,7 +143,21 @@ const SphinxPage = (props) => {
                     }
                     // only remove the .html if local links, leave external links alone
                     if ( isInternal ){
+                        console.log(`Found link to: ${a.href} --> ${currentSite} // ${window.location.toString()}`);
                         a.href = a.href.replace(/\.html/g, '');
+
+                        // try and fix links that are broken in builds do to slashes
+                        // we go from http://site/docs/modeling/page/otherpage/#anchor
+                        // to
+                        // http://site/docs/modeling/otherpage/#anchor
+                        const parts = window.location.toString().match(/^(.*?)\/([a-zA-Z0-9-.]*?\/)(#([a-z0-9])+)?$/);
+                        if ( parts !== null ){
+                            a.href = a.href.replace(parts[2], '');
+                        }
+
+                        console.log(parts);
+
+
 
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
