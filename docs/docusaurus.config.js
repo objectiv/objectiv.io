@@ -3,33 +3,21 @@
 
 const path = require('path');
 
-const fs = require('fs')
-const dotenv = require('dotenv')
-
-// helps to determine whether we are running yarn start (development) or yarn build (production)
-const nodeEnv = process.env.NODE_ENV;
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-// read env config from .env file
-const envConfig = dotenv.parse(fs.readFileSync(`.env.${objectivEnvironment}`));
-
-// only allow yarn start (dev) in dev mode
-if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
-  throw new Error(`Not allowed to use 'yarn start' (${nodeEnv}) on non dev build 
-    (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
-}
+const getEnvConfig = require('../env_config.js');
+const envConfig = getEnvConfig(objectivEnvironment);
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: envConfig.websiteUrl,
-  baseUrl: baseUrl,
+  baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -97,15 +85,15 @@ const config = {
         items: [
           {
             label: 'Tracking',
-            to: '/tracking//',
+            to: '/tracking/',
           },
           {
             label: 'Modeling',
-            to: '/modeling//',
+            to: '/modeling/',
           },
           {
             label: 'Taxonomy',
-            to: '/taxonomy//',
+            to: '/taxonomy/',
           },
           {
             type: 'search',

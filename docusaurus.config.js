@@ -2,20 +2,10 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const path = require('path');
-const fs = require('fs')
-const dotenv = require('dotenv')
 
-// helps to determine whether we are running yarn start (development) or yarn build (production)
-const nodeEnv = process.env.NODE_ENV;
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-// read env config from .env file
-const envConfig = dotenv.parse(fs.readFileSync(`.env.${objectivEnvironment}`));
-
-// only allow yarn start (dev) in dev mode
-if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
-  throw new Error(`Not allowed to use 'yarn start' (${nodeEnv}) on non dev build 
-    (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
-}
+const getEnvConfig = require('./env_config.js');
+const envConfig = getEnvConfig(objectivEnvironment);
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
