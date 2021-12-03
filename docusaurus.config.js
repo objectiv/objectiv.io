@@ -22,7 +22,10 @@ const config = {
 
   onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'error',
-  // trailingSlash: true,
+
+  // undefined it the default behaviour of docusaurus, and leaves it alone
+  // see: https://docusaurus.io/docs/api/docusaurus-config#trailing-slash for more info
+  trailingSlash: undefined,
 
   presets: [
     [
