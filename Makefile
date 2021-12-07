@@ -1,6 +1,9 @@
 .PHONY: build-all build-website build-docs build-docker-website
 
 
+
+all: build-docker-website
+
 # clean up existing builds
 clean: clean-website clean-docs
 clean-website:
