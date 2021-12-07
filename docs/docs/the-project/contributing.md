@@ -23,7 +23,7 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
 		Bug ---> CheckIssues["Check GitHub Issues"];
     CheckIssues --> Comment["Comment/+1"];
     CheckIssues --> GitHubIssue["Create GitHub Issue"];
-    FeatureRequest["Feature Request"] ----> CheckIssues;
+    FeatureRequest["Feature Request"] ---> CheckIssues;
     Contribution ----> PR["Create a Pull Request"];
     LabelUpdate["GitHub Label update"] ----> PR["Create a Pull Request"];
     StayUpToDate["Receive Updates"] ----> GitHubReleases["Follow Releases on GitHub"];
