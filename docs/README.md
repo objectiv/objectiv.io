@@ -21,15 +21,24 @@ without having to restart the server.
 
 ## Build the Documentation pages
 
-First ensure you set the right OBJECTIV_ENVIRONMENT in the environment variables: either `development`, 
-`staging` or `production`.
+The website (and docs) use dotenv files (.env*) for environment specific configuration. During the build process
+this config becomes part of the build artefact. Currently valid environments are: `development`, `staging`, `production` 
+and `docker`. To specify which environment to build for, simply set `OBJECTIV_ENVIRONMENT`, for example:
 
-* `development`: `url` is set to the production environment (https://objectiv.io), the tracker applicationId 
-  is set to `objectiv-docs-dev`, and the tracker endpoint is set to `https://localhost:5000`.
-* `staging`: `url` is set to the staging environment (https://staging.objectiv.io), the tracker applicationId 
-  is set to `objectiv-docs-staging`, and the tracker endpoint is set to `https://collector.objectiv.io`.
-* `prod`: `url` is set to the production environment (https://objectiv.io), the tracker applicationId is set 
-  to `objectiv-docs`, and the tracker endpoint is set to `https://collector.objectiv.io`.
+```bash
+export OBJECTIV_ENVIRONMENT='docker'
+```
+
+The configs for the environments are in their respectiv dotenv files. eg. production settings are in `.env.production`. 
+Both the website and docs (being separate Docusaurus instances) have their own set of config files.
+
+Then to build:
+
+```console
+yarn build
+```
+This command generates static content into the `build` directory and can be served using any static contents 
+hosting service.
 
 Then to build:
 

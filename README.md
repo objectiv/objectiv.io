@@ -38,29 +38,48 @@ yarn install
 yarn start
 ```
 
+NOTE: this cannot be run for configs other than `development`. Either set `OBJECTIV_ENVIRONMENT` to `development` or 
+unset it to make this work.
+
 This command starts a local development server and open up a browser window. Most changes are reflected live 
 without having to restart the server.
 
 ## Build the website
 
-First ensure you set the right OBJECTIV_ENVIRONMENT in the environment variables: either `development`, 
-`staging` or `production`.
+The website (and docs) use dotenv files (.env*) for environment specific configuration. During the build process
+this config becomes part of the build artefact. Currently valid environments are: `development`, `staging`, `production` 
+and `docker`. To specify which environment to build for, simply set `OBJECTIV_ENVIRONMENT`, for example:
 
-* `development`: `url` is set to the production environment (https://objectiv.io), the tracker applicationId 
-  is set to `objectiv-website-dev`, and the tracker endpoint is set to `https://localhost:5000`.
-* `staging`: `url` is set to the staging environment (https://staging.objectiv.io), the tracker applicationId 
-  is set to `objectiv-website-staging`, and the tracker endpoint is set to `https://collector.objectiv.io`.
-* `production`: `url` is set to the production environment (https://objectiv.io), the tracker applicationId is set 
-  to `objectiv-website`, and the tracker endpoint is set to `https://collector.objectiv.io`.
+```bash
+export OBJECTIV_ENVIRONMENT='docker'
+```
+
+The configs for the environments are in their respectiv dotenv files. eg. production settings are in `.env.production`. 
+Both the website and docs (being separate Docusaurus instances) have their own set of config files.
 
 Then to build:
 
 ```console
 yarn build
 ```
-
 This command generates static content into the `build` directory and can be served using any static contents 
 hosting service.
+
+
+## Building the docker image
+
+It's also possible to build a docker image, that can run the website + docs, using a built-in instance of apache. Building
+this is fairly easy, using `make`:
+```bash
+make build-docker-website
+```
+This will first build the website and docs (with .env.docker config), and then copy them into a docker image. The image
+can then be run:
+```bash
+docker run -p 127.0.0.1:8080:80 objectiv/website
+```
+The website should then be available on http://localhost:8080/
+
 
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
