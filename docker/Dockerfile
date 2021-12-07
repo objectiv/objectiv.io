@@ -5,8 +5,11 @@ FROM httpd
 ENV WEBROOT=/usr/local/apache2/htdocs/
 
 # copy apache config
-COPY docker/httpd.conf /usr/local/apache2/conf/httpd.conf
+#COPY docker/httpd.conf /usr/local/apache2/conf/httpd.conf
 
+COPY docker/objectiv.conf /usr/local/apache2/conf/
+
+RUN echo "Include conf/objectiv.conf" >> /usr/local/apache2/conf/httpd.conf
 
 # copy website
 COPY build/ $WEBROOT/
