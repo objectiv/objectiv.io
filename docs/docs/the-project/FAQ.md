@@ -34,7 +34,7 @@ We believe a widespread adoption of the open taxonomy for analytics would be ben
 ##### TRACKING
 
 ### Does Objectiv work for mobile and web?
-Objectiv tracker works with any JavaScript-based web and mobile application. It is built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and have minimal dependencies. You can combine data from various platforms and devices in your analyses without additional transformation. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for upcoming tracker development.
+Objectiv tracker works with any JavaScript-based web and mobile application. It is built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and have minimal dependencies. You can combine data from various platforms and devices in your analyses without additional transformation.
 
 ### Do I need to replace my existing analytics tracker?
 No. You can typically instrument Objectiv’s tracker and leave your existing tracking instrumentation alone and both will work fine. You can start small and expand as you go.
@@ -68,7 +68,7 @@ Objectiv Bach, our modeling library, features an SQL abstraction layer that enab
 Objectiv Bach has support for an initial set of Pandas-like operations. For all supported operations, check the reference in the [Modeling](/modeling) section.
 
 ### Can I run these models in production?
-Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details.
+Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.
 - - -
 ##### DATA PRIVACY & LEGAL
 ### Does Objectiv’s tracker collect personally identifiable information? (PII)
@@ -87,10 +87,10 @@ Objectiv is licensed under the [Apache License, Version 2.0](https://www.apache.
 ##### OPS
 
 ### Does it work with my stack?
-Objectiv currently requires a PostgreSQL database and works in any environment where you can run containers. More databases will be supported in the future. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details.
+Objectiv currently requires a PostgreSQL database and works in any environment where you can run containers. More databases will be supported in the future.
 
 ### Does it scale?
-Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details. 
+Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. 
 
 ### Can I run it on-premise?
 Yes. We don’t have any plans for a hosted version for the near future. Check out our [quickstart section](/#quick-start) of the introduction for installation instructions.

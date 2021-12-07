@@ -13,8 +13,6 @@ First off, thank you for considering to contribute to Objectiv! Please feel welc
 
 There are many ways to contribute, from improving [the documentation](https://objectiv.io/docs/), submitting [bug reports & feature requests](https://github.com/objectiv/objectiv-analytics/issues), to [writing code ](https://github.com/objectiv/objectiv-analytics/). 
 
-See our [public roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for areas we plan to work on next.
-
 To jump straight to what you're looking for, see Objectiv's contribution map below:
 
 <Mermaid chart={`
@@ -25,8 +23,7 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
 		Bug ---> CheckIssues["Check GitHub Issues"];
     CheckIssues --> Comment["Comment/+1"];
     CheckIssues --> GitHubIssue["Create GitHub Issue"];
-    FeatureRequest["Feature Request"] --> CheckRoadmap["Check Public Roadmap"];
-    CheckRoadmap --> CheckIssues;
+    FeatureRequest["Feature Request"] ---> CheckIssues;
     Contribution ----> PR["Create a Pull Request"];
     LabelUpdate["GitHub Label update"] ----> PR["Create a Pull Request"];
     StayUpToDate["Receive Updates"] ----> GitHubReleases["Follow Releases on GitHub"];
@@ -39,7 +36,6 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
     { name: 'Docs', to: 'https://objectiv.io/docs', tooltip: 'See Objectiv Documentation', target: '_self' },
     { name: 'CheckIssues', to: 'https://github.com/objectiv/objectiv-analytics/issues', tooltip: 'Go to GitHub Issues', target: '_blank' },
     { name: 'GitHubIssue', to: 'https://github.com/objectiv/objectiv-analytics/issues', tooltip: 'Go to GitHub Issues', target: '_blank' },
-    { name: 'CheckRoadmap', to: 'https://github.com/objectiv/objectiv-analytics/projects/2', tooltip: 'Go to Public Roadmap', target: '_blank' },
     { name: 'PR', to: 'https://github.com/objectiv/objectiv-analytics/pulls', tooltip: 'Go to GitHub Pull Requests', target: '_blank' },
     { name: 'GitHubReleases', to: 'https://github.com/objectiv/objectiv-analytics', tooltip: 'Follow Releases on GitHub', target: '_blank' },
     { name: 'PostSlack', to: 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg', tooltip: 'Join Objectiv on Slack', target: '_blank' }
@@ -103,8 +99,7 @@ This section guides you through submitting a new feature suggestion for Objectiv
 Before creating a feature request, please check the list below, as you might find out that you don't need to create one:
 
 1. Use the latest version of Objectiv to check if the request has already been made.
-2. Search [our public roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) to see if it's already in the plans.
-3. Perform a cursory search to see if the request has already been made. If it has, either:
+2. Perform a cursory search to see if the request has already been made. If it has, either:
     1. Vote on it using GitHub Reactions; or
     2. Add any relevant comments to the existing issue instead of opening a new one.
 
