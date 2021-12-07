@@ -46,7 +46,14 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    require.resolve('docusaurus-plugin-image-zoom')
+    require.resolve('docusaurus-plugin-image-zoom'),
+    [
+        // only load the post-build plugin when creating a production build
+        path.resolve(__dirname, 'src/plugins/post-build/'),
+        {
+            skip: objectivEnvironment !== 'production'
+        }
+    ]
   ],
   scripts: [
     {
@@ -140,11 +147,6 @@ const config = {
     }    
   })
 };
-
-// only load the post-build plugin when creating a production build
-if ( objectivEnvironment === 'production' ){
-  config.plugins.push(path.resolve(__dirname, 'src/plugins/post-build/'));
-}
 
 module.exports = config;
 

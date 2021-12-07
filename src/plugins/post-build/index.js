@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = function (context, options) {
+module.exports = function (context, { skip }) {
+  if (skip) {
+    return;
+  }
   return {
     name: 'add-htaccess',
     async postBuild({siteConfig = {}, routesPaths = [], outDir}) {
