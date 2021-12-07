@@ -80,6 +80,23 @@ docker run -p 127.0.0.1:8080:80 objectiv/website
 ```
 The website should then be available on http://localhost:8080/
 
+## Testing
+
+To verify the links are all OK, run the following:
+```asciidoc
+yarn add broken-link-checker
+make clean check-broken-links
+```
+This will build and spin up a docker container running a docker build of the website, and check all internal links.
+
+## Deployment
+
+The website is hosted on TransIP. To deploy, observe the following steps:
+* Create a build for staging (OBJECTIV_ENVIRONMENT=staging)
+* Upload the contents of the build folder to staging (using sftp, credentials are in 1password)
+* Verify the build from staging (https://staging.objectiv.io)
+* Create a build for production (OBJECTIV_ENVIRONMENT=production)
+* Upload the contents of the build folder to production on TransIP
 
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
