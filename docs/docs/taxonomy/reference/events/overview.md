@@ -21,10 +21,10 @@ Used to describe interactive and non-interactive events.
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-        NonInteractiveEvent --> FailureEvent; 
+        NonInteractiveEvent --> FailureEvent["FailureEvent<br><span class='properties'>message: string</span>"]; 
         NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
         NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-        NonInteractiveEvent --> SuccessEvent;
+        NonInteractiveEvent --> SuccessEvent["SuccessEvent<br><span class='properties'>message: string</span>"];
         NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         VideoEvent --> VideoLoadEvent;
         VideoEvent --> VideoPauseEvent;

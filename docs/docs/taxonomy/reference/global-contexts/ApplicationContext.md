@@ -2,7 +2,7 @@
 
 import Mermaid from '@theme/Mermaid';
 
-A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing the origin (application id) of the event, in its `id`.
+A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing in which app the event happens, like a website or iOS app.
 
 <Mermaid chart={`
 	graph LR 
@@ -19,4 +19,7 @@ A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing th
 />
 
 ### Properties
-None.
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Unique string describing the app in which the events happen.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.

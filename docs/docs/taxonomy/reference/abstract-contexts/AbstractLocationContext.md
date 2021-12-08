@@ -14,7 +14,7 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-        AbstractLocationContext --> ItemContext;
+        AbstractLocationContext --> InputContext;
         AbstractLocationContext --> PressableContext;
 		AbstractLocationContext --> SectionContext;
     class AbstractLocationContext diagramActive;
@@ -23,11 +23,15 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
   baseColor="blue" 
   links={[
     { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' },
+    { name: 'InputContext', to: '/taxonomy/reference/location-contexts/InputContext' },
     { name: 'PressableContext', to: '/taxonomy/reference/location-contexts/PressableContext' },
     { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' }
   ]}
 />
 
 ### Properties
-All inherited from [AbstractContext](/taxonomy/reference/abstract-contexts/overview.md#abstractcontext).
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.
+

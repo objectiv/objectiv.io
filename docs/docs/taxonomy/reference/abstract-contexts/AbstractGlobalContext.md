@@ -7,7 +7,7 @@ title: AbstractGlobalContext
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all [Global Contexts](/taxonomy/reference/global-contexts/overview.md).Global contexts add general information to an Event.
+This is the abstract parent of all [Global Contexts](/taxonomy/reference/global-contexts/overview.md). Global contexts add general information to an Event.
 
 
 See [Global Contexts](/taxonomy/reference/global-contexts/overview.md) for all Contexts that inherit from AbstractGlobalContext.
@@ -37,4 +37,8 @@ See [Global Contexts](/taxonomy/reference/global-contexts/overview.md) for all C
 />
 
 ### Properties
-All inherited from [AbstractContext](/taxonomy/reference/abstract-contexts/overview.md#abstractcontext).
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.
+

@@ -19,8 +19,10 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-|                     | type            | description
-| :--                 | :--             | :--           
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
 | **referer**         | string          | Full URL to HTTP referrer of the current page.
 | **user_agent**      | string          | User-agent of the agent that sent the event.
 | **remote_address**  | string          | (public) IP address of the agent that sent the event.

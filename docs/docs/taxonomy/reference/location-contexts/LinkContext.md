@@ -23,6 +23,8 @@ import Mermaid from '@theme/Mermaid';
 
 
 ### Properties
-|               | type        | description
-| :--           | :--         | :--           
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Element id, set automatically by the tracker.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 | **href**      | string      | URL (href) the link points to.

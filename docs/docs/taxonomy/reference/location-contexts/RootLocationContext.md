@@ -21,4 +21,7 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-None.
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Top-level UI location of the user, set automatically by the tracker.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.

@@ -19,4 +19,7 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-None.
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Input id, set automatically by the tracker.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.

@@ -21,4 +21,6 @@ import Mermaid from '@theme/Mermaid';
 ### Properties
 |                 | type      | description
 | :--             | :--       | :--           
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.     
 | **hit_number**  | integer   | Hit counter relative to the current session, this event originated in.
