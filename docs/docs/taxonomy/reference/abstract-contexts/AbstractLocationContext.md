@@ -7,25 +7,25 @@ title: AbstractLocationContext
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all [Location Contexts](/taxonomy/reference/location-contexts/overview.md). Location Contexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
-[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is meant to describe accurately where an [Event](/tracking/core-concepts/events.md) 
-originated in the UI, e.g. Sections, Menus, etc.
+This is the abstract parent of all [Location Contexts](/taxonomy/reference/location-contexts/overview.md). Location Contexts are used to populate the `location_stack`  properties of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
 
 See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for all Contexts that inherit from AbstractGlobalContext.
 
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> ItemContext;
+        AbstractLocationContext --> PressableContext;
 		AbstractLocationContext --> SectionContext;
-    AbstractLocationContext --> ItemContext;
     class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: AbstractLocationContext inheritance" 
   baseColor="blue" 
   links={[
     { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
-    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' }
+    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' },
+    { name: 'PressableContext', to: '/taxonomy/reference/location-contexts/PressableContext' },
+    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' }
   ]}
 />
 
