@@ -23,11 +23,11 @@ what application the event originated.
         InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> AbortedEvent["AbortedEvent<br /><span class='properties'>requires:<br />ErrorContext</span>"]; 
         NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-        NonInteractiveEvent --> CompletedEvent;
+        NonInteractiveEvent --> FailureEvent; 
         NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
         NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> SuccessEvent;
         NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         VideoEvent --> VideoLoadEvent;
         VideoEvent --> VideoPauseEvent;
@@ -38,10 +38,10 @@ what application the event originated.
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
-    { name: 'AbortedEvent', to: '/taxonomy/reference/events/AbortedEvent' },
+    { name: 'FailureEvent', to: '/taxonomy/reference/events/FailureEvent' },
     { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'CompletedEvent', to: '/taxonomy/reference/events/CompletedEvent' },
+    { name: 'SuccessEvent', to: '/taxonomy/reference/events/SuccessEvent' },
     { name: 'SectionVisibleEvent', to: '/taxonomy/reference/events/SectionVisibleEvent' },
     { name: 'SectionHiddenEvent', to: '/taxonomy/reference/events/SectionHiddenEvent' },
     { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },

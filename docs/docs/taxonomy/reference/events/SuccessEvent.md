@@ -1,7 +1,6 @@
-# CompletedEvent
+# SuccessEvent
 
-A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that is emitted when an action completes successfully, e.g. a form that is 
-posted.
+A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that is sent when a user action is successfully completed, like sending an email form.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -9,10 +8,10 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> CompletedEvent;
+        NonInteractiveEvent --> SuccessEvent;
     class CompletedEvent diagramActive;
 `} 
-  caption="Diagram: CompletedEvent" 
+  caption="Diagram: SuccessEvent" 
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
