@@ -24,7 +24,7 @@ docker-compose up
 ```
 
 :::caution
-There are know issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the demo available to M1 users as well. In the meanwhile, please use a device that support X86 instructions natively. 
+There are known issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the demo available to M1 users as well. In the meanwhile, please use a device that supports X86 instructions natively. 
 :::
 
 This will spin up the following containers
