@@ -18,10 +18,7 @@ uniqueness.
 
 
 ## Location Contexts
-LocationContexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
-[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is 
-meant to describe accurately where an [Event](/tracking/core-concepts/events.md) originated in the UI, e.g. 
-Sections, Menus, etc.
+Used to populate the `location_stack` properties of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
 
 * [AbstractLocationContext](./location-contexts/AbstractLocationContext.md)
 * [ExpandableSectionContext](./location-contexts/ExpandableSectionContext.md)
@@ -35,9 +32,7 @@ Sections, Menus, etc.
 
 
 ## Global Contexts
-Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
-carry information that is not related to where the [Event](/tracking/core-concepts/events.md) originated 
-(location), such as device, platform or business data.
+Global contexts add general information to an event.
 
 * [AbstractGlobalContext](./global-contexts/AbstractGlobalContext.md)
 * [ApplicationContext](./global-contexts/ApplicationContext.md)
@@ -49,11 +44,7 @@ carry information that is not related to where the [Event](/tracking/core-concep
 
 
 ## Events
-Events must provide an `id` and optionally can, but most likely will, carry a list of 
-[LocationContexts](/taxonomy/reference/location-contexts/overview.md) and 
-[GlobalContexts](/taxonomy/reference/global-contexts/overview.md). Additionally, every event must have an 
-[ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) to be able to distinguish from 
-what application the event originated.
+Used to describe interactive and non-interactive events.
 
 * [AbstractEvent](./events/AbstractEvent.md)
 * [ApplicationLoadedEvent](./events/ApplicationLoadedEvent.md)
