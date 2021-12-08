@@ -6,8 +6,9 @@ inherit from it.
 <Mermaid chart={`
 	graph LR
         AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> InputContext;
+        AbstractLocationContext --> PressableContext;
         AbstractLocationContext --> SectionContext;
-        AbstractLocationContext --> ItemContext;
     class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: AbstractLocationContext inheritance" 
@@ -16,7 +17,8 @@ inherit from it.
     { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
     { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
     { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
-    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' },
+    { name: 'PressableContext', to: '/taxonomy/reference/location-contexts/PressableContext' },
+    { name: 'InputContext', to: '/taxonomy/reference/location-contexts/InputContext' }
   ]}
 />
 

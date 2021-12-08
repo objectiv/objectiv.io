@@ -9,7 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
         SectionContext --> RootLocationContext;
-    class ScreenContext diagramActive;
+    class RootLocationContext diagramActive;
 `} 
   caption="Diagram: RootLocationContext inheritance" 
   baseColor="blue" 

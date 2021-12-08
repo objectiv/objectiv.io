@@ -8,7 +8,8 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> InteractiveEvent;
-        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        InteractiveEvent --> PressEvent["PressEvent<br /><span class='properties'>requires:<br />PressableContext</span>"];
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
     class InteractiveEvent diagramActive;
 `} 
@@ -16,7 +17,7 @@ import Mermaid from '@theme/Mermaid';
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
-    { name: 'ClickEvent', to: '/taxonomy/reference/events/ClickEvent' },
+    { name: 'PressEvent', to: '/taxonomy/reference/events/PressEvent' },
     { name: 'InputChangeEvent', to: '/taxonomy/reference/events/InputChangeEvent' }
   ]}
 />

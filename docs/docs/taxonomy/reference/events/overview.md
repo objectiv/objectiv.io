@@ -20,7 +20,8 @@ what application the event originated.
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> InteractiveEvent;
-        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"]
+        InteractiveEvent --> PressEvent["PressEvent<br /><span class='properties'>requires:<br />PressableContext</span>"];
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
@@ -50,7 +51,7 @@ what application the event originated.
     { name: 'VideoStopEvent', to: '/taxonomy/reference/events/VideoStopEvent' },
     { name: 'VideoStartEvent', to: '/taxonomy/reference/events/VideoStartEvent' },
     { name: 'InteractiveEvent', to: '/taxonomy/reference/events/InteractiveEvent' },
-    { name: 'ClickEvent', to: '/taxonomy/reference/events/ClickEvent' },
+    { name: 'PressEvent', to: '/taxonomy/reference/events/PressEvent' },
     { name: 'InputChangeEvent', to: '/taxonomy/reference/events/InputChangeEvent' }
   ]}
 />
