@@ -142,10 +142,15 @@ html[data-theme='dark'] .DocSearch {
 
 /** DOCS - Overall **/
 
+/* EditThisPage footer: full width & grey */
 div.docs-wrapper footer {
   padding: 20px 0;
   text-align: left;
-  border-top: 1px solid #eee;
+  background-color: #F5F6F7;
+  color: #606770;
+}
+div.docs-wrapper footer div.col:nth-child(2) {
+  display: none;
 }
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
