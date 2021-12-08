@@ -7,11 +7,11 @@ import Mermaid from '@theme/Mermaid';
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-    AbstractLocationContext --> ItemContext;
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-    ItemContext --> InputContext;
-    ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
+        AbstractLocationContext --> ItemContext;
+        click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
+        click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
+        ItemContext --> InputContext;
+        ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
     class ItemContext diagramActive;
 `} 
   caption="Diagram: ItemContext inheritance" 

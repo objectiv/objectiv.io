@@ -5,9 +5,9 @@ inherit from it.
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-		AbstractLocationContext --> SectionContext;
-    AbstractLocationContext --> ItemContext;
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> SectionContext;
+        AbstractLocationContext --> ItemContext;
     class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: AbstractLocationContext inheritance" 

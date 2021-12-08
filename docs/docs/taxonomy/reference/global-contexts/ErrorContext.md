@@ -6,8 +6,8 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-    AbstractGlobalContext --> ErrorContext["ErrorContext<br><span class='properties'>message: string</span>"];
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
+        AbstractGlobalContext --> ErrorContext["ErrorContext<br><span class='properties'>message: string</span>"];
     class ErrorContext diagramActive;
 `} 
   caption="Diagram: ErrorContext inheritance" 

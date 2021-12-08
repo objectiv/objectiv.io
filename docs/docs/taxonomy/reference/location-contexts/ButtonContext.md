@@ -6,10 +6,10 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-    AbstractLocationContext --> ItemContext;
-    ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
-    ActionContext --> ButtonContext;
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> ItemContext;
+        ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
+        ActionContext --> ButtonContext;
     class ButtonContext diagramActive;
 `} 
   caption="Diagram: ButtonContext inheritance" 

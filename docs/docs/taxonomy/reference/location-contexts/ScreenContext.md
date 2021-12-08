@@ -7,8 +7,8 @@ import Mermaid from '@theme/Mermaid';
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-		AbstractLocationContext --> SectionContext;
-    SectionContext --> ScreenContext["ScreenContext<br /><span class='properties'>screen: string</span>"];
+		AbstractLocationContext --> SectionContext; 
+        SectionContext --> ScreenContext["ScreenContext<br /><span class='properties'>screen: string</span>"];
     class ScreenContext diagramActive;
 `} 
   caption="Diagram: ScreenContext inheritance" 

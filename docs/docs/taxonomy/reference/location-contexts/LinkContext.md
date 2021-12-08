@@ -7,9 +7,9 @@ import Mermaid from '@theme/Mermaid';
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-    AbstractLocationContext --> ItemContext;
-    ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
-    ActionContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
+        AbstractLocationContext --> ItemContext;
+        ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
+        ActionContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
     class LinkContext diagramActive;
 `} 
   caption="Diagram: LinkContext inheritance" 

@@ -18,34 +18,30 @@ what application the event originated.
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
-    AbstractEvent --> InteractiveEvent;
-    InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
-    InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
-    AbstractEvent --> NonInteractiveEvent;
-    NonInteractiveEvent --> CompletedEvent;
-    NonInteractiveEvent --> AbortedEvent["AbortedEvent<br /><span class='properties'>requires:<br />ErrorContext</span>"];
-    NonInteractiveEvent --> DocumentLoadedEvent["DocumentLoadedEvent<br /><span class='properties'>requires:<br />WebDocumentContext</span>"];
-    NonInteractiveEvent --> URLChangeEvent["URLChangeEvent<br /><span class='properties'>requires:<br />WebDocumentContext</span>"];
-    NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-    NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-    NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-    NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
-    VideoEvent --> VideoLoadEvent;
-    VideoEvent --> VideoPauseEvent;
-    VideoEvent --> VideoStopEvent;
-    VideoEvent --> VideoStartEvent;
+        AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+        AbstractEvent --> InteractiveEvent;
+        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+        InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
+        AbstractEvent --> NonInteractiveEvent;
+        NonInteractiveEvent --> AbortedEvent["AbortedEvent<br /><span class='properties'>requires:<br />ErrorContext</span>"]; 
+        NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> CompletedEvent;
+        NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        VideoEvent --> VideoLoadEvent;
+        VideoEvent --> VideoPauseEvent;
+        VideoEvent --> VideoStopEvent;
+        VideoEvent --> VideoStartEvent;
 `} 
   caption="Diagram: Events" 
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'AbortedEvent', to: '/taxonomy/reference/events/AbortedEvent' },
+    { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
     { name: 'CompletedEvent', to: '/taxonomy/reference/events/CompletedEvent' },
-    { name: 'AbortedEvent', to: '/taxonomy/reference/events/AbortedEvent' },
-    { name: 'DocumentLoadedEvent', to: '/taxonomy/reference/events/DocumentLoadedEvent' },
-    { name: 'URLChangeEvent', to: '/taxonomy/reference/events/URLChangeEvent' },
-    { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
     { name: 'SectionVisibleEvent', to: '/taxonomy/reference/events/SectionVisibleEvent' },
     { name: 'SectionHiddenEvent', to: '/taxonomy/reference/events/SectionHiddenEvent' },
     { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },

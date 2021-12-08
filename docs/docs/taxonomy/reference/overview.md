@@ -33,9 +33,7 @@ Sections, Menus, etc.
 * [MediaPlayerContext](./location-contexts/MediaPlayerContext.md)
 * [NavigationContext](./location-contexts/NavigationContext.md)
 * [OverlayContext](./location-contexts/OverlayContext.md)
-* [ScreenContext](./location-contexts/ScreenContext.md)
 * [SectionContext](./location-contexts/SectionContext.md)
-* [WebDocumentContext](./location-contexts/WebDocumentContext.md)
 
 
 ## Global Contexts
@@ -49,6 +47,7 @@ carry information that is not related to where the [Event](/tracking/core-concep
 * [DeviceContext](./global-contexts/DeviceContext.md)
 * [ErrorContext](./global-contexts/ErrorContext.md)
 * [HttpContext](./global-contexts/HttpContext.md)
+* [PathContext](./global-contexts/PathContext.md)
 * [SessionContext](./global-contexts/SessionContext.md)
 
 

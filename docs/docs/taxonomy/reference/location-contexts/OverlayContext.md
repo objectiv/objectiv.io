@@ -6,9 +6,9 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-		AbstractLocationContext --> SectionContext;
-    SectionContext --> OverlayContext;
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+		AbstractLocationContext --> SectionContext; 
+        SectionContext --> OverlayContext;
     class OverlayContext diagramActive;
 `} 
   caption="Diagram: OverlayContext inheritance" 
