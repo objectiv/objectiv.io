@@ -31,7 +31,7 @@ docker-compose -f docker-compose-dev.yaml up -d
 docker-compose -f docker-compose-dev.yaml ps
 ```
 :::caution
-There are know issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the this setup available to M1 users as well. In the meanwhile, please use a device that support X86 instructions natively. 
+There are known issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the this setup available to M1 users as well. In the meanwhile, please use a device that supports X86 instructions natively. 
 :::
 
 This will spin up two images:
