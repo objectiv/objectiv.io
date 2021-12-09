@@ -32,10 +32,12 @@ We've setup an intial showcase of the available product analytics models in our 
 * `bounce_rate` Percentage of sessions with only a single hit
 
 ## Model parameters
-Each of the available models can run on an desired set of parameters that define:
+Each of the available models can run on a desired set of common parameters that define:
 * time range
 * time aggregation
 * user app
+
+Each model has also specific parameters than can be used to customize, for example which event defines conversion.
 
 ## Stacking models
 Each model can run before or after any of the available other models. This allows you stack them for your analysis and further ML.
