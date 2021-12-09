@@ -56,15 +56,6 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
             <i className={clsx(styles.icon, styles.iconTriangle)}></i> Request feature or report issue
           </Link>
         </li>
-        <li>
-          <Link
-            to={'https://github.com/objectiv/objectiv-analytics/projects/2'}
-            target="_blank"
-            {...tagLink({ id: 'roadmap', text: 'See the Roadmap', href: 'https://github.com/objectiv/objectiv-analytics/projects/2' })}
-          >
-            <i className={clsx(styles.icon, styles.iconFlag)}></i> See the Roadmap
-          </Link>
-        </li>
       </ul>
     </div>
   );
