@@ -20,6 +20,11 @@
       label: 'Quickstart Guide',
     },
     {
+      type: 'doc',
+      id: 'open-model-hub',
+      label: 'Open Model Hub',
+    },
+    {
       type: 'category',
       label: 'The Project',
       collapsed: false,
