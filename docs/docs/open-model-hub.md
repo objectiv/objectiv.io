@@ -17,19 +17,20 @@ We've setup an intial showcase of the available product analytics models in our 
 :::
 
 ## Available models
-* `unique_users` Unique users
-* `new_users` New users, with a specific timerange to define new users on
-* `sessions` Unique sessions
-* `sessions_per_user` Average number of sessions per user, per timeframe
 * `conversion` Unique users that reach a defined conversion feature
 * `conversion_funnel` Sequence of events before a conversion
 * `retention` Percentage of users retained per cohort
 * `features_per_user` Amount of users for each product feature
-* `frequency` Share of users per amount of total sessions
+* `frequency` Users categorized by number of total sessions
 * `recency` Mean number of days before users return
 * `session_duration` Mean session duration
 * `duration_between_events` Mean session duration between specific defined events
-* `bounce_rate` Percentage of sessions with only a single hit
+* `bounce_rate` Sessions with only a single hit
+* `unique_users` Unique users
+* `new_users` New users, with a specific timerange to define new users on
+* `sessions` Unique sessions
+* `sessions_per_user` Average number of sessions per user
+* <i>... and many more to come</i>
 
 ## Model parameters
 Each of the available models can run on a desired set of common parameters that define:
@@ -41,6 +42,9 @@ Each model has also specific parameters than can be used to customize, for examp
 
 ## Stacking models
 Each model can run before or after any of the available other models. This allows you stack them for your analysis and further ML.
+
+## Export to BI
+Once you are done building a model, you can export to your favorite open-source BI tool with a single command. Right now, we support [Lightdash](https://www.lightdash.com/), with more to come. 
 
 If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
 
