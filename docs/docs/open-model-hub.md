@@ -37,6 +37,7 @@ Each of the available models can run on a desired set of common parameters that 
 * time range
 * time aggregation
 * user app
+* feature selection
 
 Each model has also specific parameters than can be used to customize, for example which event defines conversion.
 
