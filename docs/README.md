@@ -40,14 +40,6 @@ yarn build
 This command generates static content into the `build` directory and can be served using any static contents 
 hosting service.
 
-Then to build:
-
-```console
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents 
-hosting service.
 
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
