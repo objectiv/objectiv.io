@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Objectiv comes with an open model hub that contains a growing collection of open-source, free to use data models. It includes models for a wide range of typical product analytics use cases.
 
-All models are compatible with any dataset that embraces the [open analytics taxonomy](/taxonomy). The source is available for all models and you’re free to make any changes. You can use the included pandas-compatible [Bach modeling library](/modeling/) to customize them or even add in advanced ML models.
+All models are compatible with any dataset that embraces the [open analytics taxonomy](/taxonomy/introduction.md). The source is available for all models and you’re free to make any changes. You can use the included pandas-compatible [Bach modeling library](/modeling/intro.mdx) to customize them, or even add in advanced ML models.
 
 Each model can run on an [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame#bach-dataframe) and delivers output in this format as well, so it can be used for further modeling.
 
