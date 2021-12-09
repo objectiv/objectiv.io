@@ -6,7 +6,6 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus clear && docusaurus build",
-    "build:development": "cross-env OBJECTIV_ENVIRONMENT=dev docusaurus clear && docusaurus build",
     "build:staging": "cross-env OBJECTIV_ENVIRONMENT=staging docusaurus clear && docusaurus build",
     "build:production": "cross-env OBJECTIV_ENVIRONMENT=prod docusaurus clear && docusaurus build",
     "swizzle": "docusaurus swizzle",
