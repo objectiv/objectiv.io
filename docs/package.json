@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "cross-env OBJECTIV_ENVIRONMENT=dev docusaurus clear && docusaurus build",
+    "build": "docusaurus clear && docusaurus build",
     "build:staging": "cross-env OBJECTIV_ENVIRONMENT=staging docusaurus clear && docusaurus build",
     "build:production": "cross-env OBJECTIV_ENVIRONMENT=prod docusaurus clear && docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -23,6 +23,7 @@
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.1.1",
     "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
     "file-loader": "^6.2.0",
     "mermaid": "^8.13.5",
     "prism-react-renderer": "^1.2.1",
