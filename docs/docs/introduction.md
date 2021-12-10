@@ -16,7 +16,7 @@ Objectiv is a data collection & modeling library that puts the data scientist fi
 
 It proposes the adoption of [a common taxonomy for analytics](/taxonomy), enabling a shared way to collect well-structured, pre-validated data that is ready to model on without significant gruntwork. Models & datasets embracing the taxonomy are reusable and interchangeable, allowing data scientists to build on knowledge and practices of others.
 
-<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" className="img-l" />
 
 With [Objectiv Bach](https://www.objectiv.io/docs/modeling/) (our data modeling library), you can use familiar Pandas-like DataFrame operations on your full SQL dataset. It includes extensions for effective feature creation for datasets that embrace the [taxonomy](/taxonomy).
 
