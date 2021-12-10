@@ -20,6 +20,10 @@ import Mermaid from '@theme/Mermaid';
 
 ### Properties
 |           | type        | description
-| :--       | :--         | :--           
-| **id**    | string      | Path on web including URL parameters and hashes, pathname on native. Set automatically by the tracker.
-| **_type** | string      | String literal used during serialization. Should always match the Context interface name.
+| :--       | :--         | :--
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
+
+:::info setting of the id & type
+The tracker will automatically set the id and _type based on path on web (including URL parameters, hashes) and pathname on native. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
+:::

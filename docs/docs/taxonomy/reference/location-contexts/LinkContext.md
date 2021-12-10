@@ -25,6 +25,10 @@ import Mermaid from '@theme/Mermaid';
 ### Properties
 |           | type        | description
 | :--       | :--         | :--           
-| **id**    | string      | Element id, set automatically by the tracker.
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 | **href**      | string      | URL (href) the link points to.
+
+:::info setting of the id & type
+The tracker will automatically set the id and _type based on the link element. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
+:::

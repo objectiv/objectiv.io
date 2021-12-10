@@ -24,3 +24,7 @@ import Mermaid from '@theme/Mermaid';
 | **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 | **user_agent**  | string      | String describing the user-agent that emitted the event.
+
+:::info setting of properties
+The tracker will automatically set all the properties.
+:::
