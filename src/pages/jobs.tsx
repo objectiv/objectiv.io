@@ -85,7 +85,7 @@ export default function Jobs() {
                 >
                   repo
                 </Link> 
-                &nbsp;for a runway on where we are. You can also spin up a local docker demo of the full 
+                &nbsp;for a rundown on where we are. You can also spin up a local docker demo of the full 
                 pipeline in the quickstart.
               </p>
             </div>
