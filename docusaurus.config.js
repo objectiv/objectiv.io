@@ -90,6 +90,10 @@ const config = {
           target: '_self'
         },
         {
+          to: 'jobs',
+          label: 'Jobs',
+        },
+        {
           to: 'about',
           label: 'About Us',
         },
