@@ -7,7 +7,7 @@ title: AbstractLocationContext
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all [Location Contexts](/taxonomy/reference/location-contexts/overview.md). Location Contexts are used to populate the `location_stack`  properties of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
+This is the abstract parent of all [Location Contexts](/taxonomy/reference/location-contexts/overview.md). Location Contexts are used to populate the `location_stack` property of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
 
 See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for all Contexts that inherit from AbstractGlobalContext.
 

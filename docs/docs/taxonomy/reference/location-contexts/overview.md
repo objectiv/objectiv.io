@@ -8,8 +8,7 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-Used to populate the `location_stack` properties of an [event](/taxonomy/reference/events/overview.md). A Location Stack is 
-meant to describe accurately where an event originated in the UI.
+This is the abstract parent of all [Location Contexts](/taxonomy/reference/location-contexts/overview.md). Location Contexts are used to populate the `location_stack` property of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
 
 <Mermaid chart={`
 	graph LR
