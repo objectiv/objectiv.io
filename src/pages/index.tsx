@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
 import React from 'react';
+import AnnouncementBar from '../components/announcement-bar';
 import styles from './styles.module.css';
 
 export default function Home() {
@@ -17,6 +18,13 @@ export default function Home() {
         title=''
         description={tagline}
         >
+        
+        <AnnouncementBar 
+          title="We're Hiring!"
+          content="Join our mission crew as a Data Scientist."
+          ctaLink='/jobs'
+          ctaText='Check the vacancy'
+        />
 
         <header 
           className={clsx('hero hero--primary', styles.heroBanner)}
