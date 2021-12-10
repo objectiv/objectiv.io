@@ -34,7 +34,7 @@ const config = {
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenMarkdownLinks: 'log',
   trailingSlash: false,
 
   presets: [
