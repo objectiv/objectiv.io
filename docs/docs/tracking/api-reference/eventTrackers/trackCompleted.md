@@ -1,9 +1,9 @@
-# trackCompleted
+# trackSuccess
 
-Triggers a [CompletedEvent](/taxonomy/reference/events/CompletedEvent.md).
+Triggers a [SuccessEvent](/taxonomy/reference/events/SuccessEvent.md).
 
 ```typescript
-trackCompleted = (parameters: {
+trackSuccess = (parameters: {
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,18 +22,18 @@ trackCompleted = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackCompleted` is a void function.
+`trackSuccess` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackCompleted } from '@objectiv/tracker-browser';
+import { trackSuccess } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <form onSubmit={() => {
   sendFormAsync().then(
-    () => trackCompleted({ element: form })
+    () => trackSuccess({ element: form })
   );
 }}>
   ...
@@ -43,7 +43,7 @@ import { trackCompleted } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackCompleted` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackSuccess` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />

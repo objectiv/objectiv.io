@@ -29,7 +29,6 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 | LocationContext | Automatically triggers
 | :--                                                                                 | :--           
-| [ButtonContext](/taxonomy/reference/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 | [SectionContext](/taxonomy/reference/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 | [ExpandableSectionContext](/taxonomy/reference/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 | [InputContext](/taxonomy/reference/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)

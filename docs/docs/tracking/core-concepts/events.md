@@ -74,7 +74,3 @@ The Tracker uses the same Observer described above to trigger the events below b
 ### ApplicationLoaded
 An [ApplicationLoaded](/taxonomy/reference/events/ApplicationLoadedEvent.md) Event (by default enabled, configurable)
 triggers once on application load.
-
-### URLChange
-An [URLChange](/taxonomy/reference/events/URLChangeEvent.md) Event (by default enabled, configurable) triggers on SPA 
-URL changes, by keeping track of the last URL detected.

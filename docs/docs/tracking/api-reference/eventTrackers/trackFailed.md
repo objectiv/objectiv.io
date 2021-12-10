@@ -1,9 +1,9 @@
-# trackAborted
+# trackFailure
 
-Triggers an [AbortedEvent](/taxonomy/reference/events/AbortedEvent.md).
+Triggers an [FailureEvent](/taxonomy/reference/events/FailureEvent.md).
 
 ```typescript
-trackAborted = (parameters: {
+trackFailure = (parameters: {
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,12 +22,12 @@ trackAborted = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackAborted` is a void function.
+`trackFailure` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackAborted, trackCompleted } from '@objectiv/tracker-browser';
+import { trackFailure, trackCompleted } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
@@ -37,12 +37,12 @@ import { trackAborted, trackCompleted } from '@objectiv/tracker-browser';
       () => trackCompleted({ element: form }), 
       () => {
         const errorContext = makeErrorContext({ id: "form", message: "Remote rejection." });
-        trackAborted({ globalContexts: [errorContext], element: form });
+        trackFailure({ globalContexts: [errorContext], element: form });
       }
     )
     .catch(() => {
       const errorContext = makeErrorContext({ id: "form", message: "Network failure." });
-      trackAborted({ globalContexts: [errorContext], element: form });
+      trackFailure({ globalContexts: [errorContext], element: form });
     });
 }}>
   ...
@@ -50,13 +50,13 @@ import { trackAborted, trackCompleted } from '@objectiv/tracker-browser';
 ```
 
 :::tip
-`trackAborted` can be safely used while network is temporarily down. Events will be queued and sending will be retried.  
+`trackFailure` can be safely used while network is temporarily down. Events will be queued and sending will be retried.  
 :::
 
 <br />
 
 :::tip Did you know ?
-`trackAborted` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackFailure` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />

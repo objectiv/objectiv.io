@@ -17,7 +17,7 @@ Nonetheless, sometimes it may be preferable, or necessary, to trigger Events pro
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 
 #### Non-interactive
-- [trackAborted](/tracking/api-reference/eventTrackers/trackAborted.md)
+- [trackFailed](/tracking/api-reference/eventTrackers/trackFailed.md)
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackCompleted](/tracking/api-reference/eventTrackers/trackCompleted.md)
 - [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)

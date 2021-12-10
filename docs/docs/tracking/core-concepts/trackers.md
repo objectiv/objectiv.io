@@ -27,9 +27,8 @@ import { trackClick } from '@objectiv/tracker-browser';
 />
 ```
 
-By default, the Browser Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the Browser Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) event.
 
 ## React Tracker
 The React Tracker is available via npm to be directly installed into your React application. It supports all 
@@ -45,9 +44,8 @@ import { tagButton } from '@objectiv/tracker-browser';
 
 See the [How-to Guide for React](/tracking/how-to-guides/react/getting-started.md) to get started.
 
-By default, the React Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the React Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) event.
 
 ## Angular Tracker
 The React Tracker is available via npm to be directly installed into your React application. It supports all 
@@ -61,16 +59,13 @@ Example usage:
 
 See the [How-to Guide for Angular](/tracking/how-to-guides/angular/getting-started.md) to get started.
 
-By default, the Angular Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the Angular Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) event.
 
 ## Extensibility: Plugins
 The Core Tracker is extensible through plugins. Each plugin can control when it's enabled, e.g. only if a Web
 environment is available.
 
-Three plugins are supported out of the box, and automatically enabled when the environment supports them:
+This plugin is supported out of the box, and automatically enabled when the environment supports it:
 * `application-context`: adds a Global [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) 
   to each Event;
-* `web-document-context`: adds a [Location](/tracking/core-concepts/locations.md) 
-  [WebDocumentContext](/taxonomy/reference/location-contexts/WebDocumentContext.md) to each Event;

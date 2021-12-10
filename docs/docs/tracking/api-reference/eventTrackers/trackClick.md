@@ -1,9 +1,9 @@
-# trackClick
+# trackPress
 
-Triggers a [ClickEvent](/taxonomy/reference/events/ClickEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
+Triggers a [PressEvent](/taxonomy/reference/events/PressEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
 
 ```typescript
-trackClick = (parameters: {
+trackPress = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -13,7 +13,7 @@ trackClick = (parameters: {
 ```
 
 :::info
-`trackClick` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagButton](/tracking/api-reference/locationTaggers/tagButton.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md).
+`trackPress` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagButton](/tracking/api-reference/locationTaggers/tagButton.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md).
 :::
 
 ## Parameters
@@ -26,26 +26,26 @@ trackClick = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackClick` is a void function.
+`trackPress` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackClick } from '@objectiv/tracker-browser';
+import { trackPress } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <div
-  onClick={(event) => {
-    trackClick({ element: event.target })
+  onPress={(event) => {
+    trackPress({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
 <Accordion
-  onClick={(event) => {
-    trackClick({ element: event.target })
+  onPress={(event) => {
+    trackPress({ element: event.target })
   }}
 />
 ```
@@ -53,7 +53,7 @@ import { trackClick } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackClick` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackPress` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
