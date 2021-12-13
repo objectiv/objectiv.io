@@ -30,7 +30,11 @@ We've setup an intial showcase of the available product analytics models in our 
 * `new_users`: New users, with a specific timerange to define new users on.
 * `sessions`: Unique sessions.
 * `sessions_per_user`: Average number of sessions per user.
-* <i>... and many more to come</i>
+
+## Models in development
+* `user segmentation`: Grouping uses based on similar behaviour in using product features.
+* `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
+* `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
 ## Model parameters
 Each of the available models can run on a desired set of common parameters that define:
