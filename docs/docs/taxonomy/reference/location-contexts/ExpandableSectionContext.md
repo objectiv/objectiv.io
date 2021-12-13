@@ -1,6 +1,6 @@
 # ExpandableSectionContext
 
-A [SectionContext](/taxonomy/reference/location-contexts/SectionContext) that describes a section of the UI that can toggle between visible and hidden states.
+A [SectionContext](/taxonomy/reference/location-contexts/SectionContext)  that describes a section of the UI that can expand & collapse.
 
 import Mermaid from '@theme/Mermaid';
 

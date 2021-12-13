@@ -37,7 +37,6 @@ Global contexts add general information to an event.
 * [AbstractGlobalContext](./global-contexts/AbstractGlobalContext.md)
 * [ApplicationContext](./global-contexts/ApplicationContext.md)
 * [CookieIdContext](./global-contexts/CookieIdContext.md)
-* [DeviceContext](./global-contexts/DeviceContext.md)
 * [HttpContext](./global-contexts/HttpContext.md)
 * [PathContext](./global-contexts/PathContext.md)
 * [SessionContext](./global-contexts/SessionContext.md)

@@ -9,7 +9,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> ApplicationLoadedEvent;
     class ApplicationLoadedEvent diagramActive;
 `} 
   caption="Diagram: ApplicationLoadedEvent" 
@@ -21,7 +21,7 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Requires
-- [SectionContext](/taxonomy/reference/location-contexts/SectionContext.md).
+None.
 
 ### Properties
 |                | type        | description    | contains
