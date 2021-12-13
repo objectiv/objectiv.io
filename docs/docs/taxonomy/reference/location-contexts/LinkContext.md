@@ -1,6 +1,6 @@
 # LinkContext
 
-An [PressableContext](/taxonomy/reference/location-contexts/PressableContext) that contains an href.
+A [PressableContext](/taxonomy/reference/location-contexts/PressableContext) that contains an href.
 
 import Mermaid from '@theme/Mermaid';
 
