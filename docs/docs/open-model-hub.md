@@ -43,7 +43,7 @@ Each model can run before or after any of the available other models. This allow
 * `bounce_rate`: Sessions with only a single hit.
 
 ## Models in development
-* `user clusering`: Grouping uses based on similar behaviour in using product features.
+* `user clustering`: Grouping uses based on similar behaviour in using product features.
 * `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
 * `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
@@ -57,7 +57,7 @@ Each of the available models can run on a desired set of common parameters that 
 Each model also has specific parameters that can be customized, for example which event defines conversion.
 
 ## Export to BI
-Once you are done building a model, you can export to your favorite open-source BI tool with a single command. Right now, we support [Lightdash](https://www.lightdash.com/), with more to come. 
+Once you are done building a model, you can export to your favorite open-source BI tool with a single command. Right now, we support [Metabase](https://www.metabase.com/), with more to come. 
 
 If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
 
