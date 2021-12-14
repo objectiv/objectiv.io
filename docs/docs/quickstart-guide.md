@@ -21,7 +21,7 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/objectiv/objectiv-
 ```
 ```bash
 docker-compose pull
-docker-compose up
+docker-compose up -d
 ```
 
 :::caution
