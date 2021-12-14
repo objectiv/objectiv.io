@@ -20,7 +20,8 @@ Assuming you have [Docker](https://www.docker.com/) and [Curl](https://curl.se) 
 curl -o docker-compose.yaml https://raw.githubusercontent.com/objectiv/objectiv-analytics/main/docker-compose.yaml
 ```
 ```bash
-docker-compose up
+docker-compose pull
+docker-compose up -d
 ```
 
 :::caution
