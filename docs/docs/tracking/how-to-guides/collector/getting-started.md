@@ -23,7 +23,6 @@ git clone https://github.com/objectiv/objectiv-analytics.git
 ```bash
 # enter the repo and spin up the docker containers
 cd objectiv-analytics 
-docker-compose -f docker-compose-dev.yaml pull
 docker-compose -f docker-compose-dev.yaml up -d
 ```
 
