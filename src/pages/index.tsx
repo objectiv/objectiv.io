@@ -64,7 +64,7 @@ export default function Home() {
               className={clsx("container", styles.contentContainer, styles.solutions, styles.intro)}>
               <h2>Objectiv enables small data science teams <br /> 
               to make big business impact.</h2>
-              <p>Take, stack and run pre-built data models off the shelf to quickly build<br />
+              <p>Take, stack and run pre-built data models off the shelf to quickly build <br />
               highly specific model stacks for in-depth product analysis and exploration.</p>
             </div>
 
