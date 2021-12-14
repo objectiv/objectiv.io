@@ -4,11 +4,11 @@ slug: /taxonomy/global-contexts
 title: Overview
 ---
 
-# Global Contexts
+# GlobalContexts
 
 import Mermaid from '@theme/Mermaid';
 
-Global contexts add general information to an [Event](/tracking/core-concepts/events.md). 
+GlobalContexts add general information to an [Event](/tracking/core-concepts/events.md). 
 
 <Mermaid chart={`
 	graph LR
@@ -18,12 +18,15 @@ Global contexts add general information to an [Event](/tracking/core-concepts/ev
         AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
+    class ApplicationContext diagramActive;
+    class CookieIdContext diagramActive;
+    class HttpContext diagramActive;
+    class PathContext diagramActive;
+    class SessionContext diagramActive;
 `} 
-  caption="Diagram: Global Contexts" 
+  caption="Diagram: GlobalContexts" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
     { name: 'ApplicationContext', to: '/taxonomy/reference/global-contexts/ApplicationContext' },
     { name: 'CookieIdContext', to: '/taxonomy/reference/global-contexts/CookieIdContext' },
     { name: 'HttpContext', to: '/taxonomy/reference/global-contexts/HttpContext' },
@@ -31,3 +34,5 @@ Global contexts add general information to an [Event](/tracking/core-concepts/ev
     { name: 'SessionContext', to: '/taxonomy/reference/global-contexts/SessionContext' }
   ]}
 />
+
+AbstractContext & AbstractGlobalContext are the abstract parents of all GlobalContexts.

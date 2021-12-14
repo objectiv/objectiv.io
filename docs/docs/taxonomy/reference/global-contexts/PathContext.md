@@ -8,14 +8,13 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
         AbstractGlobalContext --> PathContext;
-    class HttpContext diagramActive;
+    class PathContext diagramActive;
 `} 
   caption="Diagram: PathContext inheritance" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
-  ]}
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
+]}
 />
 
 ### Properties

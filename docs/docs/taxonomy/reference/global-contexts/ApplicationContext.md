@@ -13,9 +13,8 @@ A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing in
   caption="Diagram: ApplicationContext inheritance" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' }
-  ]}
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
+]}
 />
 
 ### Properties

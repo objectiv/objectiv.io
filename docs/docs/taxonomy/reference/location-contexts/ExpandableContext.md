@@ -1,19 +1,19 @@
-# RootLocationContext
+# ExpandableContext
 
-A [LocationContext](/taxonomy/location-contexts/) that uniquely represents the top-level UI location of the user.
- 
+A [LocationContext](/taxonomy/location-contexts/)  that describes a section of the UI that can expand & collapse.
+
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> LocationContext;
-		LocationContext --> RootLocationContext;
-    class RootLocationContext diagramActive;
+		LocationContext --> ExpandableContext;
+    class ExpandableContext diagramActive;
 `} 
-  caption="Diagram: RootLocationContext inheritance" 
+  caption="Diagram: ExpandableContext inheritance" 
   baseColor="blue" 
   links={[
-     { name: 'LocationContext', to: '/taxonomy/location-contexts/' }
+    { name: 'LocationContext', to: '/taxonomy/location-contexts/' }
   ]}
 />
 
@@ -24,5 +24,5 @@ import Mermaid from '@theme/Mermaid';
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 
 :::info setting of the id & type
-The tracker will automatically set the id and _type based on the top-level UI location of the user. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
+The tracker will automatically set the id and _type based on the expandable element. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
 :::

@@ -5,31 +5,7 @@ title: Overview
 ---
 
 # Taxonomy Reference
-
 High level overview of all the Events & Contexts available in the open taxonomy.
-
-## Abstract Contexts
-AbstractContexts define either properties required by Collectors or internal ones, ensuring hierarchical 
-uniqueness.
-
-* [AbstractContext](./abstract-contexts/AbstractContext.md)
-* [AbstractGlobalContext](./abstract-contexts/AbstractGlobalContext.md)
-* [AbstractLocationContext](./abstract-contexts/AbstractLocationContext.md)
-
-
-## Location Contexts
-Used to populate the `location_stack` properties of an event. A Location Stack is meant to describe accurately where an event originated in the UI.
-
-* [AbstractLocationContext](./location-contexts/AbstractLocationContext.md)
-* [ExpandableSectionContext](./location-contexts/ExpandableSectionContext.md)
-* [InputContext](./location-contexts/InputContext.md)
-* [LinkContext](./location-contexts/LinkContext.md)
-* [MediaPlayerContext](./location-contexts/MediaPlayerContext.md)
-* [NavigationContext](./location-contexts/NavigationContext.md)
-* [OverlayContext](./location-contexts/OverlayContext.md)
-* [PressableContext](./location-contexts/PressableContext.md)
-* [SectionContext](./location-contexts/SectionContext.md)
-
 
 ## Global Contexts
 Global contexts add general information to an event.
@@ -41,6 +17,17 @@ Global contexts add general information to an event.
 * [PathContext](./global-contexts/PathContext.md)
 * [SessionContext](./global-contexts/SessionContext.md)
 
+## Location Contexts
+LocationContexts are meant to describe where an event originated from in the visual UI.
+
+* [LocationContext](./location-contexts/)
+* [ExpandableContext](./location-contexts/ExpandableContext.md)
+* [InputContext](./location-contexts/InputContext.md)
+* [LinkContext](./location-contexts/LinkContext.md)
+* [MediaPlayerContext](./location-contexts/MediaPlayerContext.md)
+* [NavigationContext](./location-contexts/NavigationContext.md)
+* [OverlayContext](./location-contexts/OverlayContext.md)
+* [PressableContext](./location-contexts/PressableContext.md)
 
 ## Events
 Used to describe interactive and non-interactive events.

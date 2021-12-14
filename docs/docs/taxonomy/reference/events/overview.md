@@ -10,7 +10,7 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Mermaid from '@theme/Mermaid';
 
-Used to describe interactive and non-interactive events.
+Describe interactive and non-interactive events.
 
 <Mermaid chart={`
 	graph LR

@@ -13,9 +13,8 @@ import Mermaid from '@theme/Mermaid';
   caption="Diagram: SessionContext inheritance" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
-  ]}
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
+]}
 />
 
 ### Properties
