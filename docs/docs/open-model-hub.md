@@ -13,7 +13,7 @@ All models are compatible with datasets that have been validated against the [op
 Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
 
 :::demo notebook
-We've setup an intial showcase of the available product analytics models in our [open model hub demo notebook](https://notebook.objectiv.io/). 
+We've set up an initial showcase of the available product analytics models in our [open model hub demo notebook](https://notebook.objectiv.io/). 
 :::
 
 ## Available models
