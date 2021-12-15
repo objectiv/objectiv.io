@@ -4,11 +4,11 @@ slug: /taxonomy/location-contexts
 title: Overview
 ---
 
-# LocationContexts
+# Location Contexts
 
 import Mermaid from '@theme/Mermaid';
 
-LocationContexts are meant to describe where an event originated from in the visual UI.
+Location Contexts are meant to describe where an event originated from in the visual UI.
 
 <Mermaid chart={`
 	graph LR
@@ -30,7 +30,7 @@ LocationContexts are meant to describe where an event originated from in the vis
     class LinkContext diagramActive;
     class RootLocationContext diagramActive;
 `} 
-  caption="Diagram: LocationContexts" 
+  caption="Diagram: Location Contexts" 
   baseColor="blue" 
   links={[
     { name: 'ExpandableContext', to: '/taxonomy/reference/location-contexts/ExpandableContext' },
@@ -43,5 +43,5 @@ LocationContexts are meant to describe where an event originated from in the vis
     { name: 'PressableContext', to: '/taxonomy/reference/location-contexts/PressableContext' },
   ]}
 />
-AbstractContext is the abstract parents of all LocationContexts.
+AbstractContext is the abstract parents of all Location Contexts.
 

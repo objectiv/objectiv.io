@@ -22,25 +22,38 @@ Describe interactive and non-interactive events.
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
         NonInteractiveEvent --> FailureEvent["FailureEvent<br><span class='properties'>message: string</span>"]; 
-        NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-        NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> HiddenEvent["HiddenEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
         NonInteractiveEvent --> SuccessEvent["SuccessEvent<br><span class='properties'>message: string</span>"];
         NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
         VideoEvent --> VideoLoadEvent;
         VideoEvent --> VideoPauseEvent;
-        VideoEvent --> VideoStopEvent;
         VideoEvent --> VideoStartEvent;
+        VideoEvent --> VideoStopEvent;
+    class InteractiveEvent diagramActive;
+    class PressEvent diagramActive;
+    class InputChangeEvent diagramActive;
+    class NonInteractiveEvent diagramActive;
+    class ApplicationLoadedEvent diagramActive;
+    class FailureEvent diagramActive;
+    class VisibleEvent diagramActive;
+    class HiddenEvent diagramActive;
+    class SuccessEvent diagramActive;
+    class VideoEvent diagramActive;
+    class VideoLoadEvent diagramActive;
+    class VideoPauseEvent diagramActive;
+    class VideoStartEvent diagramActive;
+    class VideoStopEvent diagramActive;
 `} 
   caption="Diagram: Events" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
     { name: 'FailureEvent', to: '/taxonomy/reference/events/FailureEvent' },
     { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
     { name: 'SuccessEvent', to: '/taxonomy/reference/events/SuccessEvent' },
-    { name: 'SectionVisibleEvent', to: '/taxonomy/reference/events/SectionVisibleEvent' },
-    { name: 'SectionHiddenEvent', to: '/taxonomy/reference/events/SectionHiddenEvent' },
+    { name: 'VisibleEvent', to: '/taxonomy/reference/events/VisibleEvent' },
+    { name: 'HiddenEvent', to: '/taxonomy/reference/events/HiddenEvent' },
     { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
     { name: 'VideoLoadEvent', to: '/taxonomy/reference/events/VideoLoadEvent' },
     { name: 'VideoPauseEvent', to: '/taxonomy/reference/events/VideoPauseEvent' },

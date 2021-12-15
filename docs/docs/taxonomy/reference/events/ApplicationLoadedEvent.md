@@ -15,7 +15,6 @@ import Mermaid from '@theme/Mermaid';
   caption="Diagram: ApplicationLoadedEvent" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' }
   ]}
 />

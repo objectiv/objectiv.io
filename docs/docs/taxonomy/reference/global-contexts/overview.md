@@ -4,11 +4,11 @@ slug: /taxonomy/global-contexts
 title: Overview
 ---
 
-# GlobalContexts
+# Global Contexts
 
 import Mermaid from '@theme/Mermaid';
 
-GlobalContexts add general information to an [Event](/tracking/core-concepts/events.md). 
+Global Contexts add general information to an [Event](/tracking/core-concepts/events.md). 
 
 <Mermaid chart={`
 	graph LR
@@ -24,7 +24,7 @@ GlobalContexts add general information to an [Event](/tracking/core-concepts/eve
     class PathContext diagramActive;
     class SessionContext diagramActive;
 `} 
-  caption="Diagram: GlobalContexts" 
+  caption="Diagram: Global Contexts" 
   baseColor="blue" 
   links={[
     { name: 'ApplicationContext', to: '/taxonomy/reference/global-contexts/ApplicationContext' },
@@ -35,4 +35,4 @@ GlobalContexts add general information to an [Event](/tracking/core-concepts/eve
   ]}
 />
 
-AbstractContext & AbstractGlobalContext are the abstract parents of all GlobalContexts.
+AbstractContext & AbstractGlobalContext are the abstract parents of all Global Contexts.

@@ -15,7 +15,6 @@ import Mermaid from '@theme/Mermaid';
   caption="Diagram: VideoLoadEvent" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
     { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' }
   ]}

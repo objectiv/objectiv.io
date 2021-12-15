@@ -6,9 +6,9 @@ title: Principles
 
 # Taxonomy Principles
 
-To help ensure that the open taxonomy will enable data scientists to collect better data and model more effectively, we’ve created a set of core principles. Any new development or update will be checked against these principles.
+To help ensure that the open analytics taxonomy will enable data scientists to collect better data and model more effectively, we’ve created a set of core principles. Any new development or update will be checked against these principles.
 
-#### The open taxonomy should:
+#### The open analytics taxonomy should:
 
 1. Give data scientists the best possible data to work with for modeling.
 2. Be supported by tooling to implement it, with as little manual work as possible. 

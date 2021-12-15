@@ -10,30 +10,29 @@ import Mermaid from '@theme/Mermaid';
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> ApplicationLoadedEvent;
         NonInteractiveEvent --> FailureEvent["FailureEvent<br><span class='properties'>message: string</span>"];  
-        NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-        NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
+        NonInteractiveEvent --> HiddenEvent["HiddenEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
         NonInteractiveEvent --> SuccessEvent["SuccessEvent<br><span class='properties'>message: string</span>"];
         NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
         VideoEvent --> VideoLoadEvent;
         VideoEvent --> VideoPauseEvent;
-        VideoEvent --> VideoStopEvent;
         VideoEvent --> VideoStartEvent;
+        VideoEvent --> VideoStopEvent;
     class NonInteractiveEvent diagramActive;
 `} 
   caption="Diagram: NonInteractiveEvent" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
     { name: 'SuccessEvent', to: '/taxonomy/reference/events/SuccessEvent' },
     { name: 'FailureEvent', to: '/taxonomy/reference/events/FailureEvent' },
     { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
-    { name: 'SectionVisibleEvent', to: '/taxonomy/reference/events/SectionVisibleEvent' },
-    { name: 'SectionHiddenEvent', to: '/taxonomy/reference/events/SectionHiddenEvent' },
+    { name: 'VisibleEvent', to: '/taxonomy/reference/events/VisibleEvent' },
+    { name: 'HiddenEvent', to: '/taxonomy/reference/events/HiddenEvent' },
     { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
     { name: 'VideoLoadEvent', to: '/taxonomy/reference/events/VideoLoadEvent' },
     { name: 'VideoPauseEvent', to: '/taxonomy/reference/events/VideoPauseEvent' },
-    { name: 'VideoStopEvent', to: '/taxonomy/reference/events/VideoStopEvent' },
-    { name: 'VideoStartEvent', to: '/taxonomy/reference/events/VideoStartEvent' }
+    { name: 'VideoStartEvent', to: '/taxonomy/reference/events/VideoStartEvent' },
+    { name: 'VideoStopEvent', to: '/taxonomy/reference/events/VideoStopEvent' }
   ]}
 />
 
