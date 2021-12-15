@@ -6,11 +6,11 @@ title: Open Model Hub
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Objectiv comes with an open model hub that contains a growing collection of open-source, free to use data models. It includes models for a wide range of typical product analytics use cases.
+Objectiv comes with an open model hub that contains a growing collection of open-source, free to use data models that you can take, stack and run to quickly build highly specific model stacks for product analysis and exploration. It includes models for a wide range of typical product analytics use cases.
 
-All models are compatible with any dataset that embraces the [open analytics taxonomy](/taxonomy/introduction.md). The source is available for all models and you’re free to make any changes. You can use the included pandas-compatible [Bach modeling library](/modeling/intro.mdx) to customize them, or even add in advanced ML models.
+All models are compatible with datasets that have been validated against the [open analytics taxonomy](/taxonomy/introduction.md). The source is available for all models and you’re free to make any changes. You can use the included pandas-compatible [Bach modeling library](/modeling/intro.mdx) to customize them, or even add in advanced ML models.
 
-Each model can run on an [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) and delivers output in this format as well, so it can be used for further modeling.
+Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
 
 :::demo notebook
 We've setup an intial showcase of the available product analytics models in our [Open Model Hub demo notebook](https://notebook.objectiv.io/). 
