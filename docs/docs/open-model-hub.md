@@ -45,7 +45,7 @@ Filters can be applied to each of the models. Initially, there is a first filter
 * `is_first_session`: The first-ever session of a user.
 
 ## Models in development
-* `user clusering`: Grouping uses based on similar behaviour in using product features.
+* `user clustering`: Grouping uses based on similar behavior in using product features.
 * `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
 * `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
