@@ -12,18 +12,25 @@ All models are compatible with datasets that have been validated against the [op
 
 Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
 
-## Available models
-Each model can run before, after or combined with any of the available other models. This allows you stack them for your analysis and further ML. 
+## Models
+Each model can run before, after or combined with any of the available other models. This allows you stack them for your analysis and further ML.
+
+:::info first models in hub
+We just released a first version of the open model hub to show the high-level working. Each of the models below is now in development and will be added during the next weeks.
+:::
 
 ### Users
 * `unique_users`: Unique users.
+* `user clustering`: Grouping uses based on similar behavior in using product features.
 
 ### Product feature usage
 * `features_per_user`: Amount of users for each product feature.
+* `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
 
 ### Conversion
 * `conversion`: Unique users that reach a defined conversion feature.
 * `conversion_funnel`: Sequence of events before a conversion.
+* `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
 ### Retention
 * `retention`: Percentage of users retained per cohort.
@@ -39,11 +46,6 @@ Each model can run before, after or combined with any of the available other mod
 ## Available filters
 Filters can be applied to each of the models. Initially, there is a first filter to quickly zoom into new users or sessions.
 * `is_first_session`: The first-ever session of a user.
-
-## Models in development
-* `user clustering`: Grouping uses based on similar behavior in using product features.
-* `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
-* `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
 ## Model parameters
 Each of the available models can run on a desired set of common parameters that define:
