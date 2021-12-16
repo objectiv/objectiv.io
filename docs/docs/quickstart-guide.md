@@ -27,7 +27,7 @@ This will spin up the following containers:
 * `objectiv_website` A local version of the objectiv.io website, instrumented with the **Objectiv Tracker** 
 * `objectiv_collector` An **Objectiv Collector** to validate & store event data from the tracker
 * `objectiv_postgres` A PostgreSQL database, pre-filled with anonymized demo user data
-* `objectiv_notebook` A demo Notebook with the **Objectiv Bach** modeling library to explore and model the demo data  
+* `objectiv_notebook` A Jupyter Notebook environment with two **demo notebooks** to explore and model the demo data  
 * `objectiv_metabase` A **Metabase** (OSS BI tool) environment to share and visualize your findings   
 
 <img src={useBaseUrl('/img/objectiv-pipeline-bi.svg')} alt="Objectiv Pipeline" />
