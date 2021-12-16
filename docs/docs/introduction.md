@@ -24,7 +24,7 @@ Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 ## Getting Started
 
-Follow the easy steps in our [Quickstart Guide](/quickstart-guide) to locally run the full Objectiv pipeline in a docker container.
+Follow the easy steps in our [Quickstart Guide](/quickstart-guide) to locally run the full Objectiv pipeline dockerized.
 
 ## Running Objectiv in production
 A detailed How-to guide is coming soon. 
