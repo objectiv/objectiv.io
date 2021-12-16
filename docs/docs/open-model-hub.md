@@ -54,8 +54,8 @@ Each of the available models can run on a desired set of common parameters that 
 
 Each model also has specific parameters that can be customized, for example which event defines conversion.
 
-## Export to BI
-Once you are done building a model, you can export to your favorite open-source BI tool with a single command. Right now, we support [Metabase](https://www.metabase.com/), with more to come. 
+## Output to BI
+Once you are done building a model, you can output it to an open-source BI tool with a single command. Right now, we support [Metabase](https://www.metabase.com/), with more to come. 
 
 ## Demo
 :::info see the open model hub in action
