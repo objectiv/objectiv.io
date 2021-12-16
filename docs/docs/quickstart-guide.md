@@ -19,7 +19,7 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/objectiv/objectiv-
 docker-compose pull
 docker-compose up
 ```
-**Note:** There are known issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the demo available to M1 users as well. In the meanwhile, please use a device that supports X86 instructions natively. 
+*Note: there are known issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the demo available to M1 users as well. In the meanwhile, please use a device that supports X86 instructions natively.*
 
 
 This will spin up the following containers:
@@ -62,14 +62,14 @@ http://localhost:3000/
 
 ### Next Steps
 
-We hope you enjoyed playing around with Objectiv. If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/how-to-guides/collector/getting-started) to get started.
+We hope you enjoyed playing around with Objectiv. You can use `docker-compose down` to stop and remove the running containers properly.
+
+If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/how-to-guides/collector/getting-started) to get started.
 
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 
 * [Tracking with Objectiv](/tracking)
 * [Modeling with Objectiv Bach](/modeling)
-* [The open taxonomy of analytics](/taxonomy)
-
-You can use `docker-compose down` to stop and remove the running containers properly.
+* [The open analytics taxonomy](/taxonomy)
 
 If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
