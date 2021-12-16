@@ -42,7 +42,7 @@ This demo includes two notebooks to demonstrate what Objectiv can do:
 To explore the notebooks, open the following URL in your browser:
 
 ```bash
-http://localhost:8888/lab/tree/product_analytics.ipynb?token=objectiv
+http://localhost:8888/lab/tree/open_model_hub_demo.ipynb?token=objectiv
 ```
 For detailed modeling instructions, check out our [modeling docs](/modeling).
 
