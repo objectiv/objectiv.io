@@ -27,7 +27,7 @@ This will spin up the following containers:
 * `objectiv_website` A local version of the objectiv.io website, instrumented with the **Objectiv Tracker** 
 * `objectiv_collector` An **Objectiv Collector** to validate & store event data from the tracker
 * `objectiv_postgres` A PostgreSQL database, pre-filled with anonymized demo user data
-* `objectiv_notebook` A Jupyter Notebook environment with two **demo notebooks** to explore and model the demo data  
+* `objectiv_notebook` A Jupyter Notebook environment to demonstrate **Objectiv Bach** and the **open model hub**
 * `objectiv_metabase` A **Metabase** (OSS BI tool) environment to share and visualize your findings   
 
 <img src={useBaseUrl('/img/objectiv-pipeline-bi.svg')} alt="Objectiv Pipeline" />
@@ -52,7 +52,7 @@ To generate event data yourself, simply go to the local version of the objectiv 
 ```bash
 http://localhost:8080/
 ```
-When you trigger an event, you can see a request show up in your docker logs. If you used a terminal to spin up the containers, it shows there as well. 
+When you trigger an event, you can see a request show up in your docker logs. If you used a terminal to spin up the containers, it shows there as well. Both notebooks will show the new events if you rerun any of the cells.
 
 ### Accessing Metabase
 To view the data that has been put out to Metabase, open the following URL in your browser: 
