@@ -61,5 +61,3 @@ Once you are done building a model, you can export to your favorite open-source 
 :::info see the open model hub in action
 You can easily run the full Objectiv pipeline in a docker demo, see the [quickstart guide](./quickstart-guide/).
 :::
-
-If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
