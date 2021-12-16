@@ -28,20 +28,15 @@ export default function Home() {
               src={useBaseUrl("img/header-image.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              We're on a mission to create<br /> the ultimate workflow<br /> for data scientists
+              An open-source product <br />analytics pipeline for <br />reusable modeling
             </h1>
-            <div className={clsx(styles.heroSubTitleWrapper)}>
-              <p className={clsx(styles.heroSubTitle)}>
-                Objectiv is a data collection &amp; modeling library that puts the data scientist first. <br />
-              </p>
-            </div>
             <div className={clsx(styles.heroRepoButton)}>
               <Link 
                 to="https://github.com/objectiv/objectiv-analytics" 
                 {...tagLink({
                     id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
-                    text: 'Find us on GitHub',
+                    text: 'Objectiv on GitHub',
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -52,11 +47,8 @@ export default function Home() {
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-                Find us on GitHub
+                Objectiv on GitHub
               </Link> 
-            </div>
-            <div className={clsx(styles.heroOutro)}>
-              The project is open-source and we’re building it in public.
             </div>
           </div>
         </header>
@@ -65,296 +57,239 @@ export default function Home() {
           {...tagElement({id: 'main'})}
           className={clsx('body-large')}>
 
-          <div className={clsx(styles.pageSection,styles.pageSectionBlue)}>
+          <div className={clsx(styles.pageSectionBlue)}>
+
             <div 
               {...tagElement({id: 'intro'})}
-              className={clsx("container", styles.intro)}>
-              <h2 className={clsx(styles.introHeading)}>
-                Objectiv proposes the adoption of an open, common taxonomy for analytics <br />
-                to unify the way data scientists collect &amp; model data.
-              </h2>
-              <img 
-                className={clsx(styles.introDiagram)}
-                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics.svg")}
-                alt="The open taxonomy for analytics" />
-              {/* Show below diagram with larger font instead on smaller devices */}
-              <img 
-                className={clsx(styles.introDiagramLargeFont)}
-                src={useBaseUrl("img/objectiv-open-taxonomy-for-analytics-large-font.svg")}
-                alt="The open taxonomy for analytics" />
-              <p>
-                It enables a shared way to collect <strong>well-structured</strong>,&nbsp;
-                <strong>pre-validated</strong> data that is ready to model on without significant gruntwork. 
-                Models &amp; datasets become <strong>reusable</strong> and <strong>interchangeable</strong>, 
-                enabling data scientists to build on knowledge &amp; practices of others.
-              </p>
-              <p className={clsx(styles.introTeaser)}>
-                <img
-                  className={clsx(styles.introCaretDown)}
-                  src={useBaseUrl("img/caret-down.svg")}
-                  alt="Down" />
-                How it works
-                <img
-                  className={clsx(styles.introCaretDown)}
-                  src={useBaseUrl("img/caret-down.svg")}
-                  alt="Down" />
-              </p>
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.intro)}>
+              <h2>Objectiv enables small data science teams <br /> 
+              to make big business impact.</h2>
+              <p>Take, stack and run pre-built data models off the shelf to quickly build <br />
+              highly specific model stacks for in-depth product analysis and exploration.</p>
             </div>
+
+            <div 
+              {...tagElement({id: 'collect'})}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.collect)}>
+              <div className={clsx(styles.solutionRowRight)}>
+                <div>
+                  <img
+                    src={useBaseUrl("img/solution-collect.svg")}
+                    alt="Collect clean, consistent, and well-structured data" />
+                </div>
+                <div>
+                  <div className={clsx(styles.solutionTitle)}>
+                    <div>1.</div>
+                    <div>Collect consistent, model-ready data</div>
+                  </div>
+                  <p>While most trackers simply track everything by inserting a simple script, the data they 
+                    collect typically requires significant gruntwork before it can be used for modeling.</p>
+                  <p>Objectiv's tracker <strong>validates</strong> all collected data against an <strong>open 
+                    analytics taxonomy</strong>. This ensures it is clean, consistent and structured with 
+                    effective modeling in mind.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              {...tagElement({id: 'open-model-hub'})}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.openModelHub)}>
+              <div className={clsx(styles.solutionRowLeft)}>
+                <div>
+                  <div className={clsx(styles.solutionTitle)}>
+                    <div>2.</div>
+                    <div>Take pre-built data models off the shelf</div>
+                  </div>
+                  <p>Datasets that have been validated against the open analytics taxonomy can be used by any 
+                    model from an <strong>open model hub</strong> without transformation.</p>
+                  <p>The open model hub includes a growing collection of pre-built data models that cover a 
+                    wide range of common product analytics use cases.</p>
+                </div>
+                <div>
+                  <img
+                    src={useBaseUrl("img/solution-open-model-hub.svg")}
+                    alt="Open Model Hub" />
+                </div>
+              </div>
+            </div>
+
+            <div 
+              {...tagElement({id: 'modeling'})}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.modeling)}>
+              <div className={clsx(styles.solutionRowRight)}>
+                <div>
+                  <img
+                    src={useBaseUrl("img/solution-modeling-stack-customize.svg")}
+                    alt="Stack, run, and customize models" />
+                </div>
+                <div>
+                  <div className={clsx(styles.solutionTitle)}>
+                    <div>3.</div>
+                    <div>Stack and run them</div>
+                  </div>
+                  <p>Models from the open model hub are <strong>stackable</strong>. You can combine a number 
+                  of base models to quickly answer common BI questions, or to build highly specific model 
+                  stacks for in-depth product analysis and exploration.</p>
+
+                  <div className={clsx(styles.solutionTitle)}>
+                    <div>4.</div>
+                    <div>Customize them to make them your own</div>
+                  </div>
+                  <p>The source is available for all models and you're free to make any changes. You can use 
+                    the included pandas-compatible <strong>Objectiv Bach</strong> modeling library to 
+                    customize them or even add in advanced ML models.</p>
+                </div>
+              </div>
+            </div>
+
+            <div 
+              {...tagElement({id: 'visualize'})}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.visualize)}>
+              <div className={clsx(styles.solutionRowLeft)}>
+                <div>
+                  <div className={clsx(styles.solutionTitle)}>
+                    <div>5.</div>
+                    <div>Output to BI tools with a single command</div>
+                  </div>
+                  <p>Happy with your findings? You can output your data to open-source BI tools like <strong>Metabase</strong> with a single command.</p>
+                </div>
+                <div>
+                  <img
+                    src={useBaseUrl("img/solution-visualization.svg")}
+                    alt="Visualization" />
+                </div>
+              </div>
+            </div>
+
+            <div
+              {...tagElement({id: 'check-out-models'})}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.checkOutModels)}>
+              <h2>Test drive Objectiv locally</h2>
+              <p>Follow the easy steps in our Quickstart Guide to locally run the full Objectiv pipeline dockerized.</p>
+                <Link 
+                  to={useBaseUrl(url + "/docs/quickstart-guide/")}
+                  {...tagLink({
+                      id: 'cta-docs-quickstart-guide', 
+                      href: '/docs/quickstart-guide/',
+                      text: 'Objectiv Quickstart Guide',
+                      options: {
+                        trackClicks: {
+                          waitUntilTracked: true
+                        }
+                      }
+                    }
+                  )}
+                  target="_self" 
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Objectiv Quickstart Guide
+              </Link>
+            </div>
+
+
           </div>
 
           <div className={clsx(styles.pageSection)}>
             <div 
-              {...tagElement({id: 'taxonomy'})}
-              className={clsx("container", styles.contentContainer, styles.solutions, styles.mapToTaxonomy)}>
-              <div className={clsx(styles.solutionTitle)}>
-                <div>1.</div>
-                <div>Map your application to the open taxonomy</div>
+              {...tagElement({id: 'whats-in-the-box'})}
+              className={clsx("container", styles.contentContainer, styles.whatsInTheBox)}>
+                
+              <div className={clsx(styles.inTheBoxHeader)}>
+                <h2>What's in the box?</h2>
+                <p>Objectiv has everything you need to set up an open-source product analytics pipeline for 
+                  reusable modeling.</p>
               </div>
-              <div className={clsx(styles.solutionRowLeft)}>
-                <div>
-                  <p>
-                    <strong><em>The open taxonomy of analytics</em></strong> is our proposal for a common 
-                    way to collect, structure and validate data.
-                  </p>
-                  <p>It defines <strong>classes for each common event type</strong> and the contexts in which 
-                    they can happen. It describes their properties, requirements and their relationships with 
-                    other classes.</p>
-                </div>
-                <div>
+              
+              <div className={clsx(styles.inTheBoxComponents)}>
+                <div className={clsx(styles.inTheBoxComponent)}>
                   <img
-                    src={useBaseUrl("img/solution-taxonomy-hierarchy.svg")}
-                    alt="A class for each event type" />
+                    src={useBaseUrl("img/icons/icon-jupyter-notebooks.svg")}
+                    alt="Jupyter Notebook" />
+                  <div>
+                    <strong>All models from the open model hub</strong><br />
+                    A collection of ready-to-use, pre-built models that cover a wide range of common 
+                    product analytics use cases.
+                  </div>
                 </div>
-              </div>
-              <div className={clsx(styles.solutionRowRight)}>
-                <div>
+                <div className={clsx(styles.inTheBoxComponent)}>
                   <img
-                      src={useBaseUrl("img/solution-taxonomy-mapping.svg")}
-                      alt="Map your application to the open taxonomy" />
+                    src={useBaseUrl("img/icons/icon-taxonomy-sitemap.svg")}
+                    alt="Taxonomy" />
+                  <div>
+                    <strong>The open analytics taxonomy</strong><br />
+                    Our proposal for a common set of strict rules on how to collect, structure and validate 
+                    data.
+                  </div>
                 </div>
-                <div>
-                  <p>With Objectiv, you <strong>map your application to this taxonomy</strong>, creating a 
-                    contextual layer that's used for data collection &amp; validation.
-                  </p>
-                  <p>In most cases you can <strong>skip the discussion on what to track</strong>, because the 
-                    taxonomy is designed to ensure the collected data covers a wide range of common analytics 
-                    use cases. 
-                  </p>
-                  <div className={clsx(styles.solutionRowCta)}>
-                    <Link 
-                      to={useBaseUrl(url + "/docs/taxonomy/")}
-                      {...tagLink({
-                          id: 'cta-docs-taxonomy', 
-                          href: '/docs/taxonomy/',
-                          text: 'Docs - Taxonomy',
-                          options: {
-                            trackClicks: {
-                              waitUntilTracked: true
-                            }
-                          }
-                        }
-                      )}
-                      target="_self" 
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                      Docs - Taxonomy
-                    </Link>
+                <div className={clsx(styles.inTheBoxComponent)}>
+                  <img
+                    src={useBaseUrl("img/icons/icon-tracker.svg")}
+                    alt="Objectiv Tracker" />
+                  <div>
+                    <strong>The Objectiv Tracker</strong><br />
+                    A fully debuggable analytics tracker for various devices/frameworks. Embraces the open 
+                    analytics taxonomy. 
+                  </div>
+                </div>
+                <div className={clsx(styles.inTheBoxComponent)}>
+                  <img
+                    src={useBaseUrl("img/icons/icon-collector.svg")}
+                    alt="Objectiv Collector" />
+                  <div>
+                    <strong>The Objectiv Collector</strong><br />
+                    Provides an API and storage connectors for receiving, validating, and storing Events.
+                  </div>
+                </div>
+                <div className={clsx(styles.inTheBoxComponent)}>
+                  <img
+                    src={useBaseUrl("img/icons/icon-bach-sunglasses.svg")}
+                    alt="Bach" />
+                  <div>
+                    <strong>Objectiv Bach modeling library</strong><br />
+                    Use pandas-like dataframe operations on your full SQL dataset &amp; model on all 
+                    dimensions of the open taxonomy.
+                  </div>
+                </div>
+                <div className={clsx(styles.inTheBoxComponent)}>
+                  <img
+                    src={useBaseUrl("img/icons/icon-data-store.svg")}
+                    alt="Data Store" />
+                  <div>
+                    <strong>A PostgreSQL data store</strong><br />
+                    Used by the collector to store the validated event data.
+                    <img 
+                      src={useBaseUrl("img/solution-data-store-coming-soon.svg")}
+                      alt="Coming soon"
+                      className={clsx(styles.dataStoreComingSoon)} />
                   </div>
                 </div>
               </div>
-              <p className={clsx(styles.footnote)}>
-                The initial version of the taxonomy is built for product analytics. We have plans to support other fields as well.
-              </p>
-            </div>
-          </div>
 
-          <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-            <div 
-              {...tagElement({id: 'tracking'})}
-              className={clsx("container", styles.contentContainer, styles.solutions)}>
-              <div className={clsx(styles.solutionTitle)}>
-                <div>2.</div>
-                <div>Debug your instrumentation on the fly</div>
-              </div>
-
-              <div className={clsx(styles.solutionRowLeft)}>
+              <div className={clsx(styles.inTheBoxFooter)}>
+                <p>Open-Source. Future-proof. Free to use. No vendor lock-in. First party data.</p>
                 <div>
-                  <p>Objectiv comes with a set of tools that help you set up error-free tracking 
-                    instrumentation.</p>
-                  <p>For instance, you can <strong>validate your instrumentation against the 
-                    taxonomy</strong> and get live feedback in your IDE and console while developing, enabling 
-                    you to catch errors before data starts flowing in.</p>
-                  <div className={clsx(styles.solutionRowCta)}>
-                    <Link 
-                      to={useBaseUrl(url + "/docs/tracking/")}
-                      {...tagLink({
-                          id: 'cta-docs-tracking', 
-                          href: '/docs/tracking/', 
-                          text: 'Docs - Tracking',
-                          options: {
-                            trackClicks: {
-                              waitUntilTracked: true
-                            }
+                  <Link 
+                    to="https://github.com/objectiv/objectiv-analytics" 
+                    {...tagLink({
+                        id: 'cta-repo-button', 
+                        href: 'https://github.com/objectiv/objectiv-analytics',
+                        text: 'Get Objectiv on GitHub',
+                        options: {
+                          trackClicks: {
+                            waitUntilTracked: true
                           }
                         }
-                      )}
-                      target="_self" 
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                      Docs - Tracking
-                    </Link>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src={useBaseUrl("img/solution-tracking.svg")}
-                    alt="Live debugging feedback on your instrumentation" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={clsx(styles.pageSection, styles.pageSection)}>
-            <div 
-              {...tagElement({id: 'location-stack'})}
-              className={clsx("container", styles.contentContainer, styles.solutions)}>
-              <div className={clsx(styles.solutionTitle)}>
-                <div>3.</div>
-                <div>Collect rich &amp; descriptive data that’s ready for modeling</div>
-              </div>
-
-              <div className={clsx(styles.solutionRowRight)}>
-                <div>
-                  <img
-                    src={useBaseUrl("img/solution-location-stack.svg")}
-                    alt="Validated, rich, descriptive + well-structured" />
-                </div>
-                <div>
-                  <p>Objectiv’s tracker collects data that is unusually rich. Events can carry multiple 
-                    contexts, including the <strong>exact location in the UI</strong> from where they were 
-                    triggered.</p>
-                  <p>All data is <strong>well-structured, self-descriptive</strong> and has 
-                    been <strong>validated</strong> at the first step of the pipeline, so you can use it for 
-                    modeling with minimal additional gruntwork.</p>
-                  <div className={clsx(styles.solutionRowCta)}>
-                    <Link 
-                      to={useBaseUrl(url + "/docs/tracking/core-concepts/locations")} 
-                      {...tagLink({
-                          id: 'cta-docs-location-stack', 
-                          href: '/docs/taxonomy', 
-                          text: 'Docs - Location Stack',
-                          options: {
-                            trackClicks: {
-                              waitUntilTracked: true
-                            }
-                          }
-                        })
                       }
-                      target="_self" 
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                      Docs - Location Stack
-                    </Link>
-                  </div>
+                    )}
+                    target="_self" 
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
+                    Get Objectiv on GitHub
+                  </Link>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-            <div 
-              {...tagElement({id: 'modeling'})}
-              className={clsx("container", styles.contentContainer, styles.solutions)}>
-              <div className={clsx(styles.solutionTitle)}>
-                <div>4.</div>
-                <div>Use Pandas-like operations on your full data set</div>
-              </div>
-
-              <div className={clsx(styles.solutionRowLeft)}>
-                <div>
-                  <p>Objectiv features an SQL abstraction layer for modeling that enables you to 
-                    use <strong>familiar dataframe operations</strong> on your <strong>full data set</strong>, 
-                    straight from your notebook.</p>
-                  <p>You can <strong>output your models to SQL queries with a single command</strong>, 
-                    effectively closing the gap between experimentation and production.</p>
-                  <div className={clsx(styles.solutionRowCta)}>
-                    <Link 
-                      to="https://notebook.objectiv.io/lab?path=product_analytics.ipynb" 
-                      {...tagLink({
-                          id: 'demo-notebook', 
-                          href: 'https://notebook.objectiv.io/lab?path=product_analytics.ipynb', 
-                          text: 'Live Demo Notebook',
-                          options: {
-                            trackClicks: {
-                              waitUntilTracked: true
-                            }
-                          }
-                        }
-                      )}
-                      target="_self" 
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-jupyter-notebook.svg")} /></span>
-                      Live Demo Notebook
-                    </Link>
-                    <img
-                      src={useBaseUrl("img/try-it-here.svg")}
-                      className={clsx(styles.tryItHere)}
-                      alt="Try it here" />
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src={useBaseUrl("img/solution-modeling.svg")}
-                    alt="Talk Pandas, get SQL" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={clsx(styles.pageSection, styles.pageSection)}>
-            <div 
-              {...tagElement({id: 'reuse-models'})}
-              className={clsx("container", styles.contentContainer, styles.solutions)}>
-              <div className={clsx(styles.solutionTitle)}>
-                <div>5.</div>
-                <div>Reuse parts of any model</div>
-              </div>
-
-              <div className={clsx(styles.solutionRowRight)}>
-                <div>
-                  <img
-                    src={useBaseUrl("img/solution-reuse.svg")}
-                    alt="Quickly build models by reusing what others have made" />
-                </div>
-                <div>
-                  <p>By embracing the open taxonomy, you can <strong>reuse your own models</strong> for other 
-                    projects and <strong>quickly build models</strong> reusing parts of others.</p>
-                  <p>That behaviour pattern you've created to exactly identify the heavy users of your website? 
-                    You can likely reuse that for your mobile app by changing a single line of code.</p>
-                  <div className={clsx(styles.solutionRowCta)}>
-                    <Link 
-                      to={useBaseUrl(url + "/docs/modeling/")} 
-                      {...tagLink({
-                          id: 'cta-docs-reuse', 
-                          href: '/docs/modeling/', 
-                          text: 'Docs - Modeling',
-                          options: {
-                            trackClicks: {
-                              waitUntilTracked: true
-                            }
-                          }
-                        }
-                      )}
-                      target="_self" 
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                      Docs - Modeling
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div>          
 
           <footer>
             <div className={clsx("container", styles.contentContainer)}>

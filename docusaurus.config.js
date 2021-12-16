@@ -11,9 +11,9 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - creating the ultimate workflow for data scientists',
+  title: 'Objectiv - OSS product analytics pipeline for reusable modeling',
   titleDelimiter: '|',
-  tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
+  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
