@@ -9,7 +9,7 @@
 }
 
 .heroBanner {
-  padding: 80px 0;
+  padding: 80px 0 40px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -20,7 +20,7 @@
   font-family: 'Bungee', serif;
   font-size: 32px;
   letter-spacing: 0.2em;
-  margin: 0 0 57px 0;
+  margin: 0 0 45px 0;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
@@ -64,6 +64,11 @@
 .heroRepoButton {
   margin-bottom: 20px;
 }
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .heroRepoButton {
+    margin-bottom: 0;
+  }
+}
 
 .heroOutro {
   font-size: 14px;
@@ -73,62 +78,31 @@
 .intro, .container.intro {
   /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
   max-width: 746px !important;
-  padding: 0;
+  padding: 10px 0 86px 0;
   text-align: center;
 }
 @media (min-width: 1440px) {
   .intro, .container.intro {
     /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
     max-width: 746px !important;
+    padding: 0 0 80px 0;
     text-align: center;
-    padding: 0;
   }
 }
 @media (max-width: 966px) {
   .intro, .container.intro {
-    padding: 0 5%;
+    padding: 0 5% 60px 5%;
   }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .intro br {
+    display: none
+  }  
 }
 
-.introTeaser {
-  font-weight: bold;
-  font-size: 14px;
-  margin: 60px 0 -18px 0;
-}
-
-.introHeading {
-  font-size: 20px;
-  margin: 30px 0;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .introHeading br {
-    display: none;
-  }
-}
-
-.introDiagram, .introDiagramLargeFont {
-  margin: 0 0 48px 0;
-}
-.introDiagramLargeFont {
-  display: none;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .introDiagram, .introDiagramLargeFont {
-    margin: 42px 0;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile/tablet all */
-  .introDiagram {
-    display: none;
-  }
-  .introDiagramLargeFont {
-    display: inline-block;
-    width: 95%;
-  }
-}
-
-.introCaretDown {
-  margin: 0 40px;
+.intro h2 {
+  padding-bottom: 20px;
+  font-size: 24px;
 }
 
 h2 {
@@ -137,7 +111,7 @@ h2 {
   margin-bottom: 38px;
 }
 
-@media screen and (max-width: 966px) { /* mobile/tablet all */
+@media screen and (max-width: 480px) { /* mobile small */
   h2 br {
     display: none;
   }
@@ -171,16 +145,83 @@ h2 {
   max-width: 996px;
 }
 
-.solutionTitle {
+.solutionRowLeft, .solutionRowRight {
   display: flex;
-  flex-wrap: nowrap; /* keep on one line */
-  margin: 0 0 30px 83px;
+  flex-flow: row;
+  margin-bottom: 80px;
+}
+.solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  width: 488px; /* 320px + 2x83px grid cols left and right */
+}
+.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
+  flex: 50%;
+}
+.solutionRowRight>div:nth-child(2) {
+  padding: 20px 0 0 83px;
+}
+.solutionRowLeft>div:nth-child(1) {
+  padding: 0 83px 0 0;
+}
+/* Minor styling exceptions for the very first solution (collection) and the third (stack & run model) */
+.collect .solutionRowRight>div:nth-child(1)  {
+  padding-top: 20px;
+}
+.collect .solutionRowRight>div:nth-child(2)  {
+  padding-top: 0;
+}
+.modeling .solutionRowRight>div:nth-child(2) p  {
+  margin-bottom: 46px;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .solutionRowLeft {
+    flex-flow: row wrap;
+  }
+  .solutionRowRight {
+    flex-flow: row wrap-reverse;
+  }
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
+    text-align: center;
+  }
+  .solutionRowLeft>div:nth-child(2) {
+    margin-top: 80px;
+  }
+  .solutions .ctaButton {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    padding: 0 10px 0 10px;
+  }
+  .solutionRowLeft>div:nth-child(2) {
+    margin-top: 40px;
+  }
+  /* on mobile, center _all_ CTA buttons for all solutions */
+  .solutionRowCta {
+    text-align: center;
+    margin: 24px 0 0 0;
+  }
+}
+
+.solutionRowLeft p, .solutionRowRight p {
+  margin-bottom: 24px;
+}
+
+.solutionTitle {
+  margin: 0 0 20px 0;
 }
 .solutionTitle>div:nth-child(1) { /* the number */
+  display: block;
   width: 56px;
-  margin: 0 0 0 10px;
+  margin: 0 0 24px 0;
   font-family: Bungee, serif;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 150%;
 }
 .solutionTitle>div:nth-child(2) { /* the text */
@@ -191,16 +232,9 @@ h2 {
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .solutionTitle {
-    margin: 0 0 0 40px;
-  }
-}
-
-@media screen and (max-width: 480px) { /* mobile small */
-  .solutionTitle {
     flex-wrap: wrap; /* do not keep on one line */
-    margin: 0 0 0 10px;
+    margin: 0 0 40px 0;
     text-align: center;
-    margin-bottom: 40px;
   }
   .solutionTitle>div:nth-child(1) { /* the number */
     width: 100%;
@@ -214,76 +248,22 @@ h2 {
   }
 }
 
-.solutionRowLeft, .solutionRowRight {
-  display: flex;
-  flex-flow: row;
-}
-.solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-  width: 488px; /* 320px + 2x83px grid cols left and right */
-  padding: 0 83px 0 83px;
-}
-.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-  flex: 50%;
-}
-/* Minor styling exceptions for the very first solution (mapping to taxonomy) */
-.mapToTaxonomy .solutionRowLeft  {
-  margin-bottom: 37px;
-}
-.mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
-  padding-top: 40px;
-}
-.mapToTaxonomy .footnote {
+.checkOutModels {
   text-align: center;
-  font-size: 14px;
-  margin: 30px 0 0 0;
+  margin-bottom: 80px;
 }
-
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .solutionRowLeft {
-    flex-flow: row wrap-reverse;
-  }
-  .solutionRowRight {
-    flex-flow: row wrap;
-  }
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-    width: 100%;
-    padding: 0 40px 0 40px;
-  }
-  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-    text-align: center;
-  }
-  .solutions .ctaButton {
-    margin: 0 auto;
-  }
-  /* Minor styling exceptions for the very first solution (mapping to taxonomy) */
-  .mapToTaxonomy .solutionRowLeft  {
-    margin-bottom: 0;
-  }
-  .mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
-    padding-top: 0;
-  }
-  /* on tablets, only center the CTA button for mapToTaxonomy solution */
-  .mapToTaxonomy .solutionRowCta {
-    text-align: center;
-    margin: 50px 0 0 0;
-  }
-  .mapToTaxonomy .footnote {
-    max-width: 400px;
-    margin: 30px auto 0 auto;
-  }  
+.checkOutModels h2 {
+  margin: 40px 0;
+}
+.checkOutModels p {
+  margin: 0 0 30px 0;
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-    padding: 0 10px 0 10px;
+  .checkOutModels {
+    margin-bottom: 0;
   }
-  /* on mobile, center _all_ CTA buttons for all solutions */
-  .solutionRowCta, .mapToTaxonomy .solutionRowCta {
-    text-align: center;
-    margin: 24px 0 0 0;
-  }
-
-}
+}  
 
 .ctaButton {
   height: 48px;
@@ -316,14 +296,66 @@ h2 {
   float: left;
 }
 
-.tryItHere {
-  display: block;
-  margin: 12px 0 0 44px;
+.inTheBoxHeader, .inTheBoxFooter {
+  text-align: center;
 }
+.inTheBoxHeader {
+  margin-bottom: 100px;
+}
+.inTheBoxHeader h2 {
+  font-size: 28px;
+  margin: 30px 0;
+}
+.inTheBoxFooter {
+  margin-top: -40px;
+}
+.inTheBoxFooter p {
+  margin-bottom: 30px;
+}
+
+.inTheBoxComponents {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.inTheBoxComponent {
+  flex: 50%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  vertical-align: top;
+  margin-bottom: 80px;
+}
+.inTheBoxComponent img {
+  max-height: 90px;
+}
+.dataStoreComingSoon {
+  margin: 20px 0 0 20px;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .inTheBoxHeader {
+    margin-bottom: 60px;
+  }
+  .inTheBoxComponent {
+    flex: 100%;
+  }
+  .inTheBoxFooter {
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 480px) { /* mobile small */
-  .tryItHere {
-    margin: 24px auto 30px auto;
-  }  
+  .inTheBoxHeader {
+    margin-bottom: 40px;
+  }
+
+  .inTheBoxComponent {
+    display: block;
+    text-align: center;
+    margin-bottom: 60px;
+  }
 }
 
 footer {
@@ -491,4 +523,35 @@ footer h2 {
 
 .contributorFooter {
   padding-top: 16px;
+}
+
+/**************
+ JOBS PAGE 
+***************/
+
+.jobsHeader {
+  padding: 80px 0 0 0;
+}
+
+.jobsContainer {
+  margin-top: 0;
+  text-align: left;
+  max-width: 960px;
+}
+
+.jobsContainer h2 {
+  display: flex;
+  align-items:center;
+  margin-top: 30px;
+}
+
+.jobsContainer h1 img, .jobsContainer h2 img {
+  vertical-align: middle;
+  margin: 0 18px 0 0;
+}
+
+.jobsContainer {
+  margin-top: 0;
+  text-align: left;
+  max-width: 960px;
 }

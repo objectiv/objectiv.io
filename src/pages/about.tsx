@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
+import AnnouncementBar from '../components/announcement-bar';
 import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
@@ -83,6 +84,13 @@ export default function AboutUs() {
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
+
+        <AnnouncementBar 
+          title="We're Hiring!"
+          content="Join our mission crew as a Data Scientist."
+          ctaLink='/jobs'
+          ctaText='Check the vacancy'
+        />
 
         <header
           className={clsx('hero hero--primary', styles.aboutUsBanner)}
@@ -236,7 +244,14 @@ export default function AboutUs() {
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv's Core Team</h2>
               <p>
-                Meet the mission crew.
+                Meet the mission crew. Also,&nbsp;
+                <Link
+                  to="/jobs"
+                  {...tagLink({ id: 'hiring', text: "we're hiring a Data Scientist. Join us!", 
+                  href: '/jobs' })}
+                >
+                  we're hiring a Data Scientist. Join us!
+                </Link>
               </p>
             </div>
             <div 

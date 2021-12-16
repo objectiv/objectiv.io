@@ -23,6 +23,7 @@ git clone https://github.com/objectiv/objectiv-analytics.git
 ```bash
 # enter the repo and spin up the docker containers
 cd objectiv-analytics 
+docker-compose -f docker-compose-dev.yaml pull
 docker-compose -f docker-compose-dev.yaml up -d
 ```
 
@@ -103,3 +104,8 @@ using that port. To solve this, stop the application that's running on port 5432
 
 The opened ports are only exposed on localhost (`127.0.0.1`). So to access over the network, or ipv6, additional 
 configuration may be necessary.
+
+## Next step
+:::info Instrumenting your app 
+Now you've got the Objectiv Collector running, next step is to instrument your app with the [Objectiv Tracker](/tracking/how-to-guides/).
+:::
