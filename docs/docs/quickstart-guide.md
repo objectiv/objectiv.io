@@ -59,6 +59,8 @@ To view the data that has been put out to Metabase, open the following URL in yo
 ```bash
 http://localhost:3000/
 ```
+* Username: `demo@objectiv.io`
+* Password: `metabase1`
 
 ### Next Steps
 
