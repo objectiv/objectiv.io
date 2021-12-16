@@ -11,7 +11,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function DocPaginator(props): JSX.Element {
-  const {previous, next} = props;
+  const {metadata} = props;
 
   return (
     <nav
@@ -23,11 +23,11 @@ function DocPaginator(props): JSX.Element {
         description: 'The ARIA label for the docs pagination',
       })}>
       <div className="pagination-nav__item">
-        {previous && (
+        {metadata.previous && (
           <Link
             className="pagination-nav__link"
-            to={previous.permalink}
-            {...tagLink({ id: 'previous', text: previous.title, href: previous.permalink })}
+            to={metadata.previous.permalink}
+            {...tagLink({ id: 'previous', text: metadata.previous.title, href: metadata.previous.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -37,17 +37,17 @@ function DocPaginator(props): JSX.Element {
               </Translate>
             </div>
             <div className="pagination-nav__label">
-              &laquo; {previous.title}
+              &laquo; {metadata.previous.title}
             </div>
           </Link>
         )}
       </div>
       <div className="pagination-nav__item pagination-nav__item--next">
-        {next && (
+        {metadata.next && (
           <Link 
             className="pagination-nav__link" 
-            to={next.permalink}
-            {...tagLink({ id: 'next', text: next.title, href: next.permalink })}
+            to={metadata.next.permalink}
+            {...tagLink({ id: 'next', text: metadata.next.title, href: metadata.next.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -57,7 +57,7 @@ function DocPaginator(props): JSX.Element {
               </Translate>
             </div>
             <div className="pagination-nav__label">
-              {next.title} &raquo;
+              {metadata.next.title} &raquo;
             </div>
           </Link>
         )}
