@@ -12,13 +12,13 @@ import Mermaid from '@theme/Mermaid';
 ![Objectiv Logo](/img/logo-objectiv-large.svg "Objectiv Logo")
 
 ## Welcome to the official Objectiv documentation
-Objectiv is a data collection & modeling library that puts the data scientist first. 
+Objectiv is an open-source product analytics pipeline for reusable modeling.
 
-It proposes the adoption of [a common taxonomy for analytics](/taxonomy), enabling a shared way to collect well-structured, pre-validated data that is ready to model on without significant gruntwork. Models & datasets embracing the taxonomy are reusable and interchangeable, allowing data scientists to build on knowledge and practices of others.
+With Objectiv, you can take, stack and run [pre-built data models](/open-model-hub) off the shelf to quickly build highly specific model stacks for in-depth product analytics and exploration. Objectiv's reusable modeling is enabled by validating all collected data against an [open analytics taxonomy](/taxonomy) to ensure it is clean, consistent and structured with effective modeling in mind.
 
-<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-overview.svg')} alt="Objectiv Overview" class="img-l" />
 
-With [Objectiv Bach](https://www.objectiv.io/docs/modeling/) (our data modeling library), you can use familiar Pandas-like DataFrame operations on your full SQL dataset. It includes extensions for effective feature creation for datasets that embrace the [taxonomy](/taxonomy).
+With the included [Objectiv Bach](https://www.objectiv.io/docs/modeling/) modeling library, you can customize or build models with familiar Pandas-like dataframe operations that run on your full SQL dataset. When you're ready to share your findings, you can output it to open-source BI tools with a single command.
 
 Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
