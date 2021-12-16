@@ -12,8 +12,8 @@ All models are compatible with datasets that have been validated against the [op
 
 Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
 
-:::demo notebook
-We've set up an initial showcase of the available product analytics models in our [open model hub demo notebook](https://notebook.objectiv.io/). 
+:::info docker demo pipeline 
+You can easily run the full Objectiv pipeline in a docker demo, see the [quickstart guide](./quickstart-guide/).
 :::
 
 ## Available models
@@ -49,7 +49,7 @@ Filters can be applied to each of the models. Initially, there is a first filter
 * `product feature scoring`: Assign scores to product features that define how they help users reach a goal.
 * `marketing conversion funnel`: Comparing user conversion funnels between marketing campaigns. 
 
-# Model parameters
+## Model parameters
 Each of the available models can run on a desired set of common parameters that define:
 * time range
 * time aggregation
@@ -58,7 +58,7 @@ Each of the available models can run on a desired set of common parameters that 
 
 Each model also has specific parameters that can be customized, for example which event defines conversion.
 
-# Export to BI
+## Export to BI
 Once you are done building a model, you can export to your favorite open-source BI tool with a single command. Right now, we support [Metabase](https://www.metabase.com/), with more to come. 
 
 If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
