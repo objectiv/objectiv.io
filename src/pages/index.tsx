@@ -149,10 +149,9 @@ export default function Home() {
                 <div>
                   <div className={clsx(styles.solutionTitle)}>
                     <div>5.</div>
-                    <div>Visualize your insights with one command</div>
+                    <div>Output to BI tools with a single command</div>
                   </div>
-                  <p>Happy with your findings? You can output your data to a number of <strong>pre-built 
-                    visualizations</strong> in Metabase with a single command.</p>
+                  <p>Happy with your findings? You can output your data to open-source BI tools like <strong>Metabase</strong> with a single command.</p>
                 </div>
                 <div>
                   <img
@@ -165,16 +164,14 @@ export default function Home() {
             <div
               {...tagElement({id: 'check-out-models'})}
               className={clsx("container", styles.contentContainer, styles.solutions, styles.checkOutModels)}>
-              <h2>Check out the available data models</h2>
-              <p>As we've just released the open model hub, it contains an initial set of models. It is our 
-                goal to further expand the collection to include models for all common product analytics use 
-                cases.</p>
+              <h2>Test drive Objectiv locally</h2>
+              <p>Follow the easy steps in our Quickstart Guide to locally run the full Objectiv pipeline dockerized.</p>
                 <Link 
-                  to={useBaseUrl(url + "/docs/open-model-hub/")}
+                  to={useBaseUrl(url + "/docs/quickstart-guide/")}
                   {...tagLink({
-                      id: 'cta-docs-open-model-hub', 
-                      href: '/docs/open-model-hub/',
-                      text: 'Docs - Open Model Hub',
+                      id: 'cta-docs-quickstart-guide', 
+                      href: '/docs/quickstart-guide/',
+                      text: 'Objectiv Quickstart Guide',
                       options: {
                         trackClicks: {
                           waitUntilTracked: true
@@ -185,7 +182,7 @@ export default function Home() {
                   target="_self" 
                   className={clsx("button", styles.ctaButton)}>
                   <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Open Model Hub
+                  Objectiv Quickstart Guide
               </Link>
             </div>
 
