@@ -18,13 +18,10 @@ With Objectiv, you can take, stack and run [pre-built data models](/open-model-h
 
 <img src={useBaseUrl('/img/objectiv-overview.svg')} alt="Objectiv Overview" class="img-l" />
 
-With the included [Objectiv Bach](/modeling) modeling library, you can customize or build models with familiar Pandas-like dataframe operations that run on your full SQL dataset. When you're ready to share your findings, you can output it to open-source BI tools with a single command.
+With the included [Objectiv Bach](/modeling) modeling library, you can customize or build models with familiar Pandas-like dataframe operations that run on your full SQL dataset. When you're ready to share your findings, you can output to open-source BI tools with a single command.
 
 Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 ## Getting Started
 
 Follow the easy steps in our [Quickstart Guide](/quickstart-guide) to locally run the full Objectiv pipeline dockerized.
-
-## Running Objectiv in production
-A detailed How-to guide is coming soon. 
