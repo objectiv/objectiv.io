@@ -1,9 +1,18 @@
+# redirect to https
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^objectiv.io [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://objectiv.io/$1 [R,L]
+
+# set hsts header, to prevent client from returning to http
+Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+
 # docusaurus doesn't create proper directory indexes. This takes care of the following case:
 #
 # /docs/modeling/ -> /docs/modeling.html
 # as othwerwise it would show a directory index.
 
-RewriteEngine On
 # make sure the request ends in /
 RewriteCond %{REQUEST_URI} ^.*?/$
 # only do this if there's no index.html on disk
