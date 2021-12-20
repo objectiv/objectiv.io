@@ -67,7 +67,7 @@ const config = {
     trackerApplicationId: envConfig.trackerApplicationId,
     trackerEndPoint: envConfig.trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: envConfig.trackerConsoleEnabled
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === '1'
   },
 
   themeConfig:
@@ -156,5 +156,6 @@ module.exports = config;
 
 console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
 console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("OBJECTIV TRACKER CONSOLE ENABLED:", config.customFields.trackerConsoleEnabled);
 console.log("DOCUSAURUS URL:", config.baseUrl);
 console.log("DOCUSAURUS BASEURL:", config.baseUrl);
