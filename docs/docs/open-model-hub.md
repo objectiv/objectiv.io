@@ -61,5 +61,5 @@ Once you are done building a model, you can output it to an open-source BI tool 
 
 ## Demo
 :::info see the open model hub in action
-You can easily run the full Objectiv pipeline in a docker demo, see the [quickstart guide](./quickstart-guide/).
+You can easily run the full Objectiv pipeline in a docker demo, see the [quickstart guide](./quickstart-guide.md).
 :::
