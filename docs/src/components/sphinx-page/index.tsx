@@ -133,31 +133,27 @@ const SphinxPage = (props) => {
                     // or if it's a relative URL
                     const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
                         !a.href.startsWith('http'));
-                    // fix the hrefs in the overview/index page in case of missing trailing slash
-                    if ( url == `${baseUrl.baseUrl}_modeling/intro.html` && isInternal ){
+
+                    if ( isInternal ){
+                        // fix the hrefs in the overview/index page in case of missing trailing slash
                         if ( a.href.indexOf('modeling') == -1){
                             // we add the baseURL to the match, to make sure it works in dev and prod mode
                             const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
                             a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
-                    }
-                    // only remove the .html if local links, leave external links alone
-                    if ( isInternal ){
-                        console.log(`Found link to: ${a.href} --> ${currentSite} // ${window.location.toString()}`);
+
+                        // only remove the .html if local links, leave external links alone
+                        //  console.log(`Found link to: ${a.href} --> ${currentSite} // ${window.location.toString()}`);
                         a.href = a.href.replace(/\.html/g, '');
 
                         // try and fix links that are broken in builds do to slashes
                         // we go from http://site/docs/modeling/page/otherpage/#anchor
                         // to
                         // http://site/docs/modeling/otherpage/#anchor
-                        const parts = window.location.toString().match(/^(.*?)\/([a-zA-Z0-9-.]*?\/)(#([a-z0-9])+)?$/);
+                        const parts = window.location.toString().match(/^(.*?)\/([a-zA-Z0-9-._]*?\/)(#([a-zA-Z0-9-._])+)?$/);
                         if ( parts !== null ){
                             a.href = a.href.replace(parts[2], '');
                         }
-
-                        console.log(parts);
-
-
 
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
