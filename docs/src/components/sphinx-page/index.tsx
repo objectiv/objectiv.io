@@ -150,9 +150,10 @@ const SphinxPage = (props) => {
                         // we go from http://site/docs/modeling/page/otherpage/#anchor
                         // to
                         // http://site/docs/modeling/otherpage/#anchor
-                        const parts = window.location.toString().match(/^(.*?)\/([a-zA-Z0-9-._]*?\/)(#([a-zA-Z0-9-._])+)?$/);
+                        const parts = window.location.toString().match(/^(.*?)modeling\/([a-zA-Z0-9-._]*?\/)([a-zA-Z0-9-._]*?\/)(#([a-zA-Z0-9-._])+)?$/);
                         if ( parts !== null ){
-                            a.href = a.href.replace(parts[2], '');
+                          //  console.log(`Add fixing link (${a.href}) removing ${parts[3]}`);
+                            a.href = a.href.replace(parts[3], '');
                         }
 
                         // fix content of (internal) permalinks, change from ¶ to #
