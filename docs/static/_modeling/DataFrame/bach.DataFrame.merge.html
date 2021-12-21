@@ -1,0 +1,44 @@
+<div>
+                
+  <section id="bach-dataframe-merge">
+<h1>bach.DataFrame.merge<a class="headerlink" href="#bach-dataframe-merge" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.DataFrame.merge">
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'inner'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffixes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_x',</span> <span class="pre">'_y')</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.merge" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Join the right Dataframe or Series on self. This will return a new DataFrame that contains the
+combined columns of both dataframes, and the rows that result from joining on the specified columns.
+The columns that are joined on can consist (partially or fully) out of index columns.</p>
+<p>The interface of this function is similar to pandas&#8217; merge, but the following parameters are not
+supported: <cite>sort</cite>, <cite>copy</cite>, <cite>indicator</cite>, and <cite>validate</cite>.
+Additionally when merging two frames that have conflicting columns names, and joining on indices,
+then the resulting columns/column names can differ slightly from Pandas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>right</strong> (<em>Union</em><em>[</em><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><em>DataFrame</em></a><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em>) &#8211; DataFrame or Series to join on self</p></li>
+<li><p><strong>how</strong> (<em>str</em>) &#8211; supported values: {&#8216;left&#8217;, &#8216;right&#8217;, &#8216;outer&#8217;, &#8216;inner&#8217;, &#8216;cross&#8217;}</p></li>
+<li><p><strong>on</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) &#8211; optional, column(s) to join left and right on.</p></li>
+<li><p><strong>left_on</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) &#8211; optional, column(s) from the left df to join on</p></li>
+<li><p><strong>right_on</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) &#8211; optional, column(s) from the right df/series to join on</p></li>
+<li><p><strong>left_index</strong> (<em>bool</em>) &#8211; If true uses the index of the left df as columns to join on</p></li>
+<li><p><strong>right_index</strong> (<em>bool</em>) &#8211; If true uses the index of the right df/series as columns to join on</p></li>
+<li><p><strong>suffixes</strong> (<em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) &#8211; Tuple of two strings. Will be used to suffix duplicate column names. Must make
+column names unique</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new Dataframe. The original frames are not modified.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

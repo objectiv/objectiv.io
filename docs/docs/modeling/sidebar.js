@@ -80,237 +80,242 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/dataframe/bach.DataFrame"
+                                        "id": "modeling/DataFrame/bach.DataFrame"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "agg",
-                                        "id": "modeling/dataframe/bach.DataFrame.agg"
+                                        "id": "modeling/DataFrame/bach.DataFrame.agg"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "aggregate",
-                                        "id": "modeling/dataframe/bach.DataFrame.aggregate"
+                                        "id": "modeling/DataFrame/bach.DataFrame.aggregate"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "astype",
-                                        "id": "modeling/dataframe/bach.DataFrame.astype"
+                                        "id": "modeling/DataFrame/bach.DataFrame.astype"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "copy",
-                                        "id": "modeling/dataframe/bach.DataFrame.copy"
+                                        "id": "modeling/DataFrame/bach.DataFrame.copy"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "count",
-                                        "id": "modeling/dataframe/bach.DataFrame.count"
+                                        "id": "modeling/DataFrame/bach.DataFrame.count"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "cube",
-                                        "id": "modeling/dataframe/bach.DataFrame.cube"
+                                        "id": "modeling/DataFrame/bach.DataFrame.cube"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "drop",
-                                        "id": "modeling/dataframe/bach.DataFrame.drop"
+                                        "id": "modeling/DataFrame/bach.DataFrame.drop"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "expanding",
-                                        "id": "modeling/dataframe/bach.DataFrame.expanding"
+                                        "id": "modeling/DataFrame/bach.DataFrame.expanding"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_model",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_model"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_model"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_pandas",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_pandas"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_table",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_table"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_table"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "get_sample",
-                                        "id": "modeling/dataframe/bach.DataFrame.get_sample"
+                                        "id": "modeling/DataFrame/bach.DataFrame.get_sample"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "get_unsampled",
-                                        "id": "modeling/dataframe/bach.DataFrame.get_unsampled"
+                                        "id": "modeling/DataFrame/bach.DataFrame.get_unsampled"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "groupby",
-                                        "id": "modeling/dataframe/bach.DataFrame.groupby"
+                                        "id": "modeling/DataFrame/bach.DataFrame.groupby"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "head",
-                                        "id": "modeling/dataframe/bach.DataFrame.head"
+                                        "id": "modeling/DataFrame/bach.DataFrame.head"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "materialize",
-                                        "id": "modeling/dataframe/bach.DataFrame.materialize"
+                                        "id": "modeling/DataFrame/bach.DataFrame.materialize"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "max",
-                                        "id": "modeling/dataframe/bach.DataFrame.max"
+                                        "id": "modeling/DataFrame/bach.DataFrame.max"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "mean",
-                                        "id": "modeling/dataframe/bach.DataFrame.mean"
+                                        "id": "modeling/DataFrame/bach.DataFrame.mean"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "median",
-                                        "id": "modeling/dataframe/bach.DataFrame.median"
+                                        "id": "modeling/DataFrame/bach.DataFrame.median"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "merge",
-                                        "id": "modeling/dataframe/bach.DataFrame.merge"
+                                        "id": "modeling/DataFrame/bach.DataFrame.merge"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "min",
-                                        "id": "modeling/dataframe/bach.DataFrame.min"
+                                        "id": "modeling/DataFrame/bach.DataFrame.min"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "mode",
-                                        "id": "modeling/dataframe/bach.DataFrame.mode"
+                                        "id": "modeling/DataFrame/bach.DataFrame.mode"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "nunique",
-                                        "id": "modeling/dataframe/bach.DataFrame.nunique"
+                                        "id": "modeling/DataFrame/bach.DataFrame.nunique"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rename",
-                                        "id": "modeling/dataframe/bach.DataFrame.rename"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rename"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "reset_index",
-                                        "id": "modeling/dataframe/bach.DataFrame.reset_index"
+                                        "id": "modeling/DataFrame/bach.DataFrame.reset_index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rolling",
-                                        "id": "modeling/dataframe/bach.DataFrame.rolling"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rolling"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rollup",
-                                        "id": "modeling/dataframe/bach.DataFrame.rollup"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rollup"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sem",
-                                        "id": "modeling/dataframe/bach.DataFrame.sem"
+                                        "id": "modeling/DataFrame/bach.DataFrame.sem"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "set_index",
-                                        "id": "modeling/dataframe/bach.DataFrame.set_index"
+                                        "id": "modeling/DataFrame/bach.DataFrame.set_index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sort_values",
-                                        "id": "modeling/dataframe/bach.DataFrame.sort_values"
+                                        "id": "modeling/DataFrame/bach.DataFrame.sort_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "std",
-                                        "id": "modeling/dataframe/bach.DataFrame.std"
+                                        "id": "modeling/DataFrame/bach.DataFrame.std"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sum",
-                                        "id": "modeling/dataframe/bach.DataFrame.sum"
+                                        "id": "modeling/DataFrame/bach.DataFrame.sum"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_pandas",
-                                        "id": "modeling/dataframe/bach.DataFrame.to_pandas"
+                                        "id": "modeling/DataFrame/bach.DataFrame.to_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "var",
-                                        "id": "modeling/dataframe/bach.DataFrame.var"
+                                        "id": "modeling/DataFrame/bach.DataFrame.var"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "view_sql",
-                                        "id": "modeling/dataframe/bach.DataFrame.view_sql"
+                                        "id": "modeling/DataFrame/bach.DataFrame.view_sql"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window",
-                                        "id": "modeling/dataframe/bach.DataFrame.window"
+                                        "id": "modeling/DataFrame/bach.DataFrame.window"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "all_series",
-                                        "id": "modeling/dataframe/bach.DataFrame.all_series"
+                                        "id": "modeling/DataFrame/bach.DataFrame.all_series"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "data",
-                                        "id": "modeling/dataframe/bach.DataFrame.data"
+                                        "id": "modeling/DataFrame/bach.DataFrame.data"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "data_columns",
-                                        "id": "modeling/dataframe/bach.DataFrame.data_columns"
+                                        "id": "modeling/DataFrame/bach.DataFrame.data_columns"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "dtypes",
-                                        "id": "modeling/dataframe/bach.DataFrame.dtypes"
+                                        "id": "modeling/DataFrame/bach.DataFrame.dtypes"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "group_by",
-                                        "id": "modeling/dataframe/bach.DataFrame.group_by"
+                                        "id": "modeling/DataFrame/bach.DataFrame.group_by"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "index",
-                                        "id": "modeling/dataframe/bach.DataFrame.index"
+                                        "id": "modeling/DataFrame/bach.DataFrame.index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "index_columns",
-                                        "id": "modeling/dataframe/bach.DataFrame.index_columns"
+                                        "id": "modeling/DataFrame/bach.DataFrame.index_columns"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "index_dtypes",
-                                        "id": "modeling/dataframe/bach.DataFrame.index_dtypes"
+                                        "id": "modeling/DataFrame/bach.DataFrame.index_dtypes"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "is_materialized",
+                                        "id": "modeling/DataFrame/bach.DataFrame.is_materialized"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "order_by",
-                                        "id": "modeling/dataframe/bach.DataFrame.order_by"
+                                        "id": "modeling/DataFrame/bach.DataFrame.order_by"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "values",
-                                        "id": "modeling/dataframe/bach.DataFrame.values"
+                                        "id": "modeling/DataFrame/bach.DataFrame.values"
                                     }
                                 ]
                             }
@@ -337,22 +342,22 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "from_table",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_table"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_table"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_model",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_model"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_model"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_pandas",
-                                        "id": "modeling/dataframe/bach.DataFrame.from_pandas"
+                                        "id": "modeling/DataFrame/bach.DataFrame.from_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "copy",
-                                        "id": "modeling/dataframe/bach.DataFrame.copy"
+                                        "id": "modeling/DataFrame/bach.DataFrame.copy"
                                     }
                                 ]
                             },
@@ -368,17 +373,17 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "head",
-                                        "id": "modeling/dataframe/bach.DataFrame.head"
+                                        "id": "modeling/DataFrame/bach.DataFrame.head"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_pandas",
-                                        "id": "modeling/dataframe/bach.DataFrame.to_pandas"
+                                        "id": "modeling/DataFrame/bach.DataFrame.to_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "values",
-                                        "id": "modeling/dataframe/bach.DataFrame.values"
+                                        "id": "modeling/DataFrame/bach.DataFrame.values"
                                     }
                                 ]
                             },
@@ -420,32 +425,32 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "sort_values",
-                                        "id": "modeling/dataframe/bach.DataFrame.sort_values"
+                                        "id": "modeling/DataFrame/bach.DataFrame.sort_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rename",
-                                        "id": "modeling/dataframe/bach.DataFrame.rename"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rename"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "drop",
-                                        "id": "modeling/dataframe/bach.DataFrame.drop"
+                                        "id": "modeling/DataFrame/bach.DataFrame.drop"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "reset_index",
-                                        "id": "modeling/dataframe/bach.DataFrame.reset_index"
+                                        "id": "modeling/DataFrame/bach.DataFrame.reset_index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "set_index",
-                                        "id": "modeling/dataframe/bach.DataFrame.set_index"
+                                        "id": "modeling/DataFrame/bach.DataFrame.set_index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "merge",
-                                        "id": "modeling/dataframe/bach.DataFrame.merge"
+                                        "id": "modeling/DataFrame/bach.DataFrame.merge"
                                     }
                                 ]
                             },
@@ -461,42 +466,42 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "agg",
-                                        "id": "modeling/dataframe/bach.DataFrame.agg"
+                                        "id": "modeling/DataFrame/bach.DataFrame.agg"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "aggregate",
-                                        "id": "modeling/dataframe/bach.DataFrame.aggregate"
+                                        "id": "modeling/DataFrame/bach.DataFrame.aggregate"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "groupby",
-                                        "id": "modeling/dataframe/bach.DataFrame.groupby"
+                                        "id": "modeling/DataFrame/bach.DataFrame.groupby"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rollup",
-                                        "id": "modeling/dataframe/bach.DataFrame.rollup"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rollup"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "cube",
-                                        "id": "modeling/dataframe/bach.DataFrame.cube"
+                                        "id": "modeling/DataFrame/bach.DataFrame.cube"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window",
-                                        "id": "modeling/dataframe/bach.DataFrame.window"
+                                        "id": "modeling/DataFrame/bach.DataFrame.window"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "rolling",
-                                        "id": "modeling/dataframe/bach.DataFrame.rolling"
+                                        "id": "modeling/DataFrame/bach.DataFrame.rolling"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "expanding",
-                                        "id": "modeling/dataframe/bach.DataFrame.expanding"
+                                        "id": "modeling/DataFrame/bach.DataFrame.expanding"
                                     }
                                 ]
                             },
@@ -591,239 +596,239 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/series/bach.Series"
+                                        "id": "modeling/Series/bach.Series"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "agg",
-                                        "id": "modeling/series/bach.Series.agg"
+                                        "id": "modeling/Series/bach.Series.agg"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "aggregate",
-                                        "id": "modeling/series/bach.Series.aggregate"
+                                        "id": "modeling/Series/bach.Series.aggregate"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "all_values",
-                                        "id": "modeling/series/bach.Series.all_values"
+                                        "id": "modeling/Series/bach.Series.all_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "any_value",
-                                        "id": "modeling/series/bach.Series.any_value"
+                                        "id": "modeling/Series/bach.Series.any_value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "apply_func",
-                                        "id": "modeling/series/bach.Series.apply_func"
+                                        "id": "modeling/Series/bach.Series.apply_func"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "astype",
-                                        "id": "modeling/series/bach.Series.astype"
+                                        "id": "modeling/Series/bach.Series.astype"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "copy",
-                                        "id": "modeling/series/bach.Series.copy"
+                                        "id": "modeling/Series/bach.Series.copy"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "count",
-                                        "id": "modeling/series/bach.Series.count"
+                                        "id": "modeling/Series/bach.Series.count"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "exists",
-                                        "id": "modeling/series/bach.Series.exists"
+                                        "id": "modeling/Series/bach.Series.exists"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "fillna",
-                                        "id": "modeling/series/bach.Series.fillna"
+                                        "id": "modeling/Series/bach.Series.fillna"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "from_const",
-                                        "id": "modeling/series/bach.Series.from_const"
+                                        "id": "modeling/Series/bach.Series.from_const"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "head",
-                                        "id": "modeling/series/bach.Series.head"
+                                        "id": "modeling/Series/bach.Series.head"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "isin",
-                                        "id": "modeling/series/bach.Series.isin"
+                                        "id": "modeling/Series/bach.Series.isin"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "isnull",
-                                        "id": "modeling/series/bach.Series.isnull"
+                                        "id": "modeling/Series/bach.Series.isnull"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "max",
-                                        "id": "modeling/series/bach.Series.max"
+                                        "id": "modeling/Series/bach.Series.max"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "median",
-                                        "id": "modeling/series/bach.Series.median"
+                                        "id": "modeling/Series/bach.Series.median"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "min",
-                                        "id": "modeling/series/bach.Series.min"
+                                        "id": "modeling/Series/bach.Series.min"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "mode",
-                                        "id": "modeling/series/bach.Series.mode"
+                                        "id": "modeling/Series/bach.Series.mode"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "notnull",
-                                        "id": "modeling/series/bach.Series.notnull"
+                                        "id": "modeling/Series/bach.Series.notnull"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "nunique",
-                                        "id": "modeling/series/bach.Series.nunique"
+                                        "id": "modeling/Series/bach.Series.nunique"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sort_values",
-                                        "id": "modeling/series/bach.Series.sort_values"
+                                        "id": "modeling/Series/bach.Series.sort_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_frame",
-                                        "id": "modeling/series/bach.Series.to_frame"
+                                        "id": "modeling/Series/bach.Series.to_frame"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_pandas",
-                                        "id": "modeling/series/bach.Series.to_pandas"
+                                        "id": "modeling/Series/bach.Series.to_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "unique",
-                                        "id": "modeling/series/bach.Series.unique"
+                                        "id": "modeling/Series/bach.Series.unique"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "view_sql",
-                                        "id": "modeling/series/bach.Series.view_sql"
+                                        "id": "modeling/Series/bach.Series.view_sql"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_cume_dist",
-                                        "id": "modeling/series/bach.Series.window_cume_dist"
+                                        "id": "modeling/Series/bach.Series.window_cume_dist"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_dense_rank",
-                                        "id": "modeling/series/bach.Series.window_dense_rank"
+                                        "id": "modeling/Series/bach.Series.window_dense_rank"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_first_value",
-                                        "id": "modeling/series/bach.Series.window_first_value"
+                                        "id": "modeling/Series/bach.Series.window_first_value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_lag",
-                                        "id": "modeling/series/bach.Series.window_lag"
+                                        "id": "modeling/Series/bach.Series.window_lag"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_last_value",
-                                        "id": "modeling/series/bach.Series.window_last_value"
+                                        "id": "modeling/Series/bach.Series.window_last_value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_lead",
-                                        "id": "modeling/series/bach.Series.window_lead"
+                                        "id": "modeling/Series/bach.Series.window_lead"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_nth_value",
-                                        "id": "modeling/series/bach.Series.window_nth_value"
+                                        "id": "modeling/Series/bach.Series.window_nth_value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_ntile",
-                                        "id": "modeling/series/bach.Series.window_ntile"
+                                        "id": "modeling/Series/bach.Series.window_ntile"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_percent_rank",
-                                        "id": "modeling/series/bach.Series.window_percent_rank"
+                                        "id": "modeling/Series/bach.Series.window_percent_rank"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_rank",
-                                        "id": "modeling/series/bach.Series.window_rank"
+                                        "id": "modeling/Series/bach.Series.window_rank"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "window_row_number",
-                                        "id": "modeling/series/bach.Series.window_row_number"
+                                        "id": "modeling/Series/bach.Series.window_row_number"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "array",
-                                        "id": "modeling/series/bach.Series.array"
+                                        "id": "modeling/Series/bach.Series.array"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "base_node",
-                                        "id": "modeling/series/bach.Series.base_node"
+                                        "id": "modeling/Series/bach.Series.base_node"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "dtype",
-                                        "id": "modeling/series/bach.Series.dtype"
+                                        "id": "modeling/Series/bach.Series.dtype"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "group_by",
-                                        "id": "modeling/series/bach.Series.group_by"
+                                        "id": "modeling/Series/bach.Series.group_by"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "index",
-                                        "id": "modeling/series/bach.Series.index"
+                                        "id": "modeling/Series/bach.Series.index"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "name",
-                                        "id": "modeling/series/bach.Series.name"
+                                        "id": "modeling/Series/bach.Series.name"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sorted_ascending",
-                                        "id": "modeling/series/bach.Series.sorted_ascending"
+                                        "id": "modeling/Series/bach.Series.sorted_ascending"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "value",
-                                        "id": "modeling/series/bach.Series.value"
+                                        "id": "modeling/Series/bach.Series.value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "values",
-                                        "id": "modeling/series/bach.Series.values"
+                                        "id": "modeling/Series/bach.Series.values"
                                     }
                                 ]
                             },
                             {
                                 "type": "doc",
                                 "label": "SeriesBoolean",
-                                "id": "modeling/series/bach.SeriesBoolean"
+                                "id": "modeling/Series/bach.SeriesBoolean"
                             },
                             {
                                 "type": "category",
@@ -832,67 +837,67 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "kurt",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.kurt"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurt"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "kurtosis",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.kurtosis"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurtosis"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "mad",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.mad"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.mad"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "mean",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.mean"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.mean"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "prod",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.prod"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.prod"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "product",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.product"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.product"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "round",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.round"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.round"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sem",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.sem"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.sem"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "skew",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.skew"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.skew"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "std",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.std"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.std"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "sum",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.sum"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.sum"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "var",
-                                        "id": "modeling/series/bach.SeriesAbstractNumeric.var"
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.var"
                                     }
                                 ]
                             },
@@ -903,12 +908,12 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/series/bach.SeriesAbstractDateTime"
+                                        "id": "modeling/Series/bach.SeriesAbstractDateTime"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "dt",
-                                        "id": "modeling/series/bach.SeriesAbstractDateTime.dt"
+                                        "id": "modeling/Series/bach.SeriesAbstractDateTime.dt"
                                     }
                                 ]
                             },
@@ -919,12 +924,12 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/series/bach.SeriesString"
+                                        "id": "modeling/Series/bach.SeriesString"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "str",
-                                        "id": "modeling/series/bach.SeriesString.str"
+                                        "id": "modeling/Series/bach.SeriesString.str"
                                     }
                                 ]
                             },
@@ -935,19 +940,19 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/series/bach.SeriesJsonb"
+                                        "id": "modeling/Series/bach.SeriesJsonb"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "json",
-                                        "id": "modeling/series/bach.SeriesJsonb.json"
+                                        "id": "modeling/Series/bach.SeriesJsonb.json"
                                     }
                                 ]
                             },
                             {
                                 "type": "doc",
                                 "label": "SeriesJson",
-                                "id": "modeling/series/bach.SeriesJson"
+                                "id": "modeling/Series/bach.SeriesJson"
                             }
                         ]
                     },
@@ -972,17 +977,17 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "from_const",
-                                        "id": "modeling/series/bach.Series.from_const"
+                                        "id": "modeling/Series/bach.Series.from_const"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_frame",
-                                        "id": "modeling/series/bach.Series.to_frame"
+                                        "id": "modeling/Series/bach.Series.to_frame"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "copy",
-                                        "id": "modeling/series/bach.Series.copy"
+                                        "id": "modeling/Series/bach.Series.copy"
                                     }
                                 ]
                             },
@@ -998,27 +1003,27 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "head",
-                                        "id": "modeling/series/bach.Series.head"
+                                        "id": "modeling/Series/bach.Series.head"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "to_pandas",
-                                        "id": "modeling/series/bach.Series.to_pandas"
+                                        "id": "modeling/Series/bach.Series.to_pandas"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "array",
-                                        "id": "modeling/series/bach.Series.array"
+                                        "id": "modeling/Series/bach.Series.array"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "values",
-                                        "id": "modeling/series/bach.Series.values"
+                                        "id": "modeling/Series/bach.Series.values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "value",
-                                        "id": "modeling/series/bach.Series.value"
+                                        "id": "modeling/Series/bach.Series.value"
                                     }
                                 ]
                             },
@@ -1060,32 +1065,32 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "all_values",
-                                        "id": "modeling/series/bach.Series.all_values"
+                                        "id": "modeling/Series/bach.Series.all_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "any_value",
-                                        "id": "modeling/series/bach.Series.any_value"
+                                        "id": "modeling/Series/bach.Series.any_value"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "exists",
-                                        "id": "modeling/series/bach.Series.exists"
+                                        "id": "modeling/Series/bach.Series.exists"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "isin",
-                                        "id": "modeling/series/bach.Series.isin"
+                                        "id": "modeling/Series/bach.Series.isin"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "isnull",
-                                        "id": "modeling/series/bach.Series.isnull"
+                                        "id": "modeling/Series/bach.Series.isnull"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "notnull",
-                                        "id": "modeling/series/bach.Series.notnull"
+                                        "id": "modeling/Series/bach.Series.notnull"
                                     }
                                 ]
                             },
@@ -1101,12 +1106,12 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "sort_values",
-                                        "id": "modeling/series/bach.Series.sort_values"
+                                        "id": "modeling/Series/bach.Series.sort_values"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "fillna",
-                                        "id": "modeling/series/bach.Series.fillna"
+                                        "id": "modeling/Series/bach.Series.fillna"
                                     }
                                 ]
                             },
@@ -1122,17 +1127,17 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "agg",
-                                        "id": "modeling/series/bach.Series.agg"
+                                        "id": "modeling/Series/bach.Series.agg"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "aggregate",
-                                        "id": "modeling/series/bach.Series.aggregate"
+                                        "id": "modeling/Series/bach.Series.aggregate"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "apply_func",
-                                        "id": "modeling/series/bach.Series.apply_func"
+                                        "id": "modeling/Series/bach.Series.apply_func"
                                     }
                                 ]
                             },
@@ -1191,12 +1196,12 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.ObjectivStack"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivStack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "get_from_context_with_type_series",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.ObjectivStack.get_from_context_with_type_series"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivStack.get_from_context_with_type_series"
                                     }
                                 ]
                             },
@@ -1207,27 +1212,27 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesGlobalContexts"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "gc",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.gc"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesGlobalContexts.gc"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "global_contexts",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.global_contexts"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesGlobalContexts.global_contexts"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "obj",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.obj"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesGlobalContexts.obj"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "objectiv",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesGlobalContexts.objectiv"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesGlobalContexts.objectiv"
                                     }
                                 ]
                             },
@@ -1238,73 +1243,27 @@ module.exports = [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "location_stack",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.location_stack"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack.location_stack"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "ls",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.ls"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack.ls"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "obj",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.obj"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack.obj"
                                     },
                                     {
                                         "type": "doc",
                                         "label": "objectiv",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.SeriesLocationStack.objectiv"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "category",
-                                "label": "FeatureFrame",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "label": "Overview",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "check_supported",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.check_supported"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "copy_override",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.copy_override"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "display_sankey",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.display_sankey"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "from_data_frame",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.from_data_frame"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "hash_features",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.hash_features"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "stack_flows_from_feature_df",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.stack_flows_from_feature_df"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "write_to_full_frame",
-                                        "id": "modeling/objectiv/bach_open_taxonomy.FeatureFrame.write_to_full_frame"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack.objectiv"
                                     }
                                 ]
                             }
