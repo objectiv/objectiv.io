@@ -143,18 +143,54 @@ const SphinxPage = (props) => {
                         }
 
                         // only remove the .html if local links, leave external links alone
-                        //  console.log(`Found link to: ${a.href} --> ${currentSite} // ${window.location.toString()}`);
                         a.href = a.href.replace(/\.html/g, '');
+                          console.log(`Add Found link to: ${a.href}  // ${window.location.toString()} // ${currentSite[1]}`);
 
-                        // try and fix links that are broken in builds do to slashes
-                        // we go from http://site/docs/modeling/page/otherpage/#anchor
-                        // to
-                        // http://site/docs/modeling/otherpage/#anchor
-                        const parts = window.location.toString().match(/^(.*?)modeling\/([a-zA-Z0-9-._]*?\/)([a-zA-Z0-9-._]*?\/)(#([a-zA-Z0-9-._])+)?$/);
-                        if ( parts !== null ){
-                          //  console.log(`Add fixing link (${a.href}) removing ${parts[3]}`);
-                            a.href = a.href.replace(parts[3], '');
+                        // remove the base URL, eg http://localhost:3000/ or https://staging.objectiv.io/docs/
+                        // from the href and then split it by '/'
+                        const relative_url = a.href.replace(currentSite[1].slice(0,-1) + baseUrl.baseUrl, '');
+                        const relative_parts = relative_url.split('/');
+                        console.log(`Add rel parts: ${relative_parts.length}${relative_parts}`);
+
+                        // case 0: all is good (/Class1/bach.Class1.method1)
+                        // --> do nothing
+                        //
+                        // case 1: /module1/bach.Class1.method1/bach.Class1.method2
+                        //  --> remove $2 (bach.Class1.method1)
+                        // Example: /modeling/DataFrame/bach.DataFrame.head/bach.DataFrame.to_pandas
+                        // parts: modeling,DataFrame,bach.DataFrame.head,bach.DataFrame.to_pandas#bach.DataFrame.to_pandas
+                        //
+                        // case 2: /module1/module2/bach.Class2.method1
+                        // --> remove $1 (module1)
+                        // Example: /modeling/DataFrame/Series/bach.Series#bach.Series
+                        // Parts: modeling,DataFrame,Series,bach.Series#bach.Series
+                        //
+                        // case 3: /Class1/bach.Class1/bach.Class1.method1
+                        // --> remote $1 (bach.Class1)
+                        // Example: /modeling/Objectiv/bach_open_taxonomy.SeriesLocationStack/bach_open_taxonomy.SeriesLocationStack.ls#bach_open_taxonomy.SeriesLocationStack.ls
+                        // Parts: modeling,Objectiv,bach_open_taxonomy.SeriesLocationStack,bach_open_taxonomy.SeriesLocationStack.ls#bach_open_taxonomy.SeriesLocationStack.ls
+                        if ( relative_parts !== null && relative_parts.length > 3 ){
+
+                            // case 1
+                            const method1 = relative_parts[2].split('.');
+                            const method2 = relative_parts[3].split('.');
+                            if ( method1[0] == method2[0] && method2[1].startsWith(method1[1]) ){
+                                a.href = a.href.replace(relative_parts[2] + '/', '');
+                                console.log('Add: case 1')
+                            }
+
+                            // case 2
+                            if ( !relative_parts[2].includes(relative_parts[1]) &&
+                                relative_parts[3].includes(relative_parts[2]) &&
+                                relative_parts[2][0].match(/[A-Z]/) ) {
+                                a.href = a.href.replace(relative_parts[1] + '/', '');
+                                console.log('Add: case 2')
+                            }
                         }
+                        else {
+                            console.log('Add: case 0')
+                        }
+                        console.log(`Add resulting link: ${a.href}`);
 
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
