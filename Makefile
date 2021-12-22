@@ -2,7 +2,7 @@
 
 
 
-OBJECTIV_ENVIRONMENT := docker
+OBJECTIV_ENVIRONMENT ?= docker
 
 all: build-docker-website
 
