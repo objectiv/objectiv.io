@@ -16,16 +16,16 @@ Describe interactive and non-interactive events.
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> InteractiveEvent;
-        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"]
+        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"]
         InteractiveEvent --> PressEvent["PressEvent<br /><span class='properties'>requires:<br />PressableContext</span>"];
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> ApplicationLoadedEvent;
         NonInteractiveEvent --> FailureEvent["FailureEvent<br><span class='properties'>message: string</span>"]; 
-        NonInteractiveEvent --> HiddenEvent["HiddenEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
+        NonInteractiveEvent --> HiddenEvent["HiddenEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"];
         NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         NonInteractiveEvent --> SuccessEvent["SuccessEvent<br><span class='properties'>message: string</span>"];
-        NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
+        NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"];
         MediaEvent --> MediaLoadEvent;
         MediaEvent --> MediaPauseEvent;
         MediaEvent --> MediaStartEvent;
