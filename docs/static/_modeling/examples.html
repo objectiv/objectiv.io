@@ -3,11 +3,11 @@
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h1>
 <p>Here we&#8217;ll give some very basic examples of the usage of Bach: creating a DataFrame, basic operations,
-aggregate operations, and getting the resulting data.</p>
+aggregate operations, and getting the resulting data filtered and sorted.</p>
 <p>In the examples we&#8217;ll assume that the database has a table called &#8216;example&#8217;, with a few specific
 columns. The SQL to create that table can be found below in <a class="reference internal" href="#appendix-example-data"><span class="std std-ref">Appendix: Example Data</span></a>.</p>
-<p>We also have <a class="reference external" href="https://notebook.objectiv.io/lab?path=product_analytics.ipynb">live example notebook</a> that you
-can use to get a feel for Bach.</p>
+<p>We also have <a class="reference external" href="https://notebook.objectiv.io/lab?path=product_analytics.ipynb">live example notebook</a> that
+you can use to get a feel for Bach.</p>
 <section id="create-a-dataframe-from-a-database-table">
 <h2>Create a DataFrame from a database table<a class="headerlink" href="#create-a-dataframe-from-a-database-table" title="Permalink to this headline">&#182;</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">bach</span> <span class="kn">import</span> <span class="n">from_table</span>
@@ -35,7 +35,6 @@ existing pandas DataFrame (using <cite>from_pandas</cite>).</p>
 <span class="n">df</span><span class="p">[</span><span class="s1">'concat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">' is located in '</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">'municipality'</span><span class="p">]</span>
 <span class="c1"># remove the city column</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'city'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
 <span class="c1"># rename the 'another column' column to 'city'</span>
 <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'another column'</span><span class="p">:</span> <span class="s1">'city'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 

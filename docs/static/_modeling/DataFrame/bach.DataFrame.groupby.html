@@ -1,0 +1,41 @@
+<div>
+                
+  <section id="bach-dataframe-groupby">
+<h1>bach.DataFrame.groupby<a class="headerlink" href="#bach-dataframe-groupby" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.DataFrame.groupby">
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.groupby" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Group by any of the series currently in this DataDrame, both from index as well as data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>by</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>, </em><em>Tuple</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>, </em><em>Tuple</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em><em>, </em><em>...</em><em>]</em><em>]</em><em>, </em><em>...</em><em>]</em><em>, </em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>, </em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em><em>]</em><em>, </em><em>Tuple</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em><em>, </em><em>...</em><em>]</em><em>]</em><em>]</em><em>]</em><em>]</em>) &#8211; </p><p>The series to group by. Supported are:</p>
+<ul class="simple">
+<li><p>a string containing a columnn name.</p></li>
+<li><p>a series.</p></li>
+<li><p>a list of strings or series. A normal group by will be created.</p></li>
+<li><p>a list of (strings, series, lists). In this case a grouping list is created.</p></li>
+<li><p>a tuple of (strings, series, lists). In this case a grouping set is created.</p></li>
+</ul>
+
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new DataFrame object with the <a class="reference internal" href="bach.DataFrame.group_by.html#bach.DataFrame.group_by" title="bach.DataFrame.group_by"><code class="xref py py-attr docutils literal notranslate"><span class="pre">group_by</span></code></a> attribute set.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the dataframe is already grouped, we&#8217;ll create a grouping list from the initial
+grouping combined with this one.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
