@@ -11,13 +11,13 @@ import Mermaid from '@theme/Mermaid';
         NonInteractiveEvent --> ApplicationLoadedEvent;
         NonInteractiveEvent --> FailureEvent["FailureEvent<br><span class='properties'>message: string</span>"];  
         NonInteractiveEvent --> HiddenEvent["HiddenEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
+        NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         NonInteractiveEvent --> SuccessEvent["SuccessEvent<br><span class='properties'>message: string</span>"];
-        NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />LocationContext</span>"];
-        VideoEvent --> VideoLoadEvent;
-        VideoEvent --> VideoPauseEvent;
-        VideoEvent --> VideoStartEvent;
-        VideoEvent --> VideoStopEvent;
+        MediaEvent --> MediaLoadEvent;
+        MediaEvent --> MediaPauseEvent;
+        MediaEvent --> MediaStartEvent;
+        MediaEvent --> MediaStopEvent;
     class NonInteractiveEvent diagramActive;
 `} 
   caption="Diagram: NonInteractiveEvent" 
@@ -28,11 +28,11 @@ import Mermaid from '@theme/Mermaid';
     { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' },
     { name: 'VisibleEvent', to: '/taxonomy/reference/events/VisibleEvent' },
     { name: 'HiddenEvent', to: '/taxonomy/reference/events/HiddenEvent' },
-    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
-    { name: 'VideoLoadEvent', to: '/taxonomy/reference/events/VideoLoadEvent' },
-    { name: 'VideoPauseEvent', to: '/taxonomy/reference/events/VideoPauseEvent' },
-    { name: 'VideoStartEvent', to: '/taxonomy/reference/events/VideoStartEvent' },
-    { name: 'VideoStopEvent', to: '/taxonomy/reference/events/VideoStopEvent' }
+    { name: 'MediaEvent', to: '/taxonomy/reference/events/MediaEvent' },
+    { name: 'MediaLoadEvent', to: '/taxonomy/reference/events/MediaLoadEvent' },
+    { name: 'MediaPauseEvent', to: '/taxonomy/reference/events/MediaPauseEvent' },
+    { name: 'MediaStartEvent', to: '/taxonomy/reference/events/MediaStartEvent' },
+    { name: 'MediaStopEvent', to: '/taxonomy/reference/events/MediaStopEvent' }
   ]}
 />
 

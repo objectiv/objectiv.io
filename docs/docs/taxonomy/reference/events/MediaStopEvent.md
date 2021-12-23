@@ -1,6 +1,6 @@
-# VideoStartEvent
+# MediaStopEvent
 
-A [VideoEvent](/taxonomy/reference/events/VideoEvent) that's emitted after a video starts playback.
+A [MediaEvent](/taxonomy/reference/events/MediaEvent) that's emitted after a media item stops playback.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -8,15 +8,15 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
-        VideoEvent --> VideoStartEvent;
-    class VideoStartEvent diagramActive;
+        NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        MediaEvent --> MediaStopEvent;
+    class MediaStopEvent diagramActive;
 `} 
-  caption="Diagram: VideoStartEvent" 
+  caption="Diagram: MediaStopEvent" 
   baseColor="blue" 
   links={[
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' }
+    { name: 'MediaEvent', to: '/taxonomy/reference/events/MediaEvent' }
   ]}
 />
 

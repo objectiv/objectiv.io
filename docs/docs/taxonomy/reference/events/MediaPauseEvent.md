@@ -1,6 +1,6 @@
-# VideoPauseEvent
+# MediaPauseEvent
 
-A [VideoEvent](/taxonomy/reference/events/VideoEvent) that's emitted after a video pauses playback.
+A [MediaEvent](/taxonomy/reference/events/MediaEvent) that's emitted after a media item pauses playback.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -8,15 +8,15 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
-        VideoEvent --> VideoPauseEvent;
-    class VideoPauseEvent diagramActive;
+        NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        MediaEvent --> MediaPauseEvent;
+    class MediaPauseEvent diagramActive;
 `} 
-  caption="Diagram: VideoPauseEvent" 
+  caption="Diagram: MediaPauseEvent" 
   baseColor="blue" 
   links={[
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' }
+    { name: 'MediaEvent', to: '/taxonomy/reference/events/MediaEvent' }
   ]}
 />
 ### Requires

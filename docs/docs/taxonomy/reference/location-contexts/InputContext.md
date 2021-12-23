@@ -6,14 +6,14 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> LocationContext;
-        LocationContext --> InputContext;
+		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> InputContext;
     class InputContext diagramActive;
 `} 
   caption="Diagram: InputContext inheritance" 
   baseColor="blue" 
   links={[
-    { name: 'LocationContext', to: '/taxonomy/location-contexts/' }
+    { name: 'AbstractLocationContext', to: '/taxonomy/location-contexts/' }
   ]}
 />
 

@@ -12,15 +12,17 @@ Location Contexts are meant to describe where an event originated from in the vi
 
 <Mermaid chart={`
 	graph LR
-        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> LocationContext;
-        LocationContext --> ExpandableContext;
-        LocationContext --> InputContext;
-        LocationContext --> MediaPlayerContext;
-        LocationContext --> NavigationContext;
-        LocationContext --> OverlayContext;
-        LocationContext --> PressableContext;
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+        AbstractLocationContext --> ContentContext;
+        AbstractLocationContext --> ExpandableContext;
+        AbstractLocationContext --> InputContext;
+        AbstractLocationContext --> MediaPlayerContext;
+        AbstractLocationContext --> NavigationContext;
+        AbstractLocationContext --> OverlayContext;
+        AbstractLocationContext --> PressableContext;
         PressableContext --> LinkContext;
-        LocationContext --> RootLocationContext;
+        AbstractLocationContext --> RootLocationContext;
+    class ContentContext diagramActive;
     class ExpandableContext diagramActive;
     class InputContext diagramActive;
     class MediaPlayerContext diagramActive;
@@ -33,6 +35,7 @@ Location Contexts are meant to describe where an event originated from in the vi
   caption="Diagram: Location Contexts" 
   baseColor="blue" 
   links={[
+    { name: 'ContentContext', to: '/taxonomy/reference/location-contexts/ContentContext' },
     { name: 'ExpandableContext', to: '/taxonomy/reference/location-contexts/ExpandableContext' },
     { name: 'InputContext', to: '/taxonomy/reference/location-contexts/InputContext' },
     { name: 'LinkContext', to: '/taxonomy/reference/location-contexts/LinkContext' },
@@ -43,5 +46,5 @@ Location Contexts are meant to describe where an event originated from in the vi
     { name: 'PressableContext', to: '/taxonomy/reference/location-contexts/PressableContext' },
   ]}
 />
-AbstractContext is the abstract parents of all Location Contexts.
+AbstractContext & AbstractLocationContext are the abstract parents of all Location Contexts.
 

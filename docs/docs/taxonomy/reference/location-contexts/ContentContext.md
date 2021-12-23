@@ -1,16 +1,16 @@
-# NavigationContext
+# ContentContext
 
-A [LocationContext](/taxonomy/location-contexts/) that describes a section of the UI containing navigational elements, for example a menu.
+A [LocationContext](/taxonomy/location-contexts/) that describes a logical section of the UI that contains other Location Contexts. Enabling Data Science to analyze this section specifically. 
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-		AbstractLocationContext --> NavigationContext;
-    class NavigationContext diagramActive;
+		AbstractLocationContext --> ContentContext;
+    class ContentContext diagramActive;
 `} 
-  caption="Diagram: NavigationContext inheritance" 
+  caption="Diagram: ContentContext inheritance" 
   baseColor="blue" 
   links={[
      { name: 'AbstractLocationContext', to: '/taxonomy/location-contexts/' }

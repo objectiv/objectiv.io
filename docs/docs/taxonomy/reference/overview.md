@@ -19,6 +19,7 @@ High level overview of all the Events & Contexts available in the open analytics
 ## Location Contexts
 [Location Contexts](./location-contexts/) are meant to describe where an event originated from in the visual UI.
 
+* [ContentContext](./location-contexts/ContentContext.md)
 * [ExpandableContext](./location-contexts/ExpandableContext.md)
 * [InputContext](./location-contexts/InputContext.md)
 * [LinkContext](./location-contexts/LinkContext.md)
@@ -35,12 +36,12 @@ Used to describe interactive and non-interactive [Events](./events/).
 * [HiddenEvent](./events/HiddenEvent.md)
 * [InputChangeEvent](./events/InputChangeEvent.md)
 * [InteractiveEvent](./events/InteractiveEvent.md)
+* [MediaEvent](./events/MediaEvent.md)
+* [MediaLoadEvent](./events/MediaLoadEvent.md)
+* [MediaPauseEvent](./events/MediaPauseEvent.md)
+* [MediaStartEvent](./events/MediaStartEvent.md)
+* [MediaStopEvent](./events/MediaStopEvent.md)
 * [NonInteractiveEvent](./events/NonInteractiveEvent.md)
 * [PressEvent](./events/PressEvent.md)
 * [SuccessEvent](./events/SuccessEvent.md)
-* [VideoEvent](./events/VideoEvent.md)
-* [VideoLoadEvent](./events/VideoLoadEvent.md)
-* [VideoPauseEvent](./events/VideoPauseEvent.md)
-* [VideoStartEvent](./events/VideoStartEvent.md)
-* [VideoStopEvent](./events/VideoStopEvent.md)
 * [VisibleEvent](./events/VisibleEvent.md)

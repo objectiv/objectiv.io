@@ -1,6 +1,6 @@
-# VideoStopEvent
+# MediaEvent
 
-A [VideoEvent](/taxonomy/reference/events/VideoEvent) that's emitted after a video stops playback.
+The parent of [non-interactive events](/taxonomy/reference/events/NonInteractiveEvent.md) that are triggered by a media player. It requires a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext) to detail the origin of the event.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -8,20 +8,26 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
-        NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
-        VideoEvent --> VideoStopEvent;
-    class VideoStopEvent diagramActive;
+        NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
+        MediaEvent --> MediaLoadEvent;
+        MediaEvent --> MediaPauseEvent;
+        MediaEvent --> MediaStartEvent;
+        MediaEvent --> MediaStopEvent;
+    class MediaEvent diagramActive;
 `} 
-  caption="Diagram: VideoStopEvent" 
+  caption="Diagram: MediaEvent" 
   baseColor="blue" 
   links={[
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' }
+    { name: 'MediaLoadEvent', to: '/taxonomy/reference/events/MediaLoadEvent' },
+    { name: 'MediaPauseEvent', to: '/taxonomy/reference/events/MediaPauseEvent' },
+    { name: 'MediaStartEvent', to: '/taxonomy/reference/events/MediaStartEvent' },
+    { name: 'MediaStopEvent', to: '/taxonomy/reference/events/MediaStopEvent' }
   ]}
 />
 
 ### Requires
-- None.
+- [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
 
 ### Properties
 |                | type        | description    | contains
