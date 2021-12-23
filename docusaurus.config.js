@@ -85,17 +85,21 @@ const config = {
       },
       items: [
         {
-          label: 'Docs',
-          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          to: 'how-it-works',
+          label: 'How it works',
+        },
+        {
+          to: 'about',
+          label: 'About us',
         },
         {
           to: 'jobs',
           label: 'Jobs',
         },
         {
-          to: 'about',
-          label: 'About Us',
+          label: 'Docs',
+          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
+          target: '_self'
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
