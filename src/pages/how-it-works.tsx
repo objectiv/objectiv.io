@@ -356,6 +356,14 @@ export default function Home() {
                 </table>
               </div>
 
+              <div className={clsx(styles.viewComparison)}>
+                <a 
+                  href={useBaseUrl("img/comparison/comparison-table.svg")}
+                >
+                  <img src={useBaseUrl("img/comparison/view-comparison.svg")} alt="View the comparison" />
+                </a>
+              </div>
+
               <div className={clsx(styles.pageSectionOutro)}>
                 <div>
                 <Link 

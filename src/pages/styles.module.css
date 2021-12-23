@@ -393,6 +393,20 @@ footer h2 {
     margin-bottom: 60px;
   }
 }
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .featureComparison {
+    display: none;
+  }
+}
+@media screen and (min-width: 966px) { /* >mobile/tablet all */
+  .viewComparison {
+    display: none;
+  }
+}
+
+.viewComparison img {
+  width: 95%;
+}
 
 .foundation .pageSectionIntro {
   margin-bottom: 40px;
