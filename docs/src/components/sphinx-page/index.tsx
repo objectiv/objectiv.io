@@ -176,7 +176,8 @@ const SphinxPage = (props) => {
                                 if (method1[0] == method2[0] && method2[1].startsWith(method1[1])) {
                                     a.href = a.href.replace(relative_parts[2] + '/', '');
                                 }
-                            } else if (relative_parts.length > 2 ){
+                            }
+                            if (relative_parts.length > 2 ){
                                 // case 2 & 3
                                 if ( relative_parts[2][0].match(/[A-Z]/) ){
                                     a.href = a.href.replace(relative_parts[1] + '/', '');
