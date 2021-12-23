@@ -24,11 +24,6 @@ export default function DefaultNavbarItem({
           id: props.label, 
           text: props.label, 
           href: props.href ? props.href : props.to,
-          options: {
-            trackClicks: {
-              waitUntilTracked: true
-            }
-          }
         })
       }
     />

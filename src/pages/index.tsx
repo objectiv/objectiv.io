@@ -131,11 +131,6 @@ export default function Home() {
                       id: 'cta-how-it-works', 
                       href: '/how-it-works',
                       text: 'Find out how it works',
-                      options: {
-                        trackClicks: {
-                          waitUntilTracked: true
-                        }
-                      }
                     }
                   )}
                   target="_self" 
@@ -172,11 +167,6 @@ export default function Home() {
                         id: 'cta-docs-quickstart-guide', 
                         href: '/docs/quickstart-guide/',
                         text: 'Objectiv Quickstart Guide',
-                        options: {
-                          trackClicks: {
-                            waitUntilTracked: true
-                          }
-                        }
                       }
                     )}
                     target="_self" 
