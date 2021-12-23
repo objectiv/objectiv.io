@@ -1,0 +1,40 @@
+<div>
+                
+  <section id="bach-open-taxonomy-objectivframe-materialize">
+<h1>bach_open_taxonomy.ObjectivFrame.materialize<a class="headerlink" href="#bach-open-taxonomy-objectivframe-materialize" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach_open_taxonomy.ObjectivFrame.materialize">
+<span class="sig-prename descclassname"><span class="pre">ObjectivFrame.</span></span><span class="sig-name descname"><span class="pre">materialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ObjectivFrame.materialize" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Create a copy of this DataFrame with as base_node the current DataFrame&#8217;s state.</p>
+<p>This effectively adds a node to the underlying SqlModel graph. Generally adding nodes increases
+the size of the generated SQL query. But this can be useful if the current DataFrame contains
+expressions that you want to evaluate before further expressions are build on top of them. This might
+make sense for very large expressions, or for non-deterministic expressions (e.g. see
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">SeriesUuid.sql_gen_random_uuid()</span></code>).</p>
+<p>TODO: a known problem is that DataFrames with &#8216;json&#8217; columns cannot be fully materialized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_name</strong> &#8211; The name of the node that&#8217;s going to be created</p></li>
+<li><p><strong>inplace</strong> &#8211; Perform operation on self if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>, or create a copy.</p></li>
+<li><p><strong>limit</strong> &#8211; The limit (slice, int) to apply.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame with the current DataFrame&#8217;s state as base_node</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Calling materialize() resets the order of the dataframe. Call <code class="xref py py-meth docutils literal notranslate"><span class="pre">sort_values()</span></code> again on
+the result if order is important.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

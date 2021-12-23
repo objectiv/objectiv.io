@@ -1,0 +1,31 @@
+<div>
+                
+  <section id="bach-open-taxonomy-objectivframe-add-conversion-event">
+<h1>bach_open_taxonomy.ObjectivFrame.add_conversion_event<a class="headerlink" href="#bach-open-taxonomy-objectivframe-add-conversion-event" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach_open_taxonomy.ObjectivFrame.add_conversion_event">
+<span class="sig-prename descclassname"><span class="pre">ObjectivFrame.</span></span><span class="sig-name descname"><span class="pre">add_conversion_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location_stack</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ObjectivFrame.add_conversion_event" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Label events that are used as conversions. All labeled conversion events are set in
+ObjectivFrame.conversion_events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location_stack</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="bach_open_taxonomy.SeriesLocationStack.html#bach_open_taxonomy.SeriesLocationStack" title="bach_open_taxonomy.series.series_objectiv.SeriesLocationStack"><em>bach_open_taxonomy.series.series_objectiv.SeriesLocationStack</em></a><em>]</em>) &#8211; the location stack that is labeled as conversion. Can be any slice in of a
+objectiv_location_stack type column. Optionally use in conjunction with event_type to label a
+conversion.</p></li>
+<li><p><strong>event_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; the event type that is labeled as conversion. Optionally use in conjunction with
+objectiv_location_stack to label a conversion.</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; the name to use for the labeled conversion event. If None it will use &#8216;conversion_#&#8217;,
+where # is the number of the added conversion.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

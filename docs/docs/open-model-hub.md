@@ -10,7 +10,7 @@ Objectiv comes with an open model hub that contains a growing collection of open
 
 All models are compatible with datasets that have been validated against the [open analytics taxonomy](/taxonomy/introduction.md). The source is available for all models and you’re free to make any changes. You can use the included pandas-compatible [Bach modeling library](/modeling/intro.mdx) to customize them, or even add in advanced ML models.
 
-Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/dataframe/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
+Input and output of the models are in the [Objectiv Bach DataFrame](/modeling/DataFrame/bach.DataFrame.mdx) format, which enables you to chain multiple models together.
 
 ## Models
 Each model can run before, after or combined with any of the available other models. This allows you stack them for your analysis and further ML.

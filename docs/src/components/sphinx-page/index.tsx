@@ -133,31 +133,57 @@ const SphinxPage = (props) => {
                     // or if it's a relative URL
                     const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
                         !a.href.startsWith('http'));
-                    // fix the hrefs in the overview/index page in case of missing trailing slash
-                    if ( url == `${baseUrl.baseUrl}_modeling/intro.html` && isInternal ){
+
+                    if ( isInternal ){
+                        // fix the hrefs in the overview/index page in case of missing trailing slash
                         if ( a.href.indexOf('modeling') == -1){
                             // we add the baseURL to the match, to make sure it works in dev and prod mode
                             const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
                             a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
-                    }
-                    // only remove the .html if local links, leave external links alone
-                    if ( isInternal ){
-                        console.log(`Found link to: ${a.href} --> ${currentSite} // ${window.location.toString()}`);
+
+                        // only remove the .html if local links, leave external links alone
                         a.href = a.href.replace(/\.html/g, '');
 
-                        // try and fix links that are broken in builds do to slashes
-                        // we go from http://site/docs/modeling/page/otherpage/#anchor
-                        // to
-                        // http://site/docs/modeling/otherpage/#anchor
-                        const parts = window.location.toString().match(/^(.*?)\/([a-zA-Z0-9-.]*?\/)(#([a-z0-9])+)?$/);
-                        if ( parts !== null ){
-                            a.href = a.href.replace(parts[2], '');
+                        // remove the base URL, eg http://localhost:3000/ or https://staging.objectiv.io/docs/
+                        // from the href and then split it by '/'
+                        const relative_url = a.href.replace(currentSite[1].slice(0,-1) + baseUrl.baseUrl, '');
+                        const relative_parts = relative_url.split('/');
+
+                        /* case 0: all is good (/Class1/bach.Class1.method1)
+                         * --> do nothing
+                         *
+                         * case 1: /module1/bach.Class1.method1/bach.Class1.method2
+                         *  --> remove $2 (bach.Class1.method1)
+                         * Example: /modeling/DataFrame/bach.DataFrame.head/bach.DataFrame.to_pandas
+                         * parts: modeling,DataFrame,bach.DataFrame.head,bach.DataFrame.to_pandas#bach.DataFrame.to_pandas
+                         *
+                         * case 2: /module1/module2/bach.Class2.method1
+                         * --> remove $1 (module1)
+                         * Example: /modeling/DataFrame/Series/bach.Series#bach.Series
+                         * Parts: modeling,DataFrame,Series,bach.Series#bach.Series
+                         */
+                        if ( relative_parts !== null && relative_parts.length > 3 ){
+
+                            // case 1
+                            const method1 = relative_parts[2].split('.');
+                            const method2 = relative_parts[3].split('.');
+                            if ( method1[0] == method2[0] && method2[1].startsWith(method1[1]) ){
+                                a.href = a.href.replace(relative_parts[2] + '/', '');
+                            }
+
+                            // case 2
+                            if ( relative_parts[3].includes(relative_parts[2]) &&
+                                relative_parts[2][0].match(/[A-Z]/) ) {
+                                a.href = a.href.replace(relative_parts[1] + '/', '');
+                            }
                         }
 
-                        console.log(parts);
-
-
+                        // make sure to add a trailing slash to links with anchors that don't have it.
+                        // to avoid unnecessary redirects
+                        if ( a.href.match(/[a-zA-Z]#/) ){
+                            a.href = a.href.replace('#', '/#');
+                        }
 
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
