@@ -67,7 +67,7 @@ const config = {
     trackerApplicationId: envConfig.trackerApplicationId,
     trackerEndPoint: envConfig.trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === '1'
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true'
   },
 
   themeConfig:
