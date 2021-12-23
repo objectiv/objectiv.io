@@ -11,7 +11,7 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - OSS product analytics pipeline for reusable modeling',
+  title: 'Objectiv - open-source product analytics built for data science',
   titleDelimiter: '|',
   tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
@@ -85,17 +85,21 @@ const config = {
       },
       items: [
         {
-          label: 'Docs',
-          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          to: 'how-it-works',
+          label: 'How it works',
+        },
+        {
+          to: 'about',
+          label: 'About us',
         },
         {
           to: 'jobs',
           label: 'Jobs',
         },
         {
-          to: 'about',
-          label: 'About Us',
+          label: 'Docs',
+          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
+          target: '_self'
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
