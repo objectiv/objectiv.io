@@ -2971,13 +2971,6 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-cross-env@^7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
-  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
-  dependencies:
-    cross-spawn "^7.0.1"
-
 cross-fetch@^3.0.4:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
@@ -2985,7 +2978,7 @@ cross-fetch@^3.0.4:
   dependencies:
     node-fetch "2.6.1"
 
-cross-spawn@^7.0.1, cross-spawn@^7.0.3:
+cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -5845,10 +5838,10 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-mermaid@^8.13.6:
-  version "8.13.6"
-  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.13.6.tgz#0dc7fcf5b07b45fe03a93f1828efa4e9b6525f71"
-  integrity sha512-mz8MHq0IyEM7vLyl3fEOWgqMNYrowTS1s8Tx2EC1BGlT0KHpy4BFFgcKlLdor2vxSMSlXq1sAZS+aykFC6uUBA==
+mermaid@^8.13.7:
+  version "8.13.7"
+  resolved "https://registry.yarnpkg.com/mermaid/-/mermaid-8.13.7.tgz#79cbcc7c03ccd8ab2e3485065c089ddca9a8ddfe"
+  integrity sha512-uHUrPgFpmhqv7Pk76tnFJafoNt/zmAENZgVmPWZ8zdFfzYEoMrcxVbxhmsNL/jJqhosMnQLB9FVn+GD7vAI+sA==
   dependencies:
     "@braintree/sanitize-url" "^3.1.0"
     d3 "^7.0.0"
