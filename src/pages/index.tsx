@@ -76,6 +76,10 @@ export default function Home() {
                 src={useBaseUrl("img/solution-full-flow.svg")} 
                 className={clsx(styles.productFlow)}
                 alt="Product flow" />
+              <img 
+                src={useBaseUrl("img/solution-full-flow-vertical.svg")} 
+                className={clsx(styles.productFlowVertical)}
+                alt="Product flow" />
 
               <div className={clsx(styles.twoColumnItems)}>
                 <div className={clsx(styles.twoColumnItem)}>

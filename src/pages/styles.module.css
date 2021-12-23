@@ -245,7 +245,7 @@ footer h2 {
 .intro, .container.intro {
   /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
   max-width: 746px !important;
-  padding: 10px 0 86px 0;
+  padding: 10px 0 70px 0;
   text-align: center;
 }
 @media (min-width: 1440px) {
@@ -272,8 +272,21 @@ footer h2 {
   font-size: 24px;
 }
 
+.productIntro .productFlowVertical {
+  display: none;
+  margin: 0 auto 80px auto;
+}
 .productIntro .productFlow {
   margin-bottom: 110px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .productIntro .productFlow {
+    display: none;
+  }
+  .productIntro .productFlowVertical {
+    display: block;
+  }
 }
 
 .productIntro .pageSectionOutro {
