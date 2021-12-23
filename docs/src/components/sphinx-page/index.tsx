@@ -162,20 +162,29 @@ const SphinxPage = (props) => {
                          * --> remove $1 (module1)
                          * Example: /modeling/DataFrame/Series/bach.Series#bach.Series
                          * Parts: modeling,DataFrame,Series,bach.Series#bach.Series
+                         *
+                         * case 3: /page/module#someanchor
+                         * --> remove page
+                         * Example: /modeling/reference/DataFrame#Usage
+                         * Parts: modeling,reference,DataFrame#Usage
                          */
-                        if ( relative_parts !== null && relative_parts.length > 3 ){
-
-                            // case 1
-                            const method1 = relative_parts[2].split('.');
-                            const method2 = relative_parts[3].split('.');
-                            if ( method1[0] == method2[0] && method2[1].startsWith(method1[1]) ){
-                                a.href = a.href.replace(relative_parts[2] + '/', '');
-                            }
-
-                            // case 2
-                            if ( relative_parts[3].includes(relative_parts[2]) &&
-                                relative_parts[2][0].match(/[A-Z]/) ) {
-                                a.href = a.href.replace(relative_parts[1] + '/', '');
+                        if ( relative_parts !== null  ){
+                            if( relative_parts.length > 3 ) {
+                                // case 1
+                                const method1 = relative_parts[2].split('.');
+                                const method2 = relative_parts[3].split('.');
+                                if (method1[0] == method2[0] && method2[1].startsWith(method1[1])) {
+                                    a.href = a.href.replace(relative_parts[2] + '/', '');
+                                }
+                                // case 2
+                                if ( relative_parts[2][0].match(/[A-Z]/)) {
+                                    a.href = a.href.replace(relative_parts[1] + '/', '');
+                                }
+                            } else if (relative_parts.length == 3 ){
+                                // case 3
+                                if ( relative_parts[2][0].match(/[A-Z]/) ){
+                                    a.href = a.href.replace(relative_parts[1] + '/', '');
+                                }
                             }
                         }
 
