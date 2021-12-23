@@ -89,6 +89,37 @@ table, th, td {
   }
 }
 
+.twoColumnItems {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.twoColumnItem {
+  flex: 50%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  vertical-align: top;
+  padding: 0 20px 80px 0;
+}
+.twoColumnItem img {
+  max-height: 90px;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .twoColumnItem {
+    flex: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .twoColumnItem {
+    display: block;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+}
 footer {
   background-color: #008FDB;
   color: #fff;
@@ -241,6 +272,27 @@ footer h2 {
   font-size: 24px;
 }
 
+.productIntro .productFlow {
+  margin-bottom: 110px;
+}
+
+.productIntro .pageSectionOutro {
+  margin: 20px 0;
+}
+
+.quickStart .pageSectionIntro {
+  margin-bottom: 40px;
+}
+.quickStart .pageSectionOutro {
+  margin-top: 20px;
+}
+
+.quickStart .takesLessThan5Minutes {
+  display: block;
+  margin: 8px auto;
+  padding-left: 50px;
+}
+
 
 /**************
   HOW IT WORKS 
@@ -359,40 +411,10 @@ footer h2 {
   }
 }
 
-.inTheBoxComponents {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-}
-
-.inTheBoxComponent {
-  flex: 50%;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-  vertical-align: top;
-  margin-bottom: 80px;
-}
-.inTheBoxComponent img {
-  max-height: 90px;
-}
 .dataStoreComingSoon {
   margin: 20px 0 0 20px;
 }
 
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .inTheBoxComponent {
-    flex: 100%;
-  }
-}
-
-@media screen and (max-width: 480px) { /* mobile small */
-  .inTheBoxComponent {
-    display: block;
-    text-align: center;
-    margin-bottom: 60px;
-  }
-}
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .featureComparison {
     display: none;

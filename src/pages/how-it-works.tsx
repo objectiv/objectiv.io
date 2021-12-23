@@ -145,8 +145,8 @@ export default function Home() {
                   reusable modeling.</p>
               </div>
               
-              <div className={clsx(styles.inTheBoxComponents)}>
-                <div className={clsx(styles.inTheBoxComponent)}>
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-jupyter-notebooks.svg")}
                     alt="Jupyter Notebook" />
@@ -156,7 +156,7 @@ export default function Home() {
                     product analytics use cases.
                   </div>
                 </div>
-                <div className={clsx(styles.inTheBoxComponent)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-taxonomy-sitemap.svg")}
                     alt="Taxonomy" />
@@ -166,7 +166,7 @@ export default function Home() {
                     data.
                   </div>
                 </div>
-                <div className={clsx(styles.inTheBoxComponent)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-tracker.svg")}
                     alt="Objectiv Tracker" />
@@ -176,7 +176,7 @@ export default function Home() {
                     analytics taxonomy. 
                   </div>
                 </div>
-                <div className={clsx(styles.inTheBoxComponent)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-collector.svg")}
                     alt="Objectiv Collector" />
@@ -185,7 +185,7 @@ export default function Home() {
                     Provides an API and storage connectors for receiving, validating, and storing Events.
                   </div>
                 </div>
-                <div className={clsx(styles.inTheBoxComponent)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-bach-sunglasses.svg")}
                     alt="Bach" />
@@ -195,7 +195,7 @@ export default function Home() {
                     dimensions of the open taxonomy.
                   </div>
                 </div>
-                <div className={clsx(styles.inTheBoxComponent)}>
+                <div className={clsx(styles.twoColumnItem)}>
                   <img
                     src={useBaseUrl("img/icons/icon-data-store.svg")}
                     alt="Data Store" />
