@@ -179,6 +179,12 @@ const SphinxPage = (props) => {
                             }
                         }
 
+                        // make sure to add a trailing slash to links with anchors that don't have it.
+                        // to avoid unnecessary redirects
+                        if ( a.href.match(/[a-zA-Z]#/) ){
+                            a.href = a.href.replace('#', '/#');
+                        }
+
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
                             a.text = '#';
