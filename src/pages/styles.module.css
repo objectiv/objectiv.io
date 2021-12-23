@@ -394,34 +394,65 @@ footer h2 {
   }
 }
 
+.foundation .pageSectionIntro {
+  margin-bottom: 40px;
+}
+
 .featureComparison {
   margin-bottom: 128px;
 }
 .featureComparison table {
   margin: 0 auto;
 }
+.featureComparison table {
+  border-spacing: 20px 0;
+  border-collapse: separate;
+}
 .featureComparison th, .featureComparison tr, .featureComparison td {
   border: none;
   text-align: center;
+  min-width: 120px;
 }
 .featureComparison thead th {
-  padding: 20px 28px;
+  padding: 32px 0;
+  border-radius: 8px 8px 0 0;
 }
 .featureComparison tbody th {
   text-align: left;
-  padding: 16px 32px 16px 0;
+  padding: 16px 0;
 }
 .featureComparison table tr:nth-child(2n), .featureComparison table tr:nth-child(2n) td {
   background-color: white;
-  text-align: left;
 }
-.featureComparison img {
+.featureComparison table th:nth-child(2), .featureComparison table td:nth-child(2) {
+  background: rgba(160, 232, 146, 0.2) !important;
+}
+.featureComparison table tbody tr:nth-last-child(2) td {
+  border-radius: 0 0 8px 8px;
+  padding-bottom: 32px;
+}
+.featureComparison thead img {
   display: block;
   padding: 0 0 37px 0;
+  margin: 0 auto;
 }
-.featureComparison .footnote {
+.comparisonPartialCheck {
+  padding-right: 0;
+}
+.featureComparison sup {
   font-size: 12px;
-  padding: 0;
+  position: relative;
+  top: -20px;
+}
+.featureComparisonFootnote td {
+  padding: 24px 0;
+  margin: 0;
+  text-align: left;
+}
+.featureComparisonFootnote td p {
+  font-size: 12px;
+  line-height: 1.5em;
+  margin: 0;
 }
 
 

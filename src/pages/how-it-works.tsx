@@ -211,7 +211,7 @@ export default function Home() {
               </div>
 
               <div className={clsx(styles.pageSectionOutro)}>
-                <p>Try the full Objectiv pipeline on your local machine.</p>
+                <p>Try the <strong>full Objectiv pipeline</strong> on your local machine.</p>
                 <div>
                   <Link 
                     to={useBaseUrl(url + "/docs/quickstart-guide/")}
@@ -263,7 +263,7 @@ export default function Home() {
                       </th>
                       <th scope="col">
                         <img src={useBaseUrl("img/comparison/snowplow-logo-icon.svg")} />
-                        Snopwlow
+                        Snowplow
                       </th>
                       <th scope="col">
                         <img src={useBaseUrl("img/comparison/amplitude-logo-icon.svg")} />
@@ -278,13 +278,75 @@ export default function Home() {
                   <tbody>
                     <tr>
                       <th scope="row">First-party data</th>
-                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Open-source</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Model-ready data</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"></td>
                       <td scope="col"></td>
                       <td scope="col"></td>
                       <td scope="col"></td>
                     </tr>
-                    <tr className={clsx("footnote")}>
+                    <tr>
+                      <th scope="row">Reusable models</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Models included</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">BI tools included</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DS tools included</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                      <td scope="col"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Free to use</th>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
+                      <td scope="col" className={clsx(styles.comparisonPartialCheck)}>
+                        <img src={useBaseUrl("img/icons/icon-checkmark-grey.svg")} alt="Partial checkmark" />
+                        <sup>1.</sup>
+                      </td>
+                      <td scope="col" className={clsx(styles.comparisonPartialCheck)}>
+                        <img src={useBaseUrl("img/icons/icon-checkmark-grey.svg")} alt="Partial checkmark" />
+                        <sup>2.</sup>
+                      </td>
+                    </tr>
+                    <tr className={clsx(styles.featureComparisonFootnote)}>
                       <td colSpan="6" scope="col">
                         <p>1. Free to use for a limited amount of events</p>
                         <p>2. Free to use, but access to raw data is paid</p>
