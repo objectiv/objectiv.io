@@ -1,6 +1,6 @@
 # ApplicationLoadedEvent
 
-A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that is emitted after an application (eg. SPA) has finished loading. 
+A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that is emitted after an application (eg. SPA) or a website has finished loading. 
 
 import Mermaid from '@theme/Mermaid';
 
