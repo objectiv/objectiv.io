@@ -12,7 +12,7 @@ To help ensure that the open analytics taxonomy will enable data scientists to c
 
 1. Give data scientists the best possible data to work with for modeling.
 2. Be supported by tooling to implement it, with as little manual work as possible. 
-3. Be 100% covered by automated validation.
+3. Be covered by automated validation.
 4. Work for any website, web-app or app built on modern, well adopted frameworks.
 5. Be consistent across events, contexts, frameworks, and platforms.
 6. Have a clear intended instrumentation & modeling use for each element.

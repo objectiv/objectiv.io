@@ -4,36 +4,28 @@
 const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-const nodeEnv = process.env.NODE_ENV;
-// only allow yarn start (dev) in dev mode
-if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
-  throw new Error(`Not allowed to use 'yarn start' on non dev build (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
-}
-const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io' : 'https://objectiv.io';
-const baseUrl = '/';
-const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev';
-const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
-const trackerConsoleEnabled = !isProductionEnv;
-const postBuildPlugin = !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null });
+const getEnvConfig = require('./env_config.js');
+const envConfig = getEnvConfig(objectivEnvironment);
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - creating the ultimate workflow for data scientists',
+  title: 'Objectiv - open-source product analytics built for data science',
   titleDelimiter: '|',
-  tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: baseUrl,
-  url: websiteUrl,
+  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
+  baseUrl: envConfig.baseUrl,
+  url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'throw',
-  trailingSlash: true,
+  onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'error',
+
+  // undefined it the default behaviour of docusaurus, and leaves it alone
+  // see: https://docusaurus.io/docs/api/docusaurus-config#trailing-slash for more info
+  trailingSlash: undefined,
 
   presets: [
     [
@@ -54,8 +46,14 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    postBuildPlugin,
-    require.resolve('docusaurus-plugin-image-zoom')
+    require.resolve('docusaurus-plugin-image-zoom'),
+    [
+        // only load the post-build plugin when creating a production build
+        path.resolve(__dirname, 'src/plugins/post-build/'),
+        {
+            skip: objectivEnvironment !== 'production'
+        }
+    ]
   ],
   scripts: [
     {
@@ -66,10 +64,10 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: trackerApplicationId,
-    trackerEndPoint: trackerEndPoint,
+    trackerApplicationId: envConfig.trackerApplicationId,
+    trackerEndPoint: envConfig.trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: trackerConsoleEnabled
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true'
   },
 
   themeConfig:
@@ -87,13 +85,21 @@ const config = {
       },
       items: [
         {
-          label: 'Docs',
-          to: websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          to: 'how-it-works',
+          label: 'How it works',
         },
         {
           to: 'about',
-          label: 'About Us',
+          label: 'About us',
+        },
+        {
+          to: 'jobs',
+          label: 'Jobs',
+        },
+        {
+          label: 'Docs',
+          to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
+          target: '_self'
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
@@ -154,5 +160,6 @@ module.exports = config;
 
 console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
 console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("OBJECTIV TRACKER CONSOLE ENABLED:", config.customFields.trackerConsoleEnabled);
 console.log("DOCUSAURUS URL:", config.baseUrl);
 console.log("DOCUSAURUS BASEURL:", config.baseUrl);

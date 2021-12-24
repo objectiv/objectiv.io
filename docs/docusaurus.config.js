@@ -4,38 +4,30 @@
 const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-const nodeEnv = process.env.NODE_ENV;
-// only allow yarn start (dev) in dev mode
-if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
-  throw new Error(`Not allowed to use 'yarn start' on non dev build (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
-}
-const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io' : 'https://objectiv.io';
-const baseUrl = (isProductionEnv) ? '/docs/' : '/';
-const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev';
-const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
-const trackerConsoleEnabled = !isProductionEnv;
+const getEnvConfig = require('../env_config.js');
+const envConfig = getEnvConfig(objectivEnvironment);
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
-  url: websiteUrl,
-  baseUrl: baseUrl,
+  url: envConfig.websiteUrl,
+  baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
+
+  // undefined it the default behaviour of docusaurus, and leaves it alone
+  // see: https://docusaurus.io/docs/api/docusaurus-config#trailing-slash for more info
+  trailingSlash: undefined,
 
   presets: [
     [
@@ -78,10 +70,10 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: trackerApplicationId,
-    trackerEndPoint: trackerEndPoint,
+    trackerDocsApplicationId: envConfig.trackerApplicationId,
+    trackerEndPoint: envConfig.trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: trackerConsoleEnabled
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true'
   },
 
   themeConfig:
@@ -96,15 +88,15 @@ const config = {
         items: [
           {
             label: 'Tracking',
-            to: '/tracking//',
+            to: '/tracking/',
           },
           {
             label: 'Modeling',
-            to: '/modeling//',
+            to: '/modeling/',
           },
           {
             label: 'Taxonomy',
-            to: '/taxonomy//',
+            to: '/taxonomy/',
           },
           {
             type: 'search',
@@ -113,7 +105,7 @@ const config = {
           {
             label: 'Objectiv.io',
             position: 'right',
-            to: websiteUrl,
+            to: envConfig.websiteUrl,
             target: '_self',
             className: 'navbar__item navbar__link go-homepage'
           }
@@ -127,11 +119,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: websiteUrl + '/privacy/'
+                to: envConfig.websiteUrl + '/privacy/'
               },
               {
                 label: 'Cookies',
-                to: websiteUrl + '/privacy/cookies/'
+                to: envConfig.websiteUrl + '/privacy/cookies/'
               },
             ],
           },
@@ -158,5 +150,6 @@ module.exports = config;
 
 console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerDocsApplicationId);
 console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("OBJECTIV TRACKER CONSOLE ENABLED:", config.customFields.trackerConsoleEnabled);
 console.log("DOCUSAURUS URL:", config.baseUrl);
 console.log("DOCUSAURUS BASEURL:", config.baseUrl);

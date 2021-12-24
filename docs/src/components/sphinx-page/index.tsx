@@ -128,21 +128,68 @@ const SphinxPage = (props) => {
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
+
                     // a link is internal if the first part matches the current location,
                     // or if it's a relative URL
                     const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
                         !a.href.startsWith('http'));
-                    // fix the hrefs in the overview/index page in case of missing trailing slash
-                    if ( url == `${baseUrl.baseUrl}_modeling/intro.html` && isInternal ){
-                        if ( a.href.indexOf('modeling') == -1){
+
+                    if ( isInternal ){
+                        // fix the hrefs in the overview/index page in case of missing trailing slash
+                        if ( a.href.indexOf('modeling') == -1 && window.location.toString().slice(-1) != '/' ){
                             // we add the baseURL to the match, to make sure it works in dev and prod mode
                             const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
                             a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
-                    }
-                    // only remove the .html if local links, leave external links alone
-                    if ( isInternal ){
+
+                        // only remove the .html if local links, leave external links alone
                         a.href = a.href.replace(/\.html/g, '');
+
+                        // remove the base URL, eg http://localhost:3000/ or https://staging.objectiv.io/docs/
+                        // from the href and then split it by '/'
+                        const relative_url = a.href.replace(currentSite[1].slice(0,-1) + baseUrl.baseUrl, '');
+                        const relative_parts = relative_url.split('/');
+
+                        /* case 0: all is good (/Class1/bach.Class1.method1)
+                         * --> do nothing
+                         *
+                         * case 1: /module1/bach.Class1.method1/bach.Class1.method2
+                         *  --> remove $2 (bach.Class1.method1)
+                         * Example: /modeling/DataFrame/bach.DataFrame.head/bach.DataFrame.to_pandas
+                         * parts: modeling,DataFrame,bach.DataFrame.head,bach.DataFrame.to_pandas#bach.DataFrame.to_pandas
+                         *
+                         * case 2: /module1/module2/bach.Class2.method1
+                         * --> remove $1 (module1)
+                         * Example: /modeling/DataFrame/Series/bach.Series#bach.Series
+                         * Parts: modeling,DataFrame,Series,bach.Series#bach.Series
+                         *
+                         * case 3: /page/module#someanchor
+                         * --> remove page
+                         * Example: /modeling/reference/DataFrame#Usage
+                         * Parts: modeling,reference,DataFrame#Usage
+                         */
+                        if ( relative_parts !== null  ){
+                            if( relative_parts.length > 3 ) {
+                                // case 1
+                                const method1 = relative_parts[2].split('.');
+                                const method2 = relative_parts[3].split('.');
+                                if (method1[0] == method2[0] && method2[1].startsWith(method1[1])) {
+                                    a.href = a.href.replace(relative_parts[2] + '/', '');
+                                }
+                            }
+                            if (relative_parts.length > 2 ){
+                                // case 2 & 3
+                                if ( relative_parts[2][0].match(/[A-Z]/) ){
+                                    a.href = a.href.replace(relative_parts[1] + '/', '');
+                                }
+                            }
+                        }
+
+                        // make sure to add a trailing slash to links with anchors that don't have it.
+                        // to avoid unnecessary redirects
+                        if ( a.href.match(/[a-zA-Z]#/) ){
+                            a.href = a.href.replace('#', '/#');
+                        }
 
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
