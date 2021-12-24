@@ -22,7 +22,6 @@ Nonetheless, sometimes it may be preferable, or necessary, to trigger Events pro
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackCompleted](/tracking/api-reference/eventTrackers/trackCompleted.md)
 - [trackFailed](/tracking/api-reference/eventTrackers/trackFailed.md)
-- [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 
 #### Low-level
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
