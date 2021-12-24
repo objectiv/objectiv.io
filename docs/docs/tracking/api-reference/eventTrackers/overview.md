@@ -11,8 +11,10 @@ Nonetheless, sometimes it may be preferable, or necessary, to trigger Events pro
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
 - [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
-- [trackVideoPause](/tracking/api-reference/eventTrackers/trackVideoPause.md)
-- [trackVideoStart](/tracking/api-reference/eventTrackers/trackVideoStart.md)
+- [trackMediaLoad](/tracking/api-reference/eventTrackers/trackMediaLoad.md)
+- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
+- [trackMediaStart](/tracking/api-reference/eventTrackers/trackMediaStart.md)
+- [trackMediaStop](/tracking/api-reference/eventTrackers/trackMediaStop.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
 

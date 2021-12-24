@@ -1,9 +1,9 @@
-# trackVideoPause
+# trackMediaStart
 
-Triggers a [VideoPauseEvent](/taxonomy/reference/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [trackMediaStart](/taxonomy/reference/events/MediaStartEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackVideoPause = (parameters: {
+trackMediaStart = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,21 +22,21 @@ trackVideoPause = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackVideoPause` is a void function.
+`trackMediaStart` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackVideoPause } from '@objectiv/tracker-browser';
+import { trackMediaStart } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <video
   play={(event) => {
-    trackVideoStart({ element: event.target })
+    trackMediaStart({ element: event.target })
   }}
   pause={(event) => {
-    trackVideoPause({ element: event.target })
+    trackMediaPause({ element: event.target })
   }}
 />
 ```
@@ -44,10 +44,10 @@ import { trackVideoPause } from '@objectiv/tracker-browser';
 ```typescript jsx
 <YouTube
   onPlay={({ target: youTubePlayerInstance }) => {
-    trackVideoStart({ element: youTubePlayerInstance.getIframe() })
+    trackMediaStart({ element: youTubePlayerInstance.getIframe() })
   }}
   onPause={({ target: youTubePlayerInstance }) => {
-    trackVideoPause({ element: youTubePlayerInstance.getIframe() })
+    trackMediaPause({ element: youTubePlayerInstance.getIframe() })
   }}
 />
 ```
@@ -55,14 +55,14 @@ import { trackVideoPause } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVideoPause` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackMediaStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackVideoStart](/tracking/api-reference/eventTrackers/trackVideoStart.md)
+- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
-:::
+  :::

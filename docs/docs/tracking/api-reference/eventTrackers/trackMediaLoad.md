@@ -1,9 +1,9 @@
-# trackVideoStart
+# trackMediaLoad
 
-Triggers a [trackVideoStart](/taxonomy/reference/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [trackMediaLoad](/taxonomy/reference/events/MediaLoadEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackVideoStart = (parameters: {
+trackMediaLoad = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,32 +22,26 @@ trackVideoStart = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackVideoStart` is a void function.
+`trackMediaLoad` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackVideoStart } from '@objectiv/tracker-browser';
+import { trackMediaLoad } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <video
-  play={(event) => {
-    trackVideoStart({ element: event.target })
-  }}
-  pause={(event) => {
-    trackVideoPause({ element: event.target })
+  onLoad={(event) => {
+    trackMediaLoad({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
 <YouTube
-  onPlay={({ target: youTubePlayerInstance }) => {
-    trackVideoStart({ element: youTubePlayerInstance.getIframe() })
-  }}
-  onPause={({ target: youTubePlayerInstance }) => {
-    trackVideoPause({ element: youTubePlayerInstance.getIframe() })
+  onLoad={({ target: youTubePlayerInstance }) => {
+    trackMediaLoad({ element: youTubePlayerInstance.getIframe() })
   }}
 />
 ```
@@ -55,13 +49,15 @@ import { trackVideoStart } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackMediaLoad` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackVideoPause](/tracking/api-reference/eventTrackers/trackVideoPause.md)
+- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
+- [trackMediaStart](/tracking/api-reference/eventTrackers/trackMediaStart.md)
+- [trackMediaStop](/tracking/api-reference/eventTrackers/trackMediaStop.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
