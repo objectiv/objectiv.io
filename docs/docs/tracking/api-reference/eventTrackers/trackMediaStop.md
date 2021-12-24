@@ -32,7 +32,7 @@ import { trackMediaStop } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <video
-  onLoad={(event) => {
+  onStop={(event) => {
     trackMediaStop({ element: event.target })
   }}
 />
@@ -40,7 +40,7 @@ import { trackMediaStop } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <YouTube
-  onLoad={({ target: youTubePlayerInstance }) => {
+  onStop={({ target: youTubePlayerInstance }) => {
     trackMediaStop({ element: youTubePlayerInstance.getIframe() })
   }}
 />
