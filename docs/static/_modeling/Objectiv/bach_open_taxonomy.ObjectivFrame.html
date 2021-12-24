@@ -5,7 +5,15 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="bach_open_taxonomy.ObjectivFrame">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach_open_taxonomy.</span></span><span class="sig-name descname"><span class="pre">ObjectivFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ObjectivFrame" title="Permalink to this definition">&#182;</a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><p>The Objectiv Frame is an extension to Bach DataFrame to use specifically for data that was collected with
+Objectiv&#8217;s Tracker.</p>
+<p>It loads the data as stored by the Objectiv Tracker, makes a few transformations, and sets the right data
+types.</p>
+<p>This object points to the data on which the models from the open model hub will be applied. The
+<cite>time_aggregation</cite> parameter determines the standard timeframe that is used with aggregation functions
+from the model hub. Ie. &#8216;YYYY-MM-DD&#8217; means that days are used for the time aggregation. Only data starting
+at <cite>start_date</cite> is used for all following operations.</p>
+<p class="rubric">Methods</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
@@ -18,28 +26,19 @@
 <tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.apply_feature_frame_sample_changes.html#bach_open_taxonomy.ObjectivFrame.apply_feature_frame_sample_changes" title="bach_open_taxonomy.ObjectivFrame.apply_feature_frame_sample_changes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_feature_frame_sample_changes</span></code></a>(feature_frame)</p></td>
 <td><p>Returns a new ObjectivFrame in which all changes made in feature_frame are applied to the full data set.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.copy_override.html#bach_open_taxonomy.ObjectivFrame.copy_override" title="bach_open_taxonomy.ObjectivFrame.copy_override"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy_override</span></code></a>(**kwargs)</p></td>
-<td><p>INTERNAL</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame.html#bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame" title="bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_sample_feature_frame</span></code></a>(table_name[,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame.html#bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame" title="bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_sample_feature_frame</span></code></a>(table_name[,&#160;...])</p></td>
 <td><p>Create a df that contains only all unique combinations of the location stack and event_type.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.display_sankey.html#bach_open_taxonomy.ObjectivFrame.display_sankey" title="bach_open_taxonomy.ObjectivFrame.display_sankey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_sankey</span></code></a>([stack_column,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.display_sankey.html#bach_open_taxonomy.ObjectivFrame.display_sankey" title="bach_open_taxonomy.ObjectivFrame.display_sankey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_sankey</span></code></a>([stack_column,&#160;...])</p></td>
 <td><p>Display the Sankey chart of a location stack.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_model.html#bach_open_taxonomy.ObjectivFrame.from_model" title="bach_open_taxonomy.ObjectivFrame.from_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_model</span></code></a>()</p></td>
-<td><p>Instantiate a new DataFrame based on the result of the query defined in <cite>model</cite>.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_objectiv_data.html#bach_open_taxonomy.ObjectivFrame.from_objectiv_data" title="bach_open_taxonomy.ObjectivFrame.from_objectiv_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_objectiv_data</span></code></a>([engine,&#160;start_date,&#160;...])</p></td>
+<td><p>Loads data from table into an ObjectivFrame object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_pandas.html#bach_open_taxonomy.ObjectivFrame.from_pandas" title="bach_open_taxonomy.ObjectivFrame.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas</span></code></a>()</p></td>
-<td><p>Instantiate a new DataFrame based on the content of a Pandas DataFrame.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.materialize.html#bach_open_taxonomy.ObjectivFrame.materialize" title="bach_open_taxonomy.ObjectivFrame.materialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">materialize</span></code></a>(**kwargs)</p></td>
+<td><p>Overrides materialize from Objectiv Bach.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_table.html#bach_open_taxonomy.ObjectivFrame.from_table" title="bach_open_taxonomy.ObjectivFrame.from_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table</span></code></a>([engine,&#160;start_date,&#160;end_date,&#160;...])</p></td>
-<td><p>Loads data from table into frame</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.materialize.html#bach_open_taxonomy.ObjectivFrame.materialize" title="bach_open_taxonomy.ObjectivFrame.materialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">materialize</span></code></a>(**kwargs)</p></td>
-<td><p>Create a copy of this DataFrame with as base_node the current DataFrame's state.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df.html#bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df" title="bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack_flows_from_feature_df</span></code></a>([stack_column,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df.html#bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df" title="bach_open_taxonomy.ObjectivFrame.stack_flows_from_feature_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack_flows_from_feature_df</span></code></a>([stack_column,&#160;...])</p></td>
 <td><p>Function that calculates the links between contexts on the stack.</p></td>
 </tr>
 </tbody>
@@ -51,11 +50,23 @@
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.conversion_events.html#bach_open_taxonomy.ObjectivFrame.conversion_events" title="bach_open_taxonomy.ObjectivFrame.conversion_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversion_events</span></code></a></p></td>
+<td><p>Dictionary of all events that are labeled as conversion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.end_date.html#bach_open_taxonomy.ObjectivFrame.end_date" title="bach_open_taxonomy.ObjectivFrame.end_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">end_date</span></code></a></p></td>
+<td><p>End date as set with <a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_objectiv_data.html#bach_open_taxonomy.ObjectivFrame.from_objectiv_data" title="bach_open_taxonomy.ObjectivFrame.from_objectiv_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_objectiv_data()</span></code></a></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.mh.html#bach_open_taxonomy.ObjectivFrame.mh" title="bach_open_taxonomy.ObjectivFrame.mh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mh</span></code></a></p></td>
-<td><p/></td>
+<td><p>Access the <a class="reference internal" href="bach_open_taxonomy.ModelHub.html#bach_open_taxonomy.ModelHub" title="bach_open_taxonomy.ModelHub"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelHub</span></code></a> from the ObjectivFrame.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.model_hub.html#bach_open_taxonomy.ObjectivFrame.model_hub" title="bach_open_taxonomy.ObjectivFrame.model_hub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_hub</span></code></a></p></td>
-<td><p/></td>
+<td><p>Access the <a class="reference internal" href="bach_open_taxonomy.ModelHub.html#bach_open_taxonomy.ModelHub" title="bach_open_taxonomy.ModelHub"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelHub</span></code></a> from the ObjectivFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.start_date.html#bach_open_taxonomy.ObjectivFrame.start_date" title="bach_open_taxonomy.ObjectivFrame.start_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_date</span></code></a></p></td>
+<td><p>Start date as set with <a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_objectiv_data.html#bach_open_taxonomy.ObjectivFrame.from_objectiv_data" title="bach_open_taxonomy.ObjectivFrame.from_objectiv_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_objectiv_data()</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.time_aggregation.html#bach_open_taxonomy.ObjectivFrame.time_aggregation" title="bach_open_taxonomy.ObjectivFrame.time_aggregation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_aggregation</span></code></a></p></td>
+<td><p>Time aggregation used for aggregation models as set with <a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.from_objectiv_data.html#bach_open_taxonomy.ObjectivFrame.from_objectiv_data" title="bach_open_taxonomy.ObjectivFrame.from_objectiv_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_objectiv_data()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>
