@@ -1210,11 +1210,6 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "copy_override",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.copy_override"
-                                    },
-                                    {
-                                        "type": "doc",
                                         "label": "create_sample_feature_frame",
                                         "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.create_sample_feature_frame"
                                     },
@@ -1225,18 +1220,8 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "from_model",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.from_model"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "from_pandas",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.from_pandas"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "from_table",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.from_table"
+                                        "label": "from_objectiv_data",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.from_objectiv_data"
                                     },
                                     {
                                         "type": "doc",
@@ -1250,6 +1235,16 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "conversion_events",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.conversion_events"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "end_date",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.end_date"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "mh",
                                         "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.mh"
                                     },
@@ -1257,22 +1252,52 @@ module.exports = [
                                         "type": "doc",
                                         "label": "model_hub",
                                         "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.model_hub"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "start_date",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.start_date"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "time_aggregation",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivFrame.time_aggregation"
                                     }
                                 ]
                             },
                             {
                                 "type": "category",
-                                "label": "ObjectivStack",
+                                "label": "ModelHub",
                                 "items": [
                                     {
                                         "type": "doc",
                                         "label": "Overview",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivStack"
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub"
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "get_from_context_with_type_series",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ObjectivStack.get_from_context_with_type_series"
+                                        "label": "to_metabase",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.to_metabase"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "agg",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.agg"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "aggregate",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.aggregate"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "f",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.f"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "filter",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.filter"
                                     }
                                 ]
                             },
