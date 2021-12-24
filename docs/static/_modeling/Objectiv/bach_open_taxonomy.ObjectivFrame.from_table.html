@@ -4,23 +4,26 @@
 <h1>bach_open_taxonomy.ObjectivFrame.from_table<a class="headerlink" href="#bach-open-taxonomy-objectivframe-from-table" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="bach_open_taxonomy.ObjectivFrame.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ObjectivFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ObjectivFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
-<dd><p>Loads data from table into frame</p>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ObjectivFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ObjectivFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Instantiate a new DataFrame based on the content of an existing table in the database.</p>
+<p>This will create and remove a temporary table to asses meta data for the setting the correct dtypes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>engine</strong> &#8211; a Sqlalchemy Engine for the database. If not given, env DSN is used to create one. If
-that&#8217;s not there, the default of &#8216;postgresql://objectiv:@localhost:5432/objectiv&#8217; will be used.</p></li>
-<li><p><strong>start_date</strong> &#8211; first date for which data is loaded to the DataFrame. If None, data is loaded from
-the first date in the sql table.</p></li>
-<li><p><strong>end_date</strong> &#8211; last date for which data is loaded to the DataFrame. If None, data is loaded up to
-and including the last date in the sql table.</p></li>
-<li><p><strong>time_aggregation</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; can be used to set a default aggregation timeframe interval that is used for
-models that use aggregation. Ie. YYYY-MM-DD aggregates to days (dates). Setting it to None
-aggregates over the entire selected dataset.</p></li>
+<li><p><strong>engine</strong> &#8211; an sqlalchemy engine for the database.</p></li>
+<li><p><strong>table_name</strong> &#8211; the table name that contains the data to instantiate as DataFrame.</p></li>
+<li><p><strong>index</strong> &#8211; list of column names that make up the index. At least one column needs to be
+selected for the index.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A DataFrame based on a sql table.</p>
+</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to create this temporary table the source data is queried.</p>
+</div>
 </dd></dl>
 
 </section>
