@@ -47,7 +47,7 @@ A [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md) method is 
 
 ### Expandables
 When an Element shows in the current UI only on interaction (but does not overlay it), we define these as 
-[ExpandableSections](/taxonomy/reference/location-contexts/ExpandableContext.md).
+[Expandables](/taxonomy/reference/location-contexts/ExpandableContext.md).
 
 A [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md) method is 
 available for these cases.
