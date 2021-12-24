@@ -1,10 +1,9 @@
 # TagLinkParameters
 
-[tagLink](/tracking/api-reference/locationTaggers/tagLink.md) has two extra attributes, `text` and `href`, as mandatory parameters.
+[tagLink](/tracking/api-reference/locationTaggers/tagLink.md) has an extra attributes, `href`, as mandatory parameter.
 
 ```typescript
 type TagLinkParameters = LocationTaggerParameters & { 
-  text: string; 
   href: string
 };
 ```
@@ -12,7 +11,6 @@ type TagLinkParameters = LocationTaggerParameters & {
 ## Parameters
 |          |          | type   | default value
 | :-:      | :--      | :--    | :--           
-| required | **text** | string |
 | required | **href** | string |
 
 <br />

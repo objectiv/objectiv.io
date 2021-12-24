@@ -30,7 +30,7 @@ Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web
 Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md) events on [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event).
 
 ### TaggingAttribute.trackVisibility
-Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) events.
+Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md) or [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md) events.
 
 ### TaggingAttribute.validate
 A serialized [TagLocationOptions.validate](/tracking/api-reference/definitions/TagLocationOptions.md#optionsvalidate) object to customize how validation occurs for the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).

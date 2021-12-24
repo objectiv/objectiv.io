@@ -1,9 +1,9 @@
-# tagOverlay
+# tagRoot
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
 
 ```typescript
-tagOverlay = (parameters: {
+tagRoot = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerErrorHandlerCallback
@@ -14,17 +14,11 @@ tagOverlay = (parameters: {
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | 
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 [TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
-
-## Events
-Unless customized via the `options` parameter, automatically triggers:
-
-- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
-- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
 
 ## Examples
 
@@ -35,19 +29,19 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagOverlay } from '@objectiv/tracker-browser';
+import { tagRoot } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<div {...tagOverlay({ id: 'modal-id' })}>
+<body {...tagRoot({ id: 'page' })}>
   ...
-</div>
+</body>
 ```
 
 ```typescript jsx
-<Modal {...tagOverlay({ id: 'modal-id' })}>
+<Layout {...tagRoot({ id: 'page' })}>
   ...
-</Modal>
+</Layout>
 ```
 
   </TabItem>
@@ -56,9 +50,9 @@ import { tagOverlay } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<div [tagOverlay]="{ id: 'modal-id' }">
+<main [tagRoot]="{ id: 'page' }">
   ...
-</div>
+</main>
 ```
 
   </TabItem>
@@ -67,7 +61,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagOverlay` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
+`tagRoot` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
@@ -75,7 +69,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 :::info See also
 - [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
-- [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
 - [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)

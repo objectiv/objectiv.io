@@ -9,17 +9,17 @@ Nonetheless, sometimes it may be preferable, or necessary, to trigger Events pro
 
 #### Interactive
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
 - [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
-- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
 - [trackVideoPause](/tracking/api-reference/eventTrackers/trackVideoPause.md)
 - [trackVideoStart](/tracking/api-reference/eventTrackers/trackVideoStart.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
+- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
 
 #### Non-interactive
-- [trackFailed](/tracking/api-reference/eventTrackers/trackFailed.md)
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackCompleted](/tracking/api-reference/eventTrackers/trackCompleted.md)
+- [trackFailed](/tracking/api-reference/eventTrackers/trackFailed.md)
 - [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 
 #### Low-level

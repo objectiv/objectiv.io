@@ -36,10 +36,10 @@ core tracking methods out of the box, and provides added shorthands for React co
 
 Example usage:
 ```js
-import { tagButton } from '@objectiv/tracker-browser';
+import { tagPressable } from '@objectiv/tracker-browser';
 ```
 ```js
-<Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
+<Button {...tagPressable({ id: 'button-2' })}>Do It!</Button>
 ```
 
 See the [How-to Guide for React](/tracking/how-to-guides/react/getting-started.md) to get started.
@@ -54,7 +54,7 @@ core tracking methods out of the box, and provides added shorthands for Angular 
 Example usage:
 ```js
 // a button tag 
-<button [tagButton]="{ id: 'button-1', text: 'Click Me!' }">Click Me!</button>
+<button [tagPressable]="{ id: 'button-1' }">Click Me!</button>
 ```
 
 See the [How-to Guide for Angular](/tracking/how-to-guides/angular/getting-started.md) to get started.

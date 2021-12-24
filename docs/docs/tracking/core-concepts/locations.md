@@ -13,21 +13,19 @@ An example Location Stack for an Event:
   "location_stack":[
     {
       "_type":"WebDocumentContext",
-      "id":"#document",
-      "url":"https://example.com/path"
+      "id":"test-page",
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"homepage"
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"hero"
     },
     {
       "_type":"LinkContext",
       "id":"link-id",
-      "text":"Go!",
       "href":"/path"
     }
   ]
@@ -42,22 +40,20 @@ another Link with the same `id` on the homepage, but in a Section called 'footer
 ```json
   "location_stack":[
     {
-      "_type":"WebDocumentContext",
-      "id":"#document",
-      "url":"https://example.com/path"
+      "_type":"RootLocationContext",
+      "id":"test-page",
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"homepage"
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"footer"
     },
     {
       "_type":"LinkContext",
       "id":"link-id",
-      "text":"Go!",
       "href":"/path"
     }
   ]
@@ -85,30 +81,30 @@ automatically based on that [LocationContext](/taxonomy/reference/location-conte
 
 ### Tag Sections
 You can tag logical sections in your application's UI (e.g. the hero element on a homepage) using 
-[tagElement](tracking/api-reference/locationTaggers/tagElement.md). This binds a 
-[SectionContext](taxonomy/reference/location-contexts/SectionContext.md) to it.
+[tagContent](/tracking/api-reference/locationTaggers/tagContent.md). This binds a 
+[ContentContext](/taxonomy/reference/location-contexts/ContentContext.md) to it.
 
-This might seem without benefit, as no Events are triggered (by default) on tagged Sections. However, 
+This might seem without benefit, as no Events are triggered (by default) on tagged sections. However, 
 tagging Elements is useful in two main ways:
 
-1. When any Event triggers, a hierarchical Location Stack is generated for it, including all the Sections it 
+1. When any Event triggers, a hierarchical Location Stack is generated for it, including all the sections it 
   originated from. When analyzing the resulting data, you can fully understand where every Event came from.
 2. Every Event becomes unique (see next section about collisions).
 
-An example of tagging Sections and Links in your UI:
+An example of tagging sections and Links in your UI:
 ```js
 ...
-import { tagElement, tagLink } from '@objectiv/tracker-browser';
+import { tagContent, tagLink } from '@objectiv/tracker-browser';
 
 export default function Test() {
   return (
-    <Layout {...tagElement({ id: 'layout' })}>
-      <header {...tagElement({ id: 'homepage-hero' })}>
-        <div {...tagElement({ id: 'section1' })}>
-          <Link {...tagLink({ id: 'my-link', text: 'Link 1', href: '/link1' })} to="/link1">Link 1</Link>
+    <Layout {...tagContent({ id: 'layout' })}>
+      <header {...tagContent({ id: 'homepage-hero' })}>
+        <div {...tagContent({ id: 'section1' })}>
+          <Link {...tagLink({ id: 'my-link', href: '/link1' })} to="/link1">Link 1</Link>
         </div>
-        <div {...tagElement({ id: 'section2' })}>
-          <Link {...tagLink({ id: 'my-link', text: 'Link 2', href: '/link2' })} to="/link2">Link 2</Link>
+        <div {...tagContent({ id: 'section2' })}>
+          <Link {...tagLink({ id: 'my-link', href: '/link2' })} to="/link2">Link 2</Link>
         </div>
       </header>
     </Layout>
@@ -134,9 +130,9 @@ function Contributor({name, gitHubUsername}) {
   const ghProfileLink = "https://github.com/" + gitHubUsername;
 
   return (
-    <div {...tagElement({id: 'contributor'})}>
+    <div {...tagContent({id: 'contributor'})}>
       <Link 
-        {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+        {...tagLink({id: gitHubUsername, href: ghProfileLink})}
         href={ghProfileLink}>
         @{gitHubUsername}
       </Link>
@@ -149,7 +145,7 @@ export default function Contributors() {
     <Layout>
       // `contributors` is retrieved from a JSON file
       {contributors && contributors.length > 0 && (
-        <div {...tagElement({id: 'contributors'})}>
+        <div {...tagContent({id: 'contributors'})}>
           {contributors.map((props, idx) => (
             <Contributor key={idx} {...props} />
           ))}
@@ -173,11 +169,11 @@ How to fix this?
 We will use the second option, making each contributor `<div>` ID unique:
 
 ```js
-    <div {...tagElement({id: gitHubUsername})}>
+    <div {...tagContent({id: gitHubUsername})}>
 ```
 instead of
 ```js
-    <div {...tagElement({id: 'contributor'})}>
+    <div {...tagContent({id: 'contributor'})}>
 ```
 
 ### Applying Locations manually

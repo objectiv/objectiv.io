@@ -1,18 +1,14 @@
-# tagExpandableElement
+# tagExpandable
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ExpandableSectionContext](/taxonomy/reference/location-contexts/ExpandableSectionContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ExpandableContext](/taxonomy/reference/location-contexts/ExpandableContext.md).
 
 ```typescript
-tagExpandableElement = (parameters: {
+tagExpandable = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
-
-::: info Element vs Section
-Our Taxonomy names a logical UI unit as Section. We felt this would be confusing in Browser's world, hence Element. 
-:::
 
 ## Parameters
 |          |         | type                                                                                              | default value
@@ -28,8 +24,8 @@ Our Taxonomy names a logical UI unit as Section. We felt this would be confusing
 Unless customized via the `options` parameter, automatically triggers:
 
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
+- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
 
 ## Usage example
 
@@ -40,17 +36,17 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagExpandableElement } from '@objectiv/tracker-browser';
+import { tagExpandable } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<div {...tagExpandableElement({ id: 'faq-item-id' })}>
+<div {...tagExpandable({ id: 'faq-item-id' })}>
   ...
 </div>
 ```
 
 ```typescript jsx
-<Accordion {...tagExpandableElement({ id: 'accordion-id' })}>
+<Accordion {...tagExpandable({ id: 'accordion-id' })}>
   ...
 </Accordion>
 ```
@@ -61,7 +57,7 @@ import { tagExpandableElement } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<div [tagExpandableElement]="{ id: 'faq-item-id' }">
+<div [tagExpandable]="{ id: 'faq-item-id' }">
   ...
 </div>
 ```
@@ -72,16 +68,16 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
+`tagExpandable` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+- [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 - [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
-- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
 - [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
 - [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)

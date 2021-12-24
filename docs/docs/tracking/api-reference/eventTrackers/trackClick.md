@@ -13,7 +13,7 @@ trackPress = (parameters: {
 ```
 
 :::info
-`trackPress` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagButton](/tracking/api-reference/locationTaggers/tagButton.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md).
+`trackPress` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md).
 :::
 
 ## Parameters
@@ -59,9 +59,9 @@ import { trackPress } from '@objectiv/tracker-browser';
 <br />
 
 :::info See also
-- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+- [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 - [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) 
-- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
+- [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::
