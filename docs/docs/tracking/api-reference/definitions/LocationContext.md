@@ -47,7 +47,7 @@ export const AbstractPressableContext = assign(
 ## Context Structs
 
 :::info
-Not all Section Contexts have a corresponding [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) shorthand.
+Not all Location Contexts have a corresponding [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) shorthand.
 Creating a new Location Tagger is as simple as writing a small wrapper around the low-level [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 
 If a Location Tagger proves itself useful enough it may add it to the standard set of [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).
