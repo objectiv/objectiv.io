@@ -55,9 +55,10 @@ import { trackMediaStopEvent } from '@objectiv/tracker-browser';
 <br />
 
 :::info See also
+- [trackMediaEvent](/tracking/api-reference/eventTrackers/trackMediaEvent.md)
+- [trackMediaLoadEvent](/tracking/api-reference/eventTrackers/trackMediaLoadEvent.md)
 - [trackMediaPauseEvent](/tracking/api-reference/eventTrackers/trackMediaPauseEvent.md)
 - [trackMediaStartEvent](/tracking/api-reference/eventTrackers/trackMediaStartEvent.md)
-- [trackMediaStopEvent](/tracking/api-reference/eventTrackers/trackMediaStopEvent.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)

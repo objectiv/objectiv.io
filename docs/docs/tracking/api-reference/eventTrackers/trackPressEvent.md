@@ -36,7 +36,7 @@ import { trackPressEvent } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <div
-  onPress={(event) => {
+  onClick={(event) => {
     trackPressEvent({ element: event.target })
   }}
 />
@@ -44,7 +44,7 @@ import { trackPressEvent } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <Accordion
-  onPress={(event) => {
+  onClick={(event) => {
     trackPressEvent({ element: event.target })
   }}
 />
