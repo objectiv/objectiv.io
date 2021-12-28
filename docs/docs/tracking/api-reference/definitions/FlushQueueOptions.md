@@ -16,6 +16,6 @@ type FlushQueueOptions = false | true | 'onTimeout';
 <br/>
 
 :::info see also
-- [TaggingAttribute.trackPressEvents](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks)
-- [TaggingAttribute.trackPressEvents.waitUntilTracked](/tracking/api-reference/definitions/WaitUntilTrackedOptions.md)
+- [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks)
+- [TaggingAttribute.trackClicks.waitUntilTracked](/tracking/api-reference/definitions/WaitUntilTrackedOptions.md)
 :::
