@@ -7,7 +7,7 @@
 | required         | never         | elementId       | `data-objectiv-element-id`
 | required         | never         | context         | `data-objectiv-context`
 | optional         | never         | parentElementId | `data-objectiv-parent-element-id`
-| optional         | never         | trackPressEvents     | `data-objectiv-track-clicks`
+| optional         | never         | trackClicks     | `data-objectiv-track-clicks`
 | optional         | never         | trackBlurs      | `data-objectiv-track-blurs`
 | optional         | never         | trackVisibility | `data-objectiv-track-visibility`
 | optional         | never         | validate        | `data-objectiv-validate`
@@ -23,7 +23,7 @@ A serialized [Location Context](/taxonomy/reference/location-contexts/overview.m
 ### TaggingAttribute.parentElementId
 Rebuilding [Locations](/tracking/core-concepts/locations.md) via the DOM is not always accurate (eg: [React Portals](https://reactjs.org/docs/portals.html)). This allows specifying a parent [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
-### TaggingAttribute.trackPressEvents
+### TaggingAttribute.trackClicks
 Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically trigger [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md) on [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event).
 
 ### TaggingAttribute.trackBlurs
