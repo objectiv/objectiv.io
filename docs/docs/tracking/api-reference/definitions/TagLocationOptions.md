@@ -4,7 +4,7 @@ The `options` object parameter allows to override the default automatic tracking
 
 | Option          | Possible value
 | :--             | :--
-| trackPressEvents     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
+| trackClicks     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
 | trackBlurs      | `boolean`
 | trackVisibility | `{ mode: 'auto' }` \| `{ mode: 'manual': isVisible: boolean }`
 | parent          | `TagLocationReturnValue`
@@ -14,11 +14,11 @@ The `options` object parameter allows to override the default automatic tracking
 All options are optional and can be either omitted or set to `undefined` to revert to the default values.
 :::
 
-## options.trackPressEvents
+## options.trackClicks
 Used to customize whether and how [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) are attached to [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements).
 
 
-### options.trackPressEvents.waitUntilTracked
+### options.trackClicks.waitUntilTracked
 Some interactions may lead to the current session being closed. For example external links.
 
 To avoid losing those events the `waitUntilTracked` option can be specified. This will attach a capture Event Listener which will attempt to wait for the Tracker to finish its work before allowing the User Agent to follow its destination. 
@@ -42,7 +42,7 @@ In the following example we are instructing our [Tagged Elements Observer](/trac
     id: 'external',
     href: 'https://www.external.com',
     options: {
-      trackPressEvents: {
+      trackClicks: {
         waitUntilTracked: { 
           intervalMs: 100,
           timeoutMs: 3000,
