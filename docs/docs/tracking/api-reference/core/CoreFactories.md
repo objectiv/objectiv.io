@@ -71,7 +71,7 @@ makeOverlayContext = (props: {
 makePressableContext = (props: { 
   id: string, 
   text: string 
-}) => ButtonContext
+}) => PressableEvent
 ```
 
 ## Event Factories
