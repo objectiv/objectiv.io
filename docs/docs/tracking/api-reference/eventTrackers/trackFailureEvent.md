@@ -1,9 +1,10 @@
-# trackFailure
+# trackFailureEvent
 
 Triggers an [FailureEvent](/taxonomy/reference/events/FailureEvent.md).
 
 ```typescript
-trackFailure = (parameters: {
+trackFailureEvent = (parameters: {
+  message: string;
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,41 +23,37 @@ trackFailure = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackFailure` is a void function.
+`trackFailureEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackFailure, trackSuccessEvent } from '@objectiv/tracker-browser';
+import { trackFailurEvent, trackSuccessEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <form onSubmit={() => {
   sendFormAsync()
     .then(
-      () => trackSuccessEvent({ element: form }), 
-      () => {
-        const errorContext = makeErrorContext({ id: "form", message: "Remote rejection." });
-        trackFailure({ globalContexts: [errorContext], element: form });
-      }
+      () => trackSuccessEvent({ message: 'Yes!', element: form }), 
+      () => trackFailureEvent({ message: 'Remote rejection.', element: form })
     )
-    .catch(() => {
-      const errorContext = makeErrorContext({ id: "form", message: "Network failure." });
-      trackFailure({ globalContexts: [errorContext], element: form });
-    });
+    .catch(
+      () => trackFailureEvent({ message: 'Network failure.', element: form })
+    );
 }}>
   ...
 </form>
 ```
 
 :::tip
-`trackFailure` can be safely used while network is temporarily down. Events will be queued and sending will be retried.  
+`trackFailureEvent` can be safely used while network is temporarily down. Events will be queued and sending will be retried.  
 :::
 
 <br />
 
 :::tip Did you know ?
-`trackFailure` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackFailureEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />

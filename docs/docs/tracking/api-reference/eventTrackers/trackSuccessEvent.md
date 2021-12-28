@@ -4,6 +4,7 @@ Triggers a [SuccessEvent](/taxonomy/reference/events/SuccessEvent.md).
 
 ```typescript
 trackSuccessEvent = (parameters: {
+  message: string;
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -33,7 +34,7 @@ import { trackSuccessEvent } from '@objectiv/tracker-browser';
 ```typescript jsx
 <form onSubmit={() => {
   sendFormAsync().then(
-    () => trackSuccessEvent({ element: form })
+    () => trackSuccessEvent({ message: 'Yes!', element: form })
   );
 }}>
   ...
