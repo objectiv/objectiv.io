@@ -33,5 +33,5 @@ Find out everything about the taxonomy: all Contexts and Events are open and doc
 [Check out the Reference](./reference/overview.md)
 
 :::info join the discussion
-Objectiv and the open analytics taxonomy are open-source and we're building it in public. Have opinions on where we should take this next? [Join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg)
+Objectiv and the open analytics taxonomy are open-source and we're building them in public. Have opinions on where we should take this next? [Join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg)
 :::

@@ -1,6 +1,6 @@
 # VisibleEvent
 
-A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that's emitted after a section [LocationContext](/taxonomy/location-contexts/) has become visible.
+A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that's emitted after a [LocationContext](/taxonomy/location-contexts/) has become visible.
 
 import Mermaid from '@theme/Mermaid';
 
