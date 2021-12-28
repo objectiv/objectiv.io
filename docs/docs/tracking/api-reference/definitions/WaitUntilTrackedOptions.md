@@ -1,6 +1,6 @@
 # WaitUntilTrackedOptions
 
-Options to configure how [TaggingAttribute.trackPressEvents](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) handles waiting for TrackerQueue and possibly flushing it.
+Options to configure how [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) handles waiting for TrackerQueue and possibly flushing it.
 
 ```typescript jsx
 type WaitUntilTrackedOptions = {
