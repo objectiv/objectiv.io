@@ -1,6 +1,6 @@
 # TrackClicksAttribute
 
-The definition of [TaggingAttribute.trackPressEvents](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks).
+The definition of [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks).
 
 When a `boolean` is specified it either disables the feature entirely or applies sensible defaults.
 
