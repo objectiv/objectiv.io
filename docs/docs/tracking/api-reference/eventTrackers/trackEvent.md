@@ -31,7 +31,7 @@ trackEvent = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackEvent, makeClickEvent } from '@objectiv/tracker-browser';
+import { trackEvent, makePressEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
@@ -40,7 +40,7 @@ export const trackPressEvent = (parameters: {
   tracker?: BrowserTracker;
   onError?: TrackOnErrorCallback;
 }) => {
-  return trackEvent({ event: makeClickEvent(), ...parameters });
+  return trackEvent({ event: makePressEvent(), ...parameters });
 };
 ```
 

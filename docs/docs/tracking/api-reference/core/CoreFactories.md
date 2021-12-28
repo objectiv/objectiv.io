@@ -20,7 +20,7 @@ makeApplicationContext = (props: {
 ```typescript
 makeContentContext = (props: { 
   id: string 
-}) => SectionContext
+}) => ContentContext
 ```
 
 ```typescript
@@ -95,10 +95,10 @@ makeApplicationLoadedEvent = (props?: {
 ```
 
 ```typescript
-makeClickEvent = (props?: {
+makePressEvent = (props?: {
   location_stack?: AbstractLocationContext[],
   global_contexts?: AbstractGlobalContext[]
-}) => ClickEvent
+}) => PressEvent
 ```
 
 ```typescript

@@ -24,7 +24,7 @@ An example event with `location_stack` and `global_context` properties:
 
 ```json
 {
-  "_type":"ClickEvent",
+  "_type":"PressEvent",
   "id":"211d778b-20ea-4a12-be56-77d5b8fe3cd0",
   "location_stack":[
     {
@@ -32,13 +32,12 @@ An example event with `location_stack` and `global_context` properties:
       "id":"home"
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"homepage"
     },
     {
       "_type":"LinkContext",
       "id":"link-id",
-      "text":"Go!",
       "href":"/path"
     }
   ],

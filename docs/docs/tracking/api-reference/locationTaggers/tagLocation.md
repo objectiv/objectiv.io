@@ -51,7 +51,7 @@ import { tagLocation } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<Layout {...tagLocation({ instance: makeSectionContext({ id: 'layout' }) })}>
+<Layout {...tagLocation({ instance: makeContentContext({ id: 'layout' }) })}>
   <div {...tagLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
     ...
   </div>
@@ -64,7 +64,7 @@ import { tagLocation } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<section [tagLocation]="{ instance: makeSectionContext({ id: 'layout' }) }">
+<section [tagLocation]="{ instance: makeContentContext({ id: 'layout' }) }">
   <div [tagLocation]="{ instance: makeOverlayContext({ id: 'modal' }) }">
     ...
   </div>
