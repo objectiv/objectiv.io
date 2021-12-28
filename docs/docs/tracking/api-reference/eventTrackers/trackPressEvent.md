@@ -1,9 +1,9 @@
-# trackPress
+# trackPressEvent
 
 Triggers a [PressEvent](/taxonomy/reference/events/PressEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
 
 ```typescript
-trackPress = (parameters: {
+trackPressEvent = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -13,7 +13,7 @@ trackPress = (parameters: {
 ```
 
 :::info
-`trackPress` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md).
+`trackPressEvent` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md), [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) or [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md).
 :::
 
 ## Parameters
@@ -26,18 +26,18 @@ trackPress = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackPress` is a void function.
+`trackPressEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackPress } from '@objectiv/tracker-browser';
+import { trackPressEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <div
   onPress={(event) => {
-    trackPress({ element: event.target })
+    trackPressEvent({ element: event.target })
   }}
 />
 ```
@@ -45,7 +45,7 @@ import { trackPress } from '@objectiv/tracker-browser';
 ```typescript jsx
 <Accordion
   onPress={(event) => {
-    trackPress({ element: event.target })
+    trackPressEvent({ element: event.target })
   }}
 />
 ```
@@ -53,7 +53,7 @@ import { trackPress } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackPress` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackPressEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
@@ -62,6 +62,6 @@ import { trackPress } from '@objectiv/tracker-browser';
 - [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 - [tagLink](/tracking/api-reference/locationTaggers/tagLink.md) 
 - [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
-- [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
+- [trackInputChangeEvent](/tracking/api-reference/eventTrackers/trackInputChangeEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

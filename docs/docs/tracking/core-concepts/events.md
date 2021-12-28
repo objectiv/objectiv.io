@@ -25,12 +25,11 @@ An example event with `location_stack` and `global_context` properties:
 ```json
 {
   "_type":"ClickEvent",
-  "id":"211d778b-20ea-4a12-be56-77d5b8fe3cd0"
+  "id":"211d778b-20ea-4a12-be56-77d5b8fe3cd0",
   "location_stack":[
     {
-      "_type":"WebDocumentContext",
-      "id":"#document",
-      "url":"https://example.com/path"
+      "_type":"RootLocationContext",
+      "id":"home"
     },
     {
       "_type":"SectionContext",
@@ -49,11 +48,10 @@ An example event with `location_stack` and `global_context` properties:
       "id":"example-website"
     },
     {
-      "_type":"DeviceContext",
-      "id":"device",
-      "user_agent":"Mozilla/5.0"
+      "_type":"PathContext",
+      "id":"https://example.com/"
     }
-  ],
+  ]
 }
 ```
 

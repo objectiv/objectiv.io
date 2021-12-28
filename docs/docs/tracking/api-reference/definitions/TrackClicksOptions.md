@@ -1,6 +1,6 @@
 # TrackClicksOptions
 
-[TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are parsed onto this object via [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicks.md).  
+[TaggingAttribute.trackPressEvents](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are parsed onto this object via [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicks.md).  
 
 
 ```typescript jsx

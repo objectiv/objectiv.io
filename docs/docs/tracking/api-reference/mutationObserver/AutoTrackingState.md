@@ -14,7 +14,7 @@ AutoTrackingState = {
 |                   | type                                                                                            | default value                                                                      | description
 | :--               | :--                                                                                             | :--                                                                                | :--
 | observerInstance  | null \| [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)  | null                                                                               | Mutation Observer, if auto tracking has been initiated
-| applicationLoaded | boolean                                                                                         | `true`                                                                             | Whether [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) has been sent
+| applicationLoaded | boolean                                                                                         | `true`                                                                             | Whether [trackApplicationLoadedEvent](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) has been sent
 | previousURL       | string | undefined                                                                              | The result of [getLocationHref](/tracking/api-reference/common/getLocationHref.md) | The last seen URL 
 
 <br />

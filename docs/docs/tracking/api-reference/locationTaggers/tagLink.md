@@ -16,7 +16,7 @@ tagLink = (parameters: {
 | :-:      | :--      | :--                                                                                               | :--           
 | required | **id**   | string                                                                                            |
 | required | **href** | string                                                                                            |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackPressEvents: true }`
 | optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -25,7 +25,7 @@ tagLink = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 
 ## Usage examples
 
@@ -72,5 +72,5 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 - [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 - [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 :::

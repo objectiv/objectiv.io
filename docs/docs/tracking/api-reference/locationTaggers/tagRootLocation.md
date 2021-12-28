@@ -1,9 +1,9 @@
-# tagRoot
+# tagRootLocation
 
 Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
 
 ```typescript
-tagRoot = (parameters: {
+tagRootLocation = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerErrorHandlerCallback
@@ -29,17 +29,17 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagRoot } from '@objectiv/tracker-browser';
+import { tagRootLocation } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<body {...tagRoot({ id: 'page' })}>
+<body {...tagRootLocation({ id: 'page' })}>
   ...
 </body>
 ```
 
 ```typescript jsx
-<Layout {...tagRoot({ id: 'page' })}>
+<Layout {...tagRootLocation({ id: 'page' })}>
   ...
 </Layout>
 ```
@@ -50,7 +50,7 @@ import { tagRoot } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<main [tagRoot]="{ id: 'page' }">
+<main [tagRootLocation]="{ id: 'page' }">
   ...
 </main>
 ```
@@ -61,7 +61,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagRoot` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
+`tagRootLocation` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />

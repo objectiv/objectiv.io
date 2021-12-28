@@ -7,7 +7,7 @@ type TagLocationAttributes = {
   [TaggingAttribute.elementId]: string;
   [TaggingAttribute.parentElementId]: string;
   [TaggingAttribute.context]: string;
-  [TaggingAttribute.trackClicks]: string;
+  [TaggingAttribute.trackPressEvents]: string;
   [TaggingAttribute.trackBlurs]: string;
   [TaggingAttribute.trackVisibility]: string;
   [TaggingAttribute.validate]: string;

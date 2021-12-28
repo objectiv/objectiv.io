@@ -1,9 +1,9 @@
-# trackApplicationLoaded
+# trackSuccessEvent
 
-Triggers an [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md).
+Triggers a [SuccessEvent](/taxonomy/reference/events/SuccessEvent.md).
 
 ```typescript
-trackApplicationLoaded = (parameters: {
+trackSuccessEvent = (parameters: {
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -11,10 +11,6 @@ trackApplicationLoaded = (parameters: {
   onError?: TrackerErrorHandlerCallback;  
 }) => void
 ```
-
-:::info
-`trackApplicationLoaded` is triggered automatically when using either [makeTracker](/tracking/api-reference/general/makeTracker.md) or [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
-:::
 
 ## Parameters
 |          |                | type                                                                                              | default value
@@ -26,49 +22,33 @@ trackApplicationLoaded = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackApplicationLoaded` is a void function.
+`trackSuccessEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackApplicationLoaded } from '@objectiv/tracker-browser';
+import { trackSuccessEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<head>
+<form onSubmit={() => {
+  sendFormAsync().then(
+    () => trackSuccessEvent({ element: form })
+  );
+}}>
   ...
-  <script>
-    trackApplicationLoaded();
-  </script>
-</head>
+</form>
 ```
-
-```typescript jsx
-const App = () => {
-  ...
-  
-  trackApplicationLoaded();
-  
-  return (
-    ...
-  )
-}
-```
-
-:::warning
-Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
-:::
 
 <br />
 
 :::tip Did you know ?
-`trackApplicationLoaded` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackSuccessEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
 - [makeTracker](/tracking/api-reference/general/makeTracker.md)
-- [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

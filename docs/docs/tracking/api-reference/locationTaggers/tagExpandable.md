@@ -14,7 +14,7 @@ tagExpandable = (parameters: {
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackPressEvents: true, trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -23,9 +23,9 @@ tagExpandable = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
-- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
+- [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
 
 ## Usage example
 
@@ -82,5 +82,5 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 - [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 :::

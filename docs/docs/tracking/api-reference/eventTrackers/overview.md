@@ -8,20 +8,21 @@ Events are triggered automatically based on the [Location Context](/taxonomy/ref
 Nonetheless, sometimes it may be preferable, or necessary, to trigger Events programmatically.
 
 #### Interactive
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
-- [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
-- [trackMediaLoad](/tracking/api-reference/eventTrackers/trackMediaLoad.md)
-- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
-- [trackMediaStart](/tracking/api-reference/eventTrackers/trackMediaStart.md)
-- [trackMediaStop](/tracking/api-reference/eventTrackers/trackMediaStop.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
+- [trackInputChangeEvent](/tracking/api-reference/eventTrackers/trackInputChangeEvent.md)
+- [trackMediaEvent](/tracking/api-reference/eventTrackers/trackMediaEvent.md)
+- [trackMediaLoadEvent](/tracking/api-reference/eventTrackers/trackMediaLoadEvent.md)
+- [trackMediaPauseEvent](/tracking/api-reference/eventTrackers/trackMediaPauseEvent.md)
+- [trackMediaStartEvent](/tracking/api-reference/eventTrackers/trackMediaStartEvent.md)
+- [trackMediaStopEvent](/tracking/api-reference/eventTrackers/trackMediaStopEvent.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
-- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
+- [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md)
 
 #### Non-interactive
-- [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
-- [trackCompleted](/tracking/api-reference/eventTrackers/trackCompleted.md)
-- [trackFailed](/tracking/api-reference/eventTrackers/trackFailed.md)
+- [trackApplicationLoadedEvent](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md)
+- [trackSuccessEvent](/tracking/api-reference/eventTrackers/trackSuccessEvent.md)
+- [trackFailureEvent](/tracking/api-reference/eventTrackers/trackFailureEvent.md)
 
 #### Low-level
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)

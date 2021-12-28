@@ -1,9 +1,9 @@
-# trackMediaStop
+# trackInputChangeEvent
 
-Triggers a [trackMediaStop](/taxonomy/reference/events/MediaStopEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers an [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackMediaStop = (parameters: {
+trackInputChangeEvent = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -11,6 +11,10 @@ trackMediaStop = (parameters: {
   onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
+
+:::info
+`trackInputChangeEvent` is triggered automatically, on [blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event), by [tagInput](/tracking/api-reference/locationTaggers/tagInput.md).
+:::
 
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
@@ -22,26 +26,36 @@ trackMediaStop = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackMediaStop` is a void function.
+`trackInputChangeEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackMediaStop } from '@objectiv/tracker-browser';
+import { trackInputChangeEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<video
-  onStop={(event) => {
-    trackMediaStop({ element: event.target })
+<input
+  onBlur={(event) => {
+    trackInputChangeEvent({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
-<YouTube
-  onStop={({ target: youTubePlayerInstance }) => {
-    trackMediaStop({ element: youTubePlayerInstance.getIframe() })
+<select
+  onChange={(event) => {
+    trackInputChangeEvent({ element: event.target })
+  }}
+>
+  ...
+</select>
+```
+
+```typescript jsx
+<TextField
+  onBlur={(event) => {
+    trackInputChangeEvent({ element: event.target })
   }}
 />
 ```
@@ -49,16 +63,13 @@ import { trackMediaStop } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackMediaStop` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackInputChangeEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
-- [trackMediaStart](/tracking/api-reference/eventTrackers/trackMediaStart.md)
-- [trackMediaStop](/tracking/api-reference/eventTrackers/trackMediaStop.md)
-- [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [tagInput](/tracking/api-reference/locationTaggers/tagInput.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
-  :::
+:::

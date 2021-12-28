@@ -30,13 +30,13 @@ Unless customized via the `options` parameter, the given `instance` determines w
 | LocationContext                                                                   | Automatically triggers
 | :--                                                                               | :--
 | [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md)         | 
-| [ExpandableContext](/taxonomy/reference/location-contexts/ExpandableContext.md)   | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-| [InputContext](/taxonomy/reference/location-contexts/InputContext.md)             | [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
-| [LinkContext](/taxonomy/reference/location-contexts/LinkContext.md)               | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [ExpandableContext](/taxonomy/reference/location-contexts/ExpandableContext.md)   | [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
+| [InputContext](/taxonomy/reference/location-contexts/InputContext.md)             | [trackInputChangeEvent](/tracking/api-reference/eventTrackers/trackInputChangeEvent.md)
+| [LinkContext](/taxonomy/reference/location-contexts/LinkContext.md)               | [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 | [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md) | 
 | [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md)   | 
-| [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md)         | [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md), [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
-| [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md)     | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md)         | [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md), [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
+| [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md)     | [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 
 ## Usage example
 

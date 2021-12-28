@@ -27,14 +27,14 @@ trackFailure = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackFailure, trackCompleted } from '@objectiv/tracker-browser';
+import { trackFailure, trackSuccessEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <form onSubmit={() => {
   sendFormAsync()
     .then(
-      () => trackCompleted({ element: form }), 
+      () => trackSuccessEvent({ element: form }), 
       () => {
         const errorContext = makeErrorContext({ id: "form", message: "Remote rejection." });
         trackFailure({ globalContexts: [errorContext], element: form });
@@ -63,6 +63,5 @@ import { trackFailure, trackCompleted } from '@objectiv/tracker-browser';
 
 :::info See also
 - [makeTracker](/tracking/api-reference/general/makeTracker.md)
-- [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

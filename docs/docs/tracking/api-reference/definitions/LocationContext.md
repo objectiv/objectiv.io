@@ -65,7 +65,7 @@ const RootLocationContext = assign(
 );
 ```
 #### Tagger
-- [tagRoot](/tracking/api-reference/locationTaggers/tagRoot.md)
+- [tagRootLocation](/tracking/api-reference/locationTaggers/tagRootLocation.md)
 
 ### ContentContext
 `ContentContext` < `AbstractLocationContext` < `Abstract Context`

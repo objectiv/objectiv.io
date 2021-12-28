@@ -11,18 +11,17 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 ### Configuration
 [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
 
-|          |                        | type                                                                 | default value
-| :-:      | :--                    | :--                                                                  | :--           
-| required | **applicationId**      | string                                                               |
-| optional | trackerId              | string                                                               | Same value as `applicationId`
-| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
-| optional | **_endpoint_**         | string                                                               |
-| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
-| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
-| optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
-| optional | active                 | boolean                                                              | `true`
-| optional | trackApplicationLoaded | boolean                                                              | `true`
-| optional | trackURLChanges        | boolean                                                              | `true`
+|          |                             | type                                                                 | default value
+| :-:      | :--                         | :--                                                                  | :--           
+| required | **applicationId**           | string                                                               |
+| optional | trackerId                   | string                                                               | Same value as `applicationId`
+| optional | queue                       | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
+| optional | **_endpoint_**              | string                                                               |
+| optional | **_transport_**             | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
+| optional | plugins                     | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
+| optional | console                     | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
+| optional | active                      | boolean                                                              | `true`
+| optional | trackApplicationLoadedEvent | boolean                                                              | `true`
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
@@ -44,7 +43,7 @@ Configured for 10 retries with exponential backoff starting at 1000ms.
 ### Default Plugins
 Browser Tracker comes preconfigured with the following plugins:
 - ApplicationContextPlugin (inherited from Core Tracker)
-- WebDocumentContextPlugin
+- PathContextFromURLPlugin
 
 ## Under the hood
 To get an idea of how much Browser Tracker automates under the hood, this statement:
@@ -66,8 +65,8 @@ is equivalent to:
  const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })
  const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
  const applicationPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
- const webDocumentPlugin = new WebDocumentContextPlugin({ console });
- const plugins = new TrackerPlugins({ plugins: [ applicationPlugin, webDocumentPlugin ], console });
+ const pathContextPlugin = new PathContextFromURLPlugin({ console });
+ const plugins = new TrackerPlugins({ plugins: [ applicationPlugin, pathContextPlugin ], console });
  const tracker = new Tracker({ transport, queue, plugins, console });
 ```
 

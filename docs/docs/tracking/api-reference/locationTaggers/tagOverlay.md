@@ -23,8 +23,8 @@ tagOverlay = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
-- [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md)
+- [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
 
 ## Examples
 

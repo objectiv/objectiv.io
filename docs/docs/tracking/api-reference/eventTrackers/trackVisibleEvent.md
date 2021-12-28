@@ -1,9 +1,9 @@
-# trackHidden
+# trackVisibleEvent
 
-Triggers a [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackHidden = (parameters: {
+trackVisibleEvent = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -13,7 +13,7 @@ trackHidden = (parameters: {
 ```
 
 :::info
-`trackHidden` is triggered automatically by [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md) and [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md).
+`trackVisibleEvent` is triggered automatically by [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md) and [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md).
 :::
 
 ## Parameters
@@ -26,21 +26,21 @@ trackHidden = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackHidden` is a void function.
+`trackVisibleEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackHidden } from '@objectiv/tracker-browser';
+import { trackVisibleEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <Modal
   onShow={(event) => {
-    trackVisible({ element: event.target })
+    trackVisibleEvent({ element: event.target })
   }}
   onHide={(event) => {
-    trackHidden({ element: event.target })
+    trackHiddenEvent({ element: event.target })
   }}
 >
   ...
@@ -51,9 +51,9 @@ import { trackHidden } from '@objectiv/tracker-browser';
 const elementRef = createRef();
 ...
 useEffect(() => {
-  trackVisible({ element: elementRef.current });
+  trackVisibleEvent({ element: elementRef.current });
   return () => {
-    trackHidden({ element: elementRef.current });
+    trackHiddenEvent({ element: elementRef.current });
   }
 }, [])
 ...
@@ -67,13 +67,13 @@ return (
 <br />
 
 :::tip Did you know ?
-`trackHidden` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackVisibleEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
-:::
+  :::

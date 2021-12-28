@@ -1,6 +1,6 @@
 # trackVisibilityHiddenEvent
 
-Checks whether to trigger a [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md) event for the given [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) by checking its [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility).
+Checks whether to trigger a [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) event for the given [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) by checking its [TaggingAttribute.trackPressEvents](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility).
 
 ```typescript
 const trackVisibilityHiddenEvent = (

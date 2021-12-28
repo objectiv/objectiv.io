@@ -238,7 +238,7 @@ Again, checking the documentation is our friend here. Turns out there are event 
  <FAQItem
   {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
   onClick={(event) => {
-    trackClick({ element: event.target })
+    trackPressEvent({ element: event.target })
   }}  
   title={'How do I track 3rd party components?'}
 >

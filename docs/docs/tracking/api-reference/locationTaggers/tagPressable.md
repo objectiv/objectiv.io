@@ -14,14 +14,14 @@ tagPressable = (parameters: {
 |          |          | type                                                                                              | default value
 | :-:      | :--      | :--                                                                                               | :--           
 | required | **id**   | string                                                                                            |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackPressEvents: true }`
 | optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Events
 
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 
 ## Returns
 [TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
@@ -70,5 +70,5 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 - [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
 - [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
   :::

@@ -1,9 +1,9 @@
-# trackMediaLoad
+# trackMediaLoadEvent
 
-Triggers a [trackMediaLoad](/taxonomy/reference/events/MediaLoadEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [trackMediaLoadEvent](/taxonomy/reference/events/MediaLoadEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackMediaLoad = (parameters: {
+trackMediaLoadEvent = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -22,18 +22,18 @@ trackMediaLoad = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackMediaLoad` is a void function.
+`trackMediaLoadEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackMediaLoad } from '@objectiv/tracker-browser';
+import { trackMediaLoadEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
 <video
   onLoad={(event) => {
-    trackMediaLoad({ element: event.target })
+    trackMediaLoadEvent({ element: event.target })
   }}
 />
 ```
@@ -41,7 +41,7 @@ import { trackMediaLoad } from '@objectiv/tracker-browser';
 ```typescript jsx
 <YouTube
   onLoad={({ target: youTubePlayerInstance }) => {
-    trackMediaLoad({ element: youTubePlayerInstance.getIframe() })
+    trackMediaLoadEvent({ element: youTubePlayerInstance.getIframe() })
   }}
 />
 ```
@@ -49,16 +49,16 @@ import { trackMediaLoad } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackMediaLoad` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackMediaLoadEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackMediaPause](/tracking/api-reference/eventTrackers/trackMediaPause.md)
-- [trackMediaStart](/tracking/api-reference/eventTrackers/trackMediaStart.md)
-- [trackMediaStop](/tracking/api-reference/eventTrackers/trackMediaStop.md)
+- [trackMediaPauseEvent](/tracking/api-reference/eventTrackers/trackMediaPauseEvent.md)
+- [trackMediaStartEvent](/tracking/api-reference/eventTrackers/trackMediaStartEvent.md)
+- [trackMediaStopEvent](/tracking/api-reference/eventTrackers/trackMediaStopEvent.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
   :::

@@ -23,9 +23,9 @@ Objectiv supports two Events for Elements that become visible or hidden:
 You can manually specify whether and how an Element triggers Visibility Events, via:
 * [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md): For a given TrackableElement, 
   defines a state that triggers Visibility Events.
-* [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md): Immediately trigger a
+* [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md): Immediately trigger a
   Visible Event for the given TrackableElement.
-* [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md): Immediately trigger a
+* [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md): Immediately trigger a
   Hidden Event for the given TrackableElement.
 
 ## Use Cases

@@ -14,6 +14,7 @@ APIs to factor and bind the appropriate [LocationContext](/taxonomy/reference/lo
 - [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
 - [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 - [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
+- [tagRootLocation](/tracking/api-reference/locationTaggers/tagRootLocation.md)
 
 #### Low-level
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)

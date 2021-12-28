@@ -12,7 +12,7 @@ An example Location Stack for an Event:
 ```json
   "location_stack":[
     {
-      "_type":"WebDocumentContext",
+      "_type":"RootLocationContext",
       "id":"test-page",
     },
     {

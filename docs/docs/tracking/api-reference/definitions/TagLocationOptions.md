@@ -4,7 +4,7 @@ The `options` object parameter allows to override the default automatic tracking
 
 | Option          | Possible value
 | :--             | :--
-| trackClicks     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
+| trackPressEvents     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
 | trackBlurs      | `boolean`
 | trackVisibility | `{ mode: 'auto' }` \| `{ mode: 'manual': isVisible: boolean }`
 | parent          | `TagLocationReturnValue`
@@ -14,11 +14,11 @@ The `options` object parameter allows to override the default automatic tracking
 All options are optional and can be either omitted or set to `undefined` to revert to the default values.
 :::
 
-## options.trackClicks
+## options.trackPressEvents
 Used to customize whether and how [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) are attached to [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements).
 
 
-### options.trackClicks.waitUntilTracked
+### options.trackPressEvents.waitUntilTracked
 Some interactions may lead to the current session being closed. For example external links.
 
 To avoid losing those events the `waitUntilTracked` option can be specified. This will attach a capture Event Listener which will attempt to wait for the Tracker to finish its work before allowing the User Agent to follow its destination. 
@@ -42,7 +42,7 @@ In the following example we are instructing our [Tagged Elements Observer](/trac
     id: 'external',
     href: 'https://www.external.com',
     options: {
-      trackClicks: {
+      trackPressEvents: {
         waitUntilTracked: { 
           intervalMs: 100,
           timeoutMs: 3000,
@@ -59,10 +59,10 @@ In the following example we are instructing our [Tagged Elements Observer](/trac
 Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ## options.trackVisibility
-Used to customize whether to track [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md) and [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md) events, either automatically or manually.
+Used to customize whether to track [trackHiddenEventEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) and [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) events, either automatically or manually.
 
 ### Visibility mode:auto  
-Either [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md) or [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md) are triggered when [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) are added or removed to/from the DOM.
+Either [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) are triggered when [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
 trackVisibility = {
@@ -71,7 +71,7 @@ trackVisibility = {
 ```
 
 ### Visibility mode:manual  
-Either [trackHidden](/tracking/api-reference/eventTrackers/trackHidden.md) or [trackVisible](/tracking/api-reference/eventTrackers/trackVisible.md) are triggered whenever the `isVisible` boolean state attribute changes.
+Either [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) are triggered whenever the `isVisible` boolean state attribute changes.
 
 ```js
 trackVisibility = {

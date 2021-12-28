@@ -1,9 +1,9 @@
-# trackInputChange
+# trackMediaPauseEvent
 
-Triggers an [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [MediaPauseEvent](/taxonomy/reference/events/MediaPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
-trackInputChange = (parameters: {
+trackMediaPauseEvent = (parameters: {
   element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -11,10 +11,6 @@ trackInputChange = (parameters: {
   onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
-
-:::info
-`trackInputChange` is triggered automatically, on [blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event), by [tagInput](/tracking/api-reference/locationTaggers/tagInput.md).
-:::
 
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
@@ -26,36 +22,32 @@ trackInputChange = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackInputChange` is a void function.
+`trackMediaPauseEvent` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackInputChange } from '@objectiv/tracker-browser';
+import { trackMediaPauseEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<input
-  onBlur={(event) => {
-    trackInputChange({ element: event.target })
+<video
+  play={(event) => {
+    trackMediaPauseEvent({ element: event.target })
+  }}
+  pause={(event) => {
+    trackMediaPauseEvent({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
-<select
-  onChange={(event) => {
-    trackInputChange({ element: event.target })
+<YouTube
+  onPlay={({ target: youTubePlayerInstance }) => {
+    trackMediaStartEvent({ element: youTubePlayerInstance.getIframe() })
   }}
->
-  ...
-</select>
-```
-
-```typescript jsx
-<TextField
-  onBlur={(event) => {
-    trackInputChange({ element: event.target })
+  onPause={({ target: youTubePlayerInstance }) => {
+    trackMediaPauseEvent({ element: youTubePlayerInstance.getIframe() })
   }}
 />
 ```
@@ -63,13 +55,14 @@ import { trackInputChange } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackInputChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackMediaPauseEvent` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [tagInput](/tracking/api-reference/locationTaggers/tagInput.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackMediaStartEvent](/tracking/api-reference/eventTrackers/trackMediaStartEvent.md)
+- [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::
