@@ -22,7 +22,6 @@ export default function DefaultNavbarItem({
       {...props}
       {...tagLink({ 
           id: props.label, 
-          text: props.label, 
           href: props.href ? props.href : props.to,
         })
       }

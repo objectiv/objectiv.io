@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
-import { tagLink, tagElement } from "@objectiv/tracker-browser";
+import { tagLink, tagContent, tagRootLocation } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 
@@ -17,16 +17,16 @@ function Contributor({name, gitHubUsername}) {
   return (
     <div 
       className={clsx("card", styles.contributorCard)}
-      {...tagElement({id: gitHubUsername})}
+      {...tagContent({id: gitHubUsername})}
     >
-      <div {...tagElement({id: 'contributor-card'})}>
+      <div {...tagContent({id: 'contributor-card'})}>
         <div className="card__header">
           <div 
             className={clsx("avatar", styles.contributorAvatar)}
-            {...tagElement({id: 'avatar'})}
+            {...tagContent({id: 'avatar'})}
           >
             <Link 
-              {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+              {...tagLink({id: gitHubUsername, href: ghProfileLink})}
               href={ghProfileLink} 
               title={ghProfileTitle}
             >
@@ -43,10 +43,10 @@ function Contributor({name, gitHubUsername}) {
           <div className="avatar__intro">
             <div 
               className={clsx(styles.contributorAvatarSubtitle)}
-              {...tagElement({id: 'avatar-subtitle'})}
+              {...tagContent({id: 'avatar-subtitle'})}
             >
               <Link 
-                {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+                {...tagLink({id: gitHubUsername, href: ghProfileLink})}
                 href={ghProfileLink} 
                 title={ghProfileTitle}
               >
@@ -60,10 +60,10 @@ function Contributor({name, gitHubUsername}) {
         </div>
         <div 
           className={clsx("card__footer", styles.contributorFooter)}
-          {...tagElement({id: 'card-footer'})}
+          {...tagContent({id: 'card-footer'})}
         >
           <Link 
-            {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+            {...tagLink({id: gitHubUsername, href: ghProfileLink})}
             href={ghProfileLink} 
             title={ghProfileTitle}
           >
@@ -80,7 +80,7 @@ export default function AboutUs() {
   const {siteConfig} = context;
 
   return (
-    <div {...tagElement({id: 'page-about'})}>
+    <div {...tagRootLocation({id: 'page-about'})}>
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
@@ -94,7 +94,7 @@ export default function AboutUs() {
 
         <header
           className={clsx('hero hero--primary', styles.aboutUsBanner)}
-          {...tagElement({id: 'header'})}
+          {...tagContent({id: 'header'})}
         >
           <div className={clsx('container', styles.contentContainer)}>
             <img
@@ -115,11 +115,11 @@ export default function AboutUs() {
 
         <main
           className={clsx(styles.aboutUsMain)}
-          {...tagElement({id: 'main'})}
+          {...tagContent({id: 'main'})}
         >
           <div
             className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}
-            {...tagElement({id: 'not-just-us'})}
+            {...tagContent({id: 'not-just-us'})}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <img
@@ -147,7 +147,7 @@ export default function AboutUs() {
 
           <div
             className={clsx(styles.aboutUsPageSection)}
-            {...tagElement({id: 'we-will-take-it-on'})}
+            {...tagContent({id: 'we-will-take-it-on'})}
           >
             <div className={clsx("container", styles.contentContainer)}>
             <img
@@ -179,7 +179,7 @@ export default function AboutUs() {
 
           <div
             className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
-            {...tagElement({id: 'why-us'})}
+            {...tagContent({id: 'why-us'})}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Why we think we’re in the position to fix this</h2>
@@ -208,12 +208,12 @@ export default function AboutUs() {
                   We're backed by&nbsp;
                   <Link 
                     to="https://www.fly.vc/"
-                    {...tagLink({ id: 'vc-fly', text: 'Fly Ventures', href: 'https://www.fly.vc/' })}>
+                    {...tagLink({ id: 'vc-fly', href: 'https://www.fly.vc/' })}>
                     Fly Ventures
                   </Link> &amp;&nbsp; 
                   <Link 
                     to="https://localglobe.vc/"
-                    {...tagLink({ id: 'vc-localglobe', text: 'LocalGlobe', href: 'https://localglobe.vc/' })}>
+                    {...tagLink({ id: 'vc-localglobe', href: 'https://localglobe.vc/' })}>
                     LocalGlobe
                   </Link>. They share our vision on the future of data science and have the right 
                   experience &amp; network to help us execute our mission.
@@ -239,7 +239,7 @@ export default function AboutUs() {
           <div
             className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, 
               styles.aboutUsPageContributors)}
-            {...tagElement({id: 'core-team'})}
+            {...tagContent({id: 'core-team'})}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv's Core Team</h2>
@@ -247,8 +247,7 @@ export default function AboutUs() {
                 Meet the mission crew. Also,&nbsp;
                 <Link
                   to="/jobs"
-                  {...tagLink({ id: 'hiring', text: "we're hiring a Data Scientist. Join us!", 
-                  href: '/jobs' })}
+                  {...tagLink({ id: 'hiring', href: '/jobs' })}
                 >
                   we're hiring a Data Scientist. Join us!
                 </Link>
@@ -259,7 +258,7 @@ export default function AboutUs() {
 
             >
               {contributors && contributors.length > 0 && (
-                <div {...tagElement({id: 'contributors'})} className={clsx(styles.contributorCards)}>
+                <div {...tagContent({id: 'contributors'})} className={clsx(styles.contributorCards)}>
                   {contributors.map((props, idx) => (
                     <Contributor key={idx} {...props} />
                   ))}
