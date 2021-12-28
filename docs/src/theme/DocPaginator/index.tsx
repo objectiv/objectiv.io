@@ -27,7 +27,7 @@ function DocPaginator(props): JSX.Element {
           <Link
             className="pagination-nav__link"
             to={metadata.previous.permalink}
-            {...tagLink({ id: 'previous', text: metadata.previous.title, href: metadata.previous.permalink })}
+            {...tagLink({ id: 'previous', href: metadata.previous.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -47,7 +47,7 @@ function DocPaginator(props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={metadata.next.permalink}
-            {...tagLink({ id: 'next', text: metadata.next.title, href: metadata.next.permalink })}
+            {...tagLink({ id: 'next', href: metadata.next.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate

@@ -24,7 +24,7 @@ function TOCItemList({toc, className, linkClassName, isChild}) {
       {toc.map((heading) => (
         <li key={heading.id}>
           <a
-            {...tagLink({id: heading.id, href: "#"+heading.id, text: heading.value})}
+            {...tagLink({id: heading.id, href: "#"+heading.id})}
             href={`#${heading.id}`}
             className={linkClassName ?? undefined} // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger

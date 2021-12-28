@@ -1,7 +1,14 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, getLocationHref, windowExists } from "@objectiv/tracker-browser";
+import {
+  getOrMakeTracker,
+  getTrackerRepository,
+  getLocationHref,
+  windowExists,
+  makeRootLocationContext, Tracker, TrackerPlugins, makeDefaultPluginsList
+} from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
+import { RootLocationContextFromURLPlugin } from "./RootLocationContextFromURLPlugin";
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -49,15 +56,21 @@ function Root({children}) {
     // Execute only if we are not in SSR
     if (windowExists()) {
       const trackerOptions = {
+        applicationId: trackerDocsApplicationId as string,
         endpoint: trackerEndPoint as string,
         console: trackerConsoleEnabled ? console : undefined
       }
 
       if (trackerDocsApplicationId) {
         getOrMakeTracker({
-          applicationId: trackerDocsApplicationId as string,
           ...trackerOptions,
           active: cookiebotStatisticsConsent,
+          plugins: new TrackerPlugins({
+            plugins: [
+              ...makeDefaultPluginsList(trackerOptions),
+              new RootLocationContextFromURLPlugin(trackerOptions)
+            ]}
+          )
         });
       }
     }

@@ -21,7 +21,7 @@ import IconArrow from '@theme/IconArrow';
 import {translate} from '@docusaurus/Translate';
 import {DocSidebarItems} from '@theme/DocSidebarItem';
 import type {Props} from '@theme/DocSidebar';
-import { tagElement } from '@objectiv/tracker-browser';
+import { tagNavigation } from '@objectiv/tracker-browser';
 
 import styles from './styles.module.css';
 
@@ -77,7 +77,7 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}: Props) {
         [styles.sidebarWithHideableNavbar]: hideOnScroll,
         [styles.sidebarHidden]: isHidden,
       })}
-      {...tagElement({id: 'docs-sidebar'})}>
+      {...tagNavigation({id: 'docs-sidebar'})}>
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
       <nav
         className={clsx('menu thin-scrollbar', styles.menu, {
@@ -98,7 +98,7 @@ const DocSidebarMobileSecondaryMenu: MobileSecondaryMenuComponent<Props> = ({
   path,
 }) => {
   return (
-    <div {...tagElement({ id: 'docs-sidebar' })}>
+    <div {...tagNavigation({ id: 'docs-sidebar' })}>
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
         <DocSidebarItems
           items={sidebar}
