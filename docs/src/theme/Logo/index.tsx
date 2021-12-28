@@ -18,7 +18,7 @@ const Logo = (props): JSX.Element  => {
   const logoLink = useBaseUrl(logo.href || '/');
 
   return <OriginalLogo
-    {...tagLink({ id: 'logo', text: logo.alt, href: logoLink })}
+    {...tagLink({ id: 'logo', href: logoLink })}
     {...props} 
   />
 };

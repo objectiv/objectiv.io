@@ -322,7 +322,6 @@ const SphinxPage = (props) => {
                     const playgroundLinkTag = tagLink({
                         id: 'notebook-product-analytics',
                         href: 'https://notebook.objectiv.io/',
-                        text: 'sandboxed notebook',
                         options: {
                             trackClicks: {
                                 waitUntilTracked: true
