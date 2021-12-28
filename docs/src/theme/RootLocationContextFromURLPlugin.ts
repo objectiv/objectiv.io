@@ -28,8 +28,13 @@ export class RootLocationContextFromURLPlugin implements TrackerPluginInterface 
    * Generate a fresh RootLocationContext before each TrackerEvent is handed over to the TrackerTransport.
    */
   beforeTransport(contexts: Required<ContextsConfig>): void {
-    const rootLocationContextId = location.pathname.split('/')[1].trim().toLowerCase();
-    contexts.location_stack.unshift(makeRootLocationContext({ id: rootLocationContextId }));
+    const pathname = location.pathname;
+    const rootLocationContextId = pathname === '/' ? 'introduction' : pathname.split('/')[1].trim().toLowerCase();
+    if(rootLocationContextId){
+      contexts.location_stack.unshift(makeRootLocationContext({ id: rootLocationContextId }));
+    } else {
+      this.console.error(`%c｢objectiv:${this.pluginName}｣ Could not generate a RootLocationContext from ${location.pathname}`, 'font-weight: bold')
+    }
   }
 
   /**
