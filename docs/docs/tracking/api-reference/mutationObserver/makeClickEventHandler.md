@@ -9,7 +9,7 @@ It also supports a number of options to [wait](/tracking/api-reference/definitio
 const makeClickEventHandler = (
   element: TaggedElement,
   tracker?: BrowserTracker,
-  trackPressEventsOptions?: TrackClicksOptions
+  trackClicksOptions?: TrackClicksOptions
 ) => EventHandler
 ```
 
@@ -18,7 +18,7 @@ const makeClickEventHandler = (
 | :-:      | :--                | :--                                                                             | :--           
 | required | **element**        | [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md)           |
 | optional | tracker            | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)             |
-| optional | trackPressEventsOptions | [TrackClicksOptions](/tracking/api-reference/definitions/TrackClicksOptions.md) |
+| optional | trackClicksOptions | [TrackClicksOptions](/tracking/api-reference/definitions/TrackClicksOptions.md) |
 
 ## Returns
 [Event Handler](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers)

@@ -14,7 +14,7 @@ tagPressable = (parameters: {
 |          |          | type                                                                                              | default value
 | :-:      | :--      | :--                                                                                               | :--           
 | required | **id**   | string                                                                                            |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackPressEvents: true }`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
 | optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Events
