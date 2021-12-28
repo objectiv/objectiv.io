@@ -35,7 +35,7 @@ import { trackEvent, makeClickEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-export const trackPressEventEvent = (parameters: {
+export const trackPressEvent = (parameters: {
   element: TaggableElement | EventTarget;
   tracker?: BrowserTracker;
   onError?: TrackOnErrorCallback;
