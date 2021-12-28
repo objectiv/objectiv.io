@@ -1,6 +1,3 @@
-/**
- * The RootLocationContextFromURL Plugin factors a RootLocationContext out of the first slug of the current URL.
- */
 import {
   ContextsConfig,
   makeRootLocationContext,
@@ -9,6 +6,9 @@ import {
   TrackerPluginInterface
 } from "@objectiv/tracker-browser";
 
+/**
+ * The RootLocationContextFromURL Plugin factors a RootLocationContext out of the first slug of the current URL.
+ */
 export class RootLocationContextFromURLPlugin implements TrackerPluginInterface {
   readonly console?: TrackerConsole;
   readonly pluginName = `RootLocationContextFromURLPlugin`;
