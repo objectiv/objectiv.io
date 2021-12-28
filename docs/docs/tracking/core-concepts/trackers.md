@@ -66,6 +66,8 @@ By default, the Angular Tracker automatically tracks the
 The Core Tracker is extensible through plugins. Each plugin can control when it's enabled, e.g. only if a Web
 environment is available.
 
-This plugin is supported out of the box, and automatically enabled when the environment supports it:
+These plugins are supported out of the box, and automatically enabled when the environment supports it:
 * `application-context`: adds a Global [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) 
+  to each Event;
+* `path-context-from-url`: adds a Global [PathContext](/taxonomy/reference/global-contexts/PathContext.md)
   to each Event;
