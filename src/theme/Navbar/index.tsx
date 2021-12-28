@@ -25,7 +25,7 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
-import { tagElement, tagOverlay } from "@objectiv/tracker-browser";
+import { tagNavigation, tagOverlay } from "@objectiv/tracker-browser";
 
 const DefaultNavItemPosition = 'right';
 
@@ -230,7 +230,7 @@ function Navbar() {
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
   return (
     <nav
-      {...tagElement({id: 'navbar-top'})}
+      {...tagNavigation({id: 'navbar-top'})}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',

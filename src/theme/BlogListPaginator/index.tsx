@@ -7,7 +7,7 @@
 
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
-import { tagElement, tagLink } from "@objectiv/tracker-browser";
+import { tagContent, tagLink } from "@objectiv/tracker-browser";
 import React from 'react';
 
 function BlogListPaginator(props): JSX.Element {
@@ -16,7 +16,7 @@ function BlogListPaginator(props): JSX.Element {
 
   return (
     <nav
-      {...tagElement({id: 'blog-list-paginator'})}
+      {...tagContent({id: 'blog-list-paginator'})}
       className="pagination-nav"
       aria-label={translate({
         id: 'theme.blog.paginator.navAriaLabel',
@@ -28,7 +28,7 @@ function BlogListPaginator(props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={previousPage}
-            {...tagLink({ id: 'previous', text: 'Newer', href: previousPage })}
+            {...tagLink({ id: 'previous', href: previousPage })}
           >
             <div className="pagination-nav__label">
               &laquo;{' '}
@@ -46,7 +46,7 @@ function BlogListPaginator(props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={nextPage}
-            {...tagLink({ id: 'next', text: 'Older', href: nextPage })}
+            {...tagLink({ id: 'next', href: nextPage })}
           >
             <div className="pagination-nav__label">
               <Translate

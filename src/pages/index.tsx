@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement, tagLink } from "@objectiv/tracker-browser";
+import { tagContent, tagLink, tagRootLocation } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
@@ -12,7 +12,7 @@ export default function Home() {
   const {url, tagline, customFields} = context.siteConfig;
 
   return (
-    <div {...tagElement({id: 'page-home'})}>
+    <div {...tagRootLocation({id: 'page-home'})}>
       <Layout
         title=''
         description={tagline}
@@ -20,7 +20,7 @@ export default function Home() {
         
         <header 
           className={clsx('hero hero--primary', styles.heroBanner)}
-          {...tagElement({id: 'header'})}
+          {...tagContent({id: 'header'})}
         >
           <div className={clsx('container', styles.heroContainer)}>
             <img
@@ -36,7 +36,6 @@ export default function Home() {
                 {...tagLink({
                     id: 'cta-repo-button', 
                     href: 'https://github.com/objectiv/objectiv-analytics', 
-                    text: 'Objectiv on GitHub',
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -46,7 +45,7 @@ export default function Home() {
                 )}
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
-                <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
+                <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Objectiv on GitHub'}/></span>
                 Objectiv on GitHub
               </Link> 
             </div>
@@ -54,13 +53,13 @@ export default function Home() {
         </header>
 
         <main 
-          {...tagElement({id: 'main'})}
+          {...tagContent({id: 'main'})}
           className={clsx('body-large')}>
 
           <div className={clsx(styles.pageSectionBlue)}>
 
             <div 
-              {...tagElement({id: 'intro'})}
+              {...tagContent({id: 'intro'})}
               className={clsx("container", styles.contentContainer, styles.intro)}>
               <h2>Collect exceptionally high quality user behavior data &amp; <br />
                 explore it effectively with reusable, composable model stacks.</h2>
@@ -69,7 +68,7 @@ export default function Home() {
             </div>
 
             <div 
-              {...tagElement({id: 'product-intro'})}
+              {...tagContent({id: 'product-intro'})}
               className={clsx("container", styles.contentContainer, styles.productIntro)}>
 
               <img 
@@ -130,7 +129,6 @@ export default function Home() {
                   {...tagLink({
                       id: 'cta-how-it-works', 
                       href: '/how-it-works',
-                      text: 'Find out how it works',
                     }
                   )}
                   target="_self" 
@@ -144,7 +142,7 @@ export default function Home() {
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightBlue, styles.quickStart)}>
             <div 
-              {...tagElement({id: 'whats-in-the-box'})}
+              {...tagContent({id: 'whats-in-the-box'})}
               className={clsx("container", styles.contentContainer, styles.pageSectionIntro)}>
                 
               <div className={clsx(styles.pageSectionIntro)}>
@@ -166,12 +164,11 @@ export default function Home() {
                     {...tagLink({
                         id: 'cta-docs-quickstart-guide', 
                         href: '/docs/quickstart-guide/',
-                        text: 'Objectiv Quickstart Guide',
                       }
                     )}
                     target="_self" 
                     className={clsx("button", styles.ctaButton)}>
-                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Objectiv Quickstart Guide'}/></span>
                     Objectiv Quickstart Guide
                   </Link>
                   
@@ -189,11 +186,10 @@ export default function Home() {
               <h2>Objectiv is open source and we’re building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <Link
-                to={customFields.slackJoinLink}
+                to={customFields.slackJoinLink as string}
                 {...tagLink({
                     id: 'join-slack', 
-                    href: customFields.slackJoinLink,
-                    text: 'Join us on Slack',
+                    href: customFields.slackJoinLink as string,
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -202,7 +198,7 @@ export default function Home() {
                   }
                 )}
                 className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
+                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
                   Join us on Slack
                 </Link>
             </div>

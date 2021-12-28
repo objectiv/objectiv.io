@@ -4,25 +4,25 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
-import { tagLink, tagElement } from "@objectiv/tracker-browser";
+import { tagContent, tagLink, tagRootLocation } from "@objectiv/tracker-browser";
 
 export default function Jobs() {
   const context = useDocusaurusContext();
   const {siteConfig} = context;
   return (
-    <div {...tagElement({id: 'page-jobs'})}>
+    <div {...tagRootLocation({id: 'page-jobs'})}>
       <Layout
         title='Jobs'
         description={siteConfig?.tagline}>
         <header 
           className={clsx('hero hero--primary', styles.jobsHeader)}
-          {...tagElement({id: 'header'})}
+          {...tagContent({id: 'header'})}
         >
           <div className={clsx('container', styles.jobsContainer)}>
             <h1>Currently Hiring: Data Scientist</h1>
           </div>
         </header>
-        <main {...tagElement({id: 'main'})}>
+        <main {...tagContent({id: 'main'})}>
           <div className={clsx('container', styles.jobsContainer)}>
             <p>With Objectiv, we’re building the open-source analytics pipeline for reusable modeling.</p>
             <p>We are looking for an experienced Data Scientist that wants to help unify the way data 
@@ -36,7 +36,7 @@ export default function Jobs() {
               had for a long time: the ability to reuse, take off-the-shelf and contribute to modeling work 
               of others.</p>
 
-            <div {...tagElement({ id: 'the-project' })}>
+            <div {...tagContent({ id: 'the-project' })}>
               <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
               <p>Objectiv just soft launched the open-source project that goes after our mission. Right now 
                 we are collecting very valuable feedback from a group of experienced DS teams. We use this to 
@@ -47,7 +47,6 @@ export default function Jobs() {
                   {...tagLink({
                       id: 'site', 
                       href: '/', 
-                      text: 'site'
                     }
                   )}
                   target="_self">
@@ -58,7 +57,6 @@ export default function Jobs() {
                   {...tagLink({
                       id: 'docs', 
                       href: '/docs/', 
-                      text: 'docs',
                       options: {
                         trackClicks: {
                           waitUntilTracked: true
@@ -73,7 +71,6 @@ export default function Jobs() {
                   {...tagLink({
                       id: 'github-repo', 
                       href: 'https://github.com/objectiv/objectiv-analytics', 
-                      text: 'repo',
                       options: {
                         trackClicks: {
                           waitUntilTracked: true
@@ -131,19 +128,19 @@ export default function Jobs() {
               to taking exercise breaks or spending family time during the day and then getting stuff done in 
               the evening. Things like that.</p>
 
-            <div {...tagElement({ id: 'what-we-offer' })}>
+            <div {...tagContent({ id: 'what-we-offer' })}>
               <h2><img width="32px" src='/img/icons/icon-premium.svg' alt='What we offer' /> What we offer</h2>
               <p>A role in a super motivated and experienced team that is on a mission. Our team has over a 
                 decade of experience in analytics and has made it their core focus to build the best possible 
                 workflow for data science. Thanks to the support of &nbsp; 
                 <Link 
                   to="https://www.fly.vc/"
-                  {...tagLink({ id: 'vc-fly', text: 'Fly Ventures', href: 'https://www.fly.vc/' })}>
+                  {...tagLink({ id: 'vc-fly', href: 'https://www.fly.vc/' })}>
                   Fly Ventures
                 </Link> &amp; &nbsp; 
                 <Link 
                   to="https://localglobe.vc/"
-                  {...tagLink({ id: 'vc-localglobe', text: 'LocalGlobe', href: 'https://localglobe.vc/' })}>
+                  {...tagLink({ id: 'vc-localglobe', href: 'https://localglobe.vc/' })}>
                   LocalGlobe
                 </Link> we can focus on the long-term and take the time to get the product just right. They 
                 were also the early backers of startups like Figma, Tessian and Robinhood.</p>
@@ -153,7 +150,8 @@ export default function Jobs() {
               <p>Like what you have read and think you meet the mark? Then&nbsp;
               <Link
                 to={'mailto:jobs@objectiv.io'}
-                {...tagLink({ id: 'hear-from-you', text: "we'd love to hear from you", 
+                {...tagLink({
+                  id: 'hear-from-you',
                   href: 'mailto:jobs@objectiv.io' })}>
                 we'd love to hear from you
               </Link>
