@@ -1,0 +1,58 @@
+<div>
+                
+  <section id="bach-open-taxonomy-modelhub-aggregate">
+<h1>bach_open_taxonomy.ModelHub.aggregate<a class="headerlink" href="#bach-open-taxonomy-modelhub-aggregate" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="bach_open_taxonomy.ModelHub.aggregate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">aggregate</span></span><a class="headerlink" href="#bach_open_taxonomy.ModelHub.aggregate" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Access aggregation methods from the model hub. Same as <a class="reference internal" href="bach_open_taxonomy.ModelHub.agg.html#bach_open_taxonomy.ModelHub.agg" title="bach_open_taxonomy.ModelHub.agg"><code class="xref py py-meth docutils literal notranslate"><span class="pre">agg()</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Models that return aggregated data in some form from the original ObjectivFrame.</p>
+<p>Methods in this class can be filtered with the filter parameter, which always takes SeriesBoolean. The
+ModelHub can also create specific commonly used filters with methods from
+<a class="reference internal" href="bach_open_taxonomy.ModelHub.filter.html#bach_open_taxonomy.ModelHub.filter" title="bach_open_taxonomy.ModelHub.filter"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bach_open_taxonomy.ModelHub.filter</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the unique sessions in the ObjectivFrame.</p>
+<p>Use any template for aggreation from: <a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
+ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p></li>
+<li><p><strong>filter</strong> &#8211; the output of this model is only based on the rows for which the filter is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the unique users in the ObjectivFrame.</p>
+<p>Use any template for aggreation from: <a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
+ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p></li>
+<li><p><strong>filter</strong> &#8211; the output of this model is only based on the rows for which the filter is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

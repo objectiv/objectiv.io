@@ -2,8 +2,10 @@
                 
   <section id="objectiv-bach-open-taxonomy">
 <h1>Objectiv Bach Open Taxonomy<a class="headerlink" href="#objectiv-bach-open-taxonomy" title="Permalink to this headline">&#182;</a></h1>
-<p>Objectiv Bach Open Taxonomy is an extension to the Series used in Bach. It allows for specific functionality
-on the stacks global contexts and location stack) as used by Objectiv.</p>
+<p>Objectiv Bach Open Taxonomy is an extension to the DataFrame and Series used in Bach. An ObjectivFrame loads
+data as stored by the Objectiv Tracker and the Open Taxonomy. An ObjectivFrame makes data transformations on
+this kind of data very easy. It is gives access to methods specific to the stacks global contexts and location
+stack, and also models from the open model hub.</p>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">&#182;</a></h2>
 <table class="longtable table autosummary">
@@ -13,10 +15,10 @@ on the stacks global contexts and location stack) as used by Objectiv.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="Objectiv/bach_open_taxonomy.ObjectivFrame.html#bach_open_taxonomy.ObjectivFrame" title="bach_open_taxonomy.ObjectivFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObjectivFrame</span></code></a>(**kwargs)</p></td>
-<td><p/></td>
+<td><p>The Objectiv Frame is an extension to Bach DataFrame to use specifically for data that was collected with Objectiv&#8217;s Tracker.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Objectiv/bach_open_taxonomy.ObjectivStack.html#bach_open_taxonomy.ObjectivStack" title="bach_open_taxonomy.ObjectivStack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ObjectivStack</span></code></a>(series_object)</p></td>
-<td><p/></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Objectiv/bach_open_taxonomy.ModelHub.html#bach_open_taxonomy.ModelHub" title="bach_open_taxonomy.ModelHub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelHub</span></code></a>(df)</p></td>
+<td><p>Class for the open model hub.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="Objectiv/bach_open_taxonomy.SeriesGlobalContexts.html#bach_open_taxonomy.SeriesGlobalContexts" title="bach_open_taxonomy.SeriesGlobalContexts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesGlobalContexts</span></code></a>(engine,&#160;base_node,&#160;...)</p></td>
 <td><p>Objectiv Global Contexts series.</p></td>
