@@ -29,7 +29,7 @@ export class RootLocationContextFromURLPlugin implements TrackerPluginInterface 
    */
   beforeTransport(contexts: Required<ContextsConfig>): void {
     const pathname = location.pathname;
-    const rootLocationContextId = pathname === '/' ? 'introduction' : pathname.split('/')[1].trim().toLowerCase();
+    const rootLocationContextId = pathname === '/' ? 'home' : pathname.split('/')[1].trim().toLowerCase();
     if(rootLocationContextId){
       contexts.location_stack.unshift(makeRootLocationContext({ id: rootLocationContextId }));
     } else {
