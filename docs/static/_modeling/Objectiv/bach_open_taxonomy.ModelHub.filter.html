@@ -1,0 +1,51 @@
+<div>
+                
+  <section id="bach-open-taxonomy-modelhub-filter">
+<h1>bach_open_taxonomy.ModelHub.filter<a class="headerlink" href="#bach-open-taxonomy-modelhub-filter" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="bach_open_taxonomy.ModelHub.filter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#bach_open_taxonomy.ModelHub.filter" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Access filter methods from the model hub. Same as <a class="reference internal" href="bach_open_taxonomy.ModelHub.f.html#bach_open_taxonomy.ModelHub.f" title="bach_open_taxonomy.ModelHub.f"><code class="xref py py-meth docutils literal notranslate"><span class="pre">f()</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Methods in this class can be used as filters in aggregation models.</p>
+<p>Always return SeriesBoolean with same base node as the ObjectivFrame the method is applied
+to.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Filter.</span></span><span class="sig-name descname"><span class="pre">conversion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Labels a hit True if it is a conversion hit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.conversion_events.html#bach_open_taxonomy.ObjectivFrame.conversion_events" title="bach_open_taxonomy.ObjectivFrame.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bach_open_taxonomy.ObjectivFrame.conversion_events</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SeriesBoolean with same base node as the ObjectivFrame this method is applied to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Filter.</span></span><span class="sig-name descname"><span class="pre">is_first_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Labels a session True if the session is the first session of that user in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>SeriesBoolean with same base node as the ObjectivFrame this method is applied to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
