@@ -1,22 +1,22 @@
-import React from 'react';
 import Link from '@docusaurus/Link';
-import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement } from '@objectiv/tracker-browser';
+import { tagContent, tagRootLocation } from '@objectiv/tracker-browser';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import React from 'react';
+import styles from './styles.module.css';
 
 export default function Cookies() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
-    <div {...tagElement({id: 'page-privacy-cookies'})}>
+    <div {...tagRootLocation({id: 'page-privacy-cookies'})}>
       <Layout
         title='Cookies Policy'
         description={siteConfig.tagline}>
         <header 
           className={clsx('hero hero--primary', styles.heroBanner)}
-          {...tagElement({id: 'header'})}
+          {...tagContent({id: 'header'})}
         >
           <div className={clsx('container', styles.cookiesContainer)}>
             <h1>Why do we use Cookies?</h1>

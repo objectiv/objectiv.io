@@ -16,17 +16,17 @@ Objectiv therefore allows you to manually specify whether and how an Element tri
 
 ## Visibility Events
 Objectiv supports two Events for Elements that become visible or hidden:
-* [SectionHiddenEvent](/taxonomy/reference/events/SectionHiddenEvent.md); and
-* [SectionVisibleEvent](/taxonomy/reference/events/SectionVisibleEvent.md).
+* [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md); and
+* [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md).
 
 ## How To Use
 You can manually specify whether and how an Element triggers Visibility Events, via:
 * [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md): For a given TrackableElement, 
   defines a state that triggers Visibility Events.
-* [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md): Immediately trigger a
-  SectionVisible Event for the given TrackableElement.
-* [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md): Immediately trigger a
-  SectionHidden Event for the given TrackableElement.
+* [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md): Immediately trigger a
+  Visible Event for the given TrackableElement.
+* [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md): Immediately trigger a
+  Hidden Event for the given TrackableElement.
 
 ## Use Cases
 Below some example use cases in which you may want to use Visibility Events.
@@ -45,9 +45,9 @@ Examples are tooltips and notification menus.
 
 A [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md) method is available for these cases.
 
-### Expandable Elements
+### Expandables
 When an Element shows in the current UI only on interaction (but does not overlay it), we define these as 
-[ExpandableSections](/taxonomy/reference/location-contexts/ExpandableSectionContext.md).
+[Expandables](/taxonomy/reference/location-contexts/ExpandableContext.md).
 
-A [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md) method is 
+A [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md) method is 
 available for these cases.

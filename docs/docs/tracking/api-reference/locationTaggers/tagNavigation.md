@@ -14,17 +14,11 @@ tagNavigation = (parameters: {
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | 
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 [TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
-
-## Events
-Unless customized via the `options` parameter, automatically triggers:
-
-- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
 ## Examples
 
@@ -74,9 +68,9 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
 - [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
-- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
+- [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 :::

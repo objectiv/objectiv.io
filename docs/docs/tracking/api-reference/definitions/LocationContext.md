@@ -1,6 +1,6 @@
 # LocationContext
 
-[Structs](https://docs.superstructjs.org/) and Unions for each [LocationContext](/taxonomy/reference/location-contexts/overview.md) in the [Taxonomy](//taxonomy/introduction.md).
+[Structs](https://docs.superstructjs.org/) and Unions for each [LocationContext](/taxonomy/reference/location-contexts/overview.md) in the [Taxonomy](/taxonomy/introduction.md).
 
 :::tip Struct > TS
 TypeScript Definitions for Structs are usually already exported, if not they can be inferred using the `Infer` helper. For example:
@@ -32,112 +32,76 @@ const AbstractLocationContext = assign(
 );
 ```
 
-### AbstractSectionContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+### AbstractPressableContext
+`AbstractPressableContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
-const AbstractSectionContext = assign(
+export const AbstractPressableContext = assign(
   AbstractLocationContext,
   object({
-    __section_context: literal(true),
+    __pressable_context: literal(true),
   })
 );
-```  
-
-### AbstractItemContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
-
-```typescript
-const AbstractItemContext = assign(
-  AbstractLocationContext,
-  object({
-    __item_context: literal(true),
-  })
-);
-```  
-
-### AbstractActionContext
-`AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
-```typescript
-const AbstractActionContext = assign(
-  AbstractItemContext,
-  object({
-    __action_context: literal(true),
-    text: string(),
-  })
-);
-```  
+```
 
 ## Context Structs
 
 :::info
-Not all Section Contexts have a corresponding [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) shorthand.
+Not all Location Contexts have a corresponding [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) shorthand.
 Creating a new Location Tagger is as simple as writing a small wrapper around the low-level [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 
 If a Location Tagger proves itself useful enough it may add it to the standard set of [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).
 :::
 
-### SectionContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+### RootLocationContext
+`RootLocationContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
-const SectionContext = assign(
-  AbstractSectionContext,
+const RootLocationContext = assign(
+  AbstractLocationContext,
   object({
-    _type: literal('SectionContext'),
+    _type: literal('RootLocationContext'),
   })
 );
 ```
 #### Tagger
-- [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
+- [tagRootLocation](/tracking/api-reference/locationTaggers/tagRootLocation.md)
 
-### WebDocumentContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+### ContentContext
+`ContentContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
-const WebDocumentContext = assign(
-  AbstractSectionContext,
+const ContentContext = assign(
+  AbstractLocationContext,
   object({
-    _type: literal('WebDocumentContext'),
-    url: string(),
+    _type: literal('ContentContext'),
   })
 );
-```  
+```
+#### Tagger
+- [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
 
-### ScreenContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
-
-```typescript
-const ScreenContext = assign(
-  AbstractSectionContext,
-  object({
-    _type: literal('ScreenContext'),
-    screen: string(),
-  })
-);
-```  
-
-### ExpandableSectionContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+### ExpandableContext
+`ExpandableContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
-const ExpandableSectionContext = assign(
-  AbstractSectionContext,
+const ExpandableContext = assign(
+  AbstractLocationContext,
   object({
-    _type: literal('ExpandableSectionContext'),
+    _type: literal('ExpandableContext'),
   })
 );
 ```  
 
 #### Tagger
-- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
+- [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 
 ### MediaPlayerContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+`MediaPlayerContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
 const MediaPlayerContext = assign(
-  AbstractSectionContext,
+  AbstractLocationContext,
   object({
     _type: literal('MediaPlayerContext'),
   })
@@ -148,11 +112,11 @@ const MediaPlayerContext = assign(
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
 
 ### NavigationContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+`NavigationContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
 const NavigationContext = assign(
-  AbstractSectionContext,
+  AbstractLocationContext,
   object({
     _type: literal('NavigationContext'),
   })
@@ -163,11 +127,11 @@ const NavigationContext = assign(
 
 
 ### OverlayContext
-`AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+`OverlayContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
 const OverlayContext = assign(
-  AbstractSectionContext,
+  AbstractLocationContext,
   object({
     _type: literal('OverlayContext'),
   })
@@ -177,24 +141,12 @@ const OverlayContext = assign(
 #### Tagger
 - [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 
-### ItemContext
-`AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
-
-```typescript
-const ItemContext = assign(
-  AbstractItemContext,
-  object({
-    _type: literal('ItemContext'),
-  })
-);
-```  
-
 ### InputContext
-`AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+`InputContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
 const InputContext = assign(
-  AbstractItemContext,
+  AbstractLocationContext,
   object({
     _type: literal('InputContext'),
   })
@@ -204,39 +156,27 @@ const InputContext = assign(
 #### Tagger
 - [tagInput](/tracking/api-reference/locationTaggers/tagInput.md)
 
-### ActionContext
-`AbstractActionContext` < `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+### PressableContext
+`PressableContext` < `AbstractPressableContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
-const ActionContext = assign(
-  AbstractActionContext,
+const PressableContext = assign(
+  AbstractPressableContext,
   object({
-    _type: literal('ActionContext'),
-  })
-);
-```  
-
-### ButtonContext
-`AbstractActionContext` < `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
-
-```typescript
-const ButtonContext = assign(
-  AbstractActionContext,
-  object({
-    _type: literal('ButtonContext'),
+    _type: literal('PressableContext'),
   })
 );
 ```  
 
 #### Tagger
-- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+- [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 
 ### LinkContext
-`AbstractActionContext` < `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
+`LinkContext` < `AbstractPressableContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
 const LinkContext = assign(
-  AbstractActionContext,
+  AbstractPressableContext,
   object({
     _type: literal('LinkContext'),
     href: string(),
@@ -255,66 +195,44 @@ Struct union to match any LocationContext
 
 ```typescript
 const AnyLocationContext = union([
-  SectionContext,
-  WebDocumentContext,
-  ScreenContext,
-  ExpandableSectionContext,
-  MediaPlayerContext,
-  NavigationContext,
-  OverlayContext,
-  ItemContext,
+  ContentContext,
+  ExpandableContext,
   InputContext,
-  ActionContext,
-  ButtonContext,
   LinkContext,
-]);
-```
-
-### AnySectionContext
-Struct union to match any SectionContext
-
-```typescript
-const AnySectionContext = union([
-  SectionContext,
-  WebDocumentContext,
-  ScreenContext,
-  ExpandableSectionContext,
   MediaPlayerContext,
   NavigationContext,
   OverlayContext,
+  PressableContext,
+  RootLocationContext,
 ]);
 ```
 
-### AnyItemContext
-Struct union to match any ItemContext
+### AnyPressableContext
+Struct union to match any PressableContext
 
 ```typescript
-const AnyItemContext = union([
-  ItemContext, 
-  InputContext, 
-  ActionContext, 
-  ButtonContext, 
-  LinkContext
-]);
-```
-
-### AnyActionContext
-Struct union to match any ActionContext
-
-```typescript
-const AnyActionContext = union([
-  ActionContext, 
-  ButtonContext, 
-  LinkContext
+const AnyPressableContext = union([
+  LinkContext,
+  PressableContext, 
 ]);
 ```
 
 ### AnyClickableContext
-Struct union to match any Clickable Context
+Struct union to match AnyPressableContext and ExpandableContext
 
 ```typescript
 const AnyClickableContext = union([
-  AnyActionContext, 
-  ExpandableSectionContext
+  AnyPressableContext, 
+  ExpandableContext
+]);
+```
+
+### AnyShowableContext
+Struct union to match OverlayContext and ExpandableContext
+
+```typescript
+const AnyShowableContext = union([
+  OverlayContext, 
+  ExpandableContext
 ]);
 ```

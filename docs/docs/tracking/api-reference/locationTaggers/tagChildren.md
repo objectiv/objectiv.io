@@ -41,7 +41,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagChildren } from '@objectiv/tracker-browser';
+import { tagChildren, tagPressable } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
@@ -49,11 +49,11 @@ import { tagChildren } from '@objectiv/tracker-browser';
   {...tagChildren([
     {
       queryAll: 'button[aria-label="Previous"]',
-      tagAs: tagButton({ id: 'prev', text: 'Previous' })
+      tagAs: tagPressable({ id: 'prev' })
     },
     {
       queryAll: 'button[aria-label="Next"]',
-      tagAs: tagButton({ id: 'next', text: 'Next' })
+      tagAs: tagPressable({ id: 'next' })
     }
   ])}
 >
@@ -71,11 +71,11 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
   [tagChildren]="[
     {
       queryAll: 'button[aria-label=&quot;Previous&quot;]',
-      tagAs: tagButton({ id: 'prev', text: 'Previous' })
+      tagAs: tagPressable({ id: 'prev' })
     },
     {
       queryAll: 'button[aria-label=&quot;Next&quot;]',
-      tagAs: tagButton({ id: 'next', text: 'Next' })
+      tagAs: tagPressable({ id: 'next' })
     }
   ]"
 >
@@ -91,6 +91,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 :::info See also
 - [Location Taggers](/tracking/api-reference/locationTaggers/overview.md)
+- [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 - [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer)
 :::

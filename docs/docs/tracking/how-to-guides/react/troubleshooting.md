@@ -52,11 +52,11 @@ It's easier to tag siblings via [tagChildren](/tracking/api-reference/locationTa
 Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) as follows:
 
 ```typescript jsx
-<Card {...tagElement({ id: 'card' })}>
+<Card {...tagContent({ id: 'card' })}>
   <Menu {...tagOverlay({ id: 'menu' })}>
-    <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
-    <MenuItem {...tagButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
-    <MenuItem {...tagButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-a' })}>Item A</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-b' })}>Item B</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-c' })}>Item C</MenuItem>
   </Menu> 
 </Card>
 ```
@@ -81,13 +81,13 @@ The solution is to specify the parent [Location Tagger](/tracking/api-reference/
 This tells the [Event Tracker](/tracking/api-reference/eventTrackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
 
 ```typescript jsx
-const parent = tagElement({ id: 'card' });
+const parent = tagContent({ id: 'card' });
 ...
 <Card {...cardTracker}>
   <Menu {...tagOverlay({ id: 'menu', options: { parent } })}>
-    <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
-    <MenuItem {...tagButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
-    <MenuItem {...tagButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-a' })}>Item A</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-b' })}>Item B</MenuItem>
+    <MenuItem {...tagPressable({ id: 'menu-item-c' })}>Item C</MenuItem>
   </Menu>
 </Card>
 ```
@@ -127,9 +127,9 @@ const Button = ({ children, onClick }) => (
 <Button onClick={doSomething}>Do It!</Button>
 ```
 
-If we would try to tag it as we normally do:
+If we try to tag it as we normally do:
 ```typescript jsx
-<Button {...tagButton({ id: 'button-do-it', text: 'Yes!' })} onClick={doSomething}>Yes!</Button>
+<Button {...tagPressable({ id: 'button-do-it' })} onClick={doSomething}>Yes!</Button>
 ```
 
 It would not work, because extra props are not being forwarded to the `<button>` tag. Let's fix that:
@@ -224,7 +224,7 @@ on Click, will display its content / children to the user with an animation.
 Objectiv Taxonomy has a Context specifically meant for tracking expandable elements, let's use that:
 ```typescript jsx
 <FAQItem
-  {...tagExpandableElement({ id: 'faq-track-3rd-party-components' })}
+  {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
   title={'How do I track 3rd party components?'}
 >
   Some explanatory text to be displayed on click
@@ -236,9 +236,9 @@ Unfortunately after some testing we discover that `FAQItem` has its own internal
 Again, checking the documentation is our friend here. Turns out there are event handlers we can hook onto:
 ```typescript jsx
  <FAQItem
-  {...tagExpandableElement({ id: 'faq-track-3rd-party-components' })}
+  {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
   onClick={(event) => {
-    trackClick({ element: event.target })
+    trackPressEvent({ element: event.target })
   }}  
   title={'How do I track 3rd party components?'}
 >
@@ -286,7 +286,7 @@ Sometimes we can also leverage 3rd party event callbacks, like so:
 
 ```typescript jsx
 <Accordion
-  {...tagExpandableElement({ id: 'fix' })}
+  {...tagExpandable({ id: 'fix' })}
   onChange={(event, expanded) => {
     trackVisibility({ element: event.target, isVisible: expanded })
   }}

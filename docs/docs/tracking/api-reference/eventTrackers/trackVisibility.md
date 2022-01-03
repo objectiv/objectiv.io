@@ -1,6 +1,6 @@
 # trackVisibility
 
-Triggers either a [SectionVisibleEvent](/taxonomy/reference/events/SectionVisibleEvent.md) or [SectionHiddenEvent](/taxonomy/reference/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md) based on state.
+Triggers either a [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) or [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md) based on state.
 
 ```typescript
 trackVisibility = (parameters: {
@@ -52,7 +52,7 @@ import { trackVisibility } from '@objectiv/tracker-browser';
 <br />
 
 :::info See also
-- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
+- [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
   :::

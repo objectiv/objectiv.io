@@ -5,7 +5,6 @@ Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md)
 ```typescript
 tagLink = (parameters: {
   id: string,
-  text: string,
   href: string,
   options?: TagLocationOptions,
   onError?: TrackerErrorHandlerCallback
@@ -16,7 +15,6 @@ tagLink = (parameters: {
 |          |          | type                                                                                              | default value
 | :-:      | :--      | :--                                                                                               | :--           
 | required | **id**   | string                                                                                            |
-| required | **text** | string                                                                                            |
 | required | **href** | string                                                                                            |
 | optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
 | optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
@@ -27,7 +25,7 @@ tagLink = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 
 ## Usage examples
 
@@ -42,11 +40,11 @@ import { tagLink } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<a {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} href="/path">Go!</a>
+<a {...tagLink({ id: 'lnk-id', href: '/path' })} href="/path">Go!</a>
 ```
 
 ```typescript jsx
-<LinkComponent {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} to="/path">Go!</LinkComponent>
+<LinkComponent {...tagLink({ id: 'lnk-id', href: '/path' })} to="/path">Go!</LinkComponent>
 ```
 
   </TabItem>
@@ -55,7 +53,7 @@ import { tagLink } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<a [tagLink]="{ id: 'lnk-id', text: 'Go!', href: '/path' }" href="/path">Go!</a>
+<a [tagLink]="{ id: 'lnk-id', href: '/path' }" href="/path">Go!</a>
 ```
 
   </TabItem>
@@ -71,8 +69,8 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 
 :::info See also
-- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
-- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
+- [tagPressable](/tracking/api-reference/locationTaggers/tagPressable.md)
+- [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
-- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md)
 :::

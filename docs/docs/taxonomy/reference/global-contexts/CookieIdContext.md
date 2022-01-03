@@ -6,19 +6,24 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-    AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
+        AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
+        AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
     class CookieIdContext diagramActive;
 `} 
   caption="Diagram: CookieIdContext inheritance" 
   baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
-  ]}
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
+]}
 />
 
 ### Properties
-|                | type        | description
-| :--            | :--         | :--           
+|           | type        | description
+| :--       | :--         | :--           
+| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.      
 | **cookie_id**  | string      | Unique identifier from the session cookie.
+
+:::info setting of properties
+The tracker will automatically set all the properties and assign a cookie_id.
+:::

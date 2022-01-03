@@ -21,13 +21,13 @@ Anything that the user can interact with, but does not cause a URL change, can b
 
 ```typescript jsx
 // a button tag 
-<button {...tagButton({ id: 'button-1', text: "Click Me!" })}>Click Me!</button>
+<button {...tagPressable({ id: 'button-1' })}>Click Me!</button>
 
 // a Button component 
-<Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
+<Button {...tagPressable({ id: 'button-2' })}>Do It!</Button>
 
 // a clickable image
-<img {...tagButton({ id: 'button-3', text: "OK!" })} src="/img/ok.png" alt="OK!" />
+<img {...tagPressable({ id: 'button-3' })} src="/img/ok.png" alt="OK!" />
 ```
 
 :::info WIP
@@ -40,10 +40,10 @@ Links are interactive elements that cause, directly or indirectly, a change in t
 
 ```typescript jsx
 // a link tag 
-<a {...tagLink({ id: 'link-1', text: "Go!", href:"/somewhere" })} href="/somewhere">Go!</a>
+<a {...tagLink({ id: 'link-1', href:"/somewhere" })} href="/somewhere">Go!</a>
 
 // a Link component 
-<Link {...tagLink({ id: 'link-2', text: "Back To Cart", href:"/cart" })} to="/cart">Back</Link>
+<Link {...tagLink({ id: 'link-2', href:"/cart" })} to="/cart">Back</Link>
 ```
 
 :::info WIP
@@ -52,18 +52,18 @@ easier.
 :::
 
 
-### Expandable Elements
+### Expandables
 Elements that cause other Elements, usually their children, to be expanded and displayed to the user, such as 
 Accordions and collapsible Menus. 
 
 ```typescript jsx
 // an Accordion-like component 
-<FAQItem {...tagExpandableElement({ id: 'how-to-1' })} description="How to track Accordions?">
+<FAQItem {...tagExpandable({ id: 'how-to-1' })} description="How to track Accordions?">
   Some content here that will be displayed on click
 </FAQItem>
 
 // a contextual Menu 
-<Menu {...tagExpandableElement({ id: 'main-menu' })}>
+<Menu {...tagExpandable({ id: 'main-menu' })}>
   <MenuItem>Menu A</MenuItem>
   ...
   <MenuItem>Menu Z</MenuItem>
@@ -83,13 +83,13 @@ of how Sections can be tagged to make Events unique without having to assign a u
 
 An example for React:
 ```js
-<Layout {...tagElement({ id: 'layout' })}>
-  <header {...tagElement({ id: 'homepage-hero' })}>
-    <div {...tagElement({ id: 'section1' })}>
-      <a {...tagLink({ id: 'my-link', text: 'Link 1', href: '/link1' })} href="/link1">Link 1</a>
+<Layout {...tagContent({ id: 'layout' })}>
+  <header {...tagContent({ id: 'homepage-hero' })}>
+    <div {...tagContent({ id: 'section1' })}>
+      <a {...tagLink({ id: 'my-link', href: '/link1' })} href="/link1">Link 1</a>
     </div>
-    <div {...tagElement({ id: 'section2' })}>
-      <a {...tagLink({ id: 'my-link', text: 'Link 2', href: '/link2' })} href="/link2">Link 2</a>
+    <div {...tagContent({ id: 'section2' })}>
+      <a {...tagLink({ id: 'my-link', href: '/link2' })} href="/link2">Link 2</a>
     </div>
   </header>
 </Layout>

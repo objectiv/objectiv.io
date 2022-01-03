@@ -2,7 +2,7 @@
 
 A factory returning an [Event Handler](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers) to attach to new [TaggedElements](/tracking/api-reference/definitions/TaggedElement.md).
 
-The returned handler will trigger [trackClick](/tracking/api-reference/eventTrackers/trackClick.md) automatically if the given TaggedElement has the [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) set.
+The returned handler will trigger [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md) automatically if the given TaggedElement has the [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) set.
 It also supports a number of options to [wait](/tracking/api-reference/definitions/WaitForQueueOptions.md) and / or [flush](/tracking/api-reference/definitions/FlushQueueOptions.md) [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md). 
 
 ```typescript

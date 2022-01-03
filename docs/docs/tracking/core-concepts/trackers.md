@@ -17,19 +17,18 @@ core tracking methods out of the box.
 
 Example usage:
 ```js
-import { trackClick } from '@objectiv/tracker-browser';
+import { trackPressEvent } from '@objectiv/tracker-browser';
 ```
 ```js
 <div
   onClick={(event) => {
-    trackClick({ element: event.target })
+    trackPressEvent({ element: event.target })
   }}
 />
 ```
 
-By default, the Browser Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the Browser Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
 
 ## React Tracker
 The React Tracker is available via npm to be directly installed into your React application. It supports all 
@@ -37,17 +36,16 @@ core tracking methods out of the box, and provides added shorthands for React co
 
 Example usage:
 ```js
-import { tagButton } from '@objectiv/tracker-browser';
+import { tagPressable } from '@objectiv/tracker-browser';
 ```
 ```js
-<Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
+<Button {...tagPressable({ id: 'button-2' })}>Do It!</Button>
 ```
 
 See the [How-to Guide for React](/tracking/how-to-guides/react/getting-started.md) to get started.
 
-By default, the React Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the React Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
 
 ## Angular Tracker
 The React Tracker is available via npm to be directly installed into your React application. It supports all 
@@ -56,21 +54,20 @@ core tracking methods out of the box, and provides added shorthands for Angular 
 Example usage:
 ```js
 // a button tag 
-<button [tagButton]="{ id: 'button-1', text: 'Click Me!' }">Click Me!</button>
+<button [tagPressable]="{ id: 'button-1' }">Click Me!</button>
 ```
 
 See the [How-to Guide for Angular](/tracking/how-to-guides/angular/getting-started.md) to get started.
 
-By default, the Angular Tracker automatically tracks 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
-[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
+By default, the Angular Tracker automatically tracks the 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
 
 ## Extensibility: Plugins
 The Core Tracker is extensible through plugins. Each plugin can control when it's enabled, e.g. only if a Web
 environment is available.
 
-Three plugins are supported out of the box, and automatically enabled when the environment supports them:
+These plugins are supported out of the box, and automatically enabled when the environment supports it:
 * `application-context`: adds a Global [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) 
   to each Event;
-* `web-document-context`: adds a [Location](/tracking/core-concepts/locations.md) 
-  [WebDocumentContext](/taxonomy/reference/location-contexts/WebDocumentContext.md) to each Event;
+* `path-context-from-url`: adds a Global [PathContext](/taxonomy/reference/global-contexts/PathContext.md)
+  to each Event;

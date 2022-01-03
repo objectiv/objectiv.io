@@ -1,6 +1,6 @@
 # trackVisibilityVisibleEvent
 
-Checks whether to trigger a [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) event for the given [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) by checking its [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility).
+Checks whether to trigger a [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) event for the given [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) by checking its [TaggingAttribute.trackVisibility](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility).
 
 ```typescript
 const trackVisibilityVisibleEvent = (

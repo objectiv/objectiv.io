@@ -30,7 +30,7 @@ DOM with the respective [TaggingAttributes](/tracking/api-reference/definitions/
 A **tagging** example in React:
 ```js
 <LinkComponent 
-  {...tagLink({ id: 'link-id', text: 'Go!', href: '/path' })} 
+  {...tagLink({ id: 'link-id', href: '/path' })} 
   to="/path">
     Go!
 </LinkComponent>
@@ -71,7 +71,7 @@ A **tagChildren** example in React:
   {...tagChildren([
     {
       queryAll: 'button[aria-label="Previous"]',
-      tagAs: tagButton({ id: 'prev', text: 'Previous' })
+      tagAs: tagPressable({ id: 'prev' })
     }
   ])}
 >
@@ -79,4 +79,4 @@ A **tagChildren** example in React:
 </div>
 ```
 
-The div Element above has been decorated with a ChildrenTaggingQuery. It will execute the given `queryAll` and apply the result of the `tagButton` parameter to any matching child Element. 
+The div Element above has been decorated with a ChildrenTaggingQuery. It will execute the given `queryAll` and apply the result of the `tagPressable` parameter to any matching child Element. 

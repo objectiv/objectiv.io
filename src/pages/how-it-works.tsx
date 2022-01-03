@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement, tagLink } from "@objectiv/tracker-browser";
+import { tagContent, tagLink, tagRootLocation } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div 
-      {...tagElement({id: 'page-how-it-works'})}
+      {...tagRootLocation({id: 'page-how-it-works'})}
       className={clsx(styles.howItWorks)}>
       <Layout
         title=''
@@ -21,7 +21,7 @@ export default function Home() {
         >
         
         <header 
-          {...tagElement({id: 'header'})}
+          {...tagContent({id: 'header'})}
         >
           <div className={clsx('container', styles.intro)}>
             <h2>How it works</h2>
@@ -33,13 +33,13 @@ export default function Home() {
         </header>
 
         <main 
-          {...tagElement({id: 'main'})}
+          {...tagContent({id: 'main'})}
           className={clsx('body-large')}>
 
           <div className={clsx(styles.pageSection)}>
 
             <div 
-              {...tagElement({id: 'collect'})}
+              {...tagContent({id: 'collect'})}
               className={clsx("container", styles.contentContainer, styles.solutions, styles.collect)}>
               <div className={clsx(styles.solutionRowRight)}>
                 <div>
@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             <div 
-              {...tagElement({id: 'open-model-hub'})}
+              {...tagContent({id: 'open-model-hub'})}
               className={clsx("container", styles.contentContainer, styles.solutions, styles.openModelHub)}>
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
@@ -85,7 +85,7 @@ export default function Home() {
             </div>
 
             <div 
-              {...tagElement({id: 'modeling'})}
+              {...tagContent({id: 'modeling'})}
               className={clsx("container", styles.contentContainer, styles.solutions, styles.modeling)}>
               <div className={clsx(styles.solutionRowRight)}>
                 <div>
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
 
             <div 
-              {...tagElement({id: 'visualize'})}
+              {...tagContent({id: 'visualize'})}
               className={clsx("container", styles.contentContainer, styles.solutions, styles.visualize)}>
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
@@ -136,7 +136,7 @@ export default function Home() {
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
             <div 
-              {...tagElement({id: 'whats-in-the-box'})}
+              {...tagContent({id: 'whats-in-the-box'})}
               className={clsx("container", styles.contentContainer, styles.whatsInTheBox)}>
                 
               <div className={clsx(styles.pageSectionIntro)}>
@@ -218,7 +218,6 @@ export default function Home() {
                     {...tagLink({
                         id: 'cta-docs-quickstart-guide', 
                         href: '/docs/quickstart-guide/',
-                        text: 'Objectiv Quickstart Guide',
                         options: {
                           trackClicks: {
                             waitUntilTracked: true
@@ -228,7 +227,7 @@ export default function Home() {
                     )}
                     target="_self" 
                     className={clsx("button", styles.ctaButton)}>
-                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Objectiv Quickstart Guide'}/></span>
                     Objectiv Quickstart Guide
                   </Link>
                   </div>
@@ -238,7 +237,7 @@ export default function Home() {
 
           <div className={clsx(styles.pageSection)}>
             <div 
-              {...tagElement({id: 'foundation-for-early-data-teams'})}
+              {...tagContent({id: 'foundation-for-early-data-teams'})}
               className={clsx("container", styles.contentContainer, styles.foundation)}>
                 
               <div className={clsx(styles.pageSectionIntro)}>
@@ -252,25 +251,25 @@ export default function Home() {
                 <table>
                   <thead>
                     <tr>
-                      <th></th>
+                      <th/>
                       <th scope="col">
-                        <img src={useBaseUrl("img/comparison/objectiv-logo-icon.svg")} />
+                        <img src={useBaseUrl("img/comparison/objectiv-logo-icon.svg")}  alt={'Objectiv'}/>
                         Objectiv
                       </th>
                       <th scope="col">
-                        <img src={useBaseUrl("img/comparison/posthog-logo-icon.svg")} />
+                        <img src={useBaseUrl("img/comparison/posthog-logo-icon.svg")}  alt={'PostHog'}/>
                         PostHog
                       </th>
                       <th scope="col">
-                        <img src={useBaseUrl("img/comparison/snowplow-logo-icon.svg")} />
+                        <img src={useBaseUrl("img/comparison/snowplow-logo-icon.svg")}  alt={'Snowplow'}/>
                         Snowplow
                       </th>
                       <th scope="col">
-                        <img src={useBaseUrl("img/comparison/amplitude-logo-icon.svg")} />
+                        <img src={useBaseUrl("img/comparison/amplitude-logo-icon.svg")}  alt={'Amplitude'}/>
                         Amplitude
                       </th>
                       <th scope="col">
-                        <img src={useBaseUrl("img/comparison/google-analytics-logo-icon.svg")} />
+                        <img src={useBaseUrl("img/comparison/google-analytics-logo-icon.svg")}  alt={'Google Analytics'}/>
                         Google Analytics
                       </th>
                     </tr>
@@ -281,56 +280,56 @@ export default function Home() {
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">Open-source</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">Model-ready data</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">Reusable models</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">Models included</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">BI tools included</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
                     </tr>
                     <tr>
                       <th scope="row">DS tools included</th>
                       <td scope="col"><img src={useBaseUrl("img/icons/icon-checkmark.svg")} alt="Checkmark" /></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
-                      <td scope="col"></td>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
+                      <td scope="col"/>
                     </tr>
                     <tr>
                       <th scope="row">Free to use</th>
@@ -347,7 +346,7 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className={clsx(styles.featureComparisonFootnote)}>
-                      <td colSpan="6" scope="col">
+                      <td colSpan={6} scope="col">
                         <p>1. Free to use for a limited amount of events</p>
                         <p>2. Free to use, but access to raw data is paid</p>
                       </td>
@@ -371,7 +370,6 @@ export default function Home() {
                     {...tagLink({
                         id: 'cta-repo-button', 
                         href: 'https://github.com/objectiv/objectiv-analytics',
-                        text: 'Get Objectiv on GitHub',
                         options: {
                           trackClicks: {
                             waitUntilTracked: true
@@ -381,7 +379,7 @@ export default function Home() {
                     )}
                     target="_self" 
                     className={clsx("button", styles.ctaButton)}>
-                    <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
+                    <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Get Objectiv on GitHub'}/></span>
                     Get Objectiv on GitHub
                   </Link>
                 </div>
@@ -395,11 +393,10 @@ export default function Home() {
               <h2>Objectiv is open source and we’re building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <Link
-                to={customFields.slackJoinLink}
+                to={customFields.slackJoinLink as string}
                 {...tagLink({
                     id: 'join-slack', 
-                    href: customFields.slackJoinLink,
-                    text: 'Join us on Slack',
+                    href: customFields.slackJoinLink as string,
                     options: {
                       trackClicks: {
                         waitUntilTracked: true
@@ -408,7 +405,7 @@ export default function Home() {
                   }
                 )}
                 className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
+                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
                   Join us on Slack
                 </Link>
             </div>

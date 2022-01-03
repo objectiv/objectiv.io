@@ -24,22 +24,20 @@ An example event with `location_stack` and `global_context` properties:
 
 ```json
 {
-  "_type":"ClickEvent",
-  "id":"211d778b-20ea-4a12-be56-77d5b8fe3cd0"
+  "_type":"PressEvent",
+  "id":"211d778b-20ea-4a12-be56-77d5b8fe3cd0",
   "location_stack":[
     {
-      "_type":"WebDocumentContext",
-      "id":"#document",
-      "url":"https://example.com/path"
+      "_type":"RootLocationContext",
+      "id":"home"
     },
     {
-      "_type":"SectionContext",
+      "_type":"ContentContext",
       "id":"homepage"
     },
     {
       "_type":"LinkContext",
       "id":"link-id",
-      "text":"Go!",
       "href":"/path"
     }
   ],
@@ -49,11 +47,10 @@ An example event with `location_stack` and `global_context` properties:
       "id":"example-website"
     },
     {
-      "_type":"DeviceContext",
-      "id":"device",
-      "user_agent":"Mozilla/5.0"
+      "_type":"PathContext",
+      "id":"https://example.com/"
     }
-  ],
+  ]
 }
 ```
 
@@ -74,7 +71,3 @@ The Tracker uses the same Observer described above to trigger the events below b
 ### ApplicationLoaded
 An [ApplicationLoaded](/taxonomy/reference/events/ApplicationLoadedEvent.md) Event (by default enabled, configurable)
 triggers once on application load.
-
-### URLChange
-An [URLChange](/taxonomy/reference/events/URLChangeEvent.md) Event (by default enabled, configurable) triggers on SPA 
-URL changes, by keeping track of the last URL detected.

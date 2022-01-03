@@ -4,8 +4,7 @@ Initializes [Mutation Observer](/tracking/api-reference/mutationObserver/overvie
 
 ```typescript
 startAutoTracking = (options: {
-  trackURLChanges?: boolean;
-  trackApplicationLoaded;
+  trackApplicationLoadedEvent?: boolean;
   console?: TrackerConsole
 }): void
 ```
@@ -20,14 +19,13 @@ To restart auto-tracking with different options, first call [stopAutoTracking](/
 :::
 
 ## Parameters
-|          |                        | type                                                                 | default value
-| :-:      | :--                    | :--                                                                  | :--           
-| optional | trackURLChanges        | boolean                                                              | `true`
-| optional | trackApplicationLoaded | boolean                                                              | `true`
-| optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
+|          |                             | type                                                                 | default value
+| :-:      | :--                         | :--                                                                  | :--           
+| optional | trackApplicationLoadedEvent | boolean                                                              | `true`
+| optional | console                     | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
 
 ## Events
-- [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
+- [trackApplicationLoadedEvent](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md)
     
 <br />
 

@@ -23,8 +23,8 @@ tagOverlay = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+- [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md)
+- [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md)
 
 ## Examples
 
@@ -74,9 +74,9 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
 - [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
 - [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
-- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
+- [tagExpandable](/tracking/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 :::

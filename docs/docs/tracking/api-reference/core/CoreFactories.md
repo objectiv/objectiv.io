@@ -1,6 +1,6 @@
 # Core Factories
 
-Automatically generated factories based on the [Taxonomy](//taxonomy/introduction.md) schema. 
+Automatically generated factories based on the [Taxonomy](/taxonomy/introduction.md) schema. 
 
 :::caution
 These are core-level APIs needed only when diving into low-level tracking via [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md) or [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).   
@@ -12,29 +12,21 @@ These factories produce [LocationContext](/taxonomy/reference/location-contexts/
 ### Location Context Factory list
 
 ```typescript
-makeActionContext = (props: { 
-  id: string, 
-  text: string 
-}) => ActionContext
-```
-
-```typescript
 makeApplicationContext = (props: { 
   id: string 
 }) => ApplicationContext
 ```
 
 ```typescript
-makeButtonContext = (props: { 
-  id: string, 
-  text: string 
-}) => ButtonContext
+makeContentContext = (props: { 
+  id: string 
+}) => ContentContext
 ```
 
 ```typescript
-makeExpandableSectionContext = (props: { 
+makeExpandableContext = (props: { 
   id: string 
-}) => ExpandableSectionContext
+}) => ExpandableContext
 ```
 
 ```typescript
@@ -76,16 +68,10 @@ makeOverlayContext = (props: {
 ```
 
 ```typescript
-makeSectionContext = (props: { 
-  id: string 
-}) => SectionContext
-```
-
-```typescript
-makeWebDocumentContext = (props: { 
+makePressableContext = (props: { 
   id: string, 
-  url: string 
-}) => WebDocumentContext
+  text: string 
+}) => PressableEvent
 ```
 
 ## Event Factories
@@ -94,10 +80,10 @@ These factories produce [Event](/taxonomy/reference/events/overview.md) instance
 ### Common parameters
 All Event factories share some common, optional, parameters: 
 
-|          |                 | type                                                                              | default value
-| :-:      | :--             | :--                                                                               | :--           
-| optional | location_stack  | [AbstractLocationContext](/taxonomy/reference/abstract-contexts/AbstractLocationContext.md) | `[]` 
-| optional | global_contexts | [AbstractGlobalContext](/taxonomy/reference/abstract-contexts/AbstractGlobalContext.md)     | `[]`
+|          |                 | type                                                                         | default value
+| :-:      | :--             | :--                                                                          | :--           
+| optional | location_stack  | [AbstractLocationContext](/taxonomy/reference/location-contexts/overview.md) | `[]` 
+| optional | global_contexts | [AbstractGlobalContext](/taxonomy/reference/location-contexts/overview.md)   | `[]`
 
 ### Event Factory list
 
@@ -109,17 +95,10 @@ makeApplicationLoadedEvent = (props?: {
 ```
 
 ```typescript
-makeClickEvent = (props?: {
+makePressEvent = (props?: {
   location_stack?: AbstractLocationContext[],
   global_contexts?: AbstractGlobalContext[]
-}) => ClickEvent
-```
-
-```typescript
-makeDocumentLoadedEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => DocumentLoadedEvent
+}) => PressEvent
 ```
 
 ```typescript
@@ -137,6 +116,48 @@ makeInteractiveEvent = (props?: {
 ```
 
 ```typescript
+makeHiddenEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => HiddenEvent
+```
+
+```typescript
+makeMediaEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => MediaEvent
+```
+
+```typescript
+makeMediaLoadEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => MediaLoadEvent
+```
+
+```typescript
+makeMediaPauseEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => MediaPauseEvent
+```
+
+```typescript
+makeMediaStartEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => MediaStartEvent
+```
+
+```typescript
+makeMediaStopEvent = (props?: {
+  location_stack?: AbstractLocationContext[],
+  global_contexts?: AbstractGlobalContext[]
+}) => MediaStopEvent
+```
+
+```typescript
 makeNonInteractiveEvent = (props?: {
   location_stack?: AbstractLocationContext[],
   global_contexts?: AbstractGlobalContext[]
@@ -144,57 +165,15 @@ makeNonInteractiveEvent = (props?: {
 ```
 
 ```typescript
-makeSectionHiddenEvent = (props?: {
+makePressEvent = (props?: {
   location_stack?: AbstractLocationContext[],
   global_contexts?: AbstractGlobalContext[]
-}) => SectionHiddenEvent
+}) => PressEvent
 ```
 
 ```typescript
-makeSectionVisibleEvent = (props?: {
+makeVisibleEvent = (props?: {
   location_stack?: AbstractLocationContext[],
   global_contexts?: AbstractGlobalContext[]
-}) => SectionVisibleEvent
-```
-
-```typescript
-makeURLChangeEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => URLChangeEvent
-```
-
-```typescript
-makeVideoEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => VideoEvent
-```
-
-```typescript
-makeVideoLoadEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => VideoLoadEvent
-```
-
-```typescript
-makeVideoPauseEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => VideoPauseEvent
-```
-
-```typescript
-makeVideoStartEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => VideoStartEvent
-```
-
-```typescript
-makeVideoStopEvent = (props?: {
-  location_stack?: AbstractLocationContext[],
-  global_contexts?: AbstractGlobalContext[]
-}) => VideoStopEvent
+}) => VisibleEvent
 ```

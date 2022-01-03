@@ -27,7 +27,7 @@ function BlogPostPaginator(props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={prevItem.permalink}
-            {...tagLink({ id: 'previous', text: 'Newer', href: prevItem.permalink })}
+            {...tagLink({ id: 'previous', href: prevItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -47,7 +47,7 @@ function BlogPostPaginator(props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={nextItem.permalink}
-            {...tagLink({ id: 'next', text: 'Older', href: nextItem.permalink })}
+            {...tagLink({ id: 'next', href: nextItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate

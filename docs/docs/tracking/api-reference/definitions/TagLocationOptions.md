@@ -40,7 +40,6 @@ In the following example we are instructing our [Tagged Elements Observer](/trac
 <link
   {...tagLink({
     id: 'external',
-    text: 'Bye',
     href: 'https://www.external.com',
     options: {
       trackClicks: {
@@ -60,10 +59,10 @@ In the following example we are instructing our [Tagged Elements Observer](/trac
 Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ## options.trackVisibility
-Used to customize whether to track [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) and [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) events, either automatically or manually.
+Used to customize whether to track [trackHiddenEventEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) and [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) events, either automatically or manually.
 
 ### Visibility mode:auto  
-Either [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) are triggered when [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) are added or removed to/from the DOM.
+Either [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) are triggered when [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
 trackVisibility = {
@@ -72,7 +71,7 @@ trackVisibility = {
 ```
 
 ### Visibility mode:manual  
-Either [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) are triggered whenever the `isVisible` boolean state attribute changes.
+Either [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) are triggered whenever the `isVisible` boolean state attribute changes.
 
 ```js
 trackVisibility = {
@@ -87,7 +86,7 @@ Used to override how the parent of a [Tagged Element](/tracking/core-concepts/ta
 A practical is to track dynamically placed nodes in the DOM, such as React Portals. 
 
 ```typescript jsx
-const parentDiv = tagElement({ id: 'section' });
+const parentDiv = tagContent({ id: 'section' });
 
 <div {...parentDiv}>
 

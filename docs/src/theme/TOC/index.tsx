@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { tagElement } from "@objectiv/tracker-browser";
+import { tagNavigation } from "@objectiv/tracker-browser";
 import React from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
@@ -18,7 +18,7 @@ function TOC({className, ...props}: {className: string, toc: []}) {
   return (
     <div
       className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}
-      {...tagElement({id: 'toc'})}
+      {...tagNavigation({id: 'toc'})}
     >
       <TOCItems
         {...props}

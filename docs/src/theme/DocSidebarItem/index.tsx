@@ -5,9 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 import {
-  tagExpandableElement,
+  tagExpandable,
   tagLink,
-  trackClick
 } from "@objectiv/tracker-browser";
 import React, {useEffect, memo} from 'react';
 import clsx from 'clsx';
@@ -125,9 +124,10 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
   // @ts-ignore
   return (
     <li
-      {...tagExpandableElement({
+      {...tagExpandable({
         id: item.label,
         options: {
+          trackClicks: false,
           trackVisibility: { mode: 'manual', isVisible: !collapsed  }
         }
       })}
@@ -152,7 +152,6 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
                   e.preventDefault();
                 }
                 toggleCollapsed();
-                trackClick({ element: e.target })
               }
             : undefined
         }
@@ -185,7 +184,7 @@ function DocSidebarItemLink({item, onItemClick, activePath, ...props}) {
       )}
       key={label}>
       <Link
-        {...tagLink({ id: item.label, text: item.label, href: item.href })}
+        {...tagLink({ id: item.label, href: item.href })}
         className={clsx('menu__link', {
           'menu__link--active': isActive,
         })}
@@ -193,7 +192,6 @@ function DocSidebarItemLink({item, onItemClick, activePath, ...props}) {
         to={href}
         {...(isInternalUrl(href) && {
           onClick: (e) => {
-            trackClick({ element: e.target })
             onItemClick && onItemClick(e)
           },
         })}

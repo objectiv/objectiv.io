@@ -5,74 +5,43 @@ title: Overview
 ---
 
 # Taxonomy Reference
+High level overview of all the Events & Contexts available in the open analytics taxonomy.
 
-High level overview of all the Events & Contexts available in the open taxonomy.
+## Global Contexts
+[Global Contexts](./global-contexts/) add general information to an event.
 
-## Abstract Contexts
-AbstractContexts define either properties required by Collectors or internal ones, ensuring hierarchical 
-uniqueness.
-
-* [AbstractContext](./abstract-contexts/AbstractContext.md)
-* [AbstractGlobalContext](./abstract-contexts/AbstractGlobalContext.md)
-* [AbstractLocationContext](./abstract-contexts/AbstractLocationContext.md)
-
+* [ApplicationContext](./global-contexts/ApplicationContext.md)
+* [CookieIdContext](./global-contexts/CookieIdContext.md)
+* [HttpContext](./global-contexts/HttpContext.md)
+* [PathContext](./global-contexts/PathContext.md)
+* [SessionContext](./global-contexts/SessionContext.md)
 
 ## Location Contexts
-LocationContexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
-[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is 
-meant to describe accurately where an [Event](/tracking/core-concepts/events.md) originated in the UI, e.g. 
-Sections, Menus, etc.
+[Location Contexts](./location-contexts/) are meant to describe where an event originated from in the visual UI.
 
-* [AbstractLocationContext](./location-contexts/AbstractLocationContext.md)
-* [ActionContext](./location-contexts/ActionContext.md)
-* [ButtonContext](./location-contexts/ButtonContext.md)
-* [ExpandableSectionContext](./location-contexts/ExpandableSectionContext.md)
+* [ContentContext](./location-contexts/ContentContext.md)
+* [ExpandableContext](./location-contexts/ExpandableContext.md)
 * [InputContext](./location-contexts/InputContext.md)
-* [ItemContext](./location-contexts/ItemContext.md)
 * [LinkContext](./location-contexts/LinkContext.md)
 * [MediaPlayerContext](./location-contexts/MediaPlayerContext.md)
 * [NavigationContext](./location-contexts/NavigationContext.md)
 * [OverlayContext](./location-contexts/OverlayContext.md)
-* [ScreenContext](./location-contexts/ScreenContext.md)
-* [SectionContext](./location-contexts/SectionContext.md)
-* [WebDocumentContext](./location-contexts/WebDocumentContext.md)
-
-
-## Global Contexts
-Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
-carry information that is not related to where the [Event](/tracking/core-concepts/events.md) originated 
-(location), such as device, platform or business data.
-
-* [AbstractGlobalContext](./global-contexts/AbstractGlobalContext.md)
-* [ApplicationContext](./global-contexts/ApplicationContext.md)
-* [CookieIdContext](./global-contexts/CookieIdContext.md)
-* [DeviceContext](./global-contexts/DeviceContext.md)
-* [ErrorContext](./global-contexts/ErrorContext.md)
-* [HttpContext](./global-contexts/HttpContext.md)
-* [SessionContext](./global-contexts/SessionContext.md)
-
+* [PressableContext](./location-contexts/PressableContext.md)
 
 ## Events
-Events must provide an `id` and optionally can, but most likely will, carry a list of 
-[LocationContexts](/taxonomy/reference/location-contexts/overview.md) and 
-[GlobalContexts](/taxonomy/reference/global-contexts/overview.md). Additionally, every event must have an 
-[ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) to be able to distinguish from 
-what application the event originated.
+Used to describe interactive and non-interactive [Events](./events/).
 
-* [AbstractEvent](./events/AbstractEvent.md)
-* [AbortedEvent](./events/AbortedEvent.md)
 * [ApplicationLoadedEvent](./events/ApplicationLoadedEvent.md)
-* [ClickEvent](./events/ClickEvent.md)
-* [CompletedEvent](./events/CompletedEvent.md)
-* [DocumentLoadedEvent](./events/DocumentLoadedEvent.md)
+* [FailureEvent](./events/FailureEvent.md)
+* [HiddenEvent](./events/HiddenEvent.md)
 * [InputChangeEvent](./events/InputChangeEvent.md)
 * [InteractiveEvent](./events/InteractiveEvent.md)
+* [MediaEvent](./events/MediaEvent.md)
+* [MediaLoadEvent](./events/MediaLoadEvent.md)
+* [MediaPauseEvent](./events/MediaPauseEvent.md)
+* [MediaStartEvent](./events/MediaStartEvent.md)
+* [MediaStopEvent](./events/MediaStopEvent.md)
 * [NonInteractiveEvent](./events/NonInteractiveEvent.md)
-* [SectionHiddenEvent](./events/SectionHiddenEvent.md)
-* [SectionVisibleEvent](./events/SectionVisibleEvent.md)
-* [URLChangeEvent](./events/URLChangeEvent.md)
-* [VideoEvent](./events/VideoEvent.md)
-* [VideoLoadEvent](./events/VideoLoadEvent.md)
-* [VideoPauseEvent](./events/VideoPauseEvent.md)
-* [VideoStartEvent](./events/VideoStartEvent.md)
-* [VideoStopEvent](./events/VideoStopEvent.md)
+* [PressEvent](./events/PressEvent.md)
+* [SuccessEvent](./events/SuccessEvent.md)
+* [VisibleEvent](./events/VisibleEvent.md)

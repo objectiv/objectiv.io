@@ -14,7 +14,7 @@ import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
-import { tagLink, tagElement } from "@objectiv/tracker-browser";
+import { tagLink, tagContent } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -67,9 +67,9 @@ function BlogPostItem(props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <header {...tagElement({id: 'header'})}>
+      <header {...tagContent({id: 'header'})}>
         <TitleHeading className={styles.blogPostTitle}>
-          {isBlogPostPage ? title : <Link to={permalink} {...tagLink({ id: permalink, text: title, href: permalink })}>{title}</Link>}            
+          {isBlogPostPage ? title : <Link to={permalink} {...tagLink({ id: permalink, href: permalink })}>{title}</Link>}
         </TitleHeading>
         <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
           <time dateTime={date}>{formattedDate}</time>
@@ -86,7 +86,7 @@ function BlogPostItem(props): JSX.Element {
             <Link 
               className="avatar__photo-link avatar__photo" 
               href={authorURL}
-              {...tagLink({ id: 'authorAvatar', text: author, href: authorURL })}
+              {...tagLink({ id: 'authorAvatar', href: authorURL })}
             >
               <img src={authorImageURL} alt={author} />
             </Link>
@@ -97,7 +97,7 @@ function BlogPostItem(props): JSX.Element {
                 <div className="avatar__name">
                   <Link 
                     href={authorURL}
-                    {...tagLink({ id: 'authorName', text: author, href: authorURL })}
+                    {...tagLink({ id: 'authorName', href: authorURL })}
                   >
                     {author}
                   </Link>
@@ -116,18 +116,18 @@ function BlogPostItem(props): JSX.Element {
       <Seo {...{keywords, image}} />
 
       <article 
-        {...tagElement({id: 'article'})}
+        {...tagContent({id: 'article'})}
         className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       >
         {renderPostHeader()}
         <div 
-          {...tagElement({id: 'content'})}
+          {...tagContent({id: 'content'})}
           className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </div>
         {(tags.length > 0 || truncated) && (
           <footer
-            {...tagElement({id: 'footer'})}
+            {...tagContent({id: 'footer'})}
             className={clsx('row docusaurus-mt-lg', {
               [styles.blogPostDetailsFull]: isBlogPostPage,
             })}>
@@ -144,7 +144,7 @@ function BlogPostItem(props): JSX.Element {
                   <Link
                     key={tagPermalink}
                     className="margin-horiz--sm"
-                    {...tagLink({ id: 'tags', text: label, href: tagPermalink })}
+                    {...tagLink({ id: 'tags', href: tagPermalink })}
                     to={tagPermalink}>
                     {label}
                   </Link>
@@ -160,11 +160,11 @@ function BlogPostItem(props): JSX.Element {
 
             {!isBlogPostPage && truncated && (
               <div 
-                {...tagElement({id: 'read-more'})}
+                {...tagContent({id: 'read-more'})}
                 className="col text--right">
                 <Link
                   to={metadata.permalink}
-                  {...tagLink({ id: 'read-more', text: 'Read More', href: metadata.permalink })}
+                  {...tagLink({ id: 'read-more', href: metadata.permalink })}
                   aria-label={`Read more about ${title}`}>
                   <b>
                     <Translate

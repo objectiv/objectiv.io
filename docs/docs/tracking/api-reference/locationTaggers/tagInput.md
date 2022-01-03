@@ -23,7 +23,7 @@ tagInput = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
+- [trackInputChangeEvent](/tracking/api-reference/eventTrackers/trackInputChangeEvent.md)
 
 ## Usage example
 
@@ -69,7 +69,6 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
-- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+- [tagContent](/tracking/api-reference/locationTaggers/tagContent.md)
 - [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 :::

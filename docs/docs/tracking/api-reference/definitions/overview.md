@@ -15,7 +15,6 @@ Common TypeScript and [Struct](https://docs.superstructjs.org/) definitions.
 - [LocationTaggerParameters](/tracking/api-reference/definitions/LocationTaggerParameters.md)
 - [ParentTaggedElement](/tracking/api-reference/definitions/ParentTaggedElement.md)
 - [TagLocationAttributes](/tracking/api-reference/definitions/TagLocationAttributes.md)
-- [TagButtonParameters](/tracking/api-reference/definitions/TagButtonParameters.md)
 - [TagChildrenAttributes](/tracking/api-reference/definitions/TagChildrenAttributes.md)
 - [TagChildrenElement](/tracking/api-reference/definitions/TagChildrenElement.md)
 - [TagChildrenReturnValue](/tracking/api-reference/definitions/TagChildrenReturnValue.md)

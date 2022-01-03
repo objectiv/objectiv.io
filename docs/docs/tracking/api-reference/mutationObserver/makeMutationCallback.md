@@ -6,16 +6,14 @@ The callback orchestrates events handling and triggering, plus tagging validatio
 
 ```typescript
 const makeMutationCallback = (
-  trackURLChangeEvents: boolean, 
   console?: TrackerConsole
 ) => MutationCallback
 ```
 
 ## Parameters
-|          |                          | type                                                             | default value
-| :-:      | :--                      | :--                                                              | :--           
-| required | **trackURLChangeEvents** | boolean                                                          |
-| optional | console                  | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md) |
+|          |         | type                                                             | default value
+| :-:      | :--     | :--                                                              | :--           
+| optional | console | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md) |
 
 ## New nodes mutation
 For each new node we invoke [trackNewElements](/tracking/api-reference/mutationObserver/trackNewElements.md), which:
@@ -39,7 +37,6 @@ For each new node we invoke [trackNewElements](/tracking/api-reference/mutationO
 :::info see also
 - [trackNewElements](/tracking/api-reference/mutationObserver/trackNewElements.md)
 - [trackRemovedElements](/tracking/api-reference/mutationObserver/trackRemovedElements.md)
-- [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 - [trackVisibilityVisibleEvent](/tracking/api-reference/mutationObserver/trackVisibilityVisibleEvent.md)
 - [trackVisibilityHiddenEvent](/tracking/api-reference/mutationObserver/trackVisibilityHiddenEvent.md)
 :::

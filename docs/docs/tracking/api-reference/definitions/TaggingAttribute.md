@@ -24,13 +24,13 @@ A serialized [Location Context](/taxonomy/reference/location-contexts/overview.m
 Rebuilding [Locations](/tracking/core-concepts/locations.md) via the DOM is not always accurate (eg: [React Portals](https://reactjs.org/docs/portals.html)). This allows specifying a parent [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ### TaggingAttribute.trackClicks
-Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically trigger [trackClick](/tracking/api-reference/eventTrackers/trackClick.md) on [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event).
+Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically trigger [trackPressEvent](/tracking/api-reference/eventTrackers/trackPressEvent.md) on [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event).
 
 ### TaggingAttribute.trackBlurs
-Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md) events on [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event).
+Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track [trackInputChangeEvent](/tracking/api-reference/eventTrackers/trackInputChangeEvent.md) events on [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event).
 
 ### TaggingAttribute.trackVisibility
-Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) events.
+Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackHiddenEvent](/tracking/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/api-reference/eventTrackers/trackVisibleEvent.md) events.
 
 ### TaggingAttribute.validate
 A serialized [TagLocationOptions.validate](/tracking/api-reference/definitions/TagLocationOptions.md#optionsvalidate) object to customize how validation occurs for the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
