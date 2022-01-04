@@ -1,10 +1,14 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagContent, tagLink, tagRootLocation } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import Link from "@docusaurus/Link";
 import React from 'react';
+import { TrackedDiv } from "../trackedComponents/TrackedDiv";
+import { TrackedHeader } from "../trackedComponents/TrackedHeader";
+import { TrackedLink } from "../trackedComponents/TrackedLink";
+import { TrackedMain } from "../trackedComponents/TrackedMain";
+import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 
 export default function Home() {
@@ -12,17 +16,13 @@ export default function Home() {
   const {url, tagline, customFields} = context.siteConfig;
 
   return (
-    <div 
-      {...tagRootLocation({id: 'page-how-it-works'})}
-      className={clsx(styles.howItWorks)}>
+    <TrackedRootDiv id={'page-how-it-works'} className={clsx(styles.howItWorks)}>
       <Layout
         title=''
         description={tagline}
-        >
+      >
         
-        <header 
-          {...tagContent({id: 'header'})}
-        >
+        <TrackedHeader>
           <div className={clsx('container', styles.intro)}>
             <h2>How it works</h2>
             <p>
@@ -30,17 +30,16 @@ export default function Home() {
               build highly specific model stacks for in-depth product analysis and exploration.
             </p>
           </div>
-        </header>
+        </TrackedHeader>
 
-        <main 
-          {...tagContent({id: 'main'})}
-          className={clsx('body-large')}>
+        <TrackedMain className={clsx('body-large')}>
 
           <div className={clsx(styles.pageSection)}>
 
-            <div 
-              {...tagContent({id: 'collect'})}
-              className={clsx("container", styles.contentContainer, styles.solutions, styles.collect)}>
+            <TrackedDiv
+              id={'collect'}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.collect)}
+            >
               <div className={clsx(styles.solutionRowRight)}>
                 <div>
                   <img
@@ -60,11 +59,12 @@ export default function Home() {
                     with effective modeling in mind.</p>
                 </div>
               </div>
-            </div>
+            </TrackedDiv>
 
-            <div 
-              {...tagContent({id: 'open-model-hub'})}
-              className={clsx("container", styles.contentContainer, styles.solutions, styles.openModelHub)}>
+            <TrackedDiv
+              id={'open-model-hub'}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.openModelHub)}
+            >
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
                   <div className={clsx(styles.solutionTitle)}>
@@ -82,11 +82,12 @@ export default function Home() {
                     alt="Open Model Hub" />
                 </div>
               </div>
-            </div>
+            </TrackedDiv>
 
-            <div 
-              {...tagContent({id: 'modeling'})}
-              className={clsx("container", styles.contentContainer, styles.solutions, styles.modeling)}>
+            <TrackedDiv
+              id={'modeling'}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.modeling)}
+            >
               <div className={clsx(styles.solutionRowRight)}>
                 <div>
                   <img
@@ -111,11 +112,12 @@ export default function Home() {
                     customize them or even add in advanced ML models.</p>
                 </div>
               </div>
-            </div>
+            </TrackedDiv>
 
-            <div 
-              {...tagContent({id: 'visualize'})}
-              className={clsx("container", styles.contentContainer, styles.solutions, styles.visualize)}>
+            <TrackedDiv
+              id={'visualize'}
+              className={clsx("container", styles.contentContainer, styles.solutions, styles.visualize)}
+            >
               <div className={clsx(styles.solutionRowLeft)}>
                 <div>
                   <div className={clsx(styles.solutionTitle)}>
@@ -131,13 +133,14 @@ export default function Home() {
                     alt="Visualization" />
                 </div>
               </div>
-            </div>
+            </TrackedDiv>
           </div>
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-            <div 
-              {...tagContent({id: 'whats-in-the-box'})}
-              className={clsx("container", styles.contentContainer, styles.whatsInTheBox)}>
+            <TrackedDiv
+              id={'whats-in-the-box'}
+              className={clsx("container", styles.contentContainer, styles.whatsInTheBox)}
+            >
                 
               <div className={clsx(styles.pageSectionIntro)}>
                 <h2>What's in the box?</h2>
@@ -213,32 +216,25 @@ export default function Home() {
               <div className={clsx(styles.pageSectionOutro)}>
                 <p>Try the <strong>full Objectiv pipeline</strong> on your local machine.</p>
                 <div>
-                  <Link 
+                  <TrackedLink
                     to={useBaseUrl(url + "/docs/quickstart-guide/")}
-                    {...tagLink({
-                        id: 'cta-docs-quickstart-guide', 
-                        href: '/docs/quickstart-guide/',
-                        options: {
-                          trackClicks: {
-                            waitUntilTracked: true
-                          }
-                        }
-                      }
-                    )}
-                    target="_self" 
-                    className={clsx("button", styles.ctaButton)}>
+                    waitUntilTracked={true}
+                    target="_self"
+                    className={clsx("button", styles.ctaButton)}
+                  >
                     <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Objectiv Quickstart Guide'}/></span>
                     Objectiv Quickstart Guide
-                  </Link>
+                  </TrackedLink>
                   </div>
               </div>
-            </div>
+            </TrackedDiv>
           </div>
 
           <div className={clsx(styles.pageSection)}>
-            <div 
-              {...tagContent({id: 'foundation-for-early-data-teams'})}
-              className={clsx("container", styles.contentContainer, styles.foundation)}>
+            <TrackedDiv
+              id={'foundation-for-early-data-teams'}
+              className={clsx("container", styles.contentContainer, styles.foundation)}
+            >
                 
               <div className={clsx(styles.pageSectionIntro)}>
                 <h2>A great foundation for early data teams</h2>
@@ -365,54 +361,38 @@ export default function Home() {
 
               <div className={clsx(styles.pageSectionOutro)}>
                 <div>
-                <Link 
-                    to="https://github.com/objectiv/objectiv-analytics" 
-                    {...tagLink({
-                        id: 'cta-repo-button', 
-                        href: 'https://github.com/objectiv/objectiv-analytics',
-                        options: {
-                          trackClicks: {
-                            waitUntilTracked: true
-                          }
-                        }
-                      }
-                    )}
-                    target="_self" 
-                    className={clsx("button", styles.ctaButton)}>
+                <TrackedLink
+                    to="https://github.com/objectiv/objectiv-analytics"
+                    waitUntilTracked={true}
+                    target="_self"
+                    className={clsx("button", styles.ctaButton)}
+                >
                     <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Get Objectiv on GitHub'}/></span>
                     Get Objectiv on GitHub
-                  </Link>
+                  </TrackedLink>
                 </div>
               </div>
 
-            </div>
+            </TrackedDiv>
           </div>
 
           <footer>
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open source and we’re building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
-              <Link
+              <TrackedLink
                 to={customFields.slackJoinLink as string}
-                {...tagLink({
-                    id: 'join-slack', 
-                    href: customFields.slackJoinLink as string,
-                    options: {
-                      trackClicks: {
-                        waitUntilTracked: true
-                      }
-                    }
-                  }
-                )}
-                className={clsx("button", styles.ctaButton)}>
+                waitUntilTracked={true}
+                className={clsx("button", styles.ctaButton)}
+              >
                   <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
                   Join us on Slack
-                </Link>
+                </TrackedLink>
             </div>
           </footer>
 
-        </main>
+        </TrackedMain>
       </Layout>
-    </div>
+    </TrackedRootDiv>
   );
 }

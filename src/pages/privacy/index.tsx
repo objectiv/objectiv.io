@@ -2,22 +2,19 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import { TrackedHeader } from "../../trackedComponents/TrackedHeader";
+import { TrackedRootDiv } from "../../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagContent, tagRootLocation } from '@objectiv/tracker-browser';
 
 export default function PrivacyPolicy() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig: { tagline } } = useDocusaurusContext();
   return (
-    <div {...tagRootLocation({id: 'page-privacy'})}>
+    <TrackedRootDiv id={'page-privacy'}>
       <Layout
         title='Privacy Policy'
-        description={siteConfig.tagline}>
-        <header 
-          className={clsx('hero hero--primary', styles.heroBanner)}
-          {...tagContent({id: 'header'})}
-        >
+        description={tagline}>
+        <TrackedHeader className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.cookiesContainer)}>
             <h1>Privacy Policy</h1>
             <em>Last Updated 2021-08-18</em>
@@ -183,8 +180,8 @@ export default function PrivacyPolicy() {
               We will post any adjustments to this Privacy Policy on this page, and the revised version will be effective when it is posted. If we materially change the ways in which we use or share Personal Information previously collected from you through our Service, we will notify you through our Service, by email, or other communication.
             </p>
           </div>
-        </header>
+        </TrackedHeader>
       </Layout>
-    </div>
+    </TrackedRootDiv>
   );
 }

@@ -24,8 +24,9 @@ import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
+import { TrackedNav } from "../../trackedComponents/TrackedNav";
+import { TrackedOverlay } from "../../trackedComponents/TrackedOverlay";
 import styles from './styles.module.css'; // retrocompatible with v1
-import { tagNavigation, tagOverlay } from "@objectiv/tracker-browser";
 
 const DefaultNavItemPosition = 'right';
 
@@ -149,17 +150,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
     toggleSidebar,
   });
   return (
-    <div className="navbar-sidebar"
-      {...tagOverlay({
-        id: 'hamburger-menu',
-        options: {
-          trackVisibility: {
-            mode: 'manual',
-            isVisible: sidebarShown
-          }
-        }
-      })}
-    >
+    <TrackedOverlay id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -213,7 +204,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
           {secondaryMenu.content}
         </div>
       </div>
-    </div>
+    </TrackedOverlay>
   );
 }
 
@@ -229,8 +220,7 @@ function Navbar() {
   const hasSearchNavbarItem = items.some((item) => item.type === 'search');
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
   return (
-    <nav
-      {...tagNavigation({id: 'navbar-top'})}
+    <TrackedNav id={'navbar-top'}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',
@@ -288,7 +278,7 @@ function Navbar() {
           toggleSidebar={mobileSidebar.toggle}
         />
       )}
-    </nav>
+    </TrackedNav>
   );
 }
 

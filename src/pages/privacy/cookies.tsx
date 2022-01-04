@@ -1,23 +1,20 @@
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagContent, tagRootLocation } from '@objectiv/tracker-browser';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
+import { TrackedHeader } from "../../trackedComponents/TrackedHeader";
+import { TrackedRootDiv } from "../../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 
 export default function Cookies() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig: { tagline } } = useDocusaurusContext();
   return (
-    <div {...tagRootLocation({id: 'page-privacy-cookies'})}>
+    <TrackedRootDiv id={'page-privacy-cookies'}>
       <Layout
         title='Cookies Policy'
-        description={siteConfig.tagline}>
-        <header 
-          className={clsx('hero hero--primary', styles.heroBanner)}
-          {...tagContent({id: 'header'})}
-        >
+        description={tagline}>
+        <TrackedHeader className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.cookiesContainer)}>
             <h1>Why do we use Cookies?</h1>
             Objectiv uses cookies, web beacons and other similar technologies to:
@@ -52,8 +49,8 @@ export default function Cookies() {
             <p>Most email clients have settings which allow you to prevent the automatic downloading of images, which will disable web beacons in the email messages you read.</p>
 
           </div>
-        </header>
+        </TrackedHeader>
       </Layout>
-    </div>
+    </TrackedRootDiv>
   );
 }

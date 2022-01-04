@@ -7,15 +7,14 @@
 
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
-import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedNav } from "../../trackedComponents/TrackedNav";
 
 function BlogPostPaginator(props): JSX.Element {
   const {nextItem, prevItem} = props;
 
   return (
-    <nav
-      {...tagNavigation({id: 'blog-post-navigation'})}
+    <TrackedNav id={'blog-post-navigation'}
       className="pagination-nav docusaurus-mt-lg"
       aria-label={translate({
         id: 'theme.blog.post.paginator.navAriaLabel',
@@ -24,10 +23,9 @@ function BlogPostPaginator(props): JSX.Element {
       })}>
       <div className="pagination-nav__item">
         {prevItem && (
-          <Link 
+          <TrackedLink
             className="pagination-nav__link" 
             to={prevItem.permalink}
-            {...tagLink({ id: 'previous', href: prevItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -39,15 +37,14 @@ function BlogPostPaginator(props): JSX.Element {
             <div className="pagination-nav__label">
               &laquo; {prevItem.title}
             </div>
-          </Link>
+          </TrackedLink>
         )}
       </div>
       <div className="pagination-nav__item pagination-nav__item--next">
         {nextItem && (
-          <Link 
+          <TrackedLink
             className="pagination-nav__link" 
             to={nextItem.permalink}
-            {...tagLink({ id: 'next', href: nextItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -59,10 +56,10 @@ function BlogPostPaginator(props): JSX.Element {
             <div className="pagination-nav__label">
               {nextItem.title} &raquo;
             </div>
-          </Link>
+          </TrackedLink>
         )}
       </div>
-    </nav>
+    </TrackedNav>
   );
 }
 

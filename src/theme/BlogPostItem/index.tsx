@@ -9,12 +9,15 @@ import React from 'react';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
 import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
-import { tagLink, tagContent } from "@objectiv/tracker-browser";
+import { TrackedArticle } from "../../trackedComponents/TrackedArticle";
+import { TrackedDiv } from "../../trackedComponents/TrackedDiv";
+import { TrackedFooter } from "../../trackedComponents/TrackedFooter";
+import { TrackedHeader } from "../../trackedComponents/TrackedHeader";
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 import styles from './styles.module.css';
 
@@ -67,9 +70,9 @@ function BlogPostItem(props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <header {...tagContent({id: 'header'})}>
+      <TrackedHeader>
         <TitleHeading className={styles.blogPostTitle}>
-          {isBlogPostPage ? title : <Link to={permalink} {...tagLink({ id: permalink, href: permalink })}>{title}</Link>}
+          {isBlogPostPage ? title : <TrackedLink to={permalink}>{title}</TrackedLink>}
         </TitleHeading>
         <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
           <time dateTime={date}>{formattedDate}</time>
@@ -83,31 +86,29 @@ function BlogPostItem(props): JSX.Element {
         </div>
         <div className="avatar margin-vert--md">
           {authorImageURL && (
-            <Link 
+            <TrackedLink
               className="avatar__photo-link avatar__photo" 
               href={authorURL}
-              {...tagLink({ id: 'authorAvatar', href: authorURL })}
             >
               <img src={authorImageURL} alt={author} />
-            </Link>
+            </TrackedLink>
           )}
           <div className="avatar__intro">
             {author && (
               <>
                 <div className="avatar__name">
-                  <Link 
+                  <TrackedLink
                     href={authorURL}
-                    {...tagLink({ id: 'authorName', href: authorURL })}
                   >
                     {author}
-                  </Link>
+                  </TrackedLink>
                 </div>
                 <small className="avatar__subtitle">{authorTitle}</small>
               </>
             )}
           </div>
         </div>
-      </header>
+      </TrackedHeader>
     );
   };
 
@@ -115,19 +116,15 @@ function BlogPostItem(props): JSX.Element {
     <>
       <Seo {...{keywords, image}} />
 
-      <article 
-        {...tagContent({id: 'article'})}
+      <TrackedArticle
         className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       >
         {renderPostHeader()}
-        <div 
-          {...tagContent({id: 'content'})}
-          className="markdown">
+        <TrackedDiv id={'content'} className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
-        </div>
+        </TrackedDiv>
         {(tags.length > 0 || truncated) && (
-          <footer
-            {...tagContent({id: 'footer'})}
+          <TrackedFooter
             className={clsx('row docusaurus-mt-lg', {
               [styles.blogPostDetailsFull]: isBlogPostPage,
             })}>
@@ -141,13 +138,13 @@ function BlogPostItem(props): JSX.Element {
                   </Translate>
                 </b>
                 {tags.map(({label, permalink: tagPermalink}) => (
-                  <Link
+                  <TrackedLink
                     key={tagPermalink}
                     className="margin-horiz--sm"
-                    {...tagLink({ id: 'tags', href: tagPermalink })}
-                    to={tagPermalink}>
+                    to={tagPermalink}
+                  >
                     {label}
-                  </Link>
+                  </TrackedLink>
                 ))}
               </div>
             )}
@@ -159,13 +156,11 @@ function BlogPostItem(props): JSX.Element {
             )}
 
             {!isBlogPostPage && truncated && (
-              <div 
-                {...tagContent({id: 'read-more'})}
-                className="col text--right">
-                <Link
+              <TrackedDiv id={'read-more'} className="col text--right">
+                <TrackedLink
                   to={metadata.permalink}
-                  {...tagLink({ id: 'read-more', href: metadata.permalink })}
-                  aria-label={`Read more about ${title}`}>
+                  aria-label={`Read more about ${title}`}
+                >
                   <b>
                     <Translate
                       id="theme.blog.post.readMore"
@@ -173,12 +168,12 @@ function BlogPostItem(props): JSX.Element {
                       Read More
                     </Translate>
                   </b>
-                </Link>
-              </div>
+                </TrackedLink>
+              </TrackedDiv>
             )}
-          </footer>
+          </TrackedFooter>
         )}
-      </article>
+      </TrackedArticle>
     </>
   );
 }

@@ -1,28 +1,28 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { TrackedDiv } from "../trackedComponents/TrackedDiv";
+import { TrackedHeader } from "../trackedComponents/TrackedHeader";
+import { TrackedLink } from "../trackedComponents/TrackedLink";
+import { TrackedMain } from "../trackedComponents/TrackedMain";
+import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
-import { tagContent, tagLink, tagRootLocation } from "@objectiv/tracker-browser";
 
 export default function Jobs() {
   const context = useDocusaurusContext();
   const {siteConfig} = context;
   return (
-    <div {...tagRootLocation({id: 'page-jobs'})}>
+    <TrackedRootDiv id={'page-jobs'}>
       <Layout
         title='Jobs'
         description={siteConfig?.tagline}>
-        <header 
-          className={clsx('hero hero--primary', styles.jobsHeader)}
-          {...tagContent({id: 'header'})}
-        >
+        <TrackedHeader className={clsx('hero hero--primary', styles.jobsHeader)}>
           <div className={clsx('container', styles.jobsContainer)}>
             <h1>Currently Hiring: Data Scientist</h1>
           </div>
-        </header>
-        <main {...tagContent({id: 'main'})}>
+        </TrackedHeader>
+        <TrackedMain>
           <div className={clsx('container', styles.jobsContainer)}>
             <p>With Objectiv, we’re building the open-source analytics pipeline for reusable modeling.</p>
             <p>We are looking for an experienced Data Scientist that wants to help unify the way data 
@@ -36,56 +36,36 @@ export default function Jobs() {
               had for a long time: the ability to reuse, take off-the-shelf and contribute to modeling work 
               of others.</p>
 
-            <div {...tagContent({ id: 'the-project' })}>
+            <TrackedDiv id={'the-project'}>
               <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
               <p>Objectiv just soft launched the open-source project that goes after our mission. Right now 
                 we are collecting very valuable feedback from a group of experienced DS teams. We use this to 
                 iterate on the short term roadmap and will shortly move more into the public, step-by-step. 
                 See our&nbsp;
-                <Link 
-                  to="/" 
-                  {...tagLink({
-                      id: 'site', 
-                      href: '/', 
-                    }
-                  )}
-                  target="_self">
-                    site
-                </Link>,&nbsp;
-                <Link 
-                  to="https://objectiv.io/docs/" 
-                  {...tagLink({
-                      id: 'docs', 
-                      href: '/docs/', 
-                      options: {
-                        trackClicks: {
-                          waitUntilTracked: true
-                        }
-                      }
-                    }
-                  )}
-                  target="_self">
-                    docs
-                </Link> and <Link
-                  to="https://github.com/objectiv/objectiv-analytics" 
-                  {...tagLink({
-                      id: 'github-repo', 
-                      href: 'https://github.com/objectiv/objectiv-analytics', 
-                      options: {
-                        trackClicks: {
-                          waitUntilTracked: true
-                        }
-                      }
-                    })
-                  }
+                <TrackedLink
+                  to="/"
+                  target="_self"
+                >
+                  site
+                </TrackedLink>,&nbsp;
+                <TrackedLink
+                  to="https://objectiv.io/docs/"
+                  waitUntilTracked={true}
+                  target="_self"
+                >
+                  docs
+                </TrackedLink> and&nbsp;
+                <TrackedLink
+                  to="https://github.com/objectiv/objectiv-analytics"
+                  waitUntilTracked={true}
                   target="_self"
                 >
                   repo
-                </Link> 
+                </TrackedLink>
                 &nbsp;for a rundown on where we are. You can also spin up a local docker demo of the full 
                 pipeline in the quickstart.
               </p>
-            </div>
+            </TrackedDiv>
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The role</h2>
             <p>The key part of the project that is directly used by data scientists, is the Open Model Hub. 
@@ -128,39 +108,37 @@ export default function Jobs() {
               to taking exercise breaks or spending family time during the day and then getting stuff done in 
               the evening. Things like that.</p>
 
-            <div {...tagContent({ id: 'what-we-offer' })}>
+            <TrackedDiv id={'what-we-offer'}>
               <h2><img width="32px" src='/img/icons/icon-premium.svg' alt='What we offer' /> What we offer</h2>
               <p>A role in a super motivated and experienced team that is on a mission. Our team has over a 
                 decade of experience in analytics and has made it their core focus to build the best possible 
                 workflow for data science. Thanks to the support of &nbsp; 
-                <Link 
+                <TrackedLink
                   to="https://www.fly.vc/"
-                  {...tagLink({ id: 'vc-fly', href: 'https://www.fly.vc/' })}>
+                >
                   Fly Ventures
-                </Link> &amp; &nbsp; 
-                <Link 
+                </TrackedLink> &amp; &nbsp;
+                <TrackedLink
                   to="https://localglobe.vc/"
-                  {...tagLink({ id: 'vc-localglobe', href: 'https://localglobe.vc/' })}>
+                >
                   LocalGlobe
-                </Link> we can focus on the long-term and take the time to get the product just right. They 
+                </TrackedLink> we can focus on the long-term and take the time to get the product just right. They
                 were also the early backers of startups like Figma, Tessian and Robinhood.</p>
               <p>Join us in the early days of the product, where you will be able to leave your mark in the 
                 open-source community for data science. Our goals are very ambitious and this will allow you to 
                 grow with the company.</p>
               <p>Like what you have read and think you meet the mark? Then&nbsp;
-              <Link
+              <TrackedLink
                 to={'mailto:jobs@objectiv.io'}
-                {...tagLink({
-                  id: 'hear-from-you',
-                  href: 'mailto:jobs@objectiv.io' })}>
+              >
                 we'd love to hear from you
-              </Link>
+              </TrackedLink>
               .</p>
-            </div>
+            </TrackedDiv>
             
           </div>
-        </main>
+        </TrackedMain>
       </Layout>
-    </div>
+    </TrackedRootDiv>
   );
 }

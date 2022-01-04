@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
-import { tagContent, tagLink } from "@objectiv/tracker-browser";
 import React from 'react';
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedNav } from "../../trackedComponents/TrackedNav";
 
 function BlogListPaginator(props): JSX.Element {
   const {metadata} = props;
   const {previousPage, nextPage} = metadata;
 
   return (
-    <nav
-      {...tagContent({id: 'blog-list-paginator'})}
+    <TrackedNav
+      id={'blog-list-paginator'}
       className="pagination-nav"
       aria-label={translate({
         id: 'theme.blog.paginator.navAriaLabel',
@@ -25,10 +25,9 @@ function BlogListPaginator(props): JSX.Element {
       })}>
       <div className="pagination-nav__item">
         {previousPage && (
-          <Link 
+          <TrackedLink
             className="pagination-nav__link" 
             to={previousPage}
-            {...tagLink({ id: 'previous', href: previousPage })}
           >
             <div className="pagination-nav__label">
               &laquo;{' '}
@@ -38,15 +37,14 @@ function BlogListPaginator(props): JSX.Element {
                 Newer Entries
               </Translate>
             </div>
-          </Link>
+          </TrackedLink>
         )}
       </div>
       <div className="pagination-nav__item pagination-nav__item--next">
         {nextPage && (
-          <Link 
+          <TrackedLink
             className="pagination-nav__link" 
             to={nextPage}
-            {...tagLink({ id: 'next', href: nextPage })}
           >
             <div className="pagination-nav__label">
               <Translate
@@ -56,10 +54,10 @@ function BlogListPaginator(props): JSX.Element {
               </Translate>{' '}
               &raquo;
             </div>
-          </Link>
+          </TrackedLink>
         )}
       </div>
-    </nav>
+    </TrackedNav>
   );
 }
 
