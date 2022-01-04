@@ -14,3 +14,6 @@ COPY build/ $WEBROOT/
 
 # COPY docs
 COPY docs/build/ $WEBROOT/docs/
+
+RUN rm $WEBROOT/docs/.htaccess
+
