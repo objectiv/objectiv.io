@@ -20,7 +20,7 @@ Location Contexts are meant to describe where an event originated from in the vi
         AbstractLocationContext --> NavigationContext;
         AbstractLocationContext --> OverlayContext;
         AbstractLocationContext --> PressableContext;
-        PressableContext --> LinkContext;
+        PressableContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
         AbstractLocationContext --> RootLocationContext;
     class ContentContext diagramActive;
     class ExpandableContext diagramActive;
