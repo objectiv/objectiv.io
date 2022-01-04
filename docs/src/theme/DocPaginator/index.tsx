@@ -11,7 +11,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function DocPaginator(props): JSX.Element {
-  const {metadata} = props;
+  const {previous, next} = props;
 
   return (
     <nav
@@ -23,11 +23,11 @@ function DocPaginator(props): JSX.Element {
         description: 'The ARIA label for the docs pagination',
       })}>
       <div className="pagination-nav__item">
-        {metadata.previous && (
+        {previous && (
           <Link
             className="pagination-nav__link"
-            to={metadata.previous.permalink}
-            {...tagLink({ id: 'previous', href: metadata.previous.permalink })}
+            to={previous.permalink}
+            {...tagLink({ id: 'previous', href: previous.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -37,17 +37,17 @@ function DocPaginator(props): JSX.Element {
               </Translate>
             </div>
             <div className="pagination-nav__label">
-              &laquo; {metadata.previous.title}
+              &laquo; {previous.title}
             </div>
           </Link>
         )}
       </div>
       <div className="pagination-nav__item pagination-nav__item--next">
-        {metadata.next && (
+        {next && (
           <Link 
             className="pagination-nav__link" 
-            to={metadata.next.permalink}
-            {...tagLink({ id: 'next', href: metadata.next.permalink })}
+            to={next.permalink}
+            {...tagLink({ id: 'next', href: next.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -57,7 +57,7 @@ function DocPaginator(props): JSX.Element {
               </Translate>
             </div>
             <div className="pagination-nav__label">
-              {metadata.next.title} &raquo;
+              {next.title} &raquo;
             </div>
           </Link>
         )}
