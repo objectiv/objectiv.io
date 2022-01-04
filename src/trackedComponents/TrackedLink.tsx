@@ -4,7 +4,7 @@
 
 import Link, { LinkProps } from "@docusaurus/Link";
 import { LinkContextWrapper, makeIdFromString, makeTextFromChildren, trackPressEvent } from "@objectiv/tracker-react";
-import React from 'react';
+import React, { createRef, useState } from 'react';
 import { TrackedComponent } from "./trackedTypes";
 
 export type TrackedLinkProps = TrackedComponent<LinkProps> & {
@@ -14,6 +14,7 @@ export type TrackedLinkProps = TrackedComponent<LinkProps> & {
 };
 
 export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>((props: TrackedLinkProps, ref) => {
+  const [tracked, setTracked] = useState(false);
   const { Component = Link, forwardId = false, waitUntilTracked = false, ...otherProps } = props;
   const text = props.title ?? makeTextFromChildren(props.children);
   const id = props.id ?? makeIdFromString(text);
@@ -26,14 +27,20 @@ export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>
           ref={ref}
           id={forwardId ? id: undefined}
           onClick={async (event) => {
-            props.onClick && props.onClick(event);
-            await trackPressEvent({...trackingContext, ...{
-                options: !waitUntilTracked ? undefined : {
-                  waitForQueue: true,
-                  flushQueue: true
+            if(!tracked) {
+              const eventClone = new (event.nativeEvent.constructor as any)(event.type, event);
+              event.preventDefault();
+              await trackPressEvent({...trackingContext, ...{
+                  options: !waitUntilTracked ? undefined : {
+                    waitForQueue: true,
+                    flushQueue: true
+                  }
                 }
-              }
-            })
+              })
+              setTracked(true);
+              event.target.dispatchEvent(eventClone);
+            }
+            props.onClick && props.onClick(event);
           }}
         />
       )}
