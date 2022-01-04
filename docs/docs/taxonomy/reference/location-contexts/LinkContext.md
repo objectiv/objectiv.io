@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> PressableContext;
         PressableContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
+    class AbstractContext diagramDisabled;
     class LinkContext diagramActive;
 `} 
   caption="Diagram: LinkContext inheritance" 

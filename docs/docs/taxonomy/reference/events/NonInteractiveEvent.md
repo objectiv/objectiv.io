@@ -18,6 +18,7 @@ import Mermaid from '@theme/Mermaid';
         MediaEvent --> MediaPauseEvent;
         MediaEvent --> MediaStartEvent;
         MediaEvent --> MediaStopEvent;
+    class AbstractEvent diagramDisabled;
     class NonInteractiveEvent diagramActive;
 `} 
   caption="Diagram: NonInteractiveEvent" 

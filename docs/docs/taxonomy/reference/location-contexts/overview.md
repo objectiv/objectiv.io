@@ -22,15 +22,8 @@ Location Contexts are meant to describe where an event originated from in the vi
         AbstractLocationContext --> PressableContext;
         PressableContext --> LinkContext;
         AbstractLocationContext --> RootLocationContext;
-    class ContentContext diagramActive;
-    class ExpandableContext diagramActive;
-    class InputContext diagramActive;
-    class MediaPlayerContext diagramActive;
-    class NavigationContext diagramActive;
-    class OverlayContext diagramActive;
-    class PressableContext diagramActive;
-    class LinkContext diagramActive;
-    class RootLocationContext diagramActive;
+    class AbstractContext diagramDisabled;
+    class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: Location Contexts" 
   baseColor="blue" 

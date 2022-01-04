@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> MediaEvent["MediaEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
         MediaEvent --> MediaStopEvent;
+    class AbstractEvent diagramDisabled;
     class MediaStopEvent diagramActive;
 `} 
   caption="Diagram: MediaStopEvent" 

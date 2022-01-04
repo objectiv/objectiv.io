@@ -8,6 +8,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> ExpandableContext;
+    class AbstractContext diagramDisabled;
     class ExpandableContext diagramActive;
 `} 
   caption="Diagram: ExpandableContext inheritance" 

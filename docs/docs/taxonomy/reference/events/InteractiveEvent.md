@@ -11,6 +11,7 @@ import Mermaid from '@theme/Mermaid';
         InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"];
         InteractiveEvent --> PressEvent["PressEvent<br /><span class='properties'>requires:<br />PressableContext</span>"];
         InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
+    class AbstractEvent diagramDisabled;
     class InteractiveEvent diagramActive;
 `} 
   caption="Diagram: InteractiveEvent" 

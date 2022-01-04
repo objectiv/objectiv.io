@@ -30,20 +30,7 @@ Describe interactive and non-interactive events.
         MediaEvent --> MediaPauseEvent;
         MediaEvent --> MediaStartEvent;
         MediaEvent --> MediaStopEvent;
-    class InteractiveEvent diagramActive;
-    class PressEvent diagramActive;
-    class InputChangeEvent diagramActive;
-    class NonInteractiveEvent diagramActive;
-    class ApplicationLoadedEvent diagramActive;
-    class FailureEvent diagramActive;
-    class VisibleEvent diagramActive;
-    class HiddenEvent diagramActive;
-    class SuccessEvent diagramActive;
-    class MediaEvent diagramActive;
-    class MediaLoadEvent diagramActive;
-    class MediaPauseEvent diagramActive;
-    class MediaStartEvent diagramActive;
-    class MediaStopEvent diagramActive;
+    class AbstractEvent diagramActive;
 `} 
   caption="Diagram: Events" 
   baseColor="blue" 

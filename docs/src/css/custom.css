@@ -364,6 +364,10 @@ dl blockquote {
   fill: #ABE9FE !important;
   stroke: #006496 !important;
 }
+.diagramDisabled rect {
+  fill: #fff !important;
+  stroke: #64C8FA !important;
+}
 .diagram-pink rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;

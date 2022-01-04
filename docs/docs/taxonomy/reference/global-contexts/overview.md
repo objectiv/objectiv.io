@@ -18,11 +18,8 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
         AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
-    class ApplicationContext diagramActive;
-    class CookieIdContext diagramActive;
-    class HttpContext diagramActive;
-    class PathContext diagramActive;
-    class SessionContext diagramActive;
+    class AbstractContext diagramDisabled;
+    class AbstractGlobalContext diagramActive;
 `} 
   caption="Diagram: Global Contexts" 
   baseColor="blue" 

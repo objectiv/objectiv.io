@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> NonInteractiveEvent;
         NonInteractiveEvent --> VisibleEvent["VisibleEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"];
+    class AbstractEvent diagramDisabled;
     class VisibleEvent diagramActive;
 `} 
   caption="Diagram: VisibleEvent" 

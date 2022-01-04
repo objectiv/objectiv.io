@@ -8,6 +8,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> MediaPlayerContext;
+    class AbstractContext diagramDisabled;
     class MediaPlayerContext diagramActive;
 `} 
   caption="Diagram: MediaPlayerContext inheritance" 

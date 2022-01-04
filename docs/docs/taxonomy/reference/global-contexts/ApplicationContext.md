@@ -8,6 +8,7 @@ A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing in
 	graph LR 
         AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
         AbstractGlobalContext --> ApplicationContext;
+    class AbstractContext diagramDisabled;
     class ApplicationContext diagramActive;
 `} 
   caption="Diagram: ApplicationContext inheritance" 

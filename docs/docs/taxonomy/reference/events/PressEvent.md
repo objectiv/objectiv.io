@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
         AbstractEvent --> InteractiveEvent;
         InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />ContentContext</span>"] --> PressEvent;
         PressEvent["PressEvent<br /><span class='properties'>requires:<br />PressableContext</span>"];
+    class AbstractEvent diagramDisabled;
     class PressEvent diagramActive;
 `} 
   caption="Diagram: PressEvent" 
