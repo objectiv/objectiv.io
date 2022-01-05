@@ -4,7 +4,7 @@
 
 import Link, { LinkProps } from "@docusaurus/Link";
 import { LinkContextWrapper, makeIdFromString, makeTextFromChildren, trackPressEvent } from "@objectiv/tracker-react";
-import React, { createRef, useState } from 'react';
+import React, { useState } from 'react';
 import { TrackedComponent } from "./trackedTypes";
 
 export type TrackedLinkProps = TrackedComponent<LinkProps> & {
@@ -31,12 +31,11 @@ export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>
               const eventClone = new (event.nativeEvent.constructor as any)(event.type, event);
               event.preventDefault();
               await trackPressEvent({...trackingContext, ...{
-                  options: !waitUntilTracked ? undefined : {
-                    waitForQueue: true,
-                    flushQueue: true
-                  }
+                options: !waitUntilTracked ? undefined : {
+                  waitForQueue: true,
+                  flushQueue: true
                 }
-              })
+              }})
               setTracked(true);
               event.target.dispatchEvent(eventClone);
             }
