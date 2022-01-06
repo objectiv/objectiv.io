@@ -24,6 +24,7 @@ import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
+import { TrackedButton } from "../../trackedComponents/TrackedButton";
 import { TrackedNav } from "../../trackedComponents/TrackedNav";
 import { TrackedOverlay } from "../../trackedComponents/TrackedOverlay";
 import styles from './styles.module.css'; // retrocompatible with v1
@@ -164,15 +165,16 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
             onChange={colorModeToggle.toggle}
           />
         )}
-        <button
+        <TrackedButton
           type="button"
+          title={'close'}
           className="clean-btn navbar-sidebar__close"
           onClick={toggleSidebar}>
           <IconClose
             color="var(--ifm-color-emphasis-600)"
             className={styles.navbarSidebarCloseSvg}
           />
-        </button>
+        </TrackedButton>
       </div>
 
       <div
@@ -232,7 +234,8 @@ function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__items">
           {(items?.length > 0 || activeDocPlugin) && (
-            <button
+            <TrackedButton
+              title={'hamburger'}
               aria-label="Navigation bar toggle"
               className="navbar__toggle clean-btn"
               type="button"
@@ -240,7 +243,7 @@ function Navbar() {
               onClick={mobileSidebar.toggle}
               onKeyDown={mobileSidebar.toggle}>
               <IconMenu />
-            </button>
+            </TrackedButton>
           )}
           <Logo
             className="navbar__brand"

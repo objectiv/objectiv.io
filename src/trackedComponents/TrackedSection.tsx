@@ -5,11 +5,11 @@
 import React from "react";
 import { TrackedContent } from "./TrackedContent";
 
-export type TrackedDivProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TrackedSectionProps = React.HTMLAttributes<HTMLDivElement> & {
   id: string;
   forwardId?: boolean;
 };
 
-export const TrackedDiv = React.forwardRef<HTMLDivElement, TrackedDivProps>((props, ref) => (
+export const TrackedDiv = React.forwardRef<HTMLDivElement, TrackedSectionProps>((props, ref) => (
   <TrackedContent Component={'div'} ref={ref} {...props}/>
 ));

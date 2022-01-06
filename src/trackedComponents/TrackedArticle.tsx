@@ -2,17 +2,14 @@
  * Copyright 2021-2022 Objectiv B.V.
  */
 
-import { ContentContextWrapper } from "@objectiv/tracker-react";
 import React from "react";
+import { TrackedContent } from "./TrackedContent";
 
-export type TrackedArticleProps = React.HTMLAttributes<HTMLDivElement> & { id?: string, forwardId?: boolean };
+export type TrackedArticleProps = React.HTMLAttributes<HTMLDivElement> & {
+  id?: string;
+  forwardId?: boolean;
+};
 
-export const TrackedArticle = React.forwardRef<HTMLDivElement, TrackedArticleProps>((props: TrackedArticleProps, ref) => {
-  const { id = 'article', forwardId = false, ...otherProps } = props;
-
-  return (
-    <ContentContextWrapper id={id} >
-      <article {...otherProps} ref={ref} id={forwardId ? id: undefined} />
-    </ContentContextWrapper>
-  );
-});
+export const TrackedArticle = React.forwardRef<HTMLDivElement, TrackedArticleProps>((props, ref) => (
+  <TrackedContent id={props.id ?? 'article'} Component={'article'} ref={ref} {...props}/>
+));

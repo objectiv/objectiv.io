@@ -48,7 +48,7 @@ function Root({children}) {
   // Create React Tracker instance
   const tracker = new ReactTracker({
     endpoint: trackerEndPoint as string,
-    console: trackerConsoleEnabled ? console : undefined,
+    console: trackerConsoleEnabled && windowExists() ? console : undefined,
     applicationId: trackerApplicationId as string,
     active: cookiebotStatisticsConsent,
   })
