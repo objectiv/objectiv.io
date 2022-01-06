@@ -22,11 +22,11 @@ import Mermaid from '@theme/Mermaid';
 | :--       | :--         | :--
 | **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
-| **source**    | string      | Unique string for the advertiser, site, publication, etc.
-| **medium**    | string      | Unique string for advertising or marketing medium: cpc, banner, email newsletter, etc.
-| **campaign**    | string      | Unique string for individual campaign name, slogan, promo code, etc.
-| **term**    | string      | [optional] Unique string for search keywords.
-| **content**    | string      | [optional] Unique string to differentiate similar content, or links within the same ad.
+| **source**    | string      | The advertiser, site, publication, etc.
+| **medium**    | string      | Advertising or marketing medium: cpc, banner, email newsletter, etc.
+| **campaign**    | string      | Campaign name, slogan, promo code, etc.
+| **term**    | string      | [optional] Search keywords.
+| **content**    | string      | [optional] To differentiate similar content, or links within the same ad.
 
 :::info setting of the properties
 The backend will automatically set all the properties bases on the UTM parameters in the PathContext.
