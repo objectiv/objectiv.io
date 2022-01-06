@@ -115,7 +115,6 @@ export default function Home() {
               <div className={clsx("container", styles.contentContainer, styles.pageSectionOutro)}>
                 <TrackedLink
                   to={useBaseUrl("/how-it-works")}
-                  external={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
                 >
