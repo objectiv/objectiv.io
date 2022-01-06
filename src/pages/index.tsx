@@ -25,12 +25,41 @@ export default function Home() {
           <div className={clsx('container', styles.heroContainer)}>
             <img
               className={clsx(styles.heroImage)}
-              src={useBaseUrl("img/header-image.svg")}
+              src={useBaseUrl("img/logo-objectiv-home-header.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              Open-source <br /> product analytics <br /> built for data science
+              The day will come where you'll want <br />
+              more from your product analytics data <br />
+              than what your BI tools can deliver.
             </h1>
-            <div className={clsx(styles.heroRepoButton)}>
+            <p className={clsx(styles.heroSubTitle)}><strong>With Objectiv, you'll be ready.</strong></p> 
+          </div>
+        </TrackedHeader>
+
+        <TrackedMain className={clsx('body-large')}>
+
+          <div className={clsx(styles.pageSectionBlue, styles.theProduct)}>
+
+            <TrackedDiv 
+              id={'the-product'} 
+              className={clsx("container", styles.contentContainer, styles.intro)}>
+              <h2>Open-source product analytics that's ready for data science</h2>
+              <p>Objectiv is a complete, self-hosted product analytics stack designed for <br />
+              effective data modeling and exploration with minimal gruntwork.</p>
+              <img 
+                src={useBaseUrl("img/the-stack.svg")} 
+                className={clsx(styles.theStack)}
+                alt="The Objectiv stack" />
+              <img 
+                src={useBaseUrl("img/the-stack-horizontal-vertical.svg")} 
+                className={clsx(styles.theStackHorizontalVertical)}
+                alt="The Objectiv stack" />
+              <img 
+                src={useBaseUrl("img/the-stack-vertical.svg")} 
+                className={clsx(styles.theStackVertical)}
+                alt="The Objectiv stack" />
+              <p>It includes everything you need to answer common product analytics questions now, while <br />
+                providing a solid foundation for in-depth analysis &amp; machine learning down the road.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
                 external={true}
@@ -40,22 +69,17 @@ export default function Home() {
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Objectiv on GitHub'}/></span>
                 Objectiv on GitHub
               </TrackedLink>
-            </div>
-          </div>
-        </TrackedHeader>
 
-        <TrackedMain className={clsx('body-large')}>
-
-          <div className={clsx(styles.pageSectionBlue)}>
-
-            <TrackedDiv id={'intro'} className={clsx("container", styles.contentContainer, styles.intro)}>
-              <h2>Collect exceptionally high quality user behavior data &amp; <br />
-                explore it effectively with reusable, composable model stacks.</h2>
-              <p>Objectiv enables <strong>small data science teams</strong> to drive <strong>big product 
-                decisions</strong>.</p>
+              <img 
+                src={useBaseUrl("img/why-objectiv-outro.svg")} 
+                className={clsx(styles.whyObjectiv)}
+                alt="Why Objectiv?" />
             </TrackedDiv>
 
-            <TrackedDiv
+          </div>
+
+
+            {/* <TrackedDiv
               id={'product-intro'}
               className={clsx("container", styles.contentContainer, styles.productIntro)}
             >
@@ -112,19 +136,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={clsx("container", styles.contentContainer, styles.pageSectionOutro)}>
-                <TrackedLink
-                  to={useBaseUrl("/how-it-works")}
-                  external={true}
-                  target="_self"
-                  className={clsx("button", styles.ctaButton)}
-                >
-                  Find out how it works
-                </TrackedLink>
-              </div>
+            </TrackedDiv> */}
 
-            </TrackedDiv>
-          </div>
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightBlue, styles.quickStart)}>
             <TrackedDiv

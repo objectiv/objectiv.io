@@ -85,10 +85,6 @@ const config = {
       },
       items: [
         {
-          to: 'how-it-works',
-          label: 'How it works',
-        },
-        {
           to: 'about',
           label: 'About us',
         },
