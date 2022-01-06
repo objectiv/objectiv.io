@@ -16,13 +16,17 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
         AbstractGlobalContext --> ApplicationContext;
         AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
         AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
-        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term: string<br>content: string<br></span>"];
+        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
+        MarketingContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>term: string</span>"];
+        MarketingContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>content: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
     class ApplicationContext diagramActive;
     class CookieIdContext diagramActive;
     class HttpContext diagramActive;
     class MarketingContext diagramActive;
+    class MarketingTermContext diagramActive;
+    class MarketingContentContext diagramActive;
     class PathContext diagramActive;
     class SessionContext diagramActive;
 `} 
@@ -33,6 +37,8 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
     { name: 'CookieIdContext', to: '/taxonomy/reference/global-contexts/CookieIdContext' },
     { name: 'HttpContext', to: '/taxonomy/reference/global-contexts/HttpContext' },
     { name: 'MarketingContext', to: '/taxonomy/reference/global-contexts/MarketingContext' },
+    { name: 'MarketingTermContext', to: '/taxonomy/reference/global-contexts/MarketingTermContext' },
+    { name: 'MarketingContentContext', to: '/taxonomy/reference/global-contexts/MarketingContentContext' },
     { name: 'PathContext', to: '/taxonomy/reference/global-contexts/PathContext' },
     { name: 'SessionContext', to: '/taxonomy/reference/global-contexts/SessionContext' }
   ]}
