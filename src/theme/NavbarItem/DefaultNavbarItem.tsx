@@ -22,7 +22,6 @@ export default function DefaultNavbarItem({
       Component={OriginalDefaultNavbarItem}
       {...props}
       title={props.title ?? props.label}
-      href={props.href ?? props.to}
       external={props.external}
     />
   );
