@@ -23,7 +23,7 @@ export default function DefaultNavbarItem({
       {...props}
       title={props.title ?? props.label}
       href={props.href ?? props.to}
-      external={true}
+      external={props.external}
     />
   );
 }
