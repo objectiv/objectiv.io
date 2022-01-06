@@ -50,14 +50,14 @@ export default function Jobs() {
                 </TrackedLink>,&nbsp;
                 <TrackedLink
                   to="https://objectiv.io/docs/"
-                  waitUntilTracked={true}
+                  external={true}
                   target="_self"
                 >
                   docs
                 </TrackedLink> and&nbsp;
                 <TrackedLink
                   to="https://github.com/objectiv/objectiv-analytics"
-                  waitUntilTracked={true}
+                  external={true}
                   target="_self"
                 >
                   repo

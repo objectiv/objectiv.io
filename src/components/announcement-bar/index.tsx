@@ -11,7 +11,7 @@ function AnnouncementBar({title, content, ctaLink, ctaText}) {
         <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" alt='star' /></span>
           <strong>{title}</strong>&nbsp;
           {content}&nbsp;
-          <TrackedLink to={ctaLink} waitUntilTracked={true}>
+          <TrackedLink to={ctaLink} external={true}>
             {ctaText}
           </TrackedLink>
         <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" alt='star' /></span>

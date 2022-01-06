@@ -2,7 +2,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import Link from "@docusaurus/Link";
 import React from 'react';
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
 import { TrackedHeader } from "../trackedComponents/TrackedHeader";
@@ -218,7 +217,7 @@ export default function Home() {
                 <div>
                   <TrackedLink
                     to={useBaseUrl(url + "/docs/quickstart-guide/")}
-                    waitUntilTracked={true}
+                    external={true}
                     target="_self"
                     className={clsx("button", styles.ctaButton)}
                   >
@@ -363,7 +362,7 @@ export default function Home() {
                 <div>
                 <TrackedLink
                     to="https://github.com/objectiv/objectiv-analytics"
-                    waitUntilTracked={true}
+                    external={true}
                     target="_self"
                     className={clsx("button", styles.ctaButton)}
                 >
@@ -382,7 +381,7 @@ export default function Home() {
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to={customFields.slackJoinLink as string}
-                waitUntilTracked={true}
+                external={true}
                 className={clsx("button", styles.ctaButton)}
               >
                   <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>

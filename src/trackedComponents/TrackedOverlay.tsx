@@ -22,7 +22,7 @@ export const TrackedOverlay = (props: TrackedOverlayProps) => {
         trackVisibility({ isVisible, ...trackingContext });
         return Component ?
           <Component {...otherProps} id={forwardId ? id: undefined} /> :
-          <div id={forwardId ? id: undefined} {...otherProps} />;
+          <div {...otherProps} id={forwardId ? id: undefined} />;
       }}
 
     </OverlayContextWrapper>

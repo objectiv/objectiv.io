@@ -33,7 +33,7 @@ export default function Home() {
             <div className={clsx(styles.heroRepoButton)}>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
-                waitUntilTracked={true}
+                external={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
               >
@@ -115,7 +115,7 @@ export default function Home() {
               <div className={clsx("container", styles.contentContainer, styles.pageSectionOutro)}>
                 <TrackedLink
                   to={useBaseUrl("/how-it-works")}
-                  waitUntilTracked={true}
+                  external={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
                 >
@@ -148,7 +148,7 @@ export default function Home() {
 
                   <TrackedLink
                     to={useBaseUrl(url + "/docs/quickstart-guide/")}
-                    waitUntilTracked={true}
+                    external={true}
                     target="_self"
                     className={clsx("button", styles.ctaButton)}
                   >
@@ -171,7 +171,7 @@ export default function Home() {
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to={customFields.slackJoinLink as string}
-                waitUntilTracked={true}
+                external={true}
                 className={clsx("button", styles.ctaButton)}
               >
                   <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>

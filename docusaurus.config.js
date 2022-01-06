@@ -99,31 +99,36 @@ const config = {
         {
           label: 'Docs',
           to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          target: '_self',
+          external: true
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
+          external: true
         },
         {
           href: slackJoinLink,
           label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
+          external: true
         },
         {
           href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
+          external: true
         },
         {
           href: 'mailto:hi@objectiv.io',
           label: 'Contact Us',
           position: 'right',
           className: 'navItem navEmail',
+          external: true
         },
       ],
     },
