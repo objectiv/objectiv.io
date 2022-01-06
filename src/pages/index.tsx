@@ -9,6 +9,7 @@ import { TrackedMain } from "../trackedComponents/TrackedMain";
 import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
+import IconHeader from '../components/icon-header';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -78,6 +79,32 @@ export default function Home() {
 
           </div>
 
+          <div className={clsx(styles.pageSection)}>
+            <TrackedDiv 
+              id={'better-data'} 
+              className={clsx("container", styles.contentContainer, styles.intro, styles.betterData)}>
+              <IconHeader title="Better data at the first step of the pipeline" icon="icon-better-data" />
+
+              <div className={clsx(styles.valueRowLeft)}>
+                <div>
+                  <p>Events tracked with Objectiv are unusually rich, highly descriptive, and structured with 
+                    effective modeling in mind.</p>
+                  <p>Objectiv's tracker validates all collected events against an open analytics taxonomy at 
+                    the first step of the pipeline.</p>
+                  <p>The resulting dataset is error free, highly consistent, and ready for data science 
+                    without additional gruntwork or transformation.</p>
+                    <img
+                      src={useBaseUrl("img/value-better-data.svg")}
+                      alt="Squeaky clean model-ready data through early validation!" />
+                </div>
+                <div>
+                  <img
+                    src={useBaseUrl("img/value-better-data-event-comparison.svg")}
+                    alt="Objectiv Event example" />
+                </div>
+              </div>
+            </TrackedDiv>
+          </div>
 
             {/* <TrackedDiv
               id={'product-intro'}
@@ -139,7 +166,7 @@ export default function Home() {
             </TrackedDiv> */}
 
 
-          <div className={clsx(styles.pageSection, styles.pageSectionLightBlue, styles.quickStart)}>
+          <div className={clsx(styles.pageSection, styles.pageSectionBlue, styles.quickStart)}>
             <TrackedDiv
               id={'whats-in-the-box'}
               className={clsx("container", styles.contentContainer, styles.pageSectionIntro)}

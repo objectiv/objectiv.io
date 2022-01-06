@@ -263,7 +263,7 @@ footer h2 {
 @media screen and (max-width: 480px) { /* mobile small */
   .intro br {
     display: none
-  }  
+  }
 }
 
 .intro h2 {
@@ -330,217 +330,75 @@ footer h2 {
   margin: 0 auto;
 }
 
-.quickStart .pageSectionIntro {
-  margin-bottom: 40px;
+.valueRowLeft, .valueRowRight {
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 60px;
+  text-align: left;
 }
-.quickStart .pageSectionOutro {
+.valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
+  width: 403px; /* 320px + 1x83px grid cols left and right */
+}
+.valueRowLeft>div:nth-child(2), .valueRowRight>div:nth-child(1) {
+  flex: 50%;
+}
+.valueRowRight>div:nth-child(2) {
+  padding: 20px 0 0 83px;
+}
+
+.valueRowLeft p, .valueRowRight p {
+  margin-bottom: 24px;
+}
+.valueRowLeft p:first-child, .valueRowRight p:first-child {
+  font-weight: bold;
   margin-top: 20px;
 }
 
-.quickStart .takesLessThan5Minutes {
-  display: block;
-  margin: 8px auto;
-  padding-left: 50px;
-}
-
-
-/**************
-  HOW IT WORKS 
-***************/
-.howItWorks header {
-  background-color: var(--obj-primary-one);
-  padding: 60px 0 0 0;
-  color: #fff;
-  text-align: center;
-}
-.howItWorks header h2 {
-  color: #fff;
-  padding-bottom: 3px;
-}
-
-.solutionRowLeft, .solutionRowRight {
-  display: flex;
-  flex-flow: row;
-  margin-bottom: 80px;
-}
-.solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-  width: 488px; /* 320px + 2x83px grid cols left and right */
-}
-.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-  flex: 50%;
-}
-.solutionRowRight>div:nth-child(2) {
-  padding: 20px 0 0 83px;
-}
-.solutionRowLeft>div:nth-child(1) {
-  padding: 0 83px 0 0;
-}
-/* Minor styling exceptions for the very first solution (collection) and the third (stack & run model) */
-.collect .solutionRowRight>div:nth-child(1)  {
-  padding-top: 20px;
-}
-.collect .solutionRowRight>div:nth-child(2)  {
-  padding-top: 0;
-}
-.modeling .solutionRowRight>div:nth-child(2) p  {
-  margin-bottom: 46px;
-}
-
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .solutionRowLeft {
+  .valueRowLeft {
     flex-flow: row wrap;
+    text-align: center;
   }
-  .solutionRowRight {
+  .valueRowRight {
     flex-flow: row wrap-reverse;
+    text-align: center;
   }
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
     width: 100%;
     padding: 0 40px 0 40px;
   }
-  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-    text-align: center;
-  }
-  .solutionRowLeft>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(2) {
     margin-top: 80px;
   }
-  .solutions .ctaButton {
-    margin: 0 auto;
+  .valueRowLeft>div:first-child img {
+    margin-top: 40px;
+  }
+  .valueRowLeft p:first-child, .valueRowRight p:first-child {
+    font-weight: bold;
+    margin-top: 0;
   }
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  .valueRowLeft, .valueRowRight {
+    margin-bottom: 0;
+  }
+  
+  .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
     padding: 0 10px 0 10px;
   }
-  .solutionRowLeft>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(2) {
     margin-top: 40px;
   }
-  /* on mobile, center _all_ CTA buttons for all solutions */
-  .solutionRowCta {
+  .valueRowLeft>div:first-child img {
+    margin-top: 20px;
+  }
+  /* on mobile, center _all_ CTA buttons for all value items */
+  .valueRowCta {
     text-align: center;
     margin: 24px 0 0 0;
   }
 }
-
-.solutionRowLeft p, .solutionRowRight p {
-  margin-bottom: 24px;
-}
-
-.solutionTitle {
-  margin: 0 0 20px 0;
-}
-.solutionTitle>div:nth-child(1) { /* the number */
-  display: block;
-  width: 56px;
-  margin: 0 0 24px 0;
-  font-family: Bungee, serif;
-  font-size: 30px;
-  line-height: 150%;
-}
-.solutionTitle>div:nth-child(2) { /* the text */
-  font-family: Roboto, serif;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .solutionTitle {
-    flex-wrap: wrap; /* do not keep on one line */
-    margin: 0 0 40px 0;
-    text-align: center;
-  }
-  .solutionTitle>div:nth-child(1) { /* the number */
-    width: 100%;
-    margin: 0 0 23px 0;
-  }
-  .solutionTitle>div:nth-child(2) { /* the title */
-    width: 100%;
-  }
-  .solutionTitle br {
-    display: none;
-  }
-}
-
-.dataStoreComingSoon {
-  margin: 20px 0 0 20px;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .featureComparison {
-    display: none;
-  }
-}
-@media screen and (min-width: 966px) { /* >mobile/tablet all */
-  .viewComparison {
-    display: none;
-  }
-}
-
-.viewComparison img {
-  width: 95%;
-}
-
-.foundation .pageSectionIntro {
-  margin-bottom: 40px;
-}
-
-.featureComparison {
-  margin-bottom: 128px;
-}
-.featureComparison table {
-  margin: 0 auto;
-}
-.featureComparison table {
-  border-spacing: 20px 0;
-  border-collapse: separate;
-}
-.featureComparison th, .featureComparison tr, .featureComparison td {
-  border: none;
-  text-align: center;
-  min-width: 120px;
-}
-.featureComparison thead th {
-  padding: 32px 0;
-  border-radius: 8px 8px 0 0;
-}
-.featureComparison tbody th {
-  text-align: left;
-  padding: 16px 0;
-}
-.featureComparison table tr:nth-child(2n), .featureComparison table tr:nth-child(2n) td {
-  background-color: white;
-}
-.featureComparison table th:nth-child(2), .featureComparison table td:nth-child(2) {
-  background: rgba(160, 232, 146, 0.2) !important;
-}
-.featureComparison table tbody tr:nth-last-child(2) td {
-  border-radius: 0 0 8px 8px;
-  padding-bottom: 32px;
-}
-.featureComparison thead img {
-  display: block;
-  padding: 0 0 37px 0;
-  margin: 0 auto;
-}
-.comparisonPartialCheck {
-  padding-right: 0;
-}
-.featureComparison sup {
-  font-size: 12px;
-  position: relative;
-  top: -20px;
-}
-.featureComparisonFootnote td {
-  padding: 24px 0;
-  margin: 0;
-  text-align: left;
-}
-.featureComparisonFootnote td p {
-  font-size: 12px;
-  line-height: 1.5em;
-  margin: 0;
-}
-
 
 /**************
  ABOUT US PAGE 

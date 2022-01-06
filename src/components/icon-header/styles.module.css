@@ -1,0 +1,9 @@
+.iconHeader {
+  margin: 30px auto 85px auto;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .iconHeader {
+    margin: 30px auto 50px auto;
+  }
+}
