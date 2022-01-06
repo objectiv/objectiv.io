@@ -5,12 +5,11 @@ import styles from './styles.module.css';
 
 function IconHeader({title, icon}) {
   return (
-    <div>
+    <div className={clsx(styles.iconHeader)}>
       <img 
         src={useBaseUrl("img/icons/" + icon + ".svg")} 
-        className={clsx(styles.whyObjectiv)}
         alt="Icon" />
-      <h2 className={clsx(styles.iconHeader)}>
+      <h2>
         {title}
       </h2>
     </div>

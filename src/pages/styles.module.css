@@ -32,12 +32,11 @@ table, th, td {
 }
 
 .pageSection {
-  padding: 60px 0;
+  padding: 60px 0 100px 0;
 }
 
 .pageSectionBlue {
   background-color: var(--obj-primary-one);
-  padding: 60px 0;
   color: #fff;
 }
 
@@ -55,44 +54,11 @@ table, th, td {
   }
 }
 
-.pageSectionIntro, .pageSectionOutro {
-  text-align: center;
-}
-.pageSectionIntro {
-  margin-bottom: 100px;
-}
-.pageSectionIntro h2 {
-  font-size: 28px;
-  margin: 30px 0;
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .pageSectionIntro {
-    margin-bottom: 40px;
-  }
-  .pageSectionIntro p br {
-    display: none;
-  }
-}
-.pageSectionOutro {
-  margin-top: -40px;
-}
-.pageSectionOutro p {
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .pageSectionIntro {
-    margin-bottom: 60px;
-  }
-  .pageSectionOutro {
-    margin-top: 20px;
-  }
-}
-
 .twoColumnItems {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  margin-bottom: -80px; /* Negate the padding from the last row */
 }
 
 .twoColumnItem {
@@ -103,6 +69,7 @@ table, th, td {
   vertical-align: top;
   padding: 0 20px 80px 0;
 }
+
 .twoColumnItem img {
   max-height: 90px;
 }
@@ -120,9 +87,10 @@ table, th, td {
     padding-bottom: 60px;
   }
 }
+
 footer {
-  background-color: #008FDB;
-  color: #fff;
+  background-color: #F7FDFF;
+  color: #333;
   font-size: 16px;
   text-align: center;
   padding: 50px 0 130px 0;
@@ -136,7 +104,7 @@ footer {
 
 footer h2 {
   font-size: 20px;
-  color: #fff;
+  color: #333;
   margin-bottom: 15px;
 }
 
@@ -171,6 +139,14 @@ footer h2 {
   background: #fff;
 }
 
+.introText {
+  font-weight: bold;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .introText br {
+    display: none;
+  }
+}
 
 /**************
   HOMEPAGE 
@@ -191,7 +167,7 @@ footer h2 {
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
   }
   .heroTitle br, .heroSubTitle br {
     display: none
@@ -200,7 +176,7 @@ footer h2 {
 
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
-    padding: 2rem 0;
+    padding: 4rem 0 1rem 0;
   }
   .heroTitle {
     font-size: 24px;
@@ -227,61 +203,9 @@ footer h2 {
   }
 }
 
-.heroRepoButton {
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .heroRepoButton {
-    margin-bottom: 0;
-  }
-}
-
-.heroOutro {
-  font-size: 14px;
-  width: 100%;
-}
-
-.intro, .container.intro {
-  /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
-  max-width: 966px !important;
-  padding: 10px 0 70px 0;
-  text-align: center;
-}
-@media (min-width: 1440px) {
-  .intro, .container.intro {
-    /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
-    max-width: 966px !important;
-    padding: 0 0 80px 0;
-    text-align: center;
-  }
-}
-@media (max-width: 966px) {
-  .intro, .container.intro {
-    padding: 0 5% 60px 5%;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .intro br {
-    display: none
-  }
-}
-
-.intro h2 {
-  padding-bottom: 15px;
-  font-size: 28px;
-}
-
 .theProduct {
-  padding: 60px 0 0 0;
-}
-.theProduct .intro {
-  padding-bottom: 30px;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .theProduct p br {
-    display: none;
-  }
+  text-align: center;
+  padding: 60px 0 28px 0;
 }
 
 .theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
@@ -291,12 +215,32 @@ footer h2 {
   display: none;
 }
 
+.theProduct .ctaButton {
+  margin: 50px 0 120px 0;
+}
+
+.theProduct .whyObjectiv {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .theProduct p br {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .theProduct {
+    padding: 0;
+  }
   .theProduct .theStack {
     display: none;
   }
   .theProduct .theStackHorizontalVertical {
     display: block;
+  }
+  .theProduct .ctaButton {
+    margin-bottom: 90px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
@@ -309,31 +253,14 @@ footer h2 {
   .theProduct .theStackVertical {
     display: block;
   }
-}
-
-.theProduct .ctaButton {
-  margin: 50px 0 120px 0;
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct .ctaButton {
-    margin-bottom: 90px;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
   .theProduct .ctaButton {
     margin-bottom: 60px;
   }
 }
 
-.theProduct .whyObjectiv {
-  display: block;
-  margin: 0 auto;
-}
-
 .valueRowLeft, .valueRowRight {
   display: flex;
   flex-flow: row;
-  margin-bottom: 60px;
   text-align: left;
 }
 .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
@@ -341,9 +268,7 @@ footer h2 {
 }
 .valueRowLeft>div:nth-child(2), .valueRowRight>div:nth-child(1) {
   flex: 50%;
-}
-.valueRowRight>div:nth-child(2) {
-  padding: 20px 0 0 83px;
+  text-align: center;
 }
 
 .valueRowLeft p, .valueRowRight p {
@@ -351,7 +276,13 @@ footer h2 {
 }
 .valueRowLeft p:first-child, .valueRowRight p:first-child {
   font-weight: bold;
+}
+.valueRowLeft p:first-child {
   margin-top: 20px;
+}
+
+.valueRowRight>div:nth-child(1) {
+  padding-right: 25px;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
@@ -398,6 +329,45 @@ footer h2 {
     text-align: center;
     margin: 24px 0 0 0;
   }
+}
+
+.betterData {
+  margin-bottom: 30px;
+}
+
+.reusableModels .valueReusableModelsDiagram {
+  margin: 50px auto;
+}
+
+.bach {
+  text-align: center;
+}
+.bach img.valueBachExample {
+  margin-bottom: 65px;
+}
+.bach .twoColumnItems {
+  text-align: left;
+}
+.bach .twoColumnIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.quickStart {
+  text-align: center;
+}
+.quickStartIntro {
+  margin: 6px auto 50px auto;
+  font-weight: normal;
+}
+.quickStartOutro {
+  margin: 20px auto 28px auto;
+}
+.quickStart .takesLessThan5Minutes {
+  display: block;
+  margin: 8px auto;
+  padding-left: 50px;
 }
 
 /**************
