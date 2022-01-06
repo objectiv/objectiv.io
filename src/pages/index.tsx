@@ -3,13 +3,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
+import { TrackedFooter } from "../trackedComponents/TrackedFooter";
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
-import { TrackedHeader } from "../trackedComponents/TrackedHeader";
-import { TrackedMain } from "../trackedComponents/TrackedMain";
 import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
-import styles from './styles.module.css';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import IconHeader from '../components/icon-header';
+import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -19,8 +18,7 @@ export default function Home() {
     <TrackedRootDiv id={'page-home'}>
       <Layout
         title=''
-        description={tagline}
-        >
+        description={tagline}>
         
         <header className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.heroContainer)}>
@@ -216,7 +214,7 @@ export default function Home() {
             </TrackedDiv>
           </div>          
 
-          <footer>
+          <TrackedFooter>
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
@@ -229,7 +227,7 @@ export default function Home() {
                   Join us on Slack
                 </TrackedLink>
             </div>
-          </footer>
+          </TrackedFooter>
 
         </main>
       </Layout>
