@@ -301,8 +301,8 @@ footer h2 {
   .valueRowLeft>div:nth-child(2) {
     margin-top: 80px;
   }
-  .valueRowLeft>div:first-child img {
-    margin-top: 40px;
+  .valueRowLeft>div:first-child img, .valueRowRight>div:last-child img {
+    display: none;
   }
   .valueRowLeft p:first-child, .valueRowRight p:first-child {
     font-weight: bold;
