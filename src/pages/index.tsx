@@ -39,7 +39,7 @@ export default function Home() {
 
           <div className={clsx(styles.pageSectionBlue)}>
             <TrackedDiv 
-              id={'the-product'} 
+              id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
               <h2>Open-source product analytics that's ready for data science</h2>
               <p>Objectiv is a complete, self-hosted product analytics stack designed for <br />
