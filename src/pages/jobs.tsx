@@ -114,12 +114,12 @@ export default function Jobs() {
               <h2><img width="32px" src='/img/icons/icon-premium.svg' alt='What we offer' /> What we offer</h2>
               <p>A role in a super motivated and experienced team that is on a mission. Our team has over a 
                 decade of experience in analytics and has made it their core focus to build the best possible 
-                workflow for data science. Thanks to the support of &nbsp; 
+                workflow for data science. Thanks to the support of&nbsp; 
                 <TrackedLink
                   to="https://www.fly.vc/"
                   external={true}>
                   Fly Ventures
-                </TrackedLink> &amp; &nbsp;
+                </TrackedLink> &amp;&nbsp;
                 <TrackedLink
                   to="https://localglobe.vc/"
                   external={true}>
