@@ -225,14 +225,14 @@ footer h2 {
 }
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
+  .theProduct {
+    padding: 0 var(--ifm-spacing-horizontal);
+  }
   .theProduct p br {
     display: none;
   }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct {
-    padding: 0;
-  }
   .theProduct .theStack {
     display: none;
   }
