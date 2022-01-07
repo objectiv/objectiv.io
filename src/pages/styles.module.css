@@ -343,8 +343,34 @@ footer h2 {
   text-align: center;
 }
 .bach img.valueBachExample {
-  margin-bottom: 65px;
+  margin: 0 auto 65px auto;
 }
+.bach img.valueBachExampleMedium {
+  display: none;
+}
+.bach img.valueBachExampleSmall {
+  display: none;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .bach img.valueBachExample {
+    display: none;
+  }
+  .bach img.valueBachExampleMedium {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .bach img.valueBachExample {
+    display: none;
+  }
+  .bach img.valueBachExampleSmall {
+    display: block;
+    margin: 0 auto 50px auto;
+  }
+}
+
 .bach .twoColumnItems {
   text-align: left;
 }

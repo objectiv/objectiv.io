@@ -134,7 +134,15 @@ export default function Home() {
                 <br /> familiar Pandas-like operations on your full dataset, straight from your notebook.</p>
               <img
                 className={clsx(styles.valueBachExample)}
-                src={useBaseUrl("img/value-bach-example.svg")}
+                src={useBaseUrl("img/value-bach-example.png")}
+                alt="These operations all run on the full dataset! Neat!" />
+              <img
+                className={clsx(styles.valueBachExample, styles.valueBachExampleMedium)}
+                src={useBaseUrl("img/value-bach-example-medium.png")}
+                alt="These operations all run on the full dataset! Neat!" />
+              <img
+                className={clsx(styles.valueBachExample, styles.valueBachExampleSmall)}
+                src={useBaseUrl("img/value-bach-example-small.png")}
                 alt="These operations all run on the full dataset! Neat!" />
               <div className={clsx(styles.twoColumnItems)}>
                 <div className={clsx(styles.twoColumnItem)}>
