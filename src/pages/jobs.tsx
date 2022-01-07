@@ -2,27 +2,29 @@ import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
-import { TrackedHeader } from "../trackedComponents/TrackedHeader";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
-import { TrackedMain } from "../trackedComponents/TrackedMain";
 import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 
 export default function Jobs() {
   const context = useDocusaurusContext();
-  const {siteConfig} = context;
+  const {url, tagline} = context.siteConfig;
+
   return (
     <TrackedRootDiv id={'page-jobs'}>
       <Layout
         title='Jobs'
-        description={siteConfig?.tagline}>
-        <TrackedHeader className={clsx('hero hero--primary', styles.jobsHeader)}>
+        description={tagline}>
+        
+        <header className={clsx('hero hero--primary', styles.jobsHeader)}>
           <div className={clsx('container', styles.jobsContainer)}>
             <h1>Currently Hiring: Data Scientist</h1>
           </div>
-        </TrackedHeader>
-        <TrackedMain>
+        </header>
+
+        <main>
           <div className={clsx('container', styles.jobsContainer)}>
             <p>With Objectiv, we’re building the open-source analytics pipeline for reusable modeling.</p>
             <p>We are looking for an experienced Data Scientist that wants to help unify the way data 
@@ -49,7 +51,7 @@ export default function Jobs() {
                   site
                 </TrackedLink>,&nbsp;
                 <TrackedLink
-                  to="https://objectiv.io/docs/"
+                  to={useBaseUrl(url + "/docs/")}
                   external={true}
                   target="_self"
                 >
@@ -104,7 +106,7 @@ export default function Jobs() {
               all-team updates, syncs and making decisions on how to move forward together, and Virtual 
               Fridays to close a week of head work together and head into the weekend. We also bring the team 
               together f2f on a quarterly basis for outings.</p>
-            <p>We don’t care when work is being done, we care about what is being done. So our team is used 
+            <p>We don't care when work is being done, we care about what is being done. So our team is used 
               to taking exercise breaks or spending family time during the day and then getting stuff done in 
               the evening. Things like that.</p>
 
@@ -115,12 +117,12 @@ export default function Jobs() {
                 workflow for data science. Thanks to the support of &nbsp; 
                 <TrackedLink
                   to="https://www.fly.vc/"
-                >
+                  external={true}>
                   Fly Ventures
                 </TrackedLink> &amp; &nbsp;
                 <TrackedLink
                   to="https://localglobe.vc/"
-                >
+                  external={true}>
                   LocalGlobe
                 </TrackedLink> we can focus on the long-term and take the time to get the product just right. They
                 were also the early backers of startups like Figma, Tessian and Robinhood.</p>
@@ -128,16 +130,15 @@ export default function Jobs() {
                 open-source community for data science. Our goals are very ambitious and this will allow you to 
                 grow with the company.</p>
               <p>Like what you have read and think you meet the mark? Then&nbsp;
-              <TrackedLink
-                to={'mailto:jobs@objectiv.io'}
-              >
+              <TrackedLink to={'mailto:jobs@objectiv.io'}>
                 we'd love to hear from you
               </TrackedLink>
               .</p>
             </TrackedDiv>
             
           </div>
-        </TrackedMain>
+        </main>
+
       </Layout>
     </TrackedRootDiv>
   );
