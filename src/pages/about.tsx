@@ -5,9 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
-import { TrackedHeader } from "../trackedComponents/TrackedHeader";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
-import { TrackedMain } from "../trackedComponents/TrackedMain";
 import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
@@ -71,7 +69,7 @@ export default function AboutUs() {
           ctaText='Check the vacancy'
         />
 
-        <TrackedHeader className={clsx('hero hero--primary', styles.aboutUsBanner)}>
+        <header className={clsx('hero hero--primary', styles.aboutUsBanner)}>
           <div className={clsx('container', styles.contentContainer)}>
             <img
               src={useBaseUrl("img/icons/icon-data-heart-broken.svg")}
@@ -87,18 +85,18 @@ export default function AboutUs() {
               process was tedious and inefficient, so we started looking for better ways.
             </p>
           </div>
-        </TrackedHeader>
+        </header>
 
-        <TrackedMain className={clsx(styles.aboutUsMain)}>
-          <TrackedDiv id={'not-just-us'} className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}>
+        <main className={clsx(styles.aboutUsMain)}>
+          <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}>
             <div className={clsx("container", styles.contentContainer)}>
               <img
                 src={useBaseUrl("img/icons/icon-raised-hands.svg")}
                 alt="Icon: raised hands" />
               <h2>It wasn't just us</h2>
               <p>
-                We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ 
-                to ‘automated data ingestion pipelines with transformation workflows and automated testing’, 
+                We asked around how fellow data scientists were handling this. Answers varied from 'manually' 
+                to 'automated data ingestion pipelines with transformation workflows and automated testing', 
                 but in all cases, significant data wrangling was involved and everyone had their own way of 
                 doing it.
               </p>
@@ -113,11 +111,11 @@ export default function AboutUs() {
                 all have similar goals, but everyone builds their own schemas and models from scratch.
               </p>
             </div>
-          </TrackedDiv>
+          </div>
 
-          <TrackedDiv id={'we-will-take-it-on'} className={clsx(styles.aboutUsPageSection)}>
+          <div className={clsx(styles.aboutUsPageSection)}>
             <div className={clsx("container", styles.contentContainer)}>
-            <img
+              <img
                 src={useBaseUrl("img/icons/icon-astronaut-dancing.svg")}
                 alt="Icon: dancing astronaut" />
               <h2>We decided to take it on</h2>
@@ -142,14 +140,14 @@ export default function AboutUs() {
                 enable data scientists to use it effectively.
               </p>
             </div>
-          </TrackedDiv>
+          </div>
 
           <TrackedDiv
             id={'why-us'}
             className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
           >
             <div className={clsx("container", styles.contentContainer)}>
-              <h2>Why we think we’re in the position to fix this</h2>
+              <h2>Why we think we're in the position to fix this</h2>
 
               <div className={clsx(styles.whyUsReason)}>
                 <div>
@@ -173,10 +171,10 @@ export default function AboutUs() {
                 <div>
                   <strong>We have the right backing</strong><br />
                   We're backed by&nbsp;
-                  <TrackedLink to="https://www.fly.vc/">
+                  <TrackedLink to="https://www.fly.vc/" external={true}>
                     Fly Ventures
                   </TrackedLink> &amp;&nbsp;
-                  <TrackedLink to="https://localglobe.vc/">
+                  <TrackedLink to="https://localglobe.vc/" external={true}>
                     LocalGlobe
                   </TrackedLink>. They share our vision on the future of data science and have the right
                   experience &amp; network to help us execute our mission.
@@ -222,7 +220,8 @@ export default function AboutUs() {
               )}
             </div>
           </TrackedDiv>
-        </TrackedMain>
+        
+        </main>
       </Layout>
     </TrackedRootDiv>
   );
