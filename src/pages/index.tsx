@@ -27,7 +27,7 @@ export default function Home() {
               src={useBaseUrl("img/logo-objectiv-home-header.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              The day will come where you'll want <br />
+              The day will come when you'll want <br />
               more from your product analytics data <br />
               than what your BI tools can deliver.
             </h1>
