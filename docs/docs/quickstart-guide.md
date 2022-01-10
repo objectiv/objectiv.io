@@ -19,8 +19,6 @@ curl -o docker-compose.yaml https://raw.githubusercontent.com/objectiv/objectiv-
 docker-compose pull
 docker-compose up -d
 ```
-*Note: there are known issues when running Docker on Apple devices with the new ARM-based M1 chip. We're working on making the demo available to M1 users as well. In the meanwhile, please use a device that supports X86 instructions natively.*
-
 
 This will spin up the following containers:
 
