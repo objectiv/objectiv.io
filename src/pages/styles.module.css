@@ -32,12 +32,11 @@ table, th, td {
 }
 
 .pageSection {
-  padding: 60px 0;
+  padding: 60px 0 100px 0;
 }
 
 .pageSectionBlue {
   background-color: var(--obj-primary-one);
-  padding: 60px 0;
   color: #fff;
 }
 
@@ -55,44 +54,11 @@ table, th, td {
   }
 }
 
-.pageSectionIntro, .pageSectionOutro {
-  text-align: center;
-}
-.pageSectionIntro {
-  margin-bottom: 100px;
-}
-.pageSectionIntro h2 {
-  font-size: 28px;
-  margin: 30px 0;
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .pageSectionIntro {
-    margin-bottom: 40px;
-  }
-  .pageSectionIntro p br {
-    display: none;
-  }
-}
-.pageSectionOutro {
-  margin-top: -40px;
-}
-.pageSectionOutro p {
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .pageSectionIntro {
-    margin-bottom: 60px;
-  }
-  .pageSectionOutro {
-    margin-top: 20px;
-  }
-}
-
 .twoColumnItems {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  margin-bottom: -80px; /* Negate the padding from the last row */
 }
 
 .twoColumnItem {
@@ -103,6 +69,7 @@ table, th, td {
   vertical-align: top;
   padding: 0 20px 80px 0;
 }
+
 .twoColumnItem img {
   max-height: 90px;
 }
@@ -120,9 +87,10 @@ table, th, td {
     padding-bottom: 60px;
   }
 }
+
 footer {
-  background-color: #008FDB;
-  color: #fff;
+  background-color: #F7FDFF;
+  color: #333;
   font-size: 16px;
   text-align: center;
   padding: 50px 0 130px 0;
@@ -136,7 +104,7 @@ footer {
 
 footer h2 {
   font-size: 20px;
-  color: #fff;
+  color: #333;
   margin-bottom: 15px;
 }
 
@@ -171,12 +139,20 @@ footer h2 {
   background: #fff;
 }
 
+.introText {
+  font-weight: bold;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .introText br {
+    display: none;
+  }
+}
 
 /**************
   HOMEPAGE 
 ***************/
 .heroBanner {
-  padding: 80px 0 40px 0;
+  padding: 110px 0 40px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -184,15 +160,14 @@ footer h2 {
 }
 
 .heroTitle {
-  font-family: 'Bungee', serif;
+  font-family: 'Roboto';
   font-size: 32px;
-  letter-spacing: 0.2em;
-  margin: 0 0 45px 0;
+  margin: 0 0 48px 0;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
   }
   .heroTitle br, .heroSubTitle br {
     display: none
@@ -201,7 +176,7 @@ footer h2 {
 
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
-    padding: 2rem 0;
+    padding: 4rem 0 1rem 0;
   }
   .heroTitle {
     font-size: 24px;
@@ -213,13 +188,13 @@ footer h2 {
 }
 
 .heroImage {
-  padding-bottom: 52px;
+  padding-bottom: 38px;
 }
 
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   padding: 0 10%;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
@@ -228,282 +203,198 @@ footer h2 {
   }
 }
 
-.heroRepoButton {
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .heroRepoButton {
-    margin-bottom: 0;
-  }
-}
-
-.heroOutro {
-  font-size: 14px;
-  width: 100%;
-}
-
-.intro, .container.intro {
-  /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
-  max-width: 746px !important;
-  padding: 10px 0 70px 0;
+.theProduct {
   text-align: center;
+  padding: 60px 0 28px 0;
 }
-@media (min-width: 1440px) {
-  .intro, .container.intro {
-    /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
-    max-width: 746px !important;
-    padding: 0 0 80px 0;
-    text-align: center;
+
+.theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
+  margin: 20px auto 40px auto;
+}
+.theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
+  display: none;
+}
+
+.theProduct .ctaButton {
+  margin: 50px 0 120px 0;
+}
+
+.theProduct .whyObjectiv {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .theProduct {
+    padding: 0 var(--ifm-spacing-horizontal);
+  }
+  .theProduct p br {
+    display: none;
   }
 }
-@media (max-width: 966px) {
-  .intro, .container.intro {
-    padding: 0 5% 60px 5%;
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .theProduct .theStack {
+    display: none;
+  }
+  .theProduct .theStackHorizontalVertical {
+    display: block;
+  }
+  .theProduct .ctaButton {
+    margin-bottom: 90px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
-  .intro br {
-    display: none
-  }  
-}
-
-.intro h2 {
-  padding-bottom: 20px;
-  font-size: 24px;
-}
-
-.productIntro .productFlowVertical {
-  display: none;
-  margin: 0 auto 80px auto;
-}
-.productIntro .productFlow {
-  margin-bottom: 110px;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .productIntro .productFlow {
+  .theProduct .theStack {
     display: none;
   }
-  .productIntro .productFlowVertical {
+  .theProduct .theStackHorizontalVertical {
+    display: none;
+  }
+  .theProduct .theStackVertical {
     display: block;
+  }
+  .theProduct .ctaButton {
+    margin-bottom: 60px;
   }
 }
 
-.productIntro .pageSectionOutro {
-  margin: 20px 0;
+.valueRowLeft, .valueRowRight {
+  display: flex;
+  flex-flow: row;
+  text-align: left;
+}
+.valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
+  width: 403px; /* 320px + 1x83px grid cols left and right */
+}
+.valueRowLeft>div:nth-child(2), .valueRowRight>div:nth-child(1) {
+  flex: 50%;
+  text-align: center;
 }
 
-.quickStart .pageSectionIntro {
-  margin-bottom: 40px;
+.valueRowLeft p, .valueRowRight p {
+  margin-bottom: 24px;
 }
-.quickStart .pageSectionOutro {
+.valueRowLeft p:first-child, .valueRowRight p:first-child {
+  font-weight: bold;
+}
+.valueRowLeft p:first-child {
   margin-top: 20px;
 }
 
-.quickStart .takesLessThan5Minutes {
-  display: block;
-  margin: 8px auto;
-  padding-left: 50px;
-}
-
-
-/**************
-  HOW IT WORKS 
-***************/
-.howItWorks header {
-  background-color: var(--obj-primary-one);
-  padding: 60px 0 0 0;
-  color: #fff;
-  text-align: center;
-}
-.howItWorks header h2 {
-  color: #fff;
-  padding-bottom: 3px;
-}
-
-.solutionRowLeft, .solutionRowRight {
-  display: flex;
-  flex-flow: row;
-  margin-bottom: 80px;
-}
-.solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-  width: 488px; /* 320px + 2x83px grid cols left and right */
-}
-.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-  flex: 50%;
-}
-.solutionRowRight>div:nth-child(2) {
-  padding: 20px 0 0 83px;
-}
-.solutionRowLeft>div:nth-child(1) {
-  padding: 0 83px 0 0;
-}
-/* Minor styling exceptions for the very first solution (collection) and the third (stack & run model) */
-.collect .solutionRowRight>div:nth-child(1)  {
-  padding-top: 20px;
-}
-.collect .solutionRowRight>div:nth-child(2)  {
-  padding-top: 0;
-}
-.modeling .solutionRowRight>div:nth-child(2) p  {
-  margin-bottom: 46px;
+.valueRowRight>div:nth-child(1) {
+  padding-right: 25px;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .solutionRowLeft {
+  .valueRowLeft {
     flex-flow: row wrap;
+    text-align: center;
   }
-  .solutionRowRight {
+  .valueRowRight {
     flex-flow: row wrap-reverse;
+    text-align: center;
   }
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
     width: 100%;
     padding: 0 40px 0 40px;
   }
-  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
-    text-align: center;
-  }
-  .solutionRowLeft>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(2) {
     margin-top: 80px;
   }
-  .solutions .ctaButton {
-    margin: 0 auto;
+  .valueRowLeft>div:first-child img, .valueRowRight>div:last-child img {
+    display: none;
+  }
+  .valueRowLeft p:first-child, .valueRowRight p:first-child {
+    font-weight: bold;
+    margin-top: 0;
   }
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
-  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  .valueRowLeft, .valueRowRight {
+    margin-bottom: 0;
+  }
+  
+  .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
     padding: 0 10px 0 10px;
   }
-  .solutionRowLeft>div:nth-child(2) {
+  .valueRowLeft>div:nth-child(2) {
     margin-top: 40px;
   }
-  /* on mobile, center _all_ CTA buttons for all solutions */
-  .solutionRowCta {
+  .valueRowLeft>div:first-child img {
+    margin-top: 20px;
+  }
+  /* on mobile, center _all_ CTA buttons for all value items */
+  .valueRowCta {
     text-align: center;
     margin: 24px 0 0 0;
   }
 }
 
-.solutionRowLeft p, .solutionRowRight p {
-  margin-bottom: 24px;
+.betterData {
+  margin-bottom: 30px;
 }
 
-.solutionTitle {
-  margin: 0 0 20px 0;
-}
-.solutionTitle>div:nth-child(1) { /* the number */
-  display: block;
-  width: 56px;
-  margin: 0 0 24px 0;
-  font-family: Bungee, serif;
-  font-size: 30px;
-  line-height: 150%;
-}
-.solutionTitle>div:nth-child(2) { /* the text */
-  font-family: Roboto, serif;
-  font-weight: bold;
-  font-size: 20px;
+.reusableModels .valueReusableModelsDiagram {
+  margin: 50px auto;
 }
 
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .solutionTitle {
-    flex-wrap: wrap; /* do not keep on one line */
-    margin: 0 0 40px 0;
-    text-align: center;
-  }
-  .solutionTitle>div:nth-child(1) { /* the number */
-    width: 100%;
-    margin: 0 0 23px 0;
-  }
-  .solutionTitle>div:nth-child(2) { /* the title */
-    width: 100%;
-  }
-  .solutionTitle br {
-    display: none;
-  }
-}
-
-.dataStoreComingSoon {
-  margin: 20px 0 0 20px;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .featureComparison {
-    display: none;
-  }
-}
-@media screen and (min-width: 966px) { /* >mobile/tablet all */
-  .viewComparison {
-    display: none;
-  }
-}
-
-.viewComparison img {
-  width: 95%;
-}
-
-.foundation .pageSectionIntro {
-  margin-bottom: 40px;
-}
-
-.featureComparison {
-  margin-bottom: 128px;
-}
-.featureComparison table {
-  margin: 0 auto;
-}
-.featureComparison table {
-  border-spacing: 20px 0;
-  border-collapse: separate;
-}
-.featureComparison th, .featureComparison tr, .featureComparison td {
-  border: none;
+.bach {
   text-align: center;
-  min-width: 120px;
 }
-.featureComparison thead th {
-  padding: 32px 0;
-  border-radius: 8px 8px 0 0;
+.bach img.valueBachExample {
+  margin: 0 auto 65px auto;
 }
-.featureComparison tbody th {
-  text-align: left;
-  padding: 16px 0;
+.bach img.valueBachExampleMedium {
+  display: none;
 }
-.featureComparison table tr:nth-child(2n), .featureComparison table tr:nth-child(2n) td {
-  background-color: white;
+.bach img.valueBachExampleSmall {
+  display: none;
 }
-.featureComparison table th:nth-child(2), .featureComparison table td:nth-child(2) {
-  background: rgba(160, 232, 146, 0.2) !important;
+@media screen and (max-width: 966px) { /* mobile/tablet all */
 }
-.featureComparison table tbody tr:nth-last-child(2) td {
-  border-radius: 0 0 8px 8px;
-  padding-bottom: 32px;
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .bach img.valueBachExample {
+    display: none;
+  }
+  .bach img.valueBachExampleMedium {
+    display: block;
+  }
 }
-.featureComparison thead img {
-  display: block;
-  padding: 0 0 37px 0;
-  margin: 0 auto;
-}
-.comparisonPartialCheck {
-  padding-right: 0;
-}
-.featureComparison sup {
-  font-size: 12px;
-  position: relative;
-  top: -20px;
-}
-.featureComparisonFootnote td {
-  padding: 24px 0;
-  margin: 0;
-  text-align: left;
-}
-.featureComparisonFootnote td p {
-  font-size: 12px;
-  line-height: 1.5em;
-  margin: 0;
+@media screen and (max-width: 480px) { /* mobile small */
+  .bach img.valueBachExample {
+    display: none;
+  }
+  .bach img.valueBachExampleSmall {
+    display: block;
+    margin: 0 auto 50px auto;
+  }
 }
 
+.bach .twoColumnItems {
+  text-align: left;
+}
+.bach .twoColumnIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.quickStart {
+  text-align: center;
+}
+.quickStartIntro {
+  margin: 6px auto 50px auto;
+  font-weight: normal;
+}
+.quickStartOutro {
+  margin: 20px auto 28px auto;
+}
+.quickStart .takesLessThan5Minutes {
+  display: block;
+  margin: 8px auto;
+  padding-left: 50px;
+}
 
 /**************
  ABOUT US PAGE 
