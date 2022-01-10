@@ -17,8 +17,8 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
         AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
         AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
         AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
-        MarketingContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>term: string</span>"];
-        MarketingContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>content: string</span>"];
+        AbstractGlobalContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>requires: MarketingContext<br />term: string</span>"];
+        AbstractGlobalContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>requires: MarketingContext<br />content: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
     class ApplicationContext diagramActive;
