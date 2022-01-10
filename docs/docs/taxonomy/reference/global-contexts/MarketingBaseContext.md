@@ -1,19 +1,21 @@
-# MarketingContext
+# MarketingBaseContext
 
-A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing the marketing channel & campaign from where the user came.
+An [AbstractMarketingContext](/taxonomy/reference/global-contexts/overview.md) describing the marketing channel & campaign from where the user came.
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
-     class MarketingContext diagramActive;
+        AbstractGlobalContext --> AbstractMarketingContext;
+        AbstractMarketingContext --> MarketingBaseContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
+     class MarketingBaseContext diagramActive;
 `} 
-  caption="Diagram: MarketingContext inheritance" 
+  caption="Diagram: MarketingBaseContext inheritance" 
   baseColor="blue" 
   links={[
-        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' },
+        { name: 'AbstractMarketingContext', to: '/taxonomy/global-contexts' }
  ]}
 />
 

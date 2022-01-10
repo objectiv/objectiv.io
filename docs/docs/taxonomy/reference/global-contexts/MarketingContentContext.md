@@ -1,24 +1,26 @@
 # MarketingContentContext
 
-A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) used to differentiate similar content, or links within the same ad.
+An [AbstractMarketingContext](/taxonomy/reference/global-contexts/overview.md) used to differentiate similar content, or links within the same ad.
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>content: string</span>"];
+        AbstractGlobalContext --> AbstractMarketingContext;
+        AbstractMarketingContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>requires: MarketingBaseContext<br />content: string</span>"];
     class MarketingContentContext diagramActive;
 `} 
   caption="Diagram: MarketingContentContext inheritance" 
   baseColor="blue" 
   links={[
         { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' },
+        { name: 'AbstractMarketingContext', to: '/taxonomy/global-contexts' }
 ]}
 />
 
 ### Requires
-- [MarketingContext](/taxonomy/reference/global-contexts/MarketingContext).
+- [MarketingBaseContext](/taxonomy/reference/global-contexts/MarketingBaseContext).
 
 ### Properties
 |           | type        | description

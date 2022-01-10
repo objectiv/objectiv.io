@@ -1,24 +1,26 @@
 # MarketingTermContext
 
-A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing the search term from which the user came.
+An [AbstractMarketingContext](/taxonomy/reference/global-contexts/overview.md) describing the search term from which the user came.
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>term: string</span>"];
+	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext; 
+        AbstractGlobalContext --> AbstractMarketingContext;
+        AbstractMarketingContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>requires: MarketingBaseContext<br />term: string</span>"];
     class MarketingTermContext diagramActive;
 `} 
   caption="Diagram: MarketingTermContext inheritance" 
   baseColor="blue" 
   links={[
         { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' },
+        { name: 'AbstractMarketingContext', to: '/taxonomy/global-contexts' }
 ]}
 />
 
 ### Requires
-- [MarketingContext](/taxonomy/reference/global-contexts/MarketingContext).
+- [MarketingBaseContext](/taxonomy/reference/global-contexts/MarketingBaseContext).
 
 ### Properties
 |           | type        | description
