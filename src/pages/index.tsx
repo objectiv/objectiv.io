@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import React from 'react';
 import { TrackedFooter } from "../trackedComponents/TrackedFooter";
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
-import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import IconHeader from '../components/icon-header';
 import styles from './styles.module.css';
@@ -15,7 +14,7 @@ export default function Home() {
   const {url, tagline, customFields} = context.siteConfig;
 
   return (
-    <TrackedRootDiv id={'page-home'}>
+    <div>
       <Layout
         title=''
         description={tagline}>
@@ -239,6 +238,6 @@ export default function Home() {
 
         </main>
       </Layout>
-    </TrackedRootDiv>
+    </div>
   );
 }

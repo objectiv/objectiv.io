@@ -1,16 +1,14 @@
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
-import { TrackedRootDiv } from "../../trackedComponents/TrackedRootDiv";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 
 export default function Cookies() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
   return (
-    <TrackedRootDiv id={'page-privacy-cookies'}>
+    <div>
       <Layout
         title='Cookies Policy'
         description={tagline}>
@@ -77,6 +75,6 @@ export default function Cookies() {
           </div>
         </main>
       </Layout>
-    </TrackedRootDiv>
+    </div>
   );
 }

@@ -1,8 +1,6 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import { TrackedRootDiv } from "../../trackedComponents/TrackedRootDiv";
 import { TrackedMain } from "../../trackedComponents/TrackedMain";
 import { TrackedDiv }  from "../../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
@@ -12,7 +10,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 export default function PrivacyPolicy() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
   return (
-    <TrackedRootDiv id={'page-privacy'}>
+    <div>
       <Layout
         title='Privacy Policy'
         description={tagline}>
@@ -246,6 +244,6 @@ export default function PrivacyPolicy() {
           </div>
         </TrackedMain>
       </Layout>
-    </TrackedRootDiv>
+    </div>
   );
 }

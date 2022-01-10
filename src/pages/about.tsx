@@ -6,7 +6,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
-import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
 
@@ -57,7 +56,7 @@ export default function AboutUs() {
   const {siteConfig} = context;
 
   return (
-    <TrackedRootDiv id={'page-about'}>
+    <div>
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
@@ -223,6 +222,6 @@ export default function AboutUs() {
         
         </main>
       </Layout>
-    </TrackedRootDiv>
+    </div>
   );
 }

@@ -2367,24 +2367,29 @@
 "@objectiv/plugin-path-context-from-url@^0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#70f59485bae6cea1637c277d1fe43c7f9e8e9d3d"
-  integrity "sha1-iofb4+n0eZIFwK2ek9zeFfzBrlw= sha512-Zb90KaAfxSak8FKLoero3qxfiY7G4e5Njq5F+BnMt6rLIeTQdUqR8NUYmtqCUQFm4qQIe2ojoU9wjJZSp7kM0g=="
+  integrity sha512-ALZkbf/AhVc+tBQK9gXvkCemVKE8Cdwso8YJ73BQtYM4wM/uqn3SmLKZ5qcwSDTt+NZCZik8r88gXlk6wRl2nQ==
+
+"@objectiv/plugin-root-location-context-from-url@^0.0.6":
+  version "0.0.6"
+  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#91726b11e5f99c64242855054b4d246c19c4ce17"
+  integrity sha512-4LilIK7zHZSpB2iWlv4gh9vJScjppnoeUMGcE5LX1TS+AErG0L1dEzxwefnDEoDiS7eWhG3UrrU0YaFvKH4rrA==
 
 "@objectiv/queue-local-storage@^0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#9e338852b8a1e8c8cc3190a7d4474c1389071ace"
-  integrity "sha1-nhiZ/bCO7vo69HmBlmBiyQF2nKE= sha512-vjhdFVY5q06R0fsHZPYMKFKB6DkjE3pcOBxg/GAUJe/n0mqGVjGt9UQu5DU8ciZ0962D6bPql5kO2giVJcmObA=="
+  integrity sha512-k1Pf0oW26VzdLEAn0CEgCcIpGICpzlciqzucPsBnbE3DHCGO0mUUfRSXKyOINzlpDzbGWHAvuFkWMu2ikAx/Tw==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
 "@objectiv/schema@~0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#e33bae6d857b16027c546a880b0ed0b97b7294a8"
-  integrity "sha1-ybcnGdbhhrYM+Sxo2VyCffkGRc0= sha512-cEYJIHv8KNirADWuCMF3WO0rYROGYZZiMfq5oknqtG4XWxelOv+Ebe2H3ZqE6XZ0AXsh02Yov89vrm96kaFGBw=="
+  integrity sha512-dGJWdJVNiPh72wGbhcX5ywFBVxKguOSn+cJh7cO9ewsqsvd4ctu+xQBHJzGGZUbyusS/bh6CrIv09KpZB1du0g==
 
 "@objectiv/tracker-core-react@~0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core-react/-/tracker-core-react-0.0.6.tgz#ea1a4325ba9aa5e0a17209b27a85df2c1df70ce2"
-  integrity "sha1-vB6qtWfWuVF6xti6+nK3mMVmP5k= sha512-oyyMc7uVjuC3LDXeRkLS0hjcWrrF5QGwpyN0wUsSiLtbtbr7G2LsCGccKMySc2WfjUYlhT4iZu/igVbaOBsJOA=="
+  integrity sha512-Qc0Obavwz96EJBfg7IC6jQ3iIs2XdUSI86yLzt5PTmuv5G20xlMVWBeR6BDUhg23tawmMJB363nqIAC7j37xMA==
   dependencies:
     "@objectiv/schema" "~0.0.6"
     "@objectiv/tracker-core" "~0.0.6"
@@ -2393,16 +2398,17 @@
 "@objectiv/tracker-core@~0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#bdd8933f946b00fb6f567b6da9ca6f40d967c5c0"
-  integrity "sha1-qyyEu/FoR/KS1K02JIRkXEEaGPA= sha512-53yr+9OZ4cz7hIZhoLa7Kd38ThToTYbTc8WHOV5IvDKMMOL2XNiOAQXiEMDzL4vylK0vQDltmF7w7qgKt1Hqtg=="
+  integrity sha512-NfO429V0p5PExDjvdqLs4TKl8B57ZxedKtWnXLQgkiFtGGavZ9rpP5k+8zTmjPzaWcej/gIKvpgHXQZXoNVCRA==
   dependencies:
     uuid-random "^1.3.2"
 
 "@objectiv/tracker-react@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#98f3af563401a6cfb66a02b27674932a63de4e1c"
-  integrity "sha1-130Ku1d/R4XCkFPbMU1mOzXJPn4= sha512-Ex2Z72dj6Afc2WhxT+K74b0HeOQJGi9Ja2jrPok6JHFSMewdZ3zG0xWY4zcqBAeZnUYplIb+cv1J9dz1Ne5qzw=="
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#9fe8c98ecca84244752a04f75b5067b536a2431e"
+  integrity sha512-KWq1aFnQhcfTWtdhE4qPD7UjJkA4ulE8vOzZBcYC16rBvP7YaRuwmcqzkuk1Oyq+WlP30htvF3c+hJuETa0N7Q==
   dependencies:
     "@objectiv/plugin-path-context-from-url" "^0.0.6"
+    "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
     "@objectiv/queue-local-storage" "^0.0.6"
     "@objectiv/tracker-core" "~0.0.6"
     "@objectiv/tracker-core-react" "~0.0.6"
@@ -2412,14 +2418,14 @@
 "@objectiv/transport-fetch@^0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2ftransport-fetch/-/transport-fetch-0.0.6.tgz#0d9ff45f5667f388eaea1ac8a97bd33fe98bfe2e"
-  integrity "sha1-L9eTsgskG6cLXImUqtAzSUJqkfA= sha512-vz9WnTJgza6MW1HhgLEjLzjbwcGn9yMmE+QU7yBXruururo/ZZINsHMKcngc7DYM2MhjakBgEaFOqDZYl2L28w=="
+  integrity sha512-sTgEgMWbMlVt5W64ykU/yoIGurSvbpYBUtREjxPiqOSHx76kmo0VhNZG0J55rDfR3yxGUxVdvaZRyyt9hnL8OA==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
 "@objectiv/transport-xhr@^0.0.6":
   version "0.0.6"
   resolved "http://127.0.0.1:4873/@objectiv%2ftransport-xhr/-/transport-xhr-0.0.6.tgz#78c504bb3b5fe3433622ace205963e6786c05d5e"
-  integrity "sha1-ArtM/bhpTe8WjAC4JBL7gFei1Ms= sha512-QCNkcPhqE0c1LzPFtVzg/BZ/lRrGgaM0eXDi8NvVU7gHeHVcgqEyPxSpiCbKIHksrf/bixa0pWQlu0xBWnv8Lg=="
+  integrity sha512-/+Gz+f0vx4oIY7vAGpO8/uLY43yGFV4M3YYQnH9YFxsTdRo8uidnAnzfwl2Hm0l4aH/Dp7Bicl8MYlg95GhGGA==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 

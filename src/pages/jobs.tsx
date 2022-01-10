@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { TrackedDiv } from "../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
-import { TrackedRootDiv } from "../trackedComponents/TrackedRootDiv";
 import styles from './styles.module.css';
 
 export default function Jobs() {
@@ -13,7 +12,7 @@ export default function Jobs() {
   const {url, tagline} = context.siteConfig;
 
   return (
-    <TrackedRootDiv id={'page-jobs'}>
+    <div>
       <Layout
         title='Jobs'
         description={tagline}>
@@ -140,6 +139,6 @@ export default function Jobs() {
         </main>
 
       </Layout>
-    </TrackedRootDiv>
+    </div>
   );
 }
