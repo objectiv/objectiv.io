@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { TrackedFooter } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
 
 import {FooterLinkItem, useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
-import { TrackedFooter } from "../../trackedComponents/TrackedFooter";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import ThemedImage from '@theme/ThemedImage';

@@ -1,9 +1,8 @@
+import { TrackedDiv } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { TrackedDiv } from "../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 
@@ -50,15 +49,16 @@ export default function Jobs() {
                   site
                 </TrackedLink>,&nbsp;
                 <TrackedLink
-                  to={useBaseUrl(url + "/docs/")}
-                  external={true}
+                  to={url + "/docs/"}
+                  autoAddBaseUrl={true}
+                  waitUntilTracked={true}
                   target="_self"
                 >
                   docs
                 </TrackedLink> and&nbsp;
                 <TrackedLink
                   to="https://github.com/objectiv/objectiv-analytics"
-                  external={true}
+                  waitUntilTracked={true}
                   target="_self"
                 >
                   repo
@@ -116,12 +116,12 @@ export default function Jobs() {
                 workflow for data science. Thanks to the support of&nbsp; 
                 <TrackedLink
                   to="https://www.fly.vc/"
-                  external={true}>
+                  waitUntilTracked={true}>
                   Fly Ventures
                 </TrackedLink> &amp;&nbsp;
                 <TrackedLink
                   to="https://localglobe.vc/"
-                  external={true}>
+                  waitUntilTracked={true}>
                   LocalGlobe
                 </TrackedLink> we can focus on the long-term and take the time to get the product just right. They
                 were also the early backers of startups like Figma, Tessian and Robinhood.</p>

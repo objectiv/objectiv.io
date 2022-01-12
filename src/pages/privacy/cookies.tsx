@@ -43,22 +43,22 @@ export default function Cookies() {
               analytics and interest-based advertising, which you can access at:</p>
             <ul>
               <li>
-                United States: NAI (<TrackedLink to="http://optout.networkadvertising.org" external={true}>
-                http://optout.networkadvertising.org/</TrackedLink>) and DAA 
-                (<TrackedLink to="http://optout.aboutads.info/" external={true}>
-                  http://optout.aboutads.info/
+                United States: NAI (<TrackedLink to="https://optout.networkadvertising.org" waitUntilTracked={true}>
+                https://optout.networkadvertising.org/</TrackedLink>) and DAA
+                (<TrackedLink to="https://optout.aboutads.info/" waitUntilTracked={true}>
+                  https://optout.aboutads.info/
                 </TrackedLink>).
               </li>
               <li>
                 Canada: Digital Advertising Alliance of Canada 
-                (<TrackedLink to="https://youradchoices.ca/" external={true}>
+                (<TrackedLink to="https://youradchoices.ca/" waitUntilTracked={true}>
                   https://youradchoices.ca/
                 </TrackedLink>).
               </li>
               <li>
                 Europe: European Digital Advertising Alliance 
-                (<TrackedLink to="http://www.youronlinechoices.com/" external={true}>
-                  http://www.youronlinechoices.com/
+                (<TrackedLink to="https://www.youronlinechoices.com/" waitUntilTracked={true}>
+                  https://www.youronlinechoices.com/
                 </TrackedLink>).
               </li>
             </ul>
