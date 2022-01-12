@@ -59,6 +59,7 @@ table, th, td {
   flex-flow: row;
   flex-wrap: wrap;
   margin-bottom: -80px; /* Negate the padding from the last row */
+  text-align: left;
 }
 
 .twoColumnItem {
@@ -68,6 +69,12 @@ table, th, td {
   flex-wrap: nowrap;
   vertical-align: top;
   padding: 0 20px 80px 0;
+}
+
+.twoColumnItem .twoColumnIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 .twoColumnItem img {
@@ -258,6 +265,14 @@ footer h2 {
   }
 }
 
+.betterData {
+  margin-bottom: 30px;
+}
+
+.betterData .valueRowLeft div:first-child img {
+  margin-top: 40px;
+}
+
 .valueRowLeft, .valueRowRight {
   display: flex;
   flex-flow: row;
@@ -331,19 +346,14 @@ footer h2 {
   }
 }
 
-.betterData {
-  margin-bottom: 30px;
-}
-
-.reusableModels .valueReusableModelsDiagram {
-  margin: 50px auto;
-}
-
 .bach {
   text-align: center;
 }
+.bach h2 {
+  margin-bottom: -20px;
+}
 .bach img.valueBachExample {
-  margin: 0 auto 65px auto;
+  margin: 40px auto 65px auto;
 }
 .bach img.valueBachExampleMedium {
   display: none;
@@ -371,13 +381,17 @@ footer h2 {
   }
 }
 
-.bach .twoColumnItems {
-  text-align: left;
+.reusableModels .valueReusableModelsDiagram {
+  margin: 50px auto;
 }
-.bach .twoColumnIcon {
-  min-width: 150px;
+
+.reusableModels .valueRowRight {
+  margin-bottom: 70px;
+}
+
+.reusableModels .outro {
+  margin: 90px auto 20px auto;
   text-align: center;
-  padding-bottom: 30px;
 }
 
 .quickStart {

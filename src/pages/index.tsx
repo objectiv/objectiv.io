@@ -28,7 +28,7 @@ export default function Home() {
             <h1 className={clsx(styles.heroTitle)}>
               The day will come when you'll want <br />
               more from your product analytics data <br />
-              than what your BI tools can deliver.
+              than your BI tools can deliver.
             </h1>
             <p className={clsx(styles.heroSubTitle)}><strong>With Objectiv, you'll be ready.</strong></p> 
           </div>
@@ -99,38 +99,13 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-            <div className={clsx("container", styles.contentContainer, styles.reusableModels)}>
-              <IconHeader title="Fully reusable, stackable models included" icon="icon-reusable-models" />
-              <div className={clsx(styles.valueRowRight)}>
-                <div>
-                  <img
-                    src={useBaseUrl("img/value-reusable-models-example.svg")}
-                    alt="Example" />
-                </div>
-                <div>
-                  <p>You can reuse any model that was built with Objectiv's modeling library for your own 
-                    project by changing a single line of code. </p>
-                  <p>This is enabled by the highly consistent nature of the datasets Objectiv's tracker 
-                    collects.</p>
-                  <p>Objectiv includes pre-built models for a wide range of product analytics use cases that 
-                    you can take, stack and run to answer common product analytics questions quickly.</p>
-                  <p>You're free to or customize them (or build your own) for specific in-depth analyses.</p>
-                  <img
-                    className={clsx(styles.valueReusableModelsDiagram)}
-                    src={useBaseUrl("img/value-reusable-models.svg")}
-                    alt="Stack and run included pre-built models!" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={clsx(styles.pageSection)}>
             <div className={clsx("container", styles.contentContainer, styles.bach)}>
               <IconHeader 
-                title="Model &amp; explore with dataframe operations on the full dataset" 
+                title="Pandas-like modeling on the full dataset" 
                 icon="icon-value-bach" />
-              <p className={clsx(styles.introText)}>Objectiv's modeling library (Bach) features an SQL abstraction layer that enables you to use 
-                <br /> familiar Pandas-like operations on your full dataset, straight from your notebook.</p>
+              <p className={clsx(styles.introText)}>Objectiv Bach is a modeling library that combines the 
+                power of Pandas with the <br /> 
+                scalability of SQL and includes pre-built models that you can chain together.</p>
               <img
                 className={clsx(styles.valueBachExample)}
                 src={useBaseUrl("img/value-bach-example.png")}
@@ -152,20 +127,50 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>Experiment &amp; iterate freely</strong><br />
-                    On command, Objectiv converts your complete model stack to SQL and runs it on the full dataset, so feel free to try out new things at any stage.
+                    On command, Objectiv converts your complete model stack to SQL and runs it on the full 
+                    dataset, so feel free to try out new things at any stage.
                   </div>
                 </div>
                 <div className={clsx(styles.twoColumnItem)}>
                   <div className={clsx(styles.twoColumnIcon)}>
                     <img
-                      src={useBaseUrl("img/icons/icon-bach-taxonomy.svg")}
-                      alt="Taxonomy" />
+                      src={useBaseUrl("img/icons/icon-pandas-compatible.svg")}
+                      alt="Pandas logo" />
                   </div>
                   <div>
-                    <strong>Built for the open analytics taxonomy</strong><br />
-                    Bach is fully optimized to enable effective exploration and modeling on datasets that embrace the open analytics taxonomy.
+                    <strong>Familiar Pandas-like modeling</strong><br />
+                    Bach supports many common Pandas operations, combined with operations that are specific 
+                    to datasets collected with the Objectiv tracker.
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={clsx(styles.pageSection)}>
+            <div className={clsx("container", styles.contentContainer, styles.reusableModels)}>
+              <IconHeader title="Chain reusable models together" icon="icon-reusable-models-chained" />
+              <div className={clsx(styles.valueRowRight)}>
+                <div>
+                  <img
+                    src={useBaseUrl("img/value-reusable-models-example.svg")}
+                    alt="Example" />
+                </div>
+                <div>
+                  <p>You can reuse any model that was built with Objectiv Bach for your own project by 
+                    changing a single line of code. </p>
+                  <p>This is enabled by the highly consistent nature of the datasets Objectiv's tracker 
+                    collects.</p>
+                  <p>Objectiv includes pre-built models for a wide range of product analytics use cases. You 
+                    can chain them together to answer common product analytics questions quickly.</p>
+                  <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
+                  <img
+                    className={clsx(styles.valueReusableModelsDiagram)}
+                    src={useBaseUrl("img/value-reusable-models.svg")}
+                    alt="Take and chain pre-built models off the shelf!" />
+                </div>
+              </div>
+              <div className={clsx(styles.twoColumnItems)}>
                 <div className={clsx(styles.twoColumnItem)}>
                   <div className={clsx(styles.twoColumnIcon)}>
                     <img
@@ -180,14 +185,26 @@ export default function Home() {
                 <div className={clsx(styles.twoColumnItem)}>
                   <div className={clsx(styles.twoColumnIcon)}>
                     <img
-                      src={useBaseUrl("img/icons/icon-pandas-compatible.svg")}
-                      alt="Pandas logo" />
+                      src={useBaseUrl("img/icons/icon-brain.svg")}
+                      alt="Brain" />
                   </div>
                   <div>
                     <strong>Pandas compatible, ML ready</strong><br />
                     Bach is Pandas compatible: Take your data to the next level by tapping into the rich machine learning ecosystem Pandas is well-known for.
                   </div>
                 </div>
+              </div>
+              <div className={clsx(styles.outro)}>
+                <p>For an overview of all available pre-built models, check out the Docs.</p>
+                <TrackedLink
+                  to={useBaseUrl(url + "/docs/open-model-hub/")}
+                  external={true}
+                  target="_self"
+                  className={clsx("button", styles.ctaButton)}
+                >
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Docs - Open Model Hub'}/></span>
+                  Docs - Open Model Hub
+                </TrackedLink>
               </div>
             </div>
           </div>
