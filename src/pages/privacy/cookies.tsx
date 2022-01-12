@@ -36,7 +36,17 @@ export default function Cookies() {
               Any cookies that are considered strictly necessary, which are those that are essential for the 
               website to operate, cannot be disabled.</p>
 
-            <a href="javascript: Cookiebot.renew()">Renew or change your cookie consent here</a>.
+            <a
+              href={'#'}
+               onClick={event => {
+                 event.preventDefault();
+                 // @ts-ignore
+                 Cookiebot.renew();
+                 return false;
+               }}
+            >
+              Renew or change your cookie consent here
+            </a>.
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
             <p>Service providers may participate in self-regulatory programs that provide ways to opt out of 
