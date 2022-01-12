@@ -107,7 +107,7 @@ export default function Home() {
                 scalability of SQL and includes pre-built models that you can chain together.</p>
               <img
                 className={clsx(styles.valueBachExample)}
-                src={useBaseUrl("img/value-bach-example.png")}
+                src={useBaseUrl("img/value-bach-example@2x.png")}
                 alt="These operations all run on the full dataset! Neat!" />
               <img
                 className={clsx(styles.valueBachExample, styles.valueBachExampleMedium)}
@@ -126,7 +126,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>Experiment &amp; iterate freely</strong><br />
-                    On command, Objectiv converts your complete model stack to SQL and runs it on the full 
+                    On command, Objectiv converts your complete model chain to SQL and runs it on the full 
                     dataset, so feel free to try out new things at any stage.
                   </div>
                 </div>
