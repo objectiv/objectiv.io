@@ -38,12 +38,12 @@ export default function Cookies() {
 
             <a
               href={'#'}
-               onClick={event => {
-                 event.preventDefault();
-                 // @ts-ignore
-                 Cookiebot.renew();
-                 return false;
-               }}
+              onClick={event => {
+                event.preventDefault();
+                // @ts-ignore
+                Cookiebot.renew();
+                return false;
+              }}
             >
               Renew or change your cookie consent here
             </a>.
