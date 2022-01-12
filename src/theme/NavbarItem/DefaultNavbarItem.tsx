@@ -22,7 +22,8 @@ export default function DefaultNavbarItem({
       Component={OriginalDefaultNavbarItem}
       {...props}
       href={props.href ?? props.to}
-      forwardHref={true}
+      // NavbarItems can be Link components or <a> tags, href is harmful for the former and needed for the latter
+      forwardHref={!!props.href}
       title={props.title ?? props.label}
     />
   );
