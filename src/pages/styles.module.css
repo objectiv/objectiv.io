@@ -191,24 +191,66 @@ footer h2 {
 }
 
 .heroContainer {
-  max-width: 850px;
+  max-width: 996px;
 }
 
 .heroImage {
+  width: 48px;
   padding-bottom: 38px;
 }
 
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-bottom: 60px;
+  margin-bottom: 90px;
   padding: 0 10%;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
+    margin-bottom: 80px;
   }
 }
+@media screen and (max-width: 480px) { /* mobile small */
+  .heroSubTitle {
+    margin-bottom: 70px;
+  }
+}
+
+.heroObjectivIn2Minutes {
+  margin: 0 0 18px 0;
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .heroObjectivIn2Minutes {
+    margin: 0 0 15px 0;
+  }
+}
+
+.heroVideo {
+  position: relative; 
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 0 auto 70px auto;
+}
+.heroVideo iframe {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  margin: 0;
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .heroVideo {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .heroVideo {
+    margin-bottom: 50px;
+  }
+}
+
 
 .theProduct {
   text-align: center;
