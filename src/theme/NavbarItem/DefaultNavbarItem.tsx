@@ -7,10 +7,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { TrackedLinkContext } from "@objectiv/tracker-react";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
 import React from 'react';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 export default function DefaultNavbarItem({
   mobile = false,
@@ -18,9 +18,12 @@ export default function DefaultNavbarItem({
   ...props
 }): JSX.Element {
   return (
-    <TrackedLink
+    <TrackedLinkContext
       Component={OriginalDefaultNavbarItem}
       {...props}
+      href={props.href ?? props.to}
+      // NavbarItems can be Link components or <a> tags, href is harmful for the former and needed for the latter
+      forwardHref={!!props.href}
       title={props.title ?? props.label}
     />
   );

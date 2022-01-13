@@ -2371,38 +2371,36 @@
 
 "@objectiv/plugin-path-context-from-url@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#8a0bcff2d20f7d0152d972977fa3a608b6a69cb3"
-  integrity sha512-gIa/su8db6pj4vAa/n5VWb+MTL15YQHlgAivgsKIPNTfRf5SS7ms/d6HO04MU7tVvSDzJNZtP+8pcZYaeFvFMQ==
+  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#9e17a61b4cbbaa2e05d837957633d47436ecc505"
+  integrity sha512-CkPaFKIGMmfNtpHaWu9nbmneEYKFNMTgIUSarO+cjzL6sCNc9QN/u3lSN6EsAtzNe9an+YiTvug7TsOzi1bqjg==
 
 "@objectiv/plugin-root-location-context-from-url@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#af8d769564a362a0c03d325455c5799e5bed534b"
-  integrity sha512-oLAv4Ja6YOrtkxIMkI2ZDL6zKtTX9ZGmK61Ndd97EITsAVdfGih5I95CL3KQAPD3XR+u2wu+ex5PtQQTHDvPfw==
+  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#c7a6c080e8883bae01506acb54bcb77245e71178"
+  integrity sha512-du8jj9VgXXqk2kHGDBiHCpEcwfvj7tUjuVGh7S6rw2o292a/We4SosxWZzrgANNlFr9akunKMc7cFo4PeBmFQQ==
 
 "@objectiv/queue-local-storage@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#9a1fdef2133f65383f5dd43c89ebe20d637d0ca8"
-  integrity sha512-vF2Hrm/LsCMTL+sClgwtyCvMBPCsLqN4grkSuSmIJWygpoRoanpgg+Aa25eFBivOXrGkKITIIE2On5PZ2+psuw==
+  resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#542bba0d406685c6b9b1de7987fe2f04b0fa5238"
+  integrity sha512-LxjY2E4hgGHTJj8vNF//zdBIIXVOjam8RFPIPDQB6hXySwKoXRkt2BuFzZoLpAYxTn0PijXuQ0LoO0Odaz0ilw==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
 "@objectiv/schema@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#c9b72719d6e186b60cf92c68d95c827df90645cd"
-  integrity sha512-cEYJIHv8KNirADWuCMF3WO0rYROGYZZiMfq5oknqtG4XWxelOv+Ebe2H3ZqE6XZ0AXsh02Yov89vrm96kaFGBw==
+  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#e33bae6d857b16027c546a880b0ed0b97b7294a8"
+  integrity sha512-dGJWdJVNiPh72wGbhcX5ywFBVxKguOSn+cJh7cO9ewsqsvd4ctu+xQBHJzGGZUbyusS/bh6CrIv09KpZB1du0g==
 
 "@objectiv/tracker-core@~0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#01d2474bf5bd6ca91b69a31fb57201754d912a34"
-  integrity sha512-xkuN1laLY0WM0rYAnviVRUV5QE+j/8B2VncPotghkKAseXO7nl7CQ2yewelk9sZh4BOC/6IngMS7PKEYOE9k0Q==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#9f7b987bffdfcedee3a96f5017f3f8df7b84601e"
+  integrity sha512-tQEumkxnWrwB6FmHJcA7mSqIeABMxOHPZ5i4c8jVxZcpfmfUW9uhnqnQ9cBAHI+5Swxs4H/7MR0jfuauYZRNLw==
   dependencies:
     "@objectiv/schema" "^0.0.6"
     uuid-random "^1.3.2"
 
 "@objectiv/tracker-react@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#ca693d56d1d455ba6955c6adcff5ab4f28cd181e"
-  integrity sha512-3OwZfPbBpzai0W+x5INhysrWi0fSDRJobq5+GNaUbPideGmDZNOLwAhFrDd4/IR73yQZxHwnwKbBBOIdmUbmXA==
   dependencies:
     "@objectiv/plugin-path-context-from-url" "^0.0.6"
     "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
@@ -2413,15 +2411,11 @@
 
 "@objectiv/transport-fetch@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-fetch/-/transport-fetch-0.0.6.tgz#097a4de910c9c79487bbb54a7c9fc225eabade32"
-  integrity sha512-cuBKqnZsKqpYJQ2NQp1l1XmGQSxbLg1NX4uZwGAJio7wxVZBccO1Y3z+0MYXrbf7QDNnjdVC83uDnpDvk/hmFg==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
 "@objectiv/transport-xhr@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-xhr/-/transport-xhr-0.0.6.tgz#c53d1d83c97a370884c9a045208b940923c7f677"
-  integrity sha512-QtQIkOrQEN6Z+aDQjk/zLGpLHoJqXyV/qx26JFR88kXfxbK45AVE7IQKRnzITo9UHy5RsV71WDU3k5XTeezMpQ==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
