@@ -2396,8 +2396,8 @@
 
 "@objectiv/tracker-react@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#d0057a69ba3f1174aebab8ad4d53bb37b504b2b2"
-  integrity sha512-gBffeS3rNCAGHVT85/8A65+pNcBsqTd3OgVkGEB8ooco2Uq2vNNtxff+NAHAKXvh6TDy0KUU2xtY7gkn6OMxPw==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#e117fc4f7640fbe0ccd63a6361462eb830c1a624"
+  integrity sha512-UkBXqql1SmkKIk2bfq0woDm7TJURky6in+5r6XoCtTGj97JEIg8HQ3nPUDpy3Z4lifH4KsYGhKVKhuu4ECSJcQ==
   dependencies:
     "@objectiv/plugin-path-context-from-url" "^0.0.6"
     "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
