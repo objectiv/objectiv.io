@@ -36,29 +36,39 @@ export default function Cookies() {
               Any cookies that are considered strictly necessary, which are those that are essential for the 
               website to operate, cannot be disabled.</p>
 
-            <a href="javascript: Cookiebot.renew()">Renew or change your cookie consent here</a>.
+            <a
+              href={'#'}
+              onClick={event => {
+                event.preventDefault();
+                // @ts-ignore
+                Cookiebot.renew();
+                return false;
+              }}
+            >
+              Renew or change your cookie consent here
+            </a>.
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
             <p>Service providers may participate in self-regulatory programs that provide ways to opt out of 
               analytics and interest-based advertising, which you can access at:</p>
             <ul>
               <li>
-                United States: NAI (<TrackedLink to="http://optout.networkadvertising.org" external={true}>
-                http://optout.networkadvertising.org/</TrackedLink>) and DAA 
-                (<TrackedLink to="http://optout.aboutads.info/" external={true}>
-                  http://optout.aboutads.info/
+                United States: NAI (<TrackedLink to="https://optout.networkadvertising.org" waitUntilTracked={true}>
+                https://optout.networkadvertising.org/</TrackedLink>) and DAA
+                (<TrackedLink to="https://optout.aboutads.info/" waitUntilTracked={true}>
+                  https://optout.aboutads.info/
                 </TrackedLink>).
               </li>
               <li>
                 Canada: Digital Advertising Alliance of Canada 
-                (<TrackedLink to="https://youradchoices.ca/" external={true}>
+                (<TrackedLink to="https://youradchoices.ca/" waitUntilTracked={true}>
                   https://youradchoices.ca/
                 </TrackedLink>).
               </li>
               <li>
                 Europe: European Digital Advertising Alliance 
-                (<TrackedLink to="http://www.youronlinechoices.com/" external={true}>
-                  http://www.youronlinechoices.com/
+                (<TrackedLink to="https://www.youronlinechoices.com/" waitUntilTracked={true}>
+                  https://www.youronlinechoices.com/
                 </TrackedLink>).
               </li>
             </ul>

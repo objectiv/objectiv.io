@@ -1,11 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import { TrackedMain } from "../../trackedComponents/TrackedMain";
-import { TrackedDiv }  from "../../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { TrackedDiv, TrackedMain } from '@objectiv/tracker-react';
 
 export default function PrivacyPolicy() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
@@ -79,13 +78,13 @@ export default function PrivacyPolicy() {
                 partners may use technologies such as cookies to gather information about your activities on 
                 this website and other sites in order to provide you advertising based upon your browsing 
                 activities and interests. Some of our advertising partners are members of the&nbsp;
-                <TrackedLink to="https://www.networkadvertising.org/choices/" external={true}>Network Advertising 
+                <TrackedLink to="https://www.networkadvertising.org/choices/" waitUntilTracked={true}>Network Advertising
                 Initiative</TrackedLink> or the&nbsp;
-                <TrackedLink to="https://www.aboutads.info/choices/" external={true}>Digital Advertising 
+                <TrackedLink to="https://www.aboutads.info/choices/" waitUntilTracked={true}>Digital Advertising
                 Alliance</TrackedLink>. If you do not wish to receive our personalized ads, please visit their 
                 opt-out pages to learn about how you may opt out of receiving personalized ads from member 
                 companies (or if located in the European Union,&nbsp;
-                <TrackedLink to="https://www.youronlinechoices.eu/" external={true}>click here</TrackedLink>). 
+                <TrackedLink to="https://www.youronlinechoices.eu/" waitUntilTracked={true}>click here</TrackedLink>).
                 Please note this does not opt you out of being served ads. You will continue to receive generic 
                 ads.
               </p>

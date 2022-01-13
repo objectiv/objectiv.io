@@ -3,12 +3,11 @@
  */
 
 import Link, { LinkProps } from "@docusaurus/Link";
+import { TrackedLinkContext, TrackedLinkContextProps } from "@objectiv/tracker-react";
 import React from 'react';
-import { TrackedAnchor, TrackedAnchorProps } from "./TrackedAnchor";
-import { TrackedComponent } from "./trackedTypes";
 
-export type TrackedLinkProps = TrackedComponent<LinkProps> & Omit<TrackedAnchorProps, 'Component'>;
+export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href'> & LinkProps;
 
 export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>((props, ref) => (
-  <TrackedAnchor Component={Link} {...props} ref={ref}/>
+  <TrackedLinkContext Component={Link} {...props} href={props.href ?? props.to} ref={ref}/>
 ))

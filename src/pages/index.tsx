@@ -1,13 +1,12 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { TrackedDiv } from "@objectiv/tracker-react";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
-import { TrackedFooter } from "../trackedComponents/TrackedFooter";
-import { TrackedDiv } from "../trackedComponents/TrackedDiv";
-import { TrackedLink } from '../trackedComponents/TrackedLink';
 import IconHeader from '../components/icon-header';
 import LoomVideo from '../components/loom-video';
+import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
 export default function Home() {
@@ -67,7 +66,7 @@ export default function Home() {
                 providing a solid foundation for in-depth analysis &amp; machine learning down the road.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
-                external={true}
+                waitUntilTracked={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
               >
@@ -205,8 +204,9 @@ export default function Home() {
               <div className={clsx(styles.outro)}>
                 <p>For an overview of all available pre-built models, check out the Docs.</p>
                 <TrackedLink
-                  to={useBaseUrl(url + "/docs/open-model-hub/")}
-                  external={true}
+                  to={url + "/docs/open-model-hub/"}
+                  autoAddBaseUrl={true}
+                  waitUntilTracked={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
                 >
@@ -231,8 +231,9 @@ export default function Home() {
               <p className={clsx(styles.quickStartOutro)}>Follow the <strong>Quickstart Guide</strong> to 
               locally run the full Objectiv pipeline dockerized.</p>
               <TrackedLink
-                to={useBaseUrl(url + "/docs/quickstart-guide/")}
-                external={true}
+                to={url + "/docs/quickstart-guide/"}
+                autoAddBaseUrl={true}
+                waitUntilTracked={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
               >
@@ -246,20 +247,20 @@ export default function Home() {
             </TrackedDiv>
           </div>          
 
-          <TrackedFooter>
-            <div className={clsx("container", styles.contentContainer)}>
+          <footer>
+            <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to={customFields.slackJoinLink as string}
-                external={true}
+                waitUntilTracked={true}
                 className={clsx("button", styles.ctaButton)}
               >
                   <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
                   Join us on Slack
                 </TrackedLink>
-            </div>
-          </TrackedFooter>
+            </TrackedDiv>
+          </footer>
 
         </main>
       </Layout>

@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import { TrackedButton, TrackedNav, TrackedOverlayContext } from "@objectiv/tracker-react";
 import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
@@ -24,9 +25,6 @@ import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
-import { TrackedButton } from "../../trackedComponents/TrackedButton";
-import { TrackedNav } from "../../trackedComponents/TrackedNav";
-import { TrackedOverlay } from "../../trackedComponents/TrackedOverlay";
 import styles from './styles.module.css'; // retrocompatible with v1
 
 const DefaultNavItemPosition = 'right';
@@ -151,7 +149,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
     toggleSidebar,
   });
   return (
-    <TrackedOverlay id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
+    <TrackedOverlayContext Component={'div'} id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -206,7 +204,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
           {secondaryMenu.content}
         </div>
       </div>
-    </TrackedOverlay>
+    </TrackedOverlayContext>
   );
 }
 

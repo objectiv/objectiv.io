@@ -1,10 +1,10 @@
+import { TrackedDiv } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
-import { TrackedDiv } from "../trackedComponents/TrackedDiv";
 import { TrackedLink } from "../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
@@ -170,10 +170,10 @@ export default function AboutUs() {
                 <div>
                   <strong>We have the right backing</strong><br />
                   We're backed by&nbsp;
-                  <TrackedLink to="https://www.fly.vc/" external={true}>
+                  <TrackedLink to="https://www.fly.vc/" waitUntilTracked={true}>
                     Fly Ventures
                   </TrackedLink> &amp;&nbsp;
-                  <TrackedLink to="https://localglobe.vc/" external={true}>
+                  <TrackedLink to="https://localglobe.vc/" waitUntilTracked={true}>
                     LocalGlobe
                   </TrackedLink>. They share our vision on the future of data science and have the right
                   experience &amp; network to help us execute our mission.
