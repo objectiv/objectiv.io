@@ -32,13 +32,6 @@ export default function Home() {
               than your BI tools can deliver.
             </h1>
             <p className={clsx(styles.heroSubTitle)}><strong>With Objectiv, you'll be ready.</strong></p> 
-            <img
-              className={clsx(styles.heroObjectivIn2Minutes)}
-              src={useBaseUrl("img/objectiv-in-2-minutes.svg")}
-              alt="Objectiv in 2 minutes" />
-            <div className={clsx(styles.heroVideo)}>
-              <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
           </div>
         </header>
 
@@ -74,6 +67,14 @@ export default function Home() {
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Objectiv on GitHub'}/></span>
                 Objectiv on GitHub
               </TrackedLink>
+
+              <img
+                className={clsx(styles.objectivIn2Minutes)}
+                src={useBaseUrl("img/objectiv-in-2-minutes-white.svg")}
+                alt="Objectiv in 2 minutes" />
+              <div className={clsx(styles.productIntroVideo)}>
+                <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
 
               <img 
                 src={useBaseUrl("img/why-objectiv-outro.svg")} 

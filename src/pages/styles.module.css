@@ -202,37 +202,39 @@ footer h2 {
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   padding: 0 10%;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
   .heroSubTitle {
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
 }
 
-.heroObjectivIn2Minutes {
-  margin: 0 0 18px 0;
+.objectivIn2Minutes {
+  margin: 0 auto 18px auto;
+  display: block;
 }
 @media screen and (max-width: 480px) { /* mobile small */
-  .heroObjectivIn2Minutes {
-    margin: 0 0 15px 0;
+  .objectivIn2Minutes {
+    margin: 0 auto 15px auto;
   }
 }
 
-.heroVideo {
+.productIntroVideo {
   position: relative; 
   padding-bottom: 56.25%;
   height: 0;
-  margin: 0 auto 70px auto;
+  margin: 0 auto 90px auto;
+
 }
-.heroVideo iframe {
+.productIntroVideo iframe {
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -241,16 +243,10 @@ footer h2 {
   margin: 0;
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .heroVideo {
-    margin-bottom: 0;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .heroVideo {
+  .productIntroVideo {
     margin-bottom: 50px;
   }
 }
-
 
 .theProduct {
   text-align: center;
@@ -265,7 +261,7 @@ footer h2 {
 }
 
 .theProduct .ctaButton {
-  margin: 50px 0 120px 0;
+  margin: 50px 0 80px 0;
 }
 
 .theProduct .whyObjectiv {
@@ -287,9 +283,6 @@ footer h2 {
   }
   .theProduct .theStackHorizontalVertical {
     display: block;
-  }
-  .theProduct .ctaButton {
-    margin-bottom: 90px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
