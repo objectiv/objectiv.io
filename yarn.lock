@@ -2299,6 +2299,11 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
+"@loomhq/loom-embed@^1.2.12":
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/@loomhq/loom-embed/-/loom-embed-1.2.12.tgz#cee580fd2b7d1cc1dade99824788441f05ae0c45"
+  integrity sha512-lWjAdXlVmpTg34YWGfaAmA8do9Hou/a6Jm21Q+jLkEEJlwzmwLz7V3RsN4FSo9kTPVcnCvVhW/0gxIwyQNhCqA==
+
 "@mdx-js/mdx@1.6.22", "@mdx-js/mdx@^1.6.21":
   version "1.6.22"
   resolved "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-1.6.22.tgz"
@@ -2366,66 +2371,57 @@
 
 "@objectiv/plugin-path-context-from-url@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#70f59485bae6cea1637c277d1fe43c7f9e8e9d3d"
-  integrity sha512-ALZkbf/AhVc+tBQK9gXvkCemVKE8Cdwso8YJ73BQtYM4wM/uqn3SmLKZ5qcwSDTt+NZCZik8r88gXlk6wRl2nQ==
+  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#8a0bcff2d20f7d0152d972977fa3a608b6a69cb3"
+  integrity sha512-gIa/su8db6pj4vAa/n5VWb+MTL15YQHlgAivgsKIPNTfRf5SS7ms/d6HO04MU7tVvSDzJNZtP+8pcZYaeFvFMQ==
 
 "@objectiv/plugin-root-location-context-from-url@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#91726b11e5f99c64242855054b4d246c19c4ce17"
-  integrity sha512-4LilIK7zHZSpB2iWlv4gh9vJScjppnoeUMGcE5LX1TS+AErG0L1dEzxwefnDEoDiS7eWhG3UrrU0YaFvKH4rrA==
+  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#af8d769564a362a0c03d325455c5799e5bed534b"
+  integrity sha512-oLAv4Ja6YOrtkxIMkI2ZDL6zKtTX9ZGmK61Ndd97EITsAVdfGih5I95CL3KQAPD3XR+u2wu+ex5PtQQTHDvPfw==
 
 "@objectiv/queue-local-storage@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#9e338852b8a1e8c8cc3190a7d4474c1389071ace"
-  integrity sha512-k1Pf0oW26VzdLEAn0CEgCcIpGICpzlciqzucPsBnbE3DHCGO0mUUfRSXKyOINzlpDzbGWHAvuFkWMu2ikAx/Tw==
+  resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#9a1fdef2133f65383f5dd43c89ebe20d637d0ca8"
+  integrity sha512-vF2Hrm/LsCMTL+sClgwtyCvMBPCsLqN4grkSuSmIJWygpoRoanpgg+Aa25eFBivOXrGkKITIIE2On5PZ2+psuw==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
-"@objectiv/schema@~0.0.6":
+"@objectiv/schema@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#e33bae6d857b16027c546a880b0ed0b97b7294a8"
-  integrity sha512-dGJWdJVNiPh72wGbhcX5ywFBVxKguOSn+cJh7cO9ewsqsvd4ctu+xQBHJzGGZUbyusS/bh6CrIv09KpZB1du0g==
-
-"@objectiv/tracker-core-react@~0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core-react/-/tracker-core-react-0.0.6.tgz#ea1a4325ba9aa5e0a17209b27a85df2c1df70ce2"
-  integrity sha512-Qc0Obavwz96EJBfg7IC6jQ3iIs2XdUSI86yLzt5PTmuv5G20xlMVWBeR6BDUhg23tawmMJB363nqIAC7j37xMA==
-  dependencies:
-    "@objectiv/schema" "~0.0.6"
-    "@objectiv/tracker-core" "~0.0.6"
-    fast-deep-equal "^3.1.3"
+  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#c9b72719d6e186b60cf92c68d95c827df90645cd"
+  integrity sha512-cEYJIHv8KNirADWuCMF3WO0rYROGYZZiMfq5oknqtG4XWxelOv+Ebe2H3ZqE6XZ0AXsh02Yov89vrm96kaFGBw==
 
 "@objectiv/tracker-core@~0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#bdd8933f946b00fb6f567b6da9ca6f40d967c5c0"
-  integrity sha512-NfO429V0p5PExDjvdqLs4TKl8B57ZxedKtWnXLQgkiFtGGavZ9rpP5k+8zTmjPzaWcej/gIKvpgHXQZXoNVCRA==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#01d2474bf5bd6ca91b69a31fb57201754d912a34"
+  integrity sha512-xkuN1laLY0WM0rYAnviVRUV5QE+j/8B2VncPotghkKAseXO7nl7CQ2yewelk9sZh4BOC/6IngMS7PKEYOE9k0Q==
   dependencies:
+    "@objectiv/schema" "^0.0.6"
     uuid-random "^1.3.2"
 
 "@objectiv/tracker-react@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#9fe8c98ecca84244752a04f75b5067b536a2431e"
-  integrity sha512-KWq1aFnQhcfTWtdhE4qPD7UjJkA4ulE8vOzZBcYC16rBvP7YaRuwmcqzkuk1Oyq+WlP30htvF3c+hJuETa0N7Q==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#ca693d56d1d455ba6955c6adcff5ab4f28cd181e"
+  integrity sha512-3OwZfPbBpzai0W+x5INhysrWi0fSDRJobq5+GNaUbPideGmDZNOLwAhFrDd4/IR73yQZxHwnwKbBBOIdmUbmXA==
   dependencies:
     "@objectiv/plugin-path-context-from-url" "^0.0.6"
     "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
     "@objectiv/queue-local-storage" "^0.0.6"
     "@objectiv/tracker-core" "~0.0.6"
-    "@objectiv/tracker-core-react" "~0.0.6"
     "@objectiv/transport-fetch" "^0.0.6"
     "@objectiv/transport-xhr" "^0.0.6"
 
 "@objectiv/transport-fetch@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-fetch/-/transport-fetch-0.0.6.tgz#0d9ff45f5667f388eaea1ac8a97bd33fe98bfe2e"
-  integrity sha512-sTgEgMWbMlVt5W64ykU/yoIGurSvbpYBUtREjxPiqOSHx76kmo0VhNZG0J55rDfR3yxGUxVdvaZRyyt9hnL8OA==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-fetch/-/transport-fetch-0.0.6.tgz#097a4de910c9c79487bbb54a7c9fc225eabade32"
+  integrity sha512-cuBKqnZsKqpYJQ2NQp1l1XmGQSxbLg1NX4uZwGAJio7wxVZBccO1Y3z+0MYXrbf7QDNnjdVC83uDnpDvk/hmFg==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
 "@objectiv/transport-xhr@^0.0.6":
   version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-xhr/-/transport-xhr-0.0.6.tgz#78c504bb3b5fe3433622ace205963e6786c05d5e"
-  integrity sha512-/+Gz+f0vx4oIY7vAGpO8/uLY43yGFV4M3YYQnH9YFxsTdRo8uidnAnzfwl2Hm0l4aH/Dp7Bicl8MYlg95GhGGA==
+  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-xhr/-/transport-xhr-0.0.6.tgz#c53d1d83c97a370884c9a045208b940923c7f677"
+  integrity sha512-QtQIkOrQEN6Z+aDQjk/zLGpLHoJqXyV/qx26JFR88kXfxbK45AVE7IQKRnzITo9UHy5RsV71WDU3k5XTeezMpQ==
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
