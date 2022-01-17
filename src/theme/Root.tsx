@@ -1,6 +1,8 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
-import React, { useEffect, useState } from 'react';
+import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
+import React, { useState } from 'react';
+
+export const windowExists = () => typeof window !== 'undefined';
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -43,45 +45,21 @@ function Root({children}) {
     }
   })
 
-  // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
-  if (trackerEndPoint) {
-    // Execute only if we are not in SSR
-    if (windowExists()) {
-      const trackerOptions = {
-        endpoint: trackerEndPoint as string,
-        console: trackerConsoleEnabled ? console : undefined
-      }
-
-      if (trackerApplicationId) {
-        getOrMakeTracker({
-          applicationId: trackerApplicationId as string,
-          ...trackerOptions,
-          active: cookiebotStatisticsConsent,
-        });
-      }
-    }
-  }
+  // Create React Tracker instance
+  const tracker = new ReactTracker({
+    endpoint: trackerEndPoint as string,
+    console: trackerConsoleEnabled && windowExists() ? console : undefined,
+    applicationId: trackerApplicationId as string,
+    active: cookiebotStatisticsConsent,
+  })
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-  useEffect(
-    () => {
-      // Skip if we are in SSR
-      if (!windowExists()) {
-        return;
-      }
-      if(cookiebotStatisticsConsent) {
-        getTrackerRepository().activateAll();
-      } else {
-        getTrackerRepository().deactivateAll();
-      }
-    },
-    [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
-  )
+  useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
 
   return (
-    <>
+    <ObjectivProvider tracker={tracker}>
       {children}
-    </>
+    </ObjectivProvider>
   );
 }
 

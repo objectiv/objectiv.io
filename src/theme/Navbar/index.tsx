@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import { TrackedButton, TrackedNav, TrackedOverlayContext } from "@objectiv/tracker-react";
 import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
@@ -25,7 +26,6 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
-import { tagNavigation, tagOverlay } from "@objectiv/tracker-browser";
 
 const DefaultNavItemPosition = 'right';
 
@@ -149,17 +149,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
     toggleSidebar,
   });
   return (
-    <div className="navbar-sidebar"
-      {...tagOverlay({
-        id: 'hamburger-menu',
-        options: {
-          trackVisibility: {
-            mode: 'manual',
-            isVisible: sidebarShown
-          }
-        }
-      })}
-    >
+    <TrackedOverlayContext Component={'div'} id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -173,15 +163,16 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
             onChange={colorModeToggle.toggle}
           />
         )}
-        <button
+        <TrackedButton
           type="button"
+          title={'close'}
           className="clean-btn navbar-sidebar__close"
           onClick={toggleSidebar}>
           <IconClose
             color="var(--ifm-color-emphasis-600)"
             className={styles.navbarSidebarCloseSvg}
           />
-        </button>
+        </TrackedButton>
       </div>
 
       <div
@@ -213,7 +204,7 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
           {secondaryMenu.content}
         </div>
       </div>
-    </div>
+    </TrackedOverlayContext>
   );
 }
 
@@ -229,8 +220,7 @@ function Navbar() {
   const hasSearchNavbarItem = items.some((item) => item.type === 'search');
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
   return (
-    <nav
-      {...tagNavigation({id: 'navbar-top'})}
+    <TrackedNav id={'navbar-top'}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',
@@ -242,7 +232,8 @@ function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__items">
           {(items?.length > 0 || activeDocPlugin) && (
-            <button
+            <TrackedButton
+              title={'hamburger'}
               aria-label="Navigation bar toggle"
               className="navbar__toggle clean-btn"
               type="button"
@@ -250,7 +241,7 @@ function Navbar() {
               onClick={mobileSidebar.toggle}
               onKeyDown={mobileSidebar.toggle}>
               <IconMenu />
-            </button>
+            </TrackedButton>
           )}
           <Logo
             className="navbar__brand"
@@ -288,7 +279,7 @@ function Navbar() {
           toggleSidebar={mobileSidebar.toggle}
         />
       )}
-    </nav>
+    </TrackedNav>
   );
 }
 

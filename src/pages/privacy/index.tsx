@@ -1,29 +1,34 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagContent, tagRootLocation } from '@objectiv/tracker-browser';
+import { TrackedDiv, TrackedMain } from '@objectiv/tracker-react';
 
 export default function PrivacyPolicy() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig: { tagline } } = useDocusaurusContext();
   return (
-    <div {...tagRootLocation({id: 'page-privacy'})}>
+    <div>
       <Layout
         title='Privacy Policy'
-        description={siteConfig.tagline}>
-        <header 
-          className={clsx('hero hero--primary', styles.heroBanner)}
-          {...tagContent({id: 'header'})}
-        >
+        description={tagline}>
+
+        <TrackedMain className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.cookiesContainer)}>
             <h1>Privacy Policy</h1>
             <em>Last Updated 2021-08-18</em>
 
             <h2>Objectiv Privacy Policy</h2>
-            <p>Objectiv B.V. (together with its affiliates, including entities listed in Section 10 of this policy, "Objectiv" or "Us/We/Our") cares about the privacy of individuals who visit our website. This Privacy Policy explains how Objectiv collects, uses, processes, discloses, and safeguards information we obtain from and about our customers, visitors to our websites, business prospects and partners (collectively, "You"), including information we collect when you visit our websites (our "Services"). It also tells you about your rights and choices with respect to your information, and how you can contact us if you have any questions or concerns. Your use of the Services is subject to this Privacy Policy that can be viewed at <Link to="https://objectiv.io/privacy">https://objectiv.io/privacy</Link>.</p>
+            <p>Objectiv B.V. (together with its affiliates, including entities listed in Section 10 of this 
+              policy, "Objectiv" or "Us/We/Our") cares about the privacy of individuals who visit our 
+              website. This Privacy Policy explains how Objectiv collects, uses, processes, discloses, and 
+              safeguards information we obtain from and about our customers, visitors to our websites, 
+              business prospects and partners (collectively, "You"), including information we collect when 
+              you visit our websites (our "Services"). It also tells you about your rights and choices with 
+              respect to your information, and how you can contact us if you have any questions or concerns. 
+              Your use of the Services is subject to this Privacy Policy that can be viewed at&nbsp;
+              <TrackedLink to="https://objectiv.io/privacy">https://objectiv.io/privacy</TrackedLink>.</p>
 
             <h2>1. How Objectiv Collects Information</h2>
             <p>
@@ -56,16 +61,38 @@ export default function PrivacyPolicy() {
             <p>
               We may infer your location from information we collect (for example, your IP address indicates the general geographic region from which you are connecting to the Internet). We may use location information to provide you with features, notifications, marketing, or other content that is influenced by your location (such as showing you the Services in your local language).
             </p>
-            <h4>Cookies and Related Technologies</h4>
-            <p>
-              A cookie is a text-only string of information that a website transfers to the cookie file of the browser on your computer or mobile device. When you use our Services, we and our third party service providers may collect information from you through cookies, web beacons, web server logs, and similar technologies. See our Cookie Policy on <Link to="https://objectiv.io/privacy/cookies">https://objectiv.io/privacy/cookies</Link>.
-            </p>
-            <p>
-              We partner with third parties to manage our advertising on other sites. Our third party partners may use technologies such as cookies to gather information about your activities on this website and other sites in order to provide you advertising based upon your browsing activities and interests. Some of our advertising partners are members of the <Link to="http://www.networkadvertising.org/choices/">Network Advertising Initiative</Link> or the <Link to="http://www.aboutads.info/choices/">Digital Advertising Alliance</Link>. If you do not wish to receive our personalized ads, please visit their opt-out pages to learn about how you may opt out of receiving personalized ads from member companies (or if located in the European Union, <Link to="http://www.youronlinechoices.eu/">click here</Link>). Please note this does not opt you out of being served ads. You will continue to receive generic ads.
-            </p>
-            <p>
-              Our Services may include links, features or components supplied by third parties, such as the Facebook "Like" button or other interactive tools. Such third-parties may have information practices different than those set forth herein and their use of cookies and similar technologies is not covered by this Privacy Policy. We do not have access to or control over such third parties and encourage you to consult the privacy notices provided by those third parties.
-            </p>
+
+            <TrackedDiv id={'cookies-and-related-technologies'}>
+              <h4>Cookies and Related Technologies</h4>
+              <p>
+                A cookie is a text-only string of information that a website transfers to the cookie file of 
+                the browser on your computer or mobile device. When you use our Services, we and our third 
+                party service providers may collect information from you through cookies, web beacons, web 
+                server logs, and similar technologies. See our Cookie Policy on&nbsp;
+                <TrackedLink to="https://objectiv.io/privacy/cookies">
+                  https://objectiv.io/privacy/cookies
+                </TrackedLink>.
+              </p>
+              <p>
+                We partner with third parties to manage our advertising on other sites. Our third party 
+                partners may use technologies such as cookies to gather information about your activities on 
+                this website and other sites in order to provide you advertising based upon your browsing 
+                activities and interests. Some of our advertising partners are members of the&nbsp;
+                <TrackedLink to="https://www.networkadvertising.org/choices/" waitUntilTracked={true}>Network Advertising
+                Initiative</TrackedLink> or the&nbsp;
+                <TrackedLink to="https://www.aboutads.info/choices/" waitUntilTracked={true}>Digital Advertising
+                Alliance</TrackedLink>. If you do not wish to receive our personalized ads, please visit their 
+                opt-out pages to learn about how you may opt out of receiving personalized ads from member 
+                companies (or if located in the European Union,&nbsp;
+                <TrackedLink to="https://www.youronlinechoices.eu/" waitUntilTracked={true}>click here</TrackedLink>).
+                Please note this does not opt you out of being served ads. You will continue to receive generic 
+                ads.
+              </p>
+              <p>
+                Our Services may include links, features or components supplied by third parties, such as the Facebook "Like" button or other interactive tools. Such third-parties may have information practices different than those set forth herein and their use of cookies and similar technologies is not covered by this Privacy Policy. We do not have access to or control over such third parties and encourage you to consult the privacy notices provided by those third parties.
+              </p>
+            </TrackedDiv>
+
             <h3>iii. Information We Obtain From Third Parties</h3>
             <p>
               We may receive information about you from our third party partners, such as business or marketing partners. We may combine this information with the other information we collect about you to provide more useful information to you regarding our services. 
@@ -81,7 +108,7 @@ export default function PrivacyPolicy() {
             <h3>Analytics</h3>
             <p>We will use your information to understand and analyze how you use our Services.</p>
             <h3>Marketing and Advertising</h3>
-            <p>We will use your information for marketing purposes, such as contacting you about Objectiv’s products and services, providing you with promotional materials that may be useful, relevant, valuable or otherwise of interest to you. We use Personal Information that we collect in connection with the Services, such as your location and your activities on the Services, to determine whether Objectiv may wish to contact you in order to offer you Objectiv’s services and to facilitate the delivery of advertisements. We may send you (a) information about topics or content that we think may interest you, or (b) updates about the latest developments or features on the Services. We also may send a newsletter or similar materials to the email address you provide to us in the event that you subscribe to receive such a newsletter</p>
+            <p>We will use your information for marketing purposes, such as contacting you about Objectiv's products and services, providing you with promotional materials that may be useful, relevant, valuable or otherwise of interest to you. We use Personal Information that we collect in connection with the Services, such as your location and your activities on the Services, to determine whether Objectiv may wish to contact you in order to offer you Objectiv’s services and to facilitate the delivery of advertisements. We may send you (a) information about topics or content that we think may interest you, or (b) updates about the latest developments or features on the Services. We also may send a newsletter or similar materials to the email address you provide to us in the event that you subscribe to receive such a newsletter</p>
             <h3>Communications</h3>
             <p>
               Objectiv will use your information to communicate with you, including to respond to your inquiries and to send emails to an email address you provide to us for customer-service or technical-support purposes.
@@ -136,54 +163,85 @@ export default function PrivacyPolicy() {
             </p>
 
             <h2>9. Your Rights and Choices</h2>
-            <h3>Global Rights</h3>
-            <p>
-              Upon request, Objectiv will provide you with information about whether we hold any of your Personal Information. You can update or correct Personal Information (e.g., your email address) by accessing your account. You can also access or rectify your information by reaching out to us at <Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link> . You can delete your information by sending an email with subject ‘Forget me’ to <Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link> with your first name, last name, and the respective email addresses you would like for us to delete. To opt-out of receiving our newsletters or marketing emails, you can follow the unsubscribe instructions included in the emails communications you receive, access the email preferences in your account settings page, or contact us at the above email address. Please note that we have the right to reject deletion requests that are unduly burdensome or repetitive or that cannot be honored in light of legal obligations or ongoing disputes, or where retention is necessary to enforce our agreements or protect our or another party’s rights, property, safety, or security.
-            </p>
+
+            <TrackedDiv id={'global-rights'}>
+              <h3>Global Rights</h3>
+              <p>
+                Upon request, Objectiv will provide you with information about whether we hold any of your 
+                Personal Information. You can update or correct Personal Information (e.g., your email address) 
+                by accessing your account. You can also access or rectify your information by reaching out to 
+                us at <TrackedLink to="mailto:legal@objectiv.io" id={'rectify'}>legal@objectiv.io</TrackedLink>. You can 
+                delete your information by sending an email with subject 'Forget me' to&nbsp;
+                <TrackedLink to="mailto:legal@objectiv.io" id={'forget-me'}>legal@objectiv.io</TrackedLink> with your first 
+                name, last name, and the respective email addresses you would like for us to delete. To opt-out 
+                of receiving our newsletters or marketing emails, you can follow the unsubscribe instructions 
+                included in the emails communications you receive, access the email preferences in your account 
+                settings page, or contact us at the above email address. Please note that we have the right to 
+                reject deletion requests that are unduly burdensome or repetitive or that cannot be honored in 
+                light of legal obligations or ongoing disputes, or where retention is necessary to enforce our 
+                agreements or protect our or another party's rights, property, safety, or security.
+              </p>
+            </TrackedDiv>
+
             <h3>European Rights</h3>
             <p>
               If you are located in the European Economic Area or Switzerland, you may have the right to exercise your right to data portability to easily transfer your Personal Information to another company. In addition, you may also have the right to lodge a complaint with a supervisory authority, including in your country of residence, place of work or where an incident took place.
             </p>
 
-            <h2>10. How to Contact Us</h2>
-            <p>
-              If you have any questions or concerns about this Privacy Policy or its implementation, you may contact Objectiv via email (<Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link>) or at the following address:
-            </p>
-            <p>
-              Objectiv B.V.<br />
-              Hamburgerstraat 28a<br />
-              3512NS Utrecht<br />
-              The Netherlands<br />
-              <Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link> 
-            </p>
-            <p>
-              Objectiv’s Data Protection Officer may be contacted via email (<a href="mailto:legal@objectiv.io">legal@objectiv.io</a>) or at the following address:
-            </p>
-            <p>
-              Objectiv B.V.<br />
-              ATTN: Tom Jansen<br />
-              Hamburgerstraat 28a<br />
-              3512NS Utrecht<br />
-              The Netherlands<br />
-              <Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link> 
-            </p>
-            <p>
-              If you are located in the EEA or Switzerland, Objectiv, B.V. is the entity responsible for the processing of your Personal Information. If you have any questions about our privacy practices, or would like to exercise your rights in relation to your Personal Information, please contact:
-            </p>
-            <p>
-              Objectiv B.V.<br />
-              Hamburgerstraat 28a<br />
-              3512NS Utrecht<br />
-              The Netherlands<br />
-              <Link to="mailto:legal@objectiv.io">legal@objectiv.io</Link> 
-            </p>
+            <TrackedDiv id={'how-to-contact-us'}>
+              <h2>10. How to Contact Us</h2>
+              <TrackedDiv id={'questions'}>
+                <p>
+                  If you have any questions or concerns about this Privacy Policy or its implementation, you may 
+                  contact Objectiv via email (<TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io
+                  </TrackedLink>) or at the following address:
+                </p>
+              </TrackedDiv>
+              <TrackedDiv id={'questions-address'}>
+                <p>
+                  Objectiv B.V.<br />
+                  Hamburgerstraat 28a<br />
+                  3512NS Utrecht<br />
+                  The Netherlands<br />
+                  <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
+                </p>
+              </TrackedDiv>
+              <TrackedDiv id={'dpo'}>
+                <p>
+                  Objectiv's Data Protection Officer may be contacted via email (<TrackedLink 
+                    to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink>) or at the following address:
+                </p>
+              </TrackedDiv>
+              <TrackedDiv id={'dpo-address'}>
+                <p>
+                  Objectiv B.V.<br />
+                  ATTN: Tom Jansen<br />
+                  Hamburgerstraat 28a<br />
+                  3512NS Utrecht<br />
+                  The Netherlands<br />
+                  <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
+                </p>
+              </TrackedDiv>
+              <p>
+                If you are located in the EEA or Switzerland, Objectiv, B.V. is the entity responsible for the processing of your Personal Information. If you have any questions about our privacy practices, or would like to exercise your rights in relation to your Personal Information, please contact:
+              </p>
+              <TrackedDiv id={'eea-switzerland'}>
+                <p>
+                  Objectiv B.V.<br />
+                  Hamburgerstraat 28a<br />
+                  3512NS Utrecht<br />
+                  The Netherlands<br />
+                  <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
+                </p>
+              </TrackedDiv>
+            </TrackedDiv>
 
             <h2>Updates to this Privacy Policy</h2>
             <p>
               We will post any adjustments to this Privacy Policy on this page, and the revised version will be effective when it is posted. If we materially change the ways in which we use or share Personal Information previously collected from you through our Service, we will notify you through our Service, by email, or other communication.
             </p>
           </div>
-        </header>
+        </TrackedMain>
       </Layout>
     </div>
   );

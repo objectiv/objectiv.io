@@ -11,7 +11,7 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - open-source product analytics built for data science',
+  title: "Objectiv - OSS product analytics, ready for data science",
   titleDelimiter: '|',
   tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
@@ -85,10 +85,6 @@ const config = {
       },
       items: [
         {
-          to: 'how-it-works',
-          label: 'How it works',
-        },
-        {
           to: 'about',
           label: 'About us',
         },
@@ -99,31 +95,36 @@ const config = {
         {
           label: 'Docs',
           to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
+          waitUntilTracked: true
         },
         {
           href: slackJoinLink,
           label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
+          waitUntilTracked: true
         },
         {
           href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
+          waitUntilTracked: true
         },
         {
           href: 'mailto:hi@objectiv.io',
           label: 'Contact Us',
           position: 'right',
           className: 'navItem navEmail',
+          waitUntilTracked: true
         },
       ],
     },
