@@ -4,11 +4,11 @@ import {
   getTrackerRepository,
   getLocationHref,
   windowExists,
-  makeRootLocationContext, Tracker, TrackerPlugins, makeDefaultPluginsList
+  TrackerPlugins,
+  makeDefaultPluginsList
 } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
-import { RootLocationContextFromURLPlugin } from "./RootLocationContextFromURLPlugin";
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -64,13 +64,7 @@ function Root({children}) {
       if (trackerDocsApplicationId) {
         getOrMakeTracker({
           ...trackerOptions,
-          active: cookiebotStatisticsConsent,
-          plugins: new TrackerPlugins({
-            plugins: [
-              ...makeDefaultPluginsList(trackerOptions),
-              new RootLocationContextFromURLPlugin(trackerOptions)
-            ]}
-          )
+          active: cookiebotStatisticsConsent
         });
       }
     }
