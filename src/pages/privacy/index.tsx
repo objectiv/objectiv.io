@@ -200,8 +200,8 @@ export default function PrivacyPolicy() {
               <TrackedDiv id={'questions-address'}>
                 <p>
                   Objectiv B.V.<br />
-                  Hamburgerstraat 28a<br />
-                  3512NS Utrecht<br />
+                  Stationsplein 32<br />
+                  3511 ED Utrecht<br />
                   The Netherlands<br />
                   <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
                 </p>
@@ -216,8 +216,8 @@ export default function PrivacyPolicy() {
                 <p>
                   Objectiv B.V.<br />
                   ATTN: Tom Jansen<br />
-                  Hamburgerstraat 28a<br />
-                  3512NS Utrecht<br />
+                  Stationsplein 32<br />
+                  3511 ED Utrecht<br />
                   The Netherlands<br />
                   <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
                 </p>
@@ -228,8 +228,8 @@ export default function PrivacyPolicy() {
               <TrackedDiv id={'eea-switzerland'}>
                 <p>
                   Objectiv B.V.<br />
-                  Hamburgerstraat 28a<br />
-                  3512NS Utrecht<br />
+                  Stationsplein 32<br />
+                  3511 ED Utrecht<br />
                   The Netherlands<br />
                   <TrackedLink to="mailto:legal@objectiv.io">legal@objectiv.io</TrackedLink> 
                 </p>
