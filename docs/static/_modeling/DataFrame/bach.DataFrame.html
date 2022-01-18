@@ -4,7 +4,7 @@
 <h1>bach.DataFrame<a class="headerlink" href="#bach-dataframe" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.DataFrame">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepoints</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/mainach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>A mutable DataFrame representing tabular data in a database and enabling operations on that data.</p>
 <p>A Bach DataFrame object can be used to process large amounts of data on a database, while using an api
 that is based on the pandas api. This allows the database to group and aggregate data, sample data and
@@ -28,16 +28,17 @@ operations like equals (<cite>==</cite>), less-than (<cite>&lt;</cite>), not(<ci
 returned for which the condition is true.</p>
 <p><strong>Moving Series around</strong></p>
 <p>Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
-DataFrame is possible if they share the same base node. This means that they originate from the same data
-source. In most cases this means that the series that is to be set to the DataFrame is a result of
-operations on the DataFrame that is started with.</p>
+DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
+same base node if they originate from the same data source. In most cases this means that the series
+that is to be set to the DataFrame is a result of operations on the DataFrame that is started with.
+If a Series or DataFrame do not share the same base node, the new column is or columns are set using a
+merge on the index. This works for one level indexes where the dtype of the series is the same as the
+DataFrame&#8217;s index dtype.</p>
 <p><strong>Examples</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">column_name</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
 </pre></div>
 </div>
-<p>If a Series of DataFrames do not share the same base node, it is possible to combine the data using
-<a class="reference internal" href="bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a>.</p>
 <p><strong>Database access</strong></p>
 <p>The data of this DataFrame is always held in the database and operations on the data are performed
 by the database, not in local memory. Data will only be transferred to local memory when an
@@ -132,7 +133,7 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.rename.html#bach.DataFrame.rename" title="bach.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>([mapper,&#160;index,&#160;columns,&#160;axis,&#160;...])</p></td>
 <td><p>Rename columns.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code></a>([drop,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code></a>([level,&#160;drop,&#160;inplace])</p></td>
 <td><p>Drops the current index.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.rolling.html#bach.DataFrame.rolling" title="bach.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(window[,&#160;min_periods,&#160;center,&#160;closed])</p></td>
@@ -144,28 +145,31 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.sem.html#bach.DataFrame.sem" title="bach.DataFrame.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sem</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;numeric_only])</p></td>
 <td><p>Returns the unbiased standard error of the mean of each column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(keys[,&#160;append,&#160;drop,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(keys[,&#160;drop,&#160;append,&#160;inplace])</p></td>
 <td><p>Set this dataframe's index to the the index given in keys</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(by[,&#160;ascending])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.set_savepoint.html#bach.DataFrame.set_savepoint" title="bach.DataFrame.set_savepoint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_savepoint</span></code></a>(name[,&#160;materialization])</p></td>
+<td><p>Set the current state as a savepoint in <cite>self.savepoints</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(by[,&#160;ascending])</p></td>
 <td><p>Create a new DataFrame with the specified sorting order.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.std.html#bach.DataFrame.std" title="bach.DataFrame.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;numeric_only])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.std.html#bach.DataFrame.std" title="bach.DataFrame.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;numeric_only])</p></td>
 <td><p>Returns the sample standard deviation of each column.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.sum.html#bach.DataFrame.sum" title="bach.DataFrame.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>([axis,&#160;skipna,&#160;level,&#160;numeric_only,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.sum.html#bach.DataFrame.sum" title="bach.DataFrame.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>([axis,&#160;skipna,&#160;level,&#160;numeric_only,&#160;...])</p></td>
 <td><p>Returns the sum of all values in each column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>([limit])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>([limit])</p></td>
 <td><p>Run a SQL query representing the current state of this DataFrame against the database and return the resulting data as a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.var.html#bach.DataFrame.var" title="bach.DataFrame.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;numeric_only])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.var.html#bach.DataFrame.var" title="bach.DataFrame.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;numeric_only])</p></td>
 <td><p>Returns the unbiased variance of each column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.view_sql.html#bach.DataFrame.view_sql" title="bach.DataFrame.view_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view_sql</span></code></a>([limit])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.view_sql.html#bach.DataFrame.view_sql" title="bach.DataFrame.view_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view_sql</span></code></a>([limit])</p></td>
 <td><p>Translate the current state of this DataFrame into a SQL query.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.window.html#bach.DataFrame.window" title="bach.DataFrame.window"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window</span></code></a>(**frame_args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.window.html#bach.DataFrame.window" title="bach.DataFrame.window"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window</span></code></a>(**frame_args)</p></td>
 <td><p>Create a window on the current dataframe grouping and its sorting.</p></td>
 </tr>
 </tbody>
@@ -207,7 +211,10 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.order_by.html#bach.DataFrame.order_by" title="bach.DataFrame.order_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order_by</span></code></a></p></td>
 <td><p>Get the current sort order, if any.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.savepoints.html#bach.DataFrame.savepoints" title="bach.DataFrame.savepoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savepoints</span></code></a></p></td>
+<td><p/></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
 <td><p>Return a Numpy representation of the DataFrame akin <code class="xref py py-attr docutils literal notranslate"><span class="pre">pandas.Dataframe.values</span></code></p></td>
 </tr>
 </tbody>

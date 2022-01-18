@@ -229,6 +229,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "set_savepoint",
+                                        "id": "modeling/DataFrame/bach.DataFrame.set_savepoint"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "sort_values",
                                         "id": "modeling/DataFrame/bach.DataFrame.sort_values"
                                     },
@@ -311,6 +316,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "order_by",
                                         "id": "modeling/DataFrame/bach.DataFrame.order_by"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "savepoints",
+                                        "id": "modeling/DataFrame/bach.DataFrame.savepoints"
                                     },
                                     {
                                         "type": "doc",
