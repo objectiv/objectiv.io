@@ -4,19 +4,34 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 
 ```tsx
 TrackedLinkContext: (props: { 
-  children: ReactNode, 
-  id: string
+  children: ReactNode,
+  Component: ComponentType | keyof ReactHTML,
+  id: string,
+  forwardId?: boolean
+  href: string,
+  forwardHref?: boolean
+  title?: string;
+  forwardTitle?: boolean;
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |               | type                                 | default value |
+|:--------:|:--------------|:-------------------------------------|:--------------|
+| required | **children**  | ReactNode                            |               |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
+| required | **id**        | string                               |               |
+| optional | forwardId     | boolean                              | `false`       |
+| required | **href**      | string                               |               |
+| optional | forwardHref   | boolean                              | `false`       |
+| optional | title         | string                               |               |
+| optional | forwardTitle  | boolean                              | `false`       |
 
 ## Returns
 ReactElement.
+
+## Automatic Events
+- [PressEvent](/taxonomy/reference/events/PressEvent.md) when `onClick` triggers.
 
 ## Usage example
 
@@ -25,20 +40,25 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
 ```
 
 ```typescript jsx
-<TrackedLinkContext id={'content'}>
-  <div>
-    ...
-  </div>
-  <span>
-    ...
-  </span>
+<TrackedLinkContext Component={'a'} href={'/privacy'}>
+  Privacy
+</TrackedLinkContext>
+
+// Whenever inferring 'id' fails, due to children not having any text, a `title` can be specified
+<TrackedLinkContext Component={'a'} href={'/privacy'} title={'privacy'}>
+  <img src="/lock.jpg"/>
+</TrackedLinkContext>
+
+// Or just a manual `id`, either one will do the job
+<TrackedLinkContext Component={'a'} href={'/privacy'} id={'privacy'}>
+  <img src="/lock.jpg"/>
 </TrackedLinkContext>
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedLinkContext` internally uses [LocationContextWrapper](/tracking/react/api-reference/locationWrappers/LocationContextWrapper.md).
+`TrackedLinkContext` internally uses [LinkContextWrapper](/tracking/react/api-reference/locationWrappers/LinkContextWrapper.md).
 :::
 
 <br />

@@ -4,19 +4,26 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 
 ```tsx
 TrackedMediaPlayerContext: (props: { 
-  children: ReactNode, 
-  id: string
+  children: ReactNode,
+  Component: ComponentType | keyof ReactHTML,
+  id: string,
+  forwardId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |               | type                                 | default value |
+|:--------:|:--------------|:-------------------------------------|:--------------|
+| required | **children**  | ReactNode                            |               |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
+| required | **id**        | string                               |               |
+| optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
 ReactElement.
+
+## Automatic Events
+None.
 
 ## Usage example
 
@@ -25,20 +32,13 @@ import { TrackedMediaPlayerContext } from '@objectiv/tracker-react';
 ```
 
 ```typescript jsx
-<TrackedMediaPlayerContext id={'content'}>
-  <div>
-    ...
-  </div>
-  <span>
-    ...
-  </span>
-</TrackedMediaPlayerContext>
+<TrackedMediaPlayerContext Component={'video'} id={'content'} />
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedMediaPlayerContext` internally uses [LocationContextWrapper](/tracking/react/api-reference/locationWrappers/LocationContextWrapper.md).
+`TrackedMediaPlayerContext` internally uses [MediaPlayerContextWrapper](/tracking/react/api-reference/locationWrappers/MediaPlayerContextWrapper.md).
 :::
 
 <br />

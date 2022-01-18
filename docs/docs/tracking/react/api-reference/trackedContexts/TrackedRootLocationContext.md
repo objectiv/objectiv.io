@@ -4,19 +4,26 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 
 ```tsx
 TrackedRootLocationContext: (props: { 
-  children: ReactNode, 
-  id: string
+  children: ReactNode,
+  Component: ComponentType | keyof ReactHTML,
+  id: string,
+  forwardId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |               | type                                 | default value |
+|:--------:|:--------------|:-------------------------------------|:--------------|
+| required | **children**  | ReactNode                            |               |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
+| required | **id**        | string                               |               |
+| optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
 ReactElement.
+
+## Automatic Events
+None.
 
 ## Usage example
 
@@ -25,20 +32,17 @@ import { TrackedRootLocationContext } from '@objectiv/tracker-react';
 ```
 
 ```typescript jsx
-<TrackedRootLocationContext id={'content'}>
-  <div>
+<TrackedRootLocationContext id={'page'}>
+  <Layout>
     ...
-  </div>
-  <span>
-    ...
-  </span>
+  </Layout>
 </TrackedRootLocationContext>
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedRootLocationContext` internally uses [LocationContextWrapper](/tracking/react/api-reference/locationWrappers/LocationContextWrapper.md).
+`TrackedRootLocationContext` internally uses [RootLocationContextWrapper](/tracking/react/api-reference/locationWrappers/RootLocationContextWrapper.md).
 :::
 
 <br />

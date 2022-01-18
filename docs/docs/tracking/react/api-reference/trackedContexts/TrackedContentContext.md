@@ -23,7 +23,7 @@ TrackedContentContext: (props: {
 ## Returns
 ReactElement.
 
-## Events
+## Automatic Events
 None.
 
 ## Usage example

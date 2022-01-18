@@ -9,7 +9,7 @@ TrackedExpandableContext: (props: {
   Component: ComponentType | keyof ReactHTML,
   id: string,
   forwardId?: boolean,
-  isVisible?: boolean;
+  isVisible?: boolean
 }) => ReactElement
 ```
 
@@ -25,8 +25,9 @@ TrackedExpandableContext: (props: {
 ## Returns
 ReactElement.
 
-## Events
-[HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) and [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) based on the `isVisible` prop.
+## Automatic Events
+- [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `isVisible` switches from `true` to `false`. 
+- [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `isVisible` switches from `false` to `true`.
 
 :::caution
 The `isVisible` state of a TrackedExpandableContext at mount is ignored. Only actual changes and tracked.

@@ -4,19 +4,26 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 
 ```tsx
 TrackedInputContext: (props: { 
-  children: ReactNode, 
-  id: string
+  children: ReactNode,
+  Component: ComponentType | keyof ReactHTML,
+  id: string,
+  forwardId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |               | type                                 | default value |
+|:--------:|:--------------|:-------------------------------------|:--------------|
+| required | **children**  | ReactNode                            |               |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
+| required | **id**        | string                               |               |
+| optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
 ReactElement.
+
+## Automatic Events
+- [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) when `onBlur` triggers and the  value changed.
 
 ## Usage example
 
@@ -25,20 +32,13 @@ import { TrackedInputContext } from '@objectiv/tracker-react';
 ```
 
 ```typescript jsx
-<TrackedInputContext id={'content'}>
-  <div>
-    ...
-  </div>
-  <span>
-    ...
-  </span>
-</TrackedInputContext>
+<TrackedInputContext Component={'input'} type={'email'} id={'email'} />
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedInputContext` internally uses [LocationContextWrapper](/tracking/react/api-reference/locationWrappers/LocationContextWrapper.md).
+`TrackedInputContext` internally uses [InputContextWrapper](/tracking/react/api-reference/locationWrappers/InputContextWrapper.md).
 :::
 
 <br />
