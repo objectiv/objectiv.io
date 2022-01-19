@@ -25,11 +25,10 @@ export default function Home() {
               src={useBaseUrl("img/logo-objectiv-home-header.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              The day will come when you'll want <br />
-              more from your product analytics data <br />
-              than your BI tools can deliver.
+            open-source product analytics <br />
+            that&#39;s ready for data science
             </h1>
-            <p className={clsx(styles.heroSubTitle)}><strong>With Objectiv, you'll be ready.</strong></p> 
+            <p className={clsx(styles.heroSubTitle)}>Objectiv is a complete, self-hosted product analytics stack designed for data science applications without gruntwork.</p>
           </div>
         </header>
 
@@ -39,9 +38,9 @@ export default function Home() {
             <TrackedDiv 
               id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
-              <h2>Open-source product analytics that's ready for data science</h2>
-              <p>Objectiv is a complete, self-hosted product analytics stack designed for <br />
-              effective data modeling and exploration with minimal gruntwork.</p>
+              <h2>Get ready for data science without the gruntwork</h2>
+              <p>Objectiv includes everything you need to answer your product analytics questions with speed and precision.< br />
+                Straight from your notebook on the full, raw dataset. No cleaning, transformations or tracking plans required.</p>
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
@@ -54,8 +53,6 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
-              <p>It includes everything you need to answer common product analytics questions now, while <br />
-                providing a solid foundation for in-depth analysis &amp; machine learning down the road.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
                 waitUntilTracked={true}
@@ -75,7 +72,7 @@ export default function Home() {
 
           <div className={clsx(styles.pageSection)}>
             <div className={clsx("container", styles.contentContainer, styles.betterData)}>
-              <IconHeader title="Better data at the first step of the pipeline" icon="icon-better-data" />
+              <IconHeader title="Model-ready data at the first step of the pipeline" icon="icon-better-data" />
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
                   <p>Events tracked with Objectiv are unusually rich, highly descriptive, and structured with 
@@ -150,7 +147,7 @@ export default function Home() {
             id={'reusable-models'}
             className={clsx(styles.pageSection)}>
             <div className={clsx("container", styles.contentContainer, styles.reusableModels)}>
-              <IconHeader title="Chain reusable models together" icon="icon-reusable-models-chained" />
+              <IconHeader title="Reuse any model and chain them together" icon="icon-reusable-models-chained" />
               <div className={clsx(styles.valueRowRight)}>
                 <div>
                   <img
@@ -158,12 +155,9 @@ export default function Home() {
                     alt="Example" />
                 </div>
                 <div>
-                  <p>You can reuse any model that was built with Objectiv Bach for your own project by 
-                    changing a single line of code. </p>
-                  <p>This is enabled by the highly consistent nature of the datasets Objectiv's tracker 
-                    collects.</p>
-                  <p>Objectiv includes pre-built models for a wide range of product analytics use cases. You 
-                    can chain them together to answer common product analytics questions quickly.</p>
+                  <p>As a result of high data consistency, any model created with Objectiv Bach runs on any dataset collected with the Objectiv tracker. </p>
+                  <p>That advanced model someone from the other team built? You can reuse that for your own project by changing a single line of code.</p>
+                  <p>Objectiv also includes pre-built models for a wide range of product analytics use cases. You can chain them together to answer common product analytics questions quickly.</p>
                   <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
                   <img
                     className={clsx(styles.valueReusableModelsDiagram)}

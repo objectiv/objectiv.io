@@ -159,7 +159,7 @@ footer h2 {
   HOMEPAGE 
 ***************/
 .heroBanner {
-  padding: 110px 0 40px 0;
+  padding: 80px 0 40px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -167,9 +167,11 @@ footer h2 {
 }
 
 .heroTitle {
-  font-family: 'Roboto';
+  font-family: 'Bungee', serif;
   font-size: 32px;
-  margin: 0 0 48px 0;
+  line-height: 150%;
+  letter-spacing: 0.2em;
+  margin: 30px 0 4px 0;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
@@ -195,19 +197,38 @@ footer h2 {
 }
 
 .heroImage {
-  padding-bottom: 38px;
+  width: 48px;
+  height: 48px;
+  /*padding-bottom: 38px;*/
 }
 
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-bottom: 60px;
-  padding: 0 10%;
+  margin-top:30px;
+  margin-bottom: 40px;
+  /*padding: 0 10%;*/
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
   }
+}
+
+.productIntroVideo {
+  position: relative; 
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 0 auto 50px auto;
+
+}
+.productIntroVideo iframe {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  margin: 0;
 }
 
 .theProduct {
@@ -223,7 +244,7 @@ footer h2 {
 }
 
 .theProduct .ctaButton {
-  margin: 50px 0 120px 0;
+  margin: 0 0 100px 0;
 }
 
 .theProduct .whyObjectiv {
