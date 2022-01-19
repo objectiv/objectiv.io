@@ -28,7 +28,7 @@ export default function Home() {
             open-source product analytics <br />
             ready for data science
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Objectiv is a complete, self-hosted product analytics stack designed for data science applications without gruntwork.</p>
+            <p className={clsx(styles.heroSubTitle)}>Objectiv is a complete, self-hosted product analytics stack designed for data science without gruntwork.</p>
             <div className={clsx(styles.productIntroVideo)}>
                 <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
                 frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
