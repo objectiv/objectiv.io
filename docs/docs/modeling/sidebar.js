@@ -109,6 +109,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "create_variable",
+                                        "id": "modeling/DataFrame/bach.DataFrame.create_variable"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "cube",
                                         "id": "modeling/DataFrame/bach.DataFrame.cube"
                                     },
@@ -136,6 +141,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "from_table",
                                         "id": "modeling/DataFrame/bach.DataFrame.from_table"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "get_all_variable_usage",
+                                        "id": "modeling/DataFrame/bach.DataFrame.get_all_variable_usage"
                                     },
                                     {
                                         "type": "doc",
@@ -229,6 +239,16 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "set_savepoint",
+                                        "id": "modeling/DataFrame/bach.DataFrame.set_savepoint"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "set_variable",
+                                        "id": "modeling/DataFrame/bach.DataFrame.set_variable"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "sort_values",
                                         "id": "modeling/DataFrame/bach.DataFrame.sort_values"
                                     },
@@ -314,8 +334,18 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "savepoints",
+                                        "id": "modeling/DataFrame/bach.DataFrame.savepoints"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "values",
                                         "id": "modeling/DataFrame/bach.DataFrame.values"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "variables",
+                                        "id": "modeling/DataFrame/bach.DataFrame.variables"
                                     }
                                 ]
                             }
@@ -1276,6 +1306,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "filter",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.filter"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "to_metabase",
                                         "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.to_metabase"
                                     },
@@ -1291,13 +1326,8 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "f",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.f"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "filter",
-                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.filter"
+                                        "label": "map",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.map"
                                     }
                                 ]
                             },

@@ -1,0 +1,48 @@
+<div>
+                
+  <section id="bach-dataframe-get-all-variable-usage">
+<h1>bach.DataFrame.get_all_variable_usage<a class="headerlink" href="#bach-dataframe-get-all-variable-usage" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.DataFrame.get_all_variable_usage">
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">get_all_variable_usage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.get_all_variable_usage" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Get all variables that influence the values of this DataFrame.
+This includes both variables that are used in the current <cite>self.series</cite>, but also variables that
+were used in earlier steps, i.e. in the SqlModels of <cite>self.base_node</cite>.</p>
+<p>The output of this method can be useful for diagnosing issues with variables. If a variable is used
+multiple times, then it will appear here multiple times. If a variable has conflicting definitions
+then the conflicting dtypes and/or values are all returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p/><p>List of DefinedVariable tuples. The fields in each tuple:
+- name: name of the variable
+- dtype: dtype
+- value: value that is currently set in <cite>self.variables</cite>, or None if there is no value
+- ref_path: If the variable is used in an already materialized part of the DataFrame, i.e.</p>
+<blockquote>
+<div><p>the usage is in self.base_node, then this is the reference path from self.base_node to the
+SqlModel in which the variable usage occurs. If the variable is used in self.series instead,
+then this is None</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>old_value: If the variable is used in an already materialized part of the DataFrame, then it</dt><dd><p>also has a value already. That is this value. Will be None if this variable usage is not in
+self.base_node.</p>
+</dd>
+</dl>
+</li>
+</ul>
+
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>List[bach.dataframe.DefinedVariable]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

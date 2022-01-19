@@ -28,9 +28,12 @@ which the condition is true.</p>
 <section id="moving-series-around">
 <h3>Moving Series around<a class="headerlink" href="#moving-series-around" title="Permalink to this headline">&#182;</a></h3>
 <p>Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
-DataFrame is possible if they share the same base node. This means that they originate from the same data
-source. In most cases this means that the series that is to be set to the DataFrame is a result of
-operations on the DataFrame that is started with.</p>
+DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
+same base node if they originate from the same data source. In most cases this means that the series
+that is to be set to the DataFrame is a result of operations on the DataFrame that is started with.
+If a Series or DataFrame do not share the same base node, the new column is or columns are set using a
+merge on the index. This works for one level indexes where the dtype of the series is the same as the
+DataFrame&#8217;s index dtype.</p>
 </section>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h3>
@@ -38,8 +41,6 @@ operations on the DataFrame that is started with.</p>
 <span class="n">df</span><span class="p">[</span><span class="s1">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
 </pre></div>
 </div>
-<p>If a Series of DataFrames do not share the same base node, it is possible to combine the data using
-<a class="reference internal" href="DataFrame/bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.merge()</span></code></a>.</p>
 </section>
 <section id="database-access">
 <h3>Database access<a class="headerlink" href="#database-access" title="Permalink to this headline">&#182;</a></h3>
@@ -216,10 +217,10 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.drop.html#bach.DataFrame.drop" title="bach.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.drop</span></code></a>([labels,&#160;index,&#160;columns,&#160;...])</p></td>
 <td><p>Drop columns from the DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([drop,&#160;inplace])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([level,&#160;drop,&#160;inplace])</p></td>
 <td><p>Drops the current index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;append,&#160;drop,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;drop,&#160;append,&#160;...])</p></td>
 <td><p>Set this dataframe's index to the the index given in keys</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a>(right[,&#160;how,&#160;on,&#160;left_on,&#160;...])</p></td>
