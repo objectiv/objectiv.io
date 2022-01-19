@@ -6,6 +6,29 @@ sidebar_position: 2
 
 ReactTracker extends [Core Tracker](/tracking/api-reference/core/Tracker.md) with a simplified constructor and some preconfigured [Plugins](/tracking/api-reference/core/TrackerPlugins.md).
 
+### Usage
+```ts
+import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
+```
+
+```tsx
+const App = ({children}) => {
+
+  const tracker = new ReactTracker({
+    endpoint: '/collector',
+    applicationId: 'app-id'
+  })
+
+  return (
+    <ObjectivProvider tracker={tracker}>
+      {children}
+    </ObjectivProvider>
+  );
+}
+
+
+```
+
 ### Configuration
 ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
