@@ -26,9 +26,17 @@ export default function Home() {
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
             open-source product analytics <br />
-            that&#39;s ready for data science
+            ready for data science
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Objectiv is a complete, self-hosted product analytics stack designed for data science applications without gruntwork.</p>
+            <div className={clsx(styles.productIntroVideo)}>
+                <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
+                frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+          </div>
+          <img
+                className={clsx(styles.objectivIn2Minutes)}
+                src={useBaseUrl("img/header-2-minutes.svg")}
+                alt="Objectiv in 2 minutes" />
           </div>
         </header>
 
@@ -64,9 +72,9 @@ export default function Home() {
               </TrackedLink>
 
               <img 
-                src={useBaseUrl("img/why-objectiv-outro.svg")} 
-                className={clsx(styles.whyObjectiv)}
-                alt="Why Objectiv?" />
+                src={useBaseUrl("img/learn-more.svg")} 
+                className={clsx(styles.learnMore)}
+                alt="Learn More" />
             </TrackedDiv>
           </div>
 
@@ -192,7 +200,7 @@ export default function Home() {
               <div className={clsx(styles.outro)}>
                 <p>For an overview of all available pre-built models, check out the Docs.</p>
                 <TrackedLink
-                  to={url + "/docs/open-model-hub/"}
+                  to={url + "/docs/modeling/Objectiv/bach_open_taxonomy.ModelHub"}
                   autoAddBaseUrl={true}
                   waitUntilTracked={true}
                   target="_self"
