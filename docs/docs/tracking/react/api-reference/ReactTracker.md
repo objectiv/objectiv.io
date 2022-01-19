@@ -6,7 +6,9 @@ sidebar_position: 2
 
 ReactTracker extends [Core Tracker](/tracking/api-reference/core/Tracker.md) with a simplified constructor and some preconfigured [Plugins](/tracking/api-reference/core/TrackerPlugins.md).
 
-### Usage
+## Usage
+In this example we create a new ReactTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md).
+
 ```ts
 import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 ```
@@ -25,11 +27,9 @@ const App = ({children}) => {
     </ObjectivProvider>
   );
 }
-
-
 ```
 
-### Configuration
+## Configuration
 ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
 |          |                                 | type                                                                 | default value                                                                                                                  |
@@ -51,11 +51,13 @@ ReactTracker configuration requires at least an `applicationId` and either an `e
 When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 
+## Defaults 
+
 ### Transport
 [Fetch](/tracking/api-reference/transports/FetchAPITransport.md) + [XMLHttpRequest](/tracking/api-reference/transports/XMLHttpRequestTransport.md) Transport Switch.
 
 ### Queueing
-TrackerQueue is configured to send events in batches of 10 every 100ms.  
+TrackerQueue is configured to eagerly send max 10 events per batch, each batch is processed every 1000ms.  
 
 ### Persistence
 TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorage.md).
@@ -63,7 +65,7 @@ TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.
 
-### Default Plugins
+### Plugins
 Browser Tracker comes preconfigured with the following plugins:
 - ApplicationContextPlugin (inherited from Core Tracker)
 - PathContextFromURLPlugin
@@ -101,7 +103,5 @@ is equivalent to:
 <br />
 
 :::info see also
-- [FetchAPITransport](/tracking/api-reference/transports/FetchAPITransport.md)
-- [XMLHttpRequestTransport](/tracking/api-reference/transports/XMLHttpRequestTransport.md)
-- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorage.md)
+#TODO
 :::
