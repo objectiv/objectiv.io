@@ -72,36 +72,35 @@ Browser Tracker comes preconfigured with the following plugins:
 - RootLocationContextFromURL
 
 ## Under the hood
-To get an idea of how much React Tracker automates under the hood, this statement:
+The Tracker architecture is highly composable.  
+To get an idea of how much React Tracker automates under the hood, compared to the Core Tracker, this statement:
 
 ```typescript
- const tracker = new ReactTracker({ applicationId: 'app-id', endpoint: '/endpoint', console: console });
+const tracker = new ReactTracker({ 
+  applicationId: 'app-id', 
+  endpoint: '/endpoint', 
+  console: console
+});
 ``` 
 
 is equivalent to:
 
 ```typescript
  
- const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
- const console = trackerConfig.console;
- const fetch = new FetchAPITransport({ endpoint: '/endpoint', console });
- const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: '/endpoint', console });
- const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
- const transport = new RetryTransport({ transport: transportSwitch, console });
- const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })
- const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
- const applicationPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
- const pathContextPlugin = new PathContextFromURLPlugin({ console });
- const rootLlocationContextPlugin = new RootLocationContextFromURLPlugin({ console });
- const plugins = new TrackerPlugins({ 
-   plugins: [ applicationPlugin, pathContextPlugin, rootLlocationContextPlugin], 
-   console
- });
- const tracker = new Tracker({ transport, queue, plugins, console });
+const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
+const console = trackerConfig.console;
+const fetch = new FetchAPITransport({ endpoint: '/endpoint', console });
+const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: '/endpoint', console });
+const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
+const transport = new RetryTransport({ transport: transportSwitch, console });
+const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })
+const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
+const applicationPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
+const pathContextPlugin = new PathContextFromURLPlugin({ console });
+const rootLlocationContextPlugin = new RootLocationContextFromURLPlugin({ console });
+const plugins = new TrackerPlugins({
+  plugins: [ applicationPlugin, pathContextPlugin, rootLlocationContextPlugin], 
+  console
+});
+const tracker = new Tracker({ transport, queue, plugins, console });
 ```
-
-<br />
-
-:::info see also
-#TODO
-:::
