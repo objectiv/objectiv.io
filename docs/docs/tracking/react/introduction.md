@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-slug: /tracking
 title: Introduction
 ---
 # Tracking with Objectiv

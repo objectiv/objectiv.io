@@ -6,22 +6,22 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 TrackedPressableContext: (props: { 
   children: ReactNode,
   Component: ComponentType | keyof ReactHTML,
-  id: string,
-  forwardId?: boolean
+  id?: string,
+  forwardId?: boolean,
   title?: string;
   forwardTitle?: boolean;
 }) => ReactElement
 ```
 
 ## Parameters
-|          |               | type                                 | default value |
-|:--------:|:--------------|:-------------------------------------|:--------------|
-| required | **children**  | ReactNode                            |               |
-| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
-| required | **id**        | string                               |               |
-| optional | forwardId     | boolean                              | `false`       |
-| optional | title         | string                               |               |
-| optional | forwardTitle  | boolean                              | `false`       |
+|          |               | type                                 | default value                       |
+|:--------:|:--------------|:-------------------------------------|:------------------------------------|
+| required | **children**  | ReactNode                            |                                     |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |                                     |
+| optional | id            | string                               | inferred from `children` or `title` |
+| optional | forwardId     | boolean                              | `false`                             |
+| optional | title         | string                               |                                     |
+| optional | forwardTitle  | boolean                              | `false`                             |
 
 ## Returns
 ReactElement.
@@ -40,14 +40,14 @@ import { TrackedPressableContext } from '@objectiv/tracker-react';
   Do it
 </TrackedPressableContext>
 
-// Whenever inferring 'id' fails, due to children not having any text, a `title` can be specified
+// Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified
 <TrackedPressableContext Component={'a'} onClick={ () => doIt() } title={'Do it'}>
-  <img src="/button.jpg"/>
+  <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 
 // Or just a manual `id`, either one will do the job
 <TrackedPressableContext Component={'a'} onClick={ () => doIt() } id={'do-it'}>
-  <img src="/button.jpg"/>
+  <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 ```
 

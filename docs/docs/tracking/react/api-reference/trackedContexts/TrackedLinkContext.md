@@ -6,8 +6,8 @@ Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/C
 TrackedLinkContext: (props: { 
   children: ReactNode,
   Component: ComponentType | keyof ReactHTML,
-  id: string,
-  forwardId?: boolean
+  id?: string,
+  forwardId?: boolean,
   href: string,
   forwardHref?: boolean
   title?: string;
@@ -16,16 +16,16 @@ TrackedLinkContext: (props: {
 ```
 
 ## Parameters
-|          |               | type                                 | default value |
-|:--------:|:--------------|:-------------------------------------|:--------------|
-| required | **children**  | ReactNode                            |               |
-| required | **Component** | ComponentType &vert; keyof ReactHTML |               |
-| required | **id**        | string                               |               |
-| optional | forwardId     | boolean                              | `false`       |
-| required | **href**      | string                               |               |
-| optional | forwardHref   | boolean                              | `false`       |
-| optional | title         | string                               |               |
-| optional | forwardTitle  | boolean                              | `false`       |
+|          |               | type                                 | default value                       |
+|:--------:|:--------------|:-------------------------------------|:------------------------------------|
+| required | **children**  | ReactNode                            |                                     |
+| required | **Component** | ComponentType &vert; keyof ReactHTML |                                     |
+| optional | id            | string                               | inferred from `children` or `title` |
+| optional | forwardId     | boolean                              | `false`                             |
+| required | **href**      | string                               |                                     |
+| optional | forwardHref   | boolean                              | `false`                             |
+| optional | title         | string                               |                                     |
+| optional | forwardTitle  | boolean                              | `false`                             |
 
 ## Returns
 ReactElement.
@@ -44,7 +44,7 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
   Privacy
 </TrackedLinkContext>
 
-// Whenever inferring 'id' fails, due to children not having any text, a `title` can be specified
+// Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified
 <TrackedLinkContext Component={'a'} href={'/privacy'} title={'privacy'}>
   <img src="/lock.jpg"/>
 </TrackedLinkContext>

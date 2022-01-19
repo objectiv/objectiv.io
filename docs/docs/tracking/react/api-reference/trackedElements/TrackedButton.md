@@ -1,0 +1,72 @@
+# TrackedButton
+
+Generates a `<button>` Element wrapped in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).
+
+```tsx
+TrackedButton: (props: {
+  children: ReactNode,
+  id?: string,
+  forwardId?: boolean,
+  title?: string;
+  forwardTitle?: boolean;
+}) => ReactElement
+```
+
+## Parameters
+|          |              | type      | default value                       |
+|:--------:|:-------------|:----------|:------------------------------------|
+| required | **children** | ReactNode |                                     |
+| optional | id           | string    | inferred from `children` or `title` |
+| optional | forwardId    | boolean   | `false`                             |
+| optional | title        | string    |                                     |
+| optional | forwardTitle | boolean   | `false`                             |
+
+## Returns
+ReactElement.
+
+## Automatic Events
+- [PressEvent](/taxonomy/reference/events/PressEvent.md) when `onClick` triggers.
+
+## Usage example
+
+```typescript jsx
+import { TrackedButton } from '@objectiv/tracker-react';
+```
+
+```typescript jsx
+<div>
+  <header>
+    ...
+  </header>
+  <main>
+    <TrackedButton onClick={ () => doIt() }>
+      Do it
+    </TrackedButton>
+
+    {/* Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified */}
+    <TrackedButton onClick={ () => doIt() } title={'Do it'}>
+      <img src="/do-it.jpg"/>
+    </TrackedButton>
+
+    {/* Or just a manual `id`, either one will do the job */}
+    <TrackedButton onClick={ () => doIt() } id={'do-it'}>
+      <img src="/button.jpg"/>
+    </TrackedButton>
+  </main>
+  <footer>
+    ...
+  </footer>
+</div>
+```
+
+<br />
+
+:::tip Did you know ?
+`TrackedButton` internally uses [TrackedPressableContext](/tracking/react/api-reference/trackedContexts/TrackedPressableContext.md).
+:::
+
+<br />
+
+:::info See also
+#TODO
+:::

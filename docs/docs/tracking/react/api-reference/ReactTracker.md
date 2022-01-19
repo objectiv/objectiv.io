@@ -7,7 +7,7 @@ sidebar_position: 2
 ReactTracker extends [Core Tracker](/tracking/api-reference/core/Tracker.md) with a simplified constructor and some preconfigured [Plugins](/tracking/api-reference/core/TrackerPlugins.md).
 
 ### Configuration
-ReactTracker configuration object requires at least an `applicationId` and either a [Collector](/tracking/core-concepts/collector.md) `endpoint` or a custom `transport`.
+ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
 |          |                                 | type                                                                 | default value                                                                                                                            |
 |:--------:|:--------------------------------|:---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
