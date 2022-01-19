@@ -143,7 +143,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={clsx(styles.pageSection)}>
+          <TrackedDiv
+            id={'reusable-models'}
+            className={clsx(styles.pageSection)}>
             <div className={clsx("container", styles.contentContainer, styles.reusableModels)}>
               <IconHeader title="Reuse any model and chain them together" icon="icon-reusable-models-chained" />
               <div className={clsx(styles.valueRowRight)}>
@@ -201,7 +203,7 @@ export default function Home() {
                 </TrackedLink>
               </div>
             </div>
-          </div>
+          </TrackedDiv>
 
           <div className={clsx(styles.pageSection, styles.pageSectionBlue)}>
             <TrackedDiv
