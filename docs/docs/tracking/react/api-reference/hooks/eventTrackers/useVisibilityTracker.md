@@ -1,9 +1,10 @@
-# useHiddenEventTracker
+# useVisibilityTracker
 
-Returns a ready-to-trigger [trackHiddenEvent](/tracking/react/api-reference/eventTrackers/trackHiddenEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
+Returns a ready-to-trigger [trackVisibility](/tracking/react/api-reference/eventTrackers/trackVisibility.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useHiddenEventTracker = (parameters: {
+useVisibilityTracker = (parameters: {
+  isVisible: boolean,
   tracker?: Tracker,
   options?: TrackEventOptions,
   locationStack?: LocationStack;
@@ -14,6 +15,7 @@ useHiddenEventTracker = (parameters: {
 ## Parameters
 |          |                | type              | default value |
 |:--------:|:---------------|:------------------|:--------------|
+| required | **isVisible**  | boolean           |               |
 | optional | tracker        | ReactTracker      |               |
 | optional | options        | TrackEventOptions |               |
 | optional | locationStack  | LocationStack     |               |
@@ -27,6 +29,7 @@ useHiddenEventTracker = (parameters: {
 :::info See also
 - [useApplicationLoadedEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useApplicationLoadedEventTracker.md)
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
+- [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
 - [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
 - [useInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInteractiveEventTracker.md)
 - [useMediaEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaEventTracker.md)
@@ -37,6 +40,5 @@ useHiddenEventTracker = (parameters: {
 - [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
-- [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
 - [useVisibleEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibleEventTracker.md)
 :::

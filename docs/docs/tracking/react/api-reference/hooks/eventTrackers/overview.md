@@ -19,5 +19,5 @@ These hooks can be used to obtain ready-to-trigger callbacks for all [Taxonomy E
 - [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
-- [useVisibilityEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityEventTracker.md)
+- [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
 - [useVisibleEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibleEventTracker.md)
