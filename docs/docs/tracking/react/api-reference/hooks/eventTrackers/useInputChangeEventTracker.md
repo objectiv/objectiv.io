@@ -22,19 +22,31 @@ useInputChangeEventTracker = (parameters: {
 ## Returns
 `Function`
 
+## Usage
+```ts
+import { useInputChangeEventTracker } from "@objectiv/tracker-react";
+```
+
+```tsx title="Scenario: third party date selector with onChange callback"
+const trackInputChange = useInputChangeEventTracker();
+
+<DateSelector
+  onChange={() => {
+    trackInputChange();
+  }}
+/>
+```
+
 <br />
 
 :::info See also
 - [useApplicationLoadedEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useApplicationLoadedEventTracker.md)
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
 - [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
-- [useInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInteractiveEventTracker.md)
-- [useMediaEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaEventTracker.md)
 - [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
 - [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
 - [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
 - [useMediaStopEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStopEventTracker.md)
-- [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
 - [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)

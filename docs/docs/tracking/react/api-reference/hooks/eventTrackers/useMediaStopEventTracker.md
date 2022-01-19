@@ -22,6 +22,21 @@ useMediaStopEventTracker = (parameters: {
 ## Returns
 `Function`
 
+## Usage
+```ts
+import { useMediaStopEventTracker } from "@objectiv/tracker-react";
+```
+
+```tsx title="Scenario: third party media player with callbacks"
+const trackMediaStop = useMediaStopEventTracker();
+
+<VideoPlayer
+  onStop={() => {
+    trackMediaStop();
+  }}
+/>
+```
+
 <br />
 
 :::info See also
@@ -29,12 +44,9 @@ useMediaStopEventTracker = (parameters: {
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
 - [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
 - [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
-- [useInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInteractiveEventTracker.md)
-- [useMediaEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaEventTracker.md)
 - [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
 - [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
 - [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
-- [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
 - [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)

@@ -24,6 +24,29 @@ useSuccessEventTracker = (parameters: {
 ## Returns
 `Function`
 
+## Usage
+```ts
+import { useSuccessEventTracker } from "@objectiv/tracker-react";
+```
+
+```tsx title="Scenario: form submit success"
+const trackSuccessEvent = useSuccessEventTracker();
+
+submitFormData(formData)
+  .then((response) => {
+    if (response.ok) {
+      trackSuccessEvent({
+        message: response.statusText
+      });
+    }
+  });
+```
+
+:::caution
+The example above is very simplistic. In reality the message should be more than just an 'OK'.  
+For example, either the remote response body could be parsed or the client could specify a meaningful message.  
+:::
+
 <br />
 
 :::info See also
@@ -31,13 +54,10 @@ useSuccessEventTracker = (parameters: {
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
 - [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
 - [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
-- [useInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInteractiveEventTracker.md)
-- [useMediaEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaEventTracker.md)
 - [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
 - [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
 - [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
 - [useMediaStopEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStopEventTracker.md)
-- [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
 - [useVisibleEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibleEventTracker.md)

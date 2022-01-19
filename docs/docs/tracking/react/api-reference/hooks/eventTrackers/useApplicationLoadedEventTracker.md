@@ -11,6 +11,11 @@ useApplicationLoadedEventTracker = (parameters: {
 } = {}) => Function
 ```
 
+:::caution
+[ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md) tracks [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md) automatically on mount.  
+Make sure to set the `trackApplicationLoaded` prop of ObjectivProvider to `false` when manually tracking it.  
+:::
+
 ## Parameters
 |          |                | type              | default value |
 |:--------:|:---------------|:------------------|:--------------|
@@ -22,19 +27,30 @@ useApplicationLoadedEventTracker = (parameters: {
 ## Returns
 `Function`
 
+## Usage
+```ts
+import { useApplicationLoadedEventTracker } from "@objectiv/tracker-react";
+```
+
+```tsx title="Scenario: trigger ApplicationLoadedEvent only after the config fetch has executed"
+const trackApplicationLoadedEvent = useApplicationLoadedEventTracker();
+
+fetch('./config.json')
+  .finally(() => {
+    trackApplicationLoadedEvent()
+  });
+```
+
 <br />
 
 :::info See also
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
 - [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
 - [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
-- [useInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInteractiveEventTracker.md)
-- [useMediaEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaEventTracker.md)
 - [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
 - [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
 - [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
 - [useMediaStopEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStopEventTracker.md)
-- [useNonInteractiveEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useNonInteractiveEventTracker.md)
 - [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
 - [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
 - [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
