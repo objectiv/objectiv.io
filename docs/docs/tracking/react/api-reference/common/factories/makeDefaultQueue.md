@@ -27,5 +27,6 @@ makeDefaultQueue(); // 'TrackerQueue'
 <br />
 
 :::info See also
-#TODO
+- [makeDefaultPluginList](/tracking/react/api-reference/common/factories/makeDefaultPluginList.md)
+- [makeDefaultTransport](/tracking/react/api-reference/common/factories/makeDefaultTransport.md)
 :::

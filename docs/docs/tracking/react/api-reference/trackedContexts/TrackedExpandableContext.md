@@ -31,8 +31,6 @@ ReactElement.
 
 :::caution
 The `isVisible` state of a TrackedExpandableContext at mount is ignored. Only actual changes and tracked.
-
-#TODO: explain how to track visibility event programmatically
 :::
 
 ## Usage example

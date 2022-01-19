@@ -27,5 +27,6 @@ makeDefaultTransport(); // 'TrackerTransportRetry ...'
 <br />
 
 :::info See also
-#TODO
+- [makeDefaultPluginList](/tracking/react/api-reference/common/factories/makeDefaultPluginList.md)
+- [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)
 :::

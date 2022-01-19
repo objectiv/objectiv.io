@@ -25,5 +25,5 @@ makeIdFromString('Annoying "LONG" sentence!'); // 'annoying-long-sentence'
 <br />
 
 :::info See also
-#TODO
+- [makeTitleFromChildren](/tracking/react/api-reference/common/factories/makeTitleFromChildren.md)
 :::

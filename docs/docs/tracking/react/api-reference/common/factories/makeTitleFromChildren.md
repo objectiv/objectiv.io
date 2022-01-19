@@ -24,5 +24,5 @@ makeTitleFromChildren(<div>what?</div>);          // 'what?'
 <br />
 
 :::info See also
-#TODO
+- [makeIdFromString](/tracking/react/api-reference/common/factories/makeIdFromString.md)
 :::

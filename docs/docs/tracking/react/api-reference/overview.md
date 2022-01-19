@@ -14,20 +14,20 @@ import CommonOverview from './common/overview.md'
 
 High level overview of all the APIs available in the [React Tracker](./ReactTracker.md).
 
-## Location Wrappers
-<LocationWrappersOverview />
+## Tracked Elements
+<TrackedElementsOverview />
 
 ## Tracked Contexts
 <TrackedContextsOverview />
 
-## Tracked Elements
-<TrackedElementsOverview />
+## Location Wrappers
+<LocationWrappersOverview />
 
 ## Hooks
 <HooksOverview />
 
-## Event Trackers
-<EventTrackersOverview />
-
 ## Common
 <CommonOverview />
+
+## Low-level Event Trackers
+<EventTrackersOverview />

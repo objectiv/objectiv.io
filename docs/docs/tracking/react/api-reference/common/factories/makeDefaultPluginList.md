@@ -27,5 +27,6 @@ makeDefaultPluginsList(); // '[ApplicationContextPlugin, ...]'
 <br />
 
 :::info See also
-#TODO
+- [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)
+- [makeDefaultTransport](/tracking/react/api-reference/common/factories/makeDefaultTransport.md)
 :::

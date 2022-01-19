@@ -6,11 +6,6 @@ sidebar_position: 1
 
 These hooks can be used to obtain ready-to-trigger callbacks for all [Taxonomy Events](/taxonomy/reference/events/overview.md).
 
-:::caution
-Using event trackers directly requires extra attention to the LocationStack and its composition.  
-It's easy to instrument a callback and forget to wrap the triggering Component in a LocationContext.
-:::
-
 - [useApplicationLoadedEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useApplicationLoadedEventTracker.md)
 - [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
 - [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
