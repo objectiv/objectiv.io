@@ -3,11 +3,15 @@ sidebar_position: 4
 ---
 
 # Tracking Locations
+If you started [instrumenting your Interactions](/tracking/react/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
+
+## The importance of unique Locations
+
 To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.
 
-Assigning a unique identifier to each Element is not always possible, most often impractical, and simply doesn't work in many scenarios. Think of reusable components for example.
+Assigning a unique identifier to each Element is not always possible, most often impractical, and simply doesn't work in many scenarios. Think of reusable components for example. Unique identifiers are also harder to read and reason about on the Data side of things.
 
-Unique identifiers are also harder to read and reason about on the Data side of things.
+This is where our LocationStack comes in handy.  
 
 ## Example of collision
 Let's take a look at this page:

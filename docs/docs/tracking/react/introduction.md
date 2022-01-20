@@ -16,6 +16,7 @@ Whenever manual instrumentation is required, the SDK comes also with a set of [H
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started](/tracking/react/how-to-guides/getting-started.md)
+- [Tracking Interactions](/tracking/react/how-to-guides/tracking-interactions.md)
 - [Tracking Locations](/tracking/react/how-to-guides/tracking-locations.md)
 
 ## API Reference 

@@ -68,4 +68,4 @@ ReactDOM.render(
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.
 
-Time to start [Tracking Locations](/tracking/react/how-to-guides/tracking-locations.md)!
+Time to start [Tracking Interactions](/tracking/react/how-to-guides/tracking-interactions.md)!
