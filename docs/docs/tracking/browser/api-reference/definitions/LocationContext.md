@@ -1,6 +1,6 @@
 # LocationContext
 
-[Structs](https://docs.superstructjs.org/) and Unions for each [LocationContext](/taxonomy/reference/location-contexts/overview.md) in the [Taxonomy](/taxonomy/introduction.md).
+[Structs](https://docs.superstructjs.org/) and Unions for each [LocationContext](/taxonomy/reference/location-contexts/overview.md) in the [Taxonomy](/taxonomy).
 
 :::tip Struct > TS
 TypeScript Definitions for Structs are usually already exported, if not they can be inferred using the `Infer` helper. For example:
