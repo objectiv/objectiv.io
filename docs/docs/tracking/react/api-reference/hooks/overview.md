@@ -9,6 +9,16 @@ import EventTrackersOverview from './eventTrackers/overview.md'
 
 A range of hooks that we use for most of the tracking. All hooks are stable and perform deep comparisons on their deps.  
 
+#### Event trackers
+<EventTrackersOverview />
+
+#### Consumers
+<ConsumersOverview />
+
+<br />
+
+The hooks the SDK uses internally for event instrumentation are also available publicly.
+
 #### Lifecycle
 
 - [useOnMount](/tracking/react/api-reference/hooks/useOnMount.md)
@@ -22,9 +32,3 @@ A range of hooks that we use for most of the tracking. All hooks are stable and 
 - [useOnToggle](/tracking/react/api-reference/hooks/useOnToggle.md)
 - [useTrackOnChange](/tracking/react/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react/api-reference/hooks/useTrackOnToggle.md)
-
-#### Consumers
-<ConsumersOverview />
-
-#### Event trackers
-<EventTrackersOverview />
