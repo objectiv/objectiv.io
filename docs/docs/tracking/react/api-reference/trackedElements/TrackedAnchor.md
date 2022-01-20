@@ -9,21 +9,23 @@ TrackedAnchor: (props: {
   forwardId?: boolean,
   href: string,
   forwardHref?: boolean
-  title?: string;
-  forwardTitle?: boolean;
+  title?: string,
+  forwardTitle?: boolean,
+  waitUntilTracked?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value                       |
-|:--------:|:-------------|:----------|:------------------------------------|
-| required | **children** | ReactNode |                                     |
-| optional | id           | string    | inferred from `children` or `title` |
-| optional | forwardId    | boolean   | `false`                             |
-| required | **href**     | string    |                                     |
-| optional | forwardHref  | boolean   | `false`                             |
-| optional | title        | string    |                                     |
-| optional | forwardTitle | boolean   | `false`                             |
+|          |                  | type      | default value                       |
+|:--------:|:-----------------|:----------|:------------------------------------|
+| required | **children**     | ReactNode |                                     |
+| optional | id               | string    | inferred from `children` or `title` |
+| optional | forwardId        | boolean   | `false`                             |
+| required | **href**         | string    |                                     |
+| optional | forwardHref      | boolean   | `false`                             |
+| optional | title            | string    |                                     |
+| optional | forwardTitle     | boolean   | `false`                             |
+| optional | waitUntilTracked | boolean   | `false`                             |
 
 ## Returns
 ReactElement.

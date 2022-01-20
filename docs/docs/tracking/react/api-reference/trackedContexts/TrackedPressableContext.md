@@ -8,20 +8,22 @@ TrackedPressableContext: (props: {
   Component: ComponentType | keyof ReactHTML,
   id?: string,
   forwardId?: boolean,
-  title?: string;
-  forwardTitle?: boolean;
+  title?: string,
+  forwardTitle?: boolean,
+  waitUntilTracked?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |               | type                                 | default value                       |
-|:--------:|:--------------|:-------------------------------------|:------------------------------------|
-| required | **children**  | ReactNode                            |                                     |
-| required | **Component** | ComponentType &vert; keyof ReactHTML |                                     |
-| optional | id            | string                               | inferred from `children` or `title` |
-| optional | forwardId     | boolean                              | `false`                             |
-| optional | title         | string                               |                                     |
-| optional | forwardTitle  | boolean                              | `false`                             |
+|          |                   | type                                 | default value                       |
+|:--------:|:------------------|:-------------------------------------|:------------------------------------|
+| required | **children**      | ReactNode                            |                                     |
+| required | **Component**     | ComponentType &vert; keyof ReactHTML |                                     |
+| optional | id                | string                               | inferred from `children` or `title` |
+| optional | forwardId         | boolean                              | `false`                             |
+| optional | title             | string                               |                                     |
+| optional | forwardTitle      | boolean                              | `false`                             |
+| optional | waitUntilTracked  | boolean                              | `false`                             |
 
 ## Returns
 ReactElement.

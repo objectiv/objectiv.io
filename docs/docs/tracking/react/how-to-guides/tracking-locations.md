@@ -95,8 +95,37 @@ export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>
 )
 ```
 
-Now you can use `<TrackedLink to="/cart">Back</Link>` anywhere without having to remember to add the `href` each time.
+Now instead of:
+```tsx
+<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
+```
 
+We can simply use:
+```tsx
+<TrackedLink to="/cart">Do It!</TrackedLink>
+
+// or
+
+<TrackedLink href="/cart">Do It!</TrackedLink>
+
+```
+:::
+
+### External Links
+All Pressable may lead users to an external website and the Tracker may not have had the time to track those PressEvents.
+
+This is why all Pressable based Components support the `waitUntilTracked` option. 
+This will attempt to delay the original event handler until the Tracker has finished its job.
+
+```tsx
+<TrackedAnchor to="https://www.google.com" waitUntilTracked={true}>Google</TrackedAnchor>
+```
+
+:::info
+This option will not block indefinitely. It has a timeout of about 2s (Tracker Queue default batch delay * 2).
+That said, since the Queue is eager, under normal network conditions the wait time is barely noticeable.
+
+In a future version of React Tracker we plan to make the `waitUntilTracked` option configurable inline.
 :::
 
 ## Tracking Content
