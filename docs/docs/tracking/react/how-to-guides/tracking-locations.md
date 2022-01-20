@@ -8,7 +8,7 @@ Now that the [Tracker is up and running](/tracking/react/how-to-guides/getting-s
 thinking about Tracking some Elements or Components as 
 [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) or [Tracked Contexts](/tracking/react/api-reference/trackedElements/overview.md).
 
-The former follows HTML semantic, while the latter are generic wrappers that can render any Component or Element.
+The former follow HTML semantic, while the latter are generic wrappers that can render any Component or Element. Both are built on top of our [Providers](/tracking/react/api-reference/common/providers/overview.md) and [Location Wrappers](/tracking/react/api-reference/locationWrappers/overview.md).
 
 :::info why tagging?
 If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).
@@ -24,28 +24,16 @@ Here are some common examples of Pressable:
 
 ```tsx
 // A button Element 
-<button 
-  onClick={ () => doSomething() }
->
-  Click Me!
-</button>
+<button onClick={handleClick}>Click Me!</button>
 
 // A Button Component 
-<Button 
-  onClick={ () => doSomething() }
->
-  Do It!
-</Button>
+<Button onClick={handleClick}>Do It!</Button>
 
 // An arbitrary clickable Element
-<img 
-  src="/img/ok.png" 
-  alt="OK!" 
-  onClick={ () => doSomething() } 
-/>
+<img src="/img/ok.png" alt="OK!" onClick={handleClick}/>
 ```
 
-And this is how they can be tracked using React Tracker tracked components.
+This is how they can be tracked using React Tracker tracked components.
 
 ```ts
 import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react';
@@ -53,27 +41,13 @@ import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react'
 
 ```tsx
 // A button tag can be tracked by simply swapping the button Element tag with TrackedButton 
-<TrackedButton 
-  onClick={ () => doSomething() }
->
-  Click Me!
-</TrackedButton>
+<TrackedButton onClick={handleClick}>Click Me!</TrackedButton>
 
-// A Button component can be swapped with a TrackedPressableContext configured to render the original Component 
-<TrackedPressableContext 
-  Component={Button} 
-  onClick={ () => doSomething() }
->
-  Do It!
-</TrackedPressableContext>
+// We can swap any Component with TrackedPressableContext configured to render the original 
+<TrackedPressableContext Component={Button} onClick={handleClick}>Do It!</TrackedPressableContext>
 
 // The same applies to an image, or any other Component or HTML Elements
-<TrackedPressableContext 
-  Component={'img'}
-  src="/img/ok.png"
-  alt="OK!"
-  onClick={ () => doSomething() }
-/>
+<TrackedPressableContext Component={'img'} src="/img/ok.png" alt="OK!" onClick={handleClick} />
 ```
 
 
@@ -88,6 +62,8 @@ Links are interactive elements that cause a change in the current URL. Thus, we'
 <Link to="/cart">Back</Link>
 ```
 
+This is how they can be tracked using React Tracker tracked components.
+
 ```ts
 import { TrackedAnchor, TrackedLinkContext } from '@objectiv/tracker-react';
 ```
@@ -96,10 +72,8 @@ import { TrackedAnchor, TrackedLinkContext } from '@objectiv/tracker-react';
 // A anchor tag can be tracked by simply swapping the anchor Element tag with TrackedAnchor 
 <TrackedAnchor href="/somewhere">Go!</TrackedAnchor>
 
-// A Link component can be swapped with a TrackedLinkContext and we need add an extra `href` property   
-<TrackedLinkContext Component={Link} href="/cart" to="/cart">
-  Do It!
-</TrackedLinkContext>
+// Link can be swapped with a TrackedLinkContext with the addition of an extra `href` property   
+<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
 ```
 
 :::tip
@@ -125,16 +99,13 @@ Now you can use `<TrackedLink to="/cart">Back</Link>` anywhere without having to
 
 :::
 
-## Tracking Locations
+## Tracking Content
 To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.   
 
 That said, assigning a unique identifier to each Element is not always possible and most often impractical. 
 Think of reusable components for example.
 
 Unique identifiers are also harder to read and reason about on the Data side of things.
-
-See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-locations) for an explanation 
-of how Sections can be tagged to make Events unique without having to assign a unique identifier to each.
 
 A more thorough example:
 ```ts
