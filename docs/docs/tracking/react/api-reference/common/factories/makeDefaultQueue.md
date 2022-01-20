@@ -7,7 +7,7 @@ makeDefaultQueue = (ReactTrackerConfig) => TrackerQueueInterface
 ```  
 
 :::info
-The default TrackerQueue stores Events in [LocalStorage](#TODO).  
+The default TrackerQueue stores Events in localStorage.  
 Batching is configured to eagerly send max 10 events per batch with a delay of 1000ms between them.
 :::
 

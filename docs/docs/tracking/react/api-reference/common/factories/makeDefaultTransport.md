@@ -7,7 +7,7 @@ makeDefaultTransport = (ReactTrackerConfig) => TrackerTransportInterface
 ```  
 
 :::info
-The default TrackerTransport is a [Fetch](#TODO) + [XMLHttpRequest](#TODO) Transport Switch.  
+The default TrackerTransport is a Fetch API + XHR API Transport Switch.  
 The default retry logic is configured for 10 retries with exponential backoff starting at 1000ms.
 :::
 

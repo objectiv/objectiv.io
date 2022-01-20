@@ -11,8 +11,7 @@ To quickly spin up a fully functional demo pipeline locally, follow the [Quickst
 :::
 
 :::info 
-A collector is not strictly necessary to try out the SDKs. Trackers can also be configured to use Transports that do not rely on the Collector, such as DebugTransport.
-TODO links
+A collector is not strictly necessary to try out the SDKs. Trackers can also be configured to use Transports that do not rely on the Collector, such as [DebugTransport](https://www.npmjs.com/package/@objectiv/transport-debug).
 :::
 
 ### 1. Starting the local Collector

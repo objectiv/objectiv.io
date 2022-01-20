@@ -30,10 +30,10 @@ By default, the Browser Tracker automatically tracks the
 ## Angular Tracker
 The Angular Tracker is a module built on top of Browser Tracker coming with a Directive to ease tagging in HTML templates. 
 
-See the [How-to Guide for Angular](#TODO) to get started.
+See the [How-to Guide for Angular](/tracking/angular/how-to-guides/getting-started.md) to get started.
 
 By default, the Angular Tracker automatically tracks the 
-[ApplicationLoaded](#TODO) event.
+[ApplicationLoaded](/tracking/browser/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event via the Browser Tracker.
 
 ## Extensibility: Plugins
 The Core Tracker is extensible through plugins. Each plugin can control when it's enabled, e.g. only if a Web
