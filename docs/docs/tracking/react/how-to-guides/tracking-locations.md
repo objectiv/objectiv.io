@@ -3,19 +3,67 @@ sidebar_position: 4
 ---
 
 # Tracking Locations
+
+## Collisions
 If you started [instrumenting your Interactions](/tracking/react/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
 
-## The importance of unique Locations
+### Unique Locations
 
-To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.
+To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable. Assigning a unique identifier to each Element is not always possible, most often impractical. Think of reusable components. 
 
-Assigning a unique identifier to each Element is not always possible, most often impractical, and simply doesn't work in many scenarios. Think of reusable components for example. Unique identifiers are also harder to read and reason about on the Data side of things.
+This is where our LocationStack comes in handy in the form of Tracked Context and Element components.
 
-This is where our LocationStack comes in handy.  
+## Tracked Contexts and Elements
+
+Our [Taxonomy](/taxonomy) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
+
+For each of these, the React SDK offers a TrackedContext component.     
+
+There are also some HTML semantic aliases, called TrackedElements, aimed at tracking JSX HTML Elements. We may add more of these in the future.
+
+Here is a full recap:
+
+#### ContentContext
+- [TrackedContentContext](/tracking/react/api-reference/trackedContexts/TrackedContentContext.md)
+- [TrackedDiv](/tracking/react/api-reference/trackedElements/TrackedDiv.md)
+- [TrackedMain](/tracking/react/api-reference/trackedElements/TrackedMain.md)
+- [TrackedSection](/tracking/react/api-reference/trackedElements/TrackedSection.md)
+
+#### ExpandableContext
+- [TrackedExpandableContext](/tracking/react/api-reference/trackedContexts/TrackedExpandableContext.md)
+
+#### InputContext
+- [TrackedInputContext](/tracking/react/api-reference/trackedContexts/TrackedInputContext.md)
+- [TrackedInput](/tracking/react/api-reference/trackedElements/TrackedInput.md)
+
+#### LinkContext
+- [TrackedLinkContext](/tracking/react/api-reference/trackedContexts/TrackedLinkContext.md)
+- [TrackedAnchor](/tracking/react/api-reference/trackedElements/TrackedAnchor.md)
+
+#### MediaPlayerContext
+- [TrackedMediaPlayerContext](/tracking/react/api-reference/trackedContexts/TrackedMediaPlayerContext.md)
+
+#### NavigationContext
+- [TrackedNavigationContext](/tracking/react/api-reference/trackedContexts/TrackedNavigationContext.md)
+- [TrackedNav](/tracking/react/api-reference/trackedElements/TrackedNav.md)
+- [TrackedFooter](/tracking/react/api-reference/trackedElements/TrackedFooter.md)
+- [TrackedHeader](/tracking/react/api-reference/trackedElements/TrackedHeader.md)
+
+#### OverlayContext
+- [TrackedOverlayContext](/tracking/react/api-reference/trackedContexts/TrackedOverlayContext.md)
+
+#### PressableContext
+- [TrackedPressableContext](/tracking/react/api-reference/trackedContexts/TrackedPressableContext.md)
+- [TrackedButton](/tracking/react/api-reference/trackedElements/TrackedButton.md)
+
+#### RootLocationContext
+- [TrackedRootLocationContext](/tracking/react/api-reference/trackedContexts/TrackedRootLocationContext.md)
+
 
 ## Example of collision
-Let's take a look at this page:
+Let's see how these Components can help us in making all Interactions uniquely identifiable in the UIgst.
 
+Here is an example page with a collision:
 ```tsx
 <TrackedContentContext Component={Layout} id={'layout'}>
   <header>
@@ -27,12 +75,11 @@ Let's take a look at this page:
 </TrackedContentContext>
 ```
 
-In the example above we have a page with the same link used multiple times across the page.  
-This is not so unlikely for CTAs, especially on longer pages.
+The same link has been used multiple times across the page.  
 
 React Tracker will notify of the collision of the second link with the first one.
 
-## Solving a collision
+### Solving a collision
 To solve the issue, we can simply make the Location of these Elements richer:
 
 ```ts
