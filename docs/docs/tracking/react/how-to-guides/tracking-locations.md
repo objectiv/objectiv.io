@@ -61,7 +61,7 @@ Here is a full recap:
 
 
 ## Example of collision
-Let's see how these Components can help us in making all Interactions uniquely identifiable in the UIgst.
+Let's see how these Components can help us in making all Interactions uniquely identifiable in the UI.
 
 Here is an example page with a collision:
 ```tsx
