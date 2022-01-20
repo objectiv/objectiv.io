@@ -26,9 +26,9 @@ export default function Home() {
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
             open-source product analytics <br />
-            ready for data science
+            designed for modern data teams
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Objectiv is a complete, self-hosted product analytics stack designed for data science without gruntwork.</p>
+            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
             <div className={clsx(styles.productIntroVideo)}>
                 <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
                 frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
@@ -46,9 +46,9 @@ export default function Home() {
             <TrackedDiv 
               id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
-              <h2>Get ready for data science without the gruntwork</h2>
-              <p>Objectiv includes everything you need to answer your product analytics questions with speed and precision.< br />
-                Straight from your notebook on the full, raw dataset. No cleaning, transformations or tracking plans required.</p>
+              <h2>Some product questions are answered better from a notebook</h2>
+              <p>As product questions become more specific, nothing beats a notebook with a high quality dataset.< br />
+              Objectiv comes with everything you need to enable data science in your product analytics workflow.</p>
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
@@ -61,12 +61,16 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
+              <p>Instrument the tracker, open your notebook and start modeling on your data directly with pandas-like< br />
+              operations that run on the full dataset. No tracking plans, data cleaning or transformations required.<br/>
+              Happy with the results? Output them to your team’s favourite BI tools with a single command.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
                 waitUntilTracked={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
               >
+                
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Objectiv on GitHub'}/></span>
                 Objectiv on GitHub
               </TrackedLink>
