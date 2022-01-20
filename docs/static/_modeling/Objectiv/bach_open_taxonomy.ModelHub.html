@@ -4,11 +4,18 @@
 <h1>bach_open_taxonomy.ModelHub<a class="headerlink" href="#bach-open-taxonomy-modelhub" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="bach_open_taxonomy.ModelHub">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach_open_taxonomy.</span></span><span class="sig-name descname"><span class="pre">ModelHub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/series/series_objectiv.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ModelHub" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach_open_taxonomy.</span></span><span class="sig-name descname"><span class="pre">ModelHub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/modelhub/modelhub.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ModelHub" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Class for the open model hub. Used in ObjectivFrame.</p>
 <p>The ModelHub contains a growing collection of open-source, free to use data models
-that you can take, stack and run to quickly build highly specific model stacks for product analysis and
+that you can take, chain and run to quickly build highly specific model stacks for product analysis and
 exploration. It includes models for a wide range of typical product analytics use cases.</p>
+<p>The model hub has two main type of functions: <a class="reference internal" href="bach_open_taxonomy.ModelHub.map.html#bach_open_taxonomy.ModelHub.map" title="bach_open_taxonomy.ModelHub.map"><code class="xref py py-attr docutils literal notranslate"><span class="pre">map</span></code></a> and <a class="reference internal" href="bach_open_taxonomy.ModelHub.aggregate.html#bach_open_taxonomy.ModelHub.aggregate" title="bach_open_taxonomy.ModelHub.aggregate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">aggregate</span></code></a>.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.map.html#bach_open_taxonomy.ModelHub.map" title="bach_open_taxonomy.ModelHub.map"><code class="xref py py-attr docutils literal notranslate"><span class="pre">map</span></code></a> functions are models that always return a series with the same shape and index as the
+ObjectivFrame they originate from.</p></li>
+<li><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.aggregate.html#bach_open_taxonomy.ModelHub.aggregate" title="bach_open_taxonomy.ModelHub.aggregate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">aggregate</span></code></a> fuctions are models that return aggregated data in some form from the
+ObjectivFrame.</p></li>
+</ol>
 <p>All models are compatible with datasets that have been validated against the open analytics taxonomy. The
 source is available for all models and you&#8217;re free to make any changes. You can use the included
 pandas-compatible Bach modeling library to customize them, or even add in advanced ML models.</p>
@@ -19,7 +26,10 @@ pandas-compatible Bach modeling library to customize them, or even add in advanc
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.to_metabase.html#bach_open_taxonomy.ModelHub.to_metabase" title="bach_open_taxonomy.ModelHub.to_metabase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_metabase</span></code></a>(df[,&#160;model_type,&#160;config])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.filter.html#bach_open_taxonomy.ModelHub.filter" title="bach_open_taxonomy.ModelHub.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a>(filter)</p></td>
+<td><p>Filters the ObjectivFrame for all hits where the filter is True.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.to_metabase.html#bach_open_taxonomy.ModelHub.to_metabase" title="bach_open_taxonomy.ModelHub.to_metabase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_metabase</span></code></a>(df[,&#160;model_type,&#160;config])</p></td>
 <td><p>Plot data in <cite>df</cite> to Metabase.</p></td>
 </tr>
 </tbody>
@@ -37,11 +47,8 @@ pandas-compatible Bach modeling library to customize them, or even add in advanc
 <tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.aggregate.html#bach_open_taxonomy.ModelHub.aggregate" title="bach_open_taxonomy.ModelHub.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a></p></td>
 <td><p>Access aggregation methods from the model hub.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.f.html#bach_open_taxonomy.ModelHub.f" title="bach_open_taxonomy.ModelHub.f"><code class="xref py py-obj docutils literal notranslate"><span class="pre">f</span></code></a></p></td>
-<td><p>Access filter methods from the model hub.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.filter.html#bach_open_taxonomy.ModelHub.filter" title="bach_open_taxonomy.ModelHub.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a></p></td>
-<td><p>Access filter methods from the model hub.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach_open_taxonomy.ModelHub.map.html#bach_open_taxonomy.ModelHub.map" title="bach_open_taxonomy.ModelHub.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code></a></p></td>
+<td><p>Access map methods from the model hub.</p></td>
 </tr>
 </tbody>
 </table>
