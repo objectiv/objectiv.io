@@ -3,5 +3,18 @@ sidebar_position: 1
 slug: /tracking/react
 title: Introduction
 ---
-# Tracking with React Tracker
-TODO
+# React SDK
+
+The React SDK leverages React Context Providers and Hooks for mapping JSX Elements and Components ot the [Open Taxonomy](/taxonomy).
+
+It provides a number of Higher Order [Elements](/tracking/react/api-reference/trackedElements/overview.md), [Components](/tracking/react/api-reference/trackedContexts) and [Wrappers](/tracking/react/api-reference/locationWrappers) to easily make a regular UI Element into a Tracked one. 
+
+The resulting components are automatically wrapped in the correct [LocationContext](/taxonomy/reference/location-contexts/overview.md) and, if applicable, event handlers are automatically instrumented under the hood.
+
+## How-to Guides
+To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
+- [Getting Started](/tracking/react/how-to-guides/getting-started.md)
+- [Tracking Locations](/tracking/react/how-to-guides/tracking-locations.md)
+
+## API Reference 
+- [React SDK API Reference](/tracking/react/api-reference/overview.md)

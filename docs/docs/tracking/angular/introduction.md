@@ -16,8 +16,8 @@ To immediately jump into instrumenting your application, follow the step-by-step
 - [Troubleshooting](/tracking/angular/how-to-guides/troubleshooting.md)
 
 ## API References
-- [Angular Tracker SDK API Reference](/tracking/angular/api-reference/overview.md)
-- [Browser Tracker SDK API Reference](/tracking/browser/api-reference/overview.md)
+- [Angular SDK API Reference](/tracking/angular/api-reference/overview.md)
+- [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
 
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
