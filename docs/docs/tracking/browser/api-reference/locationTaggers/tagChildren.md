@@ -34,12 +34,6 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagChildren, tagPressable } from '@objectiv/tracker-browser';
 ```
@@ -60,32 +54,6 @@ import { tagChildren, tagPressable } from '@objectiv/tracker-browser';
   ...
 </div>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<div
-  [tagChildren]="[
-    {
-      queryAll: 'button[aria-label=&quot;Previous&quot;]',
-      tagAs: tagPressable({ id: 'prev' })
-    },
-    {
-      queryAll: 'button[aria-label=&quot;Next&quot;]',
-      tagAs: tagPressable({ id: 'next' })
-    }
-  ]"
->
-  ...
-</div>
-```
-
-  </TabItem>
-</Tabs>
-
 
 <br />
 

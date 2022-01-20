@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Introduction
+slug: /tracking/browser/core-concepts
 ---
 
 # Browser Tracking Core Concepts

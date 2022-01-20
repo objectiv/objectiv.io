@@ -28,12 +28,6 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Examples
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagOverlay } from '@objectiv/tracker-browser';
 ```
@@ -49,20 +43,6 @@ import { tagOverlay } from '@objectiv/tracker-browser';
   ...
 </Modal>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<div [tagOverlay]="{ id: 'modal-id' }">
-  ...
-</div>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

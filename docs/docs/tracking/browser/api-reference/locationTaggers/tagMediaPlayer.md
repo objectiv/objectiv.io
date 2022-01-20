@@ -21,13 +21,6 @@ tagMediaPlayer = (parameters: {
 [TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Examples
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagMediaPlayer } from '@objectiv/tracker-browser';
 ```
@@ -43,26 +36,6 @@ import { tagMediaPlayer } from '@objectiv/tracker-browser';
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
 </Player>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<div [tagMediaPlayer]="{ id: 'player-id' }">
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
-</div>
-```
-
-```typescript jsx
-<video [tagMediaPlayer]="{ id: 'player-id' }">
-  <source src="video.mp4" type="video/mp4">
-</video>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

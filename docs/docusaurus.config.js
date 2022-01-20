@@ -22,7 +22,7 @@ const config = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'log',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
 
   // undefined it the default behaviour of docusaurus, and leaves it alone

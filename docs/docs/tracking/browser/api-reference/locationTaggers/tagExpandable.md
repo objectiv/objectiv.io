@@ -29,12 +29,6 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagExpandable } from '@objectiv/tracker-browser';
 ```
@@ -50,20 +44,6 @@ import { tagExpandable } from '@objectiv/tracker-browser';
   ...
 </Accordion>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<div [tagExpandable]="{ id: 'faq-item-id' }">
-  ...
-</div>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

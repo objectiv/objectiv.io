@@ -22,12 +22,6 @@ tagNavigation = (parameters: {
 
 ## Examples
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagNavigation } from '@objectiv/tracker-browser';
 ```
@@ -43,20 +37,6 @@ import { tagNavigation } from '@objectiv/tracker-browser';
   ...
 </TopNav>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<nav [tagNavigation]="{ id: 'navigation-id' }">
-  ...
-</nav>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

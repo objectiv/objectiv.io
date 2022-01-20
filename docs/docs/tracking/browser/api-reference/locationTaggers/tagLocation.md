@@ -40,12 +40,6 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagLocation } from '@objectiv/tracker-browser';
 ```
@@ -57,22 +51,6 @@ import { tagLocation } from '@objectiv/tracker-browser';
   </div>
 </Layout>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<section [tagLocation]="{ instance: makeContentContext({ id: 'layout' }) }">
-  <div [tagLocation]="{ instance: makeOverlayContext({ id: 'modal' }) }">
-    ...
-  </div>
-</section>
-```
-
-  </TabItem>
-</Tabs>
 
 :::tip Did you notice ?
 In the example above we factored the `instance` parameters by using [Location Context Core Factories](/tracking/browser/api-reference/core/CoreFactories.md#location-context-factories).

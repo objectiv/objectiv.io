@@ -29,12 +29,6 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage examples
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagLink } from '@objectiv/tracker-browser';
 ```
@@ -46,18 +40,6 @@ import { tagLink } from '@objectiv/tracker-browser';
 ```typescript jsx
 <LinkComponent {...tagLink({ id: 'lnk-id', href: '/path' })} to="/path">Go!</LinkComponent>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<a [tagLink]="{ id: 'lnk-id', href: '/path' }" href="/path">Go!</a>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

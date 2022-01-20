@@ -28,12 +28,6 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagPressable } from '@objectiv/tracker-browser';
 ```
@@ -45,18 +39,6 @@ import { tagPressable } from '@objectiv/tracker-browser';
 ```typescript jsx
 <Submit {...tagPressable({ id: 'submit' })}>Do It!</Submit>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<button [tagPressable]="{ id: 'button-id' }">Click Me!</button>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 
@@ -71,4 +53,4 @@ Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to
 - [tagExpandable](/tracking/browser/api-reference/locationTaggers/tagExpandable.md)
 - [tagLocation](/tracking/browser/api-reference/locationTaggers/tagLocation.md)
 - [trackPressEvent](/tracking/browser/api-reference/eventTrackers/trackPressEvent.md)
-  :::
+:::

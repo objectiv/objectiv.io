@@ -22,12 +22,6 @@ tagContent = (parameters: {
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagContent } from '@objectiv/tracker-browser';
 ```
@@ -39,22 +33,6 @@ import { tagContent } from '@objectiv/tracker-browser';
   </div>
 </Layout>
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<section [tagContent]="{ id: 'layout' }">
-  <div [tagContent]="{ id: 'section' }">
-    ...
-  </div>
-</section>
-```
-
-  </TabItem>
-</Tabs>
 
 <br />
 

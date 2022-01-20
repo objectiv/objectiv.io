@@ -27,12 +27,6 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="react" label="React" default>
-
 ```typescript jsx
 import { tagInput } from '@objectiv/tracker-browser';
 ```
@@ -44,20 +38,6 @@ import { tagInput } from '@objectiv/tracker-browser';
 ```typescript jsx
 <Search {...tagInput({ id: 'search' })} />
 ```
-
-  </TabItem>
-  <TabItem value="angular" label="Angular">
-
-Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
-
-```typescript jsx
-<input [tagInput]="{ id: 'search' }" />
-```
-
-  </TabItem>
-</Tabs>
-
-
 
 <br />
 
