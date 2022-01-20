@@ -730,6 +730,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "sort_index",
+                                        "id": "modeling/Series/bach.Series.sort_index"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "sort_values",
                                         "id": "modeling/Series/bach.Series.sort_values"
                                     },
@@ -832,6 +837,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "index",
                                         "id": "modeling/Series/bach.Series.index"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "index_sorting",
+                                        "id": "modeling/Series/bach.Series.index_sorting"
                                     },
                                     {
                                         "type": "doc",

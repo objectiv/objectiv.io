@@ -12,12 +12,9 @@
 <li><p><strong>save_points</strong> &#8211; Savepoints object that&#8217;s responsible for tracking all savepoints.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) &#8211; Name for the savepoint. This will be the name of the table or view if that&#8217;s set as
 materialization. Must be unique both within the Savepoints and within the base_node.</p></li>
-<li><p><strong>materialization</strong> (<em>Union</em><em>[</em><em>sql_models.model.Materialization</em><em>, </em><em>str</em><em>]</em>) &#8211; </p><p>Optional materialization of the savepoint in the database. This doesn&#8217;t do
-anything unless self.savepoints.write_to_db() gets called and the savepoints are actually</p>
-<blockquote>
-<div><p>materialized into the database.</p>
-</div></blockquote>
-</li>
+<li><p><strong>materialization</strong> (<em>Union</em><em>[</em><em>sql_models.model.Materialization</em><em>, </em><em>str</em><em>]</em>) &#8211; Optional materialization of the savepoint in the database. This doesn&#8217;t do
+anything unless self.savepoints.write_to_db() gets called and the savepoints are actually
+materialized into the database.</p></li>
 </ul>
 </dd>
 </dl>
