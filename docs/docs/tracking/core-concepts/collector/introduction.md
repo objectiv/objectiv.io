@@ -25,7 +25,7 @@ Currently, the Collector can store Events in:
 We aim to support more storage solutions in the near future.
 
 ## Validation
-Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the 
+Objectiv's [Collector](/tracking/core-concepts/collector/introduction.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond with an 
 error, and store the Event in the `NOK` folder on disk.
 

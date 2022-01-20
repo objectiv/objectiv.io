@@ -1,4 +1,4 @@
-# makeDefaultPluginList
+# makeDefaultPluginsList
 
 Returns the default list of Plugins for ReactTracker.
 

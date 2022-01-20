@@ -9,7 +9,7 @@ sidebar_position: 1
 - [makeTitleFromChildren](/tracking/react/api-reference/common/factories/makeTitleFromChildren.md)
 
 #### Tracker Defaults
-- [makeDefaultPluginList](/tracking/react/api-reference/common/factories/makeDefaultPluginList.md)
+- [makeDefaultPluginsList](/tracking/react/api-reference/common/factories/makeDefaultPluginsList.md)
 - [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)
 - [makeDefaultTransport](/tracking/react/api-reference/common/factories/makeDefaultTransport.md)
 

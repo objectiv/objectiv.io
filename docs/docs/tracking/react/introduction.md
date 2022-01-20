@@ -1,5 +1,7 @@
 ---
-title: Introduction
 sidebar_position: 1
+slug: /tracking/react
+title: Introduction
 ---
-# React SDK
+# Tracking with React Tracker
+TODO

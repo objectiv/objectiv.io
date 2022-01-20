@@ -1,55 +1,129 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Tracking Locations
 
-Now that the [Tracker is up and running](/tracking/react/how-to-guides/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/tagging.md#elements) as [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md).  
+Now that the [Tracker is up and running](/tracking/react/how-to-guides/getting-started.md) we can start 
+thinking about Tracking some Elements or Components as 
+[LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) or [Tracked Contexts](/tracking/react/api-reference/trackedElements/overview.md).
 
-## Interactive Elements
-A good rule of thumb is to start by identifying all interactive Elements in the Application. 
+The former follows HTML semantic, while the latter are generic wrappers that can render any Component or Element.
 
-### Pressables
-Anything that the user can interact with, but does not cause a URL change, can be considered a Pressable. 
-
-```typescript jsx
-// a button tag 
-<button [tagPressable]="{ id: 'button-1' }">Click Me!</button>
-
-// a clickable image
-<img [tagPressable]="{ id: 'button-3' }" src="/img/ok.png" alt="OK!" />
-```
-
-:::info WIP
-Currently it's necessary to specify `text` manually. We are working on improvements to make this easier.
+:::info why tagging?
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).
 :::
 
+## Interactions
+A good rule of thumb is to start by identifying all the interactions in the Application. 
 
-### Links
-Links are interactive elements that cause, directly or indirectly, a change in the current URL.
+### Pressable
+Anything that the user can interact with, but does not cause a URL change, can be considered Pressable. 
 
-```typescript jsx
-// a link tag 
-<a [tagLink]="{ id: 'link-1', href:'/somewhere' }" href="/somewhere">Go!</a>
+Here are some common examples of Pressable:
+
+```tsx
+// A button Element 
+<button 
+  onClick={ () => doSomething() }
+>
+  Click Me!
+</button>
+
+// A Button Component 
+<Button 
+  onClick={ () => doSomething() }
+>
+  Do It!
+</Button>
+
+// An arbitrary clickable Element
+<img 
+  src="/img/ok.png" 
+  alt="OK!" 
+  onClick={ () => doSomething() } 
+/>
 ```
 
-:::info WIP
-Currently it's necessary to specify `text` and `href` manually. We are working on improvements to make this easier.
+And this is how they can be tracked using React Tracker tracked components.
+
+```ts
+import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react';
+```
+
+```tsx
+// A button tag can be tracked by simply swapping the button Element tag with TrackedButton 
+<TrackedButton 
+  onClick={ () => doSomething() }
+>
+  Click Me!
+</TrackedButton>
+
+// A Button component can be swapped with a TrackedPressableContext configured to render the original Component 
+<TrackedPressableContext 
+  Component={Button} 
+  onClick={ () => doSomething() }
+>
+  Do It!
+</TrackedPressableContext>
+
+// The same applies to an image, or any other Component or HTML Elements
+<TrackedPressableContext 
+  Component={'img'}
+  src="/img/ok.png"
+  alt="OK!"
+  onClick={ () => doSomething() }
+/>
+```
+
+
+### Link
+Links are interactive elements that cause a change in the current URL. Thus, we'd like to track the destination href.
+
+```typescript jsx
+// A link tag 
+<a href="/somewhere">Go!</a>
+
+// a Link component 
+<Link to="/cart">Back</Link>
+```
+
+```ts
+import { TrackedAnchor, TrackedLinkContext } from '@objectiv/tracker-react';
+```
+
+```tsx
+// A anchor tag can be tracked by simply swapping the anchor Element tag with TrackedAnchor 
+<TrackedAnchor href="/somewhere">Go!</TrackedAnchor>
+
+// A Link component can be swapped with a TrackedLinkContext and we need add an extra `href` property   
+<TrackedLinkContext Component={Link} href="/cart" to="/cart">
+  Do It!
+</TrackedLinkContext>
+```
+
+:::tip
+We highly recommend moving TrackedContext based Components to their own modules for re-usability.   
+
+Here is a real example we made for Docusaurus Links:
+
+```tsx
+import Link, { LinkProps } from "@docusaurus/Link";
+import { TrackedLinkContext, TrackedLinkContextProps } from "@objectiv/tracker-react";
+import React from 'react';
+
+export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href'> & LinkProps;
+
+export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
+  (props, ref) => (
+    <TrackedLinkContext Component={Link} {...props} href={props.href ?? props.to} ref={ref}/>
+  )
+)
+```
+
+Now you can use `<TrackedLink to="/cart">Back</Link>` anywhere without having to remember to add the `href` each time.
+
 :::
-
-
-### Expandables
-Elements that cause other Elements, usually their children, to be expanded and displayed to the user. Such as Accordions and collapsible Menus. 
-
-```typescript jsx
-<ul [tagExpandable]="{ id: 'main-menu' }">
-  <li>Menu A</li>
-  ...
-  <li>Menu Z</li>
-</ul>
-```
-
-
 
 ## Tracking Locations
 To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.   
@@ -57,19 +131,32 @@ To make modeling easier it's important to ensure all Tracked interactive Element
 That said, assigning a unique identifier to each Element is not always possible and most often impractical. 
 Think of reusable components for example.
 
-See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-locations) for an explanation 
-of how Sections can be tagged to make Events unique without having to assign a unique idenitifier to each.
+Unique identifiers are also harder to read and reason about on the Data side of things.
 
-An example for Angular:
-```js
-<div [tagContent]="{ id: 'layout' }">
-  <div [tagContent]="{ id: 'homepage-hero' }">
-    <div [tagContent]="{ id: 'section1' }"
-      <a [tagLink]="{ id: 'my-link', href: '/link1'}" href="/link1">Link 1</a>
-    </div>
-    <div [tagContent]="{ id: 'section2' }"
-      <a [tagLink]="{ id: 'my-link', href: '/link2'}" href="/link2">Link 2</a>
-    </div>
-  </div>
-</div>
+See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-locations) for an explanation 
+of how Sections can be tagged to make Events unique without having to assign a unique identifier to each.
+
+A more thorough example:
+```ts
+import { TrackedAnchor, TrackedContentContext, TrackedDiv } from '@objectiv/tracker-react';
 ```
+
+```tsx
+<TrackedContentContext Component={Layout} id={'layout'}>
+  <header>
+    <TrackedDiv id={'section1'}>
+      <TrackedAnchor href="/link1">Link 1</TrackedAnchor>
+    </TrackedDiv>
+    <TrackedDiv id={'section2'}>
+      <TrackedAnchor href="/link2">Link 2</TrackedAnchor>
+    </TrackedDiv>
+  </header>
+</TrackedContentContext>
+```
+
+:::info
+Interesting to note in the example above is that the two TrackedDiv are actually not really necessary, as the links
+would be uniquely identifiable anyway. 
+
+It's still good practice to wrap logical section in ContentContexts as they give a better understanding of what that section of the page means to the Data team, and safeguard for future addition of interactions to it.
+:::

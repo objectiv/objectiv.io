@@ -20,10 +20,10 @@ A number of web platforms and frameworks are currently supported, such as JS, Re
 - [Getting Started with React SDK](/tracking/react/how-to-guides/getting-started.md)
 - [Getting Started with Browser SDK](/tracking/browser/how-to-guides/getting-started.md)
 
-## Core Concepts
-For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
-
 ## API Reference
 To implement low-level functionality and configuration of the Trackers, all core APIs are open and documented. Check out the API References:
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
 - [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
+
+## Core Concepts
+For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).

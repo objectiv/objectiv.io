@@ -1,6 +1,5 @@
 ---
-sidebar_position: 1
-slug: /how-to-guides/collector/getting-started
+sidebar_position: 2
 title: Getting Started
 ---
 
@@ -107,5 +106,5 @@ configuration may be necessary.
 
 ## Next step
 :::info Instrumenting your app 
-Now you've got the Objectiv Collector running, next step is to instrument your app with the [Objectiv Tracker](/tracking/how-to-guides/).
+Now you've got the Objectiv Collector running, next step is to instrument your app with any of the [Objectiv Trackers](/tracking/core-concepts/trackers.md).
 :::

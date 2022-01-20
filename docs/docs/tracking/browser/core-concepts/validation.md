@@ -5,7 +5,7 @@ title: Validation
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Data tracked by Objectiv adheres to an open, standardized [Taxonomy](//taxonomy/introduction.md). This means it's 
+Data tracked by Objectiv adheres to an open, standardized [Taxonomy](/taxonomy/introduction.md). This means it's 
 well-structured & self-descriptive, and can be validated at the first step of the pipeline. Objectiv provides 
 several tools to catch errors before data starts flowing in, outlined below.
 
@@ -25,15 +25,15 @@ browser console:
 
 * **Errors**: Warnings are thrown for unknown tagging/tracking calls, missing properties, or wrongly typed 
   properties.
-* **Uniqueness**: If an Event `id` and its [Location Stack](locations.md) are not unique, an Error is thrown.
+* **Uniqueness**: If an Event `id` and its [Location Stack](/tracking/core-concepts/locations.md) are not unique, an Error is thrown.
   In the browser console, the error can be hovered/clicked to identify the existing and colliding Elements.
-  [See Locations - Solving Collisions](./locations.md#solving-collisions) for an example.
+  [See Locations - Solving Collisions](/tracking/core-concepts/locations.md#solving-collisions) for an example.
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the 
+As a final catch-all, Objectiv's [Collector](/tracking/core-concepts/collector/introduction.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
-For more background, see the [Collector docs](/tracking/collector/introduction.md).
+For more background, see the [Collector docs](/tracking/core-concepts/collector/introduction.md).
 
 ## Logging
 When you run your application, you can observe all tracking calls and other tracking events by enabling 

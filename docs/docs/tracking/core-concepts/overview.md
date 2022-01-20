@@ -17,4 +17,6 @@ This is done by [tagging](/tracking/browser/core-concepts/tagging.md) interactiv
 - [Locations](/tracking/core-concepts/locations.md) that describe the exact UI position for an [Event](/taxonomy/reference/events/overview.md).
 - [Trackers](/tracking/core-concepts/trackers.md) to instrument on various platforms.
 - [Validation](/tracking/core-concepts/validation.md) of Events according to the [Taxonomy](/taxonomy/introduction.md).
+- [Collector](/tracking/core-concepts/collector/introduction.md) to receive, validate and store [Events](/taxonomy/reference/events/overview.md).
+
 

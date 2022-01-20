@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # ReactTracker
 
-ReactTracker extends [Core Tracker](/tracking/api-reference/core/Tracker.md) with a simplified constructor and some preconfigured [Plugins](/tracking/api-reference/core/TrackerPlugins.md).
+ReactTracker extends [Core Tracker](#TODO) with a simplified constructor and some preconfigured [Plugins](#TODO).
 
 ## Usage
 In this example we create a new ReactTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md).
@@ -32,18 +32,18 @@ const App = ({children}) => {
 ## Configuration
 ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
-|          |                                 | type                                                                 | default value                                                                                                                  |
-|:--------:|:--------------------------------|:---------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
-| required | **applicationId**               | string                                                               |                                                                                                                                |
-| optional | **_endpoint_**                  | string                                                               |                                                                                                                                |
-| optional | **_transport_**                 | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)                         |
-| optional | console                         | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     | `undefined` in production, global console in dev                                                                               |
-| optional | queue                           | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)                                 |
-| optional | plugins                         | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md) |
-| optional | trackerId                       | string                                                               | Same value as `applicationId`                                                                                                  |
-| optional | active                          | boolean                                                              | `true`                                                                                                                         |
-| optional | trackPathContextFromURL         | boolean                                                              | `true`                                                                                                                         |
-| optional | trackRootLocationContextFromURL | boolean                                                              | `true`                                                                                                                         |
+|          |                                 | type                      | default value                                                                                                                        |
+|:--------:|:--------------------------------|:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| required | **applicationId**               | string                    |                                                                                                                                      |
+| optional | **_endpoint_**                  | string                    |                                                                                                                                      |
+| optional | **_transport_**                 | [TrackerTransport](#TODO) | The result of [makeDefaultTransport](/tracking/react/api-reference/common/factories/makeDefaultTransport.md)                         |
+| optional | console                         | [TrackerConsole](#TODO)   | `undefined` in production, global console in dev                                                                                     |
+| optional | queue                           | [TrackerQueue](#TODO)     | The result of [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)                                 |
+| optional | plugins                         | [TrackerPlugins](#TODO)   | TrackerPlugins with the result of [makeDefaultPluginsList](/tracking/react/api-reference/common/factories/makeDefaultPluginsList.md) |
+| optional | trackerId                       | string                    | Same value as `applicationId`                                                                                                        |
+| optional | active                          | boolean                   | `true`                                                                                                                               |
+| optional | trackPathContextFromURL         | boolean                   | `true`                                                                                                                               |
+| optional | trackRootLocationContextFromURL | boolean                   | `true`                                                                                                                               |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
@@ -54,13 +54,13 @@ When providing only `endpoint`, the Tracker will automatically create a Transpor
 ## Defaults 
 
 ### Transport
-[Fetch](/tracking/api-reference/transports/FetchAPITransport.md) + [XMLHttpRequest](/tracking/api-reference/transports/XMLHttpRequestTransport.md) Transport Switch.
+[Fetch](#TODO) + [XMLHttpRequest](#TODO) Transport Switch.
 
 ### Queueing
 TrackerQueue is configured to eagerly send max 10 events per batch, each batch is processed every 1000ms.  
 
 ### Persistence
-TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorage.md).
+TrackerQueue is configured to use [LocalStorage](#TODO).
 
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.

@@ -81,7 +81,7 @@ trackVisibility = {
 ```
 
 ## options.parent
-Used to override how the parent of a [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements) gets determined. When reconstructing the [Location Stack](/tracking/browser/core-concepts/locations.md) the given `parent` will be followed instead of the DOM tree.   
+Used to override how the parent of a [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements) gets determined. When reconstructing the [Location Stack](/tracking/core-concepts/locations.md) the given `parent` will be followed instead of the DOM tree.   
 
 A practical is to track dynamically placed nodes in the DOM, such as React Portals. 
 

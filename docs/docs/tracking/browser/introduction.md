@@ -1,5 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
+slug: /tracking/browser
 title: Introduction
 ---
-# Browser SDK
+# Tracking with Browser Tracker
+TODO

@@ -7,7 +7,7 @@ makeDefaultTransport = (ReactTrackerConfig) => TrackerTransportInterface
 ```  
 
 :::info
-The default TrackerTransport is a [Fetch](/tracking/api-reference/transports/FetchAPITransport.md) + [XMLHttpRequest](/tracking/api-reference/transports/XMLHttpRequestTransport.md) Transport Switch.  
+The default TrackerTransport is a [Fetch](#TODO) + [XMLHttpRequest](#TODO) Transport Switch.  
 The default retry logic is configured for 10 retries with exponential backoff starting at 1000ms.
 :::
 
@@ -27,6 +27,6 @@ makeDefaultTransport(); // 'TrackerTransportRetry ...'
 <br />
 
 :::info See also
-- [makeDefaultPluginList](/tracking/react/api-reference/common/factories/makeDefaultPluginList.md)
+- [makeDefaultPluginsList](/tracking/react/api-reference/common/factories/makeDefaultPluginsList.md)
 - [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)
 :::

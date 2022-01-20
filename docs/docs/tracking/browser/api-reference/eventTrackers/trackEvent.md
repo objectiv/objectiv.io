@@ -1,6 +1,6 @@
 # trackEvent
 
-First, it determines the [Location](/tracking/browser/core-concepts/locations.md) of a [TrackableElement](/tracking/browser/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then enriches the given [Event](/taxonomy/reference/events/overview.md) with the Location and triggers it.
+First, it determines the [Location](/tracking/core-concepts/locations.md) of a [TrackableElement](/tracking/browser/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then enriches the given [Event](/taxonomy/reference/events/overview.md) with the Location and triggers it.
 
 ```typescript
 trackEvent = (parameters: {

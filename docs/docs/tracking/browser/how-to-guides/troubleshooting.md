@@ -6,9 +6,9 @@ sidebar_position: 4
 When dealing with regular HTML [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
 
 The most common issues will be:
-- Incorrect [Locations](/tracking/browser/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html).
+- Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html).
 - [Events](/taxonomy/reference/events/overview.md) not triggering due to missing [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md).
-- Non-unique [Locations](/tracking/browser/core-concepts/locations.md), aka [Collisions](/tracking/browser/core-concepts/locations.md#solving-collisions).
+- Non-unique [Locations](/tracking/core-concepts/locations.md), aka [Collisions](/tracking/core-concepts/locations.md#solving-collisions).
 
 
 :::info Why not just wrap components?
@@ -198,7 +198,7 @@ Sometimes the browser console will show a warning about  colliding elements, e.g
 ![Collisions in browser console](/img/docs/tracking-collision-browser-console.png)
 
 
-The [Core Concepts section explains Collisions and how to solve them](/tracking/browser/core-concepts/locations.md#solving-collisions).
+The [Core Concepts section explains Collisions and how to solve them](/tracking/core-concepts/locations.md#solving-collisions).
 
 
 ## Manual orchestration
