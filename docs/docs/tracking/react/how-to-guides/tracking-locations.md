@@ -1,162 +1,53 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Tracking Locations
+To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.
 
-Now that the [Tracker is up and running](/tracking/react/how-to-guides/getting-started.md) we can start 
-thinking about Tracking some Elements or Components as 
-[LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) or [Tracked Contexts](/tracking/react/api-reference/trackedElements/overview.md).
-
-The former follow HTML semantic, while the latter are generic wrappers that can render any Component or Element. Both are built on top of our [Providers](/tracking/react/api-reference/common/providers/overview.md) and [Location Wrappers](/tracking/react/api-reference/locationWrappers/overview.md).
-
-:::info Locations?
-Take a look at the [Core Concepts Introduction](/tracking/core-concepts) for more information on what Locations are and why are they so important.
-:::
-
-## Interactions
-A good rule of thumb is to start by identifying all the interactions in the Application. 
-
-### Pressable
-Anything that the user can interact with, but does not cause a URL change, can be considered Pressable. 
-
-Here are some common examples of Pressable:
-
-```tsx
-// A button Element 
-<button onClick={handleClick}>Click Me!</button>
-
-// A Button Component 
-<Button onClick={handleClick}>Do It!</Button>
-
-// An arbitrary clickable Element
-<img src="/img/ok.png" alt="OK!" onClick={handleClick}/>
-```
-
-This is how they can be tracked using React Tracker tracked components.
-
-```ts
-import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react';
-```
-
-```tsx
-// A button tag can be tracked by simply swapping the button Element tag with TrackedButton 
-<TrackedButton onClick={handleClick}>Click Me!</TrackedButton>
-
-// We can swap any Component with TrackedPressableContext configured to render the original 
-<TrackedPressableContext Component={Button} onClick={handleClick}>Do It!</TrackedPressableContext>
-
-// The same applies to an image, or any other Component or HTML Elements
-<TrackedPressableContext Component={'img'} src="/img/ok.png" alt="OK!" onClick={handleClick} />
-```
-
-
-### Link
-Links are interactive elements that cause a change in the current URL. Thus, we'd like to track the destination href.
-
-```typescript jsx
-// A link tag 
-<a href="/somewhere">Go!</a>
-
-// a Link component 
-<Link to="/cart">Back</Link>
-```
-
-This is how they can be tracked using React Tracker tracked components.
-
-```ts
-import { TrackedAnchor, TrackedLinkContext } from '@objectiv/tracker-react';
-```
-
-```tsx
-// A anchor tag can be tracked by simply swapping the anchor Element tag with TrackedAnchor 
-<TrackedAnchor href="/somewhere">Go!</TrackedAnchor>
-
-// Link can be swapped with a TrackedLinkContext with the addition of an extra `href` property   
-<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
-```
-
-:::tip
-We highly recommend moving TrackedContext based Components to their own modules for re-usability.   
-
-Here is a real example we made for Docusaurus Links:
-
-```tsx
-import Link, { LinkProps } from "@docusaurus/Link";
-import { TrackedLinkContext, TrackedLinkContextProps } from "@objectiv/tracker-react";
-import React from 'react';
-
-export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href'> & LinkProps;
-
-export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
-  (props, ref) => (
-    <TrackedLinkContext Component={Link} {...props} href={props.href ?? props.to} ref={ref}/>
-  )
-)
-```
-
-Now instead of:
-```tsx
-<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
-```
-
-We can simply use:
-```tsx
-<TrackedLink to="/cart">Do It!</TrackedLink>
-
-// or
-
-<TrackedLink href="/cart">Do It!</TrackedLink>
-
-```
-:::
-
-### External Links
-All Pressable may lead users to an external website and the Tracker may not have had the time to track those PressEvents.
-
-This is why all Pressable based Components support the `waitUntilTracked` option. 
-This will attempt to delay the original event handler until the Tracker has finished its job.
-
-```tsx
-<TrackedAnchor to="https://www.google.com" waitUntilTracked={true}>Google</TrackedAnchor>
-```
-
-:::info
-This option will not block indefinitely. It has a timeout of about 2s (Tracker Queue default batch delay * 2).
-That said, since the Queue is eager, under normal network conditions the wait time is barely noticeable.
-
-In a future version of React Tracker we plan to make the `waitUntilTracked` option configurable inline.
-:::
-
-## Tracking Content
-To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.   
-
-That said, assigning a unique identifier to each Element is not always possible and most often impractical. 
-Think of reusable components for example.
+Assigning a unique identifier to each Element is not always possible, most often impractical, and simply doesn't work in many scenarios. Think of reusable components for example.
 
 Unique identifiers are also harder to read and reason about on the Data side of things.
 
-A more thorough example:
+## Example of collision
+Let's take a look at this page:
+
+```tsx
+<TrackedContentContext Component={Layout} id={'layout'}>
+  <header>
+    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
+  </header>
+  <div>
+    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
+  </div>
+</TrackedContentContext>
+```
+
+In the example above we have a page with the same link used multiple times across the page.  
+This is not so unlikely for CTAs, especially on longer pages.
+
+React Tracker will notify of the collision of the second link with the first one.
+
+## Solving a collision
+To solve the issue, we can simply make the Location of these Elements richer:
+
 ```ts
 import { TrackedAnchor, TrackedContentContext, TrackedDiv } from '@objectiv/tracker-react';
 ```
 
 ```tsx
+import { TrackedHeader } from "@objectiv/tracker-react";
+
 <TrackedContentContext Component={Layout} id={'layout'}>
-  <header>
-    <TrackedDiv id={'section1'}>
-      <TrackedAnchor href="/link1">Link 1</TrackedAnchor>
-    </TrackedDiv>
-    <TrackedDiv id={'section2'}>
-      <TrackedAnchor href="/link2">Link 2</TrackedAnchor>
-    </TrackedDiv>
-  </header>
+  <TrackedHeader>
+    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
+  </TrackedHeader>
+  <TrackedDiv>
+    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
+  </TrackedDiv>
 </TrackedContentContext>
 ```
 
-:::info
-Interesting to note in the example above is that the two TrackedDiv are actually not really necessary, as the links
-would be uniquely identifiable anyway. 
-
-It's still good practice to wrap logical section in ContentContexts as they give a better understanding of what that section of the page means to the Data team, and safeguard for future addition of interactions to it.
-:::
+## Best practices
+Solving Collisions should not be a issue to deal with frequently.    
+[Check out how to avoid them](/tracking/react/core-concepts/best-practices.md) in the first place by reading what we think are good practices around tracking Locations.

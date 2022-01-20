@@ -7,7 +7,7 @@ title: Introduction
 
 The React SDK leverages React Context Providers for mapping JSX Elements and Components to the [Open Taxonomy](/taxonomy).
 
-It provides a number of Higher Order [Elements](/tracking/react/api-reference/trackedElements/overview.md), [Components](/tracking/react/api-reference/trackedContexts) and [Wrappers](/tracking/react/api-reference/locationWrappers) to easily make a regular UI Element into a Tracked one. 
+It provides a number of Higher Order [Elements](/tracking/react/api-reference/trackedElements/overview.md), [Components](/tracking/react/api-reference/trackedContexts/overview.md) and [Wrappers](/tracking/react/api-reference/locationWrappers/overview.md) to easily make a regular UI Element into a Tracked one. 
 
 The resulting components are automatically wrapped in the correct [LocationContext](/taxonomy/reference/location-contexts/overview.md) and, if applicable, event handlers are automatically instrumented under the hood.
 
@@ -20,3 +20,6 @@ To immediately jump into instrumenting your application, follow the step-by-step
 
 ## API Reference 
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
+
+## Core Concepts
+- [Best Practices](/tracking/react/core-concepts/best-practices.md)
