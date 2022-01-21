@@ -29,14 +29,6 @@ export default function Home() {
             designed for modern data teams
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
-            <div className={clsx(styles.productIntroVideo)}>
-                <iframe src="https://www.loom.com/embed/14de380e12fe4f8f9cfa500034dedd30?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
-                frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
-          </div>
-          <img
-                className={clsx(styles.objectivIn2Minutes)}
-                src={useBaseUrl("img/header-2-minutes.svg")}
-                alt="Objectiv in 2 minutes" />
           </div>
         </header>
 
