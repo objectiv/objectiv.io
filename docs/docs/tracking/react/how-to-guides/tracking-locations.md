@@ -99,12 +99,18 @@ import { TrackedHeader } from "@objectiv/tracker-react";
   <TrackedHeader>
     <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
   </TrackedHeader>
-  <TrackedDiv>
+  <TrackedDiv id={'body'}>
     <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
   </TrackedDiv>
 </TrackedContentContext>
 ```
 
+:::tip
+You may have noticed that the TrackedDiv in the example above is not strictly necessary to solve the collision. So, why did we add it?
+
+More on that in our [best practices](/tracking/react/core-concepts/best-practices.md) around what to track and why.
+:::
+
 ## Best practices
-Solving Collisions should not be a issue to deal with frequently.    
+Solving Collisions should not be an issue to deal with frequently.    
 [Check out how to avoid them](/tracking/react/core-concepts/best-practices.md) in the first place by reading what we think are good practices around tracking Locations.
