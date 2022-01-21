@@ -2,10 +2,16 @@
 sidebar_position: 4
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Tracking Locations
 
 ## Collisions
 If you started [instrumenting your Interactions](/tracking/react/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
+
+Example of a collision of the `footer` element in the browser's console:
+
+<img alt="Collision: duplicated footer" src={useBaseUrl('img/docs/tracking-collision-react.png')} style={{ border: '1px solid lightgrey'}} />
 
 ### Unique Locations
 

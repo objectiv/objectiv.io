@@ -17,7 +17,7 @@ During instrumentation, you'll get inline documentation for every function, and 
 issues: unknown tagging/tracking calls, missing properties, or wrongly typed properties.
 
 Example inline error in IDE:
-<img alt="IDE validation: property type" src={useBaseUrl('img/docs/ide-validation-property-type.png')} />
+<img alt="IDE validation: property id" src={useBaseUrl('img/docs/ide-typescript-validation.png')} />
 
 ## Run-time validation
 When you run your application, any validation errors are caught by the Objectiv debugger, and displayed in the
