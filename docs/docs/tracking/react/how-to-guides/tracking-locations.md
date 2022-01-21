@@ -114,3 +114,7 @@ More on that in our [best practices](/tracking/react/core-concepts/best-practice
 ## Best practices
 Solving Collisions should not be an issue to deal with frequently.    
 [Check out how to avoid them](/tracking/react/core-concepts/best-practices.md) in the first place by reading what we think are good practices around tracking Locations.
+
+## What's next?
+This is pretty much it for the basics of tracking with React SDK.  
+Check out the [API Reference](/tracking/react/api-reference/overview.md) and its examples for more details about all the available Components, Hooks and APIs.  
