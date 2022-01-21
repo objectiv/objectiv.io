@@ -1,7 +1,6 @@
 ---
 sidebar_position: 6
 title: Trackers
-slug: trackers
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,56 +10,30 @@ Objectiv currently supports three trackers:
 * [React Tracker](#react-tracker) for installation into React web apps.
 * [Angular Tracker](#angular-tracker) for installation into Angular web apps.
 
-## Browser Tracker
-The [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md) is available via npm. It supports 
-core tracking methods out of the box.
+## React Tracker
+The [React Tracker](/tracking/react/how-to-guides/getting-started.md) is available via npm to be directly installed into your React application.
+It relies on React Context Providers for Location tracking and hooks for Event tracking.  
+Tracking Locations with React Tracker is much easier and reliable than with BrowserTracker.
 
-Example usage:
-```js
-import { trackPressEvent } from '@objectiv/tracker-browser';
-```
-```js
-<div
-  onClick={(event) => {
-    trackPressEvent({ element: event.target })
-  }}
-/>
-```
+See the [How-to Guide for React](/tracking/react/how-to-guides/getting-started.md) to get started.
+
+By default, the React Tracker automatically tracks the
+[ApplicationLoaded](/tracking/react/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
+
+## Browser Tracker
+The [Browser Tracker](/tracking/browser/how-to-guides/getting-started.md) is available via npm. 
+It relies on the DOM for Location tracking and can be used with any framework relying on HTML templates.
 
 By default, the Browser Tracker automatically tracks the 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
-
-## React Tracker
-The React Tracker is available via npm to be directly installed into your React application. It supports all 
-core tracking methods out of the box, and provides added shorthands for React components.
-
-Example usage:
-```js
-import { tagPressable } from '@objectiv/tracker-browser';
-```
-```js
-<Button {...tagPressable({ id: 'button-2' })}>Do It!</Button>
-```
-
-See the [How-to Guide for React](/tracking/how-to-guides/react/getting-started.md) to get started.
-
-By default, the React Tracker automatically tracks the 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
+[ApplicationLoaded](/tracking/browser/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
 
 ## Angular Tracker
-The React Tracker is available via npm to be directly installed into your React application. It supports all 
-core tracking methods out of the box, and provides added shorthands for Angular components.
+The Angular Tracker is a module built on top of Browser Tracker coming with a Directive to ease tagging in HTML templates. 
 
-Example usage:
-```js
-// a button tag 
-<button [tagPressable]="{ id: 'button-1' }">Click Me!</button>
-```
-
-See the [How-to Guide for Angular](/tracking/how-to-guides/angular/getting-started.md) to get started.
+See the [How-to Guide for Angular](/tracking/angular/how-to-guides/getting-started.md) to get started.
 
 By default, the Angular Tracker automatically tracks the 
-[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event.
+[ApplicationLoaded](/tracking/browser/api-reference/eventTrackers/trackApplicationLoadedEvent.md) event via the Browser Tracker.
 
 ## Extensibility: Plugins
 The Core Tracker is extensible through plugins. Each plugin can control when it's enabled, e.g. only if a Web
@@ -70,4 +43,6 @@ These plugins are supported out of the box, and automatically enabled when the e
 * `application-context`: adds a Global [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) 
   to each Event;
 * `path-context-from-url`: adds a Global [PathContext](/taxonomy/reference/global-contexts/PathContext.md)
+  to each Event;
+* `root-location-context-from-url`: adds a Location [PathContext](/taxonomy/reference/location-contexts/RootLocationContext.md)
   to each Event;

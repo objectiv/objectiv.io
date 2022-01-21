@@ -8,7 +8,7 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-Global Contexts add general information to an [Event](/tracking/core-concepts/events.md). 
+Global Contexts add general information to an [Event](/taxonomy/reference/events/overview.md). 
 
 <Mermaid chart={`
 	graph LR

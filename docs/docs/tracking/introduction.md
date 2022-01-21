@@ -13,14 +13,19 @@ Objectiv comes with a set of tools that help you set up error-free user behavior
 
 <img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" class="img-l" />
 
-Instrumentation involves mapping your application to the [open taxonomy for analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling. [Learn more](/tracking/core-concepts/overview.md).
+Instrumentation involves an opt-in process of mapping your application to the [open taxonomy for analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling. [Learn more](/tracking/core-concepts/overview.md).
 
 ## How-to Guides
-A number of web & mobile platforms and frameworks are currently supported, such as JS, React, React Native, 
-and Angular - with more support coming. To immediately jump into instrumenting your application, [follow the step-by-step How-to Guides](/tracking/how-to-guides/overview.md).
+A number of web platforms and frameworks are currently supported, such as JS, React, and Angular - with more support coming. To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
+- [Getting Started with React SDK](/tracking/react/how-to-guides/getting-started.md)
+- [Getting Started with Browser SDK](/tracking/browser/how-to-guides/getting-started.md)
+- [Getting Started with Angular SDK](/tracking/angular/how-to-guides/getting-started.md)
+
+## API Reference
+To implement low-level functionality and configuration of the Trackers, all core APIs are open and documented. Check out the API References:
+- [React SDK API Reference](/tracking/react/api-reference/overview.md)
+- [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
+- [Angular SDK API Reference](/tracking/angular/api-reference/overview.md)
 
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
-
-## API Reference
-To implement low-level functionality and configuration of the Trackers, all core APIs are open and documented. [Check out the API Reference](/tracking/api-reference/overview.mdx)
