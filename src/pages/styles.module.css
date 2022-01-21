@@ -176,11 +176,9 @@ footer h2 {
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
-    padding: 5rem 2rem;
+    /* padding: 5rem 2rem; */
   }
-  .heroTitle br, .heroSubTitle br {
-    display: none
-  }
+  
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
@@ -193,7 +191,8 @@ footer h2 {
 }
 
 .heroContainer {
-  max-width: 850px;
+  /* max-width: 850px; */
+  max-width: 996px;
 }
 
 .heroImage {
@@ -212,6 +211,9 @@ footer h2 {
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
+  }
+  .heroTitle br, .heroSubTitle br {
+    display: none
   }
 }
 
@@ -244,10 +246,10 @@ footer h2 {
 }
 
 .theProduct .ctaButton {
-  margin: 0 0 100px 0;
+  margin: 40px 0 100px 0;
 }
 
-.theProduct .whyObjectiv {
+.theProduct .learnMore {
   display: block;
   margin: 0 auto;
 }
