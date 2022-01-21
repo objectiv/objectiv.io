@@ -6,7 +6,7 @@ title: Introduction
 
 # Tracking Core Concepts
 
-While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or overcomplete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. 
+While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or over-complete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. 
 
 Objectiv asks you to map your application to the [open taxonomy of analytics](/taxonomy).  
 

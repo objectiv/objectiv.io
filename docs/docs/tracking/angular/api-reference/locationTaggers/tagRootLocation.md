@@ -26,7 +26,7 @@ This attribute directive builds on top of [BrowserTracker:tagRootLocation](/trac
 
 ## Examples
 
-```typescript jsx
+```html
 <main [tagRootLocation]="{ id: 'page' }">
   ...
 </main>

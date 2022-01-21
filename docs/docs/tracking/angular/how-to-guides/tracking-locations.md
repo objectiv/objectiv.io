@@ -16,7 +16,7 @@ A good rule of thumb is to start by identifying all interactive Elements in the 
 ### Buttons
 Anything that the user can interact with, but does not cause a URL change, can be considered a Button. 
 
-```typescript jsx
+```html
 // a button tag 
 <button [tagPressable]="{ id: 'button-1' }">Click Me!</button>
 
@@ -32,7 +32,7 @@ Currently it's necessary to specify `text` manually. We are working on improveme
 ### Links
 Links are interactive elements that cause, directly or indirectly, a change in the current URL.
 
-```typescript jsx
+```html
 // a link tag 
 <a [tagLink]="{ id: 'link-1', href:'/somewhere' }" href="/somewhere">Go!</a>
 ```
@@ -45,7 +45,7 @@ Currently it's necessary to specify `text` and `href` manually. We are working o
 ### Expandables
 Elements that cause other Elements, usually their children, to be expanded and displayed to the user. Such as Accordions and collapsible Menus. 
 
-```typescript jsx
+```html
 <ul [tagExpandable]="{ id: 'main-menu' }">
   <li>Menu A</li>
   ...
@@ -65,7 +65,7 @@ See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-lo
 of how Sections can be tagged to make Events unique without having to assign a unique identifier to each.
 
 An example for Angular:
-```js
+```html
 <div [tagContent]="{ id: 'layout' }">
   <div [tagContent]="{ id: 'homepage-hero' }">
     <div [tagContent]="{ id: 'section1' }"
