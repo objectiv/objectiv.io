@@ -22,5 +22,5 @@ To immediately jump into instrumenting your application, follow the step-by-step
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
 
-- [Tagging](/tracking/angular/core-concepts/tagging.md)
-- [Validation](/tracking/angular/core-concepts/validation.md)
+- [Tagging](/tracking/core-concepts/angular/tagging.md)
+- [Validation](/tracking/core-concepts/angular/validation.md)

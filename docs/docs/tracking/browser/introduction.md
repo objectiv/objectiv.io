@@ -27,5 +27,5 @@ To immediately jump into instrumenting your application, follow the step-by-step
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
 
-- [Tagging](/tracking/browser/core-concepts/tagging.md)
-- [Validation](/tracking/browser/core-concepts/validation.md)
+- [Tagging](/tracking/core-concepts/browser/tagging.md)
+- [Validation](/tracking/core-concepts/browser/validation.md)

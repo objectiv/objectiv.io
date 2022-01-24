@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Tagging Locations
 
-Now that the [Tracker is up and running](/tracking/angular/how-to-guides/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/angular/core-concepts/tagging.md#elements) as [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Location Taggers](/tracking/angular/api-reference/locationTaggers/overview.md).  
+Now that the [Tracker is up and running](/tracking/angular/how-to-guides/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/angular/tagging.md#elements) as [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Location Taggers](/tracking/angular/api-reference/locationTaggers/overview.md).  
 
 :::info why tagging?
 If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).

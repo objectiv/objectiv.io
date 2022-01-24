@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+slug: /tracking/core-concepts/react
 ---
 
 # Best practices

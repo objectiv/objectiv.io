@@ -1,6 +1,6 @@
 # tagChildren
 
-Tags a [BrowserTracker:Taggable Element](/tracking/browser/core-concepts/tagging.md#taggable-elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
+Tags a [BrowserTracker:Taggable Element](/tracking/core-concepts/browser/tagging.md#taggable-elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
 
 ```typescript
 tagChildren = (parameters: ChildrenTaggingQueries) => TagLocationReturnValue

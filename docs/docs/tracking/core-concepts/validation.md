@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
 title: Validation
 ---
 
@@ -27,7 +27,7 @@ browser console:
 * **Uniqueness**: If an Event `id` and its [Location Stack](locations.md) are not unique, an Error is thrown.
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/core-concepts/collector/introduction.md) validates any incoming Event against the 
+As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
-For more background, see the [Collector docs](/tracking/core-concepts/collector/introduction.md).
+For more background, see the [Collector docs](/tracking/collector/introduction.md).

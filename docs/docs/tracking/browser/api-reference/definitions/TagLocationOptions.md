@@ -15,7 +15,7 @@ All options are optional and can be either omitted or set to `undefined` to reve
 :::
 
 ## options.trackClicks
-Used to customize whether and how [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) are attached to [Tagged Elements](/tracking/browser/core-concepts/tagging.md#tagged-elements).
+Used to customize whether and how [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) are attached to [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements).
 
 
 ### options.trackClicks.waitUntilTracked
@@ -56,13 +56,13 @@ In the following example we are instructing our [Mutation Observer](/tracking/br
 ```
 
 ## options.trackBlurs
-Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/browser/core-concepts/tagging.md#tagged-elements).
+Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements).
 
 ## options.trackVisibility
 Used to customize whether to track [trackHiddenEventEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) and [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) events, either automatically or manually.
 
 ### Visibility mode:auto  
-Either [trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) are triggered when [Tagged Elements](/tracking/browser/core-concepts/tagging.md#tagged-elements) are added or removed to/from the DOM.
+Either [trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) are triggered when [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
 trackVisibility = {
@@ -81,7 +81,7 @@ trackVisibility = {
 ```
 
 ## options.parent
-Used to override how the parent of a [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements) gets determined. When reconstructing the [Location Stack](/tracking/core-concepts/locations.md) the given `parent` will be followed instead of the DOM tree.   
+Used to override how the parent of a [Tagged Element](/tracking/core-concepts/browser/tagging.md#tagged-elements) gets determined. When reconstructing the [Location Stack](/tracking/core-concepts/locations.md) the given `parent` will be followed instead of the DOM tree.   
 
 A practical is to track dynamically placed nodes in the DOM, such as React Portals. 
 

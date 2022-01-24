@@ -30,10 +30,10 @@ browser console:
   [See Locations - Solving Collisions](/tracking/core-concepts/locations.md#solving-collisions) for an example.
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/core-concepts/collector/introduction.md) validates any incoming Event against the 
+As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
-For more background, see the [Collector docs](/tracking/core-concepts/collector/introduction.md).
+For more background, see the [Collector docs](/tracking/collector/introduction.md).
 
 ## Logging
 When you run your application, you can observe all tracking calls and other tracking events by enabling 
