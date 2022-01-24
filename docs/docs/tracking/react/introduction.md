@@ -23,4 +23,4 @@ To immediately jump into instrumenting your application, follow the step-by-step
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
 
 ## Core Concepts
-- [Best Practices](/tracking/react/core-concepts/best-practices.md)
+- [Best Practices](/tracking/core-concepts/react/best-practices.md)

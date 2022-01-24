@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
 title: Tagging
+slug: /tracking/core-concepts/browser
 ---
 :::info why tagging?
-If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/browser/core-concepts).
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts).
 :::
 
 To understand **tagging**, we first need to know what we mean by **Elements**. 
@@ -64,8 +65,7 @@ tagging Elements is useful in two main ways:
 2. Every Event becomes unique (see next section about collisions).
 
 An example of tagging sections and Links in your UI:
-```js
-...
+```jsx
 import { tagContent, tagLink } from '@objectiv/tracker-browser';
 
 export default function Test() {

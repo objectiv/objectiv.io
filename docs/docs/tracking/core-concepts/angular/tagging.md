@@ -1,9 +1,11 @@
 ---
 sidebar_position: 2
 title: Tagging
+slug: /tracking/core-concepts/angular
 ---
+
 :::info why tagging?
-If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/browser/core-concepts).
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts/angular).
 :::
 
 To understand **tagging**, we first need to know what we mean by **Elements**. 
@@ -22,9 +24,9 @@ beforementioned [Elements](https://developer.mozilla.org/en-US/docs/Web/API/Elem
 Examples are a `<div>` or an `<a>` element in HTML.
 
 ## Tagging of Elements
-[Objectiv's Tracker API](/tracking/browser/api-reference/locationTaggers/overview.md) is used to **tag** any Element
+[Location Taggers](/tracking/angular/api-reference/locationTaggers/overview.md) are used to **tag** any Element
 that you want to track. The Tracker then uses this information to automatically decorate the Element in the 
-DOM with the respective [TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md). 
+DOM with the respective [BrowserTracker:TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md). 
 
 A **tagging** example in React:
 ```js
@@ -48,12 +50,12 @@ A **tagging** example in React:
 ```
 
 When the Tracker wants to send an [Event](/taxonomy/reference/events/overview.md) related to an Element (e.g. a 
-click), it uses its decorated [TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) to 
+click), it uses its decorated [BrowserTracker:TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) to 
 compose the Event.
 
 ## Tagging Content
 You can tag logical sections in your application's UI (e.g. the hero element on a homepage) using
-[tagContent](/tracking/browser/api-reference/locationTaggers/tagContent.md). This binds a
+[tagContent](/tracking/angular/api-reference/locationTaggers/tagContent.md). This binds a
 [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md) to it.
 
 This might seem without benefit, as no Events are triggered (by default) on tagged sections. However,
@@ -150,21 +152,21 @@ instead of
 
 ### Applying Locations manually
 Sometimes it may be preferable, or necessary, to tag Locations manually; for these cases, a low-level
-[tagLocation](/tracking/browser/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable
+[tagLocation](/tracking/angular/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable
 Element to be tracked as any LocationContext.
 
 
 ## Tagged Elements
 These are **Taggable Elements** that have been already decorated by the Objectiv Tracker with at least the 
-`elementId` and `context` [TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md). The 
+`elementId` and `context` [BrowserTracker:TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md). The 
 Tagging Attributes supply the Tracker with the information needed to compose & send the right 
 [Events](/taxonomy/reference/events/overview.md).
 
 ## Children Tagging Elements
 These are **Taggable Elements** that have been already decorated with the 
-[TaggingAttribute.tagChildren](/tracking/browser/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren) by using the [tagChildren](/tracking/browser/api-reference/locationTaggers/tagChildren.md) Location Tagger. They will execute the given [ChildrenTaggingQueries](/tracking/browser/api-reference/definitions/ChildrenTaggingQueries.md), at runtime, and tag matching children Elements.
+[BrowserTracker:TaggingAttribute.tagChildren](/tracking/browser/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren) by using the [tagChildren](/tracking/angular/api-reference/locationTaggers/tagChildren.md) Location Tagger. They will execute the given [BrowserTracker:ChildrenTaggingQueries](/tracking/browser/api-reference/definitions/ChildrenTaggingQueries.md), at runtime, and tag matching children Elements.
 
-[ChildrenTaggingQuery](/tracking/browser/api-reference/definitions/ChildrenTaggingQuery.md) objects are composed of a CSS Selector query and a set of TaggingAttributes. Each matching Element will be decorated with the given Location Tagger result. 
+[BrowserTracker:ChildrenTaggingQuery](/tracking/browser/api-reference/definitions/ChildrenTaggingQuery.md) objects are composed of a CSS Selector query and a set of TaggingAttributes. Each matching Element will be decorated with the given Location Tagger result. 
 
 A **tagChildren** example in React:
 

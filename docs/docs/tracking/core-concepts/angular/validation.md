@@ -10,8 +10,8 @@ well-structured & self-descriptive, and can be validated at the first step of th
 several tools to catch errors before data starts flowing in, outlined below.
 
 ## Build-time validation
-Objectiv's [tagging](/tracking/browser/api-reference/locationTaggers/overview.md) & 
-[tracking](/tracking/browser/api-reference/eventTrackers/overview.md) functions are typed and documented.
+Objectiv's [Location Tagging](/tracking/angular/api-reference/locationTaggers/overview.md) & 
+[BrowserTracker:Event Tracking](/tracking/browser/api-reference/eventTrackers/overview.md) functions are typed and documented.
 
 During instrumentation, you'll get inline documentation for every function, and linting for any validation 
 issues: unknown tagging/tracking calls, missing properties, or wrongly typed properties.
@@ -30,10 +30,10 @@ browser console:
   [See Locations - Solving Collisions](/tracking/core-concepts/locations.md#solving-collisions) for an example.
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/core-concepts/collector/introduction.md) validates any incoming Event against the 
+As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
-For more background, see the [Collector docs](/tracking/core-concepts/collector/introduction.md).
+For more background, see the [Collector docs](/tracking/collector/introduction.md).
 
 ## Logging
 When you run your application, you can observe all tracking calls and other tracking events by enabling 

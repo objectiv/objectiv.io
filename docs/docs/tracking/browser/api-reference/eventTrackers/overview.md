@@ -3,7 +3,7 @@ sidebar_label: Overview
 title: Event Trackers
 ---
 
-Events are triggered automatically based on the [Location Context](/taxonomy/reference/location-contexts/overview.md) bound to the [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements), as summarised in [this table](/tracking/browser/api-reference/locationTaggers/tagLocation.md#events).
+Events are triggered automatically based on the [Location Context](/taxonomy/reference/location-contexts/overview.md) bound to the [Tagged Element](/tracking/core-concepts/browser/tagging.md#tagged-elements), as summarised in [this table](/tracking/browser/api-reference/locationTaggers/tagLocation.md#events).
 
 Nonetheless, sometimes it may be preferable, or necessary, to trigger Events programmatically.
 

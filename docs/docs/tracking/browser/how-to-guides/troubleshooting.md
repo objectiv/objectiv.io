@@ -25,7 +25,7 @@ That said, if adding an extra `<div>` around a hard-to-track Component works, th
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/reference/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/reference/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
 
-[Event Trackers](/tracking/browser/api-reference/eventTrackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/browser/core-concepts/tagging.md#elements) upwards. Unfortunately we cannot 
+[Event Trackers](/tracking/browser/api-reference/eventTrackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/core-concepts/browser/tagging.md#elements) upwards. Unfortunately we cannot 
 follow, nor detect (yet), portaled subtrees. 
 
 :::info Auto detect portals?
@@ -76,7 +76,7 @@ The Location ends abruptly at the `Menu` and jumps to the application root.
 
 ### Make Locations work across Portals
 
-The solution is to specify the parent [Location Tagger](/tracking/browser/api-reference/locationTaggers/overview.md) of a portaled [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements) manually. 
+The solution is to specify the parent [Location Tagger](/tracking/browser/api-reference/locationTaggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/browser/tagging.md#tagged-elements) manually. 
 
 This tells the [Event Tracker](/tracking/browser/api-reference/eventTrackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
 
@@ -93,15 +93,15 @@ const parent = tagContent({ id: 'card' });
 ```
 
 ## Problem: Events not triggering 
-Usually this happens because the [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [Element](/tracking/browser/core-concepts/tagging.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [Element](/tracking/core-concepts/browser/tagging.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TaggingAttributes are set
 To verify if that's the issue we can simply inspect the DOM with the Browser's Developer Tools. 
 
-If the target [Tagged Element](/tracking/browser/core-concepts/tagging.md#elements) we are trying to tag does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/browser/api-reference/locationTaggers/overview.md) failed decorating it.
+If the target [Tagged Element](/tracking/core-concepts/browser/tagging.md#elements) we are trying to tag does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/browser/api-reference/locationTaggers/overview.md) failed decorating it.
 
-As an example a [Tagged Element](/tracking/browser/core-concepts/tagging.md#tagged-elements), in this case a `<button>`, should look at least like the following:
+As an example a [Tagged Element](/tracking/core-concepts/browser/tagging.md#tagged-elements), in this case a `<button>`, should look at least like the following:
 ```
 <button data-objectiv-element-id="..." data-objectiv-context="..." ...>...</button>
 ```
@@ -113,7 +113,7 @@ We can now attempt to fix the issue in two ways:
 2. Manually orchestrating [events](/taxonomy/reference/events/overview.md)
    1. Via event handlers
    2. Via state
-   3. Via a [Parent Element](/tracking/browser/core-concepts/tagging.md#children-tracking-elements)
+   3. Via a [Parent Element](/tracking/core-concepts/browser/tagging.md#children-tracking-elements)
 
 ### Props forwarding - own Components
 Consider the following component:
