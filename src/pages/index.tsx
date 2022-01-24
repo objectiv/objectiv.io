@@ -47,7 +47,7 @@ export default function Home() {
               id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
               <h2>Some product questions are answered better from a notebook</h2>
-              <p>As product questions become more specific, nothing beats a notebook with a high quality dataset.< br />
+              <p>As product questions become more specific, nothing beats a notebook with a high quality dataset. <br/>
               Objectiv comes with everything you need to enable data science in your product analytics workflow.</p>
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
@@ -61,8 +61,8 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
-              <p>Instrument the tracker, open your notebook and start modeling on your data directly with pandas-like< br />
-              operations that run on the full dataset. No tracking plans, data cleaning or transformations required.<br/>
+              <p>Instrument the tracker, open your notebook and start modeling on your data directly with pandas-like <br/>
+              operations that run on the full dataset. No tracking plans, data cleaning or transformations required. <br/>
               Happy with the results? Output them to your team’s favourite BI tools with a single command.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
