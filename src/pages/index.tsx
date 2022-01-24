@@ -29,6 +29,14 @@ export default function Home() {
             designed for modern data teams
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
+            <div className={clsx(styles.productIntroVideo)}>
+                <iframe src="https://www.loom.com/embed/ff17f9d8cd764b56bfdcb0c79cce6889?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
+                frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+          </div>
+          <img
+                className={clsx(styles.objectivIn2Minutes)}
+                src={useBaseUrl("img/header-2-minutes.svg")}
+                alt="Objectiv in 2 minutes" />
           </div>
         </header>
 
@@ -94,6 +102,19 @@ export default function Home() {
                     src={useBaseUrl("img/value-better-data-event-comparison.svg")}
                     alt="Objectiv Event example" />
                 </div>
+              </div>
+              <div className={clsx(styles.outro)}>
+                <p>To learn more about the open analytics taxonomy, check out the Docs.</p>
+                <TrackedLink
+                  to={url + "/docs/taxonomy/"}
+                  autoAddBaseUrl={true}
+                  waitUntilTracked={true}
+                  target="_self"
+                  className={clsx("button", styles.ctaButton)}
+                >
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Docs - Open Analytics Taxonomy'}/></span>
+                  Docs - Open Analytics Taxonomy
+                </TrackedLink>
               </div>
             </div>
           </div>

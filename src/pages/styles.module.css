@@ -296,6 +296,11 @@ footer h2 {
   margin-top: 40px;
 }
 
+.betterData .outro {
+  margin: 90px auto 20px auto;
+  text-align: center;
+}
+
 .valueRowLeft, .valueRowRight {
   display: flex;
   flex-flow: row;
