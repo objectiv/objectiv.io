@@ -16,9 +16,9 @@ Objectiv’s tracker collects clean, well-structured data that’s ready for mod
 ### What is the open taxonomy for analytics?
 The open taxonomy for analytics is our proposal for a common way to collect, structure, validate and model data. 
 
-Just like the taxonomy of the animal kingdom does for animals, the open taxonomy for analytics describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
+It describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
 
-Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to see how it's used
+Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/quickstart-guide) to set up Objectiv locally and see how it's used in practice.
 
 ### Why an open taxonomy for analytics?
 When it comes to product analytics, we noticed that most data teams have similar goals (optimize conversion, increase engagement, reduce churn, etc.) yet their data and models all look different. Models are often built from scratch. Someone in your field has probably already written a very similar analysis, but data teams keep reinventing the wheel because there is no common way to structure and model data. This leads to isolated knowledge and no meaningful way for data scientists to collaborate. 
@@ -27,7 +27,7 @@ We believe a widespread adoption of the open taxonomy for analytics would be ben
 
 * The recurring discussion on what to track and how to track it can be eliminated because the modeling requirements are carried by the design of the taxonomy.
 * The classification of events & contexts enables trackers to collect validated, well-structured data that is ready for modeling without additional cleaning or transformation.
-* Reuse parts of any model from any source as long as it embraces the taxonomy.
+* Any model from any source becomes reusable as long as both dataset and model embrace the taxonomy.
 
 
 - - - 
@@ -43,7 +43,7 @@ No. You can typically instrument Objectiv’s tracker and leave your existing tr
 In most cases, the recurring discussion on what to track and how to track it can be eliminated because the modeling requirements are carried by the design of the open taxonomy. It ensures that you collect the required data to effectively build models for common analyses (conversion, retention, engagement, etc.). The taxonomy can be extended to also cover less common analyses.
 
 ### Why do I need to tag sections and events in my UI?
-While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or overcomplete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. Objectiv asks the frontend engineer to tag events and sections in the application’s UI. This creates a contextual layer for your tracker that serves multiple purposes:
+While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or overcomplete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. Objectiv asks you to tag events and sections in your application’s UI. This creates a contextual layer for your tracker that serves multiple purposes:
 
 * The collected data becomes rich and descriptive. You can pinpoint exactly what event happened, which type it was, in which context it happened and from which location in the UI it was triggered.
 * Your tracking instrumentation becomes debuggable. You’ll be able to catch tracking instrumentation errors early on because it is being validated as you’re developing it. 
@@ -57,7 +57,7 @@ While most trackers simply track everything by inserting a simple script, the da
 ##### MODELING
 
 ### What does Objectiv’s tracker data look like?
-Rich, descriptive, clean and well-structured. Check out our our [sandboxed notebook](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to play with Objectiv. It uses the real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
+Rich, descriptive, clean and well-structured. Check out our our [Quickstart Guide](/quickstart-guide) to play with Objectiv locally. It includes real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
 
 ### Why is Objectiv SQL-based?
 SQL is widely used, versatile, not overly complex, and with developments in cloud technology, SQL databases have become very powerful and scalable. It’s supported by all major cloud providers and easy to self host.
@@ -65,10 +65,13 @@ SQL is widely used, versatile, not overly complex, and with developments in clou
 Objectiv Bach, our modeling library, features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
 
 ### Which Pandas-like operations can I use to build SQL models?
-Objectiv Bach has support for an initial set of Pandas-like operations. For all supported operations, check the reference in the [Modeling](/modeling) section.
+For all supported pandas operations, check the reference in the [Modeling](/modeling) section.
 
 ### Can I run these models in production?
 Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.
+
+### Does Objectiv include any data visualisation/dashboards for BI purposes?
+Objectiv does not include its own data visualisation tools as we believe there are many excellent solutions out there already that serve this purpose. We have instead focused our efforts on enabling you to easily feed your Objectiv data into your BI tool of choice. 
 - - -
 ##### DATA PRIVACY & LEGAL
 ### Does Objectiv’s tracker collect personally identifiable information? (PII)
@@ -93,12 +96,12 @@ Objectiv currently requires a PostgreSQL database and works in any environment w
 Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. 
 
 ### Can I run it on-premise?
-Yes. We don’t have any plans for a hosted version for the near future. Check out our [quickstart section](/#quick-start) of the introduction for installation instructions.
+Yes. We don’t have any plans for a hosted version for the near future. Check out our [Quickstart Guide](/quickstart-guide) for installation instructions.
 
 - - - 
 ##### COMPANY
 ### Is it supported properly?
-We’re well-funded and are actively working on the project on a daily basis with 8 full-time team members. Check out our [Github repo](https://github.com/objectiv/objectiv-analytics) to see our activity.
+We’re well-funded and are actively working on the project on a daily basis with 10 full-time team members. Check out our [Github repo](https://github.com/objectiv/objectiv-analytics) to see our activity.
 
 ### What’s your business model?
 Objectiv ultimately wants to monetize with paid offerings to users of the ecosystem that we believe will emerge around the open taxonomy for analytics. Objectiv’s core library and the taxonomy are and always will be open source and free to use.
