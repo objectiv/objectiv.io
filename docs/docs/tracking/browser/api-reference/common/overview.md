@@ -12,10 +12,23 @@ Common modules and helper functions used across the whole Browser Tracker. All o
 - [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)
 
 #### Guards
+- [isClickableContext](/tracking/browser/api-reference/common/guards/isClickableContext.md)
+- [isFlushQueueOptions](/tracking/browser/api-reference/common/guards/isFlushQueueOptions.md)
+- [isLocationContext](/tracking/browser/api-reference/common/guards/isLocationContext.md)
+- [isLocationTaggerParameters](/tracking/browser/api-reference/common/guards/isLocationTaggerParameters.md)
 - [isParentTaggedElement](/tracking/browser/api-reference/common/guards/isParentTaggedElement.md)
+- [isShowableContext](/tracking/browser/api-reference/common/guards/isShowableContext.md)
 - [isTagChildrenElement](/tracking/browser/api-reference/common/guards/isTagChildrenElement.md)
 - [isTaggableElement](/tracking/browser/api-reference/common/guards/isTaggableElement.md)
 - [isTaggedElement](/tracking/browser/api-reference/common/guards/isTaggedElement.md)
+- [isTagLocationAttributes](/tracking/browser/api-reference/common/guards/isTagLocationAttributes.md)
+- [isTagLocationOptions](/tracking/browser/api-reference/common/guards/isTagLocationOptions.md)
+- [isTagLocationParameters.md](/tracking/browser/api-reference/common/guards/isTagLocationParameters.md)
+- [isTrackClicksAttribute](/tracking/browser/api-reference/common/guards/isTrackClicksAttribute.md)
+- [isTrackVisibilityAttribute](/tracking/browser/api-reference/common/guards/isTrackVisibilityAttribute.md)
+- [isValidateAttribute](/tracking/browser/api-reference/common/guards/isValidateAttribute.md)
+- [isValidChildrenTaggingQuery](/tracking/browser/api-reference/common/guards/isValidChildrenTaggingQuery.md)
+- [isWaitUntilTrackedOptions](/tracking/browser/api-reference/common/guards/isWaitUntilTrackedOptions.md)
 
 #### Parsers
 - [parseJson](/tracking/browser/api-reference/common/parsers/parseJson.md)
