@@ -81,4 +81,4 @@ export class SharedModule {
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.
 
-Time to start [Tracking Locations](/tracking/angular/how-to-guides/tracking-locations.md)!
+Time to start [Tagging Locations](/tracking/angular/how-to-guides/tagging-locations.md)!

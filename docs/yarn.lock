@@ -2488,10 +2488,10 @@
   dependencies:
     "@objectiv/tracker-core" "~0.0.6"
 
-"@objectiv/tracker-browser@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.6.tgz#7ffc8a10a48d6bfb41cc1a52602f8fdb73da51b3"
-  integrity sha512-JuKvCYdYgJKCNKO/0xgmF6sD35H//KmQUOhR6pux4mgQ05dloZo8eC3hwIhCQnmTkmeMayK6MA9mg9sDnHrSOQ==
+"@objectiv/tracker-browser@^0.0.7":
+  version "0.0.7"
+  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.7.tgz#d71efc70cfb8561f4c5c99a8ffbedf822884d407"
+  integrity sha512-O31dKHNcGy/+Ue9JHGdHbjJGI39Xng507H603hadYg/k3AW9omMGjRPAkayGnb4NOAXINGkm5A8PyR3ChReKag==
   dependencies:
     "@objectiv/plugin-path-context-from-url" "^0.0.6"
     "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
@@ -2500,7 +2500,6 @@
     "@objectiv/transport-debug" "^0.0.6"
     "@objectiv/transport-fetch" "^0.0.6"
     "@objectiv/transport-xhr" "^0.0.6"
-    superstruct "^0.15.3"
 
 "@objectiv/tracker-core@^0.0.6", "@objectiv/tracker-core@~0.0.6":
   version "0.0.6"
@@ -9099,11 +9098,6 @@ stylis@^4.0.10, stylis@^4.0.6:
   version "4.0.10"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.10.tgz#446512d1097197ab3f02fb3c258358c3f7a14240"
   integrity "sha1-RGUS0Qlxl6s/Avs8JYNYw/ehQkA= sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg=="
-
-superstruct@^0.15.3:
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.3.tgz#07edfc715259ebfe3b4b2e4cb53e8e45b51674a4"
-  integrity sha512-wilec1Rg3FtKuRjRyCt70g5W29YUEuaLnybdVQUI+VQ7m0bw8k7TzrRv5iYmo6IpjLVrwxP5t3RgjAVqhYh4Fg==
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"
