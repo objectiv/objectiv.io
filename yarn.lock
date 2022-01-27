@@ -2364,61 +2364,61 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv/plugin-path-context-from-url@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-path-context-from-url/-/plugin-path-context-from-url-0.0.6.tgz#9e17a61b4cbbaa2e05d837957633d47436ecc505"
-  integrity sha512-CkPaFKIGMmfNtpHaWu9nbmneEYKFNMTgIUSarO+cjzL6sCNc9QN/u3lSN6EsAtzNe9an+YiTvug7TsOzi1bqjg==
+"@objectiv/plugin-path-context-from-url@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-path-context-from-url/-/plugin-path-context-from-url-0.0.7.tgz#7c1e902e39d8d4a4bb87929b6378e04082748501"
+  integrity sha512-ENrCdLM4gnFwpecr17jEYQ24mSBnkvBK+djGxWqjV5pboTauJPbQ7KAyxJTA7TG+h3HDOS5B/rEk0U/JWF5ejA==
 
-"@objectiv/plugin-root-location-context-from-url@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.6.tgz#c7a6c080e8883bae01506acb54bcb77245e71178"
-  integrity sha512-du8jj9VgXXqk2kHGDBiHCpEcwfvj7tUjuVGh7S6rw2o292a/We4SosxWZzrgANNlFr9akunKMc7cFo4PeBmFQQ==
+"@objectiv/plugin-root-location-context-from-url@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.7.tgz#9dd5c13c4d3cb08c5ecde16240d35f4334bf2ec6"
+  integrity sha512-DpQ54wwmgnquaXEMiwi2vCgjmZ9ea3ri6KPeCuhVvhRxsDSWHKgfbi2NBIhJxDf5unPiPg0lcfCpxMMzqo5mFw==
 
-"@objectiv/queue-local-storage@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fqueue-local-storage/-/queue-local-storage-0.0.6.tgz#542bba0d406685c6b9b1de7987fe2f04b0fa5238"
-  integrity sha512-LxjY2E4hgGHTJj8vNF//zdBIIXVOjam8RFPIPDQB6hXySwKoXRkt2BuFzZoLpAYxTn0PijXuQ0LoO0Odaz0ilw==
+"@objectiv/queue-local-storage@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/queue-local-storage/-/queue-local-storage-0.0.7.tgz#d3dd477640f0c7baf638c471b719e390b71c8be4"
+  integrity sha512-qaVedVvJQcD6JOxJo22fu/EPPDETIAuRnQjpHT4zKua/nMda7Be9X7XkcPwOcCAxS78nU9QJmTvd2e1q1OcUcg==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.6"
+    "@objectiv/tracker-core" "~0.0.7"
 
-"@objectiv/schema@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.6.tgz#e33bae6d857b16027c546a880b0ed0b97b7294a8"
-  integrity sha512-dGJWdJVNiPh72wGbhcX5ywFBVxKguOSn+cJh7cO9ewsqsvd4ctu+xQBHJzGGZUbyusS/bh6CrIv09KpZB1du0g==
+"@objectiv/schema@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/schema/-/schema-0.0.7.tgz#bac5a4a6ee7a04086b4abded3e7e3c98b6859d83"
+  integrity sha512-hGO52YxPINNbZsTF2k7FKRdNaQt6LCfefaIOBvd397FXe/GRLLRr2zg6bbD8BTxr6/pjv6o3yOP/cjYo+P0C2Q==
 
-"@objectiv/tracker-core@~0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.6.tgz#9f7b987bffdfcedee3a96f5017f3f8df7b84601e"
-  integrity sha512-tQEumkxnWrwB6FmHJcA7mSqIeABMxOHPZ5i4c8jVxZcpfmfUW9uhnqnQ9cBAHI+5Swxs4H/7MR0jfuauYZRNLw==
+"@objectiv/tracker-core@~0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.7.tgz#32e41d4ffc6f8ed470a45f00ba65623f50af2072"
+  integrity sha512-OKkGeaDHKixLkK6FHNT4pZxOZSbBAAbsM+Ga/guwDn8EH2DQrDJU4Zfsj5DRqC0V26BEeVsgqpALAOaMpgUGBQ==
   dependencies:
-    "@objectiv/schema" "^0.0.6"
+    "@objectiv/schema" "^0.0.7"
     uuid-random "^1.3.2"
 
-"@objectiv/tracker-react@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.6.tgz#fcfe9280d63ce99dd92b5b9ef4205f9728c041fb"
-  integrity sha512-F4NK3kr8qAxaW31XUCS5n3SyTeasEi2o8MPKOTJqPYDZ31FxV4zkquYaH7IC81EHuqNoIZNqrCaQqhh1eG4QMA==
+"@objectiv/tracker-react@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react/-/tracker-react-0.0.7.tgz#453deef3b209e16c1a95b13a4cee77d2dc5ed18b"
+  integrity sha512-ASwiWxyucMH+GGVHQQLspX3wAVJnUcnRd2XHBjn/LmM+tE4C6PMMlPL/nC0jThPF/WQEuDtJszVrMXWQsvaXvw==
   dependencies:
-    "@objectiv/plugin-path-context-from-url" "^0.0.6"
-    "@objectiv/plugin-root-location-context-from-url" "^0.0.6"
-    "@objectiv/queue-local-storage" "^0.0.6"
-    "@objectiv/tracker-core" "~0.0.6"
-    "@objectiv/transport-fetch" "^0.0.6"
-    "@objectiv/transport-xhr" "^0.0.6"
+    "@objectiv/plugin-path-context-from-url" "^0.0.7"
+    "@objectiv/plugin-root-location-context-from-url" "^0.0.7"
+    "@objectiv/queue-local-storage" "^0.0.7"
+    "@objectiv/tracker-core" "~0.0.7"
+    "@objectiv/transport-fetch" "^0.0.7"
+    "@objectiv/transport-xhr" "^0.0.7"
 
-"@objectiv/transport-fetch@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-fetch/-/transport-fetch-0.0.6.tgz#0ba7ec93911154ed1fb6629df9aa38119b69cb47"
-  integrity sha512-hEDxpeJr3DCK+7fFdrkMdKTTD5YhVv4AQE0ImT3FKUAmYdc23XVoSy/43iSQoXQk4ea8VBHZd+/HrV5fEWMZDA==
+"@objectiv/transport-fetch@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/transport-fetch/-/transport-fetch-0.0.7.tgz#f1c945b9e8827172dc802aeee5d8bd5ce1ea63fc"
+  integrity sha512-KVAEk3grQdryS5hc6RyetKf7NyjfaFNEJSP5q7Yi2qZvommihf93UAPeNHeTs4Rt1wzMhq/grqce0AY3CkoFQw==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.6"
+    "@objectiv/tracker-core" "~0.0.7"
 
-"@objectiv/transport-xhr@^0.0.6":
-  version "0.0.6"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftransport-xhr/-/transport-xhr-0.0.6.tgz#5ff9aea4b9b88af108f9aacea5124f59323f0de7"
-  integrity sha512-DRwJxvxgKK83d5RoK0sA1JOmdTI38NAxYQHT2inH04c3Yc4K290Qmsmcd7fYLPuJOe+shiODH8ZTsd9B6j/JtA==
+"@objectiv/transport-xhr@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@objectiv/transport-xhr/-/transport-xhr-0.0.7.tgz#70b3411d9e970909808a6fbae537f30b83fe0d79"
+  integrity sha512-aig9qPW44curOE2qRkeKvjA0Lj2P+Cfsz0WvN6UWFjTKcNdqArFxjUC215UiJP1dO1UPZxZCjZR5R+CX8Z85xg==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.6"
+    "@objectiv/tracker-core" "~0.0.7"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -4292,10 +4292,10 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
-  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
+dotenv@^14.3.2:
+  version "14.3.2"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-14.3.2.tgz#7c30b3a5f777c79a3429cb2db358eef6751e8369"
+  integrity sha512-vwEppIphpFdvaMCaHfCEv9IgwcxMljMw2TnAQBB4VWPvzXQLTb82jwmdOKzlEVUL3gNFT4l4TPKO+Bn+sqcrVQ==
 
 duplexer3@^0.1.4:
   version "0.1.4"
