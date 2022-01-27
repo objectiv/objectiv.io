@@ -36,7 +36,14 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: false,
-        blog: false,
+        blog: {
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarCount: 0,
+          postsPerPage: 5,
+          showReadingTime: false,
+          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
+        },
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
@@ -87,6 +94,10 @@ const config = {
         {
           to: 'about',
           label: 'About us',
+        },
+        {
+          to: 'blog',
+          label: 'Blog',
         },
         {
           to: 'jobs',
