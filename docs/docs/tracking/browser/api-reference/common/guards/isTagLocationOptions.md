@@ -1,9 +1,11 @@
-# isTagLocationAttributes
+# isTagLocationOptions
 
-A type guard to determine if the given object is a isTagLocationAttributes.
+A type guard to determine if the given object is a TagLocationOptions.
 
 ```typescript
-isTagLocationAttributes = (object: Partial<TagLocationAttributes>): object is TagLocationAttributes => boolean
+isTagLocationOptions = (
+  object: Partial<TagLocationOptions>
+): object is TagLocationOptions => boolean
 ```
 
 ## Returns
