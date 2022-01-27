@@ -6,7 +6,6 @@ import {
   useMediaStartEventTracker,
   useMediaPauseEventTracker,
   useMediaStopEventTracker,
-  useFailureEventTracker,
 } from "@objectiv/tracker-react";
 
 import clsx from "clsx";
@@ -23,7 +22,6 @@ function VideoPlayer({
   const trackMediaStart = useMediaStartEventTracker();
   const trackMediaPause = useMediaPauseEventTracker();
   const trackMediaStop = useMediaStopEventTracker();
-  const trackMediaFailure = useFailureEventTracker();
 
   function handlePlayPause() {
     setPlaying(!isPlaying);
@@ -39,7 +37,6 @@ function VideoPlayer({
         onStart={trackMediaStart}
         onPause={trackMediaPause}
         onEnded={trackMediaStop}
-        onError={trackMediaFailure}
       />
       {showPlayPauseButton && (
         <button className={clsx(styles.playButton)} onClick={handlePlayPause}>
