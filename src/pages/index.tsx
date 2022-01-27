@@ -31,7 +31,7 @@ export default function Home() {
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
             <div className={clsx(styles.productIntroVideo)}>
-              <VideoPlayer url="https://vimeo.com/128745697?dnt=1" showPlayPauseButton={true} />
+              <VideoPlayer url="https://vimeo.com/670857141?dnt=1" showPlayPauseButton={false} />
             </div>
             <img
                 className={clsx(styles.objectivIn2Minutes)}
