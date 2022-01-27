@@ -2,6 +2,8 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus sit amet dolor sed semper. Nunc faucibus tristique sapien, eu pharetra ligula pulvinar et. Aliquam ullamcorper lacus enim, in vulputate elit rutrum ut. Mauris iaculis varius erat, nec dapibus turpis lobortis eget. Cras vitae magna vitae erat volutpat tincidunt. Vestibulum eu magna eget lacus commodo eleifend sed ut lorem. Nam dapibus eros neque, non vulputate sem sodales placerat.
 
+<!--truncate-->
+
 Praesent sed venenatis risus. Morbi id tempus lectus. In hac habitasse platea dictumst. Donec ultrices massa quam, sit amet gravida ipsum vehicula a. Mauris egestas enim at mollis pharetra. Nunc sit amet velit ac diam pellentesque gravida. Mauris blandit magna non tortor auctor, sit amet tempor mauris egestas. Integer venenatis feugiat dui sit amet placerat. Sed volutpat erat est, id condimentum risus luctus et. Duis non magna aliquet, mattis erat at, consectetur erat. Fusce ac commodo eros. Aliquam pretium magna eu justo scelerisque, ac porttitor felis efficitur.
 
 Vestibulum laoreet rhoncus odio, eget congue lacus commodo feugiat. Sed dictum neque a tortor eleifend tincidunt. Phasellus bibendum neque non libero aliquam, ut cursus eros maximus. Nulla aliquam mollis erat in euismod. Nam magna orci, pellentesque vel feugiat vulputate, varius a odio. Phasellus accumsan laoreet enim, a ultrices ipsum luctus sed. Vivamus commodo, nulla vitae faucibus porta, diam est interdum ex, et rhoncus tellus tortor vel metus. Donec imperdiet dictum neque et fermentum. Nullam convallis est id enim luctus malesuada. Etiam porttitor ligula et nibh eleifend, at ullamcorper quam pharetra. Morbi lobortis tristique finibus. Etiam scelerisque enim non convallis tristique.
