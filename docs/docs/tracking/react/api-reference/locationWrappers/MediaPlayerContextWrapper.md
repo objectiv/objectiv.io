@@ -20,6 +20,8 @@ ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
 import { MediaPlayerContextWrapper } from '@objectiv/tracker-react';
 ```
@@ -27,6 +29,32 @@ import { MediaPlayerContextWrapper } from '@objectiv/tracker-react';
 ```jsx
 <MediaPlayerContextWrapper id={'video'}>
   <video src={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} />
+</MediaPlayerContextWrapper>
+```
+
+### Render Props inline tracking
+
+```jsx
+import { 
+  MediaPlayerContextWrapper, 
+  trackMediaLoadEvent, 
+  trackMediaPauseEvent,
+  trackMediaStartEvent,
+  trackMediaStopEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<MediaPlayerContextWrapper id={'video'}>
+  {(trackingContext) => (
+    <video 
+      src={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} 
+      onLoad={() => trackMediaLoadEvent(trackingContext)}
+      onPlay={() => trackMediaStartEvent(trackingContext)}
+      onPause={() => trackMediaPauseEvent(trackingContext)}
+      onEnded={() => trackMediaStopEvent(trackingContext)}
+    />
+  )}
 </MediaPlayerContextWrapper>
 ```
 
