@@ -156,7 +156,7 @@ type TrackedVideoProps = { videoUrl: string, id: string };
 
 const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
   <MediaPlayerContextWrapper id={id}>
-    {(trackingContext) => {
+    {(trackingContext) => (
       <video
         src={videoUrl}
         onReady={() => trackMediaLoadEvent(trackingContext)}
@@ -164,7 +164,7 @@ const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
         onPause={() => trackMediaPauseEvent(trackingContext)}
         onEnded={() => trackMediaStopEvent(trackingContext)}
       />
-    }}
+    )}
   </MediaPlayerContextWrapper>
 );
 ```
