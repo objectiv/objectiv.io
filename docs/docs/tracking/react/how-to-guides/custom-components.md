@@ -84,9 +84,9 @@ If we test this component you will quickly notice that the LocationStack of all 
 
 Why aren't the Event Trackers detecting the MediaPlayerContextWrapper that is clearly there?
 
-Simply because hooks generated those callbacks before the JSX has been executed. JSX looks like HTML, but is in fact compiled to JavaScript.
+Simply because hooks have generated those callbacks before the JSX has been executed. JSX looks like HTML, but is in fact compiled to JavaScript.
 
-So what actually happens in the example above is that `trackMediaLoadEvent`, `trackMediaStartEvent`, `trackMediaStartEvent` and `trackMediaStopEvent` will never know about `MediaPlayerContextWrapper` as it doesn't even exist when they have been generated.  
+What actually happens here is that the `trackMediaLoadEvent`, `trackMediaStartEvent`, `trackMediaStartEvent` and `trackMediaStopEvent` callbacks cannot know about `MediaPlayerContextWrapper`, as that Element didn't even exist when they got factored.  
 
 #### Two possible solutions
 There are two ways of solving this issue:
@@ -170,5 +170,5 @@ const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
 ```
 
 All we did here is switching our hook-based Event Trackers with low-level ones.  
-These require a `trackingContext` which we can obtain, via Render Props, from `MediaPlayerContextWrapper`.
+These require a `trackingContext` which we can obtained, via Render Props, from `MediaPlayerContextWrapper`.
 
