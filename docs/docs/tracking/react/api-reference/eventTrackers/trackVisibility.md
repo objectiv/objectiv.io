@@ -30,8 +30,11 @@ This is a lower-level API.
 ## Returns
 `Promise<TrackerEvent>`
 
-<br />
+## Usage
+- [ExpandableContextWrapper](/tracking/react/api-reference/locationWrappers/ExpandableContextWrapper.md#tracking-via-render-props) documentation has a practical usage example of this Event Tracker.
+- [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md#tracking-via-render-props) documentation has a practical usage example of this Event Tracker.
 
+<br />
 
 :::info See also
 - [trackApplicationLoadedEvent](/tracking/react/api-reference/eventTrackers/trackApplicationLoadedEvent.md)
