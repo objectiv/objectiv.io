@@ -6,6 +6,11 @@ sidebar_position: 1
 
 These Components wrap their children in a [Context.Provider](https://reactjs.org/docs/context.html#contextprovider). This allows the ReactTracker to reconstruct their Location in the UI.
 
+:::tip
+The combination of Location Wrappers and [Low-level Event Trackers](/tracking/react/api-reference/overview.md#low-level-event-trackers) is how we build Tracked Contexts and Elements.  
+Check the Render Props Usage sections for example of how to combine the two.  
+:::
+
 #### Higher-level
 - [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md)
 - [ExpandableContextWrapper](/tracking/react/api-reference/locationWrappers/ExpandableContextWrapper.md)
