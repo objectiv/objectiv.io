@@ -42,8 +42,8 @@ import { NavigationContextWrapper } from '@objectiv/tracker-react';
 ```jsx
 import { 
   NavigationContextWrapper, 
-  trackVisibleEvent, 
-  trackHiddenEvent
+  trackHiddenEvent,
+  trackVisibleEvent 
 } from '@objectiv/tracker-react';
 ```
 
