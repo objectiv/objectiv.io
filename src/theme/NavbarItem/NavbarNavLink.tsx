@@ -35,30 +35,28 @@ export default function NavbarNavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
+  console.log(href);
+  const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
   return (
     <TrackedLinkContext
       Component={Link}
-      href={toUrl}
       title={label}
-      {...(href
-        ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
-        : {
-            isNavLink: true,
-            activeClassName: !props.className?.includes(activeClassName)
-              ? activeClassName
-              : '',
-            to: toUrl,
-            ...(activeBasePath || activeBaseRegex
-              ? {
-                  isActive: (_match, location) =>
-                    activeBaseRegex
-                      ? isRegexpStringMatch(activeBaseRegex, location.pathname)
-                      : location.pathname.startsWith(activeBaseUrl),
-                }
-              : null),
-          })}
+      href={linkTo}
+      {...{
+        to: linkTo,
+        isNavLink: true,
+        activeClassName: !props.className?.includes(activeClassName)
+          ? activeClassName
+          : '',
+        ...(activeBasePath || activeBaseRegex
+          ? {
+              isActive: (_match, location) =>
+                activeBaseRegex
+                  ? isRegexpStringMatch(activeBaseRegex, location.pathname)
+                  : location.pathname.startsWith(activeBaseUrl),
+            }
+          : null),
+      }}
       {...props}>
       {isExternalLink ? (
         <span>
