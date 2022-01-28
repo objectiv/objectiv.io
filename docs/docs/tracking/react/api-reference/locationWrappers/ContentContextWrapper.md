@@ -21,7 +21,7 @@ ReactElement.
 ## Usage examples
 
 
-### Enrich Tracked Components Locations
+### Enrich Locations
 ```jsx
 import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
 ```
@@ -40,7 +40,7 @@ import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
 </ContentContextWrapper>
 ```
 
-### Track interactive &lt;div&gt; via Render Props
+### Render Props inline tracking
 ```jsx
 import { ContentContextWrapper, trackPressEvent } from '@objectiv/tracker-react';
 ```
@@ -50,7 +50,7 @@ import { ContentContextWrapper, trackPressEvent } from '@objectiv/tracker-react'
   <div>
     <ContentContextWrapper id={'sub-content'}>
       {(trackingContext) => (
-        <div onClick={ () => trackPressEvent(trackingContext) }>
+        <div onClick={() => trackPressEvent(trackingContext)}>
           Hi!, I'm interactive
         </div>
       )}

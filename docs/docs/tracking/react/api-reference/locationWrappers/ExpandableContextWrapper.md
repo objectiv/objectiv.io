@@ -20,6 +20,8 @@ ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
 import { ExpandableContextWrapper } from '@objectiv/tracker-react';
 ```
@@ -31,6 +33,26 @@ import { ExpandableContextWrapper } from '@objectiv/tracker-react';
   </Tooltip>
 </ExpandableContextWrapper>
 ```
+
+### Render Props inline tracking
+
+```jsx
+import { ExpandableContextWrapper, trackPressEvent, trackVisibility } from '@objectiv/tracker-react';
+```
+
+```jsx
+<ExpandableContextWrapper id={'accordion'}>
+  {(trackingContext) => (
+    <Accordion
+      onClick={() => trackPressEvent(trackingContext)}  
+      onToggle={(isOpen) => trackVisibility({ ...trackingContext, isVisible: isOpen })}
+    >
+    ...
+    </Accordion>
+  )}
+</ExpandableContextWrapper>
+```
+
 
 <br />
 
