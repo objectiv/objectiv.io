@@ -1,6 +1,7 @@
 # NavigationContextWrapper
 
-Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 NavigationContextWrapper: (props: {
@@ -10,10 +11,10 @@ NavigationContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
@@ -36,7 +37,7 @@ import { NavigationContextWrapper } from '@objectiv/tracker-react';
 </NavigationContextWrapper>
 ```
 
-### Render Props inline tracking
+### Tracking via Render Props
 
 ```jsx
 import { 

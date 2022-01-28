@@ -1,6 +1,7 @@
 # InputContextWrapper
 
-Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 InputContextWrapper: (props: {
@@ -10,10 +11,10 @@ InputContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
@@ -32,16 +33,22 @@ import { InputContextWrapper } from '@objectiv/tracker-react';
 </InputContextWrapper>
 ```
 
-### Render Props inline tracking
+### Tracking via Render Props
 
 ```jsx
-import { InputContextWrapper, trackInputChangeEvent } from '@objectiv/tracker-react';
+import { 
+  InputContextWrapper, 
+  trackInputChangeEvent
+} from '@objectiv/tracker-react';
 ```
 
 ```jsx
 <InputContextWrapper id={'search'}>
   {(trackingContext) => (
-    <input type={'text'} onBlur={() => trackInputChangeEvent(trackingContext)} />
+    <input 
+      type={'text'} 
+      onBlur={() => trackInputChangeEvent(trackingContext)} 
+    />
   )}
 </InputContextWrapper>
 ```

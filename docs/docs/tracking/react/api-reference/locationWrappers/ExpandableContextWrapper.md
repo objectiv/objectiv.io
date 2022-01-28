@@ -1,6 +1,7 @@
 # ExpandableContextWrapper
 
-Wraps its children in a [ExpandableContext](/taxonomy/reference/location-contexts/ExpandableContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in a [ExpandableContext](/taxonomy/reference/location-contexts/ExpandableContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 ExpandableContextWrapper: (props: {
@@ -10,10 +11,10 @@ ExpandableContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
@@ -34,10 +35,14 @@ import { ExpandableContextWrapper } from '@objectiv/tracker-react';
 </ExpandableContextWrapper>
 ```
 
-### Render Props inline tracking
+### Tracking via Render Props
 
 ```jsx
-import { ExpandableContextWrapper, trackPressEvent, trackVisibility } from '@objectiv/tracker-react';
+import { 
+  ExpandableContextWrapper, 
+  trackPressEvent, 
+  trackVisibility
+} from '@objectiv/tracker-react';
 ```
 
 ```jsx
@@ -45,7 +50,10 @@ import { ExpandableContextWrapper, trackPressEvent, trackVisibility } from '@obj
   {(trackingContext) => (
     <Accordion
       onClick={() => trackPressEvent(trackingContext)}  
-      onToggle={(isOpen) => trackVisibility({ ...trackingContext, isVisible: isOpen })}
+      onToggle={(isOpen) => trackVisibility({ 
+        ...trackingContext, 
+        isVisible: isOpen
+      })}
     >
     ...
     </Accordion>

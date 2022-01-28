@@ -1,6 +1,7 @@
 # LocationContextWrapper
 
-Wraps its children in the given [LocationContext](/taxonomy/reference/location-contexts/overview.md) instance. Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in the given [LocationContext](/taxonomy/reference/location-contexts/overview.md) instance.  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 LocationContextWrapper: (props: {
@@ -14,28 +15,60 @@ LocationContextWrapper: (props: {
 :::
 
 ## Parameters
-|          |                     | type                                                     | default value |
-|:--------:|:--------------------|:---------------------------------------------------------|:--------------|
-| required | **children**        | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **locationContext** | LocationContext                                          |               |
+|          |                     | type                                                     |
+|:--------:|:--------------------|:---------------------------------------------------------|
+| required | **children**        | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **locationContext** | LocationContext                                          |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
-import { LocationContextWrapper, makeContentContext } from '@objectiv/tracker-react';
+import { 
+  LocationContextWrapper, 
+  makeContentContext
+} from '@objectiv/tracker-react';
 ```
 
 ```jsx
-<LocationContextWrapper locationContext={ makeContentContext({ id: 'content' }) }>
+<LocationContextWrapper 
+  locationContext={ makeContentContext({ id: 'content' }) 
+}>
   <div>
     ...
   </div>
   <span>
     ...
   </span>
+</LocationContextWrapper>
+```
+
+### Tracking via Render Props
+```jsx
+import {
+  LocationContextWrapper, 
+  trackPressEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<LocationContextWrapper 
+  locationContext={ makeContentContext({ id: 'content' })
+}>
+  {(trackingContext) => (
+    <>
+      <div onClick={() => trackPressEvent(trackingContext)}>
+        Hi!
+      </div>
+      <span>
+        ...
+      </span>
+    </>
+  )}
 </LocationContextWrapper>
 ```
 

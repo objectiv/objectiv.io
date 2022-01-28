@@ -1,6 +1,7 @@
 # ContentContextWrapper
 
-Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).   
+Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).   
 
 ```tsx
 ContentContextWrapper: (props: { 
@@ -10,10 +11,10 @@ ContentContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
@@ -23,7 +24,7 @@ ReactElement.
 
 ### Enrich Locations
 ```jsx
-import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
+import { ContentContextWrapper } from '@objectiv/tracker-react';
 ```
 
 ```jsx
@@ -31,7 +32,7 @@ import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
   <div>
     <ContentContextWrapper id={'sub-content'}>
       ...
-      <TrackedLink href={'/new-location'}>Go!</TrackedLink>
+      <a href={'/new-location'}>Go!</a>
     </ContentContextWrapper>
   </div>
   <span>
@@ -40,9 +41,12 @@ import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
 </ContentContextWrapper>
 ```
 
-### Render Props inline tracking
+### Tracking via Render Props
 ```jsx
-import { ContentContextWrapper, trackPressEvent } from '@objectiv/tracker-react';
+import { 
+  ContentContextWrapper, 
+  trackPressEvent
+} from '@objectiv/tracker-react';
 ```
 
 ```jsx
@@ -51,7 +55,7 @@ import { ContentContextWrapper, trackPressEvent } from '@objectiv/tracker-react'
     <ContentContextWrapper id={'sub-content'}>
       {(trackingContext) => (
         <div onClick={() => trackPressEvent(trackingContext)}>
-          Hi!, I'm interactive
+          Hi!
         </div>
       )}
     </ContentContextWrapper>

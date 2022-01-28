@@ -1,6 +1,7 @@
 # MediaPlayerContextWrapper
 
-Wraps its children in a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 MediaPlayerContextWrapper: (props: {
@@ -10,10 +11,10 @@ MediaPlayerContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
@@ -32,7 +33,7 @@ import { MediaPlayerContextWrapper } from '@objectiv/tracker-react';
 </MediaPlayerContextWrapper>
 ```
 
-### Render Props inline tracking
+### Tracking via Render Props
 
 ```jsx
 import { 
