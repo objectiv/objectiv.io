@@ -1,6 +1,7 @@
 # PressableContextWrapper
 
-Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
 PressableContextWrapper: (props: {
@@ -10,15 +11,17 @@ PressableContextWrapper: (props: {
 ```
 
 ## Parameters
-|          |              | type                                                     | default value |
-|:--------:|:-------------|:---------------------------------------------------------|:--------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
-| required | **id**       | string                                                   |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
 ReactElement.
 
 ## Usage example
+
+### Enrich Locations
 
 ```jsx
 import { PressableContextWrapper } from '@objectiv/tracker-react';
@@ -26,11 +29,40 @@ import { PressableContextWrapper } from '@objectiv/tracker-react';
 
 ```jsx
 <PressableContextWrapper id={'do-it'}>
-  <button onClick={ () => doIt() }>
+  <button onClick={() => doIt()}>
     Do it
   </button>
 </PressableContextWrapper>
 ```
+
+### Tracking via Render Props
+
+```jsx
+import { 
+  PressableContextWrapper, 
+  trackPressEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<PressableContextWrapper id={'do-it'}>
+  {(trackingContext) => (
+    <button onClick={() => {
+      trackPressEvent(trackingContext);
+      doIt();
+    }}>
+      Do it
+    </button>
+  )}
+</PressableContextWrapper>
+```
+
+<br />
+
+:::info
+The above is just an example to illustrate the Render Props functionality.   
+Check out our [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) for a ready-to-use [TrackedButton](/tracking/react/api-reference/trackedElements/TrackedButton.md) component. 
+:::
 
 <br />
 

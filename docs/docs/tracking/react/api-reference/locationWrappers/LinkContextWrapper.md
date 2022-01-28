@@ -57,6 +57,13 @@ import {
 
 <br />
 
+:::info
+The above is just an example to illustrate the Render Props functionality.   
+Check out our [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) for a ready-to-use [TrackedAnchor](/tracking/react/api-reference/trackedElements/TrackedAnchor.md) component.
+:::
+
+<br />
+
 :::tip Did you know ?
 `LinkContextWrapper` internally uses [LocationContextWrapper](/tracking/react/api-reference/locationWrappers/LocationContextWrapper.md).
 :::
