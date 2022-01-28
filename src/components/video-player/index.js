@@ -13,9 +13,8 @@ import styles from "./styles.module.css";
 
 function VideoPlayer({
   url,
-  id = "video",
-  enableControls = true,
-  showPlayPauseButton = false,
+  id,
+  enableControls = true
 }) {
   const [isPlaying, setPlaying] = useState(false);
 
@@ -24,7 +23,7 @@ function VideoPlayer({
   }
 
   return (
-    <MediaPlayerContextWrapper id={id} className={styles.videoWrapper}>
+    <MediaPlayerContextWrapper id={id}>
       {(trackingContext) => (
         <>
           <ReactPlayer
@@ -35,12 +34,8 @@ function VideoPlayer({
             onStart={() => trackMediaStartEvent(trackingContext)}
             onPause={() => trackMediaPauseEvent(trackingContext)}
             onEnded={() => trackMediaStopEvent(trackingContext)}
+            className={clsx(styles.videoWrapper)} 
           />
-          {showPlayPauseButton && (
-            <button className={clsx(styles.playButton)} onClick={handlePlayPause}>
-              {isPlaying ? "Pause" : "Play"}
-            </button>
-          )}
         </>
       )}
     </MediaPlayerContextWrapper>

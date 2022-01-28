@@ -29,9 +29,10 @@ export default function Home() {
             open-source product analytics <br />
             designed for modern data teams
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
+            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that's ready for data 
+              science without the typical gruntwork.</p>
             <div className={clsx(styles.productIntroVideo)}>
-              <VideoPlayer url="https://vimeo.com/670857141?dnt=1" showPlayPauseButton={false} />
+              <VideoPlayer id="2-minute-video" url="https://vimeo.com/670857141?dnt=1" />
             </div>
             <img
                 className={clsx(styles.objectivIn2Minutes)}
