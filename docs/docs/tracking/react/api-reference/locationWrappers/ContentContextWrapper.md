@@ -18,8 +18,10 @@ ContentContextWrapper: (props: {
 ## Returns
 ReactElement.
 
-## Usage example
+## Usage examples
 
+
+### Enrich Tracked Components Locations
 ```jsx
 import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
 ```
@@ -37,6 +39,29 @@ import { ContentContextWrapper, TrackedLink } from '@objectiv/tracker-react';
   </span>
 </ContentContextWrapper>
 ```
+
+### Track interactive &lt;div&gt; via Render Props
+```jsx
+import { ContentContextWrapper, trackPressEvent } from '@objectiv/tracker-react';
+```
+
+```jsx
+<ContentContextWrapper id={'content'}>
+  <div>
+    <ContentContextWrapper id={'sub-content'}>
+      {(trackingContext) => (
+        <div onClick={ () => trackPressEvent(trackingContext) }>
+          Hi!, I'm interactive
+        </div>
+      )}
+    </ContentContextWrapper>
+  </div>
+  <span>
+    ...
+  </span>
+</ContentContextWrapper>
+```
+
 
 <br />
 
