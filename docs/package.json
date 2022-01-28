@@ -32,7 +32,9 @@
   },
   "resolutions": {
     "trim": "^0.0.3",
-    "nth-check": "2.0.1"
+    "nth-check": "2.0.1",
+    "node-fetch": "^3.2.0",
+    "node-forge": "^1.2.1"
   },
   "browserslist": {
     "production": [
