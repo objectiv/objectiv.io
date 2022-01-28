@@ -30,7 +30,7 @@ TrackedLinkContext: (props: {
 | optional | waitUntilTracked | boolean                              | `false`                             |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [PressEvent](/taxonomy/reference/events/PressEvent.md) when `onClick` triggers.

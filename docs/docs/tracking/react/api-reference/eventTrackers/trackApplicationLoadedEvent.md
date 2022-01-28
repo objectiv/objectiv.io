@@ -17,16 +17,55 @@ This is a lower-level API.
 [Event Tracking Hooks](/tracking/react/api-reference/hooks/eventTrackers/overview.md) are preferable as they automate retrieving both the Tracker instance and LocationStack. In fact, the do use these lower-level APIs internally.
 :::
 
+:::info
+Under normal circumstances [ObjectivTracker](/tracking/react/api-reference/common/providers/ObjectivProvider.md) tracks this event automatically, unless disabled via its options.
+:::
+
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **tracker**    | ReactTracker      |               |
-| optional | options        | TrackEventOptions |               |
-| optional | locationStack  | LocationStack     |               |
-| optional | globalContexts | GlobalContexts    |               |
+|          |                | type              |
+|:--------:|:---------------|:------------------|
+| required | **tracker**    | ReactTracker      |
+| optional | options        | TrackEventOptions |
+| optional | locationStack  | LocationStack     |
+| optional | globalContexts | GlobalContexts    |
 
 ## Returns
 `Promise<TrackerEvent>`
+
+## Usage
+```ts
+import { 
+  ReactTracker,
+  trackApplicationLoadedEvent, 
+  TrackingContextProvider, 
+  useOnMount
+} from '@objectiv/tracker-react';
+```
+
+```tsx
+import { useOnMount } from "@objectiv/tracker-react";
+
+const App = ({ children }) => {
+  const tracker = new ReactTracker({
+    endpoint: '/collector',
+    applicationId: 'app-id'
+  })
+
+  useOnMount(() => {
+    trackApplicationLoadedEvent({ tracker });
+  })
+
+  return (
+    <TrackingContextProvider tracker={tracker}>
+      {children}
+    </TrackingContextProvider>
+  );
+}
+```
+
+:::tip
+The code above is actually very similar to what [ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md) does internally. Check the [source on GitHub](https://github.com/objectiv/objectiv-analytics/blob/main/tracker/trackers/react/src/common/providers/ObjectivProvider.tsx).
+:::
 
 <br />
 

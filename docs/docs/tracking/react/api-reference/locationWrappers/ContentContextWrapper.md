@@ -17,7 +17,7 @@ ContentContextWrapper: (props: {
 | required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage examples
 

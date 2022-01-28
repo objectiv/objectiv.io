@@ -1,5 +1,5 @@
 ---
-sidebar_label: Low-level Event Trackers
+sidebar_label: Overview
 title: Event Trackers
 ---
 

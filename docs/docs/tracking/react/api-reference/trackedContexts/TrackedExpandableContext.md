@@ -23,7 +23,7 @@ TrackedExpandableContext: (props: {
 | optional | isVisible     | boolean                              | `undefined`   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `isVisible` switches from `true` to `false`. 

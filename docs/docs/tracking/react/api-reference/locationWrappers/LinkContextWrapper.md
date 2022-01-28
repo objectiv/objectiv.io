@@ -17,7 +17,7 @@ LinkContextWrapper: (props: {
 | required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 

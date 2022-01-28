@@ -21,7 +21,7 @@ TrackedOverlayContext: (props: {
 | optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `isVisible` switches from `true` to `false`.

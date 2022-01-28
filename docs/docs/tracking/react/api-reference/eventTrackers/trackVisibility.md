@@ -19,13 +19,13 @@ This is a lower-level API.
 :::
 
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **tracker**    | ReactTracker      |               |
-| required | **isVisible**  | boolean           |               |
-| optional | options        | TrackEventOptions |               |
-| optional | locationStack  | LocationStack     |               |
-| optional | globalContexts | GlobalContexts    |               |
+|          |                | type              |
+|:--------:|:---------------|:------------------|
+| required | **tracker**    | ReactTracker      |
+| required | **isVisible**  | boolean           |
+| optional | options        | TrackEventOptions |
+| optional | locationStack  | LocationStack     |
+| optional | globalContexts | GlobalContexts    |
 
 ## Returns
 `Promise<TrackerEvent>`

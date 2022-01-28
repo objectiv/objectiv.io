@@ -22,7 +22,7 @@ This is enabled by default in [ReactTracker](/tracking/react/api-reference/React
 | required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 

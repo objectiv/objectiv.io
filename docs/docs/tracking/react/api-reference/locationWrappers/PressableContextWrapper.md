@@ -17,7 +17,7 @@ PressableContextWrapper: (props: {
 | required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 
@@ -39,17 +39,26 @@ import { PressableContextWrapper } from '@objectiv/tracker-react';
 
 ```jsx
 import { 
-  PressableContextWrapper, 
-  trackPressEvent
+  PressableContextWrapper,
+  trackFailureEvent,
+  trackPressEvent,
+  trackSuccessEvent
 } from '@objectiv/tracker-react';
 ```
 
 ```jsx
 <PressableContextWrapper id={'do-it'}>
   {(trackingContext) => (
-    <button onClick={() => {
+    <button onClick={async () => {
       trackPressEvent(trackingContext);
-      doIt();
+
+      const response = await doIt();
+
+      if (response.ok) {
+        trackSuccessEvent(trackingContext);
+      } else {
+        trackFailureEvent(trackingContext);
+      }
     }}>
       Do it
     </button>

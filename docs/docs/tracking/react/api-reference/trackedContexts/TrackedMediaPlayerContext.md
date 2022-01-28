@@ -20,7 +20,7 @@ TrackedMediaPlayerContext: (props: {
 | optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 None.

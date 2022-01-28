@@ -21,7 +21,7 @@ LocationContextWrapper: (props: {
 | required | **locationContext** | LocationContext                                          |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 

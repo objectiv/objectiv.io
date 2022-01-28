@@ -22,7 +22,7 @@ TrackedInput: (props: {
 | optional | forwardTitle | boolean   | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) when `onBlur` triggers and the  value changed.
