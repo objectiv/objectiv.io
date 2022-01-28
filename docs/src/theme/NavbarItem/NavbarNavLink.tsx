@@ -13,7 +13,7 @@ import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 
-import { TrackedLinkContext } from "@objectiv/tracker-react";
+import { tagLink } from "@objectiv/tracker-browser";
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -37,25 +37,27 @@ export default function NavbarNavLink({
 
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
   return (
-    <TrackedLinkContext
-      Component={Link}
-      title={label}
-      href={linkTo}
-      {...{
-        to: linkTo,
-        isNavLink: true,
-        activeClassName: !props.className?.includes(activeClassName)
-          ? activeClassName
-          : '',
-        ...(activeBasePath || activeBaseRegex
-          ? {
-              isActive: (_match, location) =>
-                activeBaseRegex
-                  ? isRegexpStringMatch(activeBaseRegex, location.pathname)
-                  : location.pathname.startsWith(activeBaseUrl),
-            }
-          : null),
-      }}
+    <Link 
+      {...tagLink({id: label, href: linkTo}) }
+      {...(href
+        ? {
+            href: prependBaseUrlToHref ? normalizedHref : href,
+          }
+        : {
+            isNavLink: true,
+            activeClassName: !props.className?.includes(activeClassName)
+              ? activeClassName
+              : '',
+            to: toUrl,
+            ...(activeBasePath || activeBaseRegex
+              ? {
+                  isActive: (_match, location) =>
+                    activeBaseRegex
+                      ? isRegexpStringMatch(activeBaseRegex, location.pathname)
+                      : location.pathname.startsWith(activeBaseUrl),
+                }
+              : null),
+          })}
       {...props}>
       {isExternalLink ? (
         <span>
@@ -65,6 +67,6 @@ export default function NavbarNavLink({
       ) : (
         label
       )}
-    </TrackedLinkContext>
+    </Link>
   );
 }
