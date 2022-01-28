@@ -24,15 +24,15 @@ If not `trackerId` is specified, the default [BrowserTracker](/tracking/browser/
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { getTracker } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 const tracker = getTracker();
 ```
 
-```typescript jsx
+```jsx
 const defaultTracker = getTracker();
 const secondaryTracker = getTracker('secondary-tracker');
 ```

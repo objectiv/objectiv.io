@@ -30,11 +30,11 @@ trackEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackEvent, makePressEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 export const trackPressEvent = (parameters: {
   element: TaggableElement | EventTarget;
   tracker?: BrowserTracker;

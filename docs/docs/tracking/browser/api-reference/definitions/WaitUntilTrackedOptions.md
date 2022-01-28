@@ -2,7 +2,7 @@
 
 Options to configure how [TaggingAttribute.trackClicks](/tracking/browser/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) handles waiting for TrackerQueue and possibly flushing it.
 
-```typescript jsx
+```jsx
 type WaitUntilTrackedOptions = {
   intervalMs?: number;
   timeoutMs?: number;

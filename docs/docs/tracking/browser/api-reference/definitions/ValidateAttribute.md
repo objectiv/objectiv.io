@@ -2,7 +2,7 @@
 
 The definition of [TaggingAttribute.validate](/tracking/browser/api-reference/definitions/TaggingAttribute.md#taggingattributevalidate).
 
-```typescript jsx
+```jsx
 type TrackClicksAttribute = {
   locationUniqueness?: boolean;
 };

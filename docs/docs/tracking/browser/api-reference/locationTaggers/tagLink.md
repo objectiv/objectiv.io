@@ -29,15 +29,15 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage examples
 
-```typescript jsx
+```jsx
 import { tagLink } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <a {...tagLink({ id: 'lnk-id', href: '/path' })} href="/path">Go!</a>
 ```
 
-```typescript jsx
+```jsx
 <LinkComponent {...tagLink({ id: 'lnk-id', href: '/path' })} to="/path">Go!</LinkComponent>
 ```
 

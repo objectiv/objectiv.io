@@ -20,18 +20,18 @@ TrackedRootLocationContext: (props: {
 | optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedRootLocationContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedRootLocationContext id={'page'}>
   <Layout>
     ...

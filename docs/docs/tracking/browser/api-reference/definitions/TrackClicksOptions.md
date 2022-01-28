@@ -3,7 +3,7 @@
 [TaggingAttribute.trackClicks](/tracking/browser/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are parsed onto this object via [parseTrackClickAttribute](/tracking/browser/api-reference/common/parsers/parseTrackClicks.md).  
 
 
-```typescript jsx
+```jsx
 type TrackClicksOptions = undefined | {
   waitForQueue?: WaitForQueueOptions;
   flushQueue?: FlushQueueOptions;

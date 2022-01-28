@@ -36,7 +36,7 @@ Custom values can be specified as well:
 
 In the following example we are instructing our [Mutation Observer](/tracking/browser/api-reference/mutationObserver/overview.md) to attach a [Click Event handler](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers#eventtarget.addeventlistener) that will attempt to wait for up to 3 seconds, polling every 100ms and flushing the `TrackerQueue` only on timeout. 
 
-```typescript jsx
+```jsx
 <link
   {...tagLink({
     id: 'external',
@@ -85,7 +85,7 @@ Used to override how the parent of a [Tagged Element](/tracking/core-concepts/br
 
 A practical is to track dynamically placed nodes in the DOM, such as React Portals. 
 
-```typescript jsx
+```jsx
 const parentDiv = tagContent({ id: 'section' });
 
 <div {...parentDiv}>

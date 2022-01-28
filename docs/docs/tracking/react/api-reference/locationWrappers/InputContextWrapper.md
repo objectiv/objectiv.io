@@ -1,34 +1,64 @@
 # InputContextWrapper
 
-Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md).
+Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-InputContextWrapper: (props: { 
-  children: ReactNode, 
+InputContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 
-```typescript jsx
+### Enrich Locations
+
+```jsx
 import { InputContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <InputContextWrapper id={'email'}>
   <input type={'email'} />
 </InputContextWrapper>
 ```
+
+### Tracking via Render Props
+
+```jsx
+import { 
+  InputContextWrapper, 
+  trackInputChangeEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<InputContextWrapper id={'search'}>
+  {(trackingContext) => (
+    <input 
+      type={'text'} 
+      onBlur={() => trackInputChangeEvent(trackingContext)} 
+    />
+  )}
+</InputContextWrapper>
+```
+
+<br />
+
+:::info
+The above is just an example to illustrate the Render Props functionality.   
+Check out our [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) for a ready-to-use [TrackedInput](/tracking/react/api-reference/trackedElements/TrackedInput.md) component.
+:::
 
 <br />
 

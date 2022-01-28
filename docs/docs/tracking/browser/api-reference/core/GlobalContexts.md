@@ -2,7 +2,7 @@
 
 An array of [GlobalContext](/taxonomy/reference/global-contexts/overview.md) instances
 
-```typescript jsx
+```jsx
 type GlobalContexts = AbstractGlobalContext[]
 ```
 

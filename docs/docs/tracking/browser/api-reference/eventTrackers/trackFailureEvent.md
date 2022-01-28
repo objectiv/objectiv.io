@@ -27,11 +27,11 @@ trackFailureEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackFailurEvent, trackSuccessEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <form onSubmit={() => {
   sendFormAsync()
     .then(

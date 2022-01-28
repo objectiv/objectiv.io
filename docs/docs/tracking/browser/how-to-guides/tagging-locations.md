@@ -19,7 +19,7 @@ A good rule of thumb is to start by identifying all interactive Elements in the 
 ### Buttons
 Anything that the user can interact with, but does not cause a URL change, can be considered a Button. 
 
-```typescript jsx
+```jsx
 // a button tag 
 <button {...tagPressable({ id: 'button-1' })}>Click Me!</button>
 
@@ -38,7 +38,7 @@ Currently it's necessary to specify `text` manually. We are working on improveme
 ### Links
 Links are interactive elements that cause, directly or indirectly, a change in the current URL.
 
-```typescript jsx
+```jsx
 // a link tag 
 <a {...tagLink({ id: 'link-1', href:"/somewhere" })} href="/somewhere">Go!</a>
 
@@ -56,7 +56,7 @@ easier.
 Elements that cause other Elements, usually their children, to be expanded and displayed to the user, such as 
 Accordions and collapsible Menus. 
 
-```typescript jsx
+```jsx
 // an Accordion-like component 
 <FAQItem {...tagExpandable({ id: 'how-to-1' })} description="How to track Accordions?">
   Some content here that will be displayed on click

@@ -18,18 +18,18 @@ TrackedMain: (props: {
 | optional | forwardId    | boolean   | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedMain } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <header>
     ...

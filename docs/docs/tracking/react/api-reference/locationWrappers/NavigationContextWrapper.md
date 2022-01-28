@@ -1,36 +1,64 @@
 # NavigationContextWrapper
 
-Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md).
+Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-NavigationContextWrapper: (props: { 
-  children: ReactNode, 
+NavigationContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 
-```typescript jsx
+### Enrich Locations
+
+```jsx
 import { NavigationContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
-<NavigationContextWrapper id={'content'}>
+```jsx
+<NavigationContextWrapper id={'footer'}>
   <nav>
     <a href={'/'}>Homepage</a>
     <a href={'/privacy'}>Privacy</a>
     <a href={'/contact'}>Contact</a>
   </nav>
+</NavigationContextWrapper>
+```
+
+### Tracking via Render Props
+
+```jsx
+import { 
+  NavigationContextWrapper, 
+  trackHiddenEvent,
+  trackVisibleEvent 
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<NavigationContextWrapper id={'drawer'}>
+  {(trackingContext) => (
+    <Drawer
+      onShow={() => trackVisibleEvent(trackingContext)}
+      onHide={() => trackHiddenEvent(trackingContext)}
+    >
+      <a href={'/'}>Homepage</a>
+      <a href={'/privacy'}>Privacy</a>
+      <a href={'/contact'}>Contact</a>
+    </Drawer>
+  )}
 </NavigationContextWrapper>
 ```
 

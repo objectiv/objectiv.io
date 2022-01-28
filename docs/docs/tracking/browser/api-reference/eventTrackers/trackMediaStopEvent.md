@@ -26,11 +26,11 @@ trackMediaStopEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackMediaStopEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <video
   onStop={(event) => {
     trackMediaStopEvent({ element: event.target })
@@ -38,7 +38,7 @@ import { trackMediaStopEvent } from '@objectiv/tracker-browser';
 />
 ```
 
-```typescript jsx
+```jsx
 <YouTube
   onStop={({ target: youTubePlayerInstance }) => {
     trackMediaStopEvent({ element: youTubePlayerInstance.getIframe() })

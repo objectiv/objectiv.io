@@ -30,11 +30,11 @@ trackPressEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackPressEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <div
   onClick={(event) => {
     trackPressEvent({ element: event.target })
@@ -42,7 +42,7 @@ import { trackPressEvent } from '@objectiv/tracker-browser';
 />
 ```
 
-```typescript jsx
+```jsx
 <Accordion
   onClick={(event) => {
     trackPressEvent({ element: event.target })

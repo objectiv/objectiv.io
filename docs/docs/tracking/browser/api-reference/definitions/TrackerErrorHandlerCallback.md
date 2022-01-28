@@ -2,7 +2,7 @@
 
 The `onError` parameter of [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) APIs is a callback that gets invoked when Errors are caught during tracking. 
 
-```typescript jsx
+```jsx
 
 type TrackerErrorHandlerCallback = <T = unknown>(error: unknown, parameters?: T) => void
 
