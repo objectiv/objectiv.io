@@ -13,9 +13,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const config = {
-  title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
+  title: "Objectiv Docs - OSS product analytics, ready for data science",
   titleDelimiter: '|',
-  tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
+  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
