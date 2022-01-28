@@ -1,30 +1,30 @@
 # MediaPlayerContextWrapper
 
-Wraps its children in a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
+Wraps its children in a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-MediaPlayerContextWrapper: (props: { 
-  children: ReactNode, 
+MediaPlayerContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     | default value |
+|:--------:|:-------------|:---------------------------------------------------------|:--------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **id**       | string                                                   |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { MediaPlayerContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <MediaPlayerContextWrapper id={'video'}>
   <video src={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} />
 </MediaPlayerContextWrapper>

@@ -35,11 +35,11 @@ ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedAnchor } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <header>
     <TrackedAnchor href={'/'}>Homepage</TrackedAnchor>

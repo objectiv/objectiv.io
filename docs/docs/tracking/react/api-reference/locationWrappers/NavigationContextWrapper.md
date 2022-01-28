@@ -1,30 +1,30 @@
 # NavigationContextWrapper
 
-Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md).
+Wraps its children in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-NavigationContextWrapper: (props: { 
-  children: ReactNode, 
+NavigationContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     | default value |
+|:--------:|:-------------|:---------------------------------------------------------|:--------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **id**       | string                                                   |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { NavigationContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <NavigationContextWrapper id={'content'}>
   <nav>
     <a href={'/'}>Homepage</a>

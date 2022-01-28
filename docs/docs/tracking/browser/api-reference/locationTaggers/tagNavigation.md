@@ -22,17 +22,17 @@ tagNavigation = (parameters: {
 
 ## Examples
 
-```typescript jsx
+```jsx
 import { tagNavigation } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <nav {...tagNavigation({ id: 'navigation-id' })}>
   ...
 </nav>
 ```
 
-```typescript jsx
+```jsx
 <TopNav {...tagNavigation({ id: 'navigation-id' })}>
   ...
 </TopNav>

@@ -25,11 +25,11 @@ None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedHeader } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <TrackedHeader>
     ...

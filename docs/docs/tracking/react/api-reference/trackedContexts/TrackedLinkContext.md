@@ -37,11 +37,11 @@ ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedLinkContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedLinkContext Component={'a'} href={'/privacy'}>
   Privacy
 </TrackedLinkContext>

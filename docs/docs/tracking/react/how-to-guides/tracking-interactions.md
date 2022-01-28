@@ -54,7 +54,7 @@ import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react'
 ### Link
 Links are interactive elements that cause a change in the current URL. Thus, we'd like to track the destination href.
 
-```typescript jsx
+```jsx
 // A link tag 
 <a href="/somewhere">Go!</a>
 

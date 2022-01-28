@@ -28,15 +28,15 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagPressable } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <button {...tagPressable({ id: 'button-id' })}>Click Me!</button>
 ```
 
-```typescript jsx
+```jsx
 <Submit {...tagPressable({ id: 'submit' })}>Do It!</Submit>
 ```
 

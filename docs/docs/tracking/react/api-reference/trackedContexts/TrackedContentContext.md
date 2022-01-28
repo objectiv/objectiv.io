@@ -28,11 +28,11 @@ None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedContentContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedContentContext Component={'div'} id={'content'}>
   ...
   <TrackedContentContext Component={'p'} id={'intro'}>

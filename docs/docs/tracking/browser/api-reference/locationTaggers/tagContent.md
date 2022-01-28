@@ -22,11 +22,11 @@ tagContent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagContent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <Layout {...tagContent({ id: 'layout' })}>
   <div {...tagContent({ id: 'section' })}>
     ...

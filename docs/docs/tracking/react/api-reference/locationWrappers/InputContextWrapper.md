@@ -1,30 +1,30 @@
 # InputContextWrapper
 
-Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md).
+Wraps its children in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-InputContextWrapper: (props: { 
-  children: ReactNode, 
+InputContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     | default value |
+|:--------:|:-------------|:---------------------------------------------------------|:--------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **id**       | string                                                   |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { InputContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <InputContextWrapper id={'email'}>
   <input type={'email'} />
 </InputContextWrapper>

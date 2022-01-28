@@ -33,11 +33,11 @@ ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedPressableContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedPressableContext Component={'button'} onClick={ () => doIt() }>
   Do it
 </TrackedPressableContext>

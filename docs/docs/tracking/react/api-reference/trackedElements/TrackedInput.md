@@ -29,11 +29,11 @@ ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedInput } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <header>
     ...

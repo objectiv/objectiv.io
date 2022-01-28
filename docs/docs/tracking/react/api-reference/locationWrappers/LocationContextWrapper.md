@@ -1,10 +1,10 @@
 # LocationContextWrapper
 
-Wraps its children in the given [LocationContext](/taxonomy/reference/location-contexts/overview.md) instance.
+Wraps its children in the given [LocationContext](/taxonomy/reference/location-contexts/overview.md) instance. Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-LocationContextWrapper: (props: { 
-  children: ReactNode, 
+LocationContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   locationContext: LocationContext
 }) => ReactElement
 ```
@@ -14,21 +14,21 @@ LocationContextWrapper: (props: {
 :::
 
 ## Parameters
-|          |                     | type            | default value |
-|:--------:|:--------------------|:----------------|:--------------|
-| required | **children**        | ReactNode       |               |
-| required | **locationContext** | LocationContext |               |
+|          |                     | type                                                     | default value |
+|:--------:|:--------------------|:---------------------------------------------------------|:--------------|
+| required | **children**        | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **locationContext** | LocationContext                                          |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { LocationContextWrapper, makeContentContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <LocationContextWrapper locationContext={ makeContentContext({ id: 'content' }) }>
   <div>
     ...

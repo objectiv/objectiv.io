@@ -27,11 +27,11 @@ None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedNavigationContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedNavigationContext Component={'nav'} id={'top-nav'}>
   <a href={'/'}>Homepage</a>
   <a href={'/privacy'}>Privacy</a>

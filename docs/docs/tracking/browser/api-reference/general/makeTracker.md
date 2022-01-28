@@ -43,18 +43,18 @@ When providing only `endpoint`, the Tracker will automatically create a Transpor
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { makeTracker } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 makeTracker({
   applicationId: 'awesome-app',
   endpoint: 'https://collector.awesome-app.dev' 
 })
 ```
 
-```typescript jsx
+```jsx
 makeTracker({
   applicationId: 'awesome-app',
   transport: CustomTransport,

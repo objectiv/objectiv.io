@@ -27,11 +27,11 @@ None.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedMediaPlayerContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedMediaPlayerContext Component={'video'} id={'content'} />
 ```
 

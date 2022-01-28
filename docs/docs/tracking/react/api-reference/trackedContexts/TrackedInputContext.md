@@ -27,11 +27,11 @@ ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedInputContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedInputContext Component={'input'} type={'email'} id={'email'} />
 ```
 

@@ -1,30 +1,30 @@
 # PressableContextWrapper
 
-Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).
+Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-PressableContextWrapper: (props: { 
-  children: ReactNode, 
+PressableContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     | default value |
+|:--------:|:-------------|:---------------------------------------------------------|:--------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **id**       | string                                                   |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { PressableContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <PressableContextWrapper id={'do-it'}>
   <button onClick={ () => doIt() }>
     Do it

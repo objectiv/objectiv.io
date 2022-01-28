@@ -1,30 +1,30 @@
 # OverlayContextWrapper
 
-Wraps its children in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md).
+Wraps its children in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md). Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-OverlayContextWrapper: (props: { 
-  children: ReactNode, 
+OverlayContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     | default value |
+|:--------:|:-------------|:---------------------------------------------------------|:--------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |               |
+| required | **id**       | string                                                   |               |
 
 ## Returns
 ReactElement.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { OverlayContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <OverlayContextWrapper id={'modal'}>
   <Modal>
     ...

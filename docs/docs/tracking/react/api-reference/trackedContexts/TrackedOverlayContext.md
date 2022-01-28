@@ -34,11 +34,11 @@ The `isVisible` state of a TrackedOverlayContext at mount is ignored. Only actua
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedOverlayContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedOverlayContext Component={'div'} id={'modal'}>
   ...
 </TrackedOverlayContext>

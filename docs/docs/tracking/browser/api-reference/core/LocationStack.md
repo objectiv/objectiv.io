@@ -2,7 +2,7 @@
 
 An array of [LocationContext](/taxonomy/reference/location-contexts/overview.md) instances
 
-```typescript jsx
+```jsx
 type LocationStack = AbstractLocationContext[]
 ```
 

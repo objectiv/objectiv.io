@@ -35,11 +35,11 @@ The `isVisible` state of a TrackedExpandableContext at mount is ignored. Only ac
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedExpandableContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedExpandableContext Component={Tooltip} id={'tooltip'}>
   ...
 </TrackedExpandableContext>

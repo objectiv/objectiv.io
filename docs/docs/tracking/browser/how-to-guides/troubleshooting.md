@@ -36,7 +36,7 @@ Nonetheless, it's still highly recommended covering all complex trackers with te
 ### Example of Component using Portals
 The `Menu` component renders its contents in a [React Portal](https://reactjs.org/docs/portals.html). 
 
-```typescript jsx
+```jsx
 <Card>
   <Menu>
     <MenuItem>Item A</MenuItem>
@@ -51,7 +51,7 @@ It's easier to tag siblings via [tagChildren](/tracking/browser/api-reference/lo
 
 Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) as follows:
 
-```typescript jsx
+```jsx
 <Card {...tagContent({ id: 'card' })}>
   <Menu {...tagOverlay({ id: 'menu' })}>
     <MenuItem {...tagPressable({ id: 'menu-item-a' })}>Item A</MenuItem>
@@ -80,7 +80,7 @@ The solution is to specify the parent [Location Tagger](/tracking/browser/api-re
 
 This tells the [Event Tracker](/tracking/browser/api-reference/eventTrackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
 
-```typescript jsx
+```jsx
 const parent = tagContent({ id: 'card' });
 ...
 <Card {...cardTracker}>
@@ -118,7 +118,7 @@ We can now attempt to fix the issue in two ways:
 ### Props forwarding - own Components
 Consider the following component:
 
-```typescript jsx
+```jsx
 const Button = ({ children, onClick }) => (
   <button onClick={onClick}>{children}</button>
 )
@@ -128,12 +128,12 @@ const Button = ({ children, onClick }) => (
 ```
 
 If we try to tag it as we normally do:
-```typescript jsx
+```jsx
 <Button {...tagPressable({ id: 'button-do-it' })} onClick={doSomething}>Yes!</Button>
 ```
 
 It would not work, because extra props are not being forwarded to the `<button>` tag. Let's fix that:
-```typescript jsx
+```jsx
 const Button = ({ children, onClick, ...otherProps }) => (
   <button onClick={onClick} {...otherProps}>{children}</button>
 )
@@ -146,7 +146,7 @@ Third party components, especially UI libraries, usually allow specifying custom
 It's worth verifying by checking the documentation.
 
 Let's look at an example with [InputBase](https://mui.com/api/input-base/) from [Material UI](https://mui.com/). This is a search input box.
-```typescript jsx
+```jsx
 <InputBase
   id={'search'}
   placeholder="Search..."
@@ -154,7 +154,7 @@ Let's look at an example with [InputBase](https://mui.com/api/input-base/) from 
 ```
 
 If InputBase would forwards props we could simply:
-```typescript jsx
+```jsx
 <InputBase
   {...tagInput({ id: 'search' })}
   id={'search'}
@@ -167,7 +167,7 @@ provides us with a specific property called `inputProps` that is directly forwar
 
 Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md):
 
-```typescript jsx
+```jsx
 <InputBase
   id={'search'}
   placeholder="Search..."
@@ -179,7 +179,7 @@ Now we can fix the issue by simply using it to apply our [Tagging Attributes](/t
 Sometimes properties for passing extra attributes are already used, and we can't assign directly to them as done above.    
 Simply spread the [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) and merge them up with the existing props:
 
-```typescript jsx
+```jsx
 <InputBase
   id={'search'}
   placeholder="Search..."
@@ -215,14 +215,14 @@ Let's look at a hypothetical component that does not allow forwarding props to i
 We want to track a list of FAQ Items and we use this 3rd party component for that. It's an expandable element that, 
 on Click, will display its content / children to the user with an animation. 
 
-```typescript jsx
+```jsx
 <FAQItem title={'How do I track 3rd party components?'}>
   Some explanatory text to be displayed on click
 </FAQItem>
 ```
 
 Objectiv Taxonomy has a Context specifically meant for tracking expandable elements, let's use that:
-```typescript jsx
+```jsx
 <FAQItem
   {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
   title={'How do I track 3rd party components?'}
@@ -234,7 +234,7 @@ Objectiv Taxonomy has a Context specifically meant for tracking expandable eleme
 Unfortunately after some testing we discover that `FAQItem` has its own internal event handling and doesn't allow clicks to bubble out for us to track.
 
 Again, checking the documentation is our friend here. Turns out there are event handlers we can hook onto:
-```typescript jsx
+```jsx
  <FAQItem
   {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
   onClick={(event) => {
@@ -252,7 +252,7 @@ Visibility Events can be difficult to detect due to the nature of DOM and the co
 By default, we track when components mount or unmount from the DOM but it's not efficient to check for actual visibility. 
 
 Consider this menu:
-```typescript jsx
+```jsx
 <Menu
   {...tagOverlay({ id: 'menu' })}
   open={isMenuOpen}
@@ -266,7 +266,7 @@ If during testing we detect that we cannot automatically detect when the menu is
 
 Luckily the menu it's driven by the state variable `isMenuOpen`. We can use that to track its state. To do so we switch visibility tracking from automatic to manual and we tell the tracker what to monitor.
 
-```typescript jsx
+```jsx
 <Menu
   {...tagOverlay({
      id: 'menu',
@@ -284,7 +284,7 @@ The `isMenuOpen` variable is now driving both the menu visibility and the tracke
 ### Tracking Visibility via 3rd party handlers
 Sometimes we can also leverage 3rd party event callbacks, like so:
 
-```typescript jsx
+```jsx
 <Accordion
   {...tagExpandable({ id: 'fix' })}
   onChange={(event, expanded) => {
