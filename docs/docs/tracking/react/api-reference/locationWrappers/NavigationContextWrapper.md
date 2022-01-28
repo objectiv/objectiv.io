@@ -20,17 +20,44 @@ ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
 import { NavigationContextWrapper } from '@objectiv/tracker-react';
 ```
 
 ```jsx
-<NavigationContextWrapper id={'content'}>
+<NavigationContextWrapper id={'footer'}>
   <nav>
     <a href={'/'}>Homepage</a>
     <a href={'/privacy'}>Privacy</a>
     <a href={'/contact'}>Contact</a>
   </nav>
+</NavigationContextWrapper>
+```
+
+### Render Props inline tracking
+
+```jsx
+import { 
+  NavigationContextWrapper, 
+  trackVisibleEvent, 
+  trackHiddenEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<NavigationContextWrapper id={'drawer'}>
+  {(trackingContext) => (
+    <Drawer
+      onShow={() => trackVisibleEvent(trackingContext)}
+      onHide={() => trackHiddenEvent(trackingContext)}
+    >
+      <a href={'/'}>Homepage</a>
+      <a href={'/privacy'}>Privacy</a>
+      <a href={'/contact'}>Contact</a>
+    </Drawer>
+  )}
 </NavigationContextWrapper>
 ```
 
