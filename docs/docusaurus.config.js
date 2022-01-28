@@ -15,7 +15,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "Objectiv Docs - OSS product analytics, ready for data science",
   titleDelimiter: '|',
-  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
+  tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
