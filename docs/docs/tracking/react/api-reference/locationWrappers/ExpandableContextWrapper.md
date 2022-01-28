@@ -53,7 +53,6 @@ import { ExpandableContextWrapper, trackPressEvent, trackVisibility } from '@obj
 </ExpandableContextWrapper>
 ```
 
-
 <br />
 
 :::tip Did you know ?

@@ -20,6 +20,8 @@ ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
 import { InputContextWrapper } from '@objectiv/tracker-react';
 ```
@@ -29,6 +31,24 @@ import { InputContextWrapper } from '@objectiv/tracker-react';
   <input type={'email'} />
 </InputContextWrapper>
 ```
+
+### Render Props inline tracking
+
+```jsx
+import { InputContextWrapper, trackInputChangeEvent } from '@objectiv/tracker-react';
+```
+
+```jsx
+<InputContextWrapper id={'search'}>
+  {(trackingContext) => (
+    <input 
+      type={'text'} 
+      onBlur={ () => trackInputChangeEvent(trackingContext) }
+    />
+  )}
+</InputContextWrapper>
+```
+
 
 <br />
 
