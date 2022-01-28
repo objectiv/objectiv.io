@@ -8,7 +8,8 @@ These Components wrap their children in a [Context.Provider](https://reactjs.org
 
 :::tip
 The combination of Location Wrappers and [Low-level Event Trackers](/tracking/react/api-reference/overview.md#low-level-event-trackers) is how we build Tracked Contexts and Elements.  
-Check the Render Props Usage sections for example of how to combine the two.  
+
+Take a loot at this [how to build your own Custom Tracked Components](/tracking/react/how-to-guides/custom-components.md) guide for more info.
 :::
 
 #### Higher-level
