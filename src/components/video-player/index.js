@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { MediaPlayerContextWrapper } from "@objectiv/tracker-react";
 import {
-  useMediaLoadEventTracker,
-  useMediaStartEventTracker,
-  useMediaPauseEventTracker,
-  useMediaStopEventTracker,
+  MediaPlayerContextWrapper,
+  trackMediaLoadEvent,
+  trackMediaPauseEvent,
+  trackMediaStartEvent,
+  trackMediaStopEvent
 } from "@objectiv/tracker-react";
 
 import clsx from "clsx";
@@ -18,10 +18,6 @@ function VideoPlayer({
   showPlayPauseButton = false,
 }) {
   const [isPlaying, setPlaying] = useState(false);
-  const trackMediaLoad = useMediaLoadEventTracker();
-  const trackMediaStart = useMediaStartEventTracker();
-  const trackMediaPause = useMediaPauseEventTracker();
-  const trackMediaStop = useMediaStopEventTracker();
 
   function handlePlayPause() {
     setPlaying(!isPlaying);
@@ -29,19 +25,23 @@ function VideoPlayer({
 
   return (
     <MediaPlayerContextWrapper id={id} className={styles.videoWrapper}>
-      <ReactPlayer
-        url={url}
-        playing={isPlaying}
-        controls={enableControls}
-        onReady={trackMediaLoad}
-        onStart={trackMediaStart}
-        onPause={trackMediaPause}
-        onEnded={trackMediaStop}
-      />
-      {showPlayPauseButton && (
-        <button className={clsx(styles.playButton)} onClick={handlePlayPause}>
-          {isPlaying ? "Pause" : "Play"}
-        </button>
+      {(trackingContext) => (
+        <>
+          <ReactPlayer
+            url={url}
+            playing={isPlaying}
+            controls={enableControls}
+            onReady={() => trackMediaLoadEvent(trackingContext)}
+            onStart={() => trackMediaStartEvent(trackingContext)}
+            onPause={() => trackMediaPauseEvent(trackingContext)}
+            onEnded={() => trackMediaStopEvent(trackingContext)}
+          />
+          {showPlayPauseButton && (
+            <button className={clsx(styles.playButton)} onClick={handlePlayPause}>
+              {isPlaying ? "Pause" : "Play"}
+            </button>
+          )}
+        </>
       )}
     </MediaPlayerContextWrapper>
   );
