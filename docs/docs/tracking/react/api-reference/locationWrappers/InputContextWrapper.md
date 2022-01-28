@@ -41,14 +41,10 @@ import { InputContextWrapper, trackInputChangeEvent } from '@objectiv/tracker-re
 ```jsx
 <InputContextWrapper id={'search'}>
   {(trackingContext) => (
-    <input 
-      type={'text'} 
-      onBlur={ () => trackInputChangeEvent(trackingContext) }
-    />
+    <input type={'text'} onBlur={() => trackInputChangeEvent(trackingContext)} />
   )}
 </InputContextWrapper>
 ```
-
 
 <br />
 

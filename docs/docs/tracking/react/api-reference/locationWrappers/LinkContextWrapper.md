@@ -20,6 +20,8 @@ ReactElement.
 
 ## Usage example
 
+### Enrich Locations
+
 ```jsx
 import { LinkContextWrapper } from '@objectiv/tracker-react';
 ```
@@ -27,6 +29,22 @@ import { LinkContextWrapper } from '@objectiv/tracker-react';
 ```jsx
 <LinkContextWrapper id={'privacy'}>
   <a href={'/privacy'}>Privacy</a>
+</LinkContextWrapper>
+```
+
+### Render Props inline tracking
+
+```jsx
+import { LinkContextWrapper, trackPressEvent } from '@objectiv/tracker-react';
+```
+
+```jsx
+<LinkContextWrapper id={'privacy'}>
+  {(trackingContext) => (
+    <a href={'/privacy'} onClick={() => trackPressEvent(trackingContext)}>
+      Privacy
+    </a>
+  )}
 </LinkContextWrapper>
 ```
 
