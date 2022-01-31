@@ -20,18 +20,18 @@ TrackedInputContext: (props: {
 | optional | forwardId     | boolean                              | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) when `onBlur` triggers and the  value changed.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedInputContext } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <TrackedInputContext Component={'input'} type={'email'} id={'email'} />
 ```
 

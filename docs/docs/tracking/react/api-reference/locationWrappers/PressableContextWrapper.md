@@ -1,36 +1,77 @@
 # PressableContextWrapper
 
-Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).
+Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-PressableContextWrapper: (props: { 
-  children: ReactNode, 
+PressableContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 
-```typescript jsx
+### Enrich Locations
+
+```jsx
 import { PressableContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <PressableContextWrapper id={'do-it'}>
-  <button onClick={ () => doIt() }>
+  <button onClick={() => doIt()}>
     Do it
   </button>
 </PressableContextWrapper>
 ```
+
+### Tracking via Render Props
+
+```jsx
+import { 
+  PressableContextWrapper,
+  trackFailureEvent,
+  trackPressEvent,
+  trackSuccessEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<PressableContextWrapper id={'do-it'}>
+  {(trackingContext) => (
+    <button onClick={async () => {
+      trackPressEvent(trackingContext);
+
+      const response = await doIt();
+
+      if (response.ok) {
+        trackSuccessEvent(trackingContext);
+      } else {
+        trackFailureEvent(trackingContext);
+      }
+    }}>
+      Do it
+    </button>
+  )}
+</PressableContextWrapper>
+```
+
+<br />
+
+:::info
+The above is just an example to illustrate the Render Props functionality.   
+Check out our [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) for a ready-to-use [TrackedButton](/tracking/react/api-reference/trackedElements/TrackedButton.md) component. 
+:::
 
 <br />
 

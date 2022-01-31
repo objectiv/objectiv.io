@@ -28,17 +28,17 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Examples
 
-```typescript jsx
+```jsx
 import { tagOverlay } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <div {...tagOverlay({ id: 'modal-id' })}>
   ...
 </div>
 ```
 
-```typescript jsx
+```jsx
 <Modal {...tagOverlay({ id: 'modal-id' })}>
   ...
 </Modal>

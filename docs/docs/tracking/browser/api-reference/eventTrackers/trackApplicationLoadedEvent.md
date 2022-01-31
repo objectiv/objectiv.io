@@ -30,11 +30,11 @@ trackApplicationLoadedEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackApplicationLoadedEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <head>
   ...
   <script>
@@ -43,7 +43,7 @@ import { trackApplicationLoadedEvent } from '@objectiv/tracker-browser';
 </head>
 ```
 
-```typescript jsx
+```jsx
 const App = () => {
   ...
   

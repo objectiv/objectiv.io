@@ -2,7 +2,7 @@
 
 [LocationTaggers](/tracking/browser/api-reference/locationTaggers/overview.md) APIs return either a set of [TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md) or `undefined`. The latter occurs whenever an Error is thrown. 
 
-```typescript jsx
+```jsx
 
 type TagLocationReturnValue = TagLocationAttributes | undefined; 
 
