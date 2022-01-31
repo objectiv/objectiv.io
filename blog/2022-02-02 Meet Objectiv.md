@@ -1,14 +1,11 @@
 ---
 title: Meet Objectiv - Open-source product analytics, designed for data science without gruntwork
-
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus sit amet dolor sed semper. Nunc faucibus tristique sapien, eu pharetra ligula pulvinar et. Aliquam ullamcorper lacus enim, in vulputate elit rutrum ut. Mauris iaculis varius erat, nec dapibus turpis lobortis eget. Cras vitae magna vitae erat volutpat tincidunt. Vestibulum eu magna eget lacus commodo eleifend sed ut lorem. Nam dapibus eros neque, non vulputate sem sodales placerat.
 slug: meet-objectiv
 authors: vincenthoogsteder
-tags: [release]
-image: https://objectiv.io/img/the-stack.svg
-hide_table_of_contents: false
 ---
 
+import BlogImage from '@site/src/components/blog-image'
 import VideoPlayer from '@site/src/components/video-player'
 import EmbedTweet from '@site/src/components/embed-tweet'
 
@@ -25,7 +22,7 @@ We saw [an increasing amount of people with a data science role](https://www.zdn
 
 What we also saw: Front-end engineers that had to implement yet another tracking plan because data science was missing events. Data scientists jokingly calling themselves data janitors because of all the gruntwork they needed to do. Data engineers rebuilding the models of data scientists in order to use them for production. And product owners confused with the amount of time it took to answer seemingly simple product questions.
 
-![Who wants to implement tracking](../static/img/blog/implement-tracking.jpg)
+<BlogImage url='img/blog/implement-tracking.jpg' caption='Who wants to implement tracking?' />
 
 They were also all doing the same thing: building models for retention, attribution, user segmentation, churn prediction and such. And all of it was done from scratch.
 
@@ -41,7 +38,7 @@ Well, we believe there's a couple.
 
 There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the tracker. 
 
-![What I want from my data](../static/img/blog/expectations-reality.jpg)
+<BlogImage url='img/blog/expectations-reality.jpg' caption='What I want from my data' />
 
 While most trackers simply track everything by inserting a simple script, the data they collect often contains errors, such as missing or duplicate events. It is also unstructured and ambiguous, making it hard to identify what event you're looking at without having the UI and source code on hand. 
 
@@ -73,11 +70,7 @@ I’m glad you’re asking, because we’ve been busy.
 
 Objectiv is open-source product analytics, designed for data science without gruntwork. It is built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset. 
 
-<VideoPlayer url='https://vimeo.com/670857141' />
-
-*Objectiv in 2 minutes* 
-
-<br />
+<VideoPlayer url='https://vimeo.com/670857141' caption='Objectiv in 2 minutes' />
 
 As a result of consistent collection, Objectiv models and datasets are intercompatible and can be shared and reused. Pre-built models are included to cover a range of product analytics use cases right out of the box. With a single command, you can convert your entire model to an SQL query that runs on your full dataset, feeds into your BI tools or integrates into your pipeline. 
 

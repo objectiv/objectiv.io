@@ -1,0 +1,6 @@
+:local(.imageCaption) {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 25px !important;
+  font-style: italic;
+}
