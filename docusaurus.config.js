@@ -111,6 +111,12 @@ const config = {
           label: 'Jobs',
         },
         {
+          label: 'FAQ',
+          to: envConfig.websiteUrl + '/docs/the-project/faq', // ensure Docusaurus redirects to standalone docs
+          target: '_self',
+          waitUntilTracked: true
+        },
+        {
           label: 'Docs',
           to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
           target: '_self',
