@@ -19,7 +19,7 @@ function Contributor({name, gitHubUsername}) {
       <TrackedDiv id={'contributor-card'}>
         <div className="card__header">
           <TrackedDiv id={'avatar'} className={clsx("avatar", styles.contributorAvatar)}>
-            <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
+            <TrackedLink to={ghProfileLink} title={ghProfileTitle}>
               <Avatar 
                 githubHandle={gitHubUsername} 
                 size='64'
@@ -32,7 +32,7 @@ function Contributor({name, gitHubUsername}) {
           </TrackedDiv>
           <div className="avatar__intro">
             <TrackedDiv id={'avatar-subtitle'} className={clsx(styles.contributorAvatarSubtitle)}>
-              <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
+              <TrackedLink to={ghProfileLink} title={ghProfileTitle}>
                 @{gitHubUsername}
               </TrackedLink>
             </TrackedDiv>
@@ -42,7 +42,7 @@ function Contributor({name, gitHubUsername}) {
           </div>
         </div>
         <TrackedDiv id={'card-footer'} className={clsx("card__footer", styles.contributorFooter)}>
-          <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
+          <TrackedLink to={ghProfileLink} title={ghProfileTitle}>
             <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
           </TrackedLink>
         </TrackedDiv>
