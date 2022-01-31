@@ -94,6 +94,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "append",
+                                        "id": "modeling/DataFrame/bach.DataFrame.append"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "astype",
                                         "id": "modeling/DataFrame/bach.DataFrame.astype"
                                     },
@@ -209,6 +214,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "quantile",
+                                        "id": "modeling/DataFrame/bach.DataFrame.quantile"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "rename",
                                         "id": "modeling/DataFrame/bach.DataFrame.rename"
                                     },
@@ -226,6 +236,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "rollup",
                                         "id": "modeling/DataFrame/bach.DataFrame.rollup"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "round",
+                                        "id": "modeling/DataFrame/bach.DataFrame.round"
                                     },
                                     {
                                         "type": "doc",
@@ -249,6 +264,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "sort_index",
+                                        "id": "modeling/DataFrame/bach.DataFrame.sort_index"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "sort_values",
                                         "id": "modeling/DataFrame/bach.DataFrame.sort_values"
                                     },
@@ -261,6 +281,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "sum",
                                         "id": "modeling/DataFrame/bach.DataFrame.sum"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "to_numpy",
+                                        "id": "modeling/DataFrame/bach.DataFrame.to_numpy"
                                     },
                                     {
                                         "type": "doc",
@@ -440,6 +465,11 @@ module.exports = [
                                         "type": "link",
                                         "label": "Sql Model",
                                         "href": "/modeling/DataFrame#sql-model"
+                                    },
+                                    {
+                                        "type": "link",
+                                        "label": "Variables",
+                                        "href": "/modeling/DataFrame#variables"
                                     }
                                 ]
                             },
@@ -451,6 +481,11 @@ module.exports = [
                                         "type": "link",
                                         "label": "Overview",
                                         "href": "/modeling/DataFrame#reshaping-indexing-sorting-merging"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "sort_index",
+                                        "id": "modeling/DataFrame/bach.DataFrame.sort_index"
                                     },
                                     {
                                         "type": "doc",
@@ -481,6 +516,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "merge",
                                         "id": "modeling/DataFrame/bach.DataFrame.merge"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "append",
+                                        "id": "modeling/DataFrame/bach.DataFrame.append"
                                     }
                                 ]
                             },
@@ -650,6 +690,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "append",
+                                        "id": "modeling/Series/bach.Series.append"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "apply_func",
                                         "id": "modeling/Series/bach.Series.apply_func"
                                     },
@@ -742,6 +787,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "to_frame",
                                         "id": "modeling/Series/bach.Series.to_frame"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "to_numpy",
+                                        "id": "modeling/Series/bach.Series.to_numpy"
                                     },
                                     {
                                         "type": "doc",
@@ -908,6 +958,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "product",
                                         "id": "modeling/Series/bach.SeriesAbstractNumeric.product"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "quantile",
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.quantile"
                                     },
                                     {
                                         "type": "doc",
@@ -1145,6 +1200,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "sort_index",
+                                        "id": "modeling/Series/bach.Series.sort_index"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "sort_values",
                                         "id": "modeling/Series/bach.Series.sort_values"
                                     },
@@ -1152,6 +1212,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "fillna",
                                         "id": "modeling/Series/bach.Series.fillna"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "append",
+                                        "id": "modeling/Series/bach.Series.append"
                                     }
                                 ]
                             },
