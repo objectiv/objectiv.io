@@ -199,6 +199,26 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </tbody>
 </table>
 </section>
+<section id="variables">
+<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">&#182;</a></h4>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.create_variable.html#bach.DataFrame.create_variable" title="bach.DataFrame.create_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.create_variable</span></code></a>(name,&#160;value,&#160;*[,&#160;...])</p></td>
+<td><p>Create a Series object that can be used as a variable, within the returned DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_variable.html#bach.DataFrame.set_variable" title="bach.DataFrame.set_variable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_variable</span></code></a>(name,&#160;value,&#160;*[,&#160;dtype])</p></td>
+<td><p>Return a copy of this DataFrame with the variable value updated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.get_all_variable_usage.html#bach.DataFrame.get_all_variable_usage" title="bach.DataFrame.get_all_variable_usage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.get_all_variable_usage</span></code></a>()</p></td>
+<td><p>Get all variables that influence the values of this DataFrame.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="reshaping-indexing-sorting-merging">
 <h3>Reshaping, indexing, sorting &amp; merging<a class="headerlink" href="#reshaping-indexing-sorting-merging" title="Permalink to this headline">&#182;</a></h3>
@@ -208,23 +228,29 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_values</span></code></a>(by[,&#160;ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_index.html#bach.DataFrame.sort_index" title="bach.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_index</span></code></a>([level,&#160;ascending,&#160;inplace])</p></td>
+<td><p>Sort dataframe by index levels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_values</span></code></a>(by[,&#160;ascending])</p></td>
 <td><p>Create a new DataFrame with the specified sorting order.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.rename.html#bach.DataFrame.rename" title="bach.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rename</span></code></a>([mapper,&#160;index,&#160;columns,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.rename.html#bach.DataFrame.rename" title="bach.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rename</span></code></a>([mapper,&#160;index,&#160;columns,&#160;...])</p></td>
 <td><p>Rename columns.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.drop.html#bach.DataFrame.drop" title="bach.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.drop</span></code></a>([labels,&#160;index,&#160;columns,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.drop.html#bach.DataFrame.drop" title="bach.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.drop</span></code></a>([labels,&#160;index,&#160;columns,&#160;...])</p></td>
 <td><p>Drop columns from the DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([level,&#160;drop,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([level,&#160;drop,&#160;inplace])</p></td>
 <td><p>Drops the current index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;drop,&#160;append,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;drop,&#160;append,&#160;...])</p></td>
 <td><p>Set this dataframe's index to the the index given in keys</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a>(right[,&#160;how,&#160;on,&#160;left_on,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a>(right[,&#160;how,&#160;on,&#160;left_on,&#160;...])</p></td>
 <td><p>Join the right Dataframe or Series on self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.append.html#bach.DataFrame.append" title="bach.DataFrame.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.append</span></code></a>(other[,&#160;ignore_index,&#160;sort])</p></td>
+<td><p>Append rows of other dataframes to the the caller dataframe.</p></td>
 </tr>
 </tbody>
 </table>
@@ -306,16 +332,19 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.mean.html#bach.DataFrame.mean" title="bach.DataFrame.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.mean</span></code></a>([axis,&#160;skipna,&#160;level,&#160;...])</p></td>
 <td><p>Returns the mean of all values in each column.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sem.html#bach.DataFrame.sem" title="bach.DataFrame.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sem</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.quantile.html#bach.DataFrame.quantile" title="bach.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.quantile</span></code></a>([q,&#160;axis])</p></td>
+<td><p>Returns the quantile of all numeric columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sem.html#bach.DataFrame.sem" title="bach.DataFrame.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sem</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
 <td><p>Returns the unbiased standard error of the mean of each column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sum.html#bach.DataFrame.sum" title="bach.DataFrame.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sum</span></code></a>([axis,&#160;skipna,&#160;level,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sum.html#bach.DataFrame.sum" title="bach.DataFrame.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sum</span></code></a>([axis,&#160;skipna,&#160;level,&#160;...])</p></td>
 <td><p>Returns the sum of all values in each column.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.std.html#bach.DataFrame.std" title="bach.DataFrame.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.std</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.std.html#bach.DataFrame.std" title="bach.DataFrame.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.std</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
 <td><p>Returns the sample standard deviation of each column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.var.html#bach.DataFrame.var" title="bach.DataFrame.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.var</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.var.html#bach.DataFrame.var" title="bach.DataFrame.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.var</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
 <td><p>Returns the unbiased variance of each column.</p></td>
 </tr>
 </tbody>
