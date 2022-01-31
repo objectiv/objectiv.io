@@ -223,7 +223,9 @@ footer h2 {
   height: 0;
   margin: 0 auto 50px auto;
   -webkit-box-shadow: 2px 5px 16px 0px #000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 2px 5px 16px 0px #000, 5px 5px 15px 5px rgba(0,0,0,0);
+  box-shadow: 2px 5px 16px 0px #000, 5px 5px 15px 5px rgba(0,0,0,0);
+  border-radius: 6px !important;
+  overflow: hidden;
 }
 .productIntroVideo iframe {
   position: absolute; 
