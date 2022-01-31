@@ -303,6 +303,20 @@ p, .markdown p {
   font-weight: 900;
 }
 
+/* Remove ToC from a blog post and stretch article width */
+.blog-post-page .row .col--9 {
+  --ifm-col-width: 100%;
+  margin-left: 0;
+}
+.blog-post-page .row .col--2 {
+  --ifm-col-width: 0;
+}
+.blog-post-page article {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 700px;
+}
+
 .blog-post-page article header h1 {
   margin: 0;
   font-weight: 700;
@@ -352,11 +366,6 @@ p, .markdown p {
 .pagination-nav__link:hover {
   color: var(--ifm-font-color-base);
 }
-
-.blog-post-page article {
-  max-width: 680px;
-}
-
 
 /** LIGHTBOX MARKUP **/
 /* animation */

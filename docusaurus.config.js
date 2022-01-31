@@ -49,7 +49,6 @@ const config = {
             description: 'Objectiv Blog',
             copyright: `Copyright © ${new Date().getFullYear()} Objectiv.`,
           },
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
         },
         sitemap: {
           changefreq: 'weekly',
