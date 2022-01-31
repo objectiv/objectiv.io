@@ -260,6 +260,10 @@ p, .markdown p {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
 }
 
+.twitter-tweet {
+  margin: 10px auto !important;
+}
+
 /** BLOG **/
 .blog-wrapper {
   line-height: 2em;

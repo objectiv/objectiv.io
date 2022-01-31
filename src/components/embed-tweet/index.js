@@ -3,12 +3,12 @@ import { TwitterTweetEmbed } from 'react-twitter-embed';
 import { TrackedContentContext } from '@objectiv/tracker-react';
 
 function EmbedTweet({
-  tweetId
+  id
 }) {
   return (
-    <TrackedContentContext Component={'div'} id={tweetId}>
+    <TrackedContentContext Component={'div'} id={id}>
       <TwitterTweetEmbed 
-        tweetId={tweetId}
+        tweetId={id}
       />
     </TrackedContentContext>
   );
