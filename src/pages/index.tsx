@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
+import VideoPlayer from '../components/video-player';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
@@ -28,12 +29,12 @@ export default function Home() {
             open-source product analytics <br />
             designed for modern data teams
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that’s ready for data science without the typical gruntwork.</p>
+            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that's ready for data 
+              science without the typical gruntwork.</p>
             <div className={clsx(styles.productIntroVideo)}>
-                <iframe src="https://www.loom.com/embed/ff17f9d8cd764b56bfdcb0c79cce6889?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
-                frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
-          </div>
-          <img
+              <VideoPlayer id="2-minute-video" url="https://vimeo.com/670857141?dnt=1" />
+            </div>
+            <img
                 className={clsx(styles.objectivIn2Minutes)}
                 src={useBaseUrl("img/header-2-minutes.svg")}
                 alt="Objectiv in 2 minutes" />
