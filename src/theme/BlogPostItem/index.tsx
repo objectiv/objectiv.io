@@ -20,7 +20,7 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
-import { TrackedHeader, TrackedContentContext, TrackedFooter } from '@objectiv/tracker-react';
+import { TrackedHeader, TrackedContentContext, TrackedFooter, TrackedDiv } from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 // Very simple pluralization: probably good enough for now
@@ -117,6 +117,24 @@ function BlogPostItem(props: Props): JSX.Element {
       <div className="markdown" itemProp="articleBody">
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
+
+      {!truncated && (
+        <TrackedDiv
+          id={'blog-post-try-objectiv'}
+          className={clsx(styles.blogPostFooterCta)}>
+          <h2>Try Objectiv</h2>
+          <p>Objectiv in its current state is ready for early adopters. We're working hard to add support for 
+            more data stores and make it easier to integrate with your existing stack. We also want to expand 
+            the selection of models that's included.</p>
+          <p>If you want to try it out for yourself, check out our quickstart guide to spin up Objectiv 
+            locally.</p>
+          <h3>Join the discussion</h3>
+          <p>Have opinions on where we should take this or want to stay in the loop?</p>
+          <Link to="https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg">
+            Join Our Slack Channel
+          </Link>
+        </TrackedDiv>
+      )}
 
       {(tagsExists || truncated) && (
         <TrackedFooter

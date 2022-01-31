@@ -268,6 +268,7 @@ p, .markdown p {
 .blog-wrapper {
   line-height: 2em;
   letter-spacing: -0.003em;
+  margin-top: 40px;
 }
 
 .blog-wrapper footer {
@@ -310,6 +311,7 @@ p, .markdown p {
 }
 .blog-post-page .row .col--2 {
   --ifm-col-width: 0;
+  display: none;
 }
 .blog-post-page article {
   margin: 0 auto;

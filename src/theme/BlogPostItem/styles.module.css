@@ -17,3 +17,36 @@
 .blogPostDetailsFull {
   flex-direction: column;
 }
+
+article .blogPostFooterCta {
+  background-color: #F7FDFF;
+  margin: 40px 0;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+article .blogPostFooterCta p {
+  font-size: 18px;
+}
+
+article .blogPostFooterCta h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+article .blogPostFooterCta h3 {
+  color: #000;
+  font-weight: bold;
+  margin: 20px 0 0 0;
+}
+
+article .blogPostFooterCta a {
+  font-size: 18px;
+  color: #000;
+  text-decoration: underline;
+}
+article .blogPostFooterCta a:hover {
+  text-decoration: none;
+  color: var(--ifm-link-color);
+}
