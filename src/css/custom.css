@@ -298,7 +298,6 @@ p, .markdown p {
 }
 
 .blog-post-page article p {
-
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
@@ -324,11 +323,11 @@ p, .markdown p {
 }
 
 .blog-list-page article header .avatar {
-  display: none;
+  /* display: none; */
 }
 
 .blog-list-page article footer div:first-child { /* tags */
-  display: none;
+  /* display: none; */
 }
 
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
@@ -344,9 +343,6 @@ p, .markdown p {
   max-width: 680px;
 }
 
-.blog-post-page .table-of-contents {
-  display: none;
-}
 
 /** LIGHTBOX MARKUP **/
 /* animation */

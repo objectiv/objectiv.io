@@ -39,9 +39,16 @@ const config = {
         blog: {
           blogTitle: 'Objectiv Blog',
           blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 5,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          postsPerPage: 1,
           showReadingTime: false,
+          feedOptions: {
+            type: 'all',
+            title: 'Objectiv Blog',
+            description: 'Objectiv Blog',
+            copyright: `Copyright © ${new Date().getFullYear()} Objectiv.`,
+          },
           editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
         },
         sitemap: {
