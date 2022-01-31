@@ -3,20 +3,16 @@
 JSON Objects stringifier
 
 ```typescript
-stringifyJson = <T = unknown>(object: T, struct: Struct<T>): string
+stringifyJson = (object: unknown) => string
 ```  
-
-:::info struct?
-Browser Tracker currently uses [Superstruct](https://docs.superstructjs.org/) for validation and parsing of some objects.
-:::
 
 ## Parameters
 |          |            | type     | default value
 | :-:      | :--        | :--      | :--           
-| required | **object** | `object` |
+| required | **object** | `unknown` |
 
 ## Returns
-string
+`string`
 
 ## Throws
 Error when the given `object` cannot be `JSON.stringify`d

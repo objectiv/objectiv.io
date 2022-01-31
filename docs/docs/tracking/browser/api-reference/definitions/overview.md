@@ -4,7 +4,7 @@ sidebar_label: Overview
 title: Definition
 ---
 
-Common TypeScript and [Struct](https://docs.superstructjs.org/) definitions.
+Common TypeScript definitions.
 
 - [BrowserTrackerConfig](/tracking/browser/api-reference/definitions/BrowserTrackerConfig.md)
 - [ChildrenTaggingQueries](/tracking/browser/api-reference/definitions/ChildrenTaggingQueries.md)

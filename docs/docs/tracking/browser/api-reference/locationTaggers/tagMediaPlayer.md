@@ -21,17 +21,17 @@ tagMediaPlayer = (parameters: {
 [TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Examples
-```typescript jsx
+```jsx
 import { tagMediaPlayer } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <div {...tagMediaPlayer({ id: 'player-id' })}>
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
 </div>
 ```
 
-```typescript jsx
+```jsx
 <Player {...tagMediaPlayer({ id: 'player-id' })}>
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
 </Player>

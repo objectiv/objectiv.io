@@ -31,7 +31,8 @@ A **tagging** example in React:
 ```js
 <LinkComponent 
   {...tagLink({ id: 'link-id', href: '/path' })} 
-  to="/path">
+  to="/path"
+>
     Go!
 </LinkComponent>
 ```
@@ -41,9 +42,10 @@ A **tagging** example in React:
 ```html
 <a 
   data-objectiv-element-id="<a unique identifier>" 
-  data-objectiv-context="<string of encoded contexts>" 
+  data-objectiv-context="<stringified location context>" 
   data-objectiv-track-clicks="true" 
-  href="/path">
+  href="/path"
+>
   Go!
 </a>
 ```
@@ -87,11 +89,6 @@ export default function Test() {
 As you can see, there are two links with the same ID (`my-link`). However, as they are contained within
 different tagged Sections, they are still unique, and when analyzing the data, you can follow the Location
 Stack to understand where in the UI each Event originated.
-
-:::note
-Tagging Sections can/should also be applied to pages/screens, see section
-[Applying Locations to pages/screens](#applying-locations-to-pagesscreens) below.
-:::
 
 ### Solving collisions
 See below for a simplified example taken from [our website's About page](https://objectiv.io/about/), which
@@ -168,7 +165,7 @@ These are **Taggable Elements** that have been already decorated with the
 
 A **tagChildren** example in React:
 
-```typescript jsx
+```jsx
 <div
   {...tagChildren([
     {

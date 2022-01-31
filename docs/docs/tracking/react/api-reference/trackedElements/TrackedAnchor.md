@@ -28,18 +28,18 @@ TrackedAnchor: (props: {
 | optional | waitUntilTracked | boolean   | `false`                             |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [PressEvent](/taxonomy/reference/events/PressEvent.md) when `onClick` triggers.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedAnchor } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <header>
     <TrackedAnchor href={'/'}>Homepage</TrackedAnchor>

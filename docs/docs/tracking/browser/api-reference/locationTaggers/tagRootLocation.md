@@ -28,17 +28,17 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="react" label="React" default>
 
-```typescript jsx
+```jsx
 import { tagRootLocation } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <body {...tagRootLocation({ id: 'page' })}>
   ...
 </body>
 ```
 
-```typescript jsx
+```jsx
 <Layout {...tagRootLocation({ id: 'page' })}>
   ...
 </Layout>
@@ -49,7 +49,7 @@ import { tagRootLocation } from '@objectiv/tracker-browser';
 
 Taggers only work by installing the [Taggers Directive](/tracking/browser/how-to-guides/getting-started.md#optional---configure-taggers-directive).
 
-```typescript jsx
+```jsx
 <main [tagRootLocation]="{ id: 'page' }">
   ...
 </main>

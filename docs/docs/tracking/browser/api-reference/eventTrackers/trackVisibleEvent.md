@@ -30,11 +30,11 @@ trackVisibleEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackVisibleEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <Modal
   onShow={(event) => {
     trackVisibleEvent({ element: event.target })
@@ -47,7 +47,7 @@ import { trackVisibleEvent } from '@objectiv/tracker-browser';
 </Modal>
 ```
 
-```typescript jsx
+```jsx
 const elementRef = createRef();
 ...
 useEffect(() => {

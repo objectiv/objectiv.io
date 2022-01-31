@@ -34,11 +34,11 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagChildren, tagPressable } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <div
   {...tagChildren([
     {

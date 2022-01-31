@@ -6,7 +6,7 @@ When a `boolean` is specified it either disables the feature entirely or applies
 
 The same applies to `waitUntilTracked`. Either it's left out, set to `true` for sensible defaults or a custom set of options can be specified. 
 
-```typescript jsx
+```jsx
 type TrackClicksAttribute = boolean | {
   waitUntilTracked: true | WaitUntilTrackedOptions
 };

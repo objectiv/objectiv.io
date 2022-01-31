@@ -26,11 +26,11 @@ trackMediaEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackMediaEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <video
   onLoad={(event) => {
     trackMediaEvent({ element: event.target })
@@ -38,7 +38,7 @@ import { trackMediaEvent } from '@objectiv/tracker-browser';
 />
 ```
 
-```typescript jsx
+```jsx
 <YouTube
   onCustomEvent={({ target: youTubePlayerInstance }) => {
     trackMediaEvent({ element: youTubePlayerInstance.getIframe() })

@@ -17,7 +17,7 @@ Browser Tracker can [traverse and tag the DOM](/tracking/browser/api-reference/l
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started](/tracking/browser/how-to-guides/getting-started.md)
-- [Tracking Locations](/tracking/browser/how-to-guides/tracking-locations.md)
+- [Tagging Locations](/tracking/browser/how-to-guides/tagging-locations.md)
 - [Troubleshooting](/tracking/browser/how-to-guides/troubleshooting.md)
 
 ## API References

@@ -30,11 +30,11 @@ trackInputChangeEvent = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackInputChangeEvent } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <input
   onBlur={(event) => {
     trackInputChangeEvent({ element: event.target })
@@ -42,7 +42,7 @@ import { trackInputChangeEvent } from '@objectiv/tracker-browser';
 />
 ```
 
-```typescript jsx
+```jsx
 <select
   onChange={(event) => {
     trackInputChangeEvent({ element: event.target })
@@ -52,7 +52,7 @@ import { trackInputChangeEvent } from '@objectiv/tracker-browser';
 </select>
 ```
 
-```typescript jsx
+```jsx
 <TextField
   onBlur={(event) => {
     trackInputChangeEvent({ element: event.target })

@@ -27,15 +27,15 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagInput } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <input {...tagInput({ id: 'search' })} />
 ```
 
-```typescript jsx
+```jsx
 <Search {...tagInput({ id: 'search' })} />
 ```
 

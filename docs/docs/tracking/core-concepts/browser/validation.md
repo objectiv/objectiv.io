@@ -42,13 +42,16 @@ logging. This will print all tracking events to the chosen logger, e.g. the brow
 Logging can be enabled in two ways:
 1. When configuring the tracker. For example, to log to the browser console (example in React):
 ```js
-const trackerOptions = { console: console }
-
 makeTracker({
   applicationId: 'app-id',
-  ...trackerOptions,
-});
+  endpoint: 'https://collector.application.dev',
+  console: console
+})
 ```
+:::info
+Logging is automatically enabled in development mode.
+:::
+
 2. At runtime. For example, to enable logging from the browser console:
 ```console
 objectiv.trackers.defaultTracker.console = console;

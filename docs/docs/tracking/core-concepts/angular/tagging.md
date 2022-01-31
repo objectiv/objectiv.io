@@ -29,12 +29,13 @@ that you want to track. The Tracker then uses this information to automatically 
 DOM with the respective [BrowserTracker:TaggingAttributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md). 
 
 A **tagging** example in React:
-```js
-<LinkComponent 
-  {...tagLink({ id: 'link-id', href: '/path' })} 
-  to="/path">
+```html
+<a 
+  [tagLink]="{ id: 'lnk-id', href: '/path' }"
+  href="/path"
+>
     Go!
-</LinkComponent>
+</a>
 ```
 
 ...would result in something like the following decorated attributes:
@@ -42,9 +43,10 @@ A **tagging** example in React:
 ```html
 <a 
   data-objectiv-element-id="<a unique identifier>" 
-  data-objectiv-context="<string of encoded contexts>" 
+  data-objectiv-context="<stringified location context>" 
   data-objectiv-track-clicks="true" 
-  href="/path">
+  href="/path"
+>
   Go!
 </a>
 ```
@@ -66,95 +68,22 @@ tagging Elements is useful in two main ways:
 2. Every Event becomes unique (see next section about collisions).
 
 An example of tagging sections and Links in your UI:
-```js
-...
-import { tagContent, tagLink } from '@objectiv/tracker-browser';
-
-export default function Test() {
-  return (
-    <Layout {...tagContent({ id: 'layout' })}>
-      <header {...tagContent({ id: 'homepage-hero' })}>
-        <div {...tagContent({ id: 'section1' })}>
-          <Link {...tagLink({ id: 'my-link', href: '/link1' })} to="/link1">Link 1</Link>
-        </div>
-        <div {...tagContent({ id: 'section2' })}>
-          <Link {...tagLink({ id: 'my-link', href: '/link2' })} to="/link2">Link 2</Link>
-        </div>
-      </header>
-    </Layout>
-  );
-}
+```html
+ <section [tagContent]="{ id: 'layout' }">
+   <header [tagContent]="{ id: 'homepage-hero' }">
+     <div [tagContent]="{ id: 'section1' }">
+       <a [tagLink]="{ id: 'my-link', href: '/link1' }" href="/link1">Link 1</a>
+     </div>
+     <div [tagContent]="{ id: 'section2' }">
+       <a [tagLink]="{ id: 'my-link', href: '/link2' }" href="/link2">Link 2</a>
+     </div>
+   </header>
+ </section>
 ```
 
 As you can see, there are two links with the same ID (`my-link`). However, as they are contained within
 different tagged Sections, they are still unique, and when analyzing the data, you can follow the Location
 Stack to understand where in the UI each Event originated.
-
-:::note
-Tagging Sections can/should also be applied to pages/screens, see section
-[Applying Locations to pages/screens](#applying-locations-to-pagesscreens) below.
-:::
-
-### Solving collisions
-See below for a simplified example taken from [our website's About page](https://objectiv.io/about/), which
-lists the contributors to Objectiv. It renders a link to each Contributor's profile:
-
-```js
-function Contributor({name, gitHubUsername}) {
-  const ghProfileLink = "https://github.com/" + gitHubUsername;
-
-  return (
-    <div {...tagContent({id: 'contributor'})}>
-      <Link 
-        {...tagLink({id: gitHubUsername, href: ghProfileLink})}
-        href={ghProfileLink}>
-        @{gitHubUsername}
-      </Link>
-    </div>
-  );
-}
-
-export default function Contributors() {
-  return (
-    <Layout>
-      // `contributors` is retrieved from a JSON file
-      {contributors && contributors.length > 0 && (
-        <div {...tagContent({id: 'contributors'})}>
-          {contributors.map((props, idx) => (
-            <Contributor key={idx} {...props} />
-          ))}
-        </div>
-      )}
-    </Layout>
-  );
-}
-```
-
-As you can see, each contributor `<div>` has the same `id`, _'contributor'_. This will result in collisions in
-the Location Stack, and the browser console will show a warning about the colliding elements:
-
-![Collisions in browser console](/img/docs/tracking-collision-browser-console.png)
-
-How to fix this?
-
-* You could remove the `<div>` with the 'contributor' `<id>`. But it probably serves a purpose.
-* Or: you could change the `id` to be unique, e.g. every contributor's GitHub username.
-
-We will use the second option, making each contributor `<div>` ID unique:
-
-```js
-    <div {...tagContent({id: gitHubUsername})}>
-```
-instead of
-```js
-    <div {...tagContent({id: 'contributor'})}>
-```
-
-### Applying Locations manually
-Sometimes it may be preferable, or necessary, to tag Locations manually; for these cases, a low-level
-[tagLocation](/tracking/angular/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable
-Element to be tracked as any LocationContext.
-
 
 ## Tagged Elements
 These are **Taggable Elements** that have been already decorated by the Objectiv Tracker with at least the 
@@ -168,16 +97,20 @@ These are **Taggable Elements** that have been already decorated with the
 
 [BrowserTracker:ChildrenTaggingQuery](/tracking/browser/api-reference/definitions/ChildrenTaggingQuery.md) objects are composed of a CSS Selector query and a set of TaggingAttributes. Each matching Element will be decorated with the given Location Tagger result. 
 
-A **tagChildren** example in React:
+A **tagChildren** example:
 
-```typescript jsx
+```html
 <div
-  {...tagChildren([
+  [tagChildren]="[
     {
-      queryAll: 'button[aria-label="Previous"]',
+      queryAll: 'button[aria-label=&quot;Previous&quot;]',
       tagAs: tagPressable({ id: 'prev' })
+    },
+    {
+      queryAll: 'button[aria-label=&quot;Next&quot;]',
+      tagAs: tagPressable({ id: 'next' })
     }
-  ])}
+  ]"
 >
   ...
 </div>

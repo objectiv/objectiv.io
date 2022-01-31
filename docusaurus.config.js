@@ -13,7 +13,7 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 const config = {
   title: "Objectiv - OSS product analytics, ready for data science",
   titleDelimiter: '|',
-  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
+  tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
@@ -91,6 +91,12 @@ const config = {
         {
           to: 'jobs',
           label: 'Jobs',
+        },
+        {
+          label: 'FAQ',
+          to: envConfig.websiteUrl + '/docs/the-project/faq', // ensure Docusaurus redirects to standalone docs
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           label: 'Docs',

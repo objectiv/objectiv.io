@@ -4,7 +4,7 @@ The definition of [TaggingAttribute.trackVisibility](/tracking/browser/api-refer
 
 Supports two modes currently. 
 
-```typescript jsx
+```jsx
 type TrackClicksAttribute = { mode: 'auto' } | { mode: 'manual', isVisible: boolean };
 ```
 
