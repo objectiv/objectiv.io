@@ -8,6 +8,7 @@ authors: vincenthoogsteder
 import BlogImage from '@site/src/components/blog-image'
 import VideoPlayer from '@site/src/components/video-player'
 import EmbedTweet from '@site/src/components/embed-tweet'
+import BlogQuestion from '@site/src/components/blog-question'
 
 
 *During the last 12 months, our team of ten has silently worked on an open-source project that aims to effectively integrate data science into the product analytics workflow. In this series of blog posts, we want to take you along our journey and show you what we’ve been working on.*
@@ -28,9 +29,7 @@ They were also all doing the same thing: building models for retention, attribut
 
 Product analytics platforms today are simply not designed with data science in mind.
 
-<br />
-
-***So, what's the problem?*** 
+<BlogQuestion question="So, what's the problem?" />
 
 Well, we believe there's a couple.
 
@@ -62,7 +61,7 @@ Dependencies between these parties can mean that even a small change to the ques
 
 <br />
 
-***What are you going to do about it?*** 
+<BlogQuestion question="What are you going to do about it?" />
 
 I’m glad you’re asking, because we’ve been busy.
 
