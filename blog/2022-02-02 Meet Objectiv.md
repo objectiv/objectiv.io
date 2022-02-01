@@ -23,7 +23,11 @@ We saw [an increasing amount of people with a data science role](https://www.zdn
 
 What we also saw: Front-end engineers that had to implement yet another tracking plan because data science was missing events. Data scientists jokingly calling themselves data janitors because of all the gruntwork they needed to do. Data engineers rebuilding the models of data scientists in order to use them for production. And product owners confused with the amount of time it took to answer seemingly simple product questions.
 
-<BlogImage url='img/blog/implement-tracking.jpg' caption='Hat-tip to Timo Dechau for the relatable image' />
+<BlogImage url='img/blog/implement-tracking.jpg' 
+  caption='Hat-tip to {1} for the relatable image ' 
+  captionLinks={[
+    {text: 'Timo Dechau', to: 'https://twitter.com/timdechau'}
+  ]} />
 
 They were also all doing the same thing: building models for retention, attribution, user segmentation, churn prediction and such. And all of it was done from scratch.
 
