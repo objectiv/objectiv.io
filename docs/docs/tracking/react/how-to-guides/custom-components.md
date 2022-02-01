@@ -80,8 +80,7 @@ const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => {
 ```
 
 :::danger It doesn't work
-If we test this component you will quickly notice that the LocationStack of all Events will not contain the MediaPlayerContext entry.
-Read further to find out why.
+When testing this Component you will quickly notice that the LocationStack of all Events will not contain a MediaPlayerContext.
 :::
 
 Why aren't the Event Trackers detecting the MediaPlayerContextWrapper that is clearly there?
