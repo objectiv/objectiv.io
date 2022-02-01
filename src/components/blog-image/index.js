@@ -11,6 +11,8 @@ function BlogImage({
   caption = '',
   captionLinks
 }) {
+  let imageCaption = caption;
+  let imageAlt = caption;
   if(captionLinks && captionLinks.length > 0) {
     let links = {};
     let linkId = 1;
@@ -23,16 +25,17 @@ function BlogImage({
       const text = link.text ? link.text : '';
       const fullLink = <Link to={linkTo}>{text}</Link>;
       links[linkId.toString()] = fullLink;
+      imageAlt = caption.replace('{' + linkId.toString() + '}', text);
       linkId++; 
     }
-    caption = interpolate(caption, links);
+    imageCaption = interpolate(caption, links);
   }
 
   return (
     <div>
-      <img src={useBaseUrl(url)} alt={caption} />
+      <img src={useBaseUrl(url)} alt={imageAlt} className={clsx(styles.blogImage)} />
       {caption && 
-        <p className={clsx(styles.imageCaption)}>{caption}</p>
+        <p className={clsx(styles.imageCaption)}>{imageCaption}</p>
       }
     </div>
   );

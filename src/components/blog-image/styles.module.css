@@ -1,3 +1,7 @@
+:local(.blogImage) {
+  margin-top: 20px;
+}
+
 :local(.imageCaption) {
   text-align: center;
   margin-top: 5px;
