@@ -1,5 +1,5 @@
 ---
-title: Meet Objectiv - Open-source product analytics, designed for data science without gruntwork
+title: Meet Objectiv - Open-source product analytics, designed for data science
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus sit amet dolor sed semper. Nunc faucibus tristique sapien, eu pharetra ligula pulvinar et. Aliquam ullamcorper lacus enim, in vulputate elit rutrum ut. Mauris iaculis varius erat, nec dapibus turpis lobortis eget. Cras vitae magna vitae erat volutpat tincidunt. Vestibulum eu magna eget lacus commodo eleifend sed ut lorem. Nam dapibus eros neque, non vulputate sem sodales placerat.
 slug: meet-objectiv
 authors: vincenthoogsteder
@@ -19,12 +19,12 @@ import BlogQuestionAnswer from '@site/src/components/blog-question-answer'
 
 For a few years, we’ve had the privilege to look inside the kitchens of many product analytics teams to see how they were organized, how they worked and what they struggled with.
 
-We saw [an increasing amount of people with a data science role](https://www.zdnet.com/article/employers-are-desperate-for-data-scientists-as-demand-booms/) joining these teams, which isn’t too surprising with the rise of companies that have adopted a data-driven approach.
+We saw an increasing amount of people with a data science role joining these teams, which isn’t too surprising with the rise of companies that have adopted a data-driven approach.
 
 What we also saw: Front-end engineers that had to implement yet another tracking plan because data science was missing events. Data scientists jokingly calling themselves data janitors because of all the gruntwork they needed to do. Data engineers rebuilding the models of data scientists in order to use them for production. And product owners confused with the amount of time it took to answer seemingly simple product questions.
 
 <BlogImage url='img/blog/implement-tracking.jpg' 
-  caption='Hat-tip to {1} for the relatable image ' 
+  caption='Hat tip to {1} for the relatable image ' 
   captionLinks={[
     {text: 'Timo Dechau', to: 'https://twitter.com/timdechau'}
   ]} />
@@ -33,7 +33,7 @@ They were also all doing the same thing: building models for retention, attribut
 
 Product analytics platforms today are simply not designed with data science in mind.
 
-<BlogQuestionAnswer question="So, what's the problem?" answer="Well, we believe there's a couple." />
+<BlogQuestionAnswer question="So, what's the problem?" answer="We believe there's a couple." />
 
 ## Current analytics trackers collect data that’s not great for modeling
 
@@ -57,15 +57,15 @@ If a product question arises that is outside of the capabilities of the BI tools
 
 In a perfect world, this data is readily available. In practice however, it often involves asking a data engineer for an export of the raw data from the BI tool, cleaning it and applying transformations in order to be able to use it for modeling. If that model is going to be used in production, the data engineer once again gets involved to rebuild it (e.g. in SQL) to run it at scale.
 
-Dependencies between these parties can mean that even a small change to the question at hand can have a big impact on the amount of time required to answer it.
-
 <EmbedTweet id="1252291581320757249" />
 
-<BlogQuestionAnswer question="What are you going to do about it?" answer="I'm glad you're asking, because we've been busy." />
+Dependencies between these parties can mean that even a small change to the question at hand can have a big impact on the amount of time required to answer it.
+
+<BlogQuestionAnswer question="What are you going to do about it?" answer="Well, we've been busy." />
 
 ## Meet Objectiv 
 
-Objectiv is open-source product analytics, designed for data science without gruntwork. It is built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset. 
+Objectiv is open-source product analytics, designed for data science. It is built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset. 
 
 <VideoPlayer url='https://vimeo.com/670857141' caption='Objectiv in 2 minutes' />
 

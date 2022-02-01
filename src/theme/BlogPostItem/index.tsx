@@ -138,7 +138,7 @@ function BlogPostItem(props: Props): JSX.Element {
             the selection of models that's included.</p>
           <p>Follow <TrackedLink to="/docs/quickstart-guide">the quickstart guide</TrackedLink> to try 
             Objectiv out locally.</p>
-          <h3>Join the discussion</h3>
+          <h2>Join the discussion</h2>
           <p>Have opinions on where we should take this or want to stay in the loop?</p>
           <TrackedLink 
             to={slackJoinLink as string}>
