@@ -72,15 +72,9 @@ Objectiv is open-source product analytics, designed for data science. It is buil
 As a result of consistent collection, Objectiv models and datasets are intercompatible and can be shared and reused. Pre-built models are included to cover a range of product analytics use cases right out of the box. With a single command, you can convert your entire model to an SQL query that runs on your full dataset, feeds into your BI tools or integrates into your pipeline. 
 
 Check out [objectiv.io](https://www.objectiv.io) to learn more.
-<!-- 
-## Try Objectiv
 
-Objectiv in its current state is ready for early adopters. We’re working hard to add support for more data stores and make it easier to integrate with your existing stack. We also want to expand the selection of models that’s included.
+## The first milestone
 
-If you want to try it out for yourself, check out our [quickstart guide](https://www.objectiv.io/docs/quickstart-guide) to spin up Objectiv locally.
+So there it is. We're super excited to finally be able to show you what we're working on today. With this first public version of Objectiv, we've hit our first big milestone. This is just the start of our journey and we have many miles ahead, but Objectiv is alive, kicking, and ready to put some much needed data science love into your product analytics workflow. 
 
-**Join the discussion**
-
-Have opinions on where we should take this or want to stay in the loop? 
-
-[Join Our Slack Channel](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg) -->
+Give it a try and let us know what you think!
