@@ -18,7 +18,7 @@ function VimeoPlayer({ videoId, id }) {
         <>
         <Vimeo
           video={videoId}
-          dnt='true'
+          dnt={true}
           app_id='58479'
           onReady={() => trackMediaLoadEvent(trackingContext)}
           onPlay={() => trackMediaStartEvent(trackingContext)}
