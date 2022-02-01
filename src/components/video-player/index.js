@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 import {
   MediaPlayerContextWrapper,
@@ -17,12 +17,6 @@ function VideoPlayer({
   caption = '',
   enableControls = true
 }) {
-  const [isPlaying, setPlaying] = useState(false);
-
-  function handlePlayPause() {
-    setPlaying(!isPlaying);
-  }
-
   if (id) {
     return (
       <MediaPlayerContextWrapper id={id}>
