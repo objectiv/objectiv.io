@@ -183,7 +183,7 @@ footer h2 {
 
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
-    padding: 4rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
   }
   .heroTitle {
     font-size: 24px;
