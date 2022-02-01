@@ -20,7 +20,12 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
-import { TrackedHeader, TrackedContentContext, TrackedFooter } from '@objectiv/tracker-react';
+import { 
+  TrackedHeader,
+  TrackedContentContext,
+  TrackedFooter,
+  makeIdFromString 
+} from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 // Very simple pluralization: probably good enough for now
@@ -73,7 +78,7 @@ function BlogPostItem(props: Props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <TrackedHeader id={'blog-post-header-' + permalink}>
+      <TrackedHeader id={'header'}>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
@@ -103,11 +108,12 @@ function BlogPostItem(props: Props): JSX.Element {
   return (
     <TrackedContentContext 
       Component={'article'} 
-      id={'blog-post-content-' + permalink}
+      id={`post-${makeIdFromString(title)}`}
       className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       itemProp="blogPost"
       itemScope
       itemType="http://schema.org/BlogPosting">
+
       {renderPostHeader()}
 
       {image && (

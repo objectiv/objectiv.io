@@ -18,7 +18,7 @@ function BlogPostAuthor({author}: Props): JSX.Element {
   return (
     <TrackedDiv id={'avatar'} className="avatar margin-bottom--sm">
       {imageURL && (
-        <TrackedLink className="avatar__photo-link avatar__photo" to={url} waitUntilTracked={true}>
+        <TrackedLink className="avatar__photo-link avatar__photo" href={url} id={title} waitUntilTracked={true}>
           <img className={styles.image} src={imageURL} alt={name} />
         </TrackedLink>
       )}
@@ -31,11 +31,11 @@ function BlogPostAuthor({author}: Props): JSX.Element {
             itemProp="author"
             itemScope
             itemType="https://schema.org/Person">
-            <div className="avatar__name">
-              <TrackedLink to={url} itemProp="url" waitUntilTracked={true}>
+            <TrackedDiv id={'avatar-name'} className="avatar__name">
+              <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
                 <span itemProp="name">{name}</span>
               </TrackedLink>
-            </div>
+            </TrackedDiv>
             {title && (
               <small className="avatar__subtitle" itemProp="description">
                 {title}
