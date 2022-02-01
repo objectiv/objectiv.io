@@ -83,7 +83,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Objectiv Documentation Logo',
-          src: '/img/logo-objectiv-docs.svg',
+          src: '/img/logo-objectiv-docs-white.svg',
         },
         items: [
           {
