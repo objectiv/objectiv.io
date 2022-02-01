@@ -39,11 +39,11 @@ function VideoPlayer({
             onEnded={() => trackMediaStopEvent(trackingContext)}
             className={clsx(styles.videoWrapper)} 
           />
+          {caption && 
+            <p className={clsx(styles.videoCaption)}>{caption}</p>
+          }
         </>
       )}
-      {caption && 
-        <p className={clsx(styles.videoCaption)}>{caption}</p>
-      }
     </MediaPlayerContextWrapper>
   );
 }
