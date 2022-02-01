@@ -67,7 +67,7 @@ Dependencies between these parties can mean that even a small change to the ques
 
 Objectiv is open-source product analytics, designed for data science. It is built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset. 
 
-<VideoPlayer url='https://vimeo.com/670857141' caption='Objectiv in 2 minutes' />
+<VideoPlayer url='https://vimeo.com/670857141' id='objectiv-in-2-minutes' caption='Objectiv in 2 minutes' />
 
 As a result of consistent collection, Objectiv models and datasets are intercompatible and can be shared and reused. Pre-built models are included to cover a range of product analytics use cases right out of the box. With a single command, you can convert your entire model to an SQL query that runs on your full dataset, feeds into your BI tools or integrates into your pipeline. 
 
