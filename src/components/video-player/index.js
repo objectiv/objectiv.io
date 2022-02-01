@@ -14,6 +14,7 @@ import styles from "./styles.module.css";
 function VideoPlayer({
   url,
   id,
+  caption,
   enableControls = true
 }) {
   const [isPlaying, setPlaying] = useState(false);
@@ -38,6 +39,9 @@ function VideoPlayer({
             onEnded={() => trackMediaStopEvent(trackingContext)}
             className={clsx(styles.videoWrapper)} 
           />
+          {caption && 
+            <p className={clsx(styles.videoCaption)}>{caption}</p>
+          }
         </>
       )}
     </MediaPlayerContextWrapper>

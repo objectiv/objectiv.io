@@ -261,13 +261,14 @@ p, .markdown p {
 }
 
 .twitter-tweet {
-  margin: 10px auto !important;
+  margin: 40px auto !important;
 }
 
 /** BLOG **/
 .blog-wrapper {
   line-height: 2em;
   letter-spacing: -0.003em;
+  margin-top: 40px;
 }
 
 .blog-wrapper footer {
@@ -301,6 +302,21 @@ p, .markdown p {
   line-height: 36px;
   color: var(--ifm-font-color-base);
   font-weight: 900;
+}
+
+/* Remove ToC from a blog post and stretch article width */
+.blog-post-page .row .col--9 {
+  --ifm-col-width: 100%;
+  margin-left: 0;
+}
+.blog-post-page .row .col--2 {
+  --ifm-col-width: 0;
+  display: none;
+}
+.blog-post-page article {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 700px;
 }
 
 .blog-post-page article header h1 {
@@ -352,11 +368,6 @@ p, .markdown p {
 .pagination-nav__link:hover {
   color: var(--ifm-font-color-base);
 }
-
-.blog-post-page article {
-  max-width: 680px;
-}
-
 
 /** LIGHTBOX MARKUP **/
 /* animation */

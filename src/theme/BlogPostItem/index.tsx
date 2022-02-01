@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
@@ -22,6 +22,7 @@ import BlogPostAuthors from '@theme/BlogPostAuthors';
 
 import { 
   TrackedHeader,
+  TrackedDiv,
   TrackedContentContext,
   TrackedFooter,
   makeIdFromString 
@@ -49,6 +50,9 @@ function useReadingTimePlural() {
 }
 
 function BlogPostItem(props: Props): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+  const { slackJoinLink } = siteConfig?.customFields ?? {};
+
   const readingTimePlural = useReadingTimePlural();
   const {withBaseUrl} = useBaseUrlUtils();
   const {
@@ -123,6 +127,25 @@ function BlogPostItem(props: Props): JSX.Element {
       <div className="markdown" itemProp="articleBody">
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
+
+      {!truncated && (
+        <TrackedDiv
+          id={'blog-post-try-objectiv'}
+          className={clsx(styles.blogPostFooterCta)}>
+          <h2>Try Objectiv</h2>
+          <p>Objectiv in its current state is ready for early adopters. We're working hard to add support for 
+            more data stores and make it easier to integrate with your existing stack. We also want to expand 
+            the selection of models that's included.</p>
+          <p>Follow <TrackedLink to="/docs/quickstart-guide">the quickstart guide</TrackedLink> to try 
+            Objectiv out locally.</p>
+          <h2>Join the discussion</h2>
+          <p>Have opinions on where we should take this or want to stay in the loop?</p>
+          <TrackedLink 
+            to={slackJoinLink as string}>
+            Join Our Slack Channel
+          </TrackedLink>
+        </TrackedDiv>
+      )}
 
       {(tagsExists || truncated) && (
         <TrackedFooter
