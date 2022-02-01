@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import {
@@ -9,25 +10,26 @@ import {
   trackMediaStopEvent
 } from "@objectiv/tracker-react";
 
-import Vimeo from '@u-wave/react-vimeo';
-
 function VimeoPlayer({ videoId, id }) {
-  return (
+  return  (
     <MediaPlayerContextWrapper id={id}>
       {(trackingContext) => (
-        <>
-        <Vimeo
-          video={videoId}
-          dnt={true}
-          app_id='58479'
-          onReady={() => trackMediaLoadEvent(trackingContext)}
-          onPlay={() => trackMediaStartEvent(trackingContext)}
-          onPause={() => trackMediaPauseEvent(trackingContext)}
-          onEnd={() => trackMediaStopEvent(trackingContext)}
-          className={clsx(styles.videoWrapper)}
-          data-cookieconsent="ignore"
-          />
-        </>
+        <BrowserOnly>
+          {() => {
+            const Vimeo = require('@u-wave/react-vimeo').default;
+            return <Vimeo
+              video={videoId}
+              dnt={true}
+              app_id='58479'
+              onReady={() => trackMediaLoadEvent(trackingContext)}
+              onPlay={() => trackMediaStartEvent(trackingContext)}
+              onPause={() => trackMediaPauseEvent(trackingContext)}
+              onEnd={() => trackMediaStopEvent(trackingContext)}
+              className={clsx(styles.videoWrapper)}
+              data-cookieconsent="ignore"
+            />;
+          }}
+        </BrowserOnly>
       )}
     </MediaPlayerContextWrapper>
   );
