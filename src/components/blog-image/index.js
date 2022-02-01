@@ -1,6 +1,7 @@
 import React from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Link from "@docusaurus/Link";
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedDiv } from "@objectiv/tracker-react";
 import {interpolate} from '@docusaurus/Interpolate';
 
 import clsx from "clsx";
@@ -23,7 +24,7 @@ function BlogImage({
       // use the base URL for all links
       const linkTo = useBaseUrl(link.to);
       const text = link.text ? link.text : '';
-      const fullLink = <Link to={linkTo}>{text}</Link>;
+      const fullLink = <TrackedLink href={linkTo}>{text}</TrackedLink>;
       links[linkId.toString()] = fullLink;
       imageAlt = caption.replace('{' + linkId.toString() + '}', text);
       linkId++; 
@@ -32,12 +33,12 @@ function BlogImage({
   }
 
   return (
-    <div>
+    <TrackedDiv id={'image: ' + imageAlt}>
       <img src={useBaseUrl(url)} alt={imageAlt} className={clsx(styles.blogImage)} />
       {caption && 
         <p className={clsx(styles.imageCaption)}>{imageCaption}</p>
       }
-    </div>
+    </TrackedDiv>
   );
 }
 

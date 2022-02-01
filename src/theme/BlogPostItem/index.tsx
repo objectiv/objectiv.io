@@ -82,7 +82,7 @@ function BlogPostItem(props: Props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <TrackedHeader id={'header'}>
+      <TrackedHeader>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
