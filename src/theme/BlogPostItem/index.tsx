@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
@@ -44,6 +44,9 @@ function useReadingTimePlural() {
 }
 
 function BlogPostItem(props: Props): JSX.Element {
+  const { siteConfig } = useDocusaurusContext();
+  const { slackJoinLink } = siteConfig?.customFields ?? {};
+
   const readingTimePlural = useReadingTimePlural();
   const {withBaseUrl} = useBaseUrlUtils();
   const {
@@ -126,13 +129,14 @@ function BlogPostItem(props: Props): JSX.Element {
           <p>Objectiv in its current state is ready for early adopters. We're working hard to add support for 
             more data stores and make it easier to integrate with your existing stack. We also want to expand 
             the selection of models that's included.</p>
-          <p>If you want to try it out for yourself, check out our quickstart guide to spin up Objectiv 
-            locally.</p>
+          <p>Follow <TrackedLink to="/docs/quickstart-guide">the quickstart guide</TrackedLink> to try 
+            Objectiv out locally.</p>
           <h3>Join the discussion</h3>
           <p>Have opinions on where we should take this or want to stay in the loop?</p>
-          <Link to="https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg">
+          <TrackedLink 
+            to={slackJoinLink as string}>
             Join Our Slack Channel
-          </Link>
+          </TrackedLink>
         </TrackedDiv>
       )}
 
