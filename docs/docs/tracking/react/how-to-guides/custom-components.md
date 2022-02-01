@@ -46,7 +46,7 @@ Both of them can work, but the implementation will differ quite a bit. As a rule
 - Hook Event Trackers should not be used in Components enriching Locations in their JSX.
 
 
-#### A broken example 
+#### <span style={{ color: 'red'}}>A broken example</span> 
 Let's take a look at why is that so important. First let's `hook` our Component to the hook-based Event Trackers. 
 
 ```tsx
@@ -79,8 +79,9 @@ const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => {
 }
 ```
 
-#### It doesn't work 
-If we test this component you will quickly notice that the LocationStack of all Events will not contain the MediaPlayerContext entry.
+:::danger It doesn't work
+When testing this Component you will quickly notice that the LocationStack of all Events will not contain a MediaPlayerContext.
+:::
 
 Why aren't the Event Trackers detecting the MediaPlayerContextWrapper that is clearly there?
 
