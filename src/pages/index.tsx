@@ -5,7 +5,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
-import VideoPlayer from '../components/video-player';
+import VimeoPlayer from '../components/vimeo-player';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
@@ -23,16 +23,15 @@ export default function Home() {
           <div className={clsx('container', styles.heroContainer)}>
             <img
               className={clsx(styles.heroImage)}
-              src={useBaseUrl("img/logo-objectiv-home-header.svg")}
+              src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
             open-source product analytics <br />
-            designed for modern data teams
+            designed for data science <br />
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Self-hosted product analytics that's ready for data 
-              science without the typical gruntwork.</p>
+            <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
             <div className={clsx(styles.productIntroVideo)}>
-              <VideoPlayer id="2-minute-video" url="https://vimeo.com/670857141?dnt=1" />
+              <VimeoPlayer id="2-minute-video" videoId="670857141" />
             </div>
             <img
                 className={clsx(styles.objectivIn2Minutes)}
@@ -47,9 +46,9 @@ export default function Home() {
             <TrackedDiv 
               id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
-              <h2>Some product questions are answered better from a notebook</h2>
-              <p>As product questions become more specific, nothing beats a notebook with a high quality dataset. <br/>
-              Objectiv comes with everything you need to enable data science in your product analytics workflow.</p>
+              <h2>No tracking plans, data cleaning or transformations required</h2>
+              <p>Objectiv is designed to enable you to skip the typical grunt work. Just open your notebook <br/>
+              and start modeling right away with pandas-like operations that run on the full SQL dataset.</p>
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
@@ -62,9 +61,9 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
-              <p>Instrument the tracker, open your notebook and start modeling on your data directly with pandas-like <br/>
-              operations that run on the full dataset. No tracking plans, data cleaning or transformations required. <br/>
-              Happy with the results? Output them to your team’s favourite BI tools with a single command.</p>
+              <p>It includes what you need to answer common product analytics questions with speed and precision, while <br/>
+              providing a solid foundation for advanced modeling. You can output models to SQL queries with a single <br/>
+              command, and Pandas compatability means you can tap into its rich machine learning ecosystem.</p>
               <TrackedLink
                 to="https://github.com/objectiv/objectiv-analytics"
                 waitUntilTracked={true}
@@ -88,12 +87,13 @@ export default function Home() {
               <IconHeader title="Model-ready data at the first step of the pipeline" icon="icon-better-data" />
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
-                  <p>Events tracked with Objectiv are unusually rich, highly descriptive, and structured with 
-                    effective modeling in mind.</p>
                   <p>Objectiv's tracker validates all collected events against an open analytics taxonomy at 
                     the first step of the pipeline.</p>
                   <p>The resulting dataset is error free, highly consistent, and ready for data science 
                     without additional gruntwork or transformation.</p>
+                  <p>Events tracked with Objectiv are unusually rich, highly descriptive, and structured with 
+                    effective modeling in mind.</p>
+                  
                   <img
                     src={useBaseUrl("img/value-better-data.svg")}
                     alt="Squeaky clean model-ready data through early validation!" />
@@ -181,7 +181,7 @@ export default function Home() {
                     alt="Example" />
                 </div>
                 <div>
-                  <p>As a result of high data consistency, any model created with Objectiv Bach runs on any dataset collected with the Objectiv tracker. </p>
+                  <p>As a result of high data consistency, Objectiv models and datasets are intercompatible and can be shared and reused. </p>
                   <p>That advanced model someone from the other team built? You can reuse that for your own project by changing a single line of code.</p>
                   <p>Objectiv also includes pre-built models for a wide range of product analytics use cases. You can chain them together to answer common product analytics questions quickly.</p>
                   <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
