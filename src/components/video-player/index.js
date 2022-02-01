@@ -19,32 +19,32 @@ function VideoPlayer({
 }) {
   const [isPlaying, setPlaying] = useState(false);
 
+  let videoId = id ? id : url;
+
   function handlePlayPause() {
     setPlaying(!isPlaying);
   }
 
   return (
-    <div>
-      <MediaPlayerContextWrapper id={id}>
-        {(trackingContext) => (
-          <>
-            <ReactPlayer
-              url={url}
-              playing={isPlaying}
-              controls={enableControls}
-              onReady={() => trackMediaLoadEvent(trackingContext)}
-              onStart={() => trackMediaStartEvent(trackingContext)}
-              onPause={() => trackMediaPauseEvent(trackingContext)}
-              onEnded={() => trackMediaStopEvent(trackingContext)}
-              className={clsx(styles.videoWrapper)} 
-            />
-          </>
-        )}
-      </MediaPlayerContextWrapper>
+    <MediaPlayerContextWrapper id={videoId}>
+      {(trackingContext) => (
+        <>
+          <ReactPlayer
+            url={url}
+            playing={isPlaying}
+            controls={enableControls}
+            onReady={() => trackMediaLoadEvent(trackingContext)}
+            onStart={() => trackMediaStartEvent(trackingContext)}
+            onPause={() => trackMediaPauseEvent(trackingContext)}
+            onEnded={() => trackMediaStopEvent(trackingContext)}
+            className={clsx(styles.videoWrapper)} 
+          />
+        </>
+      )}
       {caption && 
         <p className={clsx(styles.videoCaption)}>{caption}</p>
       }
-    </div>
+    </MediaPlayerContextWrapper>
   );
 }
 

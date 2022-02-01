@@ -90,7 +90,12 @@ export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href
 
 export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
   (props, ref) => (
-    <TrackedLinkContext Component={Link} {...props} href={props.href ?? props.to} ref={ref}/>
+    <TrackedLinkContext 
+      Component={Link} {...props} 
+      href={props.href ?? props.to} 
+      forwardHref={!!props.href} 
+      ref={ref}
+    />
   )
 )
 ```
