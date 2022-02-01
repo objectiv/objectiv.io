@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/vimeo";
 import {
   MediaPlayerContextWrapper,
   trackMediaLoadEvent,
@@ -16,25 +16,27 @@ function VideoPlayer({
   id,
   enableControls = true
 }) {
-  const [isPlaying, setPlaying] = useState(false);
-
-  function handlePlayPause() {
-    setPlaying(!isPlaying);
-  }
-
   return (
     <MediaPlayerContextWrapper id={id}>
       {(trackingContext) => (
         <>
           <ReactPlayer
             url={url}
-            playing={isPlaying}
+            config={{
+              vimeo: {
+                dnt: false,
+                playerOptions: {
+                  dnt: false
+                }
+              }
+            }}
             controls={enableControls}
             onReady={() => trackMediaLoadEvent(trackingContext)}
             onStart={() => trackMediaStartEvent(trackingContext)}
             onPause={() => trackMediaPauseEvent(trackingContext)}
             onEnded={() => trackMediaStopEvent(trackingContext)}
             className={clsx(styles.videoWrapper)} 
+            data-cookieconsent="ignore" 
           />
         </>
       )}
