@@ -5,7 +5,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
-import VideoPlayer from '../components/video-player';
+import VimeoPlayer from '../components/vimeo-player';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
@@ -31,7 +31,7 @@ export default function Home() {
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
             <div className={clsx(styles.productIntroVideo)}>
-              <VideoPlayer id="2-minute-video" url="https://vimeo.com/670857141?dnt=1" />
+              <VimeoPlayer id="2-minute-video" videoId="670857141" />
             </div>
             <img
                 className={clsx(styles.objectivIn2Minutes)}
