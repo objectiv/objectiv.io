@@ -2,9 +2,9 @@
 sidebar_position: 5
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Custom Components
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our [previous how-to-guide](/tracking/react/how-to-guides/tracking-locations.md) explained how to enrich Locations by using [Tracked Contexts](/tracking/react/api-reference/trackedContexts/overview.md) and [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md).
 

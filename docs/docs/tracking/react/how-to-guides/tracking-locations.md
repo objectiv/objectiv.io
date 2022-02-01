@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Tracking Locations
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Collisions
 If you started [instrumenting your Interactions](/tracking/react/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
