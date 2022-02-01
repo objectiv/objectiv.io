@@ -18,12 +18,14 @@ function VideoPlayer({
 }) {
   const [isPlaying, setPlaying] = useState(false);
 
+  let videoId = id ? id : url;
+
   function handlePlayPause() {
     setPlaying(!isPlaying);
   }
 
   return (
-    <MediaPlayerContextWrapper id={id}>
+    <MediaPlayerContextWrapper id={videoId}>
       {(trackingContext) => (
         <>
           <ReactPlayer
