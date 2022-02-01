@@ -1,5 +1,5 @@
-import BrowserOnly from "@docusaurus/core/lib/client/exports/BrowserOnly";
-import React, { useState } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import {
