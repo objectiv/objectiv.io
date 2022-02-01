@@ -25,6 +25,7 @@ function VimeoPlayer({ videoId, id }) {
           onPause={() => trackMediaPauseEvent(trackingContext)}
           onEnd={() => trackMediaStopEvent(trackingContext)}
           className={clsx(styles.videoWrapper)}
+          data-cookieconsent="ignore"
           />
         </>
       )}
