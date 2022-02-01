@@ -8,10 +8,10 @@ authors: vincenthoogsteder
 import BlogImage from '@site/src/components/blog-image'
 import VideoPlayer from '@site/src/components/video-player'
 import EmbedTweet from '@site/src/components/embed-tweet'
-import BlogQuestion from '@site/src/components/blog-question'
+import BlogQuestionAnswer from '@site/src/components/blog-question-answer'
 
 
-*During the last 12 months, our team of ten has silently worked on an open-source project that aims to effectively integrate data science into the product analytics workflow. In this series of blog posts, we want to take you along our journey and show you what we’ve been working on.*
+*During the last 12 months, our team has silently worked on an open-source project that aims to effectively integrate data science into the product analytics workflow. In this series of blog posts, we want to take you along our journey and show you what we’ve been working on.*
 
 <!--truncate-->
 
@@ -23,15 +23,13 @@ We saw [an increasing amount of people with a data science role](https://www.zdn
 
 What we also saw: Front-end engineers that had to implement yet another tracking plan because data science was missing events. Data scientists jokingly calling themselves data janitors because of all the gruntwork they needed to do. Data engineers rebuilding the models of data scientists in order to use them for production. And product owners confused with the amount of time it took to answer seemingly simple product questions.
 
-<BlogImage url='img/blog/implement-tracking.jpg' caption='Who wants to implement tracking?' />
+<BlogImage url='img/blog/implement-tracking.jpg' caption='Hat-tip to Timo Dechau for the relatable image' />
 
 They were also all doing the same thing: building models for retention, attribution, user segmentation, churn prediction and such. And all of it was done from scratch.
 
 Product analytics platforms today are simply not designed with data science in mind.
 
-<BlogQuestion question="So, what's the problem?" />
-
-Well, we believe there's a couple.
+<BlogQuestionAnswer question="So, what's the problem?" answer="Well, we believe there's a couple." />
 
 ## Current analytics trackers collect data that’s not great for modeling
 
@@ -59,11 +57,7 @@ Dependencies between these parties can mean that even a small change to the ques
 
 <EmbedTweet id="1252291581320757249" />
 
-<br />
-
-<BlogQuestion question="What are you going to do about it?" />
-
-I’m glad you’re asking, because we’ve been busy.
+<BlogQuestionAnswer question="What are you going to do about it?" answer="I'm glad you're asking, because we've been busy." />
 
 ## Meet Objectiv 
 
