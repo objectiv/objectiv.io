@@ -23,7 +23,7 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
 
   // if in the 'modeling' section, edit the source code that is used to auto-generate the docs instead
   let editThisPageUrl = useRouteMatch(`${baseUrl}modeling`) !== null ? 
-    useBaseUrl('/the-project/update-the-docs') : editUrl;
+  useBaseUrl('/the-project/update-the-docs') : editUrl;
 
   return (
     <div 

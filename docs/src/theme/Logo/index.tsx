@@ -10,10 +10,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import OriginalLogo from '@theme-original/Logo';
 import { tagLink } from "@objectiv/tracker-browser";
+import type {Props} from '@theme/Logo';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-const Logo = (props): JSX.Element  => {
+function Logo(props: Props): JSX.Element {
   const {
-    navbar: {logo = {src: ''}},
+    siteConfig: {title},
+  } = useDocusaurusContext();
+  const {
+    navbar: {title: navbarTitle, logo = {src: ''}},
   } = useThemeConfig();
   const logoLink = useBaseUrl(logo.href || '/');
 
@@ -21,6 +26,6 @@ const Logo = (props): JSX.Element  => {
     {...tagLink({ id: 'logo', href: logoLink })}
     {...props} 
   />
-};
+}
 
 export default Logo;
