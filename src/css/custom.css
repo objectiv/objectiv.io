@@ -1,4 +1,14 @@
 /* stylelint-disable docusaurus/copyright-header */
+
+@media screen and (min-width: 966px) { /* desktop */
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+}
+@media screen and (max-width: 480px) { /* mobile small */
+}
+
 /**
  * Any CSS included here will be global.
  */
@@ -322,6 +332,12 @@ p, .markdown p {
 .blog-post-page article header h1 {
   margin: 0;
   font-weight: 700;
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .blog-post-page article header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 }
 
 .blog-post-page article p {

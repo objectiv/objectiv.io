@@ -26,7 +26,7 @@ export default function Home() {
               src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-            open-source product analytics <br />
+            Open-source product analytics <br />
             designed for data science <br />
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
