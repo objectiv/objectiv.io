@@ -136,14 +136,14 @@ function BlogPostItem(props: Props): JSX.Element {
           <p>Objectiv in its current state is ready for early adopters. We're working hard to add support for 
             more data stores and make it easier to integrate with your existing stack. We also want to expand 
             the selection of models that's included.</p>
-          <p>Follow <TrackedLink to="/docs/quickstart-guide">the quickstart guide</TrackedLink> to try 
-            Objectiv out locally.</p>
-          <h2>Join the discussion</h2>
-          <p>Have opinions on where we should take this or want to stay in the loop?</p>
-          <TrackedLink 
-            to={slackJoinLink as string}>
-            Join Our Slack Channel
-          </TrackedLink>
+          <p>
+            <TrackedLink to="https://objectiv.io/docs/quickstart-guide">Quickstart Guide</TrackedLink> - Try 
+              Objectiv on your local machine (takes 5 minutes)<br />
+            <TrackedLink to="https://github.com/objectiv/objectiv-analytics">Objectiv on Github</TrackedLink> 
+              &nbsp;- Check out the project and star us for future reference<br />
+            <TrackedLink to={slackJoinLink as string}>Objectiv on Slack</TrackedLink> - Join the discussion 
+              or get help
+          </p>
         </TrackedDiv>
       )}
 

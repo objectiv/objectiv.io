@@ -22,13 +22,11 @@
     "@objectiv/tracker-react": "^0.0.7",
     "@u-wave/react-vimeo": "^0.9.5",
     "clsx": "^1.1.1",
-    "docusaurus-plugin-image-zoom": "^0.0.2",
     "emailjs-com": "^3.2.0",
     "react": "^17.0.2",
     "react-avatar": "^3.10.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.17.4",
-    "react-player": "^2.9.0",
     "react-twitter-embed": "^4.0.4"
   },
   "resolutions": {
