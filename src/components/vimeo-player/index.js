@@ -17,12 +17,12 @@ function VimeoPlayer({
 }) {
   if (id) {
     return  (
-      <MediaPlayerContextWrapper id={id}>
-        {(trackingContext) => (
-          <BrowserOnly>
-            {() => {
-              const Vimeo = require('@u-wave/react-vimeo').default;
-              return (
+      <BrowserOnly>
+        {() => {
+          const Vimeo = require('@u-wave/react-vimeo').default;
+          return (
+            <MediaPlayerContextWrapper id={id}>
+              {(trackingContext) => (
                 <>
                 <Vimeo
                   video={videoId}
@@ -39,11 +39,11 @@ function VimeoPlayer({
                   <p className={clsx(styles.videoCaption)}>{caption}</p>
                 }
                 </>
-              );
-            }}
-          </BrowserOnly>
-        )}
-      </MediaPlayerContextWrapper>
+              )}
+            </MediaPlayerContextWrapper>
+          );
+        }}
+      </BrowserOnly>
     );
   } else {
     return  (
@@ -53,15 +53,15 @@ function VimeoPlayer({
           return (
             <>
               <Vimeo
-              video={videoId}
-              dnt={true}
-              app_id='58479'
-              onReady={() => trackMediaLoadEvent(trackingContext)}
-              onPlay={() => trackMediaStartEvent(trackingContext)}
-              onPause={() => trackMediaPauseEvent(trackingContext)}
-              onEnd={() => trackMediaStopEvent(trackingContext)}
-              className={clsx(styles.videoWrapper)}
-              data-cookieconsent="ignore"
+                video={videoId}
+                dnt={true}
+                app_id='58479'
+                onReady={() => trackMediaLoadEvent(trackingContext)}
+                onPlay={() => trackMediaStartEvent(trackingContext)}
+                onPause={() => trackMediaPauseEvent(trackingContext)}
+                onEnd={() => trackMediaStopEvent(trackingContext)}
+                className={clsx(styles.videoWrapper)}
+                data-cookieconsent="ignore"
               />;
               {caption && 
                 <p className={clsx(styles.videoCaption)}>{caption}</p>
