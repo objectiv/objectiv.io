@@ -4,44 +4,28 @@
 
 OBJECTIV_ENVIRONMENT ?= docker
 
-all: build-docker-website
+all: build-docker-website-image
 
-# clean up existing builds
-clean: clean-website clean-docs
-	yarn cache clean
-clean-website:
-	rm -rf build
-	rm -rf node_modules
-clean-docs:
-	rm -rf docs/build
-	rm -rf docs/node_modules
-
-# build website + docs
-build-all: build-website build-docs
-	$(info building for ${OBJECTIV_ENVIRONMENT})
-
-# build the website. we use 'index.html' to determine if there already is a valid build
-build/index.html:
+build-website-yarn:
 	yarn install && yarn build
 
-# build the docs, we check for index.html to determine if we need to do anything
-docs/build/index.html:
+build-docs-yarn:
 	cd docs && yarn install && yarn build
 
-build-website: | clean-website build/index.html
-build-docs: | clean-docs docs/build/index.html
+build-docker-website:
+	$(info building for ${OBJECTIV_ENVIRONMENT})
+	docker build --build-arg OBJECTIV_ENVIRONMENT=$(OBJECTIV_ENVIRONMENT) --no-cache -t objectiv/website-build -f docker/build/Dockerfile .
 
 
 # build docker container for full website, including docs
 # set environment to docker, to make sure the right config/env is loaded
-build-docker-website:
-	docker build --no-cache -t objectiv/website-build -f docker/build/Dockerfile .
+build-docker-website-image: build-docker-website
 	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile .
 
 
 # spin up the website container, and check all _internal_ links for broken ones
 # external links are skipped
-check-broken-links: build-docker-website
+check-broken-links: build-docker-website-image
 	# spin up website
 	docker run --rm -d -p 127.0.0.1:8080:80 --name objectiv_website_broken_link_check objectiv/website
 	./node_modules/.bin/blc --recursive --exclude-external --ordered --host-requests 10 http://localhost:8080

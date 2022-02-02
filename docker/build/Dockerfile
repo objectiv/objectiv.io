@@ -11,5 +11,6 @@ RUN mkdir $SERVICES
 COPY . $SERVICES
 
 RUN cd  $SERVICES && \
-    make -j 2 clean && \
-    make -j 1 build-all
+    rm -rf node_modules docs/node_modules && \
+    rm -rf build docs/build && \
+    make build-website-yarn build-docs-yarn
