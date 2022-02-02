@@ -32,7 +32,7 @@ function BlogPostAuthor({author}: Props): JSX.Element {
             itemScope
             itemType="https://schema.org/Person">
             <TrackedDiv id={'avatar-name'} className="avatar__name">
-              <TrackedLink href={url} itemProp="url">
+              <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
                 <span itemProp="name">{name}</span>
               </TrackedLink>
             </TrackedDiv>
