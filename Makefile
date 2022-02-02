@@ -7,10 +7,10 @@ OBJECTIV_ENVIRONMENT ?= docker
 all: build-docker-website-image
 
 build-website-yarn:
-	yarn install && yarn build
+	yarn install && yarn build && mv build build-$(OBJECTIV_ENVIRONMENT)
 
 build-docs-yarn:
-	cd docs && yarn install && yarn build
+	cd docs && yarn install && yarn build && mv build build-$(OBJECTIV_ENVIRONMENT)
 
 build-docker-build-image:
 	$(info building for ${OBJECTIV_ENVIRONMENT})
@@ -22,7 +22,7 @@ build-docker-build-image:
 build-docker-website-image: build-docker-build-image
 	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile .
 
-build-docker-deployment-image:
+build-docker-deploy-image:
 	docker build --no-cache -t objectiv/website-deploy -f docker/deploy/Dockerfile .
 
 # spin up the website container, and check all _internal_ links for broken ones
