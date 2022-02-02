@@ -86,7 +86,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
     metadata: [{
-      property: 'og:image', content: 'img/open-graph/objectiv-og-large.png'
+      property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
     }],
     colorMode: {
       disableSwitch: true,
