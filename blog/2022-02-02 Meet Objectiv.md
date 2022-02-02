@@ -6,6 +6,10 @@ image: /img/open-graph/objectiv-og-large.png
 authors: vincenthoogsteder
 ---
 
+<head>
+  <meta property="og:title" content="Meet Objectiv - Open-source product analytics, designed for data science" />
+</head>
+
 import BlogImage from '@site/src/components/blog-image'
 import VimeoPlayer from '@site/src/components/vimeo-player'
 import EmbedTweet from '@site/src/components/embed-tweet'
