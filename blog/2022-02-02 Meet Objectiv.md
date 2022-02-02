@@ -7,7 +7,7 @@ authors: vincenthoogsteder
 ---
 
 <head>
-  <meta property="og:title" content="Meet Objectiv - Open-source product analytics, designed for data science" />
+  <meta property="og:title" content="Open-source product analytics, designed for data science" />
 </head>
 
 import BlogImage from '@site/src/components/blog-image'
