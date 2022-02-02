@@ -8,10 +8,13 @@ all: build-docker-website
 
 # clean up existing builds
 clean: clean-website clean-docs
+	yarn cache clean
 clean-website:
 	rm -rf build
+	rm -rf node_modules
 clean-docs:
 	rm -rf docs/build
+	rm -rf docs/node_modules
 
 # build website + docs
 build-all: build-website build-docs
@@ -28,10 +31,12 @@ docs/build/index.html:
 build-website: | clean-website build/index.html
 build-docs: | clean-docs docs/build/index.html
 
+
 # build docker container for full website, including docs
 # set environment to docker, to make sure the right config/env is loaded
-build-docker-website: build/index.html docs/build/index.html
-	docker build --no-cache -t objectiv/website -f docker/Dockerfile .
+build-docker-website:
+	docker build --no-cache -t objectiv/website-build -f docker/build/Dockerfile .
+	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile .
 
 
 # spin up the website container, and check all _internal_ links for broken ones
