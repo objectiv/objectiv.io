@@ -1,4 +1,5 @@
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { default as Vimeo } from "@u-wave/react-vimeo";
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
@@ -15,14 +16,15 @@ function VimeoPlayer({
   id, // required if the Video needs to be tracked
   caption = '',
 }) {
-  if (id) {
-    return  (
-      <MediaPlayerContextWrapper id={id}>
-        {(trackingContext) => (
-          <BrowserOnly>
-            {() => {
-              const Vimeo = require('@u-wave/react-vimeo').default;
-              return (
+  return  (
+    <BrowserOnly>
+      {() => {
+        const Vimeo = require('@u-wave/react-vimeo').default;
+
+        if (id) {
+          return (
+            <MediaPlayerContextWrapper id={id}>
+              {(trackingContext) => (
                 <>
                 <Vimeo
                   video={videoId}
@@ -35,43 +37,33 @@ function VimeoPlayer({
                   className={clsx(styles.videoWrapper)}
                   data-cookieconsent="ignore"
                 />
-                {caption && 
+                {caption &&
                   <p className={clsx(styles.videoCaption)}>{caption}</p>
                 }
                 </>
-              );
-            }}
-          </BrowserOnly>
-        )}
-      </MediaPlayerContextWrapper>
-    );
-  } else {
-    return  (
-      <BrowserOnly>
-        {() => {
-          const Vimeo = require('@u-wave/react-vimeo').default;
+              )}
+            </MediaPlayerContextWrapper>
+          );
+        } else {
           return (
             <>
               <Vimeo
-              video={videoId}
-              dnt={true}
-              app_id='58479'
-              onReady={() => trackMediaLoadEvent(trackingContext)}
-              onPlay={() => trackMediaStartEvent(trackingContext)}
-              onPause={() => trackMediaPauseEvent(trackingContext)}
-              onEnd={() => trackMediaStopEvent(trackingContext)}
-              className={clsx(styles.videoWrapper)}
-              data-cookieconsent="ignore"
+                video={videoId}
+                dnt={true}
+                app_id='58479'
+                className={clsx(styles.videoWrapper)}
+                data-cookieconsent="ignore"
               />;
-              {caption && 
+              {caption &&
                 <p className={clsx(styles.videoCaption)}>{caption}</p>
               }
             </>
           );
-        }}
-      </BrowserOnly>
-    );
-  }
+        }
+
+      }}
+    </BrowserOnly>
+  );
 }
 
 export default VimeoPlayer;
