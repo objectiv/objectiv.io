@@ -3,6 +3,7 @@ FROM node:16
 
 ARG OBJECTIV_ENVIRONMENT=staging
 ARG SERVICES=/services/
+
 RUN mkdir $SERVICES
 
 

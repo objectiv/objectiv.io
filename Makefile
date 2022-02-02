@@ -12,16 +12,18 @@ build-website-yarn:
 build-docs-yarn:
 	cd docs && yarn install && yarn build
 
-build-docker-website:
+build-docker-build-image:
 	$(info building for ${OBJECTIV_ENVIRONMENT})
 	docker build --build-arg OBJECTIV_ENVIRONMENT=$(OBJECTIV_ENVIRONMENT) --no-cache -t objectiv/website-build -f docker/build/Dockerfile .
 
 
 # build docker container for full website, including docs
 # set environment to docker, to make sure the right config/env is loaded
-build-docker-website-image: build-docker-website
+build-docker-website-image: build-docker-build-image
 	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile .
 
+build-docker-deployment-image:
+	docker build --no-cache -t objectiv/website-deploy -f docker/deploy/Dockerfile .
 
 # spin up the website container, and check all _internal_ links for broken ones
 # external links are skipped
