@@ -11,7 +11,7 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Objectiv - OSS product analytics, designed for data science without gruntwork",
+  title: "Objectiv - OSS product analytics, designed for data science",
   titleDelimiter: '|',
   tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
@@ -36,7 +36,20 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: false,
-        blog: false,
+        blog: {
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 0,
+          postsPerPage: 1,
+          showReadingTime: false,
+          feedOptions: {
+            type: 'all',
+            title: 'Objectiv Blog',
+            description: 'Objectiv Blog',
+            copyright: `Copyright © ${new Date().getFullYear()} Objectiv.`,
+          },
+        },
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
@@ -73,6 +86,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+    metadata: [{
+      property: 'og:image', content: 'img/open-graph/objectiv-og-large.png'
+    }],
     colorMode: {
       disableSwitch: true,
     },
@@ -87,6 +103,10 @@ const config = {
         {
           to: 'about',
           label: 'About us',
+        },
+        {
+          to: 'blog',
+          label: 'Blog',
         },
         {
           to: 'jobs',

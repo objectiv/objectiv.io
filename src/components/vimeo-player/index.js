@@ -10,14 +10,49 @@ import {
   trackMediaStopEvent
 } from "@objectiv/tracker-react";
 
-function VimeoPlayer({ videoId, id }) {
-  return  (
-    <MediaPlayerContextWrapper id={id}>
-      {(trackingContext) => (
-        <BrowserOnly>
-          {() => {
-            const Vimeo = require('@u-wave/react-vimeo').default;
-            return <Vimeo
+function VimeoPlayer({ 
+  videoId, 
+  id, // required if the Video needs to be tracked
+  caption = '',
+}) {
+  if (id) {
+    return  (
+      <MediaPlayerContextWrapper id={id}>
+        {(trackingContext) => (
+          <BrowserOnly>
+            {() => {
+              const Vimeo = require('@u-wave/react-vimeo').default;
+              return (
+                <>
+                <Vimeo
+                  video={videoId}
+                  dnt={true}
+                  app_id='58479'
+                  onReady={() => trackMediaLoadEvent(trackingContext)}
+                  onPlay={() => trackMediaStartEvent(trackingContext)}
+                  onPause={() => trackMediaPauseEvent(trackingContext)}
+                  onEnd={() => trackMediaStopEvent(trackingContext)}
+                  className={clsx(styles.videoWrapper)}
+                  data-cookieconsent="ignore"
+                />
+                {caption && 
+                  <p className={clsx(styles.videoCaption)}>{caption}</p>
+                }
+                </>
+              );
+            }}
+          </BrowserOnly>
+        )}
+      </MediaPlayerContextWrapper>
+    );
+  } else {
+    return  (
+      <BrowserOnly>
+        {() => {
+          const Vimeo = require('@u-wave/react-vimeo').default;
+          return (
+            <>
+              <Vimeo
               video={videoId}
               dnt={true}
               app_id='58479'
@@ -27,12 +62,16 @@ function VimeoPlayer({ videoId, id }) {
               onEnd={() => trackMediaStopEvent(trackingContext)}
               className={clsx(styles.videoWrapper)}
               data-cookieconsent="ignore"
-            />;
-          }}
-        </BrowserOnly>
-      )}
-    </MediaPlayerContextWrapper>
-  );
+              />;
+              {caption && 
+                <p className={clsx(styles.videoCaption)}>{caption}</p>
+              }
+            </>
+          );
+        }}
+      </BrowserOnly>
+    );
+  }
 }
 
 export default VimeoPlayer;

@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /blog/
 
 Sitemap: https://objectiv.io/sitemap.xml
