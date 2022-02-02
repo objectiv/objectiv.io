@@ -175,7 +175,7 @@ function NavbarMobileSidebar({
           }
         }
       })}
-      >
+    >
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"

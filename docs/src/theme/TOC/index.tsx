@@ -19,7 +19,7 @@ const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
 
 function TOC({className, ...props}: TOCProps): JSX.Element {
   return (
-    <div 
+    <div
       className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}
       {...tagNavigation({id: 'toc'})}
     >

@@ -6,8 +6,11 @@
  */
 
 import React from 'react';
+// @ts-ignore
 import Translate, {translate} from '@docusaurus/Translate';
+// @ts-ignore
 import PaginatorNavLink from '@theme/PaginatorNavLink';
+// @ts-ignore
 import type {Props} from '@theme/DocPaginator';
 
 import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
