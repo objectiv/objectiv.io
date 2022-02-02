@@ -18,13 +18,13 @@ function BlogPostAuthor({author}: Props): JSX.Element {
   return (
     <TrackedDiv id={'avatar'} className="avatar margin-bottom--sm">
       {imageURL && (
-        <TrackedLink className="avatar__photo-link avatar__photo" href={url} id={title} waitUntilTracked={true}>
+        <TrackedLink id={name} className="avatar__photo-link avatar__photo" href={url}>
           <img className={styles.image} src={imageURL} alt={name} />
         </TrackedLink>
       )}
 
       {
-        // Note: only legacy author frontmatter allow empty name (not frontMatter.authors)
+        // Note: only legacy author front matter allow empty name (not frontMatter.authors)
         name && (
           <div
             className="avatar__intro"
@@ -32,7 +32,7 @@ function BlogPostAuthor({author}: Props): JSX.Element {
             itemScope
             itemType="https://schema.org/Person">
             <TrackedDiv id={'avatar-name'} className="avatar__name">
-              <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
+              <TrackedLink href={url} itemProp="url">
                 <span itemProp="name">{name}</span>
               </TrackedLink>
             </TrackedDiv>
