@@ -2,6 +2,7 @@
 title: Meet Objectiv - Open-source product analytics, designed for data science
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus sit amet dolor sed semper. Nunc faucibus tristique sapien, eu pharetra ligula pulvinar et. Aliquam ullamcorper lacus enim, in vulputate elit rutrum ut. Mauris iaculis varius erat, nec dapibus turpis lobortis eget. Cras vitae magna vitae erat volutpat tincidunt. Vestibulum eu magna eget lacus commodo eleifend sed ut lorem. Nam dapibus eros neque, non vulputate sem sodales placerat.
 slug: meet-objectiv
+image: /img/open-graph/objectiv-og-large.png
 authors: vincenthoogsteder
 ---
 
