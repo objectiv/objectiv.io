@@ -59,7 +59,6 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    require.resolve('docusaurus-plugin-image-zoom'),
     [
         // only load the post-build plugin when creating a production build
         path.resolve(__dirname, 'src/plugins/post-build/'),
