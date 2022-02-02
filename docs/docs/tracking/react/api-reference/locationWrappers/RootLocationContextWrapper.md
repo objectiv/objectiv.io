@@ -1,10 +1,11 @@
 # RootLocationContextWrapper
 
-Wraps its children in a [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
+Wraps its children in a [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
 
 ```tsx
-RootLocationContextWrapper: (props: { 
-  children: ReactNode, 
+RootLocationContextWrapper: (props: {
+  children: ReactNode | ((parameters: TrackingContext) => void),
   id: string
 }) => ReactElement
 ```
@@ -15,27 +16,58 @@ This is enabled by default in [ReactTracker](/tracking/react/api-reference/React
 :::
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Usage example
 
-```typescript jsx
+### Enrich Locations
+
+```jsx
 import { RootLocationContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <RootLocationContextWrapper id={'page'}>
   <Layout>
     ...
   </Layout>
 </RootLocationContextWrapper>
 ```
+
+### Tracking via Render Props
+
+```jsx
+import { 
+  RootLocationContextWrapper, 
+  trackHiddenEvent,
+  trackVisibleEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<RootLocationContextWrapper id={'page'}>
+  {(trackingContext) => (
+    <>
+      <Layout>
+        ...
+      </Layout>
+      <SupportChatOverlay
+        onShow={() => trackVisibleEvent(trackingContext)}
+        onHide={() => trackHiddenEvent(trackingContext)}
+      >
+        ...
+      </SupportChatOverlay>
+    </>
+  )}
+</RootLocationContextWrapper>
+```
+
 
 <br />
 

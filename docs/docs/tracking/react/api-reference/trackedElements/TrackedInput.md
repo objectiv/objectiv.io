@@ -22,18 +22,18 @@ TrackedInput: (props: {
 | optional | forwardTitle | boolean   | `false`       |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
 ## Automatic Events
 - [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) when `onBlur` triggers and the  value changed.
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { TrackedInput } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <div>
   <header>
     ...

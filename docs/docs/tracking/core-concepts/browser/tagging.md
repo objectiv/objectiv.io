@@ -165,7 +165,7 @@ These are **Taggable Elements** that have been already decorated with the
 
 A **tagChildren** example in React:
 
-```typescript jsx
+```jsx
 <div
   {...tagChildren([
     {

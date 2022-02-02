@@ -18,15 +18,19 @@ This is a lower-level API.
 :::
 
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **tracker**    | ReactTracker      |               |
-| optional | options        | TrackEventOptions |               |
-| optional | locationStack  | LocationStack     |               |
-| optional | globalContexts | GlobalContexts    |               |
+|          |                | type              |
+|:--------:|:---------------|:------------------|
+| required | **tracker**    | ReactTracker      |
+| optional | options        | TrackEventOptions |
+| optional | locationStack  | LocationStack     |
+| optional | globalContexts | GlobalContexts    |
 
 ## Returns
 `Promise<TrackerEvent>`
+
+## Usage
+- [NavigationContextWrapper](/tracking/react/api-reference/locationWrappers/NavigationContextWrapper.md#tracking-via-render-props) documentation has a practical usage example of this Event Tracker.
+- [RootLocationContextWrapper](/tracking/react/api-reference/locationWrappers/RootLocationContextWrapper.md#tracking-via-render-props) documentation has a practical usage example of this Event Tracker.
 
 <br />
 

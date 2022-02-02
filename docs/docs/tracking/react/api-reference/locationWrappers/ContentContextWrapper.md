@@ -1,39 +1,71 @@
 # ContentContextWrapper
 
-Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
+Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).  
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).   
 
 ```tsx
 ContentContextWrapper: (props: { 
-  children: ReactNode, 
+  children: ReactNode | ((parameters: TrackingContext) => void), 
   id: string
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type      | default value |
-|:--------:|:-------------|:----------|:--------------|
-| required | **children** | ReactNode |               |
-| required | **id**       | string    |               |
+|          |              | type                                                     |
+|:--------:|:-------------|:---------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
+| required | **id**       | string                                                   |
 
 ## Returns
-ReactElement.
+`ReactElement`
 
-## Usage example
+## Usage examples
 
-```typescript jsx
+
+### Enrich Locations
+```jsx
 import { ContentContextWrapper } from '@objectiv/tracker-react';
 ```
 
-```typescript jsx
+```jsx
 <ContentContextWrapper id={'content'}>
   <div>
-    ...
+    <ContentContextWrapper id={'sub-content'}>
+      ...
+      <a href={'/new-location'}>Go!</a>
+    </ContentContextWrapper>
   </div>
   <span>
     ...
   </span>
 </ContentContextWrapper>
 ```
+
+### Tracking via Render Props
+```jsx
+import { 
+  ContentContextWrapper, 
+  trackPressEvent
+} from '@objectiv/tracker-react';
+```
+
+```jsx
+<ContentContextWrapper id={'content'}>
+  <div>
+    <ContentContextWrapper id={'sub-content'}>
+      {(trackingContext) => (
+        <div onClick={() => trackPressEvent(trackingContext)}>
+          Hi!
+        </div>
+      )}
+    </ContentContextWrapper>
+  </div>
+  <span>
+    ...
+  </span>
+</ContentContextWrapper>
+```
+
 
 <br />
 

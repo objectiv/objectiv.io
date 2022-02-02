@@ -251,11 +251,17 @@ is okay, while a comparison operation is not.</p>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.sort_values.html#bach.Series.sort_values" title="bach.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.sort_values</span></code></a>(*[,&#160;ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.sort_index.html#bach.Series.sort_index" title="bach.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.sort_index</span></code></a>(*[,&#160;ascending])</p></td>
+<td><p>Sort this Series by its index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.sort_values.html#bach.Series.sort_values" title="bach.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.sort_values</span></code></a>(*[,&#160;ascending])</p></td>
 <td><p>Sort this Series by its values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.fillna.html#bach.Series.fillna" title="bach.Series.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.fillna</span></code></a>(other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.fillna.html#bach.Series.fillna" title="bach.Series.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.fillna</span></code></a>(other)</p></td>
 <td><p>Fill any NULL value with the given constant or other compatible Series</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.append.html#bach.Series.append" title="bach.Series.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.append</span></code></a>(other[,&#160;ignore_index])</p></td>
+<td><p>Append rows of other series to the caller series.</p></td>
 </tr>
 </tbody>
 </table>
@@ -322,16 +328,19 @@ is okay, while a comparison operation is not.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.mean.html#bach.SeriesAbstractNumeric.mean" title="bach.SeriesAbstractNumeric.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.mean</span></code></a>([partition,&#160;skipna])</p></td>
 <td><p>Get the mean/average of the input values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sem.html#bach.SeriesAbstractNumeric.sem" title="bach.SeriesAbstractNumeric.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.sem</span></code></a>([partition,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.quantile.html#bach.SeriesAbstractNumeric.quantile" title="bach.SeriesAbstractNumeric.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.quantile</span></code></a>([partition,&#160;q])</p></td>
+<td><p>When q is a float or len(q) == 1, the resultant series index will remain In case multiple quantiles are calculated, the resultant series index will have all calculated quantiles as index values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sem.html#bach.SeriesAbstractNumeric.sem" title="bach.SeriesAbstractNumeric.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.sem</span></code></a>([partition,&#160;...])</p></td>
 <td><p>Get the unbiased standard error of the mean.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sum.html#bach.SeriesAbstractNumeric.sum" title="bach.SeriesAbstractNumeric.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.sum</span></code></a>([partition,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sum.html#bach.SeriesAbstractNumeric.sum" title="bach.SeriesAbstractNumeric.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.sum</span></code></a>([partition,&#160;...])</p></td>
 <td><p>Get the sum of the input values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.std.html#bach.SeriesAbstractNumeric.std" title="bach.SeriesAbstractNumeric.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.std</span></code></a>([partition,&#160;...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.std.html#bach.SeriesAbstractNumeric.std" title="bach.SeriesAbstractNumeric.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.std</span></code></a>([partition,&#160;...])</p></td>
 <td><p>Get the sample standard deviation of the input values Normalized by N-1 by default.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.var.html#bach.SeriesAbstractNumeric.var" title="bach.SeriesAbstractNumeric.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.var</span></code></a>([partition,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.var.html#bach.SeriesAbstractNumeric.var" title="bach.SeriesAbstractNumeric.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.var</span></code></a>([partition,&#160;...])</p></td>
 <td><p>Get the sample variance of the input values (square of the sample standard deviation) Normalized by N-1 by default.</p></td>
 </tr>
 </tbody>

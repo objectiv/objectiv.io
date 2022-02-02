@@ -20,11 +20,11 @@ setDefaultTracker = (trackerId: string) => void
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { setDefaultTracker } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 setDefaultTracker('secondary-tracker');
 ```
 

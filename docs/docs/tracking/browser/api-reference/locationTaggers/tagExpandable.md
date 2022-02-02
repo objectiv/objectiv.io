@@ -29,17 +29,17 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagExpandable } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <div {...tagExpandable({ id: 'faq-item-id' })}>
   ...
 </div>
 ```
 
-```typescript jsx
+```jsx
 <Accordion {...tagExpandable({ id: 'accordion-id' })}>
   ...
 </Accordion>

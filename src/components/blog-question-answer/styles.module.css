@@ -1,0 +1,17 @@
+:local(.questionAnswer) {
+  margin: 80px auto;
+}
+
+:local(.question) {
+  text-align: center;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 150%;
+  display: block;
+  padding: 15px 0;
+}
+
+:local(.answer) {
+  text-align: center;
+}

@@ -29,11 +29,11 @@ trackVisibility = (parameters: {
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { trackVisibility } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <Accordion
   onChange={(event, expanded) => {
     trackVisibility({ element: event.target, isVisible: expanded })

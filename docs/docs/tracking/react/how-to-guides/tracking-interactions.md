@@ -54,7 +54,7 @@ import { TrackedButton, TrackedPressableContext } from '@objectiv/tracker-react'
 ### Link
 Links are interactive elements that cause a change in the current URL. Thus, we'd like to track the destination href.
 
-```typescript jsx
+```jsx
 // A link tag 
 <a href="/somewhere">Go!</a>
 
@@ -90,7 +90,12 @@ export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href
 
 export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
   (props, ref) => (
-    <TrackedLinkContext Component={Link} {...props} href={props.href ?? props.to} ref={ref}/>
+    <TrackedLinkContext 
+      Component={Link} {...props} 
+      href={props.href ?? props.to} 
+      forwardHref={!!props.href} 
+      ref={ref}
+    />
   )
 )
 ```

@@ -40,11 +40,11 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 ## Usage example
 
-```typescript jsx
+```jsx
 import { tagLocation } from '@objectiv/tracker-browser';
 ```
 
-```typescript jsx
+```jsx
 <Layout {...tagLocation({ instance: makeContentContext({ id: 'layout' }) })}>
   <div {...tagLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
     ...
