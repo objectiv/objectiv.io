@@ -1,4 +1,4 @@
-###.PHONY: build-all build-website build-docs build-docker-website
+.PHONY: build-all build-website build-docs build-docker-website
 
 
 OBJECTIV_ENVIRONMENT := "staging production"
