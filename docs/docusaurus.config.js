@@ -62,7 +62,7 @@ const config = {
     {
       src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
       'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-      'data-blockingmode': 'auto',
+      'data-blockingmode': 'manual',
       id: 'Cookiebot'
     },
   ],
@@ -79,6 +79,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{
+        property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+      }],
       navbar: {
         title: '',
         logo: {
