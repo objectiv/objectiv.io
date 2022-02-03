@@ -1,0 +1,28 @@
+name: build-website
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build-website:
+    runs-on: ubuntu-latest
+    env:
+      OBJECTIV_ENVIRONMENT: staging
+      SFTP_URL: ${{ secrets.SFTP_URL }}
+      SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+      SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+      SFTP_PUBKEY: ${{ secrets.SFTP_PUBKEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: |
+          make build-docker-deploy-image
+          docker run -e SFTP_URL \
+            -e SFTP_USERNAME \
+            -e SFTP_PASSWORD \
+            -e SFTP_PUBKEY  \
+            -e OBJECTIV_ENVIRONMENT \
+            objectiv/website-deploy deploy.sh

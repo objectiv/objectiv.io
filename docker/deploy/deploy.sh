@@ -35,10 +35,11 @@ echo production
 
 rm -rf old_staging
 mkdir -fp old_staging
+
 echo Moving new staging build to live
-glob -a mmv /subdomains/staging/ -O old_staging/
+glob -a mmv /subdomains/staging/* -O old_staging/
 glob -a mmv _staging/* -O /subdomains/staging/
-mv _staging/.htaccess /subdomains/staging/
+
 exit
 "
 lftp --user "${SFTP_USERNAME}" --password "${SFTP_PASSWORD}" "${SFTP_URL}" -e "$SCRIPT"
