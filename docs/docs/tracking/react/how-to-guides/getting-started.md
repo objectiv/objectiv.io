@@ -28,7 +28,7 @@ import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 const App = ({children}) => {
 
   const tracker = new ReactTracker({
-    endpoint: '/collector',
+    endpoint: 'collector-url',
     applicationId: 'app-id'
   })
 
