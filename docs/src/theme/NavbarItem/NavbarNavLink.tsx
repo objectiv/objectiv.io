@@ -37,8 +37,8 @@ export default function NavbarNavLink({
 
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
   return (
-    <Link 
-      {...tagLink({id: label, href: linkTo}) }
+    <Link
+      {...tagLink({id: label as string, href: linkTo}) }
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
