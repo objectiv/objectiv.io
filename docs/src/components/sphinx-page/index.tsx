@@ -123,16 +123,22 @@ const SphinxPage = (props) => {
                     }
                 });
 
+                const extractDomain = (url) => {
+                    return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1");
+                }
                 // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
                 const currentLocation = window.location.toString();
                 const currentSite = currentLocation.match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
+                const currentDomain = extractDomain(currentLocation);
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
 
                     // a link is internal if the first part matches the current location,
+                    // or the tld's match (staging vs production
                     // or if it's a relative URL
-                    const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                    const isInternal = ( (currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                        currentDomain == extractDomain(a.href) ||
                         !a.href.startsWith('http'));
 
                     if ( isInternal ){
