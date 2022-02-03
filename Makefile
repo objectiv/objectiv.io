@@ -1,10 +1,10 @@
-.PHONY: build-all build-website build-docs build-docker-website
+###.PHONY: build-all build-website build-docs build-docker-website
 
 
-
-OBJECTIV_ENVIRONMENT ?= docker
+OBJECTIV_ENVIRONMENT := "staging production"
 
 all: build-docker-website-image
+
 
 build-website-yarn:
 	yarn install && yarn build && mv build build-$(OBJECTIV_ENVIRONMENT)
@@ -19,8 +19,9 @@ build-docker-build-image:
 
 # build docker container for full website, including docs
 # set environment to docker, to make sure the right config/env is loaded
+build-docker-website-image: OBJECTIV_ENVIRONMENT = "docker"
 build-docker-website-image: build-docker-build-image
-	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile .
+	docker build --no-cache -t objectiv/website -f docker/website/Dockerfile docker
 
 build-docker-deploy-image:
 	docker build --no-cache -t objectiv/website-deploy -f docker/deploy/Dockerfile .

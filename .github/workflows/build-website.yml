@@ -9,7 +9,6 @@ jobs:
   build-website:
     runs-on: ubuntu-latest
     env:
-      OBJECTIV_ENVIRONMENT: staging
       SFTP_URL: ${{ secrets.SFTP_URL }}
       SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
       SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
@@ -24,5 +23,4 @@ jobs:
             -e SFTP_USERNAME \
             -e SFTP_PASSWORD \
             -e SFTP_PUBKEY  \
-            -e OBJECTIV_ENVIRONMENT \
             objectiv/website-deploy deploy.sh
