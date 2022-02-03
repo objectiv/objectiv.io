@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useEffect, useMemo} from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import {
   isActiveSidebarItem,
@@ -35,7 +35,6 @@ import {
 } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
-import useIsBrowser from '@docusaurus/useIsBrowser';
 
 export default function DocSidebarItem({
   item,
@@ -72,28 +71,6 @@ function useAutoExpandActiveCategory({
   }, [isActive, wasActive, collapsed, setCollapsed]);
 }
 
-// When a collapsible category has no link, we still link it to its first child during SSR as a temporary fallback
-// This allows to be able to navigate inside the category even when JS fails to load, is delayed or simply disabled
-// React hydration becomes an optional progressive enhancement
-// see https://github.com/facebookincubator/infima/issues/36#issuecomment-772543188
-// see https://github.com/facebook/docusaurus/issues/3030
-function useCategoryHrefWithSSRFallback(
-  item: PropSidebarItemCategory,
-): string | undefined {
-  const isBrowser = useIsBrowser();
-  return useMemo(() => {
-    if (item.href) {
-      return item.href;
-    }
-    // In these cases, it's not necessary to render a fallback
-    // We skip the "findFirstCategoryLink" computation
-    if (isBrowser || !item.collapsible) {
-      return undefined;
-    }
-    return findFirstCategoryLink(item);
-  }, [item, isBrowser]);
-}
-
 function DocSidebarItemCategory({
   item,
   onItemClick,
@@ -103,7 +80,7 @@ function DocSidebarItemCategory({
   ...props
 }: Props & {item: PropSidebarItemCategory}) {
   const {items, label, collapsible, className, href} = item;
-  const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
+  const firstCategoryLink = findFirstCategoryLink(item);
 
   const isActive = isActiveSidebarItem(item, activePath);
 
@@ -166,25 +143,23 @@ function DocSidebarItemCategory({
             'menu__link--sublist': collapsible && !href,
             'menu__link--active': isActive,
             [styles.menuLinkText]: !collapsible,
-            [styles.hasHref]: !!hrefWithSSRFallback,
+            [styles.hasHref]: !!firstCategoryLink,
           })}
+          aria-current={isActive ? 'page' : undefined}
           onClick={
             collapsible
               ? (e) => {
-                  onItemClick?.(item);
-                  if (href) {
-                    updateCollapsed(false);
-                  } else {
-                    e.preventDefault();
-                    updateCollapsed();
-                  }
+                onItemClick?.(item);
+                if(!collapsed && isActive) {
+                  e.preventDefault();
                 }
+                updateCollapsed();
+              }
               : () => {
-                  onItemClick?.(item);
-                }
+                onItemClick?.(item);
+              }
           }
-          aria-current={isActive ? 'page' : undefined}
-          href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
+          href={collapsible ? firstCategoryLink : undefined}
           {...props}>
           {label}
         </Link>
