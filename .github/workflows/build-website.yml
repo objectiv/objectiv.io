@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v2
       - name: build
         run: |
+          make build-docker-build-image
           make build-docker-deploy-image
           docker run -e SFTP_URL \
             -e SFTP_USERNAME \
