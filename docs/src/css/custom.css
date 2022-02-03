@@ -34,7 +34,8 @@
   --ifm-navbar-background-color: #202124;
   --ifm-navbar-link-color: #999999;
   --ifm-navbar-link-hover-color: #fff;
-  --ifm-menu-color-active: #06A5FA;
+  --ifm-menu-color-active: #fff;
+  --ifm-menu-color: #999999;
   --ifm-navbar-height: 80px; /* Fixes issue with internal links hiding under navbar */
 }
 
@@ -121,6 +122,17 @@ html[data-theme='dark'] .DocSearch {
 .navbar__item.navbar__link.go-homepage::after {
   content: '\29C9';
   margin: 0 3px 0 5px;
+}
+
+/* Nav mobile */
+.navbar__toggle svg path {
+  stroke: white;
+}
+.navbar-sidebar__back {
+  color: var(--ifm-navbar-link-color);
+}
+.menu__link--sublist:after {
+  filter: invert(100%);
 }
 
 .footer {
