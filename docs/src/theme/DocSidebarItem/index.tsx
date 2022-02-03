@@ -154,8 +154,7 @@ function DocSidebarItemCategory({
                   e.preventDefault();
                 }
                 updateCollapsed();
-              }
-              : () => {
+              } : () => {
                 onItemClick?.(item);
               }
           }
