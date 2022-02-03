@@ -79,6 +79,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{
+        property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+      }],
       navbar: {
         title: '',
         logo: {
