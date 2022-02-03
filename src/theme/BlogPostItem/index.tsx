@@ -94,7 +94,6 @@ function BlogPostItem(props: Props): JSX.Element {
             title
           ) : (
             <TrackedLink 
-              id={`post-${makeIdFromString(title)}`}  
               itemProp="url" 
               to={permalink}>
               {title}
