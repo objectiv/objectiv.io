@@ -139,9 +139,7 @@ const SphinxPage = (props) => {
                         // fix the hrefs in the overview/index page in case of missing trailing slash
                         // but only if we're toplevel, eg.
                         // https://$currentSite/.../modeling and there's no modeling in a.href
-                        if ( a.href.indexOf('modeling') == -1
-                            && currentLocation.endsWith('modeling')
-                            && currentLocation.slice(-1) != '/' ){
+                        if ( a.href.indexOf('modeling') == -1 && currentLocation.endsWith('modeling')){
                             // we add the baseURL to the match, to make sure it works in dev and prod mode
                             const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
                             const old = a.href;
