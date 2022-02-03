@@ -13,7 +13,6 @@ mermaid.initialize({
     curve:'cardinal',
     useMaxWidth: true,
   },
-  dataCookieConsent: 'ignore',
   theme: 'base', 
   themeCSS: `
     .node rect { 
@@ -63,7 +62,7 @@ const Mermaid = ({ chart, caption, baseColor, links}) => {
 
 	return (
     <div className={"diagram-"+baseColor}>
-      <div className="mermaid" data-cookieconsent="ignore">{chart}</div>
+      <div className="mermaid">{chart}</div>
       <p className="diagram-caption">{caption}</p>
     </div>
   );
