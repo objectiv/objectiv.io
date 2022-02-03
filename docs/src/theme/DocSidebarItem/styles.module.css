@@ -9,7 +9,12 @@
   .menuLinkText {
     cursor: initial;
   }
+
   .menuLinkText:hover {
     background: none;
+  }
+
+  .menuLinkText.hasHref {
+    cursor: pointer;
   }
 }
