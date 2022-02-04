@@ -37,7 +37,7 @@ import { ObjectivTrackerModule } from '@objectiv/tracker-angular';
     ...
     ObjectivTrackerModule.forRoot({
       applicationId: 'app-id',
-      endpoint: 'https://collector.application.dev'
+      endpoint: 'https://collector.app.dev'
     })
   ],
   ...

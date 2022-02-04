@@ -49,7 +49,11 @@ Browser Tracker comes preconfigured with the following plugins:
 To get an idea of how much Browser Tracker automates under the hood, this statement:
 
 ```typescript
- const tracker = new BrowserTracker({ applicationId: 'app-id', endpoint: '/endpoint', console: console });
+ const tracker = new BrowserTracker({ 
+  applicationId: 'app-id', 
+  endpoint: 'https://collector.app.dev', 
+  console: console
+});
 ``` 
 
 is equivalent to:
@@ -58,8 +62,8 @@ is equivalent to:
  
  const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
  const console = trackerConfig.console;
- const fetch = new FetchAPITransport({ endpoint: '/endpoint', console });
- const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: '/endpoint', console });
+ const fetch = new FetchAPITransport({ endpoint: 'https://collector.app.dev', console });
+ const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: 'https://collector.app.dev', console });
  const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
  const transport = new RetryTransport({ transport: transportSwitch, console });
  const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })

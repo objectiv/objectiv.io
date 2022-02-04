@@ -17,7 +17,7 @@ import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 const App = ({children}) => {
 
   const tracker = new ReactTracker({
-    endpoint: '/collector',
+    endpoint: 'https://collector.app.dev',
     applicationId: 'app-id'
   })
 
@@ -78,7 +78,7 @@ To get an idea of how much React Tracker automates under the hood, compared to t
 ```typescript
 const tracker = new ReactTracker({ 
   applicationId: 'app-id', 
-  endpoint: '/endpoint', 
+  endpoint: 'https://collector.app.dev', 
   console: console
 });
 ``` 
@@ -89,8 +89,8 @@ is equivalent to:
  
 const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
 const console = trackerConfig.console;
-const fetch = new FetchAPITransport({ endpoint: '/endpoint', console });
-const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: '/endpoint', console });
+const fetch = new FetchAPITransport({ endpoint: 'https://collector.app.dev', console });
+const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: 'https://collector.app.dev', console });
 const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
 const transport = new RetryTransport({ transport: transportSwitch, console });
 const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })

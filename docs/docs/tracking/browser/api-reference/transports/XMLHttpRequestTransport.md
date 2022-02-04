@@ -10,7 +10,7 @@ In the following example we swap the default XMLHttpRequest implementation with 
 ```typescript
 import { XMLHttpRequestTransport } from '@objectiv/tracker-browser';
 
-const COLLECTOR_ENDPOINT = 'https://collector.application.dev';
+const COLLECTOR_ENDPOINT = 'https://collector.app.dev';
 
 // Create a simple factory to make a custom XMLHttpRequestTransport with our custom xmlHttpRequestFunction
 const makeCustomXMLHttpRequestTransport = ({ endpoint: string }) => new XMLHttpRequestTransport({

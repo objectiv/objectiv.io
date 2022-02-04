@@ -30,7 +30,7 @@ TrackedExpandableContext: (props: {
 - [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `isVisible` switches from `false` to `true`.
 
 :::caution
-The `isVisible` state of a TrackedExpandableContext at mount is ignored. Only actual changes and tracked.
+The `isVisible` state of a TrackedExpandableContext is ignored on mount. Only actual changes and tracked.
 :::
 
 ## Usage example
@@ -44,6 +44,15 @@ import { TrackedExpandableContext } from '@objectiv/tracker-react';
   ...
 </TrackedExpandableContext>
 ```
+
+:::caution Props forwarding
+All `TrackedContext` components support props forwarding,
+
+Whenever a `TrackedContext` requires one or more props that may overlap with the given `Component`, props forwarding allows the
+developer to specify which ones are needed by `Component` as well.
+
+For an actual example, check [TrackedLinkContext](/tracking/react/api-reference/trackedContexts/TrackedLinkContext.md#components) usage.
+:::
 
 <br />
 

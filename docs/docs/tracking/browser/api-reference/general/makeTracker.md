@@ -50,7 +50,7 @@ import { makeTracker } from '@objectiv/tracker-browser';
 ```jsx
 makeTracker({
   applicationId: 'awesome-app',
-  endpoint: 'https://collector.awesome-app.dev' 
+  endpoint: 'https://collector.app.dev' 
 })
 ```
 

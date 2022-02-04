@@ -14,7 +14,7 @@ import {
   FetchAPITransport 
 } from '@objectiv/tracker-browser';
 
-const COLLECTOR_ENDPOINT = 'https://collector.application.dev';
+const COLLECTOR_ENDPOINT = 'https://collector.app.dev';
 
 // Create a simple factory to make a custom FetchAPITransport with our customFetchParameters.  
 const makeCustomFetchAPITransport = ({ endpoint: string }) => new FetchAPITransport({
