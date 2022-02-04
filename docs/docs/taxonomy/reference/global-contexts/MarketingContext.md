@@ -1,21 +1,19 @@
-# MarketingBaseContext
+# MarketingContext
 
-An [AbstractMarketingContext](/taxonomy/reference/global-contexts/overview.md) describing the marketing channel & campaign from where the user came.
+Describing the marketing channel & campaign from where the user came.
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> AbstractMarketingContext;
-        AbstractMarketingContext --> MarketingBaseContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
-     class MarketingBaseContext diagramActive;
+        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term: string<br>content: string</span>"];
+     class MarketingContext diagramActive;
 `} 
-  caption="Diagram: MarketingBaseContext inheritance" 
+  caption="Diagram: MarketingContext inheritance" 
   baseColor="blue" 
   links={[
-        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' },
-        { name: 'AbstractMarketingContext', to: '/taxonomy/global-contexts' }
+        { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
  ]}
 />
 
@@ -27,7 +25,9 @@ import Mermaid from '@theme/Mermaid';
 | **source**    | string      | The advertiser, site, publication, etc.
 | **medium**    | string      | Advertising or marketing medium: cpc, banner, email newsletter, etc.
 | **campaign**    | string      | Campaign name, slogan, promo code, etc.
+| **term**    | string      | _[optional]_ Search keywords. 
+| **content**    | string      | _[optional]_ To differentiate similar content, or links within the same ad. 
 
 :::info setting of the properties
-The backend will automatically set all the properties bases on the UTM parameters in the PathContext.
+The backend will automatically set all the properties based on the UTM parameters in the PathContext.
 :::

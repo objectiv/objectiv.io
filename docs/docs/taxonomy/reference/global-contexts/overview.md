@@ -16,18 +16,13 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
         AbstractGlobalContext --> ApplicationContext;
         AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
         AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
-        AbstractGlobalContext --> AbstractMarketingContext;
-            AbstractMarketingContext --> MarketingBaseContext["MarketingBaseContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string</span>"];
-            AbstractMarketingContext --> MarketingTermContext["MarketingTermContext<br><span class='properties'>requires: MarketingBaseContext<br />term: string</span>"];
-            AbstractMarketingContext --> MarketingContentContext["MarketingContentContext<br><span class='properties'>requires: MarketingBaseContext<br />content: string</span>"];
+        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term: string<br>content: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
     class ApplicationContext diagramActive;
     class CookieIdContext diagramActive;
     class HttpContext diagramActive;
-    class MarketingBaseContext diagramActive;
-    class MarketingTermContext diagramActive;
-    class MarketingContentContext diagramActive;
+    class MarketingContext diagramActive;
     class PathContext diagramActive;
     class SessionContext diagramActive;
 `} 
@@ -37,12 +32,10 @@ Global Contexts add general information to an [Event](/tracking/core-concepts/ev
     { name: 'ApplicationContext', to: '/taxonomy/reference/global-contexts/ApplicationContext' },
     { name: 'CookieIdContext', to: '/taxonomy/reference/global-contexts/CookieIdContext' },
     { name: 'HttpContext', to: '/taxonomy/reference/global-contexts/HttpContext' },
-    { name: 'MarketingBaseContext', to: '/taxonomy/reference/global-contexts/MarketingBaseContext' },
-    { name: 'MarketingTermContext', to: '/taxonomy/reference/global-contexts/MarketingTermContext' },
-    { name: 'MarketingContentContext', to: '/taxonomy/reference/global-contexts/MarketingContentContext' },
+    { name: 'MarketingContext', to: '/taxonomy/reference/global-contexts/MarketingContext' },
     { name: 'PathContext', to: '/taxonomy/reference/global-contexts/PathContext' },
     { name: 'SessionContext', to: '/taxonomy/reference/global-contexts/SessionContext' }
   ]}
 />
 
-AbstractContext & AbstractGlobalContext are the abstract parents of all Global Contexts. AbstractMarketingContext is the abstract parent of all Marketing Contexts.
+AbstractContext & AbstractGlobalContext are the abstract parents of all Global Contexts. 
