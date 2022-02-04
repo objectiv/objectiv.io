@@ -28,7 +28,7 @@ import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 const App = ({children}) => {
 
   const tracker = new ReactTracker({
-    endpoint: 'collector-url',
+    endpoint: 'https://collector.app.dev',
     applicationId: 'app-id'
   })
 
@@ -86,7 +86,7 @@ import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 ```tsx
 makeTracker({
   applicationId: 'app-id',
-  endpoint: 'https://collector.application.dev'
+  endpoint: 'https://collector.app.dev'
 });
 
 ReactDOM.render(

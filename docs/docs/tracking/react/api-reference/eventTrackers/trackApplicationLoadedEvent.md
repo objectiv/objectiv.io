@@ -47,7 +47,7 @@ import { useOnMount } from "@objectiv/tracker-react";
 
 const App = ({ children }) => {
   const tracker = new ReactTracker({
-    endpoint: '/collector',
+    endpoint: 'https://collector.app.dev',
     applicationId: 'app-id'
   })
 
