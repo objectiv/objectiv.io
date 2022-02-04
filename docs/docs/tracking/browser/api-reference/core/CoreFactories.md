@@ -44,7 +44,6 @@ makeItemContext = (props: {
 ```typescript
 makeLinkContext = (props: { 
   id: string, 
-  text: string, 
   href: string 
 }) => LinkContext
 ```
@@ -69,8 +68,7 @@ makeOverlayContext = (props: {
 
 ```typescript
 makePressableContext = (props: { 
-  id: string, 
-  text: string 
+  id: string 
 }) => PressableEvent
 ```
 
