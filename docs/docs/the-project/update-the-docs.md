@@ -1,6 +1,6 @@
 ---
 title: Updating Documentation Pages
-slug: /the-project/update-the-docs
+slug: /home/the-project/update-the-docs
 sidebar_label: Update Docs
 sidebar_position: 4
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /quickstart-guide
+slug: /home/quickstart-guide
 title: Quickstart Guide
 ---
 

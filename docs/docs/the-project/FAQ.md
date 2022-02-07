@@ -1,6 +1,6 @@
 ---
 title: FAQ
-slug: /the-project/faq
+slug: /home/the-project/faq
 sidebar_label: FAQ
 sidebar_position: 1
 ---

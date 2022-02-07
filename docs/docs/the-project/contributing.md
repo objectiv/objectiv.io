@@ -1,6 +1,6 @@
 ---
 title: Contributing
-slug: /the-project/contribute
+slug: /home/the-project/contribute
 sidebar_label: Contribute
 sidebar_position: 3
 ---
