@@ -5,7 +5,7 @@ title: Introduction
 ---
 # React SDK
 
-The React SDK leverages React Context Providers for mapping JSX Elements and Components to the [Open Taxonomy](/taxonomy).
+The React SDK leverages React Context Providers for mapping JSX Elements and Components to the [Open Taxonomy](/taxonomy/introduction.md).
 
 It provides a number of Higher Order [Elements](/tracking/react/api-reference/trackedElements/overview.md), [Components](/tracking/react/api-reference/trackedContexts/overview.md) and [Wrappers](/tracking/react/api-reference/locationWrappers/overview.md) to easily make a regular UI Element into a Tracked one. 
 
