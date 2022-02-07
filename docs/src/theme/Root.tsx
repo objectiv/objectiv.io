@@ -1,11 +1,14 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { HttpContextPlugin } from '@objectiv/plugin-http-context';
+import { PathContextFromURLPlugin } from '@objectiv/plugin-path-context-from-url';
+import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
 import {
+  getLocationHref,
   getOrMakeTracker,
   getTrackerRepository,
-  getLocationHref,
-  windowExists,
+  makeTrackerDefaultPluginsList,
   TrackerPlugins,
-  makeDefaultPluginsList
+  windowExists
 } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
@@ -61,10 +64,27 @@ function Root({children}) {
         console: trackerConsoleEnabled ? console : undefined
       }
 
+      const trackerPlugins = new TrackerPlugins({
+        plugins: [
+          ...makeTrackerDefaultPluginsList(trackerOptions),
+          new HttpContextPlugin(trackerOptions),
+          new PathContextFromURLPlugin(trackerOptions),
+          new RootLocationContextFromURLPlugin({
+            ...trackerOptions,
+            idFactoryFunction: () => {
+              const secondSlug = location.pathname.split('/')[2];
+
+              return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+            }
+          })
+        ],
+      });
+
       if (trackerDocsApplicationId) {
         getOrMakeTracker({
           ...trackerOptions,
-          active: cookiebotStatisticsConsent
+          plugins: trackerPlugins,
+          active: cookiebotStatisticsConsent,
         });
       }
     }
