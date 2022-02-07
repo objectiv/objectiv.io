@@ -158,7 +158,7 @@ function DocSidebarItemCategory({
                 onItemClick?.(item);
               }
           }
-          href={collapsible ? firstCategoryLink : undefined}
+          href={item.type !== 'category' && collapsible ? firstCategoryLink : undefined}
           {...props}>
           {label}
         </Link>
