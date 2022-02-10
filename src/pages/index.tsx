@@ -30,13 +30,23 @@ export default function Home() {
             designed for data science <br />
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
-            <div className={clsx(styles.productIntroVideo)}>
+            <div className={clsx(styles.video, styles.productIntroVideo)}>
               <VimeoPlayer id="2-minute-video" videoId="670857141" />
             </div>
             <img
                 className={clsx(styles.objectivIn2Minutes)}
                 src={useBaseUrl("img/header-2-minutes.svg")}
                 alt="Objectiv in 2 minutes" />
+            <div className={clsx(styles.objectivInPlainEnglish)}>
+              <div className={clsx(styles.video, styles.plainEnglishVideo)}>
+                <VimeoPlayer id="plain-english-video" videoId="675885649" />
+              </div>
+              <div className={clsx(styles.plainEnglishIntro)}>
+                <strong>Not a Data Scientist?</strong>
+                <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
+                  explains the what &amp; why of Objectiv in plain English.</p>
+              </div>
+            </div>
           </div>
         </header>
 
