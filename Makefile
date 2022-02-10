@@ -26,6 +26,11 @@ build-docker-website-image: build-docker-build-image
 build-docker-deploy-image:
 	docker build --no-cache -t objectiv/website-deploy -f docker/deploy/Dockerfile .
 
+
+check-broken-links-staging:
+	docker run --rm --name broken-link-checker-staging -i node:16 bash -c \
+		"yarn add broken-link-checker; ./node_modules/.bin/blc --recursive --exclude-external --ordered --host-requests 10 https://staging.objectiv.io"
+
 # spin up the website container, and check all _internal_ links for broken ones
 # external links are skipped
 check-broken-links: build-docker-website-image
