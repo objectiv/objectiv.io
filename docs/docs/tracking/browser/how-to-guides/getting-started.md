@@ -32,7 +32,7 @@ import { makeTracker } from "@objectiv/tracker-browser";
 
 makeTracker({
   applicationId: 'app-id',
-  endpoint: 'https://collector.application.dev'
+  endpoint: 'https://collector.app.dev'
 });
 
 ReactDOM.render(
@@ -54,7 +54,7 @@ const App = () => {
     () => {
       makeTracker({
         applicationId: 'app-id',
-        endpoint: 'https://collector.application.dev'
+        endpoint: 'https://collector.app.dev'
       });
     },
     [] // no dependencies => no side effects on re-render

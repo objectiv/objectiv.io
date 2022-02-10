@@ -24,11 +24,6 @@ Anything that the user can interact with, but does not cause a URL change, can b
 <img [tagPressable]="{ id: 'button-3' }" src="/img/ok.png" alt="OK!" />
 ```
 
-:::info WIP
-Currently it's necessary to specify `text` manually. We are working on improvements to make this easier.
-:::
-
-
 ### Links
 Links are interactive elements that cause, directly or indirectly, a change in the current URL.
 
@@ -38,7 +33,7 @@ Links are interactive elements that cause, directly or indirectly, a change in t
 ```
 
 :::info WIP
-Currently it's necessary to specify `text` and `href` manually. We are working on improvements to make this easier.
+Currently it's necessary to specify `href` manually. We are working on improvements to make this easier.
 :::
 
 

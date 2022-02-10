@@ -24,14 +24,13 @@ export default function Jobs() {
 
         <main>
           <div className={clsx('container', styles.jobsContainer)}>
-            <p>With Objectiv, we’re building the open-source analytics pipeline for reusable modeling.</p>
+            <p>With Objectiv, we’re building open-source product analytics, designed for data science.</p>
             <p>We are looking for an experienced Data Scientist that wants to help unify the way data 
-              scientists collect &amp; model data, with the best possible Open Model Hub to take amazing 
-              models off the shelf.</p>
+              scientists collect &amp; model product analytics data.</p>
 
             <h2><img width="32px" src='/img/icons/icon-startup.svg' alt='Our mission' /> Our mission</h2>
-            <p>We're on a mission to unify the way data scientists collect &amp; model data. Every DS team 
-              in every company is defining how to collect, structure, clean and model data in a silo, while 
+            <p>We're on a mission to unify the way data scientists collect &amp; model product analytics data.
+              Every DS team in every company is defining how to collect, structure, clean and model data in a silo, while
               their modeling goals are so similar. We’d like to give data scientists what engineers already 
               had for a long time: the ability to reuse, take off-the-shelf and contribute to modeling work 
               of others.</p>
@@ -69,10 +68,16 @@ export default function Jobs() {
             </TrackedDiv>
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The role</h2>
-            <p>The key part of the project that is directly used by data scientists, is the Open Model Hub. 
-              This is the place where we and the community develop and improve models that anyone that runs 
-              on the Open Taxonomy of Analytics can use straightaway.</p>
-            <p>It is key to our strategy to make sure this Model Hub contains high quality models that suit 
+            <p>The key part of the project that is directly used by data scientists, is the&nbsp;
+              <TrackedLink to={'https://objectiv.io/docs/modeling/'}>
+                open model hub
+              </TrackedLink>.
+              This is a collection of pre-built models that can run out of the box on data collected using the&nbsp;
+              <TrackedLink to={'https://objectiv.io/docs/taxonomy/'}>
+                open analytics taxonomy
+              </TrackedLink>.
+              </p>
+            <p>It is key to our strategy to make sure this model hub contains high quality models that suit
               many common analytics use cases. Think of these models as lego blocks; we want DS teams to 
               reuse, stack, and interchange them in any way and continue to build advanced ML on top of 
               it.</p> 
@@ -86,8 +91,7 @@ export default function Jobs() {
             <ul>
               <li>You are an expert in Pandas and SQL.</li>
               <li>You have hands-on experience building great machine learning models, and using libraries 
-                like scikit-learn and others extensively. K-means clustering is something you do while half 
-                waking up for the first coffee or tea.</li>
+                like scikit-learn and others extensively.</li>
               <li>You have at least 5 years of working experience in a data science role working with 
                 product analytics data.</li>
               <li>You have built many models for many analytics use-cases.</li>

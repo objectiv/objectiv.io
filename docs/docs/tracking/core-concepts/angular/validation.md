@@ -44,7 +44,7 @@ Logging can be enabled in two ways:
 ```js
 ObjectivTrackerModule.forRoot({
   applicationId: 'app-id',
-  endpoint: 'https://collector.application.dev',
+  endpoint: 'https://collector.app.dev',
   console: console
 })
 ```

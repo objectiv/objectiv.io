@@ -123,6 +123,21 @@ html[data-theme='dark'] .DocSearch {
   margin: 0 3px 0 5px;
 }
 
+/* Nav mobile */
+.navbar__toggle svg path {
+  stroke: white;
+}
+.navbar-sidebar {
+  --ifm-menu-color: #999999;
+  --ifm-menu-color-active: #fff;
+}
+.navbar-sidebar .navbar-sidebar__back {
+  color: var(--ifm-navbar-link-color);
+}
+.navbar-sidebar .menu__link--sublist:after {
+  filter: invert(100%);
+}
+
 .footer {
   padding: 10px;
   text-align: center;

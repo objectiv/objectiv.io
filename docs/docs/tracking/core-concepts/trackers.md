@@ -46,3 +46,5 @@ These plugins are supported out of the box, and automatically enabled when the e
   to each Event;
 * `root-location-context-from-url`: adds a Location [PathContext](/taxonomy/reference/location-contexts/RootLocationContext.md)
   to each Event;
+* `http-context`: adds a Global [HttpContext](/taxonomy/reference/global-contexts/HttpContext.md)
+  to each Event; Its remote_address is enriched server-side by the [Collector](/tracking/collector/introduction.md).

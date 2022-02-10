@@ -37,6 +37,8 @@ TrackedLinkContext: (props: {
 
 ## Usage example
 
+### Elements
+
 ```jsx
 import { TrackedLinkContext } from '@objectiv/tracker-react';
 ```
@@ -46,7 +48,7 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
   Privacy
 </TrackedLinkContext>
 
-// Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified
+// Whenever inferring 'id' is not possible, eg: children without text, a `title` can be specified
 <TrackedLinkContext Component={'a'} href={'/privacy'} title={'privacy'}>
   <img src="/lock.jpg"/>
 </TrackedLinkContext>
@@ -56,6 +58,42 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
   <img src="/lock.jpg"/>
 </TrackedLinkContext>
 ```
+
+### Components
+
+Here is an example of an actual [TrackedLink component](https://github.com/objectiv/objectiv.io/blob/main/src/trackedComponents/TrackedLink.tsx) we use on our Docusaurus based website.
+
+```jsx
+import { TrackedLinkContext } from '@objectiv/tracker-react';
+```
+
+```tsx
+type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href'> & LinkProps;
+ 
+const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
+  (props, ref) => (
+    <TrackedLinkContext
+      Component={Link} 
+      {...props}
+      href={props.href ?? props.to}
+      forwardHref={!!props.href}
+      ref={ref}
+    />
+  )
+)
+```
+
+:::caution Props forwarding
+Interesting to note in the example above is the `forwardHref` prop. 
+Without it, the resulting wrapped component would not receive the `href` prop, most likely resulting in a TypeScript error or crash.
+
+**Overlapping props**  
+`TrackedLinkContext` requires a set of props that may overlap with the given `Component` but it cannot know which one automatically.  
+
+Props forwarding allows the developer to tell `TrackedLinkContext` which of the overlapping props must be forwarded to `Component` as well. These forwarders exist for most properties that are likely to collide like `id`, `href` and `title`.
+
+By setting `forwardHref` to `true` we are telling `TrackedLinkContext` to forward the `href` value to the given Link component as well.
+:::
 
 <br />
 
