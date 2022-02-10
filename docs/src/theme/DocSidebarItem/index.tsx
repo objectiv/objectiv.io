@@ -35,6 +35,7 @@ import {
 } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
+import { useHistory } from "react-router-dom";
 
 export default function DocSidebarItem({
   item,
@@ -118,6 +119,8 @@ function DocSidebarItemCategory({
     setCollapsed,
     autoCollapseSidebarCategories,
   ]);
+  let history = useHistory();
+
 
   return (
     <li
@@ -152,6 +155,10 @@ function DocSidebarItemCategory({
                 onItemClick?.(item);
                 if(!collapsed && isActive) {
                   e.preventDefault();
+                }
+                // OBJECTIV: auto-select the first item in the category if it's a link
+                if (items && items.length > 0 && items[0].type == 'link') {
+                  history.push(items[0].href)
                 }
                 updateCollapsed();
               } : () => {
