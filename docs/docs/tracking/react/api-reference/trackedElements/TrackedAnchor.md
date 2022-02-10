@@ -22,7 +22,7 @@ TrackedAnchor: (props: {
 | optional | id               | string    | inferred from `children` or `title` |
 | optional | forwardId        | boolean   | `false`                             |
 | required | **href**         | string    |                                     |
-| optional | forwardHref      | boolean   | `false`                             |
+| optional | forwardHref      | boolean   | `true`                              |
 | optional | title            | string    |                                     |
 | optional | forwardTitle     | boolean   | `false`                             |
 | optional | waitUntilTracked | boolean   | `false`                             |

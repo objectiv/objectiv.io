@@ -7,10 +7,10 @@
 
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
+import PaginatorNavLink from '@theme/PaginatorNavLink';
 import type {Props} from '@theme/BlogListPaginator';
 
 import { TrackedNav } from "@objectiv/tracker-react";
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 function BlogListPaginator(props: Props): JSX.Element {
   const {metadata} = props;
@@ -26,34 +26,30 @@ function BlogListPaginator(props: Props): JSX.Element {
       })}>
       <div className="pagination-nav__item">
         {previousPage && (
-          <TrackedLink 
-            to={previousPage}
-            className="pagination-nav__link">
-            <div className="pagination-nav__label">
-              &laquo;{' '}
+          <PaginatorNavLink
+            permalink={previousPage}
+            title={
               <Translate
                 id="theme.blog.paginator.newerEntries"
                 description="The label used to navigate to the newer blog posts page (previous page)">
                 Newer Entries
               </Translate>
-            </div>
-          </TrackedLink>
+            }
+          />
         )}
       </div>
       <div className="pagination-nav__item pagination-nav__item--next">
         {nextPage && (
-          <TrackedLink 
-            to={nextPage}
-            className="pagination-nav__link">
-            <div className="pagination-nav__label">
+          <PaginatorNavLink
+            permalink={nextPage}
+            title={
               <Translate
                 id="theme.blog.paginator.olderEntries"
                 description="The label used to navigate to the older blog posts page (next page)">
                 Older Entries
-              </Translate>{' '}
-              &raquo;
-            </div>
-          </TrackedLink>
+              </Translate>
+            }
+          />
         )}
       </div>
     </TrackedNav>

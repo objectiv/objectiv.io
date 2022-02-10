@@ -62,59 +62,37 @@ Links are interactive elements that cause a change in the current URL. Thus, we'
 <Link to="/cart">Back</Link>
 ```
 
-This is how they can be tracked using React Tracker tracked components.
+Regular anchors can be tracked using [TrackedAnchor](/tracking/react/api-reference/trackedElements/TrackedAnchor.md) tracked components.
 
 ```ts
-import { TrackedAnchor, TrackedLinkContext } from '@objectiv/tracker-react';
+import { TrackedAnchor} from '@objectiv/tracker-react';
 ```
-
 ```tsx
-// A anchor tag can be tracked by simply swapping the anchor Element tag with TrackedAnchor 
 <TrackedAnchor href="/somewhere">Go!</TrackedAnchor>
-
-// Link can be swapped with a TrackedLinkContext with the addition of an extra `href` property   
-<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
 ```
 
-:::tip
-We highly recommend moving TrackedContext based Components to their own modules for re-usability.   
+Similarly, Components can be wrapped in a LinkContext using [TrackedLinkContext](/tracking/react/api-reference/trackedContexts/TrackedLinkContext.md)
 
-Here is a real example we made for Docusaurus Links:
+```ts
+import { TrackedLinkContext } from '@objectiv/tracker-react';
+```
 
 ```tsx
-import Link, { LinkProps } from "@docusaurus/Link";
-import { TrackedLinkContext, TrackedLinkContextProps } from "@objectiv/tracker-react";
-import React from 'react';
-
-export type TrackedLinkProps = Omit<TrackedLinkContextProps, 'Component' | 'href'> & LinkProps;
-
-export const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
-  (props, ref) => (
-    <TrackedLinkContext 
-      Component={Link} {...props} 
-      href={props.href ?? props.to} 
-      forwardHref={!!props.href} 
-      ref={ref}
-    />
-  )
-)
+<TrackedLinkContext 
+  Component={Link} 
+  href="/cart" 
+  forwardHref={true} 
+  to="/cart"
+>
+  Do It!
+</TrackedLinkContext>
 ```
 
-Now instead of:
-```tsx
-<TrackedLinkContext Component={Link} href="/cart" to="/cart">Do It!</TrackedLinkContext>
-```
-
-We can simply use:
-```tsx
-<TrackedLink to="/cart">Do It!</TrackedLink>
-
-// or
-
-<TrackedLink href="/cart">Do It!</TrackedLink>
-
-```
+:::tip see also
+Wrapping Components in TrackedContexts requires a little more care that regular Elements.   
+Check out the [API Reference of TrackedLinkContext](/tracking/react/api-reference/trackedContexts/TrackedLinkContext.md#components) for a more detailed usage example, where we explain also what props forwarding does. 
 :::
+
 
 ### External Links
 All Pressable may lead users to an external website and the Tracker may not have had the time to track those PressEvents.

@@ -17,7 +17,7 @@ import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 const App = ({children}) => {
 
   const tracker = new ReactTracker({
-    endpoint: '/collector',
+    endpoint: 'https://collector.app.dev',
     applicationId: 'app-id'
   })
 
@@ -42,6 +42,7 @@ ReactTracker configuration requires at least an `applicationId` and either an `e
 | optional | plugins                         | TrackerPlugins   | TrackerPlugins with the result of [makeDefaultPluginsList](/tracking/react/api-reference/common/factories/makeDefaultPluginsList.md) |
 | optional | trackerId                       | string           | Same value as `applicationId`                                                                                                        |
 | optional | active                          | boolean          | `true`                                                                                                                               |
+| optional | trackHttpContext                | boolean          | `true`                                                                                                                               |
 | optional | trackPathContextFromURL         | boolean          | `true`                                                                                                                               |
 | optional | trackRootLocationContextFromURL | boolean          | `true`                                                                                                                               |
 
@@ -68,8 +69,9 @@ Configured for 10 retries with exponential backoff starting at 1000ms.
 ### Plugins
 Browser Tracker comes preconfigured with the following plugins:
 - ApplicationContextPlugin (inherited from Core Tracker)
+- HttpContextPlugin
 - PathContextFromURLPlugin
-- RootLocationContextFromURL
+- RootLocationContextFromURLPlugin
 
 ## Under the hood
 The Tracker architecture is highly composable.  
@@ -78,7 +80,7 @@ To get an idea of how much React Tracker automates under the hood, compared to t
 ```typescript
 const tracker = new ReactTracker({ 
   applicationId: 'app-id', 
-  endpoint: '/endpoint', 
+  endpoint: 'https://collector.app.dev', 
   console: console
 });
 ``` 
@@ -86,21 +88,27 @@ const tracker = new ReactTracker({
 is equivalent to:
 
 ```typescript
- 
 const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
 const console = trackerConfig.console;
-const fetch = new FetchAPITransport({ endpoint: '/endpoint', console });
-const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: '/endpoint', console });
-const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
+const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev', console });
+const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev', console });
+const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport], console });
 const transport = new RetryTransport({ transport: transportSwitch, console });
-const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })
+const queueStorage = new LocalStorageQueueStore({ trackerId, console })
 const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
-const applicationPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
-const pathContextPlugin = new PathContextFromURLPlugin({ console });
-const rootLlocationContextPlugin = new RootLocationContextFromURLPlugin({ console });
+const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
+const httpContextPlugin = new HttpContextPlugin({ console });
+const pathContextFromURLPlugin = new PathContextFromURLPlugin({ console });
+const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin({ console });
 const plugins = new TrackerPlugins({
-  plugins: [ applicationPlugin, pathContextPlugin, rootLlocationContextPlugin], 
+  plugins: [
+    applicationContextPlugin,
+    httpContextPlugin,
+    pathContextFromURLPlugin,
+    rootLocationContextFromURLPlugin
+  ],
   console
 });
 const tracker = new Tracker({ transport, queue, plugins, console });
+
 ```
