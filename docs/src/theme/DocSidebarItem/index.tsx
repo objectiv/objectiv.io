@@ -38,6 +38,8 @@ import styles from './styles.module.css';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 // OBJECTIV: use history auto-select the first item in the category if it's a link
 import { useHistory } from "react-router-dom";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+// OBJECTIV END
 
 export default function DocSidebarItem({
   item,
@@ -107,6 +109,11 @@ function DocSidebarItemCategory({
   const {items, label, collapsible, className, href} = item;
   // OBJECTIV: use history auto-select the first item in the category if it's a link
   let history = useHistory();
+  let firstItemInCategoryLink = "";
+  if (items && items.length > 0 && items[0].type == 'link') {
+    firstItemInCategoryLink = useBaseUrl(items[0].href);
+  }
+  // OBJECTIV END
   const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
 
   const isActive = isActiveSidebarItem(item, activePath);
@@ -180,9 +187,8 @@ function DocSidebarItemCategory({
                     updateCollapsed(false);
                   } else {
                     // OBJECTIV: auto-select the first item in the category if it's a link
-                    if (items && items.length > 0 && items[0].type == 'link') {
-                      history.push(items[0].href);
-                    }
+                    firstItemInCategoryLink != "" ? history.push(firstItemInCategoryLink) : null;
+                    // OBJECTIV END
                     e.preventDefault();
                     updateCollapsed();
                   }
