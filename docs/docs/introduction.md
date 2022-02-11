@@ -21,7 +21,7 @@ It includes everything you need to answer your product analytics questions with 
 Straight from your notebook on the full, raw dataset. No cleaning, transformations or tracking plans required.
 
 ### Highlights
-* Collect [model-ready data](/tracking/core-concepts) that doesn't require cleaning and transformation
+* Collect [model-ready data](/tracking/core-concepts/overview.md) that doesn't require cleaning and transformation
 * Ensure compatibility with many models by validating against an [open analytics taxonomy](/taxonomy/introduction.md)
 * Build reusable models with [Pandas-like modeling](/modeling/intro.mdx) that runs on the full dataset
 * Chain together custom & [pre-built models](/modeling/Objectiv/bach_open_taxonomy.ModelHub) to answer in-depth questions quickly

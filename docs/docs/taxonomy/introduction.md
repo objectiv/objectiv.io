@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /taxonomy
+slug: /taxonomy/
 title: Introduction
 ---
 
