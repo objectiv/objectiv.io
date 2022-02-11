@@ -6,7 +6,7 @@ import {
   getLocationHref,
   getOrMakeTracker,
   getTrackerRepository,
-  makeTrackerDefaultPluginsList,
+  makeDefaultPluginsList,
   TrackerPlugins,
   windowExists
 } from "@objectiv/tracker-browser";
@@ -66,7 +66,7 @@ function Root({children}) {
 
       const trackerPlugins = new TrackerPlugins({
         plugins: [
-          ...makeTrackerDefaultPluginsList(trackerOptions),
+          ...makeDefaultPluginsList(trackerOptions),
           new HttpContextPlugin(trackerOptions),
           new PathContextFromURLPlugin(trackerOptions),
           new RootLocationContextFromURLPlugin({
