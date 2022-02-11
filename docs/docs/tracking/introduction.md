@@ -11,7 +11,7 @@ Objectiv comes with a set of tools that help you set up error-free user behavior
 * A live debugger that provides instrumentation feedback in your IDE or console; and
 * A Collector to receive, validate & store events.
 
-<img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" className="img-l" />
 
 Instrumentation involves an opt-in process of mapping your application to the [open taxonomy for analytics](/taxonomy/introduction.md) to ensure the collected data is clean, well-structured and ready for modeling. [Learn more](/tracking/core-concepts/overview.md).
 

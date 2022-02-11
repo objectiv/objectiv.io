@@ -15,7 +15,7 @@ Each common event type and the contexts in which they can happen are defined in 
 
 Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/collector) and [Bach](/modeling/intro.mdx) (our modeling library) are built around the open taxonomy and support it out of the box.
 
-<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" className="img-l" />
 
 ## Principles
 To help ensure that the open analytics taxonomy will meet its goals, we’ve created a set of principles to guide our development decisions.
