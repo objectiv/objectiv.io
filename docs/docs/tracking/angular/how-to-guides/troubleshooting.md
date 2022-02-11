@@ -43,16 +43,16 @@ If `search-results` did not use portals, this would be the final DOM after runni
 ```html
 <html>                                Location Tree
   <body>                              RootLocationContext: home
-    <div class="search">                ContentContext: search
-      Search: <input type="text"/>        InputContext: search-input
-      <div class="search-results">        OverlayContext: search-results
-        <div class="search-result">         PressableContext: search-result-1
-          search result 1
-        </div>
-        <div class="search-result">         PressableContext: search-result-2
-          search result 2
-        </div>          
-        <div class="search-result">         PressableContext: search-result-3
+    <div class="search">              └─ ContentContext: search
+      Search: <input type="text"/>       ├─ InputContext: search-input
+      <div class="search-results">       └─ OverlayContext: search-results
+        <div class="search-result">         ├─ PressableContext: search-result-1
+          search result 1                   │
+        </div>                              │
+        <div class="search-result">         ├─ PressableContext: search-result-2
+          search result 2                   │
+        </div>                              │ 
+        <div class="search-result">         └─ PressableContext: search-result-3
           search result 3
         </div>
       </div>
@@ -72,23 +72,32 @@ Let's assume that `search-results`, instead, uses a Portal to render its results
 This is how the above template may result in the DOM:
 
 ```html
-<body>
-  <div class="search">                                    // ContentContext: search
-    Search: <input type="text"/>                          // InputContext: search-input
-  </div>
-  <div class="overlay-container">
-    <div id="search-overlay-container">
-      <div class="search-results">                        // OverlayContext: search-results
-        <div class="search-result">search result 1</div>  // PressableContext: search-result-1
-        <div class="search-result">search result 2</div>  // PressableContext: search-result-2
-        <div class="search-result">search result 3</div>  // PressableContext: search-result-3
+<html>                                     Location Tree
+  <body>                                   RootLocationContext: home
+    <div class="search">                   ├─ ContentContext: search
+      Search: <input type="text"/>         │  └─ InputContext: search-input
+    </div>                                 │
+    <div class="overlay-container">        │
+      <div id="search-overlay-container">  │
+        <div class="search-results">       └─ OverlayContext: search-results
+          <div class="search-result">         ├─ PressableContext: search-result-1
+            search result 1                   │
+          </div>                              │
+          <div class="search-result">         ├─ PressableContext: search-result-2
+            search result 2                   │
+          </div>                              │
+          <div class="search-result">         └─ PressableContext: search-result-3
+            search result 3
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
+</html>
 ```
 
-As you can see `search-results` is not a child of the search `<div>` anymore. They have been rendered somewhere else. 
+As you can see `search-results` is not a child of the search `<div>` anymore. 
+It has been rendered somewhere else and actually, from a DOM point of view, it's now a sibling of the search div. 
 
 When the Tracker attempts to track a click on one of the results, it will produce an incorrect LocationStack.
 
