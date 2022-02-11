@@ -10,8 +10,10 @@ all: build-docker-website
 clean: clean-website clean-docs
 clean-website:
 	rm -rf build
+	rm -rf node_modules
 clean-docs:
 	rm -rf docs/build
+	rm -rf docs/node_modules
 
 # build website + docs
 build-all: build-website build-docs
