@@ -22,7 +22,7 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Requires
-- [AbstractLocationContext](/taxonomy/location-contexts/).
+- [AbstractLocationContext](/taxonomy/reference/location-contexts/overview.md).
 
 ### Properties
 |                | type        | description    | contains

@@ -1,6 +1,6 @@
 ---
 title: Contributing
-slug: /the-project/contribute
+slug: /home/the-project/contribute
 sidebar_label: Contribute
 sidebar_position: 3
 ---
@@ -11,7 +11,7 @@ First off, thank you for considering to contribute to Objectiv! Please feel welc
 
 ## Where to start?
 
-There are many ways to contribute, from improving [the documentation](https://objectiv.io/docs/), submitting [bug reports & feature requests](https://github.com/objectiv/objectiv-analytics/issues), to [writing code ](https://github.com/objectiv/objectiv-analytics/). 
+There are many ways to contribute, from improving [the documentation](/introduction.md), submitting [bug reports & feature requests](https://github.com/objectiv/objectiv-analytics/issues), to [writing code ](https://github.com/objectiv/objectiv-analytics/). 
 
 To jump straight to what you're looking for, see Objectiv's contribution map below:
 
@@ -143,7 +143,7 @@ Once you've found an issue you'd like to work on, please comment on it and say y
 
 ## Setting Up Your Environment And Running Tests
 
-Please refer to our [README](https://github.com/objectiv/objectiv-analytics/blob/main/README.md), or the [Objectiv Documentation](https://objectiv.io/docs/) for help on getting the project up-and-running, and on how to write & run tests for your contribution.
+Please refer to our [README](https://github.com/objectiv/objectiv-analytics/blob/main/README.md), or the [Objectiv Documentation](/introduction.md) for help on getting the project up-and-running, and on how to write & run tests for your contribution.
 
 
 ## Submitting A Contribution
