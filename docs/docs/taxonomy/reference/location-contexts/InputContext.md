@@ -1,6 +1,6 @@
 # InputContext
 
-A [LocationContext](/taxonomy/location-contexts/)  that describes an element that accepts user input, i.e. a form field.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md)  that describes an element that accepts user input, i.e. a form field.
 
 import Mermaid from '@theme/Mermaid';
 

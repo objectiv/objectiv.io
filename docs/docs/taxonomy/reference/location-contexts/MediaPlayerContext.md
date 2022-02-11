@@ -1,6 +1,6 @@
 # MediaPlayerContext
 
-A [LocationContext](/taxonomy/location-contexts/)  that describes a section of the UI containing a media player.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md)  that describes a section of the UI containing a media player.
 
 import Mermaid from '@theme/Mermaid';
 
