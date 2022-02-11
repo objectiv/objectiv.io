@@ -10,7 +10,7 @@ thinking about Tagging some [Elements](/tracking/core-concepts/browser/tagging.m
 [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md).  
 
 :::info why tagging?
-If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts/browser).
+If you want to know why we ask you to tag your elements, take a look at the [Core Concepts Introduction](/tracking/core-concepts/browser/tagging.md).
 :::
 
 ## Tagging Interactive Elements

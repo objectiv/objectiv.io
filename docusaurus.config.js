@@ -113,7 +113,7 @@ const config = {
         },
         {
           label: 'FAQ',
-          to: envConfig.websiteUrl + '/docs/the-project/faq', // ensure Docusaurus redirects to standalone docs
+          to: envConfig.websiteUrl + '/docs/home/the-project/faq', // ensure Docusaurus redirects to standalone docs
           target: '_self',
           waitUntilTracked: true
         },
