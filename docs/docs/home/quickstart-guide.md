@@ -42,7 +42,7 @@ To explore the notebooks, open the following URL in your browser:
 ```bash
 http://localhost:8888/lab/tree/model-hub-demo-notebook.ipynb?token=objectiv
 ```
-For detailed modeling instructions, check out our [modeling docs](/modeling).
+For detailed modeling instructions, check out our [modeling docs](/modeling/intro.mdx).
 
 ### Generating Events
 To generate event data yourself, simply go to the local version of the objectiv website and click around:
@@ -68,8 +68,8 @@ If you want to start using Objectiv for your own project, you'll want to set up 
 
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 
-* [Tracking with Objectiv](/tracking)
-* [Modeling with Objectiv Bach](/modeling)
-* [The open analytics taxonomy](/taxonomy)
+* [Tracking with Objectiv](/tracking/introduction.md)
+* [Modeling with Objectiv Bach](/modeling/intro.mdx)
+* [The open analytics taxonomy](/taxonomy/introduction.md)
 
 If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).

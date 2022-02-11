@@ -9,7 +9,7 @@ sidebar_position: 1
 ### How is Objectiv different from product analytics tools?
 There is a big gap between what data scientists want their data to look like and what data actually looks like when it comes from the current generation of trackers. 
 
-Objectiv’s tracker collects clean, well-structured data that’s ready for modeling without any additional cleaning and transformation. It embraces [the open taxonomy for analytics](/taxonomy), which is our proposal of a common way to collect, structure and validate data. This eliminates the recurring discussion on what to track and how to track it, and enables data scientists to quickly build advanced models by reusing parts of models others have already built.
+Objectiv’s tracker collects clean, well-structured data that’s ready for modeling without any additional cleaning and transformation. It embraces [the open taxonomy for analytics](/taxonomy/introduction.md), which is our proposal of a common way to collect, structure and validate data. This eliminates the recurring discussion on what to track and how to track it, and enables data scientists to quickly build advanced models by reusing parts of models others have already built.
 - - -
 ##### TAXONOMY
 
@@ -18,7 +18,7 @@ The open taxonomy for analytics is our proposal for a common way to collect, str
 
 It describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
 
-Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/quickstart-guide) to set up Objectiv locally and see how it's used in practice.
+Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/home/quickstart-guide.md) to set up Objectiv locally and see how it's used in practice.
 
 ### Why an open taxonomy for analytics?
 When it comes to product analytics, we noticed that most data teams have similar goals (optimize conversion, increase engagement, reduce churn, etc.) yet their data and models all look different. Models are often built from scratch. Someone in your field has probably already written a very similar analysis, but data teams keep reinventing the wheel because there is no common way to structure and model data. This leads to isolated knowledge and no meaningful way for data scientists to collaborate. 
@@ -57,7 +57,7 @@ While most trackers simply track everything by inserting a simple script, the da
 ##### MODELING
 
 ### What does Objectiv’s tracker data look like?
-Rich, descriptive, clean and well-structured. Check out our our [Quickstart Guide](/quickstart-guide) to play with Objectiv locally. It includes real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
+Rich, descriptive, clean and well-structured. Check out our our [Quickstart Guide](/home/quickstart-guide.md) to play with Objectiv locally. It includes real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
 
 ### Why is Objectiv SQL-based?
 SQL is widely used, versatile, not overly complex, and with developments in cloud technology, SQL databases have become very powerful and scalable. It’s supported by all major cloud providers and easy to self host.
@@ -65,7 +65,7 @@ SQL is widely used, versatile, not overly complex, and with developments in clou
 Objectiv Bach, our modeling library, features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
 
 ### Which Pandas-like operations can I use to build SQL models?
-For all supported pandas operations, check the reference in the [Modeling](/modeling) section.
+For all supported pandas operations, check the reference in the [Modeling](/modeling/intro.mdx) section.
 
 ### Can I run these models in production?
 Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.
@@ -96,7 +96,7 @@ Objectiv currently requires a PostgreSQL database and works in any environment w
 Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. 
 
 ### Can I run it on-premise?
-Yes. We don’t have any plans for a hosted version for the near future. Check out our [Quickstart Guide](/quickstart-guide) for installation instructions.
+Yes. We don’t have any plans for a hosted version for the near future. Check out our [Quickstart Guide](/home/quickstart-guide.md) for installation instructions.
 
 - - - 
 ##### COMPANY

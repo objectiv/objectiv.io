@@ -7,7 +7,7 @@ title: Getting Started
 This guide will help you set up a dockerized Objectiv Collector with a Postgres data store that you can use for local development purposes.
 
 :::info just want to test Objectiv?
-To quickly spin up a fully functional demo pipeline locally, follow the [Quickstart Guide](/quickstart-guide).
+To quickly spin up a fully functional demo pipeline locally, follow the [Quickstart Guide](/home/quickstart-guide.md).
 :::
 
 :::info 
