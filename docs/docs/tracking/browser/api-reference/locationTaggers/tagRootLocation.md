@@ -10,6 +10,20 @@ tagRootLocation = (parameters: {
 }) => TagLocationReturnValue
 ```
 
+:::danger Low level api
+Make sure to never use tagRootLocation while RootLocationContextFromURLPlugin is active. It will lead to multiple RootLocationContexts, which is forbidden.
+
+For applications relying on URLs, RootLocationContext can be automatically instrumented via the `RootLocationContextFromURLPlugin`.
+This is enabled by default in [BrowserTracker](/tracking/browser/api-reference/general/BrowserTracker.md#plugins).
+
+**Reconfiguring or removing RootLocationContextFromURLPlugin**   
+If you need RootLocationContextFromURLPlugin to track a different url slug, search parameter or the hashtag, you can reconfigure it to do so.
+
+When reconfiguring the RootLocationContextFromURLPlugin is not a viable option, the Plugin should be removed before using this Location Tagger to instrument roots manually.
+
+- Check out [this guide](/#TODO) for some examples.
+:::
+
 ## Parameters
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
