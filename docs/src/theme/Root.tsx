@@ -61,14 +61,12 @@ function Root({children}) {
       const trackerOptions = {
         applicationId: trackerDocsApplicationId as string,
         endpoint: trackerEndPoint as string,
-        console: trackerConsoleEnabled ? console : undefined
+        console: trackerConsoleEnabled ? console : undefined,
+        active: cookiebotStatisticsConsent,
       }
 
-      const trackerPlugins = new TrackerPlugins({
-        plugins: [
-          ...makeTrackerDefaultPluginsList(trackerOptions),
-          new HttpContextPlugin(trackerOptions),
-          new PathContextFromURLPlugin(trackerOptions),
+      if (trackerDocsApplicationId) {
+        getOrMakeTracker(trackerOptions).plugins.replace(
           new RootLocationContextFromURLPlugin({
             ...trackerOptions,
             idFactoryFunction: () => {
@@ -77,15 +75,7 @@ function Root({children}) {
               return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
             }
           })
-        ],
-      });
-
-      if (trackerDocsApplicationId) {
-        getOrMakeTracker({
-          ...trackerOptions,
-          plugins: trackerPlugins,
-          active: cookiebotStatisticsConsent,
-        });
+        );
       }
     }
   }
