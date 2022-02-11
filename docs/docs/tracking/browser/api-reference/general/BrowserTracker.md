@@ -43,7 +43,9 @@ Configured for 10 retries with exponential backoff starting at 1000ms.
 ### Default Plugins
 Browser Tracker comes preconfigured with the following plugins:
 - ApplicationContextPlugin (inherited from Core Tracker)
+- HttpContextPlugin
 - PathContextFromURLPlugin
+- RootLocationContextFromURLPlugin
 
 ## Under the hood
 To get an idea of how much Browser Tracker automates under the hood, this statement:
@@ -59,19 +61,28 @@ To get an idea of how much Browser Tracker automates under the hood, this statem
 is equivalent to:
 
 ```typescript
- 
- const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
- const console = trackerConfig.console;
- const fetch = new FetchAPITransport({ endpoint: 'https://collector.app.dev', console });
- const xmlHttpRequest = new XMLHttpRequestTransport({ endpoint: 'https://collector.app.dev', console });
- const transportSwitch = new TransportSwitch({ transports: [fetch, xmlHttpRequest], console });
- const transport = new RetryTransport({ transport: transportSwitch, console });
- const queueStorage = new TrackerQueueLocalStorageStore({ trackerId, console })
- const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
- const applicationPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
- const pathContextPlugin = new PathContextFromURLPlugin({ console });
- const plugins = new TrackerPlugins({ plugins: [ applicationPlugin, pathContextPlugin ], console });
- const tracker = new Tracker({ transport, queue, plugins, console });
+const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
+const console = trackerConfig.console;
+const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev', console });
+const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev', console });
+const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport], console });
+const transport = new RetryTransport({ transport: transportSwitch, console });
+const queueStorage = new LocalStorageQueueStore({ trackerId, console })
+const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
+const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
+const httpContextPlugin = new HttpContextPlugin({ console });
+const pathContextFromURLPlugin = new PathContextFromURLPlugin({ console });
+const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin({ console });
+const plugins = new TrackerPlugins({
+  plugins: [
+    applicationContextPlugin,
+    httpContextPlugin,
+    pathContextFromURLPlugin,
+    rootLocationContextFromURLPlugin
+  ],
+  console
+});
+const tracker = new Tracker({ transport, queue, plugins, console });
 ```
 
 <br />

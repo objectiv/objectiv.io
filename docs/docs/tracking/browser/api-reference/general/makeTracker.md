@@ -20,17 +20,17 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 :::
 
 ## Parameters
-|          |                             | type                                                                 | default value
-| :-:      | :--                         | :--                                                                  | :--           
-| required | **applicationId**           | string                                                               |
-| optional | trackerId                   | string                                                               | Same value as `applicationId`
-| optional | queue                       | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)
-| optional | **_endpoint_**              | string                                                               |
-| optional | **_transport_**             | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)
-| optional | plugins                     | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md)
-| optional | console                     | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md)     |
-| optional | active                      | boolean                                                              | `true`
-| optional | trackApplicationLoadedEvent | boolean                                                              | `true`
+|          |                             | type                                                                         | default value                                                                                                                                    |
+|:--------:|:----------------------------|:-----------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| required | **applicationId**           | string                                                                       |                                                                                                                                                  |
+| optional | trackerId                   | string                                                                       | Same value as `applicationId`                                                                                                                    |
+| optional | queue                       | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)                                           |
+| optional | **_endpoint_**              | string                                                                       |                                                                                                                                                  |
+| optional | **_transport_**             | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)                                   |
+| optional | plugins                     | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md) |
+| optional | console                     | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md)     |                                                                                                                                                  |
+| optional | active                      | boolean                                                                      | `true`                                                                                                                                           |
+| optional | trackApplicationLoadedEvent | boolean                                                                      | `true`                                                                                                                                           |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
