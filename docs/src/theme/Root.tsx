@@ -7,6 +7,7 @@ import {
   getOrMakeTracker,
   getTrackerRepository,
   makeCoreTrackerDefaultPluginsList,
+  TrackerPlugins,
   windowExists
 } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
@@ -60,13 +61,13 @@ function Root({children}) {
       const trackerOptions = {
         applicationId: trackerDocsApplicationId as string,
         endpoint: trackerEndPoint as string,
-        console: trackerConsoleEnabled ? console : undefined,
-        active: cookiebotStatisticsConsent,
+        console: trackerConsoleEnabled ? console : undefined
       }
 
       if (trackerDocsApplicationId) {
         getOrMakeTracker({
           ...trackerOptions,
+          active: cookiebotStatisticsConsent,
           plugins: [
             ...makeCoreTrackerDefaultPluginsList(trackerOptions),
             new HttpContextPlugin(trackerOptions),
