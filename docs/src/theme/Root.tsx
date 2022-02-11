@@ -1,6 +1,14 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { HttpContextPlugin } from '@objectiv/plugin-http-context';
+import { PathContextFromURLPlugin } from '@objectiv/plugin-path-context-from-url';
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import { getLocationHref, getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
+import {
+  getLocationHref,
+  getOrMakeTracker,
+  getTrackerRepository,
+  makeCoreTrackerDefaultPluginsList,
+  windowExists
+} from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 
@@ -57,16 +65,22 @@ function Root({children}) {
       }
 
       if (trackerDocsApplicationId) {
-        getOrMakeTracker(trackerOptions).plugins.replace(
-          new RootLocationContextFromURLPlugin({
-            ...trackerOptions,
-            idFactoryFunction: () => {
-              const secondSlug = location.pathname.split('/')[2];
+        getOrMakeTracker({
+          ...trackerOptions,
+          plugins: [
+            ...makeCoreTrackerDefaultPluginsList(trackerOptions),
+            new HttpContextPlugin(trackerOptions),
+            new PathContextFromURLPlugin(trackerOptions),
+            new RootLocationContextFromURLPlugin({
+              ...trackerOptions,
+              idFactoryFunction: () => {
+                const secondSlug = location.pathname.split('/')[2];
 
-              return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
-            }
-          })
-        );
+                return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+              }
+            })
+          ]
+        });
       }
     }
   }
