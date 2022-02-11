@@ -1,6 +1,6 @@
 # NavigationContext
 
-A [LocationContext](/taxonomy/location-contexts/) that describes a section of the UI containing navigational elements, for example a menu.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md) that describes a section of the UI containing navigational elements, for example a menu.
 
 import Mermaid from '@theme/Mermaid';
 

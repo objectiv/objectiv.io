@@ -1,6 +1,6 @@
 # RootLocationContext
 
-A [LocationContext](/taxonomy/location-contexts/) that uniquely represents the top-level UI location of the user.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md) that uniquely represents the top-level UI location of the user.
  
 import Mermaid from '@theme/Mermaid';
 

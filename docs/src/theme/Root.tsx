@@ -1,15 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { HttpContextPlugin } from '@objectiv/plugin-http-context';
-import { PathContextFromURLPlugin } from '@objectiv/plugin-path-context-from-url';
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import {
-  getLocationHref,
-  getOrMakeTracker,
-  getTrackerRepository,
-  makeTrackerDefaultPluginsList,
-  TrackerPlugins,
-  windowExists
-} from "@objectiv/tracker-browser";
+import { getLocationHref, getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 

@@ -10,7 +10,7 @@ First off, thank you for considering to update the Documentation pages.
 As some of the pages are automatically generated, below a very short How-To.
 
 ## Update Modeling docs
-The [Modeling](/modeling/) docs are automatically generated from the comments in 
+The [Modeling](/modeling/intro.mdx) docs are automatically generated from the comments in 
 the [Bach source code](https://github.com/objectiv/objectiv-analytics/tree/main/bach). 
 
 Please go to the repository to make any edits to the comments in the source code, and submit a PR. We'll then 
