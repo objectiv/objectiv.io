@@ -6,7 +6,7 @@ import {
   getLocationHref,
   getOrMakeTracker,
   getTrackerRepository,
-  makeTrackerDefaultPluginsList,
+  makeCoreTrackerDefaultPluginsList,
   TrackerPlugins,
   windowExists
 } from "@objectiv/tracker-browser";
@@ -64,27 +64,23 @@ function Root({children}) {
         console: trackerConsoleEnabled ? console : undefined
       }
 
-      const trackerPlugins = new TrackerPlugins({
-        plugins: [
-          ...makeTrackerDefaultPluginsList(trackerOptions),
-          new HttpContextPlugin(trackerOptions),
-          new PathContextFromURLPlugin(trackerOptions),
-          new RootLocationContextFromURLPlugin({
-            ...trackerOptions,
-            idFactoryFunction: () => {
-              const secondSlug = location.pathname.split('/')[2];
-
-              return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
-            }
-          })
-        ],
-      });
-
       if (trackerDocsApplicationId) {
         getOrMakeTracker({
           ...trackerOptions,
-          plugins: trackerPlugins,
           active: cookiebotStatisticsConsent,
+          plugins: [
+            ...makeCoreTrackerDefaultPluginsList(trackerOptions),
+            new HttpContextPlugin(trackerOptions),
+            new PathContextFromURLPlugin(trackerOptions),
+            new RootLocationContextFromURLPlugin({
+              ...trackerOptions,
+              idFactoryFunction: () => {
+                const secondSlug = location.pathname.split('/')[2];
+
+                return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+              }
+            })
+          ]
         });
       }
     }

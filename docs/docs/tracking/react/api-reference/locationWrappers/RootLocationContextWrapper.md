@@ -12,7 +12,7 @@ RootLocationContextWrapper: (props: {
 
 :::tip
 For applications relying on URLs, `RootLocationContext` can be automatically instrumented via the RootLocationContextForURL Plugin.
-This is enabled by default in [ReactTracker](/tracking/react/api-reference/ReactTracker.md#default-plugins).
+This is enabled by default in [ReactTracker](/tracking/react/api-reference/ReactTracker.md#plugins).
 :::
 
 ## Parameters

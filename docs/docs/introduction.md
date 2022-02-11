@@ -22,12 +22,12 @@ Straight from your notebook on the full, raw dataset. No cleaning, transformatio
 
 ### Highlights
 * Collect [model-ready data](/tracking/core-concepts) that doesn't require cleaning and transformation
-* Ensure compatibility with many models by validating against an [open analytics taxonomy](/taxonomy)
-* Build reusable models with [Pandas-like modeling](/modeling) that runs on the full dataset
+* Ensure compatibility with many models by validating against an [open analytics taxonomy](/taxonomy/introduction.md)
+* Build reusable models with [Pandas-like modeling](/modeling/intro.mdx) that runs on the full dataset
 * Chain together custom & [pre-built models](/modeling/Objectiv/bach_open_taxonomy.ModelHub) to answer in-depth questions quickly
 
 Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 ## Getting Started
 
-Follow the easy steps in our [Quickstart Guide](/quickstart-guide) to locally run the full Objectiv stack dockerized.
+Follow the easy steps in our [Quickstart Guide](/home/quickstart-guide.md) to locally run the full Objectiv stack dockerized.
