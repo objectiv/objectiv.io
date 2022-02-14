@@ -62,8 +62,11 @@ To do a full build of docs and website, inside a Node docker image run:
 ```bash
 make build-docker-build-image
 ```
-This command generates a docker images containing static builds for both website and docs, for the environment(s) set 
+This command generates a docker image containing static builds for both website and docs, for the environment(s) set 
 in OBJECTIV_ENVIRONMENT. By default, this is both staging and production.
+
+NOTE: the build step only builds the artefacts (as part of the resulting docker image). To actually deploy it, see the 
+deployment section.
 
 
 ## Building the docker image
@@ -99,7 +102,7 @@ The website is hosted on TransIP. To deploy, observe the following steps:
 * Create a build for production (OBJECTIV_ENVIRONMENT=production)
 * Upload the contents of the build folder to production on TransIP
 
-There is a GitHub action, to automate all of this. To run that manually, either use `act`, or do the following:
+There is a GitHub action, to automate all of this. To run that manually, either use [act](https://github.com/nektos/act), or do the following:
 to deploy: (make sure to first provision the appropriate environment variables for SFTP)
 ```bash
 make build-docker-deploy-image
