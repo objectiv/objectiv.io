@@ -53,9 +53,7 @@ If `search-results` did not use portals, this would be the final DOM after runni
 </html>
 ```
 
-Everything works fine: the Tracker can easily navigate from a result upwards and collect the correct Location.
-
-Eg: `search-results` is a child of `search` and a sibling of `search-input`.
+Everything works fine: the Tracker can easily navigate from a result upwards and collect the correct Location, e.g. `search-results` is a child of `search` and a sibling of `search-input`.
 
 
 ### DOM with portals
