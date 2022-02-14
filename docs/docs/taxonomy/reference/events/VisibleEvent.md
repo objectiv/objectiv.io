@@ -1,6 +1,6 @@
 # VisibleEvent
 
-A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that's emitted after a [LocationContext](/taxonomy/location-contexts/) has become visible.
+A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that's emitted after a [LocationContext](/taxonomy/reference/location-contexts/overview.md) has become visible.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -19,7 +19,7 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Requires
-- [AbstractLocationContext](/taxonomy/location-contexts/).
+- [AbstractLocationContext](/taxonomy/reference/location-contexts/overview.md).
 
 ### Properties
 |                | type        | description    | contains

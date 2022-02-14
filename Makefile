@@ -5,9 +5,17 @@ OBJECTIV_ENVIRONMENT := "staging production"
 
 all: build-docker-website-image
 
-
 build-website-yarn:
 	yarn install && yarn build && mv build build-$(OBJECTIV_ENVIRONMENT)
+
+# clean up existing builds, this is not needed for dockerized builds ofc
+clean: clean-website clean-docs
+clean-website:
+	rm -rf build
+	rm -rf node_modules
+clean-docs:
+	rm -rf docs/build
+	rm -rf docs/node_modules
 
 build-docs-yarn:
 	cd docs && yarn install && yarn build && mv build build-$(OBJECTIV_ENVIRONMENT)

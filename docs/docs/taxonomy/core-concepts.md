@@ -14,10 +14,10 @@ The open analytics taxonomy consists of:
 * Their properties, requirements and inheritance.
 
 ## Global Contexts
-[Global Contexts](/taxonomy/global-contexts/) add general information to an [Event](/taxonomy/events/). 
+[Global Contexts](/taxonomy/reference/global-contexts/overview.md) add general information to an [Event](/taxonomy/reference/events/overview.md). 
 
 ## Location Contexts
-[Location Contexts](/taxonomy/location-contexts/) are meant to describe where an [Event](/taxonomy/events/) originated from in the visual UI. 
+[Location Contexts](/taxonomy/reference/location-contexts/overview.md) are meant to describe where an [Event](/taxonomy/reference/events/overview.md) originated from in the visual UI. 
 
 ## Events
-Describe interactive and non-interactive [Events](/taxonomy/events/).
+Describe interactive and non-interactive [Events](/taxonomy/reference/events/overview.md).
