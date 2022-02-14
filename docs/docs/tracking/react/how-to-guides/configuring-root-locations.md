@@ -140,7 +140,7 @@ RootLocationContext is obligatory in all LocationStacks.
 
 There are several ways to track them without RootLocationContextFromURLPlugin:
 - Wrap logical pages in [RootLocationContextWrapper](/tracking/react/api-reference/locationWrappers/RootLocationContextWrapper.md).
-- Enrich root Elements or Components with [TrackedRootLocation](/tracking/react/api-reference/trackedContexts/TrackedRootLocationContext.md). Eg: a Layout Component.
+- Enrich root Elements or Components with [TrackedRootLocation](/tracking/react/api-reference/trackedContexts/TrackedRootLocationContext.md), e.g. a Layout Component.
 - Write your own Plugin and leverage your internal state or non-url based routing system.
 
 And if you are unsure which to pick or how to begin, please let us know. We love a challenge.
