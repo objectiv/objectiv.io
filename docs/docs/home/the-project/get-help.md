@@ -1,6 +1,6 @@
 ---
 title: Getting Help
-slug: /the-project/get-help
+slug: /home/the-project/get-help
 sidebar_label: Get Help
 sidebar_position: 2
 ---

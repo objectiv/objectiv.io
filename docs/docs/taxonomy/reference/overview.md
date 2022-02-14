@@ -8,7 +8,7 @@ title: Overview
 High level overview of all the Events & Contexts available in the open analytics taxonomy.
 
 ## Global Contexts
-[Global Contexts](./global-contexts/) add general information to an event.
+[Global Contexts](./global-contexts/overview.md) add general information to an event.
 
 * [ApplicationContext](./global-contexts/ApplicationContext.md)
 * [CookieIdContext](./global-contexts/CookieIdContext.md)
@@ -17,7 +17,7 @@ High level overview of all the Events & Contexts available in the open analytics
 * [SessionContext](./global-contexts/SessionContext.md)
 
 ## Location Contexts
-[Location Contexts](./location-contexts/) are meant to describe where an event originated from in the visual UI.
+[Location Contexts](./location-contexts/overview.md) are meant to describe where an event originated from in the visual UI.
 
 * [ContentContext](./location-contexts/ContentContext.md)
 * [ExpandableContext](./location-contexts/ExpandableContext.md)
@@ -29,7 +29,7 @@ High level overview of all the Events & Contexts available in the open analytics
 * [PressableContext](./location-contexts/PressableContext.md)
 
 ## Events
-Used to describe interactive and non-interactive [Events](./events/).
+Used to describe interactive and non-interactive [Events](./events/overview.md).
 
 * [ApplicationLoadedEvent](./events/ApplicationLoadedEvent.md)
 * [FailureEvent](./events/FailureEvent.md)

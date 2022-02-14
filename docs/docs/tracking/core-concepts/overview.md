@@ -8,7 +8,7 @@ title: Introduction
 
 While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or over-complete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. 
 
-Objectiv asks you to map your application to the [open taxonomy of analytics](/taxonomy).  
+Objectiv asks you to map your application to the [open taxonomy of analytics](/taxonomy/introduction.md).  
 
 This is done by identifying the interactive elements in your application’s UI and assigning them [locations](/tracking/core-concepts/locations.md). It will create a contextual layer for your application that Objectiv's tracker uses to collect clean, well-structured data that is ready for modeling with minimal gruntwork. 
 
@@ -21,6 +21,6 @@ A few events, such as [ApplicationLoadedEvent](/taxonomy/reference/events/Applic
 - [Collector](/tracking/collector/introduction.md) to receive, validate and store [Events](/taxonomy/reference/events/overview.md).
 
 #### SDK specific
-- [React SDK Core Concepts](/tracking/core-concepts/react)
-- [Browser SDK Core Concepts](/tracking/core-concepts/browser)
-- [Angular SDK Core Concepts](/tracking/core-concepts/angular)
+- [React SDK Core Concepts](/tracking/core-concepts/react/best-practices.md)
+- [Browser SDK Core Concepts](/tracking/core-concepts/browser/tagging.md)
+- [Angular SDK Core Concepts](/tracking/core-concepts/angular/tagging.md)

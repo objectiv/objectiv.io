@@ -255,7 +255,7 @@ export default function Home() {
               <p className={clsx(styles.quickStartOutro)}>Follow the <strong>Quickstart Guide</strong> to 
               locally run the full Objectiv pipeline dockerized.</p>
               <TrackedLink
-                to={url + "/docs/quickstart-guide/"}
+                to={url + "/docs/home/quickstart-guide/"}
                 autoAddBaseUrl={true}
                 waitUntilTracked={true}
                 target="_self"
