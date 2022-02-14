@@ -267,20 +267,22 @@ export default function Home() {
             </TrackedDiv>
           </div>          
 
-          <footer className={clsx("container", styles.contentContainer)}>
-            <TrackedDiv id={'objectiv-in-plain-english'} className={clsx(styles.objectivInPlainEnglish)}>
-              <div id="objectiv-in-plain-english" className={clsx(styles.video, styles.plainEnglishVideo)}>
-                <VimeoPlayer id="plain-english-video" videoId="675885649" />
-              </div>
+          <footer>
+            <div id="objectiv-in-plain-english" className={clsx("container", styles.contentContainer)}>
+              <TrackedDiv id={'objectiv-in-plain-english'} className={clsx(styles.objectivInPlainEnglish)}>
+                <div className={clsx(styles.video, styles.plainEnglishVideo)}>
+                  <VimeoPlayer id="plain-english-video" videoId="675885649" />
+                </div>
 
-              <div className={clsx(styles.plainEnglishIntro)}>
-                <strong>Not a Data Scientist?</strong>
-                <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
-                  explains the what &amp; why of Objectiv in plain English.</p>
-              </div>
-            </TrackedDiv>
+                <div className={clsx(styles.plainEnglishIntro)}>
+                  <strong>Not a Data Scientist?</strong>
+                  <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
+                    explains the what &amp; why of Objectiv in plain English.</p>
+                </div>
+              </TrackedDiv>
+            </div>
 
-            <TrackedDiv id={'slack'}>
+            <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
