@@ -4,10 +4,20 @@ on:
   push:
     branches:
       - 'main'
+    secrets:
+      SFTP_URL:
+        required: true
+      SFTP_USERNAME:
+        required: true
+      SFTP_PASSWORD:
+        required: true
+      SFTP_PUBKEY:
+        required: true
 
 jobs:
   build-website:
     runs-on: ubuntu-latest
+    environment: production
     env:
       SFTP_URL: ${{ secrets.SFTP_URL }}
       SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
