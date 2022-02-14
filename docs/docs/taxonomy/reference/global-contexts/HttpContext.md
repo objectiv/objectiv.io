@@ -7,7 +7,7 @@ import Mermaid from '@theme/Mermaid';
 <Mermaid chart={`
 	graph LR
         AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
+        AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referrer: string<br>user_agent: string<br>remote_address: string</span>"];
     class HttpContext diagramActive;
 `} 
   caption="Diagram: HttpContext inheritance" 
@@ -22,7 +22,7 @@ import Mermaid from '@theme/Mermaid';
 | :--       | :--         | :--           
 | **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
-| **referer**         | string          | Full URL to HTTP referrer of the current page.
+| **referrer**         | string          | Previous URL that the user visited before the event.
 | **user_agent**      | string          | User-agent of the agent that sent the event.
 | **remote_address**  | string          | (public) IP address of the agent that sent the event.
 
