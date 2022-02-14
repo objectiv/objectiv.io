@@ -2,16 +2,9 @@ name: build-website
 
 on:
   push:
-    secrets:
-      SFTP_URL:
-        required: true
-      SFTP_USERNAME:
-        required: true
-      SFTP_PASSWORD:
-        required: true
-      SFTP_PUBKEY:
-        required: true
-
+    branches:
+      - 'main'
+      
 jobs:
   build-website:
     runs-on: ubuntu-latest
