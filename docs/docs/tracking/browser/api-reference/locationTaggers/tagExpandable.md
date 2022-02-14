@@ -14,7 +14,7 @@ tagExpandable = (parameters: {
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -23,7 +23,6 @@ tagExpandable = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackPressEvent](/tracking/browser/api-reference/eventTrackers/trackPressEvent.md)
 - [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md)
 - [trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md)
 
