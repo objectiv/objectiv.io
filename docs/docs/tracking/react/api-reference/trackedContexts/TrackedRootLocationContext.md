@@ -22,7 +22,7 @@ If you need RootLocationContextFromURLPlugin to track a different url slug, sear
 
 When reconfiguring the RootLocationContextFromURLPlugin is not a viable option, the Plugin should be removed before using this Location Tagger to instrument roots manually.
 
-- Check out [this guide](/#TODO) for some examples.
+- Check out [this guide](/tracking/react/how-to-guides/configuring-root-locations.md) for some examples.
 :::
 
 ## Parameters
