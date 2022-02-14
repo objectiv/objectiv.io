@@ -124,6 +124,6 @@ Used to configure client-side validation.
 
 
 ### options.validate.locationUniqueness
-Sometimes the same piece of UI can have mutually exclusive variants. Eg: a menu switching to its mobile version via CSS.
+Sometimes the same piece of UI can have mutually exclusive variants, e.g. a menu switching to its mobile version via CSS.
 
 In those cases uniqueness checking can be disabled setting `validate.locationUniqueness` to false.
