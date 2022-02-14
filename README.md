@@ -57,13 +57,13 @@ export OBJECTIV_ENVIRONMENT='docker'
 The configs for the environments are in their respectiv dotenv files. eg. production settings are in `.env.production`. 
 Both the website and docs (being separate Docusaurus instances) have their own set of config files.
 
-Then to build:
-
-```console
-yarn build
+### Building in a docker image
+To do a full build of docs and website, inside a Node docker image run:
+```bash
+make build-docker-build-image
 ```
-This command generates static content into the `build` directory and can be served using any static contents 
-hosting service.
+This command generates a docker images containing static builds for both website and docs, for the environment(s) set 
+in OBJECTIV_ENVIRONMENT. By default, this is both staging and production.
 
 
 ## Building the docker image
@@ -71,7 +71,8 @@ hosting service.
 It's also possible to build a docker image, that can run the website + docs, using a built-in instance of apache. Building
 this is fairly easy, using `make`:
 ```bash
-make build-docker-website
+# this builds a runnable docker image, using the latest dockerized build
+make build-docker-website-image
 ```
 This will first build the website and docs (with .env.docker config), and then copy them into a docker image. The image
 can then be run:
@@ -97,6 +98,17 @@ The website is hosted on TransIP. To deploy, observe the following steps:
 * Verify the build from staging (https://staging.objectiv.io)
 * Create a build for production (OBJECTIV_ENVIRONMENT=production)
 * Upload the contents of the build folder to production on TransIP
+
+There is a GitHub action, to automate all of this. To run that manually, either use `act`, or do the following:
+to deploy: (make sure to first provision the appropriate environment variables for SFTP)
+```bash
+make build-docker-deploy-image
+docker run -e SFTP_URL \
+    -e SFTP_USERNAME \
+    -e SFTP_PASSWORD \
+    -e SFTP_PUBKEY  \
+    objectiv/website-deploy deploy.sh
+```
 
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
