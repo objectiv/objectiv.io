@@ -6,7 +6,7 @@ The `options` object parameter allows to override the default automatic tracking
 | :--             | :--
 | trackClicks     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
 | trackBlurs      | `boolean`
-| trackVisibility | `{ mode: 'auto' }` \| `{ mode: 'manual': isVisible: boolean }`
+| trackVisibility | `boolean` \| `{ mode: 'auto' }` \| `{ mode: 'manual': isVisible: boolean }`
 | parent          | `TagLocationReturnValue`
 | validate        | `{ locationUniqueness: bolean }`
 
@@ -65,8 +65,16 @@ Used to customize whether to track [trackHiddenEventEvent](/tracking/browser/api
 Either [trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) are triggered when [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
-trackVisibility = {
-  mode: 'auto'
+options: { 
+  trackVisibility: true
+};
+
+// or
+
+options: {
+  trackVisibility = {
+    mode: 'auto'
+  }
 }
 ```
 
@@ -74,9 +82,18 @@ trackVisibility = {
 Either [trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) or [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) are triggered whenever the `isVisible` boolean state attribute changes.
 
 ```js
-trackVisibility = {
-  mode: 'manual',
-  isVisible: boolean
+options: {
+  trackVisibility = {
+    mode: 'manual',
+    isVisible: boolean
+  }
+}
+```
+
+### Disable automatic Visibility tracking
+```js
+options: {
+  trackVisibility = false
 }
 ```
 
@@ -107,6 +124,6 @@ Used to configure client-side validation.
 
 
 ### options.validate.locationUniqueness
-Sometimes the same piece of UI can have mutually exclusive variants. Eg: a menu switching to its mobile version via CSS.
+Sometimes the same piece of UI can have mutually exclusive variants, e.g. a menu switching to its mobile version via CSS.
 
 In those cases uniqueness checking can be disabled setting `validate.locationUniqueness` to false.

@@ -15,7 +15,7 @@ Under normal circumstances there's no need to use this context, since [ObjectivP
 
 The main use case for adding another TrackingContextProvider is to reconfigure or swap the ReactTracker instance with a new one and/or to initialize the LocationStack for a branch of Components. 
 
-This may be necessary for utilizing different configurations, eg: for privacy reasons. 
+This may be necessary for utilizing different configurations, e.g. for privacy reasons. 
 :::
 
 ## Parameters

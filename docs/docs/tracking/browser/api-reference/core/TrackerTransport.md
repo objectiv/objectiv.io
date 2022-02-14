@@ -59,7 +59,7 @@ new TrackerTransportGroup({
 ### TrackerTransportSwitch
 Forwards received TransportableEvents to the first of its usable Transports.
 
-This allows to implement preference logic between similar Transports. Eg. Fetch and XMLHttpRequest.
+This allows to implement preference logic between similar Transports, e.g. Fetch and XMLHttpRequest.
 
 ```typescript
 new TrackerTransportSwitch({

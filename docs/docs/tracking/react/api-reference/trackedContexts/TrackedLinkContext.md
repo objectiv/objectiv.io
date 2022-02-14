@@ -48,7 +48,7 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
   Privacy
 </TrackedLinkContext>
 
-// Whenever inferring 'id' is not possible, eg: children without text, a `title` can be specified
+// Whenever inferring 'id' is not possible, e.g. children without text, a `title` can be specified
 <TrackedLinkContext Component={'a'} href={'/privacy'} title={'privacy'}>
   <img src="/lock.jpg"/>
 </TrackedLinkContext>
