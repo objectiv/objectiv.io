@@ -2,8 +2,6 @@ name: build-website
 
 on:
   push:
-    branches:
-      - 'main'
     secrets:
       SFTP_URL:
         required: true
