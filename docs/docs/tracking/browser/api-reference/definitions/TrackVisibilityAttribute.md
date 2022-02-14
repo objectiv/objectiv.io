@@ -5,8 +5,14 @@ The definition of [TaggingAttribute.trackVisibility](/tracking/browser/api-refer
 Supports two modes currently. 
 
 ```jsx
-type TrackClicksAttribute = { mode: 'auto' } | { mode: 'manual', isVisible: boolean };
+type TrackVisibilityAttribute = boolean | { mode: 'auto' } | { mode: 'manual', isVisible: boolean };
 ```
+
+## 'true'
+Shorthand for Mode: auto.
+
+## 'false'
+Disables automatic visibility tracking.
 
 ## Mode: auto
 Will trigger Visibility Events based on DOM mutations.

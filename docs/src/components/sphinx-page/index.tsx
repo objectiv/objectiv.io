@@ -225,7 +225,7 @@ const SphinxPage = (props) => {
                             // move ID to the actual heading
                             section.id = '_' + originalId;
                             headings[0].id = originalId;
-                            headings[0].className = "sphinxAnchor";
+                            headings[0].className = "sphinxAnchor anchor";
 
                             // stop the loop if we are successful
                             return false;

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Tagging Locations
@@ -59,7 +59,7 @@ Think of reusable components for example.
 See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-locations) for an explanation 
 of how Sections can be tagged to make Events unique without having to assign a unique identifier to each.
 
-An example for Angular:
+An example:
 ```html
 <div [tagContent]="{ id: 'layout' }">
   <div [tagContent]="{ id: 'homepage-hero' }">
@@ -70,5 +70,19 @@ An example for Angular:
       <a [tagLink]="{ id: 'my-link', href: '/link2'}" href="/link2">Link 2</a>
     </div>
   </div>
+</div>
+```
+
+
+## makeIdFromString
+When using Location Taggers, especially in generic components, it's likely to have to use dynamic data to populate the id attribute.
+
+AngularTracker comes with a `makeIdFromString` [PipeFilter](https://angular.io/guide/pipes).  
+
+In the following example a wrapper `div` will render multiple `button` elements. We make identifiers for PressableContext by piping `makeIdFromString` to `button.text`:
+
+```html
+<div *ngFor="let button of buttons">
+  <button [tagPressable]="{ id: button.text | makeIdFromString }">{{ button.text }}</button>
 </div>
 ```

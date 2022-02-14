@@ -18,7 +18,7 @@ Used for logging messages and, in general, to uniquely identify this plugin.
 ```typescript
 isUsable(): boolean
 ```
-Should return if the TrackerPlugin can be used. Eg: a browser based plugin may want to return `false` during SSR.
+Should return if the TrackerPlugin can be used, e.g. a browser based plugin may want to return `false` during SSR.
 
 ## Lifecycle
 Plugins may implement lifecycle methods. These receive as parameter the Tracker's contexts.
