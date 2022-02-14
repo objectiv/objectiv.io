@@ -34,19 +34,15 @@ export default function Home() {
               <VimeoPlayer id="2-minute-video" videoId="670857141" />
             </div>
             <img
-                className={clsx(styles.objectivIn2Minutes)}
-                src={useBaseUrl("img/header-2-minutes.svg")}
-                alt="Objectiv in 2 minutes" />
-            <div className={clsx(styles.objectivInPlainEnglish)}>
-              <div className={clsx(styles.video, styles.plainEnglishVideo)}>
-                <VimeoPlayer id="plain-english-video" videoId="675885649" />
-              </div>
-              <div className={clsx(styles.plainEnglishIntro)}>
-                <strong>Not a Data Scientist?</strong>
-                <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
-                  explains the what &amp; why of Objectiv in plain English.</p>
-              </div>
-            </div>
+              className={clsx(styles.objectivIn2Minutes)}
+              src={useBaseUrl("img/header-2-minutes.svg")}
+              alt="Objectiv in 2 minutes" />
+            <p>Not a data scientist? Check out Vincent explaining&nbsp;
+              <TrackedLink 
+                to="#objectiv-in-plain-english"
+                target="_self">
+                Objectiv in plain English
+              </TrackedLink> (2min video).</p>
           </div>
         </header>
 
@@ -271,8 +267,20 @@ export default function Home() {
             </TrackedDiv>
           </div>          
 
-          <footer>
-            <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
+          <footer className={clsx("container", styles.contentContainer)}>
+            <TrackedDiv id={'objectiv-in-plain-english'} className={clsx(styles.objectivInPlainEnglish)}>
+              <div id="objectiv-in-plain-english" className={clsx(styles.video, styles.plainEnglishVideo)}>
+                <VimeoPlayer id="plain-english-video" videoId="675885649" />
+              </div>
+
+              <div className={clsx(styles.plainEnglishIntro)}>
+                <strong>Not a Data Scientist?</strong>
+                <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
+                  explains the what &amp; why of Objectiv in plain English.</p>
+              </div>
+            </TrackedDiv>
+
+            <TrackedDiv id={'slack'}>
               <h2>Objectiv is open source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink

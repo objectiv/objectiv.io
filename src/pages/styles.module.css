@@ -237,9 +237,13 @@ footer h2 {
   overflow: hidden;
 }
 
+.objectivIn2Minutes {
+  margin-bottom: 30px;
+}
+
 .objectivInPlainEnglish {
-  margin: 64px 0 40px 0;
-  background: #F7FDFF;
+  margin: 80px 0;
+  background: #fff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* 0px 4px 4px rgba(0, 0, 0, 0.25); */
   display: flex;
   flex-direction: row;
