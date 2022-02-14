@@ -15,7 +15,7 @@ Global Contexts add general information to an [Event](/taxonomy/reference/events
         AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
         AbstractGlobalContext --> ApplicationContext;
         AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
-        AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
+        AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referrer: string<br>user_agent: string<br>remote_address: string</span>"];
         AbstractGlobalContext --> PathContext;
         AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
     class ApplicationContext diagramActive;
