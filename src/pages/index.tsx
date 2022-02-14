@@ -37,7 +37,7 @@ export default function Home() {
               className={clsx(styles.objectivIn2Minutes)}
               src={useBaseUrl("img/header-2-minutes.svg")}
               alt="Objectiv in 2 minutes" />
-            <p>Not a data scientist? Check out Vincent explaining&nbsp;
+            <p>Not a data scientist? Check&nbsp;
               <TrackedLink 
                 to="#objectiv-in-plain-english"
                 target="_self">
