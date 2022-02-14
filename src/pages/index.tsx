@@ -30,13 +30,19 @@ export default function Home() {
             designed for data science <br />
             </h1>
             <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
-            <div className={clsx(styles.productIntroVideo)}>
+            <div className={clsx(styles.video, styles.productIntroVideo)}>
               <VimeoPlayer id="2-minute-video" videoId="670857141" />
             </div>
             <img
-                className={clsx(styles.objectivIn2Minutes)}
-                src={useBaseUrl("img/header-2-minutes.svg")}
-                alt="Objectiv in 2 minutes" />
+              className={clsx(styles.objectivIn2Minutes)}
+              src={useBaseUrl("img/header-2-minutes.svg")}
+              alt="Objectiv in 2 minutes" />
+            <p>Not a data scientist? Check&nbsp;
+              <TrackedLink 
+                to="#objectiv-in-plain-english"
+                target="_self">
+                Objectiv in plain English
+              </TrackedLink> (2min video).</p>
           </div>
         </header>
 
@@ -262,6 +268,20 @@ export default function Home() {
           </div>          
 
           <footer>
+            <div id="objectiv-in-plain-english" className={clsx("container", styles.contentContainer)}>
+              <TrackedDiv id={'objectiv-in-plain-english'} className={clsx(styles.objectivInPlainEnglish)}>
+                <div className={clsx(styles.video, styles.plainEnglishVideo)}>
+                  <VimeoPlayer id="plain-english-video" videoId="675885649" />
+                </div>
+
+                <div className={clsx(styles.plainEnglishIntro)}>
+                  <strong>Not a Data Scientist?</strong>
+                  <p>Models in pipelines? Pandas with notebooks!? Don't worry, Vincent has got you covered and 
+                    explains the what &amp; why of Objectiv in plain English.</p>
+                </div>
+              </TrackedDiv>
+            </div>
+
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>

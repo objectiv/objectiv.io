@@ -158,6 +158,7 @@ footer h2 {
 /**************
   HOMEPAGE 
 ***************/
+
 .heroBanner {
   padding: 40px 0 40px 0;
   text-align: center;
@@ -174,13 +175,6 @@ footer h2 {
   margin: 30px 0 4px 0;
 }
 
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .heroBanner {
-    /* padding: 5rem 2rem; */
-  }
-  
-}
-
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
     padding: 2rem 0 1rem 0;
@@ -191,14 +185,18 @@ footer h2 {
 }
 
 .heroContainer {
-  /* max-width: 850px; */
   max-width: 996px;
+  padding: 0 2px !important;
+}
+@media screen and (max-width: 1024px) {
+  .heroContainer {
+    padding: 0 var(--ifm-spacing-horizontal) !important;
+  }
 }
 
 .heroImage {
   width: 296px;
   height: 192px;
-  /*padding-bottom: 38px;*/
 }
 
 .heroSubTitle {
@@ -206,7 +204,6 @@ footer h2 {
   line-height: 150%;
   margin-top:30px;
   margin-bottom: 40px;
-  /*padding: 0 10%;*/
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
@@ -217,22 +214,86 @@ footer h2 {
   }
 }
 
-.productIntroVideo {
+.video {
   position: relative; 
-  padding-bottom: 58.25%;
   height: 0;
-  margin: 0 auto 50px auto;
-  filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.25));
-  border-radius: 10px !important;
-  overflow: hidden;
+  overflow: show;
 }
-.productIntroVideo iframe {
+.video iframe {
   position: absolute; 
   top: 0; 
   left: 0; 
   width: 100%; 
   height: 100%;
   margin: 0;
+  border: none;
+}
+
+.productIntroVideo {
+  margin: 0 auto 50px auto;
+  padding-bottom: 58.25%;
+  filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.objectivIn2Minutes {
+  margin-bottom: 30px;
+}
+
+.objectivInPlainEnglish {
+  margin: 60px 0 80px 0;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  font-size: 18px;
+}
+.objectivInPlainEnglish .plainEnglishVideo {
+  flex: 0 0 auto;
+  min-width: 320px;
+  height: auto; /* needed to stretch the box to the video height */
+  box-shadow: none;
+}
+@media screen and (min-width: 966px) { /* desktop */
+  .objectivInPlainEnglish .plainEnglishVideo {
+    background: #000; /* For some reason Vimeos shrink when played, so this makes it look slightly better */
+  }
+}
+
+.objectivInPlainEnglish .plainEnglishIntro {
+  flex: 1;
+  padding: 0 45px;
+}
+.objectivInPlainEnglish p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .objectivInPlainEnglish {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .objectivInPlainEnglish .plainEnglishVideo {
+    flex: none;
+    width: 100%;
+    padding-bottom: 58.25%;
+    height: 0;
+  }
+  .objectivInPlainEnglish .plainEnglishIntro {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .objectivInPlainEnglish {
+    margin-top: 30px;
+  }
+  .objectivInPlainEnglish .plainEnglishIntro {
+    padding: 30px;
+  }
 }
 
 .theProduct {
