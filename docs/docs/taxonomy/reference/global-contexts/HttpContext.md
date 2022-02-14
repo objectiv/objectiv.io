@@ -22,7 +22,7 @@ import Mermaid from '@theme/Mermaid';
 | :--       | :--         | :--           
 | **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
-| **referrer**         | string          | The URL that the browser sets in the referer header, in the request that loaded the current page.
+| **referrer**         | string          | The URL that the browser sets in the referrer header, in the request that loaded the current page.
 | **user_agent**      | string          | User-agent of the agent that sent the event.
 | **remote_address**  | string          | (public) IP address of the agent that sent the event.
 
