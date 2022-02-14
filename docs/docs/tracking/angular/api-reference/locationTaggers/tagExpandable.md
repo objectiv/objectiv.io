@@ -18,7 +18,7 @@ This attribute directive builds on top of [BrowserTracker:tagExpandable](/tracki
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | options | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -27,7 +27,6 @@ This attribute directive builds on top of [BrowserTracker:tagExpandable](/tracki
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [BrowserTracker:trackPressEvent](/tracking/browser/api-reference/eventTrackers/trackPressEvent.md)
 - [BrowserTracker:trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md)
 - [BrowserTracker:trackHiddenEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md)
 
