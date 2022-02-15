@@ -12,6 +12,12 @@ TrackedContentContext: (props: {
 }) => ReactElement
 ```
 
+:::caution
+As a limitation of the current TypeScript definitions, Tracked Components are only compatible with HTMLElements or HTMLElement-like components.
+
+We are currently working on improving these definitions to enable support for any React Component. Meanwhile, if you need to track Components with definitions that do not match valid HTML elements, take a look at our guide on how to write your own [Custom Tracked Components](/tracking/react/how-to-guides/custom-components.md).
+:::
+
 ## Parameters
 |          |               | type                                 | default value |
 |:--------:|:--------------|:-------------------------------------|:--------------|
@@ -36,9 +42,6 @@ import { TrackedContentContext } from '@objectiv/tracker-react';
 <TrackedContentContext Component={'div'} id={'content'}>
   ...
   <TrackedContentContext Component={'p'} id={'intro'}>
-    ...
-  </TrackedContentContext>
-  <TrackedContentContext Component={BoxComponent} id={'details'}>
     ...
   </TrackedContentContext>
 </TrackedContentContext>
