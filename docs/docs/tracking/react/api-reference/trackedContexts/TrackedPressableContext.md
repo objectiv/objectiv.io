@@ -14,6 +14,12 @@ TrackedPressableContext: (props: {
 }) => ReactElement
 ```
 
+:::caution
+As a limitation of the current TypeScript definitions, Tracked Components are only compatible with HTMLElements or HTMLElement-like components.
+
+We are currently working on improving these definitions to enable support for any React Component. Meanwhile, if you need to track Components with definitions that do not match valid HTML elements, take a look at our guide on how to write your own [Custom Tracked Components](/tracking/react/how-to-guides/custom-components.md).
+:::
+
 ## Parameters
 |          |                   | type                                 | default value                       |
 |:--------:|:------------------|:-------------------------------------|:------------------------------------|
@@ -43,12 +49,12 @@ import { TrackedPressableContext } from '@objectiv/tracker-react';
 </TrackedPressableContext>
 
 // Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified
-<TrackedPressableContext Component={'a'} onClick={ () => doIt() } title={'Do it'}>
+<TrackedPressableContext Component={'button'} onClick={ () => doIt() } title={'Do it'}>
   <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 
 // Or just a manual `id`, either one will do the job
-<TrackedPressableContext Component={'a'} onClick={ () => doIt() } id={'do-it'}>
+<TrackedPressableContext Component={'button'} onClick={ () => doIt() } id={'do-it'}>
   <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 ```
