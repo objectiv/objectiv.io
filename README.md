@@ -113,5 +113,14 @@ docker run -e SFTP_URL \
     objectiv/website-deploy deploy.sh
 ```
 
+Alternatively, it's also possible to extract the build artefacts from the docker image, using the deployment image:
+```bash
+# first build deployment image
+make build-docker-deploy-image
+
+# then extract into dir "extract"
+docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
+```
+
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).
