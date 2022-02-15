@@ -31,7 +31,7 @@ To reconfigure the tracker Plugins we have to make a new list of them. To do so,
 3. Filter out RootLocationContextFromURLPlugin and replace it with a new customized instance. 
 
 ```ts
-import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url'
+import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
 import { makeDefaultPluginsList } from "@objectiv/tracker-browser";
 
 const trackerConfig = {
@@ -74,7 +74,7 @@ These are just examples. Actual implementations should perform a lot more valida
 
 ### Website running in sub-folder
 Example URL: `http://www.website.dev/slug1/slug2`.   
-Expected RootLocationContext id: `slug1`.  
+Expected RootLocationContext id: `slug2`.  
 
 ```ts
 idFactoryFunction: () => {
