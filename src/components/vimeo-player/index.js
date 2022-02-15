@@ -30,6 +30,7 @@ function VimeoPlayer({
                   video={videoId}
                   dnt={true}
                   app_id='58479'
+                  className="objectivPlayer"
                   onReady={() => trackMediaLoadEvent(trackingContext)}
                   onPlay={() => trackMediaStartEvent(trackingContext)}
                   onPause={() => trackMediaPauseEvent(trackingContext)}

@@ -9,7 +9,7 @@ Since Angular Tracker is a small wrapper around Browser Tracker, the way to cust
 The only difference is how to pass the new Plugins to the Tracker. Here is a full example:
 
 ```ts
-import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url'
+import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
 import { ObjectivTrackerModule, makeDefaultPluginsList } from '@objectiv/tracker-angular';
 
 const trackerConfig = {
