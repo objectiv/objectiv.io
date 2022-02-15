@@ -113,6 +113,17 @@ docker run -e SFTP_URL \
     objectiv/website-deploy deploy.sh
 ```
 
+The deployment script automatically does the following:
+- upload the staging build to /tmp/staging_
+- upload the production build to /tmp/production_
+- remove the old/archived staging build in /tmp/staging_old
+- move the old staging deployment to /tmp/staging_old
+- move the newly uploaded staging build into /subdomains/staging
+
+To set the production build live, simply move it from /tmp/production_ to /www
+
+
+### Manual deployment / extraction
 Alternatively, it's also possible to extract the build artefacts from the docker image, using the deployment image:
 ```bash
 # first build deployment image
