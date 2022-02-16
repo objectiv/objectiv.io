@@ -1,4 +1,5 @@
-FROM objectiv/website-build
+ARG TAG=latest
+FROM objectiv/website-build:${TAG}
 
 
 COPY docker/deploy/deploy.sh /usr/local/bin
