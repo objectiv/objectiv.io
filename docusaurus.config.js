@@ -41,7 +41,7 @@ const config = {
           blogDescription: 'Objectiv Blog',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 0,
-          postsPerPage: 1,
+          postsPerPage: 10,
           showReadingTime: false,
           feedOptions: {
             type: 'all',

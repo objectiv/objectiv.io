@@ -365,10 +365,6 @@ p, .markdown p {
   color:rgb(100, 100, 100);
 }
 
-.blog-list-page article footer div:first-child { /* tags */
-  display: none;
-}
-
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
   text-align: left;  
   color: var(--ifm-font-color-base);
