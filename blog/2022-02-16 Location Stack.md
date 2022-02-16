@@ -46,7 +46,7 @@ It’s also impossible to quickly select all the events that came from a specifi
 ## How Objectiv handles events
 
 Here is an example of the same event, but this time collected by Objectiv’s tracker:
-```
+```json
 {
  "_type": "PressEvent",
  "location_stack": [
@@ -86,7 +86,7 @@ We ask the front-end developer to instrument the interactions (e.g. clicks on li
 
 Locations can be nested to build a logical model into your product that the tracker uses to identify exactly where events are triggered:
 
-```
+```tsx
 import { TrackedNav, TrackedAnchor } from "@objectiv/tracker-react";
 import TrackedSideBarCategory from './components/sidebar-category';
  
@@ -110,7 +110,7 @@ export default function sidebarMenu() {
 :::info
 This example shows you how you can use wrapped components to map logical UI sections for a React-based application, such as our Docs. 
 
-Wherever possible, Objectiv tries to automatically generate the IDs based on the attributes of the element that’s being tracked. Objectiv also supports other platforms and frameworks. Check out our docs for more information.
+Wherever possible, Objectiv tries to automatically generate the IDs based on the attributes of the element that’s being tracked. Objectiv also supports other platforms and frameworks. Check out our [docs](/docs/tracking/) for more information.
 :::
 
 While this approach requires a bit more work to set up, capturing this hierarchical stack of sections serves another important purpose: **slicing**.
@@ -121,18 +121,18 @@ While this approach requires a bit more work to set up, capturing this hierarchi
 As your dataset now carries the logical model of your product, you can use it to slice events on a very granular level without the need to do a ton of manual mapping first.
 
 For the sake of demonstration, let’s assume we’re specifically interested in user behavior within all navigation elements. With our modeling library, you can get that from the data by running a single command from your Jupyter notebook: 
-``` 
+```python
 location_stack.json[{ "_type": "NavigationContext"}:]
 ```
 This results in a clean dataframe with all events generated inside any navigation component in your product. With that, you can straight on build further analyses.
 
 Or say you want to look at user behavior on a more specific level, to look at interactions with just the sidebar navigation in the docs:
-```
+```python
 location_stack.json[{"id": "docs-sidebar", "_type": "NavigationContext"}:]
 ```
 ## Validation
 
-A third benefit of mapping the logical sections of your product is that it allows you to validate your instrumentation in real-time while you’re developing. We will discuss the topic of validation in an upcoming blogpost. 
+A third benefit of mapping the logical sections of your product is that it allows you to validate your instrumentation in real-time while you’re developing. We will discuss the topic of validation in an upcoming blog post. 
 
 ## Summary
 
@@ -141,4 +141,4 @@ So in short, by mapping the logical sections of your product in your instrumenta
 * Fine grained slicing control without manual mapping at model-time
 * Debuggable analytics instrumentation at compile-time
 
-We hope you're as excited about our approach to event collection as we are. Give Objectiv a try and let us know what you think. 
+We hope you're as excited about our approach to event collection as we are. [Give Objectiv a try](/docs/home/quickstart-guide) and let us know what you think. 
