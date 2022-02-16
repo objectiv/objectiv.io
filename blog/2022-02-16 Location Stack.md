@@ -8,6 +8,7 @@ authors: bobjansen
 
 <head>
   <meta property="og:title" content="Open-source product analytics, designed for data science" />
+  <meta name="image" property="og:image" content="/img/open-graph/og-sherlock.svg" />
 </head>
 
 import BlogImage from '@site/src/components/blog-image'
