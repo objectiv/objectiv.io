@@ -2,7 +2,7 @@
 title: Why Objectiv captures the logical structure of your product inside your dataset
 description: As part of our mission to enable effective data science in the product analytics workflow, we’ve completely redesigned the analytics tracker from scratch. One of its unique features is the ability to capture exactly where in your product an event was triggered. This information is stored in the event itself. Today, we want to show you how that works and why it matters.
 slug: location-stack
-image: /img/open-graph/og-sherlock.svg
+image: /img/open-graph/og-sherlock.png
 authors: bobjansen
 ---
 
