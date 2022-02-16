@@ -32,7 +32,7 @@ To demonstrate why that’s useful, let’s take a look at a typical event that 
 This fictional event relates to users clicking this link in our Docs:
 
 <BlogImage url='img/blog/link_example.png'
-  caption='The user clicks on Overview in the Dataframe section of the API reference '/>
+  caption="A click on 'Overview' in the DataFrame section of the API reference " />
 
 Now, with just the raw data to go by, you would have a hard time identifying exactly where this event came from. You would need to have access to the source code and UI of the exact version this event was collected from.
 
@@ -141,4 +141,7 @@ So in short, by mapping the logical sections of your product in your instrumenta
 * Fine grained slicing control without manual mapping at model-time
 * Debuggable analytics instrumentation at compile-time
 
-We hope you're as excited about our approach to event collection as we are. [Give Objectiv a try](/docs/home/quickstart-guide) and let us know what you think. 
+We hope you're as excited about our approach to event collection as we are. [Give Objectiv a try](/docs/home/quickstart-guide) and let us know what you think. For a quick rundown of what Objectiv can do, check out our 2 minute video below.
+
+<VimeoPlayer videoId='670857141' id='objectiv-in-2-minutes' caption='Objectiv in 2 minutes' />
+
