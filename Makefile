@@ -2,7 +2,9 @@
 
 
 OBJECTIV_ENVIRONMENT := "staging production"
-TAG ?= latest
+
+# default tag is current date
+TAG ?= $(shell date +%Y%M%d)
 
 all: build-docker-website-image
 
