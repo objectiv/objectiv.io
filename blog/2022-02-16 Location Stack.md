@@ -124,12 +124,11 @@ For the sake of demonstration, let’s assume we’re specifically interested in
 ``` 
 location_stack.json[{ "_type": "NavigationContext"}:]
 ```
-This results in a clean dataframe with all events generated inside any navigation component in your product. With that, you can straight on build further analysis.
+This results in a clean dataframe with all events generated inside any navigation component in your product. With that, you can straight on build further analyses.
 
 Or say you want to look at user behavior on a more specific level, to look at interactions with just the sidebar navigation in the docs:
 ```
-location_stack.json[{"id": "docs-sidebar", "_type":
-	"NavigationContext"}:]
+location_stack.json[{"id": "docs-sidebar", "_type": "NavigationContext"}:]
 ```
 ## Validation
 
