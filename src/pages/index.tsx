@@ -49,7 +49,8 @@ export default function Home() {
               <h2>You can get a lot more from your product analytics data <br />
               when you add data science in the mix.</h2>
               <p>Being able to do advanced analyses on your product data, such as user clustering, 
-                recommendations &amp; churn prediction, unlocks a level of product opportunities that you 
+                recommendations &amp; churn <br />
+                prediction, unlocks a level of product opportunities that you 
                 wouldn't be able to get from your BI dashboard.</p>
               <img
                 className={clsx(styles.quicklyPullThisData)}
@@ -58,10 +59,10 @@ export default function Home() {
               />              
               <p>
                 <strong>The current generation of product analytics tools is not designed with data science 
-                  in mind.</strong><br />
+                  in mind. </strong><br />
                 The data they collect needs a lot of cleaning and transformation before it can be used for 
-                modeling, and models typically cannot be reused because there is no common way to structure 
-                data.</p>
+                modeling, <br />
+                and models typically cannot be reused because there is no common way to structure data.</p>
               <img
                 className={clsx(styles.meetObjectiv)}
                 src={useBaseUrl("img/meet-objectiv.svg")}
