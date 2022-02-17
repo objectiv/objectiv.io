@@ -1,3 +1,4 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { TrackedDiv } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
@@ -48,7 +49,7 @@ export default function Jobs() {
                   site
                 </TrackedLink>,&nbsp;
                 <TrackedLink
-                  to={url + "/docs/"}
+                  to={useBaseUrl("/docs/", {absolute: true})}
                   autoAddBaseUrl={true}
                   waitUntilTracked={true}
                   target="_self"
@@ -69,11 +70,11 @@ export default function Jobs() {
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The role</h2>
             <p>The key part of the project that is directly used by data scientists, is the&nbsp;
-              <TrackedLink to={'https://objectiv.io/docs/modeling/'}>
+              <TrackedLink to={useBaseUrl("/docs/modeling/", {absolute: true})}>
                 open model hub
               </TrackedLink>.
               This is a collection of pre-built models that can run out of the box on data collected using the&nbsp;
-              <TrackedLink to={'https://objectiv.io/docs/taxonomy/'}>
+              <TrackedLink to={useBaseUrl("/docs/taxonomy/", {absolute: true})}>
                 open analytics taxonomy
               </TrackedLink>.
               </p>
