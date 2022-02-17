@@ -7,7 +7,7 @@ authors: bobjansen
 ---
 
 <head>
-  <meta property="og:title" content="Open-source product analytics, designed for data science" />
+  <meta property="og:title" content="Why Objectiv captures the logical structure of your product inside your dataset" />
 </head>
 
 import BlogImage from '@site/src/components/blog-image'
