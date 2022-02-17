@@ -136,7 +136,7 @@ function BlogPostItem(props: Props): JSX.Element {
             more data stores and make it easier to integrate with your existing stack. We also want to expand 
             the selection of models that's included.</p>
           <p>
-            <TrackedLink to="https://objectiv.io/docs/quickstart-guide">Quickstart Guide</TrackedLink> - Try 
+            <TrackedLink to="https://objectiv.io/docs/home/quickstart-guide/">Quickstart Guide</TrackedLink> - Try 
               Objectiv on your local machine (takes 5 minutes)<br />
             <TrackedLink to="https://github.com/objectiv/objectiv-analytics">Objectiv on Github</TrackedLink> 
               &nbsp;- Check out the project and star us for future reference<br />
