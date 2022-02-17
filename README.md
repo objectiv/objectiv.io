@@ -89,9 +89,14 @@ The website should then be available on http://localhost:8080/
 To verify the links are all OK, set the OBJECTIV_ENVIRONMENT environment variable to 'docker', and run the following:
 ```asciidoc
 yarn add broken-link-checker
-make clean check-broken-links
+make check-broken-links
 ```
 This will build and spin up a docker container running a docker build of the website, and check all internal links.
+
+To verify if the links are all OK on staging, run:
+```
+make check-broken-links-staging
+```
 
 ## Deployment
 
