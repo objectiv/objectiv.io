@@ -263,6 +263,10 @@ p, .markdown p {
   margin-right: 0.5em;
   line-height: 14px;
 }
+.alert a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
 
 .footnotes hr {
   border: 0;
@@ -340,7 +344,7 @@ p, .markdown p {
   }
 }
 
-.blog-post-page article p {
+.blog-post-page article {
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
@@ -363,10 +367,6 @@ p, .markdown p {
 .blog-list-page article header .margin-vert--md, .blog-post-page article header .margin-vert--md { /* blog post date */
   margin-top: 0 !important;
   color:rgb(100, 100, 100);
-}
-
-.blog-list-page article footer div:first-child { /* tags */
-  display: none;
 }
 
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
