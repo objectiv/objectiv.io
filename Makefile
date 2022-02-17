@@ -4,7 +4,7 @@
 OBJECTIV_ENVIRONMENT := "staging production"
 
 # default tag is current date
-TAG ?= $(shell date +%Y%M%d)
+TAG ?= $(shell date +%Y%m%d)
 
 all: build-docker-website-image
 
@@ -47,13 +47,14 @@ check-broken-links-staging:
 
 build-docker-website-image-local: OBJECTIV_ENVIRONMENT="docker"
 build-docker-website-image-local: build-docker-build-image build-docker-deploy-image
-	docker run -e OBJECTIV_ENVIRONMENT=docker -v ${PWD}/output:/extract -t objectiv/website-deploy:${TAG} extract.sh
-	docker build --no-cache --t objectiv/website:${TAG} -f docker/website/Dockerfile .
+	docker run --rm -i -e OBJECTIV_ENVIRONMENT=docker -v ${PWD}/output:/extract -t objectiv/website-deploy:${TAG} extract.sh
+	docker build --no-cache -t objectiv/website:${TAG} -f docker/website/Dockerfile .
 
 # spin up the website container, and check all _internal_ links for broken ones
 # external links are skipped
 check-broken-links: build-docker-website-image-local
 	# spin up website
+	yarn add broken-link-checker
 	docker run --rm -d -p 127.0.0.1:8080:80 --name objectiv_website_broken_link_check objectiv/website:${TAG}
 	./node_modules/.bin/blc --recursive --exclude-external --ordered --host-requests 10 http://localhost:8080
 	docker stop objectiv_website_broken_link_check
