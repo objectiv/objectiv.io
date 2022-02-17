@@ -70,11 +70,21 @@ export default function Jobs() {
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The role</h2>
             <p>The key part of the project that is directly used by data scientists, is the&nbsp;
-              <TrackedLink to={useBaseUrl("/docs/modeling/", {absolute: true})}>
+              <TrackedLink
+                to={useBaseUrl("/docs/modeling/", {absolute: true})}
+                autoAddBaseUrl={true}
+                waitUntilTracked={true}
+                target="_self"
+              >
                 open model hub
               </TrackedLink>.
               This is a collection of pre-built models that can run out of the box on data collected using the&nbsp;
-              <TrackedLink to={useBaseUrl("/docs/taxonomy/", {absolute: true})}>
+              <TrackedLink
+                to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                autoAddBaseUrl={true}
+                waitUntilTracked={true}
+                target="_self"
+              >
                 open analytics taxonomy
               </TrackedLink>.
               </p>
