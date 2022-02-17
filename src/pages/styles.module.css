@@ -235,6 +235,34 @@ footer h2 {
   margin: 0;
 }
 
+.whyObjectiv {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.whyObjectiv h2 {
+  font-size: 28px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .whyObjectiv h2 br {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .whyObjectiv h2 {
+    font-size: 24px;
+  }
+}
+
+.whyObjectiv img.quicklyPullThisData {
+  margin: 40px auto 70px auto;
+}
+
+.whyObjectiv img.meetObjectiv {
+  margin: 80px auto 0px 0;
+}
+
 .theProduct {
   text-align: center;
   padding: 60px 0 28px 0;

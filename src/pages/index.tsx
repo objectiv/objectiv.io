@@ -42,13 +42,43 @@ export default function Home() {
 
         <main className={clsx('body-large')}>
 
+          <div className={clsx(styles.pageSectionLightBlue)}>
+            <TrackedDiv 
+                id={'why-objectiv'} 
+                className={clsx("container", styles.contentContainer, styles.whyObjectiv)}>
+              <h2>You can get a lot more from your product analytics data <br />
+              when you add data science in the mix.</h2>
+              <p>Being able to do advanced analyses on your product data, such as user clustering, 
+                recommendations &amp; churn prediction, unlocks a level of product opportunities that you 
+                wouldn't be able to get from your BI dashboard.</p>
+              <img
+                className={clsx(styles.quicklyPullThisData)}
+                src={useBaseUrl("img/quickly-pull-this-data.svg")}
+                alt="Hey Data Scientist, can you quickly pull this data for me?"
+              />              
+              <p>
+                <strong>The current generation of product analytics tools is not designed with data science 
+                  in mind.</strong><br />
+                The data they collect needs a lot of cleaning and transformation before it can be used for 
+                modeling, and models typically cannot be reused because there is no common way to structure 
+                data.</p>
+              <img
+                className={clsx(styles.meetObjectiv)}
+                src={useBaseUrl("img/meet-objectiv.svg")}
+                alt="Meet Objectiv"
+              />              
+            </TrackedDiv>
+          </div>
+
           <div className={clsx(styles.pageSectionBlue)}>
             <TrackedDiv 
               id={'the-stack'} 
               className={clsx("container", styles.contentContainer, styles.theProduct)}>
               <h2>No tracking plans, data cleaning or transformations required</h2>
-              <p>Objectiv is designed to enable you to skip the typical grunt work. Just open your notebook <br/>
-              and start modeling right away with pandas-like operations that run on the full SQL dataset.</p>
+              <p><strong>Objectiv</strong> has completely redesigned product analytics from scratch to 
+                effectively integrate data science into the workflow. It enables data scientists to skip the 
+                grunt work, open their notebooks and work directly with model ready-data and pre-built models 
+                to <strong>build advanced analyses in minutes, not months</strong>.</p>
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
