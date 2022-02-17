@@ -128,6 +128,7 @@ const config = {
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
+          target: '_self',
           waitUntilTracked: true
         },
         {
@@ -135,6 +136,7 @@ const config = {
           label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
+          target: '_self',
           waitUntilTracked: true
         },
         {
@@ -142,6 +144,7 @@ const config = {
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
+          target: '_self',
           waitUntilTracked: true
         },
         {
@@ -149,6 +152,7 @@ const config = {
           label: 'Contact Us',
           position: 'right',
           className: 'navItem navEmail',
+          target: '_self',
           waitUntilTracked: true
         },
       ],
