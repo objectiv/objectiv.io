@@ -6,10 +6,6 @@ image: /img/open-graph/og-sherlock.png
 authors: bobjansen
 ---
 
-<head>
-  <meta property="og:title" content="Open-source product analytics, designed for data science" />
-</head>
-
 import BlogImage from '@site/src/components/blog-image'
 import VimeoPlayer from '@site/src/components/vimeo-player'
 
