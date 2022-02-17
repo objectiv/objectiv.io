@@ -245,7 +245,7 @@ footer h2 {
   font-size: 28px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .whyObjectiv h2 br {
+  .whyObjectiv br {
     display: none;
   }
 }
