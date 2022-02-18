@@ -50,7 +50,6 @@ export default function Jobs() {
                 </TrackedLink>,&nbsp;
                 <TrackedLink
                   to={useBaseUrl("/docs/", {absolute: true})}
-                  autoAddBaseUrl={true}
                   waitUntilTracked={true}
                   target="_self"
                 >
@@ -72,7 +71,6 @@ export default function Jobs() {
             <p>The key part of the project that is directly used by data scientists, is the&nbsp;
               <TrackedLink
                 to={useBaseUrl("/docs/modeling/", {absolute: true})}
-                autoAddBaseUrl={true}
                 waitUntilTracked={true}
                 target="_self"
               >
@@ -81,7 +79,6 @@ export default function Jobs() {
               This is a collection of pre-built models that can run out of the box on data collected using the&nbsp;
               <TrackedLink
                 to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
-                autoAddBaseUrl={true}
                 waitUntilTracked={true}
                 target="_self"
               >

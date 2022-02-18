@@ -139,7 +139,6 @@ export default function Home() {
                 <p>To learn more about the open analytics taxonomy, check out the Docs.</p>
                 <TrackedLink
                   to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
-                  autoAddBaseUrl={true}
                   waitUntilTracked={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
@@ -250,7 +249,6 @@ export default function Home() {
                 <p>For an overview of all available pre-built models, check out the Docs.</p>
                 <TrackedLink
                   to={useBaseUrl("/docs/modeling/Objectiv/bach_open_taxonomy.ModelHub", {absolute: true})}
-                  autoAddBaseUrl={true}
                   waitUntilTracked={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
@@ -277,7 +275,6 @@ export default function Home() {
               locally run the full Objectiv pipeline dockerized.</p>
               <TrackedLink
                 to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
-                autoAddBaseUrl={true}
                 waitUntilTracked={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
