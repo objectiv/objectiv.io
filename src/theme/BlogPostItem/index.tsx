@@ -26,7 +26,10 @@ import {
   TrackedDiv,
   TrackedContentContext,
   TrackedFooter,
-  makeIdFromString 
+  makeIdFromString, 
+  trackVisibleEvent,
+  useTracker,
+  makeContentContext
 } from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
@@ -80,10 +83,25 @@ function BlogPostItem(props: Props): JSX.Element {
   const tagsExists = tags.length > 0;
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
+  // OBJECTIV: VisibleEvent on blog post load
+  const blogPostId = 'post-' + makeIdFromString(title);
+  if (isBlogPostPage) {
+    const tracker = useTracker();
+    trackVisibleEvent({
+      tracker: tracker, 
+      locationStack: [
+        makeContentContext({ 
+          id: blogPostId
+        })
+      ]
+    });
+  }
+  // END OBJECTIV
+
   return (
     <TrackedContentContext 
       Component={'article'} 
-      id={`post-${makeIdFromString(title)}`}
+      id={blogPostId}
       className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       itemProp="blogPost"
       itemScope
