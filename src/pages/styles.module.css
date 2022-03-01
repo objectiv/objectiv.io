@@ -391,7 +391,7 @@ footer h2 {
 
 /* Section: Skip the gruntwork */
 .skipTheGruntWork .skipTheGruntWorkUSPs {
-  padding-top: 80px;
+  padding-top: 30px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .skipTheGruntWork .skipTheGruntWorkUSPs {
