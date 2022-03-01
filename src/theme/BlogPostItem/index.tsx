@@ -88,7 +88,6 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
     truncated,
     isBlogPostPage = false,
   } = props;
-  console.log(metadata);
   const {
     date,
     formattedDate,
