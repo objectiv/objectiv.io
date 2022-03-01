@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
@@ -24,12 +24,10 @@ import BlogPostAuthors from '@theme/BlogPostAuthors';
 import { 
   TrackedHeader,
   TrackedDiv,
-  TrackedContentContext,
   TrackedFooter,
   makeIdFromString, 
-  trackVisibleEvent,
-  useTracker,
-  makeContentContext
+  useVisibleEventTracker,
+  TrackedContentContext,
 } from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
@@ -54,6 +52,29 @@ function useReadingTimePlural() {
 }
 
 function BlogPostItem(props: Props): JSX.Element {
+  const {
+    metadata,
+    isBlogPostPage
+  } = props;
+  const { title } = metadata;
+  const blogPostId = 'post-' + makeIdFromString(title);
+  return (
+    <TrackedContentContext 
+      Component={'article'} 
+      id={`post-${makeIdFromString(title)}`}
+      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
+      itemProp="blogPost"
+      itemScope
+      itemType="http://schema.org/BlogPosting">
+
+      <BlogPostArticle blogPostId={blogPostId} {...props}>
+      </BlogPostArticle>
+
+    </TrackedContentContext>
+  );
+}
+
+function BlogPostArticle(props, blogPostId): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const { slackJoinLink } = siteConfig?.customFields ?? {};
 
@@ -67,6 +88,7 @@ function BlogPostItem(props: Props): JSX.Element {
     truncated,
     isBlogPostPage = false,
   } = props;
+  console.log(metadata);
   const {
     date,
     formattedDate,
@@ -84,28 +106,16 @@ function BlogPostItem(props: Props): JSX.Element {
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
   // OBJECTIV: VisibleEvent on blog post load
-  const blogPostId = 'post-' + makeIdFromString(title);
-  if (isBlogPostPage) {
-    const tracker = useTracker();
-    trackVisibleEvent({
-      tracker: tracker, 
-      locationStack: [
-        makeContentContext({ 
-          id: blogPostId
-        })
-      ]
-    });
-  }
+  const trackVisibleEvent = useVisibleEventTracker();
+  useEffect(() => {
+    if (isBlogPostPage) {
+      trackVisibleEvent();
+    }
+  }, [blogPostId]);
   // END OBJECTIV
 
   return (
-    <TrackedContentContext 
-      Component={'article'} 
-      id={blogPostId}
-      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
-      itemProp="blogPost"
-      itemScope
-      itemType="http://schema.org/BlogPosting">
+    <>
       <TrackedHeader>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
@@ -212,7 +222,7 @@ function BlogPostItem(props: Props): JSX.Element {
           )}
         </TrackedFooter>
       )}
-    </TrackedContentContext>
+    </>
   );
 }
 
