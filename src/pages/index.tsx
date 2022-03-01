@@ -138,8 +138,7 @@ export default function Home() {
               <div className={clsx(styles.outro)}>
                 <p>To learn more about the open analytics taxonomy, check out the Docs.</p>
                 <TrackedLink
-                  to={url + "/docs/taxonomy/"}
-                  autoAddBaseUrl={true}
+                  to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
                   waitUntilTracked={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
@@ -249,8 +248,7 @@ export default function Home() {
               <div className={clsx(styles.outro)}>
                 <p>For an overview of all available pre-built models, check out the Docs.</p>
                 <TrackedLink
-                  to={url + "/docs/modeling/Objectiv/bach_open_taxonomy.ModelHub"}
-                  autoAddBaseUrl={true}
+                  to={useBaseUrl("/docs/modeling/Objectiv/bach_open_taxonomy.ModelHub", {absolute: true})}
                   waitUntilTracked={true}
                   target="_self"
                   className={clsx("button", styles.ctaButton)}
@@ -276,8 +274,7 @@ export default function Home() {
               <p className={clsx(styles.quickStartOutro)}>Follow the <strong>Quickstart Guide</strong> to 
               locally run the full Objectiv pipeline dockerized.</p>
               <TrackedLink
-                to={url + "/docs/home/quickstart-guide/"}
-                autoAddBaseUrl={true}
+                to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
                 waitUntilTracked={true}
                 target="_self"
                 className={clsx("button", styles.ctaButton)}
