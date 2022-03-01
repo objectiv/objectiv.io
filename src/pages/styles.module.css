@@ -13,7 +13,7 @@
 ***************/
 h2 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 28px;
   margin-bottom: 38px;
 }
 
@@ -32,7 +32,19 @@ table, th, td {
 }
 
 .pageSection {
-  padding: 60px 0 100px 0;
+  padding: 110px 0 100px 0;
+}
+
+.pageSectionDarkGrey {
+  background-color: #333333;
+  color: #fff;
+}
+.pageSectionDarkGrey h2 {
+  color: #fff;
+}
+
+.pageSectionLightGrey {
+  background-color: #FAFAFA;
 }
 
 .pageSectionBlue {
@@ -49,50 +61,32 @@ table, th, td {
 }
 
 @media screen and (max-width: 966px) { /* mobile all */
-  .pageSection, .pageSectionBlue {
-    padding: 50px 0;
+  .pageSection {
+    padding: 100px 0;
   }
 }
-
-.twoColumnItems {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  margin-bottom: -80px; /* Negate the padding from the last row */
-  text-align: left;
-}
-
-.twoColumnItem {
-  flex: 50%;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-  vertical-align: top;
-  padding: 0 20px 80px 0;
-}
-
-.twoColumnItem .twoColumnIcon {
-  min-width: 150px;
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.twoColumnItem img {
-  max-height: 90px;
-}
-
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .twoColumnItem {
-    flex: 100%;
-  }
-}
-
 @media screen and (max-width: 480px) { /* mobile small */
-  .twoColumnItem {
-    display: block;
-    text-align: center;
-    padding-bottom: 60px;
+  .pageSection {
+    padding: 80px 0;
   }
+}
+
+.video {
+  position: relative; 
+  padding-bottom: 58.25%;
+  height: 0;
+  margin: 0 auto 50px auto;
+  filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.video iframe {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  margin: 0;
 }
 
 footer {
@@ -146,20 +140,15 @@ footer h2 {
   background: #fff;
 }
 
-.introText {
-  font-weight: bold;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .introText br {
-    display: none;
-  }
-}
 
 /**************
   HOMEPAGE 
 ***************/
+
+/* Section: Hero */
 .heroBanner {
-  padding: 40px 0 40px 0;
+  background-color: #FEF284;
+  padding: 130px 0 110px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -167,174 +156,66 @@ footer h2 {
 }
 
 .heroTitle {
-  font-family: 'Bungee', serif;
-  font-size: 32px;
+  font-family: Roboto, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
   line-height: 150%;
-  letter-spacing: 0.2em;
-  margin: 30px 0 4px 0;
+  margin: 40px 0 0 0;
 }
 
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroBanner {
-    /* padding: 5rem 2rem; */
+    padding: 90px 0;
   }
-  
+  .heroTitle {
+    margin-left: 5%;
+    margin-right: 5%;
+  }  
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
-    padding: 2rem 0 1rem 0;
+    padding: 50px 0 90px 0;
   }
   .heroTitle {
-    font-size: 24px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 .heroContainer {
-  /* max-width: 850px; */
   max-width: 996px;
 }
 
 .heroImage {
-  width: 296px;
-  height: 192px;
-  /*padding-bottom: 38px;*/
+  width: auto;
+  max-width: 99%;
 }
 
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-top:30px;
-  margin-bottom: 40px;
-  /*padding: 0 10%;*/
+  margin: 20px 0 30px 0;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .heroTitle br, .heroSubTitle br {
     display: none
   }
 }
 
-.productIntroVideo {
-  position: relative; 
-  padding-bottom: 58.25%;
-  height: 0;
-  margin: 0 auto 50px auto;
-  filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.25));
-  border-radius: 10px !important;
-  overflow: hidden;
-}
-.productIntroVideo iframe {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
-  margin: 0;
-}
 
-.whyObjectiv {
-  text-align: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.whyObjectiv h2 {
-  font-size: 28px;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .whyObjectiv br {
-    display: none;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .whyObjectiv h2 {
-    font-size: 24px;
-  }
-}
-
-.whyObjectiv img.quicklyPullThisData {
-  margin: 40px auto 70px auto;
-}
-
-.whyObjectiv img.meetObjectiv {
-  margin: 80px auto 0px 0;
-}
-
-.theProduct {
-  text-align: center;
-  padding: 60px 0 28px 0;
-}
-
-.theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
-  margin: 20px auto 40px auto;
-}
-.theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
-  display: none;
-}
-
-.theProduct .ctaButton {
-  margin: 40px 0 100px 0;
-}
-
-.theProduct .learnMore {
-  display: block;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .theProduct {
-    padding: 0 var(--ifm-spacing-horizontal);
-  }
-  .theProduct p br {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct .theStack {
-    display: none;
-  }
-  .theProduct .theStackHorizontalVertical {
-    display: block;
-  }
-  .theProduct .ctaButton {
-    margin-bottom: 90px;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .theProduct .theStack {
-    display: none;
-  }
-  .theProduct .theStackHorizontalVertical {
-    display: none;
-  }
-  .theProduct .theStackVertical {
-    display: block;
-  }
-  .theProduct .ctaButton {
-    margin-bottom: 60px;
-  }
-}
-
-.betterData {
-  margin-bottom: 30px;
-}
-
-.betterData .valueRowLeft div:first-child img {
-  margin-top: 40px;
-}
-
-.betterData .outro {
-  margin: 90px auto 20px auto;
-  text-align: center;
-}
-
+/* Section: all sections with value props */
 .valueRowLeft, .valueRowRight {
   display: flex;
   flex-flow: row;
   text-align: left;
+  padding-bottom: 90px;
 }
 .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
   width: 403px; /* 320px + 1x83px grid cols left and right */
@@ -343,42 +224,44 @@ footer h2 {
   flex: 50%;
   text-align: center;
 }
-
 .valueRowLeft p, .valueRowRight p {
   margin-bottom: 24px;
-}
-.valueRowLeft p:first-child, .valueRowRight p:first-child {
-  font-weight: bold;
 }
 .valueRowLeft p:first-child {
   margin-top: 20px;
 }
-
 .valueRowRight>div:nth-child(1) {
   padding-right: 25px;
 }
+.valueRowRight:last-child {
+  padding-bottom: 30px;
+}
+.valueRowLeft>div:first-child img, .valueRowRight>div:last-child img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+/* Shift all textual content down about 40px compared to the image next to it */
+.valueRowRight>div:nth-child(2), .valueRowLeft>div:nth-child(1) {
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   .valueRowLeft {
     flex-flow: row wrap;
-    text-align: center;
   }
   .valueRowRight {
     flex-flow: row wrap-reverse;
-    text-align: center;
   }
   .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
     width: 100%;
-    padding: 0 40px 0 40px;
+    padding: 0 20px;
   }
   .valueRowLeft>div:nth-child(2) {
     margin-top: 80px;
   }
-  .valueRowLeft>div:first-child img, .valueRowRight>div:last-child img {
-    display: none;
-  }
   .valueRowLeft p:first-child, .valueRowRight p:first-child {
-    font-weight: bold;
     margin-top: 0;
   }
 }
@@ -404,69 +287,278 @@ footer h2 {
   }
 }
 
-.bach {
+
+/* Section: Why Objectiv? */
+.whyObjectiv {  
   text-align: center;
+  padding-bottom: 80px;
 }
-.bach h2 {
-  margin-bottom: -20px;
+
+.whyObjectiv h2 {
+  font-size: 28px;
+  margin: 30px 0;
 }
-.bach img.valueBachExample {
-  margin: 40px auto 65px auto;
-}
-.bach img.valueBachExampleMedium {
-  display: none;
-}
-.bach img.valueBachExampleSmall {
-  display: none;
-}
+
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .bach img.valueBachExample {
-    display: none;
-  }
-  .bach img.valueBachExampleMedium {
-    display: block;
+  .whyObjectiv {  
+    padding-bottom: 0;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
-  .bach img.valueBachExample {
+  .whyObjectiv {  
+    padding-top: 0;
+  }
+  .whyObjectiv h2 {
+    font-size: 24px;
+  }
+}
+
+.whyObjectiv .valueRowLeft:last-child {
+  padding-bottom: 30px; /* Different from design */
+}
+/* Don't shift the content down compared to the image in the Why Objectiv section */
+.whyObjectiv .valueRowLeft>div:nth-child(1) {
+  padding-top: 0;}
+
+
+.whyObjectivSummary {
+  margin-top: 75px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .whyObjectivSummary {
+    margin-top: 0;
+  }
+  .whyObjectivSummary.valueRowLeft {
+    flex-flow: row wrap-reverse;
+  }
+  .whyObjectivSummary.valueRowLeft>div:first-child {
+    flex: 100%;
+    text-align: center;
+  }
+  .whyObjectivSummary.valueRowLeft>div:first-child img {
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .whyObjectivSummary {
+    margin-top: 0;
+  }
+  .whyObjectivSummary.valueRowLeft>div:first-child img {
+    margin: 40px auto 0 auto;
+  }
+}
+
+.whyObjectivSummary .whyItems {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.whyObjectivSummary .whyItem {
+  flex: 50%;
+  display: flex;
+  vertical-align: top;
+  padding: 0;
+}
+
+.whyObjectivSummary .whyItem .iconIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .whyObjectivSummary .whyItem {
+    flex: 100%;
+  }
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .whyObjectivSummary .whyItem .iconIcon {
+    min-width: 100px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .whyObjectivSummary .whyItem {
+    display: block;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+}
+
+
+/* Section: Skip the gruntwork */
+.skipTheGruntWork .skipTheGruntWorkUSPs {
+  padding-top: 80px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .skipTheGruntWork .skipTheGruntWorkUSPs {
+    padding-top: 50px;
+  }
+  .skipTheGruntWork .valueRowRight:last-child {
+    padding-bottom: 0;
+  }
+}
+
+
+/* Section: Granular Control & Bach */
+.granularControl {
+  margin-bottom: 150px;
+}
+.granularControl .granularControlUSPs .valueRowLeft {
+  padding-bottom: 120px;
+}
+.granularControl .granularControlUSPs .valueRowLeft>div:first-child {
+  padding-top: 40px;
+}
+.granularControl .granularControlUSPs .valueRowLeft>div:first-child img {
+  padding-top: 60px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .granularControl {
+    margin-bottom: 0;
+  }
+}
+
+.modelingBach .bachIntroVideo {
+  text-align: center;
+  margin: -50px 0 50px 0;
+}
+.modelingBach .bachIntroVideo .video {
+  margin-top: 50px;
+}
+.modelingBach .twoColumnItems {
+  padding: 50px 0 0 0;
+}
+
+.twoColumnItems {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-bottom: -80px; /* Negate the padding from the last row */
+  text-align: left;
+}
+
+.twoColumnItem {
+  flex: 50%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  vertical-align: top;
+  padding: 0 20px 80px 0;
+}
+
+.twoColumnItem .twoColumnIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.twoColumnItem img {
+  max-height: 90px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .twoColumnItem {
+    flex: 100%;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .twoColumnItem {
+    display: block;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .modelingBach .bachIntroVideo {
+    margin-top: 0;
+  }
+}
+
+
+
+/* Section: Eliminate complexity */
+.eliminateComplexity .twoColumnItems {
+  margin-top: 120px;
+}
+.eliminateComplexity .twoColumnIcon {
+  min-width: 100px;
+  text-align: left;
+}
+.eliminateComplexity .twoColumnIcon img {
+  display: inline-block !important;
+  margin: 0;
+}
+.eliminateComplexity .metabaseIntegrationMobile {
+  display: none;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .eliminateComplexity .metabaseIntegrationMobile {
+    display: block;
+    margin-top: 100px;
+  }
+  .eliminateComplexity .metabaseIntegrationDesktop {
     display: none;
   }
-  .bach img.valueBachExampleSmall {
-    display: block;
-    margin: 0 auto 50px auto;
+  .eliminateComplexity .valueRowLeft {
+    padding-bottom: 0; 
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .eliminateComplexity .metabaseIntegrationMobile {
+    margin-top: 60px;
+  }
+  .eliminateComplexity .twoColumnIcon {
+    text-align: center;
   }
 }
 
-.reusableModels .valueReusableModelsDiagram {
-  margin: 50px auto;
-}
 
-.reusableModels .valueRowRight {
-  margin-bottom: 70px;
-}
-
-.reusableModels .outro {
-  margin: 90px auto 20px auto;
+/* Section: What's in the box? */
+.theProduct {
   text-align: center;
 }
-
-.quickStart {
-  text-align: center;
+.theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
+  margin: -20px auto 40px auto;
 }
-.quickStartIntro {
-  margin: 6px auto 50px auto;
-  font-weight: normal;
+.theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
+  display: none;
 }
-.quickStartOutro {
-  margin: 20px auto 28px auto;
+.theProduct .ctaButton {
+  margin: 15px 0 20px 0;
 }
-.quickStart .takesLessThan5Minutes {
+.theProduct .takesLessThan5Minutes {
   display: block;
   margin: 8px auto;
   padding-left: 50px;
 }
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .theProduct br {
+    display: none;
+  }
+  .theProduct .theStack {
+    display: none;
+  }
+  .theProduct .theStackHorizontalVertical {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .theProduct .theStack {
+    display: none;
+  }
+  .theProduct .theStackHorizontalVertical {
+    display: none;
+  }
+  .theProduct .theStackVertical {
+    display: block;
+    margin: 40px auto;
+  }
+}
+
 
 /**************
  ABOUT US PAGE 
