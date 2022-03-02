@@ -52,15 +52,12 @@ export default function Home() {
             <TrackedDiv 
               id={'why-objectiv'} 
               className={clsx("container", styles.contentContainer, styles.whyObjectiv)}>
-              <img
-                src={useBaseUrl("img/objectiv-logo-negative.svg")}
-                alt="Objectiv logo" />
-              <h2>Effectively integrate data science into <br />
-                your product analytics workflow with Objectiv</h2>
-              <p>
-                Objectiv enables data teams to pull in-depth insights with unparalleled speed and fidelity.
-              </p>
-
+              <IconHeader 
+                title="Effectively integrate data science into <br />your product analytics workflow with 
+                  Objectiv" 
+                subTitle="Objectiv enables data teams to pull in-depth insights with unparalleled speed and 
+                  fidelity." 
+                icon="icon-objectiv-logo-negative" />
               <div className={clsx(styles.valueRowLeft, styles.whyObjectivSummary)}>
                 <div>
                   <img
