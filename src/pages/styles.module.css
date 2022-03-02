@@ -17,7 +17,7 @@ h2 {
   margin-bottom: 38px;
 }
 
-@media screen and (max-width: 480px) { /* mobile small */
+@media screen and (max-width: 768px) { /* mobile small */
   h2 br {
     display: none;
   }
@@ -90,7 +90,7 @@ table, th, td {
 }
 
 footer {
-  background-color: #F7FDFF;
+  background-color: #FAFAFA;
   color: #333;
   font-size: 16px;
   text-align: center;
@@ -104,7 +104,6 @@ footer {
 }
 
 footer h2 {
-  font-size: 20px;
   color: #333;
   margin-bottom: 15px;
 }
@@ -148,7 +147,7 @@ footer h2 {
 /* Section: Hero */
 .heroBanner {
   background-color: #FEF284;
-  padding: 130px 0 110px 0;
+  padding: 110px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -162,6 +161,7 @@ footer h2 {
   font-size: 36px;
   line-height: 150%;
   margin: 40px 0 0 0;
+  color: #333;
 }
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
@@ -197,6 +197,7 @@ footer h2 {
   font-size: 18px;
   line-height: 150%;
   margin: 20px 0 30px 0;
+  color: #333;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
@@ -291,15 +292,13 @@ footer h2 {
 /* Section: Why Objectiv? */
 .whyObjectiv {  
   text-align: center;
-  padding-bottom: 80px;
 }
 
 .whyObjectiv h2 {
-  font-size: 28px;
   margin: 30px 0;
 }
 
-@media screen and (max-width: 966px) { /* mobile/tablet all */
+@media screen and (max-width: 768px) { /* mobile/tablet all */
   .whyObjectiv {  
     padding-bottom: 0;
   }
@@ -307,9 +306,6 @@ footer h2 {
 @media screen and (max-width: 480px) { /* mobile small */
   .whyObjectiv {  
     padding-top: 0;
-  }
-  .whyObjectiv h2 {
-    font-size: 24px;
   }
 }
 
@@ -390,12 +386,9 @@ footer h2 {
 
 
 /* Section: Skip the gruntwork */
-.skipTheGruntWork .skipTheGruntWorkUSPs {
-  padding-top: 30px;
-}
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .skipTheGruntWork .skipTheGruntWorkUSPs {
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .skipTheGruntWork .valueRowRight:last-child {
     padding-bottom: 0;

@@ -397,7 +397,7 @@ export default function Home() {
 
           <footer>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
-              <h2>Objectiv is open source and we're building it in public.</h2>
+              <h2>Objectiv is open-source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to={customFields.slackJoinLink as string}
