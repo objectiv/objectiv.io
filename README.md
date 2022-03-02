@@ -1,4 +1,4 @@
-# Objectiv Website
+# Objectiv Website & Documentation
 
 ## Editing website pages
 
@@ -44,9 +44,9 @@ unset it to make this work.
 This command starts a local development server and open up a browser window. Most changes are reflected live 
 without having to restart the server.
 
-## Build the website
+## Build the website & docs
 
-The website (and docs) use dotenv files (.env*) for environment specific configuration. During the build process
+The website and docs use dotenv files (.env*) for environment specific configuration. During the build process
 this config becomes part of the build artefact. Currently valid environments are: `development`, `staging`, `production` 
 and `docker`. To specify which environment to build for, simply set `OBJECTIV_ENVIRONMENT`, for example:
 
@@ -69,7 +69,7 @@ NOTE: the build step only builds the artefacts (as part of the resulting docker 
 deployment section.
 
 
-## Building the docker image
+## Building a runnable docker image
 
 It's also possible to build a docker image, that can run the website + docs, using a built-in instance of apache. Building
 this is fairly easy, using `make`:
@@ -107,8 +107,9 @@ The website is hosted on TransIP. To deploy, observe the following steps:
 * Create a build for production (OBJECTIV_ENVIRONMENT=production)
 * Upload the contents of the build folder to production on TransIP
 
-There is a GitHub action, to automate all of this. To run that manually, either use [act](https://github.com/nektos/act), or do the following:
-to deploy: (make sure to first provision the appropriate environment variables for SFTP)
+There is a GitHub action, to automate all of this. To run that manually, either use 
+[act](https://github.com/nektos/act), or do the following to deploy (make sure to first provision the 
+appropriate environment variables for SFTP):
 ```bash
 make build-docker-deploy-image
 docker run -e SFTP_URL \
@@ -125,17 +126,33 @@ The deployment script automatically does the following:
 - move the old staging deployment to /tmp/staging_old
 - move the newly uploaded staging build into /subdomains/staging
 
-To set the production build live, simply move it from /tmp/production_ to /www
+To run the broken-link-checker on staging after deployment:
+```
+yarn add broken-link-checker
+make check-broken-links-staging
+```
 
+To set the production build live, simply move it from `/tmp/production_` to `/www`.
 
 ### Manual deployment / extraction
 Alternatively, it's also possible to extract the build artefacts from the docker image, using the deployment image:
 ```bash
-# first build deployment image
+# first, build the docker image with static builds for both website and docs for staging and production.
+make build-docker-build-image
+
+# secondly, build the deployment image
 make build-docker-deploy-image
 
 # then extract into dir "extract"
 docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
+```
+Or in one go (make sure to double-check the output):
+```
+git pull && make build-docker-build-image && make build-docker-deploy-image && docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
+```
+Then, upload manually to staging via FTP, and run the broken-links-checker on it:
+```
+yarn add broken-link-checker && make check-broken-links-staging
 ```
 
 ## Acknowledgements
