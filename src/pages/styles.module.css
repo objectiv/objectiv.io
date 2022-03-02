@@ -32,7 +32,7 @@ table, th, td {
 }
 
 .pageSection {
-  padding: 110px 0 100px 0;
+  padding: 100px 0 100px 0;
 }
 
 .pageSectionDarkGrey {
@@ -148,7 +148,7 @@ footer h2 {
 /* Section: Hero */
 .heroBanner {
   background-color: #FEF284;
-  padding: 110px 0;
+  padding: 100px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -177,7 +177,7 @@ footer h2 {
 
 @media screen and (max-width: 480px) { /* mobile small */
   .heroBanner {
-    padding: 50px 0 90px 0;
+    padding: 80px 0;
   }
   .heroTitle {
     margin-left: 0;
@@ -234,9 +234,6 @@ footer h2 {
 }
 .valueRowRight>div:nth-child(1) {
   padding-right: 25px;
-}
-.valueRowRight:last-child {
-  padding-bottom: 30px;
 }
 .valueRowLeft>div:first-child img, .valueRowRight>div:last-child img {
   display: block;
@@ -299,7 +296,7 @@ footer h2 {
   margin: 30px 0;
 }
 
-@media screen and (max-width: 768px) { /* mobile/tablet all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   .whyObjectiv {  
     padding-bottom: 0;
   }
@@ -323,7 +320,7 @@ footer h2 {
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .whyObjectivSummary {
-    margin-top: 0;
+    margin-top: -50px;
   }
   .whyObjectivSummary.valueRowLeft {
     flex-flow: row wrap-reverse;
@@ -338,9 +335,6 @@ footer h2 {
   }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .whyObjectivSummary {
-    margin-top: 0;
-  }
   .whyObjectivSummary.valueRowLeft>div:first-child img {
     margin: 40px auto 0 auto;
   }
@@ -387,6 +381,9 @@ footer h2 {
 
 
 /* Section: Skip the gruntwork */
+.skipTheGruntWork .valueRowRight:last-child { /* Bottom padding for all but the last one */
+  padding-bottom: 0;
+}
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .skipTheGruntWork .skipTheGruntWorkUSPs {
     padding-top: 20px;
@@ -399,7 +396,7 @@ footer h2 {
 
 /* Section: Granular Control & Bach */
 .granularControl {
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 .granularControl .granularControlUSPs .valueRowLeft {
   padding-bottom: 120px;
@@ -431,7 +428,6 @@ footer h2 {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  margin-bottom: -80px; /* Negate the padding from the last row */
   text-align: left;
 }
 
@@ -441,7 +437,7 @@ footer h2 {
   flex-flow: row;
   flex-wrap: nowrap;
   vertical-align: top;
-  padding: 0 20px 80px 0;
+  padding: 0 20px 0 0;
 }
 
 .twoColumnItem .twoColumnIcon {
@@ -475,6 +471,9 @@ footer h2 {
 
 
 /* Section: Eliminate complexity */
+.eliminateComplexity .valueRowLeft:last-child { /* Bottom padding tweaked for the last one */
+  padding-bottom: 30px;
+}
 .eliminateComplexity .twoColumnItems {
   margin-top: 120px;
 }
@@ -500,6 +499,10 @@ footer h2 {
   .eliminateComplexity .valueRowLeft {
     padding-bottom: 0; 
   }
+  .eliminateComplexity .twoColumnItem {
+    padding-bottom: 0;
+    padding-right: 0;
+  }
 }
 @media screen and (max-width: 480px) { /* mobile small */
   .eliminateComplexity .metabaseIntegrationMobile {
@@ -516,7 +519,7 @@ footer h2 {
   text-align: center;
 }
 .theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
-  margin: -20px auto 40px auto;
+  margin: -40px auto 40px auto;
 }
 .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
   display: none;
