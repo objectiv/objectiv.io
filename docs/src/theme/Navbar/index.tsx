@@ -26,9 +26,17 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 
-import { tagNavigation, tagOverlay, tagPressable } from "@objectiv/tracker-browser";
+import { tagInput, tagLink, tagNavigation, tagOverlay, tagPressable } from "@objectiv/tracker-browser";
+// OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu 
+import { useLocation } from "@docusaurus/router";
+import { useHistory } from "react-router-dom";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import objectivStyles from './objectiv.styles.module.css';
+// OBJECTIV END
 
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -155,7 +163,36 @@ function NavbarMobileSidebar({
   toggleSidebar,
 }: NavbarMobileSidebarProps) {
   useLockBodyScroll(sidebarShown);
-  const items = useNavbarItems();
+
+  // OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu 
+  type NavbarItemProps = {
+    to: string;
+    label: string;
+  }
+  let items = useNavbarItems();
+
+  let history = useHistory();
+  let location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const homepageUrl = siteConfig.url;
+  let currentNavCategory = 'Home';
+  // remove the homepage URL from the dropdown
+  items = items.filter(function (el:NavbarItemProps) {
+    return el.to != homepageUrl;
+  });
+  items.forEach((item:NavbarItemProps, index) => {
+    let itemTo = useBaseUrl(item.to);
+    if (itemTo == location.pathname) {
+      currentNavCategory = item.label;
+    }
+  });
+
+  function goToTopNavCategory(e) {
+    const linkTo = e.target.value;
+    history.push(linkTo);
+    toggleSidebar();
+  }
+  // END OBJECTIV
 
   const colorModeToggle = useColorModeToggle();
 
@@ -213,8 +250,9 @@ function NavbarMobileSidebar({
           </ul>
         </div>
 
+        {/* OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu  */}
         <div className="navbar-sidebar__item menu">
-          {items.length > 0 && (
+          {/* {items.length > 0 && (
             <button
               {...tagPressable({ id: 'navbar-back' })}
               type="button"
@@ -223,15 +261,39 @@ function NavbarMobileSidebar({
               <Translate
                 id="theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel"
                 description="The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)">
-                ← Back to main menu
+                ← All Categories
               </Translate>
             </button>
-          )}
+          )} */}
+          <div className={clsx(objectivStyles.objectivNavCategories)}>
+            <span className={clsx(objectivStyles.objectivSelectNavbarCategoryGoTo)}>Section:</span>
+            <select {...tagInput({id: 'navbar-categories'})} onChange={goToTopNavCategory} name="nav-categories" id="nav-categories">
+              <option value={useBaseUrl('/')}>Home</option>
+              {items.map((item:NavbarItemProps, i) => (
+                item.label && <option value={useBaseUrl(item.to)} key={i}>{item.label}</option>
+              ))}
+            </select>
+            <h2>{currentNavCategory}</h2>
+
+            {/* <ul className="menu__list">
+              {items.map((item, i) => (
+                <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
+              ))}
+            </ul> */}
+          </div>
           {secondaryMenu.content}
+          <div className={clsx(objectivStyles.objectivNavHomepageLink)}>
+            <Link 
+              {...tagLink({ id: 'homepage', href: homepageUrl })}
+              className="menu__link" to={homepageUrl}>⧉ objectiv.io</Link>
+          </div>
+          {/* END OBJECTIV */}
         </div>
       </div>
     </div>
   );
+
+  
 }
 
 function Navbar(): JSX.Element {
