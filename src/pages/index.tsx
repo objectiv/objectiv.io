@@ -1,17 +1,17 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { TrackedDiv } from "@objectiv/tracker-react";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
+import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
-  const {url, tagline, customFields} = context.siteConfig;
+  const {tagline, customFields} = context.siteConfig;
 
   return (
     <div>
@@ -19,67 +19,349 @@ export default function Home() {
         title=''
         description={tagline}>
         
-        <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <TrackedHeader 
+          id={'hero'} 
+          className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.heroContainer)}>
             <img
               className={clsx(styles.heroImage)}
-              src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
+              src={useBaseUrl("img/header-applications.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-            Open-source product analytics <br />
-            designed for data science <br />
+            You can do a lot more with user behavior data <br />
+            when you add data science into the mix
             </h1>
-            <p className={clsx(styles.heroSubTitle)}>Collect model-ready data and run your entire product analytics workflow straight from your notebook.</p>
-            <div className={clsx(styles.productIntroVideo)}>
-              <VimeoPlayer id="2-minute-video" videoId="670857141" />
-            </div>
-            <img
-                className={clsx(styles.objectivIn2Minutes)}
-                src={useBaseUrl("img/header-2-minutes.svg")}
-                alt="Objectiv in 2 minutes" />
+            <p className={clsx(styles.heroSubTitle)}>
+              Objectiv is open-source product analytics <strong>designed for effective data science</strong>.
+            </p>
+            <TrackedLink
+              to="https://github.com/objectiv/objectiv-analytics"
+              waitUntilTracked={true}
+              target="_self"
+              className={clsx("button", styles.ctaButton)}>
+              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  
+                alt={'Objectiv on GitHub'}/></span>
+              Star us on GitHub
+            </TrackedLink>
           </div>
-        </header>
+        </TrackedHeader>
 
         <main className={clsx('body-large')}>
 
-          <div className={clsx(styles.pageSectionLightBlue)}>
+          <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
-                id={'why-objectiv'} 
-                className={clsx("container", styles.contentContainer, styles.whyObjectiv)}>
-              <h2>You can get a lot more from your product analytics data <br />
-              when you add data science in the mix.</h2>
-              <p>Being able to do advanced analyses on your product data, such as user clustering, 
-                recommendations &amp; churn <br />
-                prediction, unlocks a level of product opportunities that you 
-                wouldn't be able to get from your BI dashboard.</p>
-              <img
-                className={clsx(styles.quicklyPullThisData)}
-                src={useBaseUrl("img/quickly-pull-this-data.svg")}
-                alt="Hey Data Scientist, can you quickly pull this data for me?"
-              />              
-              <p>
-                <strong>The current generation of product analytics tools is not designed with data science 
-                  in mind. </strong><br />
-                The data they collect needs a lot of cleaning and transformation before it can be used for 
-                modeling, <br />
-                and models typically cannot be reused because there is no common way to structure data.</p>
-              <img
-                className={clsx(styles.meetObjectiv)}
-                src={useBaseUrl("img/meet-objectiv.svg")}
-                alt="Meet Objectiv"
-              />              
+              id={'why-objectiv'} 
+              className={clsx("container", styles.contentContainer, styles.whyObjectiv)}>
+              <IconHeader 
+                title="Effectively integrate data science into <br />your product analytics workflow with 
+                  Objectiv" 
+                subTitle="Objectiv enables data teams to pull in-depth insights with unparalleled speed and 
+                  fidelity." 
+                icon="icon-objectiv-logo-negative" />
+              <div className={clsx(styles.valueRowLeft, styles.whyObjectivSummary)}>
+                <div>
+                  <img
+                    src={useBaseUrl("img/objectiv-notebook.svg")}
+                    alt="Run your product analtyics workflow from a notebook" />
+                </div>
+                <div>
+                  <div className={clsx(styles.whyItems)}>
+                    <div className={clsx(styles.whyItem)}>
+                      <div className={clsx(styles.iconIcon)}>
+                        <img
+                          src={useBaseUrl("img/icons/icon-accelerate.svg")}
+                          alt="Accelerate" />
+                      </div>
+                      <div>
+                        <strong>Skip the typical gruntwork</strong><br />
+                        Build in-depth analyses in minutes with model-ready data and pre-built models.
+                      </div>
+                    </div>
+                  </div>
+                  <div className={clsx(styles.whyItems)}>
+                    <div className={clsx(styles.whyItem)}>
+                      <div className={clsx(styles.iconIcon)}>
+                        <img
+                          src={useBaseUrl("img/icons/icon-diamond-yellow.svg")}
+                          alt="Diamond" />
+                      </div>
+                      <div>
+                        <strong>Granular control over the full dataset</strong><br />
+                        Use a powerful modeling library on data that's structured for effective data science.
+                      </div>
+                    </div>
+                  </div>
+                  <div className={clsx(styles.whyItems)}>
+                    <div className={clsx(styles.whyItem)}>
+                      <div className={clsx(styles.iconIcon)}>
+                        <img
+                          src={useBaseUrl("img/icons/icon-abc.svg")}
+                          alt="A-B-C blocks" />
+                      </div>
+                      <div>
+                        <strong>Cut down stack complexity</strong><br />
+                        Make the notebook the headquarters of all your product analytics operations.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </TrackedDiv>
           </div>
 
-          <div className={clsx(styles.pageSectionBlue)}>
+          <div className={clsx(styles.pageSection)}>
             <TrackedDiv 
-              id={'the-stack'} 
-              className={clsx("container", styles.contentContainer, styles.theProduct)}>
-              <h2>No tracking plans, data cleaning or transformations required</h2>
-              <p><strong>Objectiv</strong> has completely redesigned product analytics from scratch to 
-                effectively integrate data science into the workflow. It enables data scientists to skip the 
-                grunt work, open their notebooks and work directly with model ready-data and pre-built models 
-                to <strong>build advanced analyses in minutes, not months</strong>.</p>
+                id={'skip-the-gruntwork'} 
+                className={clsx("container", styles.contentContainer, styles.skipTheGruntWork)}>
+              <IconHeader 
+                title="Skip the grunt work and use pre-built models <br />to run in-depth analyses in 
+                  minutes, not months" 
+                subTitle="No tracking plans, data cleaning or transformations required." 
+                icon="icon-accelerate" />
+              <div className={clsx(styles.skipTheGruntWorkUSPs)}>
+                <div className={clsx(styles.valueRowRight)}>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-better-data.svg")}
+                      alt="Squeaky clean model-ready data through early validation!" />
+                  </div>
+                  <div>
+                    <p>
+                      <strong>A taxonomy for model-ready data</strong> <br />
+                      Objectiv's tracker validates all incoming events against an&nbsp;
+                      <TrackedLink
+                        to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self">
+                        open analytics taxonomy
+                      </TrackedLink>. This ensures it is well-structured, clean and ready for modeling.
+                    </p>
+                    <p>It describes classes for common user interactions and their contexts. A tracking plan 
+                      is no longer needed as the requirements for effective analysis are carried by the 
+                      design of the taxonomy.</p>
+                  </div>
+                </div>
+                <div className={clsx(styles.valueRowLeft)}>
+                  <div>
+                    <p>
+                      <strong>Reuse anyone's models</strong> <br />
+                      Objectiv datasets are highly consistent. As a result, models and datasets are 
+                      intercompatible and can be shared and reused.
+                    </p>
+                    <p>That advanced model someone from the other team built? You can reuse that for your own 
+                      project by changing a single line of code.</p>
+                  </div>
+                  <div>
+                  <img
+                    src={useBaseUrl("img/value-reusable-models-churn-prediction.svg")}
+                    alt="Churn Prediction" />
+                  </div>
+                </div>
+              </div>
+              <div className={clsx(styles.valueRowRight)}>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-reusable-models.svg")}
+                      alt="Take pre-built models off the shelf" />
+                  </div>
+                  <div>
+                    <p>
+                      <strong>Take pre-built models off the shelf</strong> <br />
+                      Objectiv also includes pre-built models for a wide range of product analytics use 
+                      cases. You can chain them together to answer common product analytics questions quickly.
+                    </p>
+                    <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
+                  </div>
+                </div>
+            </TrackedDiv>
+          </div>
+
+
+          <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
+            <TrackedDiv 
+                id={'granular-control'} 
+                className={clsx("container", styles.contentContainer, styles.granularControl)}>
+              <IconHeader 
+                title="Take granular control over <br />data that's designed for modeling" 
+                subTitle="Tap into a level of insights that simply isn't available from the dashboards of BI 
+                  tools." 
+                icon="icon-diamond-yellow" />
+              <div className={clsx(styles.granularControlUSPs)}>
+                <div className={clsx(styles.valueRowLeft)}>
+                  <div>
+                    <p>
+                      <strong>Slice data without manual mapping</strong><br />
+                      Objectiv's tracker captures the structure of your product's UI inside the dataset. 
+                      Events contain the exact location where they were triggered in a hierarchical stack of 
+                      locations.
+                    </p>
+                    <p>
+                      This not only makes events easily identifiable, it also enables data slicing on a very 
+                      granular level without doing a ton of manual mapping first.
+                    </p>
+                    <img
+                      src={useBaseUrl("img/value-fine-grained-slicing-control.svg")}
+                      alt="Fine-grained slicing control" />
+                  </div>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-better-data-event.svg")}
+                      alt="Objectiv Event example" />
+                  </div>  
+                </div>
+              </div>
+              <TrackedDiv 
+                  id={'modeling-bach'} 
+                  className={clsx(styles.modelingBach)}>
+                <IconHeader 
+                  title="Powerful modeling on the full dataset" 
+                  subTitle="Meet Objectiv Bach - a modeling library that combines the power of Pandas with 
+                    the scalability of SQL." 
+                  icon="icon-bach-sunglasses" />
+                <div className={clsx(styles.bachIntroVideo)}>
+                  <img
+                    className={clsx(styles.objectivIn2Minutes)}
+                    src={useBaseUrl("img/bach-in-2-minutes.svg")}
+                    alt="Objectiv Bach for Data Scientists - 2 minutes" />
+                  <div className={clsx(styles.video)}>
+                    <VimeoPlayer id="2-minute-video" videoId="670857141" />
+                  </div>
+                </div>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-bach-sunglasses.svg")}
+                        alt="Bach" />
+                    </div>
+                    <div>
+                      <strong>Run models on the full SQL dataset</strong><br />
+                      Build models using dataframes and pandas-like operations and run them on the full 
+                      dataset as SQL
+                    </div>
+                  </div>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-pandas-compatible.svg")}
+                        alt="Pandas logo" />
+                    </div>
+                    <div>
+                      <strong>Pandas compatible</strong><br />
+                      Pandas compatibility enables you to tap into the rich ecosystem Pandas is well-know 
+                      for, including all ML libraries.
+                    </div>
+                  </div>
+                </div>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-taxonomy-sitemap.svg")}
+                        alt="Bach" />
+                    </div>
+                    <div>
+                      <strong>Works with the open taxonomy</strong><br />
+                      Bach includes operations that are specifically designed to effectively work with 
+                      datasets that embrace the&nbsp;
+                      <TrackedLink
+                        to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self">
+                        open analytics taxonomy
+                      </TrackedLink>.
+                    </div>
+                  </div>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-brain.svg")}
+                        alt="Brain" />
+                    </div>
+                    <div>
+                      <strong>Optimized for machine learning</strong><br />
+                      A number of built-in optimizations for popular libraries, like scikit-learn, will 
+                      enable you to incorporate ML into your analyses faster.
+                    </div>
+                  </div>
+                </div>
+              </TrackedDiv>
+            </TrackedDiv>
+          </div>
+
+          <div className={clsx(styles.pageSection)}>
+            <TrackedDiv 
+                id={'eliminate-complexity'} 
+                className={clsx("container", styles.contentContainer, styles.eliminateComplexity)}>
+              <IconHeader 
+                title="Cut down delivery times by eliminating <br />complexity in your analytics stack" 
+                subTitle="Run your entire product analytics workflow from a notebook." 
+                icon="icon-abc" />
+              <div className={clsx(styles.granularControlUSPs)}>
+                <div className={clsx(styles.valueRowLeft)}>
+                  <div>
+                    <p>
+                      <strong>The notebook as your headquarters</strong><br />
+                      On command, Objectiv converts your entire model to a production-ready SQL query, which 
+                      you can directly use to feed into your tools and products.
+                    </p>
+                    <p>
+                      Combine this with the fact that raw Objectiv data is model-ready straight from the 
+                      tracker, and you have a very efficient workflow that enables you to experiment freely 
+                      without the typical overhead.
+                    </p>
+                    <p>
+                      As a result, you can adapt to changing product questions much faster and keep all your 
+                      product analytics projects in one place.
+                    </p>
+                    <div className={clsx(styles.twoColumnItems, styles.metabaseIntegrationDesktop)}>
+                      <div className={clsx(styles.twoColumnItem)}>
+                        <div className={clsx(styles.twoColumnIcon)}>
+                          <img
+                            src={useBaseUrl("img/icons/icon-metabase.svg")}
+                            alt="Bach" />
+                        </div>
+                        <div>
+                          <strong>Built-in Metabase integration </strong><br />
+                          To simplify sharing insights with the rest of your team, Objectiv comes with 
+                          built-in integration for the open-source BI platform Metabase.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-notebook-as-headquarters.svg")}
+                      alt="The notebook as your headquarters" />
+                  </div>  
+                  <div className={clsx(styles.twoColumnItems, styles.metabaseIntegrationMobile)}>
+                      <div className={clsx(styles.twoColumnItem)}>
+                        <div className={clsx(styles.twoColumnIcon)}>
+                          <img
+                            src={useBaseUrl("img/icons/icon-metabase.svg")}
+                            alt="Bach" />
+                        </div>
+                        <div>
+                          <strong>Built-in Metabase integration </strong><br />
+                          To simplify sharing insights with the rest of your team, Objectiv comes with 
+                          built-in integration for the open-source BI platform Metabase.
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </TrackedDiv>
+          </div>
+
+          <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
+            <TrackedDiv 
+              id={'the-stack-quickstart'} 
+              className={clsx("container", styles.contentContainer, styles.theProduct, styles.quickStart)}>
+              <IconHeader 
+                title="What's in the box?" 
+                subTitle="Objectiv is self-hosted. It includes what you need to answer common product 
+                analytics <br /> questions fast and accurately, while providing a solid foundation for 
+                advanced modeling." />
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
@@ -92,197 +374,15 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
-              <p>It includes what you need to answer common product analytics questions with speed and precision, while <br/>
-              providing a solid foundation for advanced modeling. You can output models to SQL queries with a single <br/>
-              command, and Pandas compatability means you can tap into its rich machine learning ecosystem.</p>
+              <p><strong>Want to try Objectiv?</strong> Follow the Quickstart Guide to run a fully functional 
+                Objectiv setup locally.</p>
               <TrackedLink
-                to="https://github.com/objectiv/objectiv-analytics"
+                to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
                 waitUntilTracked={true}
                 target="_self"
-                className={clsx("button", styles.ctaButton)}
-              >
-                
-                <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  alt={'Objectiv on GitHub'}/></span>
-                Objectiv on GitHub
-              </TrackedLink>
-
-              <img 
-                src={useBaseUrl("img/learn-more.svg")} 
-                className={clsx(styles.learnMore)}
-                alt="Learn More" />
-            </TrackedDiv>
-          </div>
-
-          <div className={clsx(styles.pageSection)}>
-            <div className={clsx("container", styles.contentContainer, styles.betterData)}>
-              <IconHeader title="Model-ready data at the first step of the pipeline" icon="icon-better-data" />
-              <div className={clsx(styles.valueRowLeft)}>
-                <div>
-                  <p>Objectiv's tracker validates all collected events against an open analytics taxonomy at 
-                    the first step of the pipeline.</p>
-                  <p>The resulting dataset is error free, highly consistent, and ready for data science 
-                    without additional gruntwork or transformation.</p>
-                  <p>Events tracked with Objectiv are unusually rich, highly descriptive, and structured with 
-                    effective modeling in mind.</p>
-                  
-                  <img
-                    src={useBaseUrl("img/value-better-data.svg")}
-                    alt="Squeaky clean model-ready data through early validation!" />
-                </div>
-                <div>
-                  <img
-                    src={useBaseUrl("img/value-better-data-event-comparison.svg")}
-                    alt="Objectiv Event example" />
-                </div>
-              </div>
-              <div className={clsx(styles.outro)}>
-                <p>To learn more about the open analytics taxonomy, check out the Docs.</p>
-                <TrackedLink
-                  to={url + "/docs/taxonomy/"}
-                  autoAddBaseUrl={true}
-                  waitUntilTracked={true}
-                  target="_self"
-                  className={clsx("button", styles.ctaButton)}
-                >
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Docs - Open Analytics Taxonomy'}/></span>
-                  Docs - Open Analytics Taxonomy
-                </TrackedLink>
-              </div>
-            </div>
-          </div>
-
-          <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-            <div className={clsx("container", styles.contentContainer, styles.bach)}>
-              <IconHeader 
-                title="Pandas-like modeling on the full dataset" 
-                icon="icon-value-bach" />
-              <p className={clsx(styles.introText)}>Objectiv Bach is a modeling library that combines the 
-                power of Pandas with the <br /> 
-                scalability of SQL and includes pre-built models that you can chain together.</p>
-              <img
-                className={clsx(styles.valueBachExample)}
-                src={useBaseUrl("img/value-bach-example@2x.png")}
-                alt="These operations all run on the full dataset! Neat!" />
-              <img
-                className={clsx(styles.valueBachExample, styles.valueBachExampleMedium)}
-                src={useBaseUrl("img/value-bach-example-medium.png")}
-                alt="These operations all run on the full dataset! Neat!" />
-              <img
-                className={clsx(styles.valueBachExample, styles.valueBachExampleSmall)}
-                src={useBaseUrl("img/value-bach-example-small.png")}
-                alt="These operations all run on the full dataset! Neat!" />
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-experiment.svg")}
-                      alt="Experiment and iterate" />
-                  </div>
-                  <div>
-                    <strong>Experiment &amp; iterate freely</strong><br />
-                    On command, Objectiv converts your complete model chain to SQL and runs it on the full 
-                    dataset, so feel free to try out new things at any stage.
-                  </div>
-                </div>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-pandas-compatible.svg")}
-                      alt="Pandas logo" />
-                  </div>
-                  <div>
-                    <strong>Familiar Pandas-like modeling</strong><br />
-                    Bach supports many common Pandas operations, combined with operations that are specific 
-                    to datasets collected with the Objectiv tracker.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <TrackedDiv
-            id={'reusable-models'}
-            className={clsx(styles.pageSection)}>
-            <div className={clsx("container", styles.contentContainer, styles.reusableModels)}>
-              <IconHeader title="Reuse any model and chain them together" icon="icon-reusable-models-chained" />
-              <div className={clsx(styles.valueRowRight)}>
-                <div>
-                  <img
-                    src={useBaseUrl("img/value-reusable-models-example.svg")}
-                    alt="Example" />
-                </div>
-                <div>
-                  <p>As a result of high data consistency, Objectiv models and datasets are intercompatible and can be shared and reused. </p>
-                  <p>That advanced model someone from the other team built? You can reuse that for your own project by changing a single line of code.</p>
-                  <p>Objectiv also includes pre-built models for a wide range of product analytics use cases. You can chain them together to answer common product analytics questions quickly.</p>
-                  <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
-                  <img
-                    className={clsx(styles.valueReusableModelsDiagram)}
-                    src={useBaseUrl("img/value-reusable-models.svg")}
-                    alt="Take and chain pre-built models off the shelf!" />
-                </div>
-              </div>
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-metabase.svg")}
-                      alt="Metabase logo" />
-                  </div>
-                  <div>
-                    <strong>Output to BI with a single command</strong><br />
-                    Happy with the results? Share your insights with your team by outputting your data to supported BI tools with a single command.
-                  </div>
-                </div>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-brain.svg")}
-                      alt="Brain" />
-                  </div>
-                  <div>
-                    <strong>Pandas compatible, ML ready</strong><br />
-                    Bach is Pandas compatible: Take your data to the next level by tapping into the rich machine learning ecosystem Pandas is well-known for.
-                  </div>
-                </div>
-              </div>
-              <div className={clsx(styles.outro)}>
-                <p>For an overview of all available pre-built models, check out the Docs.</p>
-                <TrackedLink
-                  to={url + "/docs/modeling/Objectiv/bach_open_taxonomy.ModelHub"}
-                  autoAddBaseUrl={true}
-                  waitUntilTracked={true}
-                  target="_self"
-                  className={clsx("button", styles.ctaButton)}
-                >
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Docs - Open Model Hub'}/></span>
-                  Docs - Open Model Hub
-                </TrackedLink>
-              </div>
-            </div>
-          </TrackedDiv>
-
-          <div className={clsx(styles.pageSection, styles.pageSectionBlue)}>
-            <TrackedDiv
-              id={'quickstart'}
-              className={clsx("container", styles.contentContainer, styles.quickStart)}
-            >
-              <h2>Try the complete Objectiv stack on your local machine</h2>
-              <p className={clsx(styles.introText, styles.quickStartIntro)}>It comes with everything you 
-                need, including a copy of our website as a <strong>demo app</strong>, <br /> 
-                a <strong>notebook</strong> with working models and a <strong>Metabase</strong> environment 
-                to output data to.</p>
-              <img src={useBaseUrl("img/solution-screenshots.png")} alt="Screenshots" />
-              <p className={clsx(styles.quickStartOutro)}>Follow the <strong>Quickstart Guide</strong> to 
-              locally run the full Objectiv pipeline dockerized.</p>
-              <TrackedLink
-                to={url + "/docs/home/quickstart-guide/"}
-                autoAddBaseUrl={true}
-                waitUntilTracked={true}
-                target="_self"
-                className={clsx("button", styles.ctaButton)}
-              >
-                <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  alt={'Objectiv Quickstart Guide'}/></span>
+                className={clsx("button", styles.ctaButton)}>
+                <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                  alt={'Objectiv Quickstart Guide'}/></span>
                 Objectiv Quickstart Guide
               </TrackedLink>
               <img 
@@ -290,11 +390,11 @@ export default function Home() {
                 className={clsx(styles.takesLessThan5Minutes)}
                 alt="Takes less than 5 minutes" />
             </TrackedDiv>
-          </div>          
+          </div>
 
           <footer>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
-              <h2>Objectiv is open source and we're building it in public.</h2>
+              <h2>Objectiv is open-source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to={customFields.slackJoinLink as string}
