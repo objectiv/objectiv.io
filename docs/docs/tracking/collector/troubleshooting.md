@@ -27,14 +27,14 @@ port `5000`). Let's see if this is the case below.
   <TabItem value="linux" label="Linux">
 
 ```bash
-TODO
+sudo lsof -n -i :[PORT_NUMBER]
 ```
 
   </TabItem>
   <TabItem value="mac" label="MacOS">
 
 ```bash
-TODO
+netstat -an |grep [PORT_NUMBER]
 ```
 
   </TabItem>
@@ -47,7 +47,17 @@ netstat -aon | findstr :[PORT_NUMBER]
   </TabItem>
 </Tabs>
 
+
+:::info
+
+On Linux the Collector will simply refuse to start if it cannot bind to the port. On Windows/Mac this is 
+different, because the container is running in a VM. Getting the Collector to run on MacOS can also vary a 
+bit depending on the OS version.
+
+:::
+
 Once you identify the application running on the same port, stop it, and restart the Collector.
+
 
 ## The Postgres container is not starting properly
 
@@ -70,6 +80,15 @@ docker volume rm objectiv-analytics_pgdata
 # restart the containers
 docker-compose -f docker-compose-dev.yaml up -d
 ```
+
+:::info
+
+The name of the docker volume that you remove in the example above, is determined by the directory from which 
+the instance was started. So if your checkout dir is in fact objectiv-analytics, this is correct, otherwise 
+you probably need to find the name of the volume first (`docker volume ls`), and remove that.
+
+:::
+
 
 ## My issue is not listed here
 Please get in touch with us via the options in the box below.
