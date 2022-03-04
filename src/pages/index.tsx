@@ -11,7 +11,7 @@ import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
-  const {tagline, customFields} = context.siteConfig;
+  const {tagline} = context.siteConfig;
 
   return (
     <div>
@@ -397,13 +397,12 @@ export default function Home() {
               <h2>Objectiv is open-source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
-                to={customFields.slackJoinLink as string}
-                waitUntilTracked={true}
+                to="/join-slack"
                 className={clsx("button", styles.ctaButton)}
               >
-                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
-                  Join us on Slack
-                </TrackedLink>
+                <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
+                Join us on Slack
+              </TrackedLink>
             </TrackedDiv>
           </footer>
 
