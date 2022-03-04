@@ -115,7 +115,7 @@ docker run -e SFTP_URL \
 
 ==> Then, to set the production build live, simply move it from `/tmp/production_` to `/www`.
 
-### Manual deployment / extraction
+## Manual deployment
 Alternatively, if you want/need to to deploy manually, it's also possible to extract the build artefacts from 
 the docker image, and upload those:
 ```bash
