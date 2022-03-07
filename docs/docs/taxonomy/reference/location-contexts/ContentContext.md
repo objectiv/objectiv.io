@@ -1,6 +1,6 @@
 # ContentContext
 
-A [LocationContext](/taxonomy/location-contexts/) that describes a logical section of the UI that contains other Location Contexts. Enabling Data Science to analyze this section specifically. 
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md) that describes a logical section of the UI that contains other Location Contexts. Enabling Data Science to analyze this section specifically. 
 
 import Mermaid from '@theme/Mermaid';
 

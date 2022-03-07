@@ -9,7 +9,7 @@ import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import OriginalLogo from '@theme-original/Logo';
-import { tagLink } from "@objectiv/tracker-browser";
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
 const Logo = (props): JSX.Element  => {
   const {
@@ -17,10 +17,7 @@ const Logo = (props): JSX.Element  => {
   } = useThemeConfig();
   const logoLink = useBaseUrl(logo.href || '/');
 
-  return <OriginalLogo
-    {...tagLink({ id: 'logo', href: logoLink })}
-    {...props} 
-  />
+  return <TrackedLink Component={OriginalLogo} id={'logo'} href={logoLink} title={logo.alt} {...props} />
 };
 
 export default Logo;

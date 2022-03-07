@@ -4,38 +4,43 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, {useCallback, useState, useEffect} from 'react';
+
+ import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import SearchBar from '@theme/SearchBar';
 import Toggle from '@theme/Toggle';
-import useThemeContext from '@theme/hooks/useThemeContext';
 import {
   useThemeConfig,
   useMobileSecondaryMenuRenderer,
   usePrevious,
   useHistoryPopHandler,
+  useHideableNavbar,
+  useLockBodyScroll,
+  useWindowSize,
+  useColorMode,
 } from '@docusaurus/theme-common';
-import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useWindowSize from '@theme/hooks/useWindowSize';
-import {useActivePlugin} from '@theme/hooks/useDocs';
-import NavbarItem from '@theme/NavbarItem';
+import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
+import NavbarItem, {type Props as NavbarItemConfig} from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
-import styles from './styles.module.css'; // retrocompatible with v1
-import { tagNavigation, tagOverlay } from "@objectiv/tracker-browser";
 
+import styles from './styles.module.css';
+
+import { TrackedButton, TrackedNav, TrackedOverlayContext } from "@objectiv/tracker-react";
+
+// retrocompatible with v1
 const DefaultNavItemPosition = 'right';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
-  return useThemeConfig().navbar.items;
-} // If split links by left/right
-// if position is unspecified, fallback to right (as v1)
+  return useThemeConfig().navbar.items as NavbarItemConfig[];
+}
 
-function splitNavItemsByPosition(items) {
+// If split links by left/right
+// if position is unspecified, fallback to right (as v1)
+function splitNavItemsByPosition(items: NavbarItemConfig[]) {
   const leftItems = items.filter(
     (item) => (item.position ?? DefaultNavItemPosition) === 'left',
   );
@@ -49,117 +54,118 @@ function splitNavItemsByPosition(items) {
 }
 
 function useMobileSidebar() {
-  const windowSize = useWindowSize(); // Mobile sidebar not visible on hydration: can avoid SSR rendering
+  const windowSize = useWindowSize();
 
+  // Mobile sidebar not visible on hydration: can avoid SSR rendering
   const shouldRender = windowSize === 'mobile'; // || windowSize === 'ssr';
 
-  const [shown, setShown] = useState(false); // Close mobile sidebar on navigation pop
-  // Most likely firing when using the Android back button (but not only)
+  const [shown, setShown] = useState(false);
 
+  // Close mobile sidebar on navigation pop
+  // Most likely firing when using the Android back button (but not only)
   useHistoryPopHandler(() => {
     if (shown) {
-      setShown(false); // Should we prevent the navigation here?
+      setShown(false);
+      // Should we prevent the navigation here?
       // See https://github.com/facebook/docusaurus/pull/5462#issuecomment-911699846
-
       return false; // prevent pop navigation
     }
-
     return undefined;
   });
+
   const toggle = useCallback(() => {
     setShown((s) => !s);
   }, []);
+
   useEffect(() => {
     if (windowSize === 'desktop') {
       setShown(false);
     }
   }, [windowSize]);
-  return {
-    shouldRender,
-    toggle,
-    shown,
-  };
+
+  return {shouldRender, toggle, shown};
 }
 
 function useColorModeToggle() {
   const {
     colorMode: {disableSwitch},
   } = useThemeConfig();
-  const {isDarkTheme, setLightTheme, setDarkTheme} = useThemeContext();
+  const {isDarkTheme, setLightTheme, setDarkTheme} = useColorMode();
   const toggle = useCallback(
     (e) => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
   );
-  return {
-    isDarkTheme,
-    toggle,
-    disabled: disableSwitch,
-  };
+  return {isDarkTheme, toggle, disabled: disableSwitch};
 }
 
-function useSecondaryMenu({sidebarShown, toggleSidebar}) {
+function useSecondaryMenu({
+  sidebarShown,
+  toggleSidebar,
+}: NavbarMobileSidebarProps) {
   const content = useMobileSecondaryMenuRenderer()?.({
     toggleSidebar,
   });
   const previousContent = usePrevious(content);
-  const [shown, setShown] = useState(() => {
-    // /!\ content is set with useEffect,
-    // so it's not available on mount anyway
-    // "return !!content" => always returns false
-    return false;
-  }); // When content is become available for the first time (set in useEffect)
-  // we set this content to be shown!
 
+  const [shown, setShown] = useState<boolean>(
+    () =>
+      // /!\ content is set with useEffect,
+      // so it's not available on mount anyway
+      // "return !!content" => always returns false
+      false,
+  );
+
+  // When content is become available for the first time (set in useEffect)
+  // we set this content to be shown!
   useEffect(() => {
     const contentBecameAvailable = content && !previousContent;
-
     if (contentBecameAvailable) {
       setShown(true);
     }
   }, [content, previousContent]);
-  const hasContent = !!content; // On sidebar close, secondary menu is set to be shown on next re-opening
-  // (if any secondary menu content available)
 
+  const hasContent = !!content;
+
+  // On sidebar close, secondary menu is set to be shown on next re-opening
+  // (if any secondary menu content available)
   useEffect(() => {
     if (!hasContent) {
       setShown(false);
       return;
     }
-
     if (!sidebarShown) {
       setShown(true);
     }
   }, [sidebarShown, hasContent]);
+
   const hide = useCallback(() => {
     setShown(false);
   }, []);
-  return {
-    shown,
-    hide,
-    content,
-  };
+
+  return {shown, hide, content};
 }
 
-function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
+type NavbarMobileSidebarProps = {
+  sidebarShown: boolean;
+  toggleSidebar: () => void;
+};
+
+function NavbarMobileSidebar({
+  sidebarShown,
+  toggleSidebar,
+}: NavbarMobileSidebarProps) {
   useLockBodyScroll(sidebarShown);
   const items = useNavbarItems();
+
   const colorModeToggle = useColorModeToggle();
+
   const secondaryMenu = useSecondaryMenu({
     sidebarShown,
     toggleSidebar,
   });
+
   return (
-    <div className="navbar-sidebar"
-      {...tagOverlay({
-        id: 'hamburger-menu',
-        options: {
-          trackVisibility: {
-            mode: 'manual',
-            isVisible: sidebarShown
-          }
-        }
-      })}
-    >
+    <TrackedOverlayContext Component={'div'} id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -173,15 +179,16 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
             onChange={colorModeToggle.toggle}
           />
         )}
-        <button
+        <TrackedButton
           type="button"
+          title={'close'}
           className="clean-btn navbar-sidebar__close"
           onClick={toggleSidebar}>
           <IconClose
             color="var(--ifm-color-emphasis-600)"
             className={styles.navbarSidebarCloseSvg}
           />
-        </button>
+        </TrackedButton>
       </div>
 
       <div
@@ -191,7 +198,6 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
         <div className="navbar-sidebar__item menu">
           <ul className="menu__list">
             {items.map((item, i) => (
-              // @ts-ignore - ts incompatible swizzled code
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
             ))}
           </ul>
@@ -213,24 +219,26 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
           {secondaryMenu.content}
         </div>
       </div>
-    </div>
+    </TrackedOverlayContext>
   );
 }
 
-function Navbar() {
+function Navbar(): JSX.Element {
   const {
     navbar: {hideOnScroll, style},
   } = useThemeConfig();
+
   const mobileSidebar = useMobileSidebar();
   const colorModeToggle = useColorModeToggle();
   const activeDocPlugin = useActivePlugin();
   const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
+
   const items = useNavbarItems();
   const hasSearchNavbarItem = items.some((item) => item.type === 'search');
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
+
   return (
-    <nav
-      {...tagNavigation({id: 'navbar-top'})}
+    <TrackedNav id={'navbar-top'}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',
@@ -242,7 +250,8 @@ function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__items">
           {(items?.length > 0 || activeDocPlugin) && (
-            <button
+            <TrackedButton
+              title={'hamburger'}
               aria-label="Navigation bar toggle"
               className="navbar__toggle clean-btn"
               type="button"
@@ -250,7 +259,7 @@ function Navbar() {
               onClick={mobileSidebar.toggle}
               onKeyDown={mobileSidebar.toggle}>
               <IconMenu />
-            </button>
+            </TrackedButton>
           )}
           <Logo
             className="navbar__brand"
@@ -288,7 +297,7 @@ function Navbar() {
           toggleSidebar={mobileSidebar.toggle}
         />
       )}
-    </nav>
+    </TrackedNav>
   );
 }
 

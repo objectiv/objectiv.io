@@ -4,124 +4,155 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+import React, {useEffect, useMemo} from 'react';
+import clsx from 'clsx';
+import {
+  isActiveSidebarItem,
+  usePrevious,
+  Collapsible,
+  useCollapsible,
+  findFirstCategoryLink,
+  ThemeClassNames,
+  useThemeConfig,
+  useDocSidebarItemsExpandedState,
+} from '@docusaurus/theme-common';
+import Link from '@docusaurus/Link';
+import isInternalUrl from '@docusaurus/isInternalUrl';
+import {translate} from '@docusaurus/Translate';
+import IconExternalLink from '@theme/IconExternalLink';
+
+import DocSidebarItems from '@theme/DocSidebarItems';
+import type {Props} from '@theme/DocSidebarItem';
+import type {
+  PropSidebarItemCategory,
+  PropSidebarItemLink,
+} from '@docusaurus/plugin-content-docs';
+
 import {
   tagExpandable,
   tagLink,
 } from "@objectiv/tracker-browser";
-import React, {useEffect, memo} from 'react';
-import clsx from 'clsx';
-import {
-  isSamePath,
-  usePrevious,
-  Collapsible,
-  useCollapsible,
-  ThemeClassNames,
-} from '@docusaurus/theme-common';
-import Link from '@docusaurus/Link';
-import isInternalUrl from '@docusaurus/isInternalUrl';
-import IconExternalLink from '@theme/IconExternalLink';
+
 import styles from './styles.module.css';
+import useIsBrowser from '@docusaurus/useIsBrowser';
+// OBJECTIV: use history auto-select the first item in the category if it's a link
+import { useHistory } from "react-router-dom";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+// OBJECTIV END
 
-const isActiveSidebarItem = (item, activePath) => {
-  if (item.type === 'link') {
-    return isSamePath(item.href, activePath);
-  }
-
-  if (item.type === 'category') {
-    return item.items.some((subItem) =>
-      isActiveSidebarItem(subItem, activePath),
-    );
-  }
-
-  return false;
-}; // Optimize sidebar at each "level"
-// TODO this item should probably not receive the "activePath" props
-// TODO this triggers whole sidebar re-renders on navigation
-
-// @ts-ignore - types are all broken here, ignoring them since this is swizzled code
-export const DocSidebarItems = memo(function DocSidebarItems({items, ...props}) {
-  return (
-    <>
-      {items.map((item, index) => (
-        <DocSidebarItem
-          key={index} // sidebar is static, the index does not change
-          item={item}
-          {...props}
-        />
-      ))}
-    </>
-  );
-});
-export default function DocSidebarItem({item, ...props}) {
+export default function DocSidebarItem({
+  item,
+  ...props
+}: Props): JSX.Element | null {
   switch (item.type) {
     case 'category':
       if (item.items.length === 0) {
         return null;
       }
-
-      // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
       return <DocSidebarItemCategory item={item} {...props} />;
-
     case 'link':
     default:
-      // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
       return <DocSidebarItemLink item={item} {...props} />;
   }
-} // If we navigate to a category and it becomes active, it should automatically expand itself
+}
 
-function useAutoExpandActiveCategory({isActive, collapsed, setCollapsed}) {
+// If we navigate to a category and it becomes active, it should automatically expand itself
+function useAutoExpandActiveCategory({
+  isActive,
+  collapsed,
+  setCollapsed,
+}: {
+  isActive: boolean;
+  collapsed: boolean;
+  setCollapsed: (b: boolean) => void;
+}) {
   const wasActive = usePrevious(isActive);
   useEffect(() => {
     const justBecameActive = isActive && !wasActive;
-
     if (justBecameActive && collapsed) {
       setCollapsed(false);
     }
-  }, [isActive, wasActive, collapsed]);
+  }, [isActive, wasActive, collapsed, setCollapsed]);
 }
 
-function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
-  const {items, label, collapsible} = item;
+// When a collapsible category has no link, we still link it to its first child during SSR as a temporary fallback
+// This allows to be able to navigate inside the category even when JS fails to load, is delayed or simply disabled
+// React hydration becomes an optional progressive enhancement
+// see https://github.com/facebookincubator/infima/issues/36#issuecomment-772543188
+// see https://github.com/facebook/docusaurus/issues/3030
+function useCategoryHrefWithSSRFallback(
+  item: PropSidebarItemCategory,
+): string | undefined {
+  const isBrowser = useIsBrowser();
+  return useMemo(() => {
+    if (item.href) {
+      return item.href;
+    }
+    // In these cases, it's not necessary to render a fallback
+    // We skip the "findFirstCategoryLink" computation
+    if (isBrowser || !item.collapsible) {
+      return undefined;
+    }
+    return findFirstCategoryLink(item);
+  }, [item, isBrowser]);
+}
+
+function DocSidebarItemCategory({
+  item,
+  onItemClick,
+  activePath,
+  level,
+  index,
+  ...props
+}: Props & {item: PropSidebarItemCategory}) {
+  const {items, label, collapsible, className, href} = item;
+  // OBJECTIV: use history auto-select the first item in the category if it's a link
+  let history = useHistory();
+  let firstItemInCategoryLink = "";
+  if (items && items.length > 0 && items[0].type == 'link') {
+    firstItemInCategoryLink = useBaseUrl(items[0].href);
+  }
+  // OBJECTIV END
+  const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
+
   const isActive = isActiveSidebarItem(item, activePath);
-  const {collapsed, setCollapsed, toggleCollapsed} = useCollapsible({
+
+  const {collapsed, setCollapsed} = useCollapsible({
     // active categories are always initialized as expanded
     // the default (item.collapsed) is only used for non-active categories
     initialState: () => {
       if (!collapsible) {
         return false;
       }
-
       return isActive ? false : item.collapsed;
     },
   });
-  useAutoExpandActiveCategory({
-    isActive,
-    collapsed,
-    setCollapsed,
-  });
 
-  const findFirstLinkItem = (items) => {
-    const [firstItem] = items;
-
-    // There are no items :(
-    if(!firstItem) {
-      return;
-    }
-
-    switch(firstItem.type) {
-      // If the item is a link we are done and we can return it
-      case 'link':
-        return firstItem;
-
-      // Else keep searching deeper
-      case 'category':
-        return findFirstLinkItem(firstItem.items)
-    }
+  useAutoExpandActiveCategory({isActive, collapsed, setCollapsed});
+  const {expandedItem, setExpandedItem} = useDocSidebarItemsExpandedState();
+  function updateCollapsed(toCollapsed: boolean = !collapsed) {
+    setExpandedItem(toCollapsed ? null : index);
+    setCollapsed(toCollapsed);
   }
+  const {autoCollapseSidebarCategories} = useThemeConfig();
+  useEffect(() => {
+    if (
+      collapsible &&
+      expandedItem &&
+      expandedItem !== index &&
+      autoCollapseSidebarCategories
+    ) {
+      setCollapsed(true);
+    }
+  }, [
+    collapsible,
+    expandedItem,
+    index,
+    setCollapsed,
+    autoCollapseSidebarCategories,
+  ]);
 
-  const firstLinkItem = findFirstLinkItem(items);
-
-  // @ts-ignore
   return (
     <li
       {...tagExpandable({
@@ -133,54 +164,95 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
       })}
       className={clsx(
         ThemeClassNames.docs.docSidebarItemCategory,
+        ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
         'menu__list-item',
         {
           'menu__list-item--collapsed': collapsed,
         },
+        className,
       )}>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <Link
-        className={clsx('menu__link', {
-          'menu__link--sublist': collapsible,
-          'menu__link--active': collapsible && isActive,
-          [styles.menuLinkText]: !collapsible,
-        })}
-        onClick={
-          collapsible
-            ? (e) => {
-                if(!collapsed && isActive) {
-                  e.preventDefault();
+      <div className="menu__list-item-collapsible">
+        <Link
+          className={clsx('menu__link', {
+            'menu__link--sublist': collapsible && !href,
+            'menu__link--active': isActive,
+            [styles.menuLinkText]: !collapsible,
+            [styles.hasHref]: !!hrefWithSSRFallback,
+          })}
+          onClick={
+            collapsible
+              ? (e) => {
+                  onItemClick?.(item);
+                  if (href) {
+                    updateCollapsed(false);
+                  } else {
+                    // OBJECTIV: auto-select the first item in the category if it's a link
+                    firstItemInCategoryLink != "" ? history.push(firstItemInCategoryLink) : null;
+                    // OBJECTIV END
+                    e.preventDefault();
+                    updateCollapsed();
+                  }
                 }
-                toggleCollapsed();
-              }
-            : undefined
-        }
-        href={collapsible ? firstLinkItem.href : undefined}
-        {...props}>
-        {label}
-      </Link>
+              : () => {
+                  onItemClick?.(item);
+                }
+          }
+          aria-current={isActive ? 'page' : undefined}
+          href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
+          {...props}>
+          {label}
+        </Link>
+        {href && collapsible && (
+          <button
+            aria-label={translate(
+              {
+                id: 'theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel',
+                message: "Toggle the collapsible sidebar category '{label}'",
+                description:
+                  'The ARIA label to toggle the collapsible sidebar category',
+              },
+              {label},
+            )}
+            type="button"
+            className="clean-btn menu__caret"
+            onClick={(e) => {
+              e.preventDefault();
+              updateCollapsed();
+            }}
+          />
+        )}
+      </div>
 
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         <DocSidebarItems
-          // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
           items={items}
           tabIndex={collapsed ? -1 : 0}
           onItemClick={onItemClick}
           activePath={activePath}
+          level={level + 1}
         />
       </Collapsible>
     </li>
   );
 }
 
-function DocSidebarItemLink({item, onItemClick, activePath, ...props}) {
-  const {href, label} = item;
+function DocSidebarItemLink({
+  item,
+  onItemClick,
+  activePath,
+  level,
+  index,
+  ...props
+}: Props & {item: PropSidebarItemLink}) {
+  const {href, label, className} = item;
   const isActive = isActiveSidebarItem(item, activePath);
   return (
     <li
       className={clsx(
         ThemeClassNames.docs.docSidebarItemLink,
+        ThemeClassNames.docs.docSidebarItemLinkLevel(level),
         'menu__list-item',
+        className,
       )}
       key={label}>
       <Link
@@ -191,9 +263,7 @@ function DocSidebarItemLink({item, onItemClick, activePath, ...props}) {
         aria-current={isActive ? 'page' : undefined}
         to={href}
         {...(isInternalUrl(href) && {
-          onClick: (e) => {
-            onItemClick && onItemClick(e)
-          },
+          onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
         {...props}>
         {isInternalUrl(href) ? (

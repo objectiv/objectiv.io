@@ -1,6 +1,6 @@
 # PressableContext
 
-A [LocationContext](/taxonomy/location-contexts/) that describes an interactive element (like a link, button, icon), that the user can press.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md) that describes an interactive element (like a link, button, icon), that the user can press.
 
 import Mermaid from '@theme/Mermaid';
 

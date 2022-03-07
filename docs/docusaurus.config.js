@@ -13,16 +13,16 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const config = {
-  title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
+  title: "Objectiv - Open-source product analytics, designed for data science",
   titleDelimiter: '|',
-  tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
+  tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'log',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
 
   // undefined it the default behaviour of docusaurus, and leaves it alone
@@ -62,7 +62,7 @@ const config = {
     {
       src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
       'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-      'data-blockingmode': 'auto',
+      'data-blockingmode': 'manual',
       id: 'Cookiebot'
     },
   ],
@@ -79,11 +79,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{
+        property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+      }],
       navbar: {
         title: '',
         logo: {
           alt: 'Objectiv Documentation Logo',
-          src: '/img/logo-objectiv-docs.svg',
+          src: '/img/logo-objectiv-docs-white.svg',
         },
         items: [
           {

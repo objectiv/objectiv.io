@@ -1,6 +1,6 @@
 # ExpandableContext
 
-A [LocationContext](/taxonomy/location-contexts/)  that describes a section of the UI that can expand & collapse.
+A [LocationContext](/taxonomy/reference/location-contexts/overview.md)  that describes a section of the UI that can expand & collapse.
 
 import Mermaid from '@theme/Mermaid';
 

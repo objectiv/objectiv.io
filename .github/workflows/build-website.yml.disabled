@@ -1,0 +1,39 @@
+name: build-website
+
+on:
+  workflow_call:
+    secrets:
+      SFTP_URL:
+        required: true
+      SFTP_USERNAME:
+        required: true
+      SFTP_PASSWORD:
+        required: true
+      SFTP_PUBKEY:
+        required: true
+  push:
+    branches:
+      - 'main'
+      
+      
+jobs:
+  build-website:
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      SFTP_URL: ${{ secrets.SFTP_URL }}
+      SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+      SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+      SFTP_PUBKEY: ${{ secrets.SFTP_PUBKEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: |
+          make build-docker-build-image
+          make build-docker-deploy-image
+          docker run -e SFTP_URL \
+            -e SFTP_USERNAME \
+            -e SFTP_PASSWORD \
+            -e SFTP_PUBKEY  \
+            objectiv/website-deploy deploy.sh

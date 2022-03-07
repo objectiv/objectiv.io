@@ -1,14 +1,17 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { HttpContextPlugin } from '@objectiv/plugin-http-context';
+import { PathContextFromURLPlugin } from '@objectiv/plugin-path-context-from-url';
+import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
 import {
+  getLocationHref,
   getOrMakeTracker,
   getTrackerRepository,
-  getLocationHref,
-  windowExists,
-  makeRootLocationContext, Tracker, TrackerPlugins, makeDefaultPluginsList
+  makeCoreTrackerDefaultPluginsList,
+  TrackerPlugins,
+  windowExists
 } from "@objectiv/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
-import { RootLocationContextFromURLPlugin } from "./RootLocationContextFromURLPlugin";
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -65,12 +68,19 @@ function Root({children}) {
         getOrMakeTracker({
           ...trackerOptions,
           active: cookiebotStatisticsConsent,
-          plugins: new TrackerPlugins({
-            plugins: [
-              ...makeDefaultPluginsList(trackerOptions),
-              new RootLocationContextFromURLPlugin(trackerOptions)
-            ]}
-          )
+          plugins: [
+            ...makeCoreTrackerDefaultPluginsList(trackerOptions),
+            new HttpContextPlugin(trackerOptions),
+            new PathContextFromURLPlugin(trackerOptions),
+            new RootLocationContextFromURLPlugin({
+              ...trackerOptions,
+              idFactoryFunction: () => {
+                const secondSlug = location.pathname.split('/')[2];
+
+                return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+              }
+            })
+          ]
         });
       }
     }

@@ -1,4 +1,14 @@
 /* stylelint-disable docusaurus/copyright-header */
+
+@media screen and (min-width: 966px) { /* desktop */
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+}
+@media screen and (max-width: 480px) { /* mobile small */
+}
+
 /**
  * Any CSS included here will be global.
  */
@@ -253,6 +263,10 @@ p, .markdown p {
   margin-right: 0.5em;
   line-height: 14px;
 }
+.alert a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
 
 .footnotes hr {
   border: 0;
@@ -260,10 +274,22 @@ p, .markdown p {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
 }
 
+.twitter-tweet {
+  margin: 40px auto !important;
+}
+
 /** BLOG **/
 .blog-wrapper {
   line-height: 2em;
   letter-spacing: -0.003em;
+  margin-top: 40px;
+}
+
+.blog-wrapper footer {
+  padding: 0;
+  text-align: left;
+  background-color: #fff;
+  color: var(--ifm-font-color-base);
 }
 
 .blog-list-page article {
@@ -292,13 +318,33 @@ p, .markdown p {
   font-weight: 900;
 }
 
+/* Remove ToC from a blog post and stretch article width */
+.blog-post-page .row .col--9 {
+  --ifm-col-width: 100%;
+  margin-left: 0;
+}
+.blog-post-page .row .col--2 {
+  --ifm-col-width: 0;
+  display: none;
+}
+.blog-post-page article {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 700px;
+}
+
 .blog-post-page article header h1 {
   margin: 0;
   font-weight: 700;
 }
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .blog-post-page article header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+}
 
-.blog-post-page article p {
-
+.blog-post-page article {
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
@@ -323,14 +369,6 @@ p, .markdown p {
   color:rgb(100, 100, 100);
 }
 
-.blog-list-page article header .avatar {
-  display: none;
-}
-
-.blog-list-page article footer div:first-child { /* tags */
-  display: none;
-}
-
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
   text-align: left;  
   color: var(--ifm-font-color-base);
@@ -340,12 +378,11 @@ p, .markdown p {
   font-weight: bold;
 }
 
-.blog-post-page article {
-  max-width: 680px;
+.pagination-nav__link {
+  border: none;
 }
-
-.blog-post-page .table-of-contents {
-  display: none;
+.pagination-nav__link:hover {
+  color: var(--ifm-font-color-base);
 }
 
 /** LIGHTBOX MARKUP **/

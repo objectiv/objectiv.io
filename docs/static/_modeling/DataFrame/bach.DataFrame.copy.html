@@ -9,8 +9,10 @@
 <p>As this dataframe only represents data in the backing SQL store, and does not contain any data,
 this is a metadata copy only, no actual data is duplicated and changes to the underlying data
 will represented in both copy and original.
-Changes to data, index, sorting, grouping etc. on the copy will not affect the original.</p>
+Changes to data, index, sorting, grouping etc. on the copy will not affect the original.
+The savepoints on the other hand will be shared by the original and the copy.</p>
 <p>If you want to create a snapshot of the data, have a look at <a class="reference internal" href="bach.DataFrame.get_sample.html#bach.DataFrame.get_sample" title="bach.DataFrame.get_sample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_sample()</span></code></a></p>
+<p>Calling <cite>copy(df)</cite> will invoke this copy function, i.e. <cite>copy(df)</cite> is implemented as df.copy()</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>a copy of the dataframe</p>

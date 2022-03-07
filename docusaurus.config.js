@@ -11,9 +11,9 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - open-source product analytics built for data science',
+  title: "Objectiv - Open-source product analytics, designed for data science",
   titleDelimiter: '|',
-  tagline: 'Take, stack and run pre-built data models off the shelf to quickly build highly specific model stacks for in-depth product analysis and exploration.', //meta description, and og:description
+  tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
@@ -36,7 +36,20 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: false,
-        blog: false,
+        blog: {
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 0,
+          postsPerPage: 10,
+          showReadingTime: false,
+          feedOptions: {
+            type: 'all',
+            title: 'Objectiv Blog',
+            description: 'Objectiv Blog',
+            copyright: `Copyright © ${new Date().getFullYear()} Objectiv.`,
+          },
+        },
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
@@ -46,7 +59,6 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    require.resolve('docusaurus-plugin-image-zoom'),
     [
         // only load the post-build plugin when creating a production build
         path.resolve(__dirname, 'src/plugins/post-build/'),
@@ -73,6 +85,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+    metadata: [{
+      property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+    }],
     colorMode: {
       disableSwitch: true,
     },
@@ -85,45 +100,60 @@ const config = {
       },
       items: [
         {
-          to: 'how-it-works',
-          label: 'How it works',
-        },
-        {
           to: 'about',
           label: 'About us',
+        },
+        {
+          to: 'blog',
+          label: 'Blog',
         },
         {
           to: 'jobs',
           label: 'Jobs',
         },
         {
+          label: 'FAQ',
+          to: envConfig.websiteUrl + '/docs/home/the-project/faq', // ensure Docusaurus redirects to standalone docs
+          target: '_self',
+          waitUntilTracked: true
+        },
+        {
           label: 'Docs',
           to: envConfig.websiteUrl + '/docs', // ensure Docusaurus redirects to standalone docs
-          target: '_self'
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           href: 'https://github.com/objectiv/objectiv-analytics',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           href: slackJoinLink,
           label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
+          target: '_self',
+          waitUntilTracked: true
         },
         {
           href: 'mailto:hi@objectiv.io',
           label: 'Contact Us',
           position: 'right',
           className: 'navItem navEmail',
+          target: '_self',
+          waitUntilTracked: true
         },
       ],
     },

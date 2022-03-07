@@ -5,17 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { TrackedFooter } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
 
-import Link from '@docusaurus/Link';
 import {FooterLinkItem, useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import ThemedImage from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function FooterLink({
   to,
@@ -28,9 +28,8 @@ function FooterLink({
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
 
   return (
-    <Link
+    <TrackedLink
       className="footer__link-item"
-      {...tagLink({ id: label, href: href ? prependBaseUrlToHref ? normalizedHref : href : toUrl })}
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -47,7 +46,7 @@ function FooterLink({
       ) : (
         label
       )}
-    </Link>
+    </TrackedLink>
   );
 }
 
@@ -72,8 +71,7 @@ function Footer(): JSX.Element | null {
   }
 
   return (
-    <footer
-      {...tagNavigation({id: 'footer'})}
+    <TrackedFooter
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>
@@ -117,13 +115,13 @@ function Footer(): JSX.Element | null {
             {logo && (logo.src || logo.srcDark) && (
               <div className="margin-bottom--sm">
                 {logo.href ? (
-                  <Link 
+                  <TrackedLink
                     href={logo.href} 
-                    {...tagLink({ id: logo.alt, href: logo.href })}
                     className={styles.footerLogoLink}
+                    title={logo.alt}
                   >
                     <FooterLogo alt={logo.alt} sources={sources} />
-                  </Link>
+                  </TrackedLink>
                 ) : (
                   <FooterLogo alt={logo.alt} sources={sources} />
                 )}
@@ -142,7 +140,7 @@ function Footer(): JSX.Element | null {
           </div>
         )}
       </div>
-    </footer>
+    </TrackedFooter>
   );
 }
 

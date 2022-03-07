@@ -1,0 +1,18 @@
+:local(.questionAnswer) {
+  margin: 80px auto;
+}
+
+:local(.question) {
+  font-family: 'Roboto', 'Bungee', sans-serif;
+  text-align: center;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  display: block;
+  padding: 15px 0;
+}
+
+:local(.answer) {
+  text-align: center;
+}

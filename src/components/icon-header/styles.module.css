@@ -1,0 +1,16 @@
+.iconHeader {
+  text-align: center;
+  margin: 0 auto 80px auto;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .iconHeader {
+    margin: 10px auto 60px auto;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .iconHeader {
+    margin: 10px auto 30px auto;
+  }
+}

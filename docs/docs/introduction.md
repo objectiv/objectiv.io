@@ -12,16 +12,22 @@ import Mermaid from '@theme/Mermaid';
 ![Objectiv Logo](/img/logo-objectiv-large.svg "Objectiv Logo")
 
 ## Welcome to the official Objectiv documentation
-Objectiv is an open-source product analytics pipeline for reusable modeling.
+Objectiv is a complete, self-hosted product analytics stack designed for
+data science without gruntwork.
 
-With Objectiv, you can take, stack and run [pre-built data models](/open-model-hub) off the shelf to quickly build highly specific model stacks for in-depth product analytics and exploration. Objectiv's reusable modeling is enabled by validating all collected data against an [open analytics taxonomy](/taxonomy) to ensure it is clean, consistent and structured with effective modeling in mind.
+<img src={useBaseUrl('/img/objectiv-stack.svg')} alt="The Objectiv Stack"/>
 
-<img src={useBaseUrl('/img/objectiv-overview.svg')} alt="Objectiv Overview" className="img-l" />
+It includes everything you need to answer your product analytics questions with speed and precision.
+Straight from your notebook on the full, raw dataset. No cleaning, transformations or tracking plans required.
 
-With the included [Objectiv Bach](/modeling) modeling library, you can customize or build models with familiar Pandas-like dataframe operations that run on your full SQL dataset. When you're ready to share your findings, you can output to open-source BI tools with a single command.
+### Highlights
+* Collect [model-ready data](/tracking/core-concepts/overview.md) that doesn't require cleaning and transformation
+* Ensure compatibility with many models by validating against an [open analytics taxonomy](/taxonomy/introduction.md)
+* Build reusable models with [Pandas-like modeling](/modeling/intro.mdx) that runs on the full dataset
+* Chain together custom & [pre-built models](/modeling/Objectiv/bach_open_taxonomy.ModelHub) to answer in-depth questions quickly
 
 Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 ## Getting Started
 
-Follow the easy steps in our [Quickstart Guide](/quickstart-guide) to locally run the full Objectiv pipeline dockerized.
+Follow the easy steps in our [Quickstart Guide](/home/quickstart-guide.md) to locally run the full Objectiv stack dockerized.

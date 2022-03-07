@@ -57,13 +57,16 @@ export OBJECTIV_ENVIRONMENT='docker'
 The configs for the environments are in their respectiv dotenv files. eg. production settings are in `.env.production`. 
 Both the website and docs (being separate Docusaurus instances) have their own set of config files.
 
-Then to build:
-
-```console
-yarn build
+### Building in a docker image
+To do a full build of docs and website, inside a Node docker image run:
+```bash
+make build-docker-build-image
 ```
-This command generates static content into the `build` directory and can be served using any static contents 
-hosting service.
+This command generates a docker image containing static builds for both website and docs, for the environment(s) set 
+in OBJECTIV_ENVIRONMENT. By default, this is both staging and production.
+
+NOTE: the build step only builds the artefacts (as part of the resulting docker image). To actually deploy it, see the 
+deployment section.
 
 
 ## Building the docker image
@@ -71,7 +74,8 @@ hosting service.
 It's also possible to build a docker image, that can run the website + docs, using a built-in instance of apache. Building
 this is fairly easy, using `make`:
 ```bash
-make build-docker-website
+# this builds a runnable docker image, using the latest dockerized build
+make build-docker-website-image
 ```
 This will first build the website and docs (with .env.docker config), and then copy them into a docker image. The image
 can then be run:
@@ -82,12 +86,17 @@ The website should then be available on http://localhost:8080/
 
 ## Testing
 
-To verify the links are all OK, run the following:
+To verify the links are all OK, set the OBJECTIV_ENVIRONMENT environment variable to 'docker', and run the following:
 ```asciidoc
 yarn add broken-link-checker
-make clean check-broken-links
+make check-broken-links
 ```
 This will build and spin up a docker container running a docker build of the website, and check all internal links.
+
+To verify if the links are all OK on staging, run:
+```
+make check-broken-links-staging
+```
 
 ## Deployment
 
@@ -97,6 +106,37 @@ The website is hosted on TransIP. To deploy, observe the following steps:
 * Verify the build from staging (https://staging.objectiv.io)
 * Create a build for production (OBJECTIV_ENVIRONMENT=production)
 * Upload the contents of the build folder to production on TransIP
+
+There is a GitHub action, to automate all of this. To run that manually, either use [act](https://github.com/nektos/act), or do the following:
+to deploy: (make sure to first provision the appropriate environment variables for SFTP)
+```bash
+make build-docker-deploy-image
+docker run -e SFTP_URL \
+    -e SFTP_USERNAME \
+    -e SFTP_PASSWORD \
+    -e SFTP_PUBKEY  \
+    objectiv/website-deploy deploy.sh
+```
+
+The deployment script automatically does the following:
+- upload the staging build to /tmp/staging_
+- upload the production build to /tmp/production_
+- remove the old/archived staging build in /tmp/staging_old
+- move the old staging deployment to /tmp/staging_old
+- move the newly uploaded staging build into /subdomains/staging
+
+To set the production build live, simply move it from /tmp/production_ to /www
+
+
+### Manual deployment / extraction
+Alternatively, it's also possible to extract the build artefacts from the docker image, using the deployment image:
+```bash
+# first build deployment image
+make build-docker-deploy-image
+
+# then extract into dir "extract"
+docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
+```
 
 ## Acknowledgements
 This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).

@@ -123,22 +123,32 @@ const SphinxPage = (props) => {
                     }
                 });
 
+                const extractDomain = (url) => {
+                    return url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1");
+                }
                 // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
-                const currentSite = window.location.toString().match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
+                const currentLocation = window.location.toString();
+                const currentSite = currentLocation.match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
+                const currentDomain = extractDomain(currentLocation);
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
 
                     // a link is internal if the first part matches the current location,
+                    // or the tld's match (staging vs production
                     // or if it's a relative URL
-                    const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                    const isInternal = ( (currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                        currentDomain == extractDomain(a.href) ||
                         !a.href.startsWith('http'));
 
                     if ( isInternal ){
                         // fix the hrefs in the overview/index page in case of missing trailing slash
-                        if ( a.href.indexOf('modeling') == -1 && window.location.toString().slice(-1) != '/' ){
+                        // but only if we're toplevel, eg.
+                        // https://$currentSite/.../modeling and there's no modeling in a.href
+                        if ( a.href.indexOf('modeling') == -1 && currentLocation.endsWith('modeling')){
                             // we add the baseURL to the match, to make sure it works in dev and prod mode
                             const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
+                            const old = a.href;
                             a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
 
@@ -215,7 +225,7 @@ const SphinxPage = (props) => {
                             // move ID to the actual heading
                             section.id = '_' + originalId;
                             headings[0].id = originalId;
-                            headings[0].className = "sphinxAnchor";
+                            headings[0].className = "sphinxAnchor anchor";
 
                             // stop the loop if we are successful
                             return false;

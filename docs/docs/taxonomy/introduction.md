@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /taxonomy
+slug: /taxonomy/
 title: Introduction
 ---
 
@@ -13,9 +13,9 @@ validate analytics data. Adoption of the open analytics taxonomy enables data & 
 
 Each common event type and the contexts in which they can happen are defined in a class, which describes their properties, requirements and relationships with other classes.
 
-Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/core-concepts/collector) and [Bach](/modeling) (our modeling library) are built around the open taxonomy and support it out of the box.
+Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/collector) and [Bach](/modeling/intro.mdx) (our modeling library) are built around the open taxonomy and support it out of the box.
 
-<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" className="img-l" />
 
 ## Principles
 To help ensure that the open analytics taxonomy will meet its goals, we’ve created a set of principles to guide our development decisions.

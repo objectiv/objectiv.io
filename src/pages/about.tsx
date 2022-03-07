@@ -1,13 +1,13 @@
+import { TrackedDiv } from "@objectiv/tracker-react";
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
+import { TrackedLink } from "../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
-import { tagLink, tagContent, tagRootLocation } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 
@@ -15,21 +15,11 @@ function Contributor({name, gitHubUsername}) {
   const ghProfileLink = "https://github.com/" + gitHubUsername;
   const ghProfileTitle = "Check out @" + gitHubUsername + " on GitHub";
   return (
-    <div 
-      className={clsx("card", styles.contributorCard)}
-      {...tagContent({id: gitHubUsername})}
-    >
-      <div {...tagContent({id: 'contributor-card'})}>
+    <TrackedDiv id={gitHubUsername} className={clsx("card", styles.contributorCard)}>
+      <TrackedDiv id={'contributor-card'}>
         <div className="card__header">
-          <div 
-            className={clsx("avatar", styles.contributorAvatar)}
-            {...tagContent({id: 'avatar'})}
-          >
-            <Link 
-              {...tagLink({id: gitHubUsername, href: ghProfileLink})}
-              href={ghProfileLink} 
-              title={ghProfileTitle}
-            >
+          <TrackedDiv id={'avatar'} className={clsx("avatar", styles.contributorAvatar)}>
+            <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
               <Avatar 
                 githubHandle={gitHubUsername} 
                 size='64'
@@ -38,40 +28,26 @@ function Contributor({name, gitHubUsername}) {
                 alt={name} 
                 title={name} 
               />
-            </Link>
-          </div>
+            </TrackedLink>
+          </TrackedDiv>
           <div className="avatar__intro">
-            <div 
-              className={clsx(styles.contributorAvatarSubtitle)}
-              {...tagContent({id: 'avatar-subtitle'})}
-            >
-              <Link 
-                {...tagLink({id: gitHubUsername, href: ghProfileLink})}
-                href={ghProfileLink} 
-                title={ghProfileTitle}
-              >
+            <TrackedDiv id={'avatar-subtitle'} className={clsx(styles.contributorAvatarSubtitle)}>
+              <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
                 @{gitHubUsername}
-              </Link>
-            </div>
+              </TrackedLink>
+            </TrackedDiv>
             <div className={clsx(styles.contributorName)}>
               {name}
             </div>
           </div>
         </div>
-        <div 
-          className={clsx("card__footer", styles.contributorFooter)}
-          {...tagContent({id: 'card-footer'})}
-        >
-          <Link 
-            {...tagLink({id: gitHubUsername, href: ghProfileLink})}
-            href={ghProfileLink} 
-            title={ghProfileTitle}
-          >
+        <TrackedDiv id={'card-footer'} className={clsx("card__footer", styles.contributorFooter)}>
+          <TrackedLink href={ghProfileLink} title={ghProfileTitle}>
             <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
-          </Link>
-        </div>
-      </div>
-    </div>
+          </TrackedLink>
+        </TrackedDiv>
+      </TrackedDiv>
+    </TrackedDiv>
   );
 }
 
@@ -80,7 +56,7 @@ export default function AboutUs() {
   const {siteConfig} = context;
 
   return (
-    <div {...tagRootLocation({id: 'page-about'})}>
+    <div>
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
@@ -92,10 +68,7 @@ export default function AboutUs() {
           ctaText='Check the vacancy'
         />
 
-        <header
-          className={clsx('hero hero--primary', styles.aboutUsBanner)}
-          {...tagContent({id: 'header'})}
-        >
+        <header className={clsx('hero hero--primary', styles.aboutUsBanner)}>
           <div className={clsx('container', styles.contentContainer)}>
             <img
               src={useBaseUrl("img/icons/icon-data-heart-broken.svg")}
@@ -113,22 +86,16 @@ export default function AboutUs() {
           </div>
         </header>
 
-        <main
-          className={clsx(styles.aboutUsMain)}
-          {...tagContent({id: 'main'})}
-        >
-          <div
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}
-            {...tagContent({id: 'not-just-us'})}
-          >
+        <main className={clsx(styles.aboutUsMain)}>
+          <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey)}>
             <div className={clsx("container", styles.contentContainer)}>
               <img
                 src={useBaseUrl("img/icons/icon-raised-hands.svg")}
                 alt="Icon: raised hands" />
               <h2>It wasn't just us</h2>
               <p>
-                We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ 
-                to ‘automated data ingestion pipelines with transformation workflows and automated testing’, 
+                We asked around how fellow data scientists were handling this. Answers varied from 'manually' 
+                to 'automated data ingestion pipelines with transformation workflows and automated testing', 
                 but in all cases, significant data wrangling was involved and everyone had their own way of 
                 doing it.
               </p>
@@ -145,12 +112,9 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div
-            className={clsx(styles.aboutUsPageSection)}
-            {...tagContent({id: 'we-will-take-it-on'})}
-          >
+          <div className={clsx(styles.aboutUsPageSection)}>
             <div className={clsx("container", styles.contentContainer)}>
-            <img
+              <img
                 src={useBaseUrl("img/icons/icon-astronaut-dancing.svg")}
                 alt="Icon: dancing astronaut" />
               <h2>We decided to take it on</h2>
@@ -177,12 +141,12 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
-            {...tagContent({id: 'why-us'})}
+          <TrackedDiv
+            id={'why-us'}
+            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey, styles.aboutUsPageWhyUs)}
           >
             <div className={clsx("container", styles.contentContainer)}>
-              <h2>Why we think we’re in the position to fix this</h2>
+              <h2>Why we think we're in the position to fix this</h2>
 
               <div className={clsx(styles.whyUsReason)}>
                 <div>
@@ -206,16 +170,12 @@ export default function AboutUs() {
                 <div>
                   <strong>We have the right backing</strong><br />
                   We're backed by&nbsp;
-                  <Link 
-                    to="https://www.fly.vc/"
-                    {...tagLink({ id: 'vc-fly', href: 'https://www.fly.vc/' })}>
+                  <TrackedLink to="https://www.fly.vc/" waitUntilTracked={true}>
                     Fly Ventures
-                  </Link> &amp;&nbsp; 
-                  <Link 
-                    to="https://localglobe.vc/"
-                    {...tagLink({ id: 'vc-localglobe', href: 'https://localglobe.vc/' })}>
+                  </TrackedLink> &amp;&nbsp;
+                  <TrackedLink to="https://localglobe.vc/" waitUntilTracked={true}>
                     LocalGlobe
-                  </Link>. They share our vision on the future of data science and have the right 
+                  </TrackedLink>. They share our vision on the future of data science and have the right
                   experience &amp; network to help us execute our mission.
                 </div>
               </div>
@@ -234,38 +194,32 @@ export default function AboutUs() {
               </div>
 
             </div>
-          </div>
+          </TrackedDiv>
 
-          <div
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, 
-              styles.aboutUsPageContributors)}
-            {...tagContent({id: 'core-team'})}
+          <TrackedDiv
+            id={'core-team'}
+            className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv's Core Team</h2>
               <p>
                 Meet the mission crew. Also,&nbsp;
-                <Link
-                  to="/jobs"
-                  {...tagLink({ id: 'hiring', href: '/jobs' })}
-                >
+                <TrackedLink to="/jobs">
                   we're hiring a Data Scientist. Join us!
-                </Link>
+                </TrackedLink>
               </p>
             </div>
-            <div 
-              className={clsx("container")}
-
-            >
+            <div className={clsx("container")}>
               {contributors && contributors.length > 0 && (
-                <div {...tagContent({id: 'contributors'})} className={clsx(styles.contributorCards)}>
+                <TrackedDiv id={'contributors'} className={clsx(styles.contributorCards)}>
                   {contributors.map((props, idx) => (
                     <Contributor key={idx} {...props} />
                   ))}
-                </div>
+                </TrackedDiv>
               )}
             </div>
-          </div>
+          </TrackedDiv>
+        
         </main>
       </Layout>
     </div>
