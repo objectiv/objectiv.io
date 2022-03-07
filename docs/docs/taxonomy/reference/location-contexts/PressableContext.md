@@ -8,7 +8,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
         AbstractLocationContext --> PressableContext;
-        PressableContext --> LinkContext;
+        PressableContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
     class PressableContext diagramActive;
 `} 
   caption="Diagram: PressableContext inheritance" 
