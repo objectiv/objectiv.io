@@ -52,7 +52,8 @@ links.
 
 
 ### Testing a branch on staging
-To test a branch on staging, first of course check it out (`git checkout <YOUR_BRANCH>`), and then run:
+To test a branch on staging, first of course check it out (`git checkout <YOUR_BRANCH>`), make sure to first 
+provision the appropriate environment variables for SFTP, and then run:
 ```bash
 # pull any changes, and build the deployable docker images for both website and docs for staging & production.
 git pull && make build-docker-build-image && make build-docker-deploy-image
