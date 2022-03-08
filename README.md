@@ -56,7 +56,7 @@ To test a branch on staging, first of course check it out (`git checkout <YOUR_B
 provision the appropriate environment variables for SFTP, and then run:
 ```bash
 # pull any changes, and build the deployable docker images for both website and docs for staging & production.
-git pull && make build-docker-build-image && make build-docker-deploy-image
+git pull && make build-docker-build-image build-docker-deploy-image
 
 # then, upload to staging via FTP
 docker run -e SFTP_URL \
@@ -87,7 +87,7 @@ The deployment script automatically does the following:
 
 It's also possible to make a build of the site & docs that can run it with a built-in instance of apache:
 ```bash
-make build-docker-build-image && make build-docker-website-image
+make build-docker-build-image build-docker-website-image
 ```
 The image can then be run as such, making it available on http://localhost:8080/:
 ```bash
@@ -104,7 +104,7 @@ appropriate environment variables for SFTP):
 git checkout main && git pull 
 
 # second, build the docker images with static builds for staging and production, and for deployment
-make build-docker-build-image && make build-docker-deploy-image
+make build-docker-build-image build-docker-deploy-image
 
 # third, deploy to TransIP
 docker run -e SFTP_URL \
@@ -121,7 +121,7 @@ Alternatively, if you want/need to to deploy manually, it's also possible to ext
 the docker image, and upload those:
 ```bash
 # first, build the images
-make build-docker-build-image && make build-docker-deploy-image
+make build-docker-build-image build-docker-deploy-image
 
 # then extract into dir "extract"
 docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
