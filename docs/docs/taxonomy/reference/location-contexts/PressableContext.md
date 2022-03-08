@@ -8,7 +8,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
         AbstractLocationContext --> PressableContext;
-        PressableContext --> LinkContext;
+        PressableContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
     class PressableContext diagramActive;
 `} 
   caption="Diagram: PressableContext inheritance" 
@@ -26,15 +26,5 @@ import Mermaid from '@theme/Mermaid';
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 
 :::info setting of the id & type
-The tracker will automatically set the id and _type based on the pressable element. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
+The tracker will automatically set the `id` and `_type` based on the pressable element. When this is not possible on a specific platform, it will ask for a manual `id` and `_type` to be set.
 :::
-
-
-{"_type":"PressEvent","location_stack":
-    [{"_type":"RootLocationContext","id":"page-home"},
-    {"_type":"ContentContext","id":"main"},
-    {"_type":"ContentContext","id":"whats-in-the-box"},
-    {"_type":"LinkContext","id":"quickstart-guide","href":"/docs/quickstart-guide/"}]
-}
-
-            
