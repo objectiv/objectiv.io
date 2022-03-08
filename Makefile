@@ -56,5 +56,5 @@ check-broken-links: build-docker-website-image-local
 	# spin up website
 	yarn add broken-link-checker
 	docker run --rm -d -p 127.0.0.1:8080:80 --name objectiv_website_broken_link_check objectiv/website:${TAG}
-	./node_modules/.bin/blc --recursive --exclude-external --ordered --host-requests 10 http://localhost:8080
+	./node_modules/.bin/blc --recursive --exclude-external --ordered --host-requests 10 http://localhost:8080 || true
 	docker stop objectiv_website_broken_link_check
