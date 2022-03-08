@@ -87,7 +87,7 @@ export default function AboutUs() {
         </header>
 
         <main className={clsx(styles.aboutUsMain)}>
-          <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}>
+          <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey)}>
             <div className={clsx("container", styles.contentContainer)}>
               <img
                 src={useBaseUrl("img/icons/icon-raised-hands.svg")}
@@ -143,7 +143,7 @@ export default function AboutUs() {
 
           <TrackedDiv
             id={'why-us'}
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
+            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey, styles.aboutUsPageWhyUs)}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Why we think we're in the position to fix this</h2>

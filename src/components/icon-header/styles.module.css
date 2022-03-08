@@ -1,6 +1,6 @@
 .iconHeader {
   text-align: center;
-  margin: 10px auto 90px auto;
+  margin: 0 auto 80px auto;
 }
 
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */

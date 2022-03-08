@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
@@ -24,9 +24,10 @@ import BlogPostAuthors from '@theme/BlogPostAuthors';
 import { 
   TrackedHeader,
   TrackedDiv,
-  TrackedContentContext,
   TrackedFooter,
-  makeIdFromString 
+  makeIdFromString, 
+  useVisibleEventTracker,
+  TrackedContentContext,
 } from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 
@@ -51,6 +52,29 @@ function useReadingTimePlural() {
 }
 
 function BlogPostItem(props: Props): JSX.Element {
+  const {
+    metadata,
+    isBlogPostPage
+  } = props;
+  const { title } = metadata;
+  const blogPostId = 'post-' + makeIdFromString(title);
+  return (
+    <TrackedContentContext 
+      Component={'article'} 
+      id={`post-${makeIdFromString(title)}`}
+      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
+      itemProp="blogPost"
+      itemScope
+      itemType="http://schema.org/BlogPosting">
+
+      <BlogPostArticle blogPostId={blogPostId} {...props}>
+      </BlogPostArticle>
+
+    </TrackedContentContext>
+  );
+}
+
+function BlogPostArticle(props, blogPostId): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const { slackJoinLink } = siteConfig?.customFields ?? {};
 
@@ -80,14 +104,17 @@ function BlogPostItem(props: Props): JSX.Element {
   const tagsExists = tags.length > 0;
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
+  // OBJECTIV: VisibleEvent on blog post load
+  const trackVisibleEvent = useVisibleEventTracker();
+  useEffect(() => {
+    if (isBlogPostPage) {
+      trackVisibleEvent();
+    }
+  }, [blogPostId]);
+  // END OBJECTIV
+
   return (
-    <TrackedContentContext 
-      Component={'article'} 
-      id={`post-${makeIdFromString(title)}`}
-      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
-      itemProp="blogPost"
-      itemScope
-      itemType="http://schema.org/BlogPosting">
+    <>
       <TrackedHeader>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
@@ -136,12 +163,21 @@ function BlogPostItem(props: Props): JSX.Element {
             more data stores and make it easier to integrate with your existing stack. We also want to expand 
             the selection of models that's included.</p>
           <p>
-            <TrackedLink to="https://objectiv.io/docs/home/quickstart-guide/">Quickstart Guide</TrackedLink> - Try 
-              Objectiv on your local machine (takes 5 minutes)<br />
-            <TrackedLink to="https://github.com/objectiv/objectiv-analytics">Objectiv on Github</TrackedLink> 
-              &nbsp;- Check out the project and star us for future reference<br />
-            <TrackedLink to={slackJoinLink as string}>Objectiv on Slack</TrackedLink> - Join the discussion 
-              or get help
+            <TrackedLink 
+              to={withBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
+              target="_self">
+                Quickstart Guide
+            </TrackedLink> - Try Objectiv on your local machine (takes 5 minutes)<br />
+            <TrackedLink 
+              to="https://github.com/objectiv/objectiv-analytics"
+              target="_self">
+                Objectiv on Github
+              </TrackedLink> - Check out the project and star us for future reference<br />
+            <TrackedLink 
+              to={slackJoinLink as string}
+              target="_self">
+                Objectiv on Slack
+            </TrackedLink> - Join the discussion or get help
           </p>
         </TrackedDiv>
       )}
@@ -185,7 +221,7 @@ function BlogPostItem(props: Props): JSX.Element {
           )}
         </TrackedFooter>
       )}
-    </TrackedContentContext>
+    </>
   );
 }
 
