@@ -12,16 +12,16 @@ import TabItem from '@theme/TabItem';
 If you see this error for tracking calls, the Collector probably didn't start correctly, or cannot listen on 
 the specified port.
 
-1. Go to `http://localhost:[PORT]/schema` (e.g. [http://localhost:5000/schema](http://localhost:5000/schema)) 
+1. Go to `http://localhost:[PORT]/schema` (e.g. [http://localhost:8081/schema](http://localhost:8081/schema)) 
 and verify you see the schema.
-1. If you don't, go to `http://localhost:[PORT]/` (e.g. [http://localhost:5000/](http://localhost:5000/)) and 
+1. If you don't, go to `http://localhost:[PORT]/` (e.g. [http://localhost:8081/](http://localhost:8081/)) and 
 verify you see a a `Method not allowed` message or a `500` error message.
 1. If not, let's check the Collector logs for clues, and resolve any issues you see in there.
   ```bash
   docker logs objectiv_collector
   ```
 1. If the logs don't yield any clues, it's possible that the cannot listen on the given port (by default 
-port `5000`). Let's see if this is the case below.
+port `8081`). Let's see if this is the case below.
 
 <Tabs groupId="operating-systems">
   <TabItem value="linux" label="Linux">
