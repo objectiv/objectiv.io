@@ -63,7 +63,7 @@ docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \
     -e SFTP_PUBKEY  \
-    objectiv/website-deploy deploy.sh
+    objectiv/website-deploy:$(date +%Y%m%d) deploy.sh
 
 # finally, run the broken-links-checker on staging:
 make check-broken-links-staging
@@ -111,7 +111,7 @@ docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \
     -e SFTP_PUBKEY  \
-    objectiv/website-deploy deploy.sh
+    objectiv/website-deploy:$(date +%Y%m%d) deploy.sh
 ```
 
 ==> Then, to set the production build live, simply move it from `/tmp/production_` to `/www`.
