@@ -36,7 +36,7 @@ docker-compose -f docker-compose-dev.yaml ps
 
 This will spin up two images:
 
-* `objectiv_collector` - Endpoint that the Objectiv-tracker can send events to (http://localhost:5000).
+* `objectiv_collector` - Endpoint that the Objectiv-tracker can send events to (http://localhost:8081).
 * `objectiv_postgres` - Database to store data.
 
 :::caution
