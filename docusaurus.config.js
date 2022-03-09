@@ -133,7 +133,7 @@ const config = {
         },
         {
           href: slackJoinLink,
-          label: ' ',
+          label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
           target: '_self',
