@@ -63,7 +63,7 @@ docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \
     -e SFTP_PUBKEY  \
-    objectiv/website-deploy deploy.sh
+    objectiv/website-deploy:$(date +%Y%m%d) deploy.sh
 
 # finally, run the broken-links-checker on staging:
 make check-broken-links-staging
@@ -72,6 +72,8 @@ make check-broken-links-staging
 ---
 **NOTE**
 
+The above deploy command uses the current date as the tag for the website-deploy image. If you've set another 
+TAG when building the image, use that instead (e.g. `objectiv/website-deploy:TAG deploy.sh`).
 
 The deployment script automatically does the following:
 - upload the staging build to /tmp/staging_
@@ -111,10 +113,19 @@ docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \
     -e SFTP_PUBKEY  \
-    objectiv/website-deploy deploy.sh
+    objectiv/website-deploy:$(date +%Y%m%d) deploy.sh
 ```
 
 ==> Then, to set the production build live, simply move it from `/tmp/production_` to `/www`.
+
+---
+
+**NOTE**
+
+The above deploy command uses the current date as the tag for the website-deploy image. If you've set another 
+TAG when building the image, use that instead (e.g. `objectiv/website-deploy:TAG deploy.sh`).
+
+---
 
 ## Manual deployment
 Alternatively, if you want/need to to deploy manually, it's also possible to extract the build artefacts from 
