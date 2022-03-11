@@ -286,6 +286,10 @@ p, .markdown p {
   margin-top: 40px;
 }
 
+.blog-wrapper header a {
+  color: var(--ifm-font-color-base);
+}
+
 .blog-wrapper footer {
   padding: 0;
   text-align: left;
