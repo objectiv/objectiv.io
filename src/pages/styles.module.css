@@ -426,6 +426,11 @@
 .modelingBach .twoColumnItems {
   padding: 50px 0 0 0;
 }
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .modelingBach .twoColumnItems .twoColumnItem:nth-child(2) {
+    padding-bottom: 0; /* Remove unneeded padding between rows on mobile/tablet */
+  }
+}
 
 .twoColumnItems {
   display: flex;
