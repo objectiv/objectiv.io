@@ -110,6 +110,7 @@ body {
   }
   .navbar .navSlack {
     background: url('/img/icons/icon-nav-slack.svg') no-repeat;
+    color: transparent; 
   }
   .navbar .navSlack:hover {
     background: url('/img/icons/icon-nav-slack-hover.svg') no-repeat;

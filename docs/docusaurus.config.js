@@ -7,7 +7,7 @@ const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
 const getEnvConfig = require('../env_config.js');
 const envConfig = getEnvConfig(objectivEnvironment);
 
-const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
+const slackJoinLink = envConfig.websiteUrl + '/join-slack';
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
