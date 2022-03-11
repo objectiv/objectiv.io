@@ -5,9 +5,9 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
-import { TrackedLink } from "../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
-import AnnouncementBar from '../components/announcement-bar';
+import AnnouncementBar from '../../components/announcement-bar';
 
 let contributors = require('./contributors.json');
 
@@ -77,7 +77,7 @@ export default function AboutUs() {
             <h2>
               About Objectiv and why we're here
             </h2>
-            <p className={clsx('body-large')}>
+            <p className={clsx(styles.bodyLarge)}>
               Objectiv started as a product analytics suite for enterprise that ran on existing analytics data 
               (from Google Analytics, Adobe Analytics, Mixpanel, etc.). We spent a significant amount of time 
               cleaning and reorganizing that data to get it to a point where we could use it for modeling. The 
@@ -87,7 +87,7 @@ export default function AboutUs() {
         </header>
 
         <main className={clsx(styles.aboutUsMain)}>
-          <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey)}>
+          <div className={clsx(styles.aboutUsPageSection, styles.aboutUsPageSectionLightGrey)}>
             <div className={clsx("container", styles.contentContainer)}>
               <img
                 src={useBaseUrl("img/icons/icon-raised-hands.svg")}
@@ -143,7 +143,7 @@ export default function AboutUs() {
 
           <TrackedDiv
             id={'why-us'}
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionLightGrey, styles.aboutUsPageWhyUs)}
+            className={clsx(styles.aboutUsPageSection, styles.aboutUsPageSectionLightGrey, styles.aboutUsPageWhyUs)}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Why we think we're in the position to fix this</h2>
@@ -198,7 +198,7 @@ export default function AboutUs() {
 
           <TrackedDiv
             id={'core-team'}
-            className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
+            className={clsx(styles.aboutUsPageSection, styles.aboutUsPageContributors)}
           >
             <div className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv's Core Team</h2>
