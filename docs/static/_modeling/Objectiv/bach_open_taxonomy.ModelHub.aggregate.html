@@ -26,11 +26,13 @@ ModelHub can also create specific commonly used filters with methods that return
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">session_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Calculate the average duration of sessions per time interval as set with <code class="docutils literal notranslate"><span class="pre">time_aggregation</span></code>.</p>
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">session_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the average duration of sessions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p>
+<dd class="field-odd"><p><strong>groupby</strong> &#8211; sets the column(s) to group by.
+- if <cite>not_set</cite> it defaults to using <code class="xref py py-attr docutils literal notranslate"><span class="pre">ObjectivFrame.model_hub.time_agg</span></code>.
+- if None it aggregates over all data.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>series with results.</p>
@@ -40,15 +42,15 @@ ModelHub can also create specific commonly used filters with methods that return
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Calculate the unique sessions in the ObjectivFrame.</p>
-<p>Use any template for aggreation from: <a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
-ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p></li>
 <li><p><strong>filter</strong> &#8211; the output of this model is only based on the rows for which the filter is True.</p></li>
+<li><p><strong>groupby</strong> &#8211; sets the column(s) to group by.
+- if <cite>not_set</cite> it defaults to using <code class="xref py py-attr docutils literal notranslate"><span class="pre">ObjectivFrame.model_hub.time_agg</span></code>.
+- if None it aggregates over all data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -59,15 +61,15 @@ ie. <code class="docutils literal notranslate"><span class="pre">time_aggregatio
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Calculate the unique users in the ObjectivFrame.</p>
-<p>Use any template for aggreation from: <a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
-ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p></li>
 <li><p><strong>filter</strong> &#8211; the output of this model is only based on the rows for which the filter is True.</p></li>
+<li><p><strong>groupby</strong> &#8211; sets the column(s) to group by.
+- if <cite>not_set</cite> it defaults to using <code class="xref py py-attr docutils literal notranslate"><span class="pre">ObjectivFrame.model_hub.time_agg</span></code>.
+- if None it aggregates over all data.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

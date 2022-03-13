@@ -80,7 +80,7 @@ is okay, while a comparison operation is not.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series</span></code></a>(engine,&#160;base_node,&#160;index,&#160;name,&#160;...)</p></td>
-<td><p>A Series that represents the generic type and its specific operations</p></td>
+<td><p>Series is an abstract class.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesBoolean</span></code></a>(engine,&#160;base_node,&#160;index,&#160;...)</p></td>
 <td><p>A Series that represents the Boolean type and its specific operations</p></td>
@@ -260,7 +260,7 @@ is okay, while a comparison operation is not.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.append.html#bach.Series.append" title="bach.Series.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.append</span></code></a>(other[,&#160;ignore_index])</p></td>
 <td><p>Append rows of other series to the caller series.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.drop_duplicates.html#bach.Series.drop_duplicates" title="bach.Series.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.drop_duplicates</span></code></a>([keep,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.drop_duplicates.html#bach.Series.drop_duplicates" title="bach.Series.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.drop_duplicates</span></code></a>([keep])</p></td>
 <td><p>Return a series with duplicated rows removed.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.dropna.html#bach.Series.dropna" title="bach.Series.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.dropna</span></code></a>()</p></td>
@@ -323,6 +323,9 @@ is okay, while a comparison operation is not.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.nunique.html#bach.Series.nunique" title="bach.Series.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.nunique</span></code></a>([partition,&#160;skipna])</p></td>
 <td><p/></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.value_counts.html#bach.Series.value_counts" title="bach.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.value_counts</span></code></a>([normalize,&#160;sort,&#160;...])</p></td>
+<td><p>Returns a series containing counts per unique value</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -334,6 +337,12 @@ is okay, while a comparison operation is not.</p>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.cut.html#bach.SeriesAbstractNumeric.cut" title="bach.SeriesAbstractNumeric.cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.cut</span></code></a>(bins[,&#160;right])</p></td>
+<td><p>Segments values into bins.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.qcut.html#bach.SeriesAbstractNumeric.qcut" title="bach.SeriesAbstractNumeric.qcut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.qcut</span></code></a>(q)</p></td>
+<td><p>Segments values into equal-sized buckets based on rank or sample quantiles.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.mean.html#bach.SeriesAbstractNumeric.mean" title="bach.SeriesAbstractNumeric.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.mean</span></code></a>([partition,&#160;skipna])</p></td>
 <td><p>Get the mean/average of the input values.</p></td>
 </tr>

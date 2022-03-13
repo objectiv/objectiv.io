@@ -7,8 +7,8 @@
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">from_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_objects</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'loaded_data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cte'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fail'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.from_pandas" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Instantiate a new DataFrame based on the content of a Pandas DataFrame.</p>
 <p>The index of the Pandas DataFrame is set to the index of the DataFrame. Only single level index is
-supported. Supported dtypes are &#8216;int64&#8217;, &#8216;float64&#8217;, &#8216;string&#8217;, &#8216;datetime64[ns]&#8217;, &#8216;bool&#8217;. The &#8216;object&#8217;
-dtype is supported if the column contains string values and convert_objects is set to True.</p>
+supported. Supported dtypes are &#8216;int32&#8217;, &#8216;int64&#8217;, &#8216;float64&#8217;, &#8216;string&#8217;, &#8216;datetime64[ns]&#8217;, &#8216;bool&#8217;. If
+convert_objects is set to True, other columns are converted to supported data types if possible.</p>
 <p>How the data is loaded depends on the chosen materialization:</p>
 <ol class="arabic simple">
 <li><p>&#8216;table&#8217;: This will first write the data to a database table using pandas
@@ -27,8 +27,10 @@ in the database first (e.g. by specifying &#8216;table&#8217;).</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>engine</strong> (<em>sqlalchemy.engine.base.Engine</em>) &#8211; an sqlalchemy engine for the database.</p></li>
 <li><p><strong>df</strong> (<em>pandas.core.frame.DataFrame</em>) &#8211; Pandas DataFrame to instantiate as DataFrame.</p></li>
-<li><p><strong>convert_objects</strong> (<em>bool</em>) &#8211; If True, columns of type &#8216;object&#8217; are converted to &#8216;string&#8217; using the
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.convert_dtypes()</span></code> method where possible.</p></li>
+<li><p><strong>convert_objects</strong> (<em>bool</em>) &#8211; If True, the data in the columns with dtypes not in the list of supported
+dtypes are checked they contain supported data types. &#8216;Object&#8217; columns that contain strings are
+converted to the &#8216;string&#8217; dtype and loaded accordingly. Other types can only be loaded if
+materialization is &#8216;cte&#8217; and the type is supported as Bach Series.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) &#8211; </p><ul>
 <li><p>For &#8216;table&#8217; materialization: name of the table that Pandas will write the data to.</p></li>
 <li><p>For &#8216;cte&#8217; materialization: name of the node in the underlying SqlModel graph.</p></li>

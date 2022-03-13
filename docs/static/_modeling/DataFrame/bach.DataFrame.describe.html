@@ -11,8 +11,11 @@ The following statistics are considered: <cite>count</cite>, <cite>mean</cite>, 
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>percentiles</strong> (<em>Optional</em><em>[</em><em>Sequence</em><em>[</em><em>float</em><em>]</em><em>]</em>) &#8211; list of percentiles to be calculated. Values must be between 0 and 1.</p></li>
-<li><p><strong>include</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) &#8211; dtypes to be included, if not provided calculations will be based on numerical columns</p></li>
-<li><p><strong>exclude</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) &#8211; dtypes to be excluded</p></li>
+<li><p><strong>include</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) &#8211; dtypes to be included.
+Either a sequence of dtypes, a single dtype, or the special value &#8216;all&#8217;.
+By default calculations will be based on numerical columns, if there are any
+numerical columns and on all columns if there are no numerical columns.</p></li>
+<li><p><strong>exclude</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) &#8211; dtypes to be excluded. Either a sequence of dtypes, a single dtype, or None.</p></li>
 <li><p><strong>datetime_is_numeric</strong> (<em>bool</em>) &#8211; not supported</p></li>
 </ul>
 </dd>
