@@ -106,11 +106,35 @@ const config = {
             position: 'right',
           },
           {
+            href: 'https://github.com/objectiv/objectiv-analytics',
+            label: 'GitHub',
+            position: 'right',
+            className: 'navItem navGitHub',
+            target: '_self',
+            waitUntilTracked: true
+          },
+          {
+            href: slackJoinLink,
+            label: 'Slack',
+            position: 'right',
+            className: 'navItem navSlack',
+            target: '_self',
+            waitUntilTracked: true
+          },
+          {
+            href: 'https://twitter.com/objectiv_io',
+            label: 'Twitter',
+            position: 'right',
+            className: 'navItem navTwitter',
+            target: '_self',
+            waitUntilTracked: true
+          },  
+          {
             label: 'Objectiv.io',
             position: 'right',
             to: envConfig.websiteUrl,
             target: '_self',
-            className: 'navbar__item navbar__link go-homepage'
+            className: 'button navHomepage',
           }
         ],
       },

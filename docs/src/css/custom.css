@@ -57,7 +57,7 @@ html[data-theme='light'] .DocSearch {
   /* Modal */
   --docsearch-modal-background: var(--ifm-color-secondary-lighter);
   /* Search box */
-  --docsearch-searchbox-background: #fff;
+  --docsearch-searchbox-background: #000;
   --docsearch-searchbox-focus-background: var(--ifm-color-white);
   /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
@@ -65,9 +65,6 @@ html[data-theme='light'] .DocSearch {
   --docsearch-hit-background: var(--ifm-color-white);
   /* Footer */
   --docsearch-footer-background: var(--ifm-color-white);
-}
-html[data-theme='light'] .DocSearch-Button:hover {
-  box-shadow: inset 0 0 0 2px #999;
 }
 
 html[data-theme='dark'] .DocSearch {
@@ -93,17 +90,95 @@ html[data-theme='dark'] .DocSearch {
   );
 }
 
-/**
- * Hide the "See all ## results" link at the bottom of the search widget. 
- * See https://github.com/facebook/docusaurus/issues/5084 for context.
- */
- .DocSearch-Dropdown-Container .DocSearch-HitsFooter {
+/** TOP NAVIGATION **/
+nav .navbar__logo {
+  margin: 2px 8px 0 4px;
+}
+nav .DocSearch-Button {
+  padding: 0 12px;
+}
+html[data-theme='light'] .DocSearch-Button:hover {
+  box-shadow: inset 0 0 0 1px #fff;
+  background: #000;
+}
+
+nav .DocSearch-Button .DocSearch-Search-Icon {
+  color: #999;
+}
+nav .DocSearch-Button-Placeholder {
+  padding-right: 90px;
+  color: #999;
+}
+nav .DocSearch-Button-Key {
+  background: #000;
+  box-shadow: none;
+  padding-bottom: 0;
+  color: #999;
+}
+nav .DocSearch-Button-Keys span:first-child {
+  width: 30px;
+  margin-right: 0;
+}
+nav .DocSearch-Button-Keys span:first-child::after {
+  content: "\00a0+";
+}
+
+.navbar .navItem {
+  width: 24px;
+  height: 24px;
+  padding: 0 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.navbar .navItem span, .navbar .navItem svg {
+  display: none;
+}
+.navbar .navGitHub {
+  background-image: url('/img/icons/icon-nav-github.svg');
+}
+.navbar .navGitHub:hover {
+  background-image: url('/img/icons/icon-nav-github-hover.svg');
+}
+.navbar .navSlack {
+  background-image: url('/img/icons/icon-nav-slack.svg');
+  color: transparent; 
+}
+.navbar .navSlack:hover {
+  background-image: url('/img/icons/icon-nav-slack-hover.svg');
+}
+.navbar .navTwitter {
+  background-image: url('/img/icons/icon-nav-twitter.svg');
+}
+.navbar .navTwitter:hover {
+  background-image: url('/img/icons/icon-nav-twitter-hover.svg');
+}
+nav .navHomepage {
+  background: #999;
+  color: #333333;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 20px !important;
+  margin: 0 4px 0 12px;
+  border-radius: 4px;
+}
+nav .navHomepage:hover {
+  background: #fff;
+  color: #333333;
+}
+
+
+
+/* Hide the "See all ## results" link at the bottom of the search widget.  */
+ /* See https://github.com/facebook/docusaurus/issues/5084 for context. */
+.DocSearch-Dropdown-Container .DocSearch-HitsFooter {
   display: none;
 }
 .DocSearch-Dropdown-Container {
   padding-bottom: var(--docsearch-spacing);
 }
 
+
+/** LEFT NAVIGATION **/
 @media (max-width: 996px) {
   .navbar-sidebar .navbar__item {
     display: block !important;
@@ -116,11 +191,6 @@ html[data-theme='dark'] .DocSearch {
 .navbar-sidebar h2.activeDocsSection {
   font-size: 18px;
   margin: 16px 0 16px 16px;
-}
-
-.navbar__item.navbar__link.go-homepage::after {
-  content: '\29C9';
-  margin: 0 3px 0 5px;
 }
 
 /* Nav mobile */
@@ -138,6 +208,7 @@ html[data-theme='dark'] .DocSearch {
   filter: invert(100%);
 }
 
+/** FOOTER **/
 .footer {
   padding: 10px;
   text-align: center;
