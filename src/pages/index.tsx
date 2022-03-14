@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </TrackedHeader>
 
-        <main className={clsx('body-large')}>
+        <main className={clsx(styles.bodyLarge)}>
 
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
@@ -392,7 +392,7 @@ export default function Home() {
             </TrackedDiv>
           </div>
 
-          <footer>
+          <footer className={clsx(styles.slackFooter)}>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open-source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
