@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
-import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
+import { TrackedDiv } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
@@ -19,7 +19,7 @@ export default function Home() {
         title=''
         description={tagline}>
         
-        <TrackedHeader 
+        <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.heroContainer)}>
@@ -44,7 +44,7 @@ export default function Home() {
               Star us on GitHub
             </TrackedLink>
           </div>
-        </TrackedHeader>
+        </TrackedDiv>
 
         <main className={clsx(styles.bodyLarge)}>
 
