@@ -42,7 +42,7 @@ operations on Series available to do operations like add or subtract, to create 
 <td><p>Return a copy of this Series.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.count.html#bach.Series.count" title="bach.Series.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the amount of rows in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.Series.describe.html#bach.Series.describe" title="bach.Series.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>([percentiles,&#160;datetime_is_numeric])</p></td>
 <td><p>Returns descriptive statistics, it will vary based on what is provided</p></td>
@@ -72,22 +72,22 @@ operations on Series available to do operations like add or subtract, to create 
 <td><p>Evaluate for every row in this series whether the value is missing or NULL.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.max.html#bach.Series.max" title="bach.Series.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the maximum value in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.Series.median.html#bach.Series.median" title="bach.Series.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the median in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.min.html#bach.Series.min" title="bach.Series.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the minimum value in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.Series.mode.html#bach.Series.mode" title="bach.Series.mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mode</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the mode in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.notnull.html#bach.Series.notnull" title="bach.Series.notnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notnull</span></code></a>()</p></td>
 <td><p>Evaluate for every row in this series whether the value is not missing or NULL.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.Series.nunique.html#bach.Series.nunique" title="bach.Series.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nunique</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p/></td>
+<td><p>Returns the amount of unique values in each partition or for all values if none is given.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.sort_index.html#bach.Series.sort_index" title="bach.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(*[,&#160;ascending])</p></td>
 <td><p>Sort this Series by its index.</p></td>
@@ -105,7 +105,7 @@ operations on Series available to do operations like add or subtract, to create 
 <td><p>Get the data from this series as a pandas.Series :param limit: The limit to apply, either as a max amount of rows or a slice.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.Series.unique.html#bach.Series.unique" title="bach.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>([partition,&#160;skipna])</p></td>
-<td><p>Get the unique values in this series, currently by grouping the series involved.</p></td>
+<td><p>Return all unique values in this Series.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.Series.unstack.html#bach.Series.unstack" title="bach.Series.unstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstack</span></code></a>([level,&#160;fill_value,&#160;aggregation])</p></td>
 <td><p>Pivot a level of the index labels.</p></td>

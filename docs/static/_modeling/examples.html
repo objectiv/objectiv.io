@@ -35,9 +35,9 @@ existing pandas DataFrame (using <cite>from_pandas</cite>).</p>
 <span class="c1"># Add a column 'concat', with the result of concatenating strings</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'concat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">' is located in '</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">'municipality'</span><span class="p">]</span>
 <span class="c1"># remove the city column</span>
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'city'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'city'</span><span class="p">])</span>
 <span class="c1"># rename the 'another column' column to 'city'</span>
-<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'another column'</span><span class="p">:</span> <span class="s1">'city'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'another column'</span><span class="p">:</span> <span class="s1">'city'</span><span class="p">})</span>
 
 <span class="c1"># Convert the Bach DataFrame to a pandas DataFrame.</span>
 <span class="c1"># When executing in a notebook this will print the dataframe.</span>

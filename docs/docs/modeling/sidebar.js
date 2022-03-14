@@ -1042,33 +1042,8 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "kurt",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurt"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "kurtosis",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurtosis"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "mad",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.mad"
-                                    },
-                                    {
-                                        "type": "doc",
                                         "label": "mean",
                                         "id": "modeling/Series/bach.SeriesAbstractNumeric.mean"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "prod",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.prod"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "product",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.product"
                                     },
                                     {
                                         "type": "doc",
@@ -1089,11 +1064,6 @@ module.exports = [
                                         "type": "doc",
                                         "label": "sem",
                                         "id": "modeling/Series/bach.SeriesAbstractNumeric.sem"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "skew",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.skew"
                                     },
                                     {
                                         "type": "doc",
@@ -1152,16 +1122,6 @@ module.exports = [
                                         "type": "doc",
                                         "label": "Overview",
                                         "id": "modeling/Series/bach.SeriesJsonb"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "max",
-                                        "id": "modeling/Series/bach.SeriesJsonb.max"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "min",
-                                        "id": "modeling/Series/bach.SeriesJsonb.min"
                                     },
                                     {
                                         "type": "doc",
