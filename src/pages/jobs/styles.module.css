@@ -1,0 +1,30 @@
+/**************
+ JOBS PAGE 
+***************/
+
+.jobsHeader {
+  padding: 80px 0 0 0;
+}
+
+.jobsContainer {
+  margin-top: 0;
+  text-align: left;
+  max-width: 960px;
+}
+
+.jobsContainer h2 {
+  display: flex;
+  align-items:center;
+  margin-top: 30px;
+}
+
+.jobsContainer h1 img, .jobsContainer h2 img {
+  vertical-align: middle;
+  margin: 0 18px 0 0;
+}
+
+.jobsContainer {
+  margin-top: 0;
+  text-align: left;
+  max-width: 960px;
+}

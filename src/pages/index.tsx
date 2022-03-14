@@ -5,13 +5,13 @@ import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
-import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
+import { TrackedDiv } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
-  const {tagline, customFields} = context.siteConfig;
+  const {tagline} = context.siteConfig;
 
   return (
     <div>
@@ -19,7 +19,7 @@ export default function Home() {
         title=''
         description={tagline}>
         
-        <TrackedHeader 
+        <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className={clsx('container', styles.heroContainer)}>
@@ -44,9 +44,9 @@ export default function Home() {
               Star us on GitHub
             </TrackedLink>
           </div>
-        </TrackedHeader>
+        </TrackedDiv>
 
-        <main className={clsx('body-large')}>
+        <main className={clsx(styles.bodyLarge)}>
 
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
@@ -392,18 +392,17 @@ export default function Home() {
             </TrackedDiv>
           </div>
 
-          <footer>
+          <footer className={clsx(styles.slackFooter)}>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
               <h2>Objectiv is open-source and we're building it in public.</h2>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
-                to={customFields.slackJoinLink as string}
-                waitUntilTracked={true}
+                to="/join-slack"
                 className={clsx("button", styles.ctaButton)}
               >
-                  <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
-                  Join us on Slack
-                </TrackedLink>
+                <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
+                Join us on Slack
+              </TrackedLink>
             </TrackedDiv>
           </footer>
 
