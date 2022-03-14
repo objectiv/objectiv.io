@@ -232,6 +232,10 @@ p, .markdown p {
   margin-top: 40px;
 }
 
+.blog-wrapper header a {
+  color: var(--ifm-font-color-base);
+}
+
 .blog-wrapper footer {
   padding: 0;
   text-align: left;
@@ -317,7 +321,6 @@ p, .markdown p {
 }
 
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
-  text-align: left;  
   color: var(--ifm-font-color-base);
 }
 .blog-list-page article footer .text--right a:after {

@@ -135,7 +135,7 @@ the docker image, and upload those:
 make build-docker-build-image build-docker-deploy-image
 
 # then extract into dir "extract"
-docker run -v $PWD/extract:/extract objectiv/website-deploy extract.sh
+docker run -v $PWD/extract:/extract objectiv/website-deploy:$(date +%Y%m%d) extract.sh
 ```
 
 Then, upload manually to staging via FTP, and optionally run the broken-links-checker on it:
