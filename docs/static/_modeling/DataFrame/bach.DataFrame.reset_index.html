@@ -4,7 +4,7 @@
 <h1>bach.DataFrame.reset_index<a class="headerlink" href="#bach-dataframe-reset-index" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.DataFrame.reset_index">
-<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.reset_index" title="Permalink to this definition">&#182;</a></dt>
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">reset_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.reset_index" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Drops the current index.</p>
 <p>With reset_index, all indexes are removed from the DataFrame, so that the DataFrame does not have any
 index Series. A new index can be set with <a class="reference internal" href="bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_index()</span></code></a>.</p>
@@ -14,14 +14,13 @@ index Series. A new index can be set with <a class="reference internal" href="ba
 <li><p><strong>level</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Sequence</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em>) &#8211; Removes given levels from index. Removes all levels by default</p></li>
 <li><p><strong>drop</strong> (<em>bool</em>) &#8211; if False, the dropped index is added to the data columns of the DataFrame. If True it
 is removed.</p></li>
-<li><p><strong>inplace</strong> (<em>bool</em>) &#8211; update the current DataFrame or return a new DataFrame.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>DataFrame with the index dropped or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+<dd class="field-even"><p>DataFrame with the index dropped.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a>]</p>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a></p>
 </dd>
 </dl>
 </dd></dl>

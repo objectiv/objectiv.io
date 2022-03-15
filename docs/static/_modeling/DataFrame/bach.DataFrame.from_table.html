@@ -4,9 +4,10 @@
 <h1>bach.DataFrame.from_table<a class="headerlink" href="#bach-dataframe-from-table" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.DataFrame.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_dtypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Instantiate a new DataFrame based on the content of an existing table in the database.</p>
-<p>This will create and remove a temporary table to asses meta data for the setting the correct dtypes.</p>
+<p>If all_dtypes is not specified, the column dtypes are queried from the database&#8217;s information
+schema.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -14,6 +15,9 @@
 <li><p><strong>table_name</strong> (<em>str</em>) &#8211; the table name that contains the data to instantiate as DataFrame.</p></li>
 <li><p><strong>index</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) &#8211; list of column names that make up the index. At least one column needs to be
 selected for the index.</p></li>
+<li><p><strong>all_dtypes</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em>) &#8211; Optional. Mapping from column name to dtype.
+Must contain all index and data columns.
+Must be in same order as the columns appear in the the sql-model.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -25,7 +29,7 @@ selected for the index.</p></li>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In order to create this temporary table the source data is queried.</p>
+<p>If all_dtypes is not set, then this will query the database.</p>
 </div>
 </dd></dl>
 
