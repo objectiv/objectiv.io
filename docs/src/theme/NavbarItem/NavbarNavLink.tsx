@@ -36,6 +36,8 @@ export default function NavbarNavLink({
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
+  // @ts-ignore
+  delete props.waitUntilTracked;
   return (
     <Link
       {...tagLink({id: label as string, href: linkTo}) }

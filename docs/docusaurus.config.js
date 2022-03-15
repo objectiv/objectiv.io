@@ -134,7 +134,7 @@ const config = {
             position: 'right',
             to: envConfig.websiteUrl,
             target: '_self',
-            className: 'button navHomepage',
+            className: 'navItem navHomepage',
           }
         ],
       },

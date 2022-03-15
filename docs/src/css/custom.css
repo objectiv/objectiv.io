@@ -110,17 +110,14 @@ nav .DocSearch-Button-Placeholder {
   color: #999;
 }
 nav .DocSearch-Button-Key {
-  background: #000;
+  background: #202124;
   box-shadow: none;
   padding-bottom: 0;
   color: #999;
 }
 nav .DocSearch-Button-Keys span:first-child {
   width: 30px;
-  margin-right: 0;
-}
-nav .DocSearch-Button-Keys span:first-child::after {
-  content: "\00a0+";
+  margin-right: 5px;
 }
 
 .navbar .navItem {
@@ -152,18 +149,39 @@ nav .DocSearch-Button-Keys span:first-child::after {
 .navbar .navTwitter:hover {
   background-image: url('/img/icons/icon-nav-twitter-hover.svg');
 }
-nav .navHomepage {
-  background: #999;
-  color: #333333;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px 20px !important;
-  margin: 0 4px 0 12px;
-  border-radius: 4px;
+.navbar .navHomepage {
+  background-image: url('/img/icons/icon-nav-objectiv-logo.svg');
 }
-nav .navHomepage:hover {
-  background: #fff;
-  color: #333333;
+.navbar .navHomepage:hover {
+  background-image: url('/img/icons/icon-nav-objectiv-logo-hover.svg');
+}
+@media screen and (min-width: 996px) { /* desktop */
+  nav .navHomepage {
+    width: auto !important;
+    height: auto !important;
+    background: #999;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 20px !important;
+    margin: 0 4px 0 12px;
+    border-radius: 4px;
+    border-color: var(--ifm-button-border-color);
+    border-style: solid;
+    border-width: var(--ifm-button-border-width);
+    line-height: 1.5;
+    transition-property: color, background, border-color;
+    transition-duration: var(--ifm-button-transition-duration);
+    transition-timing-function: var(--ifm-transition-timing-default);
+  }
+  nav .navHomepage:hover {
+    background: #fff !important;
+    color: #333333;
+  }
+}
+
+.dropdown > .navbar__link:after {
+  margin-left: 13px;
 }
 
 
