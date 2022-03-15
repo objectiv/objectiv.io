@@ -20,8 +20,8 @@ verify you see a a `Method not allowed` message or a `500` error message.
   ```bash
   docker logs objectiv_collector
   ```
-1. If the logs don't yield any clues, it's possible that the cannot listen on the given port (by default 
-port `8081`). Let's see if this is the case below.
+1. If the logs don't yield any clues, it's possible that the Collector cannot listen on the given port (by 
+default port `8081`). Let's see if this is the case below.
 
 <Tabs groupId="operating-systems">
   <TabItem value="linux" label="Linux">
