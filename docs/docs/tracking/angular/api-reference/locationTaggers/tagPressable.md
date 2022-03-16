@@ -19,7 +19,7 @@ This attribute directive builds on top of [BrowserTracker:tagPressable](/trackin
 | :-:      | :--      | :--                                                                                               | :--           
 | required | **id**   | string                                                                                            |
 | optional | options  | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
-| optional | onError  | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
+| optional | onError  | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
 [BrowserTracker:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)

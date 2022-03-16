@@ -33,10 +33,6 @@ Determines if trackEvent will process Events or not.
 Required, string.   
 Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md).
 
-### console
-Optional, [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md).   
-TrackerConsole instance for logging.
-
 ### global_contexts
 Optional, [GlobalContexts](/tracking/browser/api-reference/core/GlobalContexts.md).   
 Array of GlobalContext instances.
@@ -60,6 +56,9 @@ TrackerTransport instance. Responsible for sending Events.
 ### plugins
 Optional, [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md).  
 Plugins will be executed when the Tracker initializes and before the Event is sent.
+
+### trackApplicationContext
+Optional. Whether to track ApplicationContext automatically. Enabled by default.
 
 ## Default Plugins
 Core Tracker comes preconfigured with the following plugins:
@@ -96,7 +95,8 @@ async trackEvent(event: TrackerEvent) => Promise<TrackerEvent>
 The main entry point of the Tracker Instance:
 - Prepends given Event's LocationStack and GlobalContexts with the Tracker's LocationStack and GlobalContexts
 - Sets the Event's `time` attribute
-- Invokes all Plugins `beforeTransport` lifecycle method
+- Invokes all Plugins' `enrich` lifecycle method
+- Invokes all Plugins' `validate` lifecycle method
 - If Queue has been configured
   - Hands the Event over to Queue 
 - Else if Transport has been configured

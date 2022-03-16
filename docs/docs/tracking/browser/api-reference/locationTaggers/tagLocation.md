@@ -19,7 +19,7 @@ tagLocation = (parameters: {
 | :-:      | :--          | :--                                                                                               | :--           
 | required | **instance** | [LocationContext](/taxonomy/reference/location-contexts/overview.md)                              |
 | optional | options      | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | Dynamically calculated based on `instance`. See the [Events](#events) table below.
-| optional | onError      | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
+| optional | onError      | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
 [TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md) 

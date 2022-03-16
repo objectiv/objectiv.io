@@ -11,16 +11,5 @@ type TrackerConsole = Pick<
 ```
 
 :::info
-Most Core Tracker modules accept a `console` parameter. To quickly enable logging simply pass the Console API to it.
-The tracker will use it to log various debugging info. 
-
-The following example will enable `console` for all modules:
-
-```typescript
-makeTracker({
-  applicationId: 'app',
-  endpoint: 'https://collector.app.dev',
-  console: window.console
-})
-```
+Check out our how-to on how to [configure logging](/tracking/browser/how-to-guides/configuring-logging.md);
 :::

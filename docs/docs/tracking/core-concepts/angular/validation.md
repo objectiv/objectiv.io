@@ -36,23 +36,4 @@ As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md
 For more background, see the [Collector docs](/tracking/collector/introduction.md).
 
 ## Logging
-When you run your application, you can observe all tracking calls and other tracking events by enabling 
-logging. This will print all tracking events to the chosen logger, e.g. the browser console.
-
-Logging can be enabled in two ways:
-1. When configuring the tracker. For example, to log to the browser console:
-```js
-ObjectivTrackerModule.forRoot({
-  applicationId: 'app-id',
-  endpoint: 'https://collector.app.dev',
-  console: console
-})
-```
-:::info
-Logging is automatically enabled in development mode.
-:::
-
-2. At runtime. For example, to enable logging from the browser console:
-```console
-objectiv.trackers.defaultTracker.console = console;
-```
+Check out this how-to guide on [how to configure logging](/tracking/angular/how-to-guides/configuring-logging.md).

@@ -17,7 +17,7 @@ tagLink = (parameters: {
 | required | **id**   | string                                                                                            |
 | required | **href** | string                                                                                            |
 | optional | options  | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
-| optional | onError  | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
+| optional | onError  | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
 [TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)

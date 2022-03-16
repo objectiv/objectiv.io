@@ -73,7 +73,7 @@ const loggingTracker = new ReactTracker({
 });
 ```
 
-This tracker instance will log all Events to `console.debug`.
+This tracker instance will log all Events to `TrackerConsole.debug`.
 :::
 
 ### Before the Application renders

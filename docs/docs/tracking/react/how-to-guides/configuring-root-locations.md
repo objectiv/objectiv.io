@@ -23,48 +23,25 @@ const tracker = new ReactTracker({
 });
 ```
 
-### Make a new list of Plugins
-To reconfigure the tracker Plugins we have to make a new list of them. To do so, we need to:
-
-1. Split out the configuration in its own variable.
-2. Use `makeDefaultPluginsList`, from ReactTracker, to build the default list of plugins.
-3. Filter out RootLocationContextFromURLPlugin and replace it with a new customized instance. 
+### Specifying a customized Plugin
+To override the default implementation of RootLocationContextFromURLPlugin we simply provide a new instance of it. 
 
 ```ts
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import { makeDefaultPluginsList } from "@objectiv/tracker-react";
-
-const trackerConfig = {
-  applicationId: 'app-id',
-  endpoint: 'https://collector.app.dev'
-};
-
-// Get the default list of Plugins of ReactTracker
-const trackerPlugins = makeDefaultPluginsList(trackerConfig)
-  
-  // Get rid of the default RootLocationContextFromURLPlugin
-  .filter(plugin => plugin.pluginName !== 'RootLocationContextFromURLPlugin')
-  
-  // Add a new version of RootLocationContextFromURLPlugin
-  .concat(
-    new RootLocationContextFromURLPlugin({
-      // Pass the trackerConfig to the Plugin
-      ...trackerConfig,
-
-      // And a custom, not yet very useful, idFactoryFunction 
-      idFactoryFunction: () => {
-        return 'not-so-useful-root-location-id'
-      }
-    })
-  );
+import { ReactTracker } from '@objectiv/tracker-react';
 
 const tracker = new ReactTracker({
-  ...trackerConfig,
-  plugins: trackerPlugins
+  applicationId: 'app-id',
+  endpoint: 'https://collector.app.dev',
+  plugins: [
+    new RootLocationContextFromURLPlugin({
+      idFactoryFunction: customIdFactoryFunction
+    })    
+  ]
 });
 ```
 
-## Customize RootLocationContext identifiers
+## idFactoryFunction examples
 We are now ready to swap the `idFactoryFunction` of `RootLocationContextFromURLPlugin` with a custom implementation.
 This function will be invoked before each Event is sent to generate a RootLocationContext.
 
@@ -118,29 +95,19 @@ idFactoryFunction: () => {
 If none of the methods above works for your specific scenario, there's always the option of disabling the plugin entirely.
 
 ```ts
-import { makeDefaultPluginsList } from "@objectiv/tracker-react";
-
-const trackerConfig = {
-  applicationId: 'app-id',
-  endpoint: 'https://collector.app.dev'
-};
-
-// Get the default list of Plugins of ReactTracker and remove RootLocationContextFromURLPlugin 
-const trackerPlugins = makeDefaultPluginsList(trackerConfig)
-  .filter(plugin => plugin.pluginName !== 'RootLocationContextFromURLPlugin');
-
 const tracker = new ReactTracker({
-  ...trackerConfig,
-  plugins: trackerPlugins
+  applicationId: 'app-id',
+  endpoint: 'https://collector.app.dev',
+  trackRootLocationContextFromURL: false
 });
 ```
 
 :::caution
-RootLocationContext is obligatory in all LocationStacks.  
+Missing RootLocationContext will be reported as an error. All LocationStacks must contain a RootLocationContext as first Element, as defined by the [Open Taxonomy](/taxonomy/introduction.md).  
 
 There are several ways to track them without RootLocationContextFromURLPlugin:
 - Wrap logical pages in [RootLocationContextWrapper](/tracking/react/api-reference/locationWrappers/RootLocationContextWrapper.md).
-- Enrich root Elements or Components with [TrackedRootLocation](/tracking/react/api-reference/trackedContexts/TrackedRootLocationContext.md), e.g. a Layout Component.
+- Enrich root Elements or Component Elements with [TrackedRootLocation](/tracking/react/api-reference/trackedContexts/TrackedRootLocationContext.md), e.g. a Layout Component.
 - Write your own Plugin and leverage your internal state or non-url based routing system.
 
 And if you are unsure which to pick or how to begin, please let us know. We love a challenge.
