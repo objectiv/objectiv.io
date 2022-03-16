@@ -58,7 +58,20 @@ provision the appropriate environment variables for SFTP, and then run:
 # pull any changes, and build the deployable docker images for both website and docs for staging & production.
 git pull && make build-docker-build-image build-docker-deploy-image
 
-# then, upload to staging via FTP
+# second, compare the sitemap on production to the sitemap in the image, to double-check any URL changes; if 
+# you don't have `blessings` & `lxml` installed yet, do `sudo apt-get install python3-blessings python3-lxml`
+mkdir -p tmp
+curl https://objectiv.io/sitemap.xml > ./tmp/$(date +%Y%m%d)-sitemap-website.xml
+docker run --rm --entrypoint cat objectiv/website-deploy:$(date +%Y%m%d) \
+  /services/build-production/sitemap.xml > ./tmp/$(date +%Y%m%d)-build-sitemap-website.xml
+curl https://objectiv.io/docs/sitemap.xml > ./tmp/$(date +%Y%m%d)-sitemap-docs.xml
+docker run --rm --entrypoint cat objectiv/website-deploy:$(date +%Y%m%d) \
+  /services/docs/build-production/sitemap.xml > ./tmp/$(date +%Y%m%d)-build-sitemap-docs.xml
+
+python3 xdiff.py ./tmp/$(date +%Y%m%d)-sitemap-docs.xml ./tmp/$(date +%Y%m%d)-build-sitemap-docs.xml
+python3 xdiff.py ./tmp/$(date +%Y%m%d)-sitemap-website.xml ./tmp/$(date +%Y%m%d)-build-sitemap-website.xml
+
+# if URL checks are okay, upload to staging via FTP
 docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \
