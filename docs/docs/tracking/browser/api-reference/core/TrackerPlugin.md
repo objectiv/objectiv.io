@@ -4,10 +4,6 @@ Plugins can enrich a Tracker's [LocationStack](/tracking/browser/api-reference/c
 
 ## Properties
 
-### console
-Optional, [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md).    
-TrackerConsole instance for logging.
-
 ### pluginName
 Required, string.  
 Used for logging messages and, in general, to uniquely identify this plugin.
@@ -24,16 +20,23 @@ Should return if the TrackerPlugin can be used, e.g. a browser based plugin may 
 Plugins may implement lifecycle methods. These receive as parameter the Tracker's contexts.
 
 ### initialize
+
 ```typescript
-initialize: (contexts: Required<ContextsConfig>) => void
+initialize: (tracker: TrackerInterface) => void
 ```
 Trackers will invoke `initialize` when constructed as `active` or when switching from inactive to active.
 
-### beforeTransport
+### enrich
 ```typescript
-beforeTransport: (contexts: Required<ContextsConfig>) => void
+enrich: (contexts: Required<ContextsConfig>) => void
 ```
-Trackers will invoke `beforeTransport` before handing events over to Queue / Transport.
+Trackers will invoke `enrich` before `validate`.
+
+### validate
+```typescript
+validate: (event: TrackerEvent) => void
+```
+Trackers will invoke `validate` before handing events over to Queue / Transport.
 
 <br/>
 
