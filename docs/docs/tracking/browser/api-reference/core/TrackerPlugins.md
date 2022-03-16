@@ -8,15 +8,10 @@ TrackerPlugins is initialized with a list of plugins and, optionally, a TrackerC
 ```typescript
 new TreackerPlugins({
   plugins: TrackerPlugin[],
-  console?: TrackerConsole
 })
 ```
 
 ## Properties
-
-### console
-Optional, [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md).    
-TrackerConsole instance for logging.
 
 ### plugins
 Private, [TrackerPlugin](/tracking/browser/api-reference/core/TrackerPlugin.md)[].  
@@ -25,16 +20,24 @@ Holds the list of TrackerPlugin[] received at construction.
 ## Methods
 
 ### initialize
+
 ```typescript
-initialize: (contexts: Required<ContextsConfig>) => void
+initialize: (tracker: TrackerInterface) => void
 ```
 Invokes the `initialize` lifecycle method of all plugins. 
 
-### beforeTransport
+### enrich
 ```typescript
-beforeTransport: (contexts: Required<ContextsConfig>) => void
+enrich: (contexts: Required<ContextsConfig>) => void
 ```
-Invokes the `beforeTransport` lifecycle method of all plugins. 
+Invokes the `enrich` lifecycle method of all plugins. 
+
+### validate
+```typescript
+validate: (event: TrackerEvent) => void
+```
+Invokes the `validate` lifecycle method of all plugins.
+
 
 <br/>
 

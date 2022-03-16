@@ -11,7 +11,6 @@ All Queues parameters are optional and fallback to sensible defaults.
 
 ```typescript
 new TrackerQueue(config: {
-  console?: TrackerConsole;
   store?: TrackerQueueStore;
   batchSize?: number;
   batchDelayMs?: number;
@@ -22,7 +21,6 @@ new TrackerQueue(config: {
 ### Parameters
 |          |              | type                                                             | default value
 | :-:      | :--          | :--                                                              | :--           
-| optional | console      | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md) |
 | console  | store        | TrackerQueueStore                                                | TrackerQueueMemoryStore
 | optional | batchSize    | number                                                           | 10
 | optional | batchDelayMs | number                                                           | 1000

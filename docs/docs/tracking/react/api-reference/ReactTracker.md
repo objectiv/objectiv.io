@@ -32,19 +32,19 @@ const App = ({children}) => {
 ## Configuration
 ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
-|          |                                 | type             | default value                                                                                                                        |
-|:--------:|:--------------------------------|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| required | **applicationId**               | string           |                                                                                                                                      |
-| optional | **_endpoint_**                  | string           |                                                                                                                                      |
-| optional | **_transport_**                 | TrackerTransport | The result of [makeDefaultTransport](/tracking/react/api-reference/common/factories/makeDefaultTransport.md)                         |
-| optional | console                         | TrackerConsole   | `undefined` in production, global console in dev                                                                                     |
-| optional | queue                           | TrackerQueue     | The result of [makeDefaultQueue](/tracking/react/api-reference/common/factories/makeDefaultQueue.md)                                 |
-| optional | plugins                         | TrackerPlugins   | TrackerPlugins with the result of [makeDefaultPluginsList](/tracking/react/api-reference/common/factories/makeDefaultPluginsList.md) |
-| optional | trackerId                       | string           | Same value as `applicationId`                                                                                                        |
-| optional | active                          | boolean          | `true`                                                                                                                               |
-| optional | trackHttpContext                | boolean          | `true`                                                                                                                               |
-| optional | trackPathContextFromURL         | boolean          | `true`                                                                                                                               |
-| optional | trackRootLocationContextFromURL | boolean          | `true`                                                                                                                               |
+|          |                                 | type             | default value                                                                                                                            |
+|:--------:|:--------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| required | **applicationId**               | string           |                                                                                                                                          |
+| optional | **_endpoint_**                  | string           |                                                                                                                                          |
+| optional | **_transport_**                 | TrackerTransport | The result of [makeReactTrackerDefaultTransport](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultTransport.md)     |
+| optional | queue                           | TrackerQueue     | The result of [makeReactTrackerDefaultQueue](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultQueue.md)             |
+| optional | plugins                         | TrackerPlugin    | The result of [makeReactTrackerDefaultPluginsList](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultPluginsList.md) |
+| optional | trackerId                       | string           | Same value as `applicationId`                                                                                                            |
+| optional | active                          | boolean          | `true`                                                                                                                                   |
+| optional | trackApplicationContext         | boolean          | `true`                                                                                                                                   |
+| optional | trackHttpContext                | boolean          | `true`                                                                                                                                   |
+| optional | trackPathContextFromURL         | boolean          | `true`                                                                                                                                   |
+| optional | trackRootLocationContextFromURL | boolean          | `true`                                                                                                                                   |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
@@ -80,8 +80,7 @@ To get an idea of how much React Tracker automates under the hood, compared to t
 ```typescript
 const tracker = new ReactTracker({ 
   applicationId: 'app-id', 
-  endpoint: 'https://collector.app.dev', 
-  console: console
+  endpoint: 'https://collector.app.dev',
 });
 ``` 
 
@@ -89,26 +88,24 @@ is equivalent to:
 
 ```typescript
 const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
-const console = trackerConfig.console;
-const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev', console });
-const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev', console });
-const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport], console });
-const transport = new RetryTransport({ transport: transportSwitch, console });
-const queueStorage = new LocalStorageQueueStore({ trackerId, console })
-const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
-const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
-const httpContextPlugin = new HttpContextPlugin({ console });
-const pathContextFromURLPlugin = new PathContextFromURLPlugin({ console });
-const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin({ console });
+const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev' });
+const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev' });
+const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport] });
+const transport = new RetryTransport({ transport: transportSwitch });
+const queueStorage = new LocalStorageQueueStore({ trackerId })
+const trackerQueue = new TrackerQueue({ storage: trackerStorage });
+const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id' });
+const httpContextPlugin = new HttpContextPlugin();
+const pathContextFromURLPlugin = new PathContextFromURLPlugin();
+const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin();
 const plugins = new TrackerPlugins({
   plugins: [
     applicationContextPlugin,
     httpContextPlugin,
     pathContextFromURLPlugin,
     rootLocationContextFromURLPlugin
-  ],
-  console
+  ]
 });
-const tracker = new Tracker({ transport, queue, plugins, console });
+const tracker = new Tracker({ transport, queue, plugins });
 
 ```
