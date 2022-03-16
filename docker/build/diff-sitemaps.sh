@@ -1,5 +1,5 @@
 CURRENT_DATE=$(date +%Y%m%d)
-mkdir -p tmp
+mkdir -p ./tmp
 curl https://objectiv.io/sitemap.xml > ./tmp/$CURRENT_DATE-sitemap-website.xml
 docker run --rm --entrypoint cat objectiv/website-deploy:$CURRENT_DATE \
   /services/build-production/sitemap.xml > ./tmp/$CURRENT_DATE-build-sitemap-website.xml
@@ -9,3 +9,5 @@ docker run --rm --entrypoint cat objectiv/website-deploy:$CURRENT_DATE \
 
 python3 ./docker/build/xdiff.py ./tmp/$CURRENT_DATE-sitemap-docs.xml ./tmp/$CURRENT_DATE-build-sitemap-docs.xml
 python3 ./docker/build/xdiff.py ./tmp/$CURRENT_DATE-sitemap-website.xml ./tmp/$CURRENT_DATE-build-sitemap-website.xml
+
+rm -rf ./tmp/
