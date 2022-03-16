@@ -7,7 +7,7 @@ sidebar_position: 5
 All Trackers, Transports, Queues and Plugins log to TrackerConsole global singleton.
 
 ## What is TrackerConsole
-TrackerConsole is a simplified wrapper implementation of node.js and browsers Console.
+TrackerConsole is a simplified wrapper implementation of node.js and browsers' Console.
 
 ### TrackerConsoleImplementation interface
 TrackerConsoleImplementations only implement a subset of native Consoles:
