@@ -1,0 +1,33 @@
+<div>
+                
+  <section id="bach-open-taxonomy-modelhub-time-agg">
+<h1>bach_open_taxonomy.ModelHub.time_agg<a class="headerlink" href="#bach-open-taxonomy-modelhub-time-agg" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach_open_taxonomy.ModelHub.time_agg">
+<span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">time_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/analysis/bach_open_taxonomy/bach_open_taxonomy/modelhub/modelhub.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach_open_taxonomy.ModelHub.time_agg" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Formats the moment column in the ObjectivFrame, returns a SeriesString.</p>
+<p>By default it uses the time_aggregation as set in the ObjectivFrame, unless overriden by the
+<cite>time_aggregation</cite> parameter.</p>
+<p>Use any template for aggreation from: <a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
+ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time_aggregation</strong> (<em>str</em>) &#8211; if <code class="docutils literal notranslate"><span class="pre">None</span></code>, it uses <a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.time_aggregation.html#bach_open_taxonomy.ObjectivFrame.time_aggregation" title="bach_open_taxonomy.ObjectivFrame.time_aggregation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ObjectivFrame.time_aggregation</span></code></a> set from the
+ObjectivFrame.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SeriesString.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../Series/bach.SeriesString.html#bach.SeriesString" title="bach.SeriesString">SeriesString</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
