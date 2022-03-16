@@ -23,7 +23,7 @@ trackEvent = (parameters: {
 | optional | element   | [TrackedElement](/tracking/browser/api-reference/definitions/TrackedElement.md)                                 | [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
 | optional | tracker   | [BrowserTracker](/tracking/browser/api-reference/general/BrowserTracker.md)                                     | The default tracker as returned by [getTracker](/tracking/browser/api-reference/general/getTracker.md)
 | optional | trackerId | string                                                                                                  |  
-| optional | onError   | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)       | `console.error`
+| optional | onError   | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)       | `TrackerConsole.error`
 
 ## Returns
 `trackEvent` is a void function.

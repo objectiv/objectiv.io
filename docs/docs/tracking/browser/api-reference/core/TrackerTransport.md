@@ -10,7 +10,6 @@ They can receive both Events or Promises and share a very simple common interfac
 export type TransportableEvent = TrackerEvent | Promise<TrackerEvent>;
 
 export interface TrackerTransportInterface {
-  console?: TrackerConsole;
   transportName: string;
   isUsable(): boolean;
   handle(...args: NonEmptyArray<TransportableEvent>): Promise<any>;
@@ -18,10 +17,6 @@ export interface TrackerTransportInterface {
 ```
 
 ## Properties
-
-### console
-Optional, [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md).    
-TrackerConsole instance for logging.
 
 ### transportName
 Required, string.  
@@ -92,12 +87,10 @@ A Switch preferring Fetch over XMLHttpRequest, wrapped in an exponential backoff
 
 ```typescript
 new TrackerTransportRetry({
-  console,
   transport: new TrackerTransportSwitch({
-    console,
     transports: [
-      new FetchAPITransport({ endpoint, console }),
-      new XMLHttpRequestTransport({ endpoint, console }),
+      new FetchAPITransport({ endpoint }),
+      new XMLHttpRequestTransport({ endpoint }),
     ],
   }),
 });

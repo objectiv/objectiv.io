@@ -5,8 +5,17 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.Series.unique">
 <span class="sig-prename descclassname"><span class="pre">Series.</span></span><span class="sig-name descname"><span class="pre">unique</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.Series.unique" title="Permalink to this definition">&#182;</a></dt>
-<dd><p>Get the unique values in this series, currently by grouping the series involved.</p>
+<dd><p>Return all unique values in this Series.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>partition</strong> (<em>Union</em><em>[</em><em>GroupBy</em><em>, </em><a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><em>DataFrame</em></a><em>]</em>) &#8211; The partition or window to apply.</p></li>
+<li><p><strong>skipna</strong> (<em>bool</em>) &#8211; only <code class="docutils literal notranslate"><span class="pre">skipna=True</span></code> supported. This means NULL values are ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new Series with the aggregation applied</p>
+</dd>
 </dl>
 </dd></dl>
 

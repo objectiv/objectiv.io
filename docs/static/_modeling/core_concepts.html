@@ -32,8 +32,9 @@ database. This also results in a few differences in how DataFrames form both lib
 situations:</p>
 <ul class="simple">
 <li><p>The order of rows in a Bach DataFrame can be non-deterministic. If there is not a deterministic
-<a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code></a> call, then the order of the rows that the data-transfer
-functions return can be unpredictable.</p></li>
+<a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code></a> or <a class="reference internal" href="DataFrame/bach.DataFrame.fillna.html#bach.DataFrame.fillna" title="bach.DataFrame.fillna"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code></a> call, then the order of the rows that the data-transfer
+functions return can be unpredictable. In case for <a class="reference internal" href="DataFrame/bach.DataFrame.fillna.html#bach.DataFrame.fillna" title="bach.DataFrame.fillna"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code></a>, methods <cite>ffill</cite> and <cite>bfill</cite> might fill gaps
+with different values since rows containing <cite>NULL</cite>/<cite>None</cite> can yield a different order of rows.</p></li>
 <li><p>Bach DataFrames can distinguish between <cite>NULL</cite>/<cite>None</cite> and Not-a-Number (<cite>NaN</cite>). Pandas generally doesn&#8217;t
 and mainly uses NaN. When outputting data from a Bach DataFrame to a pandas DataFrame, most of this
 distinction is lost again.</p></li>

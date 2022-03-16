@@ -19,10 +19,13 @@ type BrowserTrackerConfig = {
   queue?: TrackerQueueInterface;
   transport?: TrackerTransportInterface;
   plugins?: TrackerPlugins;
-  console?: TrackerConsole;
   active?: boolean;  
   endpoint?: string;
   trackApplicationLoadedEvent?: boolean;
+  trackApplicationContext?: boolean;
+  trackHttpContext?: boolean;
+  trackPathContextFromURL?: boolean;
+  trackRootLocationContextFromURL?: boolean;
 };
 ```
 
@@ -32,17 +35,20 @@ Internally it will automatically configure the Transport layer for the given `en
 :::
 
 ## Attributes
-|           |          |                             | type                                                                         | default value                                                                                                                                    |
-|:----------|:--------:|:----------------------------|:-----------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
-| inherited | required | **applicationId**           | string                                                                       |                                                                                                                                                  |
-| inherited | optional | trackerId                   | string                                                                       | Same value as `applicationId`                                                                                                                    |
-| inherited | optional | queue                       | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)                                           |
-| inherited | optional | **_transport_**             | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)                                   |
-| inherited | optional | plugins                     | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md) | 
-| inherited | optional | console                     | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md)     |                                                                                                                                                  |
-| inherited | optional | active                      | boolean                                                                      | `true`                                                                                                                                           |
-| own       | optional | **_endpoint_**              | string                                                                       |                                                                                                                                                  |
-| own       | optional | trackApplicationLoadedEvent | boolean                                                                      | `true`                                                                                                                                           |
+|           |          |                                 | type                                                                         | default value                                                                                                                                                                 |
+|:----------|:--------:|:--------------------------------|:-----------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| inherited | required | **applicationId**               | string                                                                       |                                                                                                                                                                               |
+| inherited | optional | trackerId                       | string                                                                       | Same value as `applicationId`                                                                                                                                                 |
+| inherited | optional | queue                           | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         | The result of [makeBrowserTrackerDefaultQueue](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)                                            |
+| inherited | optional | **_transport_**                 | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) | The result of [makeBrowserTrackerDefaultTransport](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)                                    |
+| inherited | optional | plugins                         | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeBrowserTrackerDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultPluginsList.md)  | 
+| inherited | optional | active                          | boolean                                                                      | `true`                                                                                                                                                                        |
+| own       | optional | **_endpoint_**                  | string                                                                       |                                                                                                                                                                               |
+| own       | optional | trackApplicationLoadedEvent     | boolean                                                                      | `true`                                                                                                                                                                        |
+| inherited | optional | trackApplicationContext         | boolean                                                                      | `true`                                                                                                                                                                        |
+| own       | optional | trackHttpContext                | boolean                                                                      | `true`                                                                                                                                                                        |
+| own       | optional | trackPathContextFromURL         | boolean                                                                      | `true`                                                                                                                                                                        |
+| own       | optional | trackRootLocationContextFromURL | boolean                                                                      | `true`                                                                                                                                                                        |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.

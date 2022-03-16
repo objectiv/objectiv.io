@@ -8,5 +8,5 @@ type TrackerErrorHandlerCallback = <T = unknown>(error: unknown, parameters?: T)
 
 ```
 :::info
-`onError` is optional for all [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) APIs. It's default value is simply `console.error`.
+`onError` is optional for all [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) APIs. It's default value is simply `TrackerConsole.error`.
 :::

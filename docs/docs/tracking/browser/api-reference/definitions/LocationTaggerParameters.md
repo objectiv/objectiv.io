@@ -16,4 +16,4 @@ type LocationTaggerParameters = {
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
 | optional | options | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | Dynamically calculated based on `instance`. See the [Events](/tracking/browser/api-reference/locationTaggers/tagLocation.md#events) table.
-| optional | onError | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
+| optional | onError | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
