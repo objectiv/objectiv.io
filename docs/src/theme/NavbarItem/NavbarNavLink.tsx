@@ -13,7 +13,7 @@ import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 
-import { tagLink } from "@objectiv/tracker-browser";
+import { tagLink, TagLocationOptions } from "@objectiv/tracker-browser";
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -36,11 +36,12 @@ export default function NavbarNavLink({
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
-  // @ts-ignore
-  delete props.waitUntilTracked;
+  const tagLinkOptions: TagLocationOptions = isExternalLink
+    ? { trackClicks: { waitUntilTracked: true } }
+    : { trackClicks: true };
   return (
     <Link
-      {...tagLink({id: label as string, href: linkTo}) }
+      {...tagLink({id: label as string, href: linkTo, options: tagLinkOptions}) }
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
