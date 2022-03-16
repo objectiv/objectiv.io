@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Configuring logging
 
-All Trackers, Transports, Queues and Plugins log to TrackerConsole global singleton.
+All Trackers, Transports, Queues and Plugins log to the TrackerConsole global singleton.
 
 ## What is TrackerConsole
 TrackerConsole is a simplified wrapper implementation of node.js and browsers' Console.
