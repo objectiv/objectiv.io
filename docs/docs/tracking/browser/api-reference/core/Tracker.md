@@ -95,8 +95,8 @@ async trackEvent(event: TrackerEvent) => Promise<TrackerEvent>
 The main entry point of the Tracker Instance:
 - Prepends given Event's LocationStack and GlobalContexts with the Tracker's LocationStack and GlobalContexts
 - Sets the Event's `time` attribute
-- Invokes all Plugins `enrich` lifecycle method
-- Invokes all Plugins `validate` lifecycle method
+- Invokes all Plugins' `enrich` lifecycle method
+- Invokes all Plugins' `validate` lifecycle method
 - If Queue has been configured
   - Hands the Event over to Queue 
 - Else if Transport has been configured
