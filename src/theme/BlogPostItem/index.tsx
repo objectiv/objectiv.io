@@ -21,11 +21,11 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
-import { 
+import { makeIdFromString } from "@objectiv/tracker-core";
+import {
   TrackedHeader,
   TrackedDiv,
   TrackedFooter,
-  makeIdFromString, 
   useVisibleEventTracker,
   TrackedContentContext,
 } from '@objectiv/tracker-react';
