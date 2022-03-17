@@ -159,9 +159,6 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
           id={'blog-post-try-objectiv'}
           className={clsx(styles.blogPostFooterCta)}>
           <h2>Try Objectiv</h2>
-          <p>Objectiv in its current state is ready for early adopters. We're working hard to add support for 
-            more data stores and make it easier to integrate with your existing stack. We also want to expand 
-            the selection of models that's included.</p>
           <p>
             <TrackedLink 
               to={withBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
