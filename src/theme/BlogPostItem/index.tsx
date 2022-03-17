@@ -115,7 +115,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
 
   return (
     <>
-      <TrackedHeader>
+      <TrackedContentContext id='blog-post-header' Component='header'>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
@@ -140,7 +140,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
           )}
         </div>
         <BlogPostAuthors authors={authors} assets={assets} />
-      </TrackedHeader>
+      </TrackedContentContext>
 
       {image && (
         <meta itemProp="image" content={withBaseUrl(image, {absolute: true})} />
