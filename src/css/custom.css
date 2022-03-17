@@ -115,12 +115,6 @@ body {
   .navbar .navSlack:hover {
     background: url('/img/icons/icon-nav-slack-hover.svg') no-repeat;
   }
-  .navbar .navDiscourse {
-    background: url('/img/icons/icon-nav-discourse.svg') no-repeat;
-  }
-  .navbar .navDiscourse:hover {
-    background: url('/img/icons/icon-nav-discourse-hover.svg') no-repeat;
-  }
   .navbar .navTwitter {
     background: url('/img/icons/icon-nav-twitter.svg') no-repeat;
   }
