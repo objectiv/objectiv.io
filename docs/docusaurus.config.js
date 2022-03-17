@@ -111,7 +111,6 @@ const config = {
             position: 'right',
             className: 'navItem navGitHub',
             target: '_self',
-            waitUntilTracked: true
           },
           {
             href: slackJoinLink,
@@ -119,7 +118,6 @@ const config = {
             position: 'right',
             className: 'navItem navSlack',
             target: '_self',
-            waitUntilTracked: true
           },
           {
             href: 'https://twitter.com/objectiv_io',
@@ -127,7 +125,6 @@ const config = {
             position: 'right',
             className: 'navItem navTwitter',
             target: '_self',
-            waitUntilTracked: true
           },  
           {
             label: 'Objectiv.io',
