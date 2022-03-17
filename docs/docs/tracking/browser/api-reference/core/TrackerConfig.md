@@ -3,15 +3,15 @@
 Core Tracker configuration object.  
 
 ## Attributes
-|          |                   | type                                                                         | default value                 |
-|:--------:|:------------------|:-----------------------------------------------------------------------------|:------------------------------|
-| required | **applicationId** | string                                                                       |                               |
-| optional | trackerId         | string                                                                       | Same value as `applicationId` |
-| optional | queue             | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         |                               |
-| optional | transport         | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) |                               |
-| optional | plugins           | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | [ApplicationContextPlugin]    |
-| optional | console           | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md)     |                               |
-| optional | active            | boolean                                                                      | `true`                        |
+|          |                         | type                                                                         | default value                 |
+|:--------:|:------------------------|:-----------------------------------------------------------------------------|:------------------------------|
+| required | **applicationId**       | string                                                                       |                               |
+| optional | trackerId               | string                                                                       | Same value as `applicationId` |
+| optional | queue                   | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         |                               |
+| optional | transport               | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) |                               |
+| optional | plugins                 | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | [ApplicationContextPlugin]    |
+| optional | active                  | boolean                                                                      | `true`                        |
+| optional | trackApplicationContext | boolean                                                                      | `true`                        |
 
 <br/>
 

@@ -104,6 +104,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "bfill",
+                                        "id": "modeling/DataFrame/bach.DataFrame.bfill"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "copy",
                                         "id": "modeling/DataFrame/bach.DataFrame.copy"
                                     },
@@ -146,6 +151,16 @@ module.exports = [
                                         "type": "doc",
                                         "label": "expanding",
                                         "id": "modeling/DataFrame/bach.DataFrame.expanding"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "ffill",
+                                        "id": "modeling/DataFrame/bach.DataFrame.ffill"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "fillna",
+                                        "id": "modeling/DataFrame/bach.DataFrame.fillna"
                                     },
                                     {
                                         "type": "doc",
@@ -289,6 +304,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "stack",
+                                        "id": "modeling/DataFrame/bach.DataFrame.stack"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "std",
                                         "id": "modeling/DataFrame/bach.DataFrame.std"
                                     },
@@ -306,6 +326,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "to_pandas",
                                         "id": "modeling/DataFrame/bach.DataFrame.to_pandas"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "value_counts",
+                                        "id": "modeling/DataFrame/bach.DataFrame.value_counts"
                                     },
                                     {
                                         "type": "doc",
@@ -546,6 +571,26 @@ module.exports = [
                                         "type": "doc",
                                         "label": "append",
                                         "id": "modeling/DataFrame/bach.DataFrame.append"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "fillna",
+                                        "id": "modeling/DataFrame/bach.DataFrame.fillna"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "ffill",
+                                        "id": "modeling/DataFrame/bach.DataFrame.ffill"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "bfill",
+                                        "id": "modeling/DataFrame/bach.DataFrame.bfill"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "stack",
+                                        "id": "modeling/DataFrame/bach.DataFrame.stack"
                                     }
                                 ]
                             },
@@ -850,6 +895,11 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
+                                        "label": "value_counts",
+                                        "id": "modeling/Series/bach.Series.value_counts"
+                                    },
+                                    {
+                                        "type": "doc",
                                         "label": "view_sql",
                                         "id": "modeling/Series/bach.Series.view_sql"
                                     },
@@ -920,11 +970,6 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "dtype",
-                                        "id": "modeling/Series/bach.Series.dtype"
-                                    },
-                                    {
-                                        "type": "doc",
                                         "label": "group_by",
                                         "id": "modeling/Series/bach.Series.group_by"
                                     },
@@ -961,9 +1006,25 @@ module.exports = [
                                 ]
                             },
                             {
-                                "type": "doc",
+                                "type": "category",
                                 "label": "SeriesBoolean",
-                                "id": "modeling/Series/bach.SeriesBoolean"
+                                "items": [
+                                    {
+                                        "type": "doc",
+                                        "label": "Overview",
+                                        "id": "modeling/Series/bach.SeriesBoolean"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "max",
+                                        "id": "modeling/Series/bach.SeriesBoolean.max"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "min",
+                                        "id": "modeling/Series/bach.SeriesBoolean.min"
+                                    }
+                                ]
                             },
                             {
                                 "type": "category",
@@ -976,18 +1037,8 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "kurt",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurt"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "kurtosis",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.kurtosis"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "mad",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.mad"
+                                        "label": "cut",
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.cut"
                                     },
                                     {
                                         "type": "doc",
@@ -996,13 +1047,8 @@ module.exports = [
                                     },
                                     {
                                         "type": "doc",
-                                        "label": "prod",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.prod"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "product",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.product"
+                                        "label": "qcut",
+                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.qcut"
                                     },
                                     {
                                         "type": "doc",
@@ -1018,11 +1064,6 @@ module.exports = [
                                         "type": "doc",
                                         "label": "sem",
                                         "id": "modeling/Series/bach.SeriesAbstractNumeric.sem"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "label": "skew",
-                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.skew"
                                     },
                                     {
                                         "type": "doc",
@@ -1443,6 +1484,11 @@ module.exports = [
                                         "type": "doc",
                                         "label": "filter",
                                         "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.filter"
+                                    },
+                                    {
+                                        "type": "doc",
+                                        "label": "time_agg",
+                                        "id": "modeling/Objectiv/bach_open_taxonomy.ModelHub.time_agg"
                                     },
                                     {
                                         "type": "doc",

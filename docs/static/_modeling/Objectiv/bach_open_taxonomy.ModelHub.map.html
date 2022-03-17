@@ -35,7 +35,7 @@ of the ObjectivFrame</p></li>
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_conversion_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Labels a hit True if it is a conversion event, all other hits are labeled False.</p>
+<dd><p>Labels a hit <code class="docutils literal notranslate"><span class="pre">True</span></code> if it is a conversion event, all other hits are labeled False.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> &#8211; the name of the conversion to label as set in
@@ -50,7 +50,7 @@ of the ObjectivFrame</p></li>
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_first_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Labels all hits in a session True if that session is the first session of that user in the data.</p>
+<dd><p>Labels all hits in a session <code class="docutils literal notranslate"><span class="pre">True</span></code> if that session is the first session of that user in the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>SeriesBoolean with the same index as the ObjectivFrame this method is applied to.</p>
@@ -61,10 +61,10 @@ of the ObjectivFrame</p></li>
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_new_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Labels all hits True if the user is first seen in the period given time_aggregation.</p>
+<dd><p>Labels all hits <code class="docutils literal notranslate"><span class="pre">True</span></code> if the user is first seen in the period given time_aggregation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time_aggregation</strong> &#8211; if None, it uses the time_aggregation set in ObjectivFrame.</p>
+<dd class="field-odd"><p><strong>time_aggregation</strong> &#8211; if <code class="docutils literal notranslate"><span class="pre">None</span></code>, it uses the time_aggregation set in ObjectivFrame.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>SeriesBoolean with the same index as the ObjectivFrame this method is applied to.</p>
@@ -76,14 +76,14 @@ of the ObjectivFrame</p></li>
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">pre_conversion_hit_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'session_id'</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Returns a count backwards from the first conversion, given the partition. I.e. first hit before
-converting is 1, second hit before converting 2, etc. Returns None if there are no conversions in the
-partition or after the first conversion.</p>
+converting is 1, second hit before converting 2, etc. Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if there are no conversions
+in the partition or after the first conversion.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> &#8211; the name of the conversion to label as set in
 <a class="reference internal" href="bach_open_taxonomy.ObjectivFrame.conversion_events.html#bach_open_taxonomy.ObjectivFrame.conversion_events" title="bach_open_taxonomy.ObjectivFrame.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ObjectivFrame.conversion_events</span></code></a>.</p></li>
-<li><p><strong>filter</strong> &#8211; filters hits from being counted. Returns None for filtered hits.</p></li>
+<li><p><strong>filter</strong> &#8211; filters hits from being counted. Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> for filtered hits.</p></li>
 <li><p><strong>partition</strong> &#8211; the partition over which the number of conversions are counted. Can be any column
 of the ObjectivFrame</p></li>
 </ul>

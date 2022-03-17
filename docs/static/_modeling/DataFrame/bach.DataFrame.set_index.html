@@ -4,7 +4,7 @@
 <h1>bach.DataFrame.set_index<a class="headerlink" href="#bach-dataframe-set-index" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.DataFrame.set_index">
-<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">set_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.set_index" title="Permalink to this definition">&#182;</a></dt>
+<span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">set_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.set_index" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Set this dataframe&#8217;s index to the the index given in keys</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -13,15 +13,13 @@
 Series are passed, they should have the same base node as the DataFrame they are set on.</p></li>
 <li><p><strong>drop</strong> (<em>bool</em>) &#8211; delete columns to be used as the new index.</p></li>
 <li><p><strong>append</strong> (<em>bool</em>) &#8211; whether to append to the existing index or replace.</p></li>
-<li><p><strong>inplace</strong> (<em>bool</em>) &#8211; update the current DataFrame or return a new DataFrame. This is not always supported
-and will raise if it is not.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a DataFrame with the new index or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+<dd class="field-even"><p>a DataFrame with the new index.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a>]</p>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a></p>
 </dd>
 </dl>
 </dd></dl>

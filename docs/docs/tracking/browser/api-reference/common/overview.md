@@ -7,9 +7,9 @@ title: Common
 Common modules and helper functions used across the whole Browser Tracker. All of these APIs are internal.
 
 #### Factories
-- [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md)
-- [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)
-- [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)
+- [makeBrowserTrackerDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultPluginsList.md)
+- [makeBrowserTrackerDefaultQueue](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+- [makeBrowserTrackerDefaultTransport](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
 
 #### Guards
 - [isClickableContext](/tracking/browser/api-reference/common/guards/isClickableContext.md)

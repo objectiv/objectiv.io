@@ -5,15 +5,12 @@ A [TrackerTransport](/tracking/browser/api-reference/core/TrackerConsole.md) tha
 Used primarily for debugging purposes or for unit testing.
 
 ## Usage
-In the following example we are creating a test tracker that logs all of its messages to console. 
+In the following example we are creating a test tracker that logs all of its messages to console.debug. 
 
 ```typescript
 makeTracker({
   applicationId: 'test',
-  console: console,
-  transport: new DebugTransport({
-    console: console
-  })
+  transport: new DebugTransport()
 });
 ```
 

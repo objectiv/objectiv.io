@@ -90,7 +90,7 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.from_table.html#bach.DataFrame.from_table" title="bach.DataFrame.from_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_table</span></code></a>(engine,&#160;table_name,&#160;index)</p></td>
 <td><p>Instantiate a new DataFrame based on the content of an existing table in the database.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.from_model.html#bach.DataFrame.from_model" title="bach.DataFrame.from_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_model</span></code></a>(engine,&#160;model,&#160;index)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.from_model.html#bach.DataFrame.from_model" title="bach.DataFrame.from_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_model</span></code></a>(engine,&#160;model,&#160;index[,&#160;...])</p></td>
 <td><p>Instantiate a new DataFrame based on the result of the query defined in <cite>model</cite>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.from_pandas.html#bach.DataFrame.from_pandas" title="bach.DataFrame.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_pandas</span></code></a>(engine,&#160;df,&#160;...[,&#160;...])</p></td>
@@ -228,7 +228,7 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_index.html#bach.DataFrame.sort_index" title="bach.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_index</span></code></a>([level,&#160;ascending,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_index.html#bach.DataFrame.sort_index" title="bach.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_index</span></code></a>([level,&#160;ascending])</p></td>
 <td><p>Sort dataframe by index levels.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_values</span></code></a>(by[,&#160;ascending])</p></td>
@@ -243,13 +243,13 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.drop_duplicates.html#bach.DataFrame.drop_duplicates" title="bach.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.drop_duplicates</span></code></a>([subset,&#160;keep,&#160;...])</p></td>
 <td><p>Return a dataframe with duplicated rows removed based on all series labels or a subset of labels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.dropna.html#bach.DataFrame.dropna" title="bach.DataFrame.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.dropna</span></code></a>(*[,&#160;axis,&#160;how,&#160;thresh,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.dropna.html#bach.DataFrame.dropna" title="bach.DataFrame.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.dropna</span></code></a>(*[,&#160;axis,&#160;how,&#160;thresh,&#160;subset])</p></td>
 <td><p>Removes rows with missing values (NaN, None and SQL NULL).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([level,&#160;drop,&#160;inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.reset_index.html#bach.DataFrame.reset_index" title="bach.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a>([level,&#160;drop])</p></td>
 <td><p>Drops the current index.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;drop,&#160;append,&#160;...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html#bach.DataFrame.set_index" title="bach.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a>(keys[,&#160;drop,&#160;append])</p></td>
 <td><p>Set this dataframe's index to the the index given in keys</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.merge.html#bach.DataFrame.merge" title="bach.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a>(right[,&#160;how,&#160;on,&#160;left_on,&#160;...])</p></td>
@@ -257,6 +257,18 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.append.html#bach.DataFrame.append" title="bach.DataFrame.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.append</span></code></a>(other[,&#160;ignore_index,&#160;sort])</p></td>
 <td><p>Append rows of other dataframes to the the caller dataframe.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.fillna.html#bach.DataFrame.fillna" title="bach.DataFrame.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.fillna</span></code></a>(*[,&#160;value,&#160;method,&#160;axis,&#160;...])</p></td>
+<td><p>Fill any NULL value using a method or with a given value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.ffill.html#bach.DataFrame.ffill" title="bach.DataFrame.ffill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.ffill</span></code></a>([sort_by,&#160;ascending])</p></td>
+<td><p>Fill missing values by propagating the last non-nullable value in each series.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.bfill.html#bach.DataFrame.bfill" title="bach.DataFrame.bfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.bfill</span></code></a>([sort_by,&#160;ascending])</p></td>
+<td><p>Fill missing values by using the next non-nullable value in each series.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.stack.html#bach.DataFrame.stack" title="bach.DataFrame.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.stack</span></code></a>([dropna])</p></td>
+<td><p>Stacks all data_columns into a single index series.</p></td>
 </tr>
 </tbody>
 </table>
@@ -327,6 +339,9 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.nunique.html#bach.DataFrame.nunique" title="bach.DataFrame.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.nunique</span></code></a>([axis,&#160;skipna])</p></td>
 <td><p>Returns the number of unique values in each column.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.value_counts.html#bach.DataFrame.value_counts" title="bach.DataFrame.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.value_counts</span></code></a>([subset,&#160;normalize,&#160;...])</p></td>
+<td><p>Returns a series containing counts of each unique row in the DataFrame</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -342,7 +357,7 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <td><p>Returns the mean of all values in each column.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.quantile.html#bach.DataFrame.quantile" title="bach.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.quantile</span></code></a>([q,&#160;axis])</p></td>
-<td><p>Returns the quantile of all numeric columns.</p></td>
+<td><p>Returns the quantile per numeric/timedelta column.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.sem.html#bach.DataFrame.sem" title="bach.DataFrame.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sem</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
 <td><p>Returns the unbiased standard error of the mean of each column.</p></td>

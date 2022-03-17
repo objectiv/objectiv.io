@@ -11,17 +11,20 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 ### Configuration
 [BrowserTrackerConfig](/tracking/browser/api-reference/definitions/BrowserTrackerConfig.md)
 
-|          |                             | type                                                                 | default value
-| :-:      | :--                         | :--                                                                  | :--           
-| required | **applicationId**           | string                                                               |
-| optional | trackerId                   | string                                                               | Same value as `applicationId`
-| optional | queue                       | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)
-| optional | **_endpoint_**              | string                                                               |
-| optional | **_transport_**             | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)
-| optional | plugins                     | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md)
-| optional | console                     | [TrackerConsole](/tracking/browser/api-reference/core/TrackerConsole.md)     |
-| optional | active                      | boolean                                                              | `true`
-| optional | trackApplicationLoadedEvent | boolean                                                              | `true`
+|          |                                 | type                                                                           | default value                                                                                                                                  |
+|:--------:|:--------------------------------|:-------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
+| required | **applicationId**               | string                                                                         |                                                                                                                                                |
+| optional | trackerId                       | string                                                                         | Same value as `applicationId`                                                                                                                  |
+| optional | queue                           | [TrackerQueue](/tracking/browser/api-reference/core/TrackerQueue.md)           | The result of [makeBrowserTrackerDefaultQueue](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)             |
+| optional | **_endpoint_**                  | string                                                                         |                                                                                                                                                |
+| optional | **_transport_**                 | [TrackerTransport](/tracking/browser/api-reference/core/TrackerTransport.md)   | The result of [makeBrowserTrackerDefaultTransport](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)     |
+| optional | plugins                         | [TrackerPlugins](/tracking/browser/api-reference/core/TrackerPlugins.md)       | The result of [makeBrowserTrackerDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultPluginsList.md) |
+| optional | active                          | boolean                                                                        | `true`                                                                                                                                         |
+| optional | trackApplicationContext         | boolean                                                                        | `true`                                                                                                                                         |
+| optional | trackHttpContext                | boolean                                                                        | `true`                                                                                                                                         |
+| optional | trackPathContextFromURL         | boolean                                                                        | `true`                                                                                                                                         |
+| optional | trackRootLocationContextFromURL | boolean                                                                        | `true`                                                                                                                                         |
+| optional | trackApplicationLoadedEvent     | boolean                                                                        | `true`                                                                                                                                         |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
@@ -53,8 +56,7 @@ To get an idea of how much Browser Tracker automates under the hood, this statem
 ```typescript
  const tracker = new BrowserTracker({ 
   applicationId: 'app-id', 
-  endpoint: 'https://collector.app.dev', 
-  console: console
+  endpoint: 'https://collector.app.dev'
 });
 ``` 
 
@@ -62,27 +64,25 @@ is equivalent to:
 
 ```typescript
 const trackerId = trackerConfig.trackerId ?? trackerConfig.applicationId;
-const console = trackerConfig.console;
-const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev', console });
-const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev', console });
-const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport], console });
-const transport = new RetryTransport({ transport: transportSwitch, console });
-const queueStorage = new LocalStorageQueueStore({ trackerId, console })
-const trackerQueue = new TrackerQueue({ storage: trackerStorage, console });
-const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id', console });
-const httpContextPlugin = new HttpContextPlugin({ console });
-const pathContextFromURLPlugin = new PathContextFromURLPlugin({ console });
-const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin({ console });
+const fetchTransport = new FetchTransport({ endpoint: 'https://collector.app.dev' });
+const xhrTransport = new XHRTransport({ endpoint: 'https://collector.app.dev' });
+const transportSwitch = new TransportSwitch({ transports: [fetchTransport, xhrTransport] });
+const transport = new RetryTransport({ transport: transportSwitch });
+const queueStorage = new LocalStorageQueueStore({ trackerId })
+const trackerQueue = new TrackerQueue({ storage: trackerStorage });
+const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: 'app-id' });
+const httpContextPlugin = new HttpContextPlugin();
+const pathContextFromURLPlugin = new PathContextFromURLPlugin();
+const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin();
 const plugins = new TrackerPlugins({
   plugins: [
     applicationContextPlugin,
     httpContextPlugin,
     pathContextFromURLPlugin,
     rootLocationContextFromURLPlugin
-  ],
-  console
+  ]
 });
-const tracker = new Tracker({ transport, queue, plugins, console });
+const tracker = new Tracker({ transport, queue, plugins });
 ```
 
 <br />
@@ -91,9 +91,9 @@ const tracker = new Tracker({ transport, queue, plugins, console });
 - [makeTracker](/tracking/browser/api-reference/general/makeTracker.md)
 - [getOrMakeTracker](/tracking/browser/api-reference/general/getOrMakeTracker.md)
 - [BrowserTrackerConfig](/tracking/browser/api-reference/definitions/BrowserTrackerConfig.md)
-- [makeDefaultTransport](/tracking/browser/api-reference/common/factories/makeDefaultTransport.md)
-- [makeDefaultQueue](/tracking/browser/api-reference/common/factories/makeDefaultQueue.md)
-- [makeDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeDefaultPluginsList.md)
+- [makeBrowserTrackerDefaultTransport](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
+- [makeBrowserTrackerDefaultQueue](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+- [makeBrowserTrackerDefaultPluginsList](/tracking/browser/api-reference/common/factories/makeBrowserTrackerDefaultPluginsList.md)
 - [FetchAPITransport](/tracking/browser/api-reference/transports/FetchAPITransport.md)
 - [XMLHttpRequestTransport](/tracking/browser/api-reference/transports/XMLHttpRequestTransport.md)
 - [TrackerQueueLocalStorageStore](/tracking/browser/api-reference/queues/TrackerQueueLocalStorage.md)
