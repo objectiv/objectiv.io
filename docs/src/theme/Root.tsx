@@ -1,15 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { HttpContextPlugin } from '@objectiv/plugin-http-context';
-import { PathContextFromURLPlugin } from '@objectiv/plugin-path-context-from-url';
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import {
-  getLocationHref,
-  getOrMakeTracker,
-  getTrackerRepository,
-  makeCoreTrackerDefaultPluginsList,
-  TrackerPlugins,
-  windowExists
-} from "@objectiv/tracker-browser";
+import { getLocationHref, getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
+import { NoopConsoleImplementation, TrackerConsole } from "@objectiv/tracker-core";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 
@@ -54,36 +46,27 @@ function Root({children}) {
     }
   })
 
-  // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
-  if (trackerEndPoint) {
-    // Execute only if we are not in SSR
-    if (windowExists()) {
-      const trackerOptions = {
-        applicationId: trackerDocsApplicationId as string,
-        endpoint: trackerEndPoint as string,
-        console: trackerConsoleEnabled ? console : undefined
-      }
+  // Initialize Tracker only if we have all required configuration variables, and we are not in SSR.
+  if (trackerEndPoint && trackerDocsApplicationId && trackerEndPoint && windowExists()) {
 
-      if (trackerDocsApplicationId) {
-        getOrMakeTracker({
-          ...trackerOptions,
-          active: cookiebotStatisticsConsent,
-          plugins: [
-            ...makeCoreTrackerDefaultPluginsList(trackerOptions),
-            new HttpContextPlugin(trackerOptions),
-            new PathContextFromURLPlugin(trackerOptions),
-            new RootLocationContextFromURLPlugin({
-              ...trackerOptions,
-              idFactoryFunction: () => {
-                const secondSlug = location.pathname.split('/')[2];
+    // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig.
+    TrackerConsole.setImplementation(trackerConsoleEnabled ? console : NoopConsoleImplementation);
 
-                return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
-              }
-            })
-          ]
-        });
-      }
-    }
+    // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
+    getOrMakeTracker({
+      applicationId: trackerDocsApplicationId as string,
+      endpoint: trackerEndPoint as string,
+      active: cookiebotStatisticsConsent,
+      plugins: [
+        new RootLocationContextFromURLPlugin({
+          idFactoryFunction: () => {
+            const secondSlug = location.pathname.split('/')[2];
+
+            return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+          }
+        })
+      ]
+    });
   }
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances

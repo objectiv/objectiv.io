@@ -21,11 +21,11 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
-import { 
+import { makeIdFromString } from "@objectiv/tracker-core";
+import {
   TrackedHeader,
   TrackedDiv,
   TrackedFooter,
-  makeIdFromString, 
   useVisibleEventTracker,
   TrackedContentContext,
 } from '@objectiv/tracker-react';
@@ -115,7 +115,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
 
   return (
     <>
-      <TrackedHeader>
+      <TrackedContentContext id='blog-post-header' Component='header'>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
@@ -140,7 +140,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
           )}
         </div>
         <BlogPostAuthors authors={authors} assets={assets} />
-      </TrackedHeader>
+      </TrackedContentContext>
 
       {image && (
         <meta itemProp="image" content={withBaseUrl(image, {absolute: true})} />
