@@ -173,7 +173,6 @@ export default function Home() {
             </TrackedDiv>
           </div>
 
-
           <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
             <TrackedDiv 
                 id={'granular-control'} 
@@ -301,7 +300,7 @@ export default function Home() {
                 title="Cut down delivery times by eliminating <br />complexity in your analytics stack" 
                 subTitle="Run your entire product analytics workflow from a notebook." 
                 icon="icon-abc" />
-              <div className={clsx(styles.granularControlUSPs)}>
+              <div className={clsx(styles.eliminateComplexityUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>

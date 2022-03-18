@@ -263,8 +263,8 @@
     width: 100%;
     padding: 0 20px;
   }
-  .valueRowLeft>div:nth-child(2) {
-    margin-top: 80px;
+  .valueRowLeft>div:nth-child(2), .valueRowRight>div:nth-child(1) {
+    margin-top: 60px;
   }
   .valueRowLeft p:first-child, .valueRowRight p:first-child {
     margin-top: 0;
@@ -402,6 +402,9 @@
   .skipTheGruntWork .skipTheGruntWorkUSPs {
     padding-top: 20px;
   }
+  .skipTheGruntWork .valueRowRight>div:first-child {
+    margin-top: 0;
+  }
   .skipTheGruntWork .valueRowLeft:last-child {
     padding-bottom: 0;
   }
@@ -421,6 +424,9 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .granularControl {
     margin-bottom: 0;
+  }
+  .granularControl .granularControlUSPs {
+    margin-top: -100px;
   }
 }
 
@@ -469,14 +475,13 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .twoColumnItem {
     flex: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
   .twoColumnItem {
     display: block;
     text-align: center;
-    padding-bottom: 60px;
   }
 
   .granularControl .bachIntroVideo {
@@ -486,6 +491,9 @@
 
 
 /* Section: Eliminate complexity */
+.eliminateComplexity .eliminateComplexityUSPs {
+  margin-top: 0;
+}
 .eliminateComplexity .valueRowLeft:last-child { /* Bottom padding tweaked for the last one */
   padding-bottom: 30px;
 }
@@ -502,11 +510,16 @@
   padding: 60px 0 50px 0;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
+  .eliminateComplexity .eliminateComplexityUSPs {
+    margin-top: -80px;
+  }
   .eliminateComplexity .valueRowLeft {
     padding-bottom: 0; 
   }
+  .eliminateComplexity .valueRowFull {
+    padding-top: 120px;
+  }
 }
-
 
 /* Section: What's in the box? */
 .theProduct {
@@ -518,6 +531,9 @@
 .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
   display: none;
 }
+.theProduct .twoColumnItems {
+  padding-bottom: 130px;
+}
 .theProduct .ctaButton {
   margin: 15px 0 20px 0;
 }
@@ -525,6 +541,11 @@
   display: block;
   margin: 8px auto;
   padding-left: 50px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .theProduct .twoColumnItems {
+    padding-bottom: 80px;
+  }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .theProduct br {
@@ -548,8 +569,4 @@
     display: block;
     margin: 40px auto;
   }
-}
-
-.theProduct .twoColumnItems {
-  padding-bottom: 130px;
 }
