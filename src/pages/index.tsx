@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import React from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
+import AnimatedGif from '../components/animated-gif';
 import { TrackedDiv } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
@@ -184,10 +185,9 @@ export default function Home() {
                 icon="icon-accelerate" />
               <div className={clsx(styles.granularControlUSPs)}>
                 <div className={clsx(styles.valueRowFull)}>
-                  <img
-                    src={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
-                    alt="Example animation of how to call models from the model hub"
-                    className={clsx(styles.exampleAnimatedGif)} />
+                  <AnimatedGif
+                    url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
+                    alt='Example animation of how to call models from the model hub' />
                 </div>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
@@ -325,10 +325,9 @@ export default function Home() {
                   </div>  
                 </div>
                 <div className={clsx(styles.valueRowFull)}>
-                  <img
-                    src={useBaseUrl("img/examples/example-output-to-metabase.gif")}
-                    alt="Example animation of output to Metabase"
-                    className={clsx(styles.exampleAnimatedGif)} />
+                  <AnimatedGif
+                    url={useBaseUrl("img/examples/example-output-to-metabase.gif")}
+                    alt='Example animation of output to Metabase' />
                 </div>
                 <div className={clsx(styles.combineExport)}>
                   <img

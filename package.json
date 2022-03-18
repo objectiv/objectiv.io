@@ -26,7 +26,8 @@
     "react-avatar": "^3.10.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.17.4",
-    "react-twitter-embed": "^4.0.4"
+    "react-twitter-embed": "^4.0.4",
+    "react-visibility-sensor": "^5.1.1"
   },
   "resolutions": {
     "trim": "^0.0.3",
