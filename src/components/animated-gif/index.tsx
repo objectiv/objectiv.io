@@ -2,7 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
+export const windowExists = () => typeof window !== 'undefined';
+
 function useOnScreen(ref) {
+  // Skip if we are in SSR
+  if (!windowExists()) {
+    return;
+  }
   const [isIntersecting, setIntersecting] = useState(false);
   const observer = new IntersectionObserver(
     ([entry]) => setIntersecting(entry.isIntersecting)
