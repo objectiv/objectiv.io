@@ -7,6 +7,7 @@ interface RefObject<T> {
   readonly current: T | null
 }
 let starUsAnchorRef; // reference to the anchor, at which's Y position the notification should show
+
 export const StarUsAnchor = React.forwardRef((props, ref: RefObject<null>) => {
   starUsAnchorRef = ref;
   return <div {...props} ref={ref} />;
@@ -22,8 +23,6 @@ function StarUsNotification(props, ref) {
     setStarUsAnchorPosition(dimensions.y + offsetY + window.scrollY); // add window.scrollY so position is also correct on refresh
 
     const onScroll = () => {
-      // console.log("SCROLL Y: ", window.scrollY);
-      // console.log("anchorPosition: ", starUsAnchorPosition);
       const scrollCheck = window.scrollY >= starUsAnchorPosition;
       setStarUsNotificationShown(scrollCheck);
     };
