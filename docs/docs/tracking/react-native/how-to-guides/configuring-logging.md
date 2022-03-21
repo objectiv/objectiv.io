@@ -82,22 +82,20 @@ If this behavior is not good enough for your application, or if you want more co
 You can even create your own implementation, for example to log to an external service.
 
 ### Specifying a custom implementation
-In the following example we use dotenv to import some custom environment variable and enable logging based on that. 
-
-This would allow enabling logging in a test / staging / production environment.
+In the following example we use react-native-dotenv to import some custom environment variable and enable logging based on that.
 
 ```ts
 import { TrackerConsole } from "@objectiv/tracker-core";
 import { ReactNativeTracker } from "@objectiv/tracker-react-native";
-import 'dotenv/config';
+import { TRACKER_ENABLE_CONSOLE, TRACKER_APPLICATION_ID, TRACKER_ENDPOINT } from "@env"
 
-if (process.env.TRACKER_ENABLE_CONSOLE) {
+if (TRACKER_ENABLE_CONSOLE) {
   TrackerConsole.setImplementation(console);
 }
 
 const tracker = new ReactNativeTracker({
-  applicationId: process.env.TRACKER_APPLICATION_ID,
-  endpoint: process.env.TRACKER_ENDPOINT
+  applicationId: TRACKER_APPLICATION_ID,
+  endpoint: TRACKER_ENDPOINT
 });
 ```
 
