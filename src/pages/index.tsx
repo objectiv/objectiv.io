@@ -144,14 +144,19 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={clsx(styles.valueRowFull)}>
-                  <img
-                    src={useBaseUrl("img/value-taxonomy-highlighted.png")}
-                    className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
-                    alt="2. collect squeaky clean model-ready data!" />
-                  <img
-                    src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
-                    className={clsx(styles.valueTaxonomyHighlightedVertical)}
-                    alt="2. collect squeaky clean model-ready data!" />
+                  <TrackedLink
+                    to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                    waitUntilTracked={true}
+                    target="_self">
+                    <img
+                      src={useBaseUrl("img/value-taxonomy-highlighted.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                    <img
+                      src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedVertical)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                  </TrackedLink>.
                 </div>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
