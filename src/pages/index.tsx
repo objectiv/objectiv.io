@@ -146,6 +146,11 @@ export default function Home() {
                 <div className={clsx(styles.valueRowFull)}>
                   <img
                     src={useBaseUrl("img/value-taxonomy-highlighted.png")}
+                    className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
+                    alt="2. collect squeaky clean model-ready data!" />
+                  <img
+                    src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
+                    className={clsx(styles.valueTaxonomyHighlightedVertical)}
                     alt="2. collect squeaky clean model-ready data!" />
                 </div>
                 <div className={clsx(styles.valueRowLeft)}>
@@ -332,6 +337,11 @@ export default function Home() {
                 <div className={clsx(styles.combineExport)}>
                   <img
                     src={useBaseUrl("img/value-combine-export.svg")}
+                    className={clsx(styles.valueCombineExportHorizontal)}
+                    alt="Combine or export in several ways" />
+                  <img
+                    src={useBaseUrl("img/value-combine-export-vertical.svg")}
+                    className={clsx(styles.valueCombineExportVertical)}
                     alt="Combine or export in several ways" />
                   <p>To simplify sharing insights with other team members, Objectiv comes with <br />
                   built-in integration for the open-source BI platform <strong>Metabase</strong>.</p>
