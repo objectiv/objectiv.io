@@ -10,34 +10,35 @@ Our [previous how-to-guide](/tracking/react-native/how-to-guides/tracking-locati
 
 In this guide we are going to explore how to correctly use Location Wrappers and low-level Event Trackers to produce a fully functional Tracked Component.
 
-## Making TrackedVideo
-Suppose we have several HTML `<video>` tags on our website, and we would like to track when users saw a video, when they played or paused it and when the video reached its end.
+## Making TrackedImage
+Suppose we have several interactive images in our Application, and we would like to track when users press on them.
 
-Since we want to track all videos, ideally we want to make this into a new Tracked Component to be reused where needed.
-
+:::info Bear with us
+In a realistic scenario we would just use one of the ready-made Pressable Tracked Components, but for the sake of this example we are going to build everything from scratch using low-level APIs.
+:::
 ## Picking a LocationContext 
-The most appropriate candidate to wrap around our videos is a [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
+Since users can literally press on these images, let's use a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).
 
-The equivalent Location Wrapper is [MediaPlayerContextWrapper](/tracking/react-native/api-reference/locationWrappers/MediaPlayerContextWrapper.md).
+The equivalent Location Wrapper is [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 
 Here is how our component could look like:
 
 ```tsx
-import { MediaPlayerContextWrapper } from "@objectiv/tracker-react-native";
+import { PressableContextWrapper } from "@objectiv/tracker-react-native";
+import { Image } from 'react-native';
 
-type TrackedVideoProps = { videoUrl: string, id: string };
+type TrackedImageProps = ImageProps & { id: string };
 
-const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
-  <MediaPlayerContextWrapper id={id}>
-    <video
-      src={videoUrl}
-    />
-  </MediaPlayerContextWrapper>
+const TrackedImage = ({ id, ...imageProps }: TrackedImageProps) => (
+  <PressableContextWrapper id={id}>
+    <Image {...imageProps} />
+  </PressableContextWrapper>
 );
 ```
 
-## Handling Media Events
-Next we are going to hook up the `<video>` event handlers to Event Trackers. React Tracker SDK offers both [Hook based Event Trackers](/tracking/react-native/api-reference/hooks/eventTrackers/overview.md) and [Low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md).
+## Handling Press Events
+Next we are going to add a press handler.  
+React Native Tracker SDK offers both [Hook based Event Trackers](/tracking/react-native/api-reference/hooks/eventTrackers/overview.md) and [Low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md).
 
 
 ### Hooks vs Low-level
@@ -50,91 +51,84 @@ Both of them can work, but the implementation will differ quite a bit. As a rule
 Let's take a look at why is that so important. First let's `hook` our Component to the hook-based Event Trackers. 
 
 ```tsx
-import {
-  useMediaLoadEventTracker,
-  useMediaPauseEventTracker,
-  useMediaStartEventTracker, 
-  useMediaStopEventTracker
-} from "@objectiv/tracker-react-native";
+import { PressableContextWrapper, usePressEventTracker } from "@objectiv/tracker-react-native";
 
-type TrackedVideoProps = { videoUrl: string, id: string };
+type TrackedImageProps = ImageProps & { 
+  id: string,
+  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
+};
 
-const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => {
-  const trackMediaLoadEvent = useMediaLoadEventTracker();
-  const trackMediaStartEvent = useMediaStartEventTracker();
-  const trackMediaPauseEvent = useMediaPauseEventTracker();
-  const trackMediaStopEvent = useMediaStopEventTracker();
+const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => {
+  const trackPressEvent = usePressEventTracker();
 
   return (
-    <MediaPlayerContextWrapper id={id}>
-      <video
-        src={videoUrl}
-        onReady={() => trackMediaLoadEvent()}
-        onStart={() => trackMediaStartEvent()}
-        onPause={() => trackMediaPauseEvent()}
-        onEnded={() => trackMediaStopEvent()}
-      />
-    </MediaPlayerContextWrapper>
+    <PressableContextWrapper id={id}>
+      <Pressable
+        onPress={(event) => {
+          onPress && onPress(event);
+          trackPressEvent();
+        }}
+      >
+        <Image {...imageProps} />
+      </Pressable>
+    </PressableContextWrapper>
   );
 }
 ```
 
 :::danger It doesn't work
-When testing this Component you will quickly notice that the LocationStack of all Events will not contain a MediaPlayerContext.
+When testing this Component you will quickly notice that the LocationStack of all Events will not contain a PressableContext.
 :::
 
-Why aren't the Event Trackers detecting the MediaPlayerContextWrapper that is clearly there?
+Why aren't the Event Trackers detecting the PressableContextWrapper that is clearly there?
 
 Simply because hooks have generated those callbacks before the JSX has been executed. JSX looks like HTML, but is in fact compiled to JavaScript.
 
-What actually happens here is that the `trackMediaLoadEvent`, `trackMediaStartEvent`, `trackMediaStartEvent` and `trackMediaStopEvent` callbacks cannot know about `MediaPlayerContextWrapper`, as that Element didn't even exist when they got factored.  
+What actually happens here is that the `trackPressEvent` callback cannot know about `PressableContextWrapper`, as that Component didn't even exist when they got factored.  
 
 #### Two possible solutions
 There are two ways of solving this issue:
 
-1. Split the `<video>` component and the hooks calls in a separate component.
+1. Split the `<Image>` component and the hooks calls in a separate component.
 2. Use LocationWrapper RenderProps to gain access to the correct TrackingContext.
 
 ### Split-component approach
 While this works fine, we don't really recommend it as it makes for a very fragmented codebase. Nonetheless, here is how it would look like:
 
 ```tsx
-import {
-  useMediaLoadEventTracker,
-  useMediaPauseEventTracker,
-  useMediaStartEventTracker, 
-  useMediaStopEventTracker
-} from "@objectiv/tracker-react-native";
+import { PressableContextWrapper, usePressEventTracker } from "@objectiv/tracker-react-native";
 
-type TrackedVideoProps = VideoPlayerProps & { id: string };
+type PressableImageProps = ImageProps & {
+  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
+};
 
-const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
-  <MediaPlayerContextWrapper id={id}>
-    <VideoPlayer src={videoUrl} />
-  </MediaPlayerContextWrapper>
-);
-
-type VideoPlayerProps = { videoUrl: string };
-
-const VideoPlayer = ({ videoUrl }: VideoPlayerProps) => {
-  const trackMediaLoadEvent = useMediaLoadEventTracker();
-  const trackMediaStartEvent = useMediaStartEventTracker();
-  const trackMediaPauseEvent = useMediaPauseEventTracker();
-  const trackMediaStopEvent = useMediaStopEventTracker();
+const PressableImage = ({ onPress, ...imageProps }: PressableImageProps) => {
+  const trackPressEvent = usePressEventTracker();
 
   return (
-    <video
-      src={videoUrl}
-      onReady={() => trackMediaLoadEvent()}
-      onStart={() => trackMediaStartEvent()}
-      onPause={() => trackMediaPauseEvent()}
-      onEnded={() => trackMediaStopEvent()}
-    />
-  );
+    <Pressable 
+      onPress={(event) => {
+        onPress && onPress(event);
+        trackPressEvent();
+      }}
+    >
+      <Image {...imageProps} />
+    </Pressable>
+  )
 }
+
+type TrackedImageProps = PressableImageProps & {
+  id: string,
+};
+
+const TrackedImage = ({ id, ...pressableImageProps }: TrackedImageProps) => (
+  <PressableContextWrapper id={id}>
+    <PressableImage {...pressableImageProps} />
+  </PressableContextWrapper>
+);
 ```
 
-This works because now `VideoPlayer`, being a separate component, will be able to correctly fetch the Context Provider that `TrackedVideo` provides via `MediaPlayerContextWrapper`.
+This works because now `PressableImage`, being a separate component, will be able to correctly fetch the Context Provider that `TrackedImage` provides via `PressableContextWrapper`.
 
 ### Render Props approach
 There's a less verbose solution using [Render Props](https://reactjs.org/docs/render-props.html).  
@@ -146,30 +140,48 @@ TrackingContext will contain the closest instance of ReactNativeTracker and the 
 This is how that looks like:
 
 ```tsx
-import {
-  trackMediaLoadEvent,
-  trackMediaPauseEvent,
-  trackMediaStartEvent,
-  trackMediaStopEvent
-} from "@objectiv/tracker-react-native";
+import { PressableContextWrapper, trackPressEvent } from "@objectiv/tracker-react-native";
 
-type TrackedVideoProps = { videoUrl: string, id: string };
+type TrackedImageProps = ImageProps & {
+  id: string,
+  onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
+};
 
-const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
-  <MediaPlayerContextWrapper id={id}>
+const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => (
+  <PressableContextWrapper id={id}>
     {(trackingContext) => (
-      <video
-        src={videoUrl}
-        onReady={() => trackMediaLoadEvent(trackingContext)}
-        onStart={() => trackMediaStartEvent(trackingContext)}
-        onPause={() => trackMediaPauseEvent(trackingContext)}
-        onEnded={() => trackMediaStopEvent(trackingContext)}
-      />
+      <Pressable
+        onPress={(event) => {
+          onPress && onPress(event);
+          trackPressEvent(trackingContext);
+        }}
+      >
+        <Image {...imageProps} />
+      </Pressable>
     )}
-  </MediaPlayerContextWrapper>
+  </PressableContextWrapper>
 );
 ```
 
-All we did here is switching our hook-based Event Trackers with low-level ones.  
-These require a `trackingContext` which we can obtained, via Render Props, from `MediaPlayerContextWrapper`.
+All we did here is getting rid of the usePressEventTracker and instead imported the lower-level trackPressEvent.  
+This requires a `trackingContext` parameters which we can obtain, via Render Props, from `PressableContextWrapper`.
 
+:::tip There's an easier way
+The example above basically shows how TrackedPressable is made internally, so we may have just used that.  
+
+Here is how that would look like:
+
+```tsx
+import { TrackedPressable, TrackedPressableProps } from "@objectiv/tracker-react-native";
+
+type TrackedImageProps = ImageProps & TrackedPressableProps;
+
+const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => (
+  <TrackedPressable id={id} onPress={onPress}>
+    <Image {...imageProps} />
+  </TrackedPressable>
+);
+```
+
+Make sure to check out the API Reference for [TrackedPressable](/tracking/react-native/api-reference/trackedComponents/TrackedPressable.md) and all the other [Tracked Components](/tracking/react-native/api-reference/trackedComponents/overview.md).
+:::

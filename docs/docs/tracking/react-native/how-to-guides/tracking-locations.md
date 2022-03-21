@@ -9,97 +9,107 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Collisions
 If you started [instrumenting your Interactions](/tracking/react-native/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
 
-Example of a collision of the `footer` element in the browser's console:
+Example of a collision of a hypothetical `footer` element in the browser's console:
 
 <img alt="Collision: duplicated footer" src={useBaseUrl('img/docs/tracking-collision-react.png')} style={{ border: '1px solid lightgrey'}} />
 
 ### Unique Locations
 
-To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable. Assigning a unique identifier to each Element is not always possible, most often impractical. Think of reusable components. 
+To make modeling easier it's important to ensure all Tracked interactive Components are uniquely identifiable. Assigning a unique identifier to each of them is not always possible and most often impractical. Think of reusable components. 
 
-This is where our LocationStack comes in handy in the form of Tracked Context and Element components.
+This is where our LocationStack comes in handy with Tracked Location Components.
 
-## Tracked Contexts and Elements
+## Tracked Location Components
 
 Our [Taxonomy](/taxonomy/introduction.md) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
 
-For each of these, the React SDK offers a TrackedContext component.     
-
-There are also some HTML semantic aliases, called TrackedElements, aimed at tracking JSX HTML Elements. We may add more of these in the future.
-
-Here is a full recap:
+Here is how we mapped React Native Components to our Taxonomy LocationContexts:
 
 #### ContentContext
-// TODO
-
-#### ExpandableContext
-// TODO
-
-#### InputContext
-// TODO
-
-#### LinkContext
-// TODO
-
-#### MediaPlayerContext
-// TODO
-
-#### NavigationContext
-// TODO
+- [TrackedFlatList](/tracking/react-native/api-reference/trackedComponents/TrackedFlatList.md)
+- [TrackedKeyboardAvoidingView](/tracking/react-native/api-reference/trackedComponents/TrackedKeyboardAvoidingView.md)
+- [TrackedSafeAreaView](/tracking/react-native/api-reference/trackedComponents/TrackedSafeAreaView.md)
+- [TrackedScrollView](/tracking/react-native/api-reference/trackedComponents/TrackedScrollView.md)
+- [TrackedSectionList](/tracking/react-native/api-reference/trackedComponents/TrackedSectionList.md)
+- [TrackedView](/tracking/react-native/api-reference/trackedComponents/TrackedView.md)
+- [TrackedVirtualizedList](/tracking/react-native/api-reference/trackedComponents/TrackedVirtualizedList.md)
 
 #### OverlayContext
-// TODO
+- [TrackedActivityIndicator](/tracking/react-native/api-reference/trackedComponents/TrackedActivityIndicator.md)
+- [TrackedModal](/tracking/react-native/api-reference/trackedComponents/TrackedModal.md)
 
-#### PressableContext
-// TODO
-
-#### RootLocationContext
-// TODO
-
+:::info Visibility Events
+While ContentContexts are purely used for enriching the Locations of their children components, OverlayContexts can also automatically track Visible and Hidden Events. 
+:::
 
 ## Example of collision
 Let's see how these Components can help us in making all Interactions uniquely identifiable in the UI.
 
-Here is an example page with a collision:
+Here is an example Screen with a collision:
 ```tsx
-<TrackedContentContext Component={Layout} id={'layout'}>
-  <header>
-    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
-  </header>
-  <div>
-    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
-  </div>
-</TrackedContentContext>
+import { TrackedButton } from '@objectiv/tracker-react-native';
+
+<View>
+  <View>
+    <Text>Introductory text</Text>
+    <TrackedButton onPress={onPressLearnMore} title="Learn More"/>
+  </View>
+  <Separator />
+  <View>
+    <Text>More text</Text>
+    <TrackedButton onPress={onPressLearnMore} title="Learn More"/>
+  </View>
+</View>
 ```
 
-The same link has been used multiple times across the page.  
+There are two TrackedButtons on the same screen and, because they have the same title, their identifiers will be the same. This is not allowed as it makes identifying which Button has been pressed impossible.
 
-React Tracker will notify of the collision of the second link with the first one.
+React Native Tracker will notify of the collision of the second Button with the first one.
 
 ### Solving a collision
-To solve the issue, we can simply make the Location of these Elements richer:
+To solve the issue, we can simply make the Location of one or both of these Elements richer:
 
-```ts
-import { TrackedAnchor, TrackedContentContext, TrackedDiv } from '@objectiv/tracker-react-native';
+
+#### Either by wrapping components
+```tsx
+import { ContentContextWrapper, TrackedButton } from '@objectiv/tracker-react-native';
+
+<View>
+  <View>
+    <ContentContextWrapper id="top">
+      <Text>Introductory text</Text>
+      <TrackedButton onPress={onPressLearnMore} title="Learn More" />
+    </ContentContextWrapper>    
+  </View>
+  <Separator />
+  <View>
+    <Text>More text</Text>
+    <TrackedButton onPress={onPressLearnMore} title="Learn More"/>
+  </View>
+</View>
 ```
 
+#### Or, even better, by swapping parents with their Tracked counterparts
 ```tsx
-import { TrackedHeader } from "@objectiv/tracker-react-native";
+import { TrackedButton, TrackedView } from '@objectiv/tracker-react-native';
 
-<TrackedContentContext Component={Layout} id={'layout'}>
-  <TrackedHeader>
-    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
-  </TrackedHeader>
-  <TrackedDiv id={'body'}>
-    <TrackedAnchor href="/signup">Sign up</TrackedAnchor>
-  </TrackedDiv>
-</TrackedContentContext>
+<View>
+  <TrackedView id="top">
+    <Text>Introductory text</Text>
+    <TrackedButton onPress={onPressLearnMore} title="Learn More" />
+  </TrackedView>
+  <Separator />
+  <TrackedView id="bottom">
+    <Text>More text</Text>
+    <TrackedButton onPress={onPressLearnMore} title="Learn More"/>
+  </TrackedView>
+</View>
 ```
 
 :::tip
-You may have noticed that the TrackedDiv in the example above is not strictly necessary to solve the collision. So, why did we add it?
+You may have noticed that the second TrackedView in the example above is not strictly necessary to solve the collision. So, why did we add it?
 
-More on that in our [best practices](/tracking/core-concepts/react-native/best-practices.md) around what to track and why.
+More on that in our [best practices](/tracking/core-concepts/react/best-practices.md) around what to track and why.
 :::
 
 ## Best practices

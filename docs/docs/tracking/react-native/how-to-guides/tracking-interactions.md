@@ -25,12 +25,13 @@ The React Native Tracker package comes with these ready-to-use Components.
 
 All of them are wrapped in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md) via [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md) and have their `onPress` automatically tracked: 
 
-- [TrackedButton](#TODO)
-- [TrackedPressable](#TODO)
-- [TrackedText](#TODO)
-- [TrackedTouchableHighlight](#TODO)
-- [TrackedTouchableNativeFeedback](#TODO)
-- [TrackedTouchableOpacity](#TODO)
+- [TrackedButton](/tracking/react-native/api-reference/trackedComponents/TrackedButton.md)
+- [TrackedPressable](/tracking/react-native/api-reference/trackedComponents/TrackedPressable.md)
+- [TrackedText](/tracking/react-native/api-reference/trackedComponents/TrackedText.md)
+- [TrackedTouchableHighlight](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableHighlight.md)
+- [TrackedTouchableNativeFeedback](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableNativeFeedback.md)
+- [TrackedTouchableOpacity](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableOpacity.md)
+- [TrackedTouchableWithoutFeedback](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableWithoutFeedback.md)
 
 ### Usage example
 Since these components have the same API of their non-tracked counterparts, using them is as easy as replacing them.
@@ -90,8 +91,8 @@ The React Native Tracker package comes with these ready-to-use Components.
 
 All of them are wrapped in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md) via [InputContextWrapper](/tracking/react-native/api-reference/locationWrappers/InputContextWrapper.md) and have their events automatically tracked:
 
-- [TrackedSwitch](#TODO)
-- [TrackedTextInput](#TODO)
+- [TrackedSwitch](/tracking/react-native/api-reference/trackedComponents/TrackedSwitch.md)
+- [TrackedTextInput](/tracking/react-native/api-reference/trackedComponents/TrackedTextInput.md)
 
 ### Usage example
 These components have the same API of their non-tracked counterparts, using them is as easy as replacing them.

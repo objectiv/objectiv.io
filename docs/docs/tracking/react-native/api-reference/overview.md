@@ -11,7 +11,7 @@ import HooksOverview from './hooks/overview.md'
 import CommonOverview from './common/overview.md'
 import EventTrackersOverview from './eventTrackers/overview.md'
 
-High level overview of all the APIs available in the [React Tracker](/tracking/react-native/api-reference/ReactNativeTracker.md).
+High level overview of all the APIs available in the [React Native Tracker](/tracking/react-native/api-reference/ReactNativeTracker.md).
 
 ## Tracked Components
 <TrackedComponentsOverview />
