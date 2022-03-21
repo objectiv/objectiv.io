@@ -16,7 +16,7 @@ export const StarUsAnchor = React.forwardRef((props, ref: RefObject<null>) => {
 function StarUsNotification(props, ref) {
   const [starUsNotificationShown, setStarUsNotificationShown] = useState(false);
   const [starUsAnchorPosition, setStarUsAnchorPosition] = useState(1000);
-  const offsetY = props.offsetY;
+  const offsetY = props.offsetY?? 0;
 
   useEffect(() => {
     const dimensions = starUsAnchorRef.current?.getBoundingClientRect();
