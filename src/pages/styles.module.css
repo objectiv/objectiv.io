@@ -388,9 +388,16 @@
 /* Section: Skip the gruntwork */
 .skipTheGruntWork .valueRowFull {
   padding-bottom: 120px;
+  text-align: center;
 }
 .skipTheGruntWork .valueRowLeft:last-child { /* Bottom padding for all but the last one */
   padding-bottom: 0;
+}
+.skipTheGruntWork .valueTaxonomyHighlightedVertical {
+  display: none;
+}
+.skipTheGruntWork .valueRowLeft:last-child>div:first-child img {
+  margin-top: 66px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .skipTheGruntWork .skipTheGruntWorkUSPs {
@@ -399,8 +406,16 @@
   .skipTheGruntWork .valueRowRight>div:first-child {
     margin-top: 0;
   }
-  .skipTheGruntWork .valueRowLeft:last-child {
-    padding-bottom: 0;
+  .skipTheGruntWork .valueRowRight {
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .skipTheGruntWork .valueTaxonomyHighlightedVertical {
+    display: inline-block;
+  }
+  .skipTheGruntWork .valueTaxonomyHighlightedHorizontal {
+    display: none;
   }
 }
 
@@ -418,9 +433,6 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .granularControl {
     margin-bottom: 0;
-  }
-  .granularControl .granularControlUSPs {
-    margin-top: -100px;
   }
 }
 
@@ -503,6 +515,9 @@
 .eliminateComplexity .combineExport p {
   padding: 60px 0 50px 0;
 }
+.eliminateComplexity .valueCombineExportVertical {
+  display: none;
+}
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .eliminateComplexity .eliminateComplexityUSPs {
     margin-top: -80px;
@@ -512,6 +527,14 @@
   }
   .eliminateComplexity .valueRowFull {
     padding-top: 120px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .eliminateComplexity .valueCombineExportVertical {
+    display: inline-block;
+  }
+  .eliminateComplexity .valueCombineExportHorizontal {
+    display: none;
   }
 }
 
@@ -528,13 +551,8 @@
 .theProduct .twoColumnItems {
   padding-bottom: 130px;
 }
-.theProduct .ctaButton {
-  margin: 15px 0 20px 0;
-}
-.theProduct .takesLessThan5Minutes {
-  display: block;
-  margin: 8px auto;
-  padding-left: 50px;
+.theProduct .twoColumnItems .twoColumnItem {
+  padding-right: 25px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .theProduct .twoColumnItems {
@@ -542,9 +560,6 @@
   }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct br {
-    display: none;
-  }
   .theProduct .theStack {
     display: none;
   }
@@ -563,4 +578,17 @@
     display: block;
     margin: 40px auto;
   }
+}
+
+.theProduct .stackBQComingSoon {
+  margin: 10px 0 0 10px;
+}
+
+.theProduct .ctaButton {
+  margin: 15px 0 20px 0;
+}
+.theProduct .takesLessThan5Minutes {
+  display: block;
+  margin: 8px auto;
+  padding-left: 50px;
 }

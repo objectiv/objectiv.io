@@ -146,9 +146,20 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={clsx(styles.valueRowFull)}>
-                  <img
-                    src={useBaseUrl("img/value-taxonomy-highlighted.png")}
-                    alt="2. collect squeaky clean model-ready data!" />
+                  <TrackedLink
+                    to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                    waitUntilTracked={true}
+                    id="2. collect squeaky clean model-ready data!"
+                    target="_self">
+                    <img
+                      src={useBaseUrl("img/value-taxonomy-highlighted.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                    <img
+                      src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedVertical)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                  </TrackedLink>.
                 </div>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
@@ -334,6 +345,11 @@ export default function Home() {
                 <div className={clsx(styles.combineExport)}>
                   <img
                     src={useBaseUrl("img/value-combine-export.svg")}
+                    className={clsx(styles.valueCombineExportHorizontal)}
+                    alt="Combine or export in several ways" />
+                  <img
+                    src={useBaseUrl("img/value-combine-export-vertical.svg")}
+                    className={clsx(styles.valueCombineExportVertical)}
                     alt="Combine or export in several ways" />
                   <p>To simplify sharing insights with other team members, Objectiv comes with <br />
                   built-in integration for the open-source BI platform <strong>Metabase</strong>.</p>
@@ -373,7 +389,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>PostgreSQL support</strong><br />
-                    Run it on-premise or in your Google / AWS cloud.
+                    Run it locally or in the cloud for reliable event handling.
                   </div>
                 </div>
                 <div className={clsx(styles.twoColumnItem)}>
@@ -383,8 +399,11 @@ export default function Home() {
                       alt="BigQuery through Snowplow" />
                   </div>
                   <div>
-                    <strong>BigQuery Support</strong><br />
-                    Plugs into your Snowplow backend for event handling at scale.
+                    <strong>BigQuery support</strong><br />
+                    Plugs into your Snowplow backend for event handling at scale with BiqQuery.<br />
+                    <img src={useBaseUrl("img/coming-soon.svg")} 
+                      className={clsx(styles.stackBQComingSoon)}
+                      alt="Coming soon" />
                   </div>
                 </div>
               </div>
