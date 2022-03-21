@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Tracker API Reference
+# Browser Tracker API Reference
 
 import GeneralOverview from './general/overview.md'
 import CommonOverview from './common/overview.md'
