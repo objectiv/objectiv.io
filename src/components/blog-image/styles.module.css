@@ -8,3 +8,16 @@
   margin-bottom: 25px !important;
   font-style: italic;
 }
+
+:local(.blogImageLarge) {
+  max-width: 130%;
+  width: 130%;
+  margin-left: -15%;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  :local(.blogImageLarge) {
+    max-width: 120%;
+    width: 120%;
+    margin-left: -10%;
+  }
+}
