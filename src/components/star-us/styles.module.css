@@ -1,0 +1,41 @@
+.starUsNotification {
+  width: 165px;
+  height: 47px;
+  position: absolute;
+  top: 55px;
+  right: 66px;
+  z-index: 1000;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.6s linear;
+}
+
+.starUsNotificationShow {
+  opacity: 1;
+}
+
+.starUsNotificationSticky {
+  position: fixed;
+}
+
+.starUsNotificationStickyPointer {
+  height: 15px;
+  padding: 0 0 0 25px;
+}
+
+.starUsNotificationStickyContent {
+  background: #333;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+
+.starUsNotificationStickyContent img {
+  vertical-align: middle;
+  padding: 0 10px 0 0;
+}
+
+@media screen and (max-width: 966px) { /* do not show at all on mobile/tablet all */
+  .starUsNotification {
+    display: none;
+  }
+}

@@ -5,6 +5,7 @@ title: Quickstart Guide
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import JoinSlackLink from '@site/src/components/join-slack-link';
 
 This quickstart guide will show you how to spin up a fully functional Objectiv demo pipeline. It includes everything you need to test drive Objectiv locally.
 
@@ -72,4 +73,4 @@ To learn more about tracking & modeling with Objectiv, or about the open taxonom
 * [Modeling with Objectiv Bach](/modeling/intro.mdx)
 * [The open analytics taxonomy](/taxonomy/introduction.md)
 
-If you have any questions or feedback, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
+If you have any questions or feedback, please <JoinSlackLink linkText='join us on Slack' />.

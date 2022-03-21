@@ -2,10 +2,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useRef } from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
 import AnimatedGif from '../components/animated-gif';
+import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import { TrackedDiv } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
@@ -13,13 +14,14 @@ import styles from './styles.module.css';
 export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
-
+  const starUsNotificationAnchorRef = useRef(null);
+  
   return (
     <div>
       <Layout
         title=''
         description={tagline}>
-        
+        <StarUsNotification innerRef={starUsNotificationAnchorRef} offsetY={280} />
         <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -48,7 +50,6 @@ export default function Home() {
         </TrackedDiv>
 
         <main className={clsx(styles.bodyLarge)}>
-
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
               id={'why-objectiv'} 
@@ -112,6 +113,7 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.pageSection)}>
+            <StarUsAnchor ref={starUsNotificationAnchorRef} />
             <TrackedDiv 
                 id={'skip-the-gruntwork'} 
                 className={clsx("container", styles.contentContainer, styles.skipTheGruntWork)}>
@@ -440,6 +442,7 @@ export default function Home() {
 
         </main>
       </Layout>
+
     </div>
   );
 }
