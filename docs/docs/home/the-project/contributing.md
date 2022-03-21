@@ -6,6 +6,7 @@ sidebar_position: 3
 ---
 
 import Mermaid from '@theme/Mermaid';
+import JoinSlackLink from '@site/src/components/join-slack-link';
 
 First off, thank you for considering to contribute to Objectiv! Please feel welcome - we need volunteer developers like yourself. Community adoption and contribution are critical to Objectiv's success. We're here to help you find things to work on that you're excited about.
 
@@ -27,7 +28,6 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
     Contribution ----> PR["Create a Pull Request"];
     LabelUpdate["GitHub Label update"] ----> PR["Create a Pull Request"];
     StayUpToDate["Receive Updates"] ----> GitHubReleases["Follow Releases on GitHub"];
-    click PostSlack "https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg" "Join Objectiv on Slack" _blank;
 `} 
   caption="Figure: How To Contribute" 
   baseColor="basic" 
@@ -38,7 +38,7 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
     { name: 'GitHubIssue', to: 'https://github.com/objectiv/objectiv-analytics/issues', tooltip: 'Go to GitHub Issues', target: '_blank' },
     { name: 'PR', to: 'https://github.com/objectiv/objectiv-analytics/pulls', tooltip: 'Go to GitHub Pull Requests', target: '_blank' },
     { name: 'GitHubReleases', to: 'https://github.com/objectiv/objectiv-analytics', tooltip: 'Follow Releases on GitHub', target: '_blank' },
-    { name: 'PostSlack', to: 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg', tooltip: 'Join Objectiv on Slack', target: '_blank' }
+    { name: 'PostSlack', to: 'https://objectiv.io/join-slack', tooltip: 'Join Objectiv on Slack', target: '_blank' }
   ]}
 />
 
@@ -58,7 +58,7 @@ We take security issues very seriously. Please do not open up a GitHub issue if 
 
 :::note
 
-Please don't file an issue to ask a question. You'll get faster results by posting it in [Objectiv's Slack channels](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
+Please don't file an issue to ask a question. You'll get faster results by posting it in <JoinSlackLink linkText="Objectiv's Slack channels" />
 
 :::
 
