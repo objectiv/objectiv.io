@@ -15,6 +15,7 @@ export const StarUsAnchor = React.forwardRef((props, ref: RefObject<null>) => {
 
 function StarUsNotification(props, ref) {
   const [starUsNotificationShown, setStarUsNotificationShown] = useState(false);
+  const [starUsNotificationClosed, setStarUsNotificationClosed] = useState(false);
   const [starUsAnchorPosition, setStarUsAnchorPosition] = useState(1000);
   const offsetY = props.offsetY?? 0;
 
@@ -23,18 +24,28 @@ function StarUsNotification(props, ref) {
     setStarUsAnchorPosition(dimensions.y + offsetY + window.scrollY); // add window.scrollY so position is also correct on refresh
 
     const onScroll = () => {
-      const scrollCheck = window.scrollY >= starUsAnchorPosition;
-      setStarUsNotificationShown(scrollCheck);
+      if (!starUsNotificationClosed) {
+        const scrollCheck = window.scrollY >= starUsAnchorPosition;
+        setStarUsNotificationShown(scrollCheck);
+      }
     };
 
     document.addEventListener("scroll", onScroll);
     return () => {
       document.removeEventListener("scroll", onScroll);
     };
-  }, [starUsAnchorRef]);
+  }, [starUsAnchorRef, starUsNotificationClosed]);
+
+  function closeNotification(e) {
+    setStarUsNotificationClosed(true);
+    setStarUsNotificationShown(false);
+  }
 
   return (
-    <div style={{opacity: 0}} className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
+    <div 
+      style={{opacity: 0}} 
+      onClick={closeNotification}
+      className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
       <div className={clsx(styles.starUsNotificationSticky)}>
           <div className={clsx(styles.starUsNotificationStickyPointer)}>
             <img src={useBaseUrl("img/icons/icon-caret-up.svg")} />
