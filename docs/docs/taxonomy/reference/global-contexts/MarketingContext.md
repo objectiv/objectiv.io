@@ -1,6 +1,6 @@
 # MarketingContext
 
-Describing the marketing channel & campaign from where the user came.
+A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing the marketing channel & campaign from where the user came.
 
 import Mermaid from '@theme/Mermaid';
 

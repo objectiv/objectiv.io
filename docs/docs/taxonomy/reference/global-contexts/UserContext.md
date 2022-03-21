@@ -1,16 +1,16 @@
-# PathContext
+# UserContext
 
-A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing the path where the user is when an event is sent.
+A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) to match the user ID in the Objectiv data, to your internal user data. In the tracker you can choose which field(s) to put in the ID and hash this.
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> PathContext;
-    class PathContext diagramActive;
+        AbstractGlobalContext --> UserContext["UserContext<br><span class='properties'>input_fields: string<br />hash_type: string</span>"];
+    class UserContext diagramActive;
 `} 
-  caption="Diagram: PathContext inheritance" 
+  caption="Diagram: UserContext inheritance" 
   baseColor="blue" 
   links={[
         { name: 'AbstractGlobalContext', to: '/taxonomy/global-contexts' }
@@ -21,8 +21,10 @@ import Mermaid from '@theme/Mermaid';
 |           | type        | description
 | :--       | :--         | :--
 | **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
-| **_type** | string      | String literal used during serialization. Should always match the Context interface name.          
+| **_type** | string      | String literal used during serialization. Should always match the Context interface name.      
+| **input_fields** | string      | Field(s) used to create the user ID hash.   
+| **hash_type** | string      | Algorithm used top create the user ID hash.   
 
 :::info setting of the id & type
-The tracker will automatically set the id and _type based on path on web (including URL parameters, hashes) and pathname on native. When this is not possible on a specific platform, it will ask for a manual id and _type to be set.
+The tracker will enable you to set the id and _type based on the input_fields and hash-type.
 :::
