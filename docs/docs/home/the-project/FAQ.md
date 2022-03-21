@@ -1,10 +1,12 @@
 ---
-title: FAQ
+title: Frequently Asked Questions
 slug: /home/the-project/faq
 sidebar_label: FAQ
 sidebar_position: 1
 ---
 # Frequently Asked Questions
+
+import JoinSlackLink from '@site/src/components/join-slack-link';
 
 ### How is Objectiv different from product analytics tools?
 There is a big gap between what data scientists want their data to look like and what data actually looks like when it comes from the current generation of trackers. 
@@ -110,4 +112,4 @@ Objectiv ultimately wants to monetize with paid offerings to users of the ecosys
 We want to make sure the taxonomy enables collection of data that meets the requirements of the data science community for effective modeling. As such, we will be looking to create a continuous feedback loop with said community to ensure it meets their needs. As widespread adoption is a goal, we will put effort in seeing that it can be used for a wide range of DS use cases.
 
 ### Do you plan to develop a taxonomy for other areas?
-The current version of our taxonomy is built for product analytics. With it, we’ve built a solid foundation that can be used to create taxonomies for other fields, e.g. Payments and CRM. If you’ve got a lot of experience in a particular field and would like to contribute, please [join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
+The current version of our taxonomy is built for product analytics. With it, we’ve built a solid foundation that can be used to create taxonomies for other fields, e.g. Payments and CRM. If you’ve got a lot of experience in a particular field and would like to contribute, please  <JoinSlackLink linkText='join us on Slack' />.

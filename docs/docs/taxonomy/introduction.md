@@ -7,6 +7,7 @@ title: Introduction
 # The open analytics taxonomy 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import JoinSlackLink from '@site/src/components/join-slack-link';
 
 The open analytics taxonomy is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
 validate analytics data. Adoption of the open analytics taxonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
@@ -33,5 +34,5 @@ Find out everything about the taxonomy: all Contexts and Events are open and doc
 [Check out the Reference](./reference/overview.md)
 
 :::info join the discussion
-Objectiv and the open analytics taxonomy are open-source and we're building them in public. Have opinions on where we should take this next? [Join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg)
+Objectiv and the open analytics taxonomy are open-source and we're building them in public. Have opinions on where we should take this next? <JoinSlackLink linkText='Join us on Slack' />.
 :::
