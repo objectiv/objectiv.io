@@ -147,7 +147,7 @@ export default function Home() {
                   <TrackedLink
                     to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
                     waitUntilTracked={true}
-                    title="2. collect squeaky clean model-ready data!"
+                    id="2. collect squeaky clean model-ready data!"
                     target="_self">
                     <img
                       src={useBaseUrl("img/value-taxonomy-highlighted.png")}
