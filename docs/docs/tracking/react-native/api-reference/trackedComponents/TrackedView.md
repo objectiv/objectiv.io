@@ -1,11 +1,11 @@
-# TrackedActivityIndicator
+# TrackedView
 
-Wraps [ActivityIndicator](https://reactnative.dev/docs/activityindicator) in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md) and automatically tracks Visibility Events for it.
+Wraps [View](https://reactnative.dev/docs/view) in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
 
 ```tsx
-TrackedActivityIndicator: (props: ActivityIndicatorProps & {
+TrackedView = (props: ViewProps & {
   id: string,
-}) => ReactElement
+}) => View
 ```
 
 ## Additional Props
@@ -14,28 +14,31 @@ TrackedActivityIndicator: (props: ActivityIndicatorProps & {
 | **required**  | **id**  | string    |
 
 ## Automatic Events
-- [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `animating` changes from `false` to `true`.
-- [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `animating` changes from `true` to `false`.
+none.
 
 ## Usage example
 
 ```jsx
-import { TrackedActivityIndicator } from '@objectiv/tracker-react';
+import { TrackedView } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-const Loading = ({ visible }: { visible:boolean }) => (
-  <TrackedActivityIndicator animating={visible} />
-);
+#TODO
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedActivityIndicator` internally uses [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md).
+`TrackedView` internally uses [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md).
 :::
 
 <br />
 
 :::info See also
+- [TrackedFlatList](/tracking/react-native/api-reference/trackedComponents/TrackedFlatList.md)
+- [TrackedKeyboardAvoidingView](/tracking/react-native/api-reference/trackedComponents/TrackedKeyboardAvoidingView.md)
+- [TrackedSafeAreaView](/tracking/react-native/api-reference/trackedComponents/TrackedSafeAreaView.md)
+- [TrackedScrollView](/tracking/react-native/api-reference/trackedComponents/TrackedScrollView.md)
+- [TrackedSectionList](/tracking/react-native/api-reference/trackedComponents/TrackedSectionList.md)
+- [TrackedVirtualizedList](/tracking/react-native/api-reference/trackedComponents/TrackedVirtualizedList.md)
 :::

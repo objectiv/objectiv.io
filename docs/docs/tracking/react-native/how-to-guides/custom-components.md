@@ -14,7 +14,23 @@ In this guide we are going to explore how to correctly use Location Wrappers and
 Suppose we have several interactive images in our Application, and we would like to track when users press on them.
 
 :::info Bear with us
-In a realistic scenario we would just use one of the ready-made Pressable Tracked Components, but for the sake of this example we are going to build everything from scratch using low-level APIs.
+The following example could just be achieved using a [TrackedPressable](/tracking/react-native/api-reference/trackedComponents/TrackedPressable.md) component:
+
+```tsx
+import {TrackedPressable, TrackedPressableProps} from "@objectiv/tracker-react-native";
+
+type TrackedImageProps = ImageProps & TrackedPressableProps;
+
+const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => (
+  <TrackedPressable id={id} onPress={onPress}>
+    <Image {...imageProps} />
+  </TrackedPressable>
+);
+```
+
+But for the sake of showcasing how the SDK works under the hood we are going to build everything from scratch using lower-level APIs.
+
+This should give you a good idea of how to approach writing your own Tracked Components when the ones we prepared may not fit your needs.
 :::
 ## Picking a LocationContext 
 Since users can literally press on these images, let's use a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).
@@ -82,9 +98,9 @@ When testing this Component you will quickly notice that the LocationStack of al
 
 Why aren't the Event Trackers detecting the PressableContextWrapper that is clearly there?
 
-Simply because hooks have generated those callbacks before the JSX has been executed. JSX looks like HTML, but is in fact compiled to JavaScript.
+Simply because hooks have generated those callbacks before the JSX has been executed.
 
-What actually happens here is that the `trackPressEvent` callback cannot know about `PressableContextWrapper`, as that Component didn't even exist when they got factored.  
+What actually happens here is that the `trackPressEvent` callback cannot know about `PressableContextWrapper`, as that Component will be created later on.  
 
 #### Two possible solutions
 There are two ways of solving this issue:
@@ -165,23 +181,4 @@ const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => (
 
 All we did here is getting rid of the usePressEventTracker and instead imported the lower-level trackPressEvent.  
 This requires a `trackingContext` parameters which we can obtain, via Render Props, from `PressableContextWrapper`.
-
-:::tip There's an easier way
-The example above basically shows how TrackedPressable is made internally, so we may have just used that.  
-
-Here is how that would look like:
-
-```tsx
-import { TrackedPressable, TrackedPressableProps } from "@objectiv/tracker-react-native";
-
-type TrackedImageProps = ImageProps & TrackedPressableProps;
-
-const TrackedImage = ({ id, onPress, ...imageProps }: TrackedImageProps) => (
-  <TrackedPressable id={id} onPress={onPress}>
-    <Image {...imageProps} />
-  </TrackedPressable>
-);
-```
-
-Make sure to check out the API Reference for [TrackedPressable](/tracking/react-native/api-reference/trackedComponents/TrackedPressable.md) and all the other [Tracked Components](/tracking/react-native/api-reference/trackedComponents/overview.md).
 :::

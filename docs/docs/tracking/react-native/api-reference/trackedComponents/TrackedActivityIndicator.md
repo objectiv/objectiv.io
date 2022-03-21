@@ -5,7 +5,7 @@ Wraps [ActivityIndicator](https://reactnative.dev/docs/activityindicator) in a [
 ```tsx
 TrackedActivityIndicator: (props: ActivityIndicatorProps & {
   id: string,
-}) => ReactElement
+}) => ActivityIndicator
 ```
 
 ## Additional Props
@@ -20,7 +20,7 @@ TrackedActivityIndicator: (props: ActivityIndicatorProps & {
 ## Usage example
 
 ```jsx
-import { TrackedActivityIndicator } from '@objectiv/tracker-react';
+import { TrackedActivityIndicator } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx

@@ -1,41 +1,73 @@
-# TrackedActivityIndicator
+# TrackedText
 
-Wraps [ActivityIndicator](https://reactnative.dev/docs/activityindicator) in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md) and automatically tracks Visibility Events for it.
+Wraps [Text](https://reactnative.dev/docs/text) in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md) and automatically tracks [PressEvent](/taxonomy/reference/events/PressEvent.md) for it.
 
 ```tsx
-TrackedActivityIndicator: (props: ActivityIndicatorProps & {
-  id: string,
-}) => ReactElement
+TrackedText: (props: TextProps & {
+  id?: string,
+}) => Text
 ```
 
 ## Additional Props
-|               |         | type      | 
-|:-------------:|:--------|:----------|
-| **required**  | **id**  | string    |
+|          |     | type      | default value            | 
+|:--------:|:----|:----------|:-------------------------|
+| optional | id  | string    | inferred from `children` |
+
+:::info
+In development mode, TrackedText will log an error to the console when failing to infer an identifier from `children`.
+:::
 
 ## Automatic Events
-- [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `animating` changes from `false` to `true`.
-- [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `animating` changes from `true` to `false`.
+- [PressEvent](/taxonomy/reference/events/PressEvent.md) when `onPress` triggers.
 
-## Usage example
+## Usage examples
 
 ```jsx
-import { TrackedActivityIndicator } from '@objectiv/tracker-react';
+import { TrackedText } from '@objectiv/tracker-react-native';
 ```
 
+#### A regular Text
 ```tsx
-const Loading = ({ visible }: { visible:boolean }) => (
-  <TrackedActivityIndicator animating={visible} />
-);
+<Text 
+  onPress={onPressFunction}
+>
+  I'm a pressable text!
+</Text>
+```
+
+#### Non parseable children
+```tsx
+<Text
+  onPress={onPressFunction}
+  id="thumb-down"
+>
+  👎
+</Text>
+```
+
+#### Custom identifier
+```tsx
+<Text
+  onPress={onPressFunction}
+  id="custom-analytics-id"
+>
+  Press me!
+</Text>
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedActivityIndicator` internally uses [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md).
+`TrackedText` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />
 
 :::info See also
+- [TrackedButton](/tracking/react-native/api-reference/trackedComponents/TrackedButton.md)
+- [TrackedPressable](/tracking/react-native/api-reference/trackedComponents/TrackedPressable.md)
+- [TrackedTouchableHighlight](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableHighlight.md)
+- [TrackedTouchableNativeFeedback](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableNativeFeedback.md)
+- [TrackedTouchableOpacity](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableOpacity.md)
+- [TrackedTouchableWithoutFeedback](/tracking/react-native/api-reference/trackedComponents/TrackedTouchableWithoutFeedback.md)
 :::

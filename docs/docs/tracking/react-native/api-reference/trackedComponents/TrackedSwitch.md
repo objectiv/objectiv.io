@@ -1,11 +1,11 @@
-# TrackedActivityIndicator
+# TrackedSwitch
 
-Wraps [ActivityIndicator](https://reactnative.dev/docs/activityindicator) in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md) and automatically tracks Visibility Events for it.
+Wraps [Switch](https://reactnative.dev/docs/switch) in a [InputContext](/taxonomy/reference/location-contexts/InputContext.md) and automatically tracks [InputChangeEvent](/taxonomy/reference/events/VisibleEvent.md) for it.
 
 ```tsx
-TrackedActivityIndicator: (props: ActivityIndicatorProps & {
+TrackedSwitch: (props: SwitchProps & {
   id: string,
-}) => ReactElement
+}) => Switch
 ```
 
 ## Additional Props
@@ -14,28 +14,26 @@ TrackedActivityIndicator: (props: ActivityIndicatorProps & {
 | **required**  | **id**  | string    |
 
 ## Automatic Events
-- [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `animating` changes from `false` to `true`.
-- [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `animating` changes from `true` to `false`.
+- [InputChangeEvent](/taxonomy/reference/events/VisibleEvent.md) when `onValueChange` triggers.
 
 ## Usage example
 
 ```jsx
-import { TrackedActivityIndicator } from '@objectiv/tracker-react';
+import { TrackedSwitch } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-const Loading = ({ visible }: { visible:boolean }) => (
-  <TrackedActivityIndicator animating={visible} />
-);
+#TODO
 ```
 
 <br />
 
 :::tip Did you know ?
-`TrackedActivityIndicator` internally uses [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md).
+`TrackedSwitch` internally uses [InputContextWrapper](/tracking/react/api-reference/locationWrappers/InputContextWrapper.md).
 :::
 
 <br />
 
 :::info See also
+- [TrackedTextInput](/tracking/react-native/api-reference/trackedComponents/TrackedTextInput.md)
 :::
