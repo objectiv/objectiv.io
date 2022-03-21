@@ -371,7 +371,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>PostgreSQL support</strong><br />
-                    Run it on-premise or in your Google / AWS cloud.
+                    Run it locally or in the cloud for reliable event handling.
                   </div>
                 </div>
                 <div className={clsx(styles.twoColumnItem)}>
@@ -381,8 +381,11 @@ export default function Home() {
                       alt="BigQuery through Snowplow" />
                   </div>
                   <div>
-                    <strong>BigQuery Support</strong><br />
-                    Plugs into your Snowplow backend for event handling at scale.
+                    <strong>BigQuery support</strong><br />
+                    Plugs into your Snowplow backend for event handling at scale with BiqQuery.<br />
+                    <img src={useBaseUrl("img/coming-soon.svg")} 
+                      className={clsx(styles.stackBQComingSoon)}
+                      alt="Coming soon" />
                   </div>
                 </div>
               </div>

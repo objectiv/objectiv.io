@@ -399,8 +399,8 @@
   .skipTheGruntWork .valueRowRight>div:first-child {
     margin-top: 0;
   }
-  .skipTheGruntWork .valueRowLeft:last-child {
-    padding-bottom: 0;
+  .skipTheGruntWork .valueRowRight {
+    padding-bottom: 40px;
   }
 }
 
@@ -418,9 +418,6 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .granularControl {
     margin-bottom: 0;
-  }
-  .granularControl .granularControlUSPs {
-    margin-top: -100px;
   }
 }
 
@@ -542,9 +539,6 @@
   }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct br {
-    display: none;
-  }
   .theProduct .theStack {
     display: none;
   }
@@ -563,4 +557,8 @@
     display: block;
     margin: 40px auto;
   }
+}
+
+.theProduct .stackBQComingSoon {
+  margin: 10px 0 0 10px;
 }
