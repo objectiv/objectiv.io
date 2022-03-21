@@ -36,12 +36,16 @@ function StarUsNotification(props, ref) {
   return (
     <div className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
       <div className={clsx(styles.starUsNotificationSticky)}>
-        <div className={clsx(styles.starUsNotificationStickyPointer)}>
-          <img src={useBaseUrl("img/icons/icon-caret-up.svg")} />
-        </div>
-        <div className={clsx(styles.starUsNotificationStickyContent)}>
-          <img src={useBaseUrl("img/icons/icon-emoticon-smiley-stars.svg")} /> Star us on Github!
-        </div>
+        {starUsNotificationShown && (
+          <div>
+            <div className={clsx(styles.starUsNotificationStickyPointer)}>
+              <img src={useBaseUrl("img/icons/icon-caret-up.svg")} />
+            </div>
+            <div className={clsx(styles.starUsNotificationStickyContent)}>
+              <img src={useBaseUrl("img/icons/icon-emoticon-smiley-stars.svg")} /> Star us on Github!
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
