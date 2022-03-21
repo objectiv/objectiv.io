@@ -21,7 +21,7 @@ export default function Home() {
       <Layout
         title=''
         description={tagline}>
-        <StarUsNotification innerRef={starUsNotificationAnchorRef} offsetY={280} />
+        <StarUsNotification innerRef={starUsNotificationAnchorRef} />
         <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
