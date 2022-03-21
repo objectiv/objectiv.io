@@ -2,9 +2,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useRef } from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
+import AnimatedGif from '../components/animated-gif';
+import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import { TrackedDiv } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
@@ -12,13 +14,14 @@ import styles from './styles.module.css';
 export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
-
+  const starUsNotificationAnchorRef = useRef(null);
+  
   return (
     <div>
       <Layout
         title=''
         description={tagline}>
-        
+        <StarUsNotification innerRef={starUsNotificationAnchorRef} />
         <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -32,7 +35,7 @@ export default function Home() {
             when you add data science into the mix
             </h1>
             <p className={clsx(styles.heroSubTitle)}>
-              Objectiv is open-source product analytics <strong>designed for effective data science</strong>.
+              Objectiv is open-source product analytics <strong>for data teams</strong>.
             </p>
             <TrackedLink
               to="https://github.com/objectiv/objectiv-analytics"
@@ -47,7 +50,6 @@ export default function Home() {
         </TrackedDiv>
 
         <main className={clsx(styles.bodyLarge)}>
-
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
               id={'why-objectiv'} 
@@ -66,6 +68,19 @@ export default function Home() {
                 </div>
                 <div>
                   <div className={clsx(styles.whyItems)}>
+                    <div className={clsx(styles.whyItems)}>
+                      <div className={clsx(styles.whyItem)}>
+                        <div className={clsx(styles.iconIcon)}>
+                          <img
+                            src={useBaseUrl("img/icons/icon-diamond-yellow.svg")}
+                            alt="Diamond" />
+                        </div>
+                        <div>
+                          <strong>Unlock a deeper level of insights</strong><br />
+                          Capture rich user behavior data that's designed for modeling without gruntwork.
+                        </div>
+                      </div>
+                    </div>
                     <div className={clsx(styles.whyItem)}>
                       <div className={clsx(styles.iconIcon)}>
                         <img
@@ -73,21 +88,9 @@ export default function Home() {
                           alt="Accelerate" />
                       </div>
                       <div>
-                        <strong>Skip the typical gruntwork</strong><br />
-                        Build in-depth analyses in minutes with model-ready data and pre-built models.
-                      </div>
-                    </div>
-                  </div>
-                  <div className={clsx(styles.whyItems)}>
-                    <div className={clsx(styles.whyItem)}>
-                      <div className={clsx(styles.iconIcon)}>
-                        <img
-                          src={useBaseUrl("img/icons/icon-diamond-yellow.svg")}
-                          alt="Diamond" />
-                      </div>
-                      <div>
-                        <strong>Granular control over the full dataset</strong><br />
-                        Use a powerful modeling library on data that's structured for effective data science.
+                        <strong>Build in-depth models in minutes</strong><br />
+                        Take granular control over your full SQL dataset with pre-built models and 
+                        Pandas-like operations.
                       </div>
                     </div>
                   </div>
@@ -110,20 +113,21 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.pageSection)}>
+            <StarUsAnchor ref={starUsNotificationAnchorRef} />
             <TrackedDiv 
                 id={'skip-the-gruntwork'} 
                 className={clsx("container", styles.contentContainer, styles.skipTheGruntWork)}>
               <IconHeader 
-                title="Skip the grunt work and use pre-built models <br />to run in-depth analyses in 
-                  minutes, not months" 
-                subTitle="No tracking plans, data cleaning or transformations required." 
-                icon="icon-accelerate" />
+                title="Unlock a deeper level of insights <br /> without the typical gruntwork" 
+                subTitle="Capture rich user behavior data that’s model-ready. No cleaning, transformations or 
+                  tracking plans required." 
+                icon="icon-diamond-yellow" />
               <div className={clsx(styles.skipTheGruntWorkUSPs)}>
                 <div className={clsx(styles.valueRowRight)}>
                   <div>
                     <img
                       src={useBaseUrl("img/value-better-data.svg")}
-                      alt="Squeaky clean model-ready data through early validation!" />
+                      alt="1. validate events againts an open analytics taxonomy" />
                   </div>
                   <div>
                     <p>
@@ -141,56 +145,26 @@ export default function Home() {
                       design of the taxonomy.</p>
                   </div>
                 </div>
-                <div className={clsx(styles.valueRowLeft)}>
-                  <div>
-                    <p>
-                      <strong>Reuse anyone's models</strong> <br />
-                      Objectiv datasets are highly consistent. As a result, models and datasets are 
-                      intercompatible and can be shared and reused.
-                    </p>
-                    <p>That advanced model someone from the other team built? You can reuse that for your own 
-                      project by changing a single line of code.</p>
-                  </div>
-                  <div>
-                  <img
-                    src={useBaseUrl("img/value-reusable-models-churn-prediction.svg")}
-                    alt="Churn Prediction" />
-                  </div>
-                </div>
-              </div>
-              <div className={clsx(styles.valueRowRight)}>
-                  <div>
+                <div className={clsx(styles.valueRowFull)}>
+                  <TrackedLink
+                    to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                    waitUntilTracked={true}
+                    id="2. collect squeaky clean model-ready data!"
+                    target="_self">
                     <img
-                      src={useBaseUrl("img/value-reusable-models.svg")}
-                      alt="Take pre-built models off the shelf" />
-                  </div>
-                  <div>
-                    <p>
-                      <strong>Take pre-built models off the shelf</strong> <br />
-                      Objectiv also includes pre-built models for a wide range of product analytics use 
-                      cases. You can chain them together to answer common product analytics questions quickly.
-                    </p>
-                    <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
-                  </div>
+                      src={useBaseUrl("img/value-taxonomy-highlighted.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                    <img
+                      src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
+                      className={clsx(styles.valueTaxonomyHighlightedVertical)}
+                      alt="2. collect squeaky clean model-ready data!" />
+                  </TrackedLink>.
                 </div>
-            </TrackedDiv>
-          </div>
-
-
-          <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
-            <TrackedDiv 
-                id={'granular-control'} 
-                className={clsx("container", styles.contentContainer, styles.granularControl)}>
-              <IconHeader 
-                title="Take granular control over <br />data that's designed for modeling" 
-                subTitle="Tap into a level of insights that simply isn't available from the dashboards of BI 
-                  tools." 
-                icon="icon-diamond-yellow" />
-              <div className={clsx(styles.granularControlUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>
-                      <strong>Slice data without manual mapping</strong><br />
+                      <strong>Get the full context</strong><br />
                       Objectiv's tracker captures the structure of your product's UI inside the dataset. 
                       Events contain the exact location where they were triggered in a hierarchical stack of 
                       locations.
@@ -210,14 +184,57 @@ export default function Home() {
                   </div>  
                 </div>
               </div>
-              <TrackedDiv 
-                  id={'modeling-bach'} 
-                  className={clsx(styles.modelingBach)}>
-                <IconHeader 
-                  title="Powerful modeling on the full dataset" 
-                  subTitle="Meet Objectiv Bach - a modeling library that combines the power of Pandas with 
-                    the scalability of SQL." 
-                  icon="icon-bach-sunglasses" />
+            </TrackedDiv>
+          </div>
+
+          <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
+            <TrackedDiv 
+                id={'granular-control'} 
+                className={clsx("container", styles.contentContainer, styles.granularControl)}>
+              <IconHeader 
+                title="Build &amp; run in-depth analyses <br />in minutes, not months" 
+                subTitle="Take granular control over your full SQL dataset with pre-built models and 
+                  Pandas-like operations." 
+                icon="icon-accelerate" />
+              <div className={clsx(styles.granularControlUSPs)}>
+                <div className={clsx(styles.valueRowFull)}>
+                  <AnimatedGif
+                    url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
+                    alt='Example animation of how to call models from the model hub' />
+                </div>
+                <div className={clsx(styles.valueRowLeft)}>
+                  <div>
+                    <p>
+                      <strong>Pandas-like modeling on the full SQL dataset</strong> <br />
+                      The Objectiv Bach modeling library combines the scalability of SQL with the agility of 
+                      Pandas.
+                    </p>
+                    <p>
+                      You can build models using dataframes and pandas-like operations and run them on the 
+                      full dataset as SQL. If you know Pandas, you'll feel right at home.</p>
+                  </div>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-pandas-like-operations-on-full-dataset.svg")}
+                      alt="Pandas-like operations on the full dataset" />
+                    </div>
+                  </div>
+                  <div className={clsx(styles.valueRowRight)}>
+                    <div>
+                      <img
+                        src={useBaseUrl("img/value-reusable-models.svg")}
+                        alt="Take pre-built models off the shelf" />
+                    </div>
+                    <div>
+                      <p>
+                        <strong>Take pre-built models off the shelf</strong> <br />
+                        Objectiv includes pre-built models for a wide range of product analytics use cases. You 
+                        can chain them together to answer common product analytics questions quickly.
+                      </p>
+                      <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
+                    </div>
+                  </div>
+                </div>
                 <div className={clsx(styles.bachIntroVideo)}>
                   <img
                     className={clsx(styles.objectivIn2Minutes)}
@@ -231,13 +248,13 @@ export default function Home() {
                   <div className={clsx(styles.twoColumnItem)}>
                     <div className={clsx(styles.twoColumnIcon)}>
                       <img
-                        src={useBaseUrl("img/icons/icon-bach-sunglasses.svg")}
-                        alt="Bach" />
+                        src={useBaseUrl("img/icons/icon-recycling.svg")}
+                        alt="Reuse" />
                     </div>
                     <div>
-                      <strong>Run models on the full SQL dataset</strong><br />
-                      Build models using dataframes and pandas-like operations and run them on the full 
-                      dataset as SQL
+                      <strong>Reuse anyone's models</strong><br />
+                      High data consistency means models and datasets are intercompatible and can be shared 
+                      and reused.
                     </div>
                   </div>
                   <div className={clsx(styles.twoColumnItem)}>
@@ -248,7 +265,7 @@ export default function Home() {
                     </div>
                     <div>
                       <strong>Pandas compatible</strong><br />
-                      Pandas compatibility enables you to tap into the rich ecosystem Pandas is well-know 
+                      Pandas compatibility enables you to tap into the rich ecosystem Pandas is well-known 
                       for, including all ML libraries.
                     </div>
                   </div>
@@ -285,7 +302,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </TrackedDiv>
             </TrackedDiv>
           </div>
 
@@ -297,7 +313,7 @@ export default function Home() {
                 title="Cut down delivery times by eliminating <br />complexity in your analytics stack" 
                 subTitle="Run your entire product analytics workflow from a notebook." 
                 icon="icon-abc" />
-              <div className={clsx(styles.granularControlUSPs)}>
+              <div className={clsx(styles.eliminateComplexityUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>
@@ -314,40 +330,29 @@ export default function Home() {
                       As a result, you can adapt to changing product questions much faster and keep all your 
                       product analytics projects in one place.
                     </p>
-                    <div className={clsx(styles.twoColumnItems, styles.metabaseIntegrationDesktop)}>
-                      <div className={clsx(styles.twoColumnItem)}>
-                        <div className={clsx(styles.twoColumnIcon)}>
-                          <img
-                            src={useBaseUrl("img/icons/icon-metabase.svg")}
-                            alt="Bach" />
-                        </div>
-                        <div>
-                          <strong>Built-in Metabase integration </strong><br />
-                          To simplify sharing insights with the rest of your team, Objectiv comes with 
-                          built-in integration for the open-source BI platform Metabase.
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div>
                     <img
                       src={useBaseUrl("img/value-notebook-as-headquarters.svg")}
                       alt="The notebook as your headquarters" />
                   </div>  
-                  <div className={clsx(styles.twoColumnItems, styles.metabaseIntegrationMobile)}>
-                      <div className={clsx(styles.twoColumnItem)}>
-                        <div className={clsx(styles.twoColumnIcon)}>
-                          <img
-                            src={useBaseUrl("img/icons/icon-metabase.svg")}
-                            alt="Bach" />
-                        </div>
-                        <div>
-                          <strong>Built-in Metabase integration </strong><br />
-                          To simplify sharing insights with the rest of your team, Objectiv comes with 
-                          built-in integration for the open-source BI platform Metabase.
-                        </div>
-                      </div>
-                    </div>
+                </div>
+                <div className={clsx(styles.valueRowFull)}>
+                  <AnimatedGif
+                    url={useBaseUrl("img/examples/example-output-to-metabase.gif")}
+                    alt='Example animation of output to Metabase' />
+                </div>
+                <div className={clsx(styles.combineExport)}>
+                  <img
+                    src={useBaseUrl("img/value-combine-export.svg")}
+                    className={clsx(styles.valueCombineExportHorizontal)}
+                    alt="Combine or export in several ways" />
+                  <img
+                    src={useBaseUrl("img/value-combine-export-vertical.svg")}
+                    className={clsx(styles.valueCombineExportVertical)}
+                    alt="Combine or export in several ways" />
+                  <p>To simplify sharing insights with other team members, Objectiv comes with <br />
+                  built-in integration for the open-source BI platform <strong>Metabase</strong>.</p>
                 </div>
               </div>
             </TrackedDiv>
@@ -374,8 +379,37 @@ export default function Home() {
                 src={useBaseUrl("img/the-stack-vertical.svg")} 
                 className={clsx(styles.theStackVertical)}
                 alt="The Objectiv stack" />
-              <p><strong>Want to try Objectiv?</strong> Follow the Quickstart Guide to run a fully functional 
-                Objectiv setup locally.</p>
+
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-postgresql.png")}
+                      alt="PostgreSQL" />
+                  </div>
+                  <div>
+                    <strong>PostgreSQL support</strong><br />
+                    Run it locally or in the cloud for reliable event handling.
+                  </div>
+                </div>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-bigquery-snowplow.png")}
+                      alt="BigQuery through Snowplow" />
+                  </div>
+                  <div>
+                    <strong>BigQuery support</strong><br />
+                    Plugs into your Snowplow backend for event handling at scale with BiqQuery.<br />
+                    <img src={useBaseUrl("img/coming-soon.svg")} 
+                      className={clsx(styles.stackBQComingSoon)}
+                      alt="Coming soon" />
+                  </div>
+                </div>
+              </div>
+
+              <h2>Try the Objectiv local demo</h2>
+              <p>Follow the Quickstart Guide to run a fully functional Objectiv setup locally.</p>
               <TrackedLink
                 to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
                 waitUntilTracked={true}
@@ -394,7 +428,7 @@ export default function Home() {
 
           <footer className={clsx(styles.slackFooter)}>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
-              <h2>Objectiv is open-source and we're building it in public.</h2>
+              <h3>Objectiv is open-source and we're building it in public.</h3>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to="/join-slack"
@@ -408,6 +442,7 @@ export default function Home() {
 
         </main>
       </Layout>
+
     </div>
   );
 }

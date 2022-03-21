@@ -220,7 +220,7 @@
   display: flex;
   flex-flow: row;
   text-align: left;
-  padding-bottom: 90px;
+  padding-bottom: 80px;
 }
 .valueRowLeft>div:nth-child(1), .valueRowRight>div:nth-child(2) {
   width: 403px; /* 320px + 1x83px grid cols left and right */
@@ -243,6 +243,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.valueRowFull {
+  padding-bottom: 80px;
+}
 
 /* Shift all textual content down about 40px compared to the image next to it */
 .valueRowRight>div:nth-child(2), .valueRowLeft>div:nth-child(1) {
@@ -260,8 +263,8 @@
     width: 100%;
     padding: 0 20px;
   }
-  .valueRowLeft>div:nth-child(2) {
-    margin-top: 80px;
+  .valueRowLeft>div:nth-child(2), .valueRowRight>div:nth-child(1) {
+    margin-top: 60px;
   }
   .valueRowLeft p:first-child, .valueRowRight p:first-child {
     margin-top: 0;
@@ -288,7 +291,6 @@
     margin: 24px 0 0 0;
   }
 }
-
 
 /* Section: Why Objectiv? */
 .whyObjectiv {  
@@ -384,15 +386,36 @@
 
 
 /* Section: Skip the gruntwork */
-.skipTheGruntWork .valueRowRight:last-child { /* Bottom padding for all but the last one */
+.skipTheGruntWork .valueRowFull {
+  padding-bottom: 120px;
+  text-align: center;
+}
+.skipTheGruntWork .valueRowLeft:last-child { /* Bottom padding for all but the last one */
   padding-bottom: 0;
+}
+.skipTheGruntWork .valueTaxonomyHighlightedVertical {
+  display: none;
+}
+.skipTheGruntWork .valueRowLeft:last-child>div:first-child img {
+  margin-top: 66px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .skipTheGruntWork .skipTheGruntWorkUSPs {
     padding-top: 20px;
   }
-  .skipTheGruntWork .valueRowRight:last-child {
-    padding-bottom: 0;
+  .skipTheGruntWork .valueRowRight>div:first-child {
+    margin-top: 0;
+  }
+  .skipTheGruntWork .valueRowRight {
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .skipTheGruntWork .valueTaxonomyHighlightedVertical {
+    display: inline-block;
+  }
+  .skipTheGruntWork .valueTaxonomyHighlightedHorizontal {
+    display: none;
   }
 }
 
@@ -400,9 +423,6 @@
 /* Section: Granular Control & Bach */
 .granularControl {
   margin-bottom: 50px;
-}
-.granularControl .granularControlUSPs .valueRowLeft {
-  padding-bottom: 120px;
 }
 .granularControl .granularControlUSPs .valueRowLeft>div:first-child {
   padding-top: 40px;
@@ -416,18 +436,18 @@
   }
 }
 
-.modelingBach .bachIntroVideo {
+.granularControl .bachIntroVideo {
   text-align: center;
-  margin: -50px 0 50px 0;
+  margin: 20px 0 50px 0;
 }
-.modelingBach .bachIntroVideo .video {
+.granularControl .bachIntroVideo .video {
   margin-top: 50px;
 }
-.modelingBach .twoColumnItems {
+.granularControl .twoColumnItems {
   padding: 50px 0 0 0;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .modelingBach .twoColumnItems .twoColumnItem:nth-child(2) {
+  .granularControl .twoColumnItems .twoColumnItem:nth-child(2) {
     padding-bottom: 0; /* Remove unneeded padding between rows on mobile/tablet */
   }
 }
@@ -461,89 +481,85 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .twoColumnItem {
     flex: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
   .twoColumnItem {
     display: block;
     text-align: center;
-    padding-bottom: 60px;
   }
 
-  .modelingBach .bachIntroVideo {
+  .granularControl .bachIntroVideo {
     margin-top: 0;
   }
 }
 
 
-
 /* Section: Eliminate complexity */
+.eliminateComplexity .eliminateComplexityUSPs {
+  margin-top: 0;
+}
 .eliminateComplexity .valueRowLeft:last-child { /* Bottom padding tweaked for the last one */
   padding-bottom: 30px;
 }
-.eliminateComplexity .twoColumnItems {
-  margin-top: 120px;
+.eliminateComplexity .valueRowLeft>div:nth-child(1) {
+  padding-top: 80px;
 }
-.eliminateComplexity .twoColumnIcon {
-  min-width: 100px;
-  text-align: left;
+.eliminateComplexity .valueRowFull {
+  padding-bottom: 36px;
 }
-.eliminateComplexity .twoColumnIcon img {
-  display: inline-block !important;
-  margin: 0;
+.eliminateComplexity .combineExport {
+  text-align: center;
 }
-.eliminateComplexity .metabaseIntegrationMobile {
+.eliminateComplexity .combineExport p {
+  padding: 60px 0 50px 0;
+}
+.eliminateComplexity .valueCombineExportVertical {
   display: none;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .eliminateComplexity .metabaseIntegrationMobile {
-    display: block;
-    margin-top: 100px;
-  }
-  .eliminateComplexity .metabaseIntegrationDesktop {
-    display: none;
+  .eliminateComplexity .eliminateComplexityUSPs {
+    margin-top: -80px;
   }
   .eliminateComplexity .valueRowLeft {
     padding-bottom: 0; 
   }
-  .eliminateComplexity .twoColumnItem {
-    padding-bottom: 0;
-    padding-right: 0;
+  .eliminateComplexity .valueRowFull {
+    padding-top: 120px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
-  .eliminateComplexity .metabaseIntegrationMobile {
-    margin-top: 60px;
+  .eliminateComplexity .valueCombineExportVertical {
+    display: inline-block;
   }
-  .eliminateComplexity .twoColumnIcon {
-    text-align: center;
+  .eliminateComplexity .valueCombineExportHorizontal {
+    display: none;
   }
 }
-
 
 /* Section: What's in the box? */
 .theProduct {
   text-align: center;
 }
 .theProduct .theStack, .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
-  margin: -40px auto 40px auto;
+  margin: -20px auto 50px auto;
 }
 .theProduct .theStackVertical, .theProduct .theStackHorizontalVertical {
   display: none;
 }
-.theProduct .ctaButton {
-  margin: 15px 0 20px 0;
+.theProduct .twoColumnItems {
+  padding-bottom: 130px;
 }
-.theProduct .takesLessThan5Minutes {
-  display: block;
-  margin: 8px auto;
-  padding-left: 50px;
+.theProduct .twoColumnItems .twoColumnItem {
+  padding-right: 25px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .theProduct .twoColumnItems {
+    padding-bottom: 80px;
+  }
 }
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .theProduct br {
-    display: none;
-  }
   .theProduct .theStack {
     display: none;
   }
@@ -562,4 +578,17 @@
     display: block;
     margin: 40px auto;
   }
+}
+
+.theProduct .stackBQComingSoon {
+  margin: 10px 0 0 10px;
+}
+
+.theProduct .ctaButton {
+  margin: 15px 0 20px 0;
+}
+.theProduct .takesLessThan5Minutes {
+  display: block;
+  margin: 8px auto;
+  padding-left: 50px;
 }
