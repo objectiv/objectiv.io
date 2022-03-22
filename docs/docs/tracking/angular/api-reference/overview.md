@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Tracker API Reference
+# Angular Tracker API Reference
 
 import LocationTaggersOverview from './locationTaggers/overview.md'
 

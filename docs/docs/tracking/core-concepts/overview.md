@@ -22,5 +22,6 @@ A few events, such as [ApplicationLoadedEvent](/taxonomy/reference/events/Applic
 
 #### SDK specific
 - [React SDK Core Concepts](/tracking/core-concepts/react/best-practices.md)
+- [React Native SDK Core Concepts](/tracking/core-concepts/react-native/best-practices.md)
 - [Browser SDK Core Concepts](/tracking/core-concepts/browser/tagging.md)
 - [Angular SDK Core Concepts](/tracking/core-concepts/angular/tagging.md)

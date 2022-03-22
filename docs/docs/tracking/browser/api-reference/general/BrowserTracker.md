@@ -74,15 +74,13 @@ const applicationContextPlugin = new ApplicationContextPlugin({ applicationId: '
 const httpContextPlugin = new HttpContextPlugin();
 const pathContextFromURLPlugin = new PathContextFromURLPlugin();
 const rootLocationContextFromURLPlugin = new RootLocationContextFromURLPlugin();
-const plugins = new TrackerPlugins({
-  plugins: [
-    applicationContextPlugin,
-    httpContextPlugin,
-    pathContextFromURLPlugin,
-    rootLocationContextFromURLPlugin
-  ]
-});
-const tracker = new Tracker({ transport, queue, plugins });
+const plugins = [
+  applicationContextPlugin,
+  httpContextPlugin,
+  pathContextFromURLPlugin,
+  rootLocationContextFromURLPlugin
+];
+const tracker = new Tracker({ trackerId, transport, queue, plugins });
 ```
 
 <br />

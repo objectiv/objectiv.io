@@ -13,6 +13,9 @@ The Module itself makes it easy to [configure the BrowserTracker](/tracking/angu
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started](/tracking/angular/how-to-guides/getting-started.md)
 - [Tagging Locations](/tracking/angular/how-to-guides/tagging-locations.md)
+- [Portals and options.parent](/tracking/angular/how-to-guides/portals.md)
+- [Configuring Root Locations](/tracking/angular/how-to-guides/configuring-root-locations.md)
+- [Configuring Logging](/tracking/angular/how-to-guides/configuring-logging.md)
 - [Troubleshooting](/tracking/angular/how-to-guides/troubleshooting.md)
 
 ## API References

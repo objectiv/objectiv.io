@@ -19,6 +19,8 @@ To immediately jump into instrumenting your application, follow the step-by-step
 - [Tracking Interactions](/tracking/react/how-to-guides/tracking-interactions.md)
 - [Tracking Locations](/tracking/react/how-to-guides/tracking-locations.md)
 - [Custom Components](/tracking/react/how-to-guides/custom-components.md)
+- [Configuring Root Locations](/tracking/react/how-to-guides/configuring-root-locations.md)
+- [Configuring Logging](/tracking/react/how-to-guides/configuring-logging.md)
 
 ## API Reference 
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
