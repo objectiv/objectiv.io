@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Collisions
 If you started [instrumenting your Interactions](/tracking/react-native/how-to-guides/tracking-interactions.md), chances are you already ran into some Collisions.
 
-Example of a collision of a hypothetical `footer` element in the browser's console:
+Example of a collision of a hypothetical `footer` components in the browser's console:
 
 <img alt="Collision: duplicated footer" src={useBaseUrl('img/docs/tracking-collision-react.png')} style={{ border: '1px solid lightgrey'}} />
 
@@ -67,7 +67,7 @@ There are two TrackedButtons on the same screen and, because they have the same 
 React Native Tracker will notify of the collision of the second Button with the first one.
 
 ### Solving a collision
-To solve the issue, we can simply make the Location of one or both of these Elements richer:
+To solve the issue, we can simply make the Location of one or both of these Components richer:
 
 
 #### Either by wrapping components

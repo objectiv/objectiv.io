@@ -7,7 +7,7 @@ title: Introduction
 
 The React Native SDK leverages React Context Providers for mapping Native Components to the [Open Taxonomy](/taxonomy/introduction.md).
 
-It provides generic [Wrappers](/tracking/react-native/api-reference/locationWrappers/overview.md) and automatically tracked Native [Components](/tracking/react-native/api-reference/trackedComponents/overview.md) to easily track most commonly used UI Elements. 
+It provides generic [Wrappers](/tracking/react-native/api-reference/locationWrappers/overview.md) and automatically tracked Native [Components](/tracking/react-native/api-reference/trackedComponents/overview.md) to easily track most commonly used UI Components. 
 
 Whenever manual instrumentation is required, the SDK comes also with a set of [Hooks](/tracking/react-native/api-reference/hooks/overview.md) and [low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md) to trigger [Events](/taxonomy/reference/events/overview.md) programmatically.
 
