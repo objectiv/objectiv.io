@@ -16,6 +16,7 @@ We also have a [React Navigation Plugin](/tracking/react-native/how-to-guides/ge
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started](/tracking/react-native/how-to-guides/getting-started.md)
+  - [React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#installing-react-navigation-plugin)
 - [Tracking Interactions](/tracking/react-native/how-to-guides/tracking-interactions.md)
 - [Tracking Locations](/tracking/react-native/how-to-guides/tracking-locations.md)
 - [Custom Components](/tracking/react-native/how-to-guides/custom-components.md)
