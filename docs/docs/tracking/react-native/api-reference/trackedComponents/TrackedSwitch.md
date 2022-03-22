@@ -23,7 +23,10 @@ import { TrackedSwitch } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-#TODO
+<TrackedSwitch
+  onValueChange={toggleSwitch}
+  value={isEnabled}
+/>
 ```
 
 <br />

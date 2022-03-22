@@ -23,7 +23,10 @@ import { TrackedTextInput } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-#TODO
+<TrackedTextInput
+  onChangeText={onChangeText}
+  value={text}
+/>
 ```
 
 <br />

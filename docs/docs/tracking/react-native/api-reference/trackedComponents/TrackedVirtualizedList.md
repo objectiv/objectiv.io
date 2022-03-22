@@ -23,7 +23,25 @@ import { TrackedVirtualizedList } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-#TODO
+const Item = ({ title }) => (
+  <View>
+    <TrackedText>{title}</TrackedText>
+  </View>
+);
+```
+
+```tsx
+<TrackedVirtualizedList
+  data={[]}
+  initialNumToRender={4}
+  renderItem={({ item }) => <Item title={item.title} />}
+  keyExtractor={item => item.key}
+  getItemCount={(data) => 50}
+  getItem={(data, index) => ({
+    id: Math.random().toString(12).substring(0),
+    title: `Item ${index+1}`
+  })}
+/>
 ```
 
 <br />
