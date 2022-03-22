@@ -49,6 +49,7 @@ const Item = ({ title }) => (
 
 ```tsx
 <TrackedFlatList
+  id="items"
   data={DATA}
   renderItem={renderItem}
   keyExtractor={item => item.id}

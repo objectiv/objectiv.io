@@ -25,7 +25,7 @@ import { TrackedActivityIndicator } from '@objectiv/tracker-react-native';
 
 ```tsx
 const Loading = ({ visible }: { visible:boolean }) => (
-  <TrackedActivityIndicator animating={visible} />
+  <TrackedActivityIndicator animating={visible} id="loading" />
 );
 ```
 
