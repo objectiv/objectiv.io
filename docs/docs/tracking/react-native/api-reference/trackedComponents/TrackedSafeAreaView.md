@@ -19,11 +19,27 @@ none.
 ## Usage example
 
 ```jsx
-import { TrackedSafeAreaView } from '@objectiv/tracker-react-native';
+import { TrackedButton, TrackedSafeAreaView, TrackedView } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-#TODO
+<TrackedSafeAreaView id="view-name">
+  <TrackedView id="hero">
+    Welcome back!
+    <TrackedButton
+      onPress={doSomethingHandler}
+      title="Do something!"
+    />
+  </TrackedView>
+  <Separator />
+  <TrackedView id="screen-body">
+    More content here
+    <TrackedButton
+      onPress={doSomethingHandler}
+      title="Do something!"
+    />
+  </TrackedView>
+</TrackedSafeAreaView>
 ```
 
 <br />

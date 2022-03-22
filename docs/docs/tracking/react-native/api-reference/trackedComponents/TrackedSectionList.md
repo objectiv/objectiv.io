@@ -21,11 +21,39 @@ none.
 ## Usage example
 
 ```jsx
-import { TrackedSectionList } from '@objectiv/tracker-react-native';
+import { TrackedSectionList, TrackedText } from '@objectiv/tracker-react-native';
 ```
 
 ```tsx
-#TODO
+const DATA = [
+  {
+    title: "Main dishes",
+    data: ["Pizza", "Burger", "Risotto"]
+  },
+  {
+    title: "Sides",
+    data: ["French Fries", "Onion Rings", "Fried Shrimps"]
+  }
+];
+```
+
+```tsx
+const Item = ({ title }) => (
+  <View>
+    <TrackedText>{title}</TrackedText>
+  </View>
+);
+```
+
+```tsx
+<TrackedSectionList
+  sections={DATA}
+  keyExtractor={(item, index) => item + index}
+  renderItem={({ item }) => <Item title={item} />}
+  renderSectionHeader={({ section: { title } }) => (
+    <TrackedText>{title}</TrackedText>
+  )}
+/>
 ```
 
 <br />
