@@ -13,10 +13,11 @@ High level overview of all the Events & Contexts available in the open analytics
 * [ApplicationContext](./global-contexts/ApplicationContext.md)
 * [CookieIdContext](./global-contexts/CookieIdContext.md)
 * [HttpContext](./global-contexts/HttpContext.md)
+* [InternalUserContext](./global-contexts/InternalUserContext.md)
 * [MarketingContext](./global-contexts/MarketingContext.md)
 * [PathContext](./global-contexts/PathContext.md)
 * [SessionContext](./global-contexts/SessionContext.md)
-* [UserContext](./global-contexts/UserContext.md)
+
 
 ## Location Contexts
 [Location Contexts](./location-contexts/overview.md) are meant to describe where an event originated from in the visual UI.

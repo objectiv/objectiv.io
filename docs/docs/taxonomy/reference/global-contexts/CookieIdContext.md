@@ -2,6 +2,8 @@
 
 A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing information needed to reconstruct a user session.
 
+The cookie_id is used to uniquely identify a user. Data teams using Objectiv data will see a user_id, which is equal to the cookie_id.
+
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
