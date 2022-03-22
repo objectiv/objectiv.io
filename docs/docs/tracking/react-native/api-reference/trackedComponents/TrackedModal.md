@@ -37,7 +37,7 @@ const ModalScreen = ({ visible }: { visible: boolean }) => (
 <br />
 
 :::tip Did you know ?
-`TrackedModal` internally uses [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md).
+`TrackedModal` internally uses [OverlayContextWrapper](/tracking/react-native/api-reference/locationWrappers/OverlayContextWrapper.md).
 :::
 
 <br />

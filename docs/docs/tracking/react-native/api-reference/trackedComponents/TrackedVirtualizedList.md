@@ -47,7 +47,7 @@ const Item = ({ title }) => (
 <br />
 
 :::tip Did you know ?
-`TrackedVirtualizedList` internally uses [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md).
+`TrackedVirtualizedList` internally uses [ContentContextWrapper](/tracking/react-native/api-reference/locationWrappers/ContentContextWrapper.md).
 :::
 
 <br />

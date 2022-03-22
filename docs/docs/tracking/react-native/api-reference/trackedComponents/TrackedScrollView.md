@@ -43,7 +43,7 @@ import { TrackedButton, TrackedScrollView } from '@objectiv/tracker-react-native
 <br />
 
 :::tip Did you know ?
-`TrackedScrollView` internally uses [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md).
+`TrackedScrollView` internally uses [ContentContextWrapper](/tracking/react-native/api-reference/locationWrappers/ContentContextWrapper.md).
 :::
 
 <br />

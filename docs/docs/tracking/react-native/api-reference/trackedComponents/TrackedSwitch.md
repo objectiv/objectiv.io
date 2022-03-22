@@ -32,7 +32,7 @@ import { TrackedSwitch } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedSwitch` internally uses [InputContextWrapper](/tracking/react/api-reference/locationWrappers/InputContextWrapper.md).
+`TrackedSwitch` internally uses [InputContextWrapper](/tracking/react-native/api-reference/locationWrappers/InputContextWrapper.md).
 :::
 
 <br />

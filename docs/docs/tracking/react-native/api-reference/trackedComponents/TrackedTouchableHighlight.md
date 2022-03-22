@@ -58,7 +58,7 @@ import { TrackedTouchableHighlight } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedTouchableHighlight` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
+`TrackedTouchableHighlight` internally uses [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />

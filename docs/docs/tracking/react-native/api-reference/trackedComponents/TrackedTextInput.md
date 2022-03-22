@@ -32,7 +32,7 @@ import { TrackedTextInput } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedTextInput` internally uses [InputContextWrapper](/tracking/react/api-reference/locationWrappers/InputContextWrapper.md).
+`TrackedTextInput` internally uses [InputContextWrapper](/tracking/react-native/api-reference/locationWrappers/InputContextWrapper.md).
 :::
 
 <br />

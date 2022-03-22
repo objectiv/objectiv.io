@@ -55,7 +55,7 @@ import { TrackedButton } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedButton` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
+`TrackedButton` internally uses [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />

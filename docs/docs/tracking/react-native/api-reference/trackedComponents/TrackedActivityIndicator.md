@@ -32,7 +32,7 @@ const Loading = ({ visible }: { visible:boolean }) => (
 <br />
 
 :::tip Did you know ?
-`TrackedActivityIndicator` internally uses [OverlayContextWrapper](/tracking/react/api-reference/locationWrappers/OverlayContextWrapper.md).
+`TrackedActivityIndicator` internally uses [OverlayContextWrapper](/tracking/react-native/api-reference/locationWrappers/OverlayContextWrapper.md).
 :::
 
 <br />

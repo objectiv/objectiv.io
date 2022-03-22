@@ -64,7 +64,7 @@ import { TrackedTouchableOpacity } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedTouchableOpacity` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
+`TrackedTouchableOpacity` internally uses [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />

@@ -58,7 +58,7 @@ import { TrackedText } from '@objectiv/tracker-react-native';
 <br />
 
 :::tip Did you know ?
-`TrackedText` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
+`TrackedText` internally uses [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />

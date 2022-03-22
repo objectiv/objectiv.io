@@ -59,7 +59,7 @@ const Item = ({ title }) => (
 <br />
 
 :::tip Did you know ?
-`TrackedSectionList` internally uses [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md).
+`TrackedSectionList` internally uses [ContentContextWrapper](/tracking/react-native/api-reference/locationWrappers/ContentContextWrapper.md).
 :::
 
 <br />

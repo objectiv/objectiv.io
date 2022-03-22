@@ -58,7 +58,7 @@ import { TrackedTouchableWithoutFeedback } from '@objectiv/tracker-react-native'
 <br />
 
 :::tip Did you know ?
-`TrackedTouchableWithoutFeedback` internally uses [PressableContextWrapper](/tracking/react/api-reference/locationWrappers/PressableContextWrapper.md).
+`TrackedTouchableWithoutFeedback` internally uses [PressableContextWrapper](/tracking/react-native/api-reference/locationWrappers/PressableContextWrapper.md).
 :::
 
 <br />

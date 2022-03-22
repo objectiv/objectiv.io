@@ -58,7 +58,7 @@ const Item = ({ title }) => (
 <br />
 
 :::tip Did you know ?
-`TrackedFlatList` internally uses [ContentContextWrapper](/tracking/react/api-reference/locationWrappers/ContentContextWrapper.md).
+`TrackedFlatList` internally uses [ContentContextWrapper](/tracking/react-native/api-reference/locationWrappers/ContentContextWrapper.md).
 :::
 
 <br />
