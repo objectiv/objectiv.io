@@ -400,7 +400,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>BigQuery support</strong><br />
-                    Plugs into your Snowplow backend for event handling at scale with BiqQuery.<br />
+                    Plugs into your Snowplow backend for event handling at scale with BigQuery.<br />
                     <img src={useBaseUrl("img/coming-soon.svg")} 
                       className={clsx(styles.stackBQComingSoon)}
                       alt="Coming soon" />
