@@ -109,7 +109,7 @@ import { TrackedButton, TrackedView } from '@objectiv/tracker-react-native';
 :::tip
 You may have noticed that the second TrackedView in the example above is not strictly necessary to solve the collision. So, why did we add it?
 
-More on that in our [best practices](/tracking/core-concepts/react/best-practices.md) around what to track and why.
+More on that in our [best practices](/tracking/core-concepts/react-native/best-practices.md) around what to track and why.
 :::
 
 ## Best practices
