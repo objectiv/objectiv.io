@@ -32,6 +32,7 @@ const Item = ({ title }) => (
 
 ```tsx
 <TrackedVirtualizedList
+  id="items"
   data={[]}
   initialNumToRender={4}
   renderItem={({ item }) => <Item title={item.title} />}

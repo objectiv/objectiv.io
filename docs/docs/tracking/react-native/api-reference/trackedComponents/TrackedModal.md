@@ -25,7 +25,7 @@ import { TrackedModal } from '@objectiv/tracker-react-native';
 
 ```tsx
 const ModalScreen = ({ visible }: { visible: boolean }) => (
-  <TrackedModal visible={visible}>
+  <TrackedModal visible={visible} id="modal">
     <View>
       Modal body
     </View>

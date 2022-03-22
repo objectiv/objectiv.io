@@ -47,6 +47,7 @@ const Item = ({ title }) => (
 
 ```tsx
 <TrackedSectionList
+  id="items"
   sections={DATA}
   keyExtractor={(item, index) => item + index}
   renderItem={({ item }) => <Item title={item} />}
