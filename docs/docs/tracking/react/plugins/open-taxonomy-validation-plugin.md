@@ -3,6 +3,9 @@
 Executes a number of validation rules to ensure the quality of the inbound data.  
 When ReactTracker executes in development mode, all violations will be logged early to the console.
 
+## Installation
+Bundled with [@objectiv/tracker-core](https://www.npmjs.com/package/@objectiv/tracker-core) and thus included by default in ReactTracker as well.
+
 ## Implementation
 Implements PluginInterface's `validate`.
 
@@ -13,6 +16,3 @@ The following rules are executed:
 
 ### isUsable
 Always true; OpenTaxonomyValidationPlugin is always usable.
-
-## Package
-Bundled with [@objectiv/tracker-core](https://www.npmjs.com/package/@objectiv/tracker-core) and thus included by default in ReactTracker as well.

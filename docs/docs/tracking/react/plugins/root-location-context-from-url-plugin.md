@@ -33,6 +33,9 @@ const tracker = new ReactTracker({
 Check out this detailed how-to guide on [how to configure Root Locations](/tracking/react/how-to-guides/configuring-root-locations.md).
 :::
 
+## Installation
+The package [@objectiv/plugin-root-location-context-from-url](https://www.npmjs.com/package/@objectiv/plugin-root-location-context-from-url) is included by default in ReactTracker.
+
 ## Implementation
 Implements PluginInterface's `enrich`.
 
@@ -44,7 +47,4 @@ Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationP
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.
-
-## Package
-[@objectiv/plugin-root-location-context-from-url](https://www.npmjs.com/package/@objectiv/plugin-root-location-context-from-url). Included by default in ReactTracker.
 

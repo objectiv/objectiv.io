@@ -4,6 +4,9 @@ All Events must contain an [ApplicationContext](/taxonomy/reference/global-conte
 
 This Plugin automatically creates one using ReactTracker's [applicationId parameter](/tracking/react/api-reference/ReactTracker.md#configuration) as its identifier.
 
+## Installation
+Bundled with [@objectiv/tracker-core](https://www.npmjs.com/package/@objectiv/tracker-core) and thus included by default in ReactTracker as well.
+
 ## Implementation
 Implements PluginInterface's `initialize` and `enrich` methods.
 
@@ -18,6 +21,3 @@ Nothing. ApplicationContext validation is performed by [OpenTaxonomyValidationPl
 
 ### isUsable
 Always true; ApplicationContextPlugin is always usable.
-
-## Package
-Bundled with [@objectiv/tracker-core](https://www.npmjs.com/package/@objectiv/tracker-core) and thus included by default in ReactTracker as well.

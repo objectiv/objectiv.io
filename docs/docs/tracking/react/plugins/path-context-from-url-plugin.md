@@ -8,6 +8,9 @@ On Web we retrieve this information from the URL by using the [Location.href](ht
 PathContexts are parsed further server-side for generating other Contexts as well, such as [MarketingContext](/taxonomy/reference/global-contexts/MarketingContext.md).
 :::
 
+## Installation
+The package [@objectiv/plugin-path-context-from-url](https://www.npmjs.com/package/@objectiv/plugin-path-context-from-url) is included by default in ReactTracker.
+
 ## Implementation
 Implements PluginInterface's `enrich` and `validate` methods.
 
@@ -19,6 +22,3 @@ If this plugin is usable, [PathContext](/taxonomy/reference/global-contexts/Path
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.
-
-## Package
-[@objectiv/plugin-path-context-from-url](https://www.npmjs.com/package/@objectiv/plugin-path-context-from-url). Included by default in ReactTracker.
