@@ -16,7 +16,7 @@ Take a look at the [Core Concepts Introduction](/tracking/core-concepts) for mor
 A good rule of thumb is to start by identifying all the interactive Components in the Application and replacing them with their Tracked version. 
 
 :::tip React Navigation
-If your Application uses React Navigation we highly recommend installing or at least checking the [React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#installing-react-navigation-plugin).  
+If your Application uses React Navigation we highly recommend installing or at least checking the [React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#installing-react-navigation).  
 This will automate tracking RootLocationContext, PathContext and commonly used navigators, such as Tabs and Drawers.
 :::
 

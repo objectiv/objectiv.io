@@ -43,7 +43,7 @@ Implements PluginInterface's `enrich`.
 Creates a new instance of RootLocationContext, where its identifier equals the result of `idFactoryFunction`, and adds it to the Location Stack of the outgoing Event in the first position.
 
 ### validate
-Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation-plugin).
+Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation).
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.

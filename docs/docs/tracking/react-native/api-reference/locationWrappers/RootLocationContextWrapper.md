@@ -14,7 +14,7 @@ RootLocationContextWrapper: (props: {
 Make sure to never use RootLocationContextWrapper while ReactNavigationPlugin is active. It will lead to multiple RootLocationContexts, which is forbidden.
 
 For applications relying on React Navigation, RootLocationContext can be automatically instrumented via the `ReactNavigationPlugin`.
-Check out how to [Install React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#install-react-navigation-plugin).
+Check out how to [Install React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#install-react-navigation).
 :::
 
 ## Parameters
