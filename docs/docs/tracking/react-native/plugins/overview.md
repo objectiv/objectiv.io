@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# React Tracker Plugins
+# React Native Tracker Plugins
 
 There are two kind of Plugins: Plugin implementations and Component libraries.
 
