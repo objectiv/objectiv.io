@@ -47,4 +47,3 @@ Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationP
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.
-

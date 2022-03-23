@@ -1,4 +1,5 @@
-# ReactRouterTrackedComponents
+# ReactRouter
+# ReactRouter
 
 Optional plugin, for anyone using ReactRouter, providing automatically tracked Link and NavLink components.  
 
@@ -30,5 +31,3 @@ They basically perform two main tasks:
 
 ## Usage example
 Check out this [example application on codesandbox](https://codesandbox.io/s/react-router-6-objectiv-tracked-components-example-pr01du?file=/src/App.js) for a comprehensive list of all options and cases.
-
-
