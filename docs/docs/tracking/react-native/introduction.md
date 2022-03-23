@@ -11,7 +11,7 @@ It provides generic [Wrappers](/tracking/react-native/api-reference/locationWrap
 
 Whenever manual instrumentation is required, the SDK comes also with a set of [Hooks](/tracking/react-native/api-reference/hooks/overview.md) and [low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md) to trigger [Events](/taxonomy/reference/events/overview.md) programmatically.
 
-We also have a [React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#installing-react-navigation-plugin) to easily track RootLocationContext, PathContext, Tabs and Drawers. Check out how to [Install React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#install-react-navigation-plugin).
+We also have a [React Navigation Plugin](/tracking/react-native/plugins/react-navigation.md) to easily track RootLocationContext, PathContext, Tabs and Drawers. Check out how to [Install React Navigation Plugin](/tracking/react-native/how-to-guides/getting-started.md#install-react-navigation-plugin).
 
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:

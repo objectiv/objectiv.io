@@ -28,31 +28,31 @@ import { TrackedPressable } from '@objectiv/tracker-react-native';
 
 #### A regular Pressable
 ```tsx
-<Pressable 
+<TrackedPressable 
   onPress={onPressFunction}
 >
   <Text>I'm pressable!</Text>
-</Pressable>
+</TrackedPressable>
 ```
 
 #### Non parseable children
 ```tsx
-<Pressable 
+<TrackedPressable 
   onPress={onPressFunction}
   id="thumb-down"
 >
   <Text>👎</Text>
-</Pressable>
+</TrackedPressable>
 ```
 
 #### Custom identifier
 ```tsx
-<Pressable
+<TrackedPressable
   onPress={onPressFunction}
   id="custom-analytics-id"
 >
   <Text>Press me!</Text>
-</Pressable>
+</TrackedPressable>
 ```
 
 <br />

@@ -1,5 +1,4 @@
 # ReactRouter
-# ReactRouter
 
 Optional plugin, for anyone using ReactRouter, providing automatically tracked Link and NavLink components.  
 

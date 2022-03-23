@@ -66,12 +66,12 @@ TrackerQueue is configured to use an in-memory Queue.
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.
 
-### Plugins
-Browser Tracker comes preconfigured with the following plugins:
-- ApplicationContextPlugin (inherited from Core Tracker)
+### Included plugins
+- [ApplicationContextPlugin](/tracking/react-native/plugins/application-context.md)
+- [OpenTaxonomyValidationPlugin](/tracking/react-native/plugins/open-taxonomy-validation.md)
 
 ### Optional Plugins
-- [ReactNavigationPlugin](/tracking/react-native/how-to-guides/getting-started.md#installing-react-navigation-plugin)
+- [ReactNavigation](/tracking/react-native/plugins/react-navigation.md)
 
 
 ## Under the hood

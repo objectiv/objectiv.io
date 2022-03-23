@@ -115,7 +115,7 @@ import { TrackedTextInput } from "@objectiv/tracker-react-native";
 const CustomTextInput = () => {
   const [text, onChangeText] = React.useState("Some Text");
 
-  return <TrackedTextInput onChangeText={onChangeText} value={text} />;
+  return <TrackedTextInput id="custom-input" onChangeText={onChangeText} value={text} />;
 };
 ```
 

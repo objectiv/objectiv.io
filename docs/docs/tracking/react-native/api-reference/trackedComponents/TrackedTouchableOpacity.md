@@ -28,37 +28,37 @@ import { TrackedTouchableOpacity } from '@objectiv/tracker-react-native';
 
 #### A regular TouchableOpacity
 ```tsx
-<TouchableOpacity 
+<TrackedTouchableOpacity 
   onPress={onPressFunction}
 >
   <View>
     <Text>Press me!</Text>
   </View>
-</TouchableOpacity>
+</TrackedTouchableOpacity>
 ```
 
 #### Non parseable children
 ```tsx
-<TouchableOpacity
+<TrackedTouchableOpacity
   onPress={onPressFunction}
   id="thumb-down"
 >
   <View>
     <Text>👎</Text>
   </View>
-</TouchableOpacity>
+</TrackedTouchableOpacity>
 ```
 
 #### Custom identifier
 ```tsx
-<TouchableOpacity
+<TrackedTouchableOpacity
   onPress={onPressFunction}
   id="custom-analytics-id"
 >
   <View>
     <Text>Press me!</Text>
   </View>
-</TouchableOpacity>
+</TrackedTouchableOpacity>
 ```
 
 <br />

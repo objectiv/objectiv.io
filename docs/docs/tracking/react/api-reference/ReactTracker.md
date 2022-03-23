@@ -67,14 +67,14 @@ TrackerQueue is configured to use localStorage.
 Configured for 10 retries with exponential backoff starting at 1000ms.
 
 ## Included plugins
-- [ApplicationContextPlugin](/tracking/react/plugins/application-context-plugin.md)
-- [HttpContextPlugin](/tracking/react/plugins/http-context-plugin.md)
-- [OpenTaxonomyValidationPlugin](/tracking/react/plugins/open-taxonomy-validation-plugin.md)
-- [PathContextFromURLPlugin](/tracking/react/plugins/path-context-from-url-plugin.md)
-- [RootLocationContextFromURLPlugin](/tracking/react/plugins/root-location-context-from-url-plugin.md)
+- [ApplicationContextPlugin](/tracking/react/plugins/application-context.md)
+- [HttpContextPlugin](/tracking/react/plugins/http-context.md)
+- [OpenTaxonomyValidationPlugin](/tracking/react/plugins/open-taxonomy-validation.md)
+- [PathContextFromURLPlugin](/tracking/react/plugins/path-context-from-url.md)
+- [RootLocationContextFromURLPlugin](/tracking/react/plugins/root-location-context-from-url.md)
 
 ## Optional plugins
-- [ReactRouterTrackedComponents](/tracking/react/plugins/react-router-tracked-components-plugin.md)
+- [ReactRouterTrackedComponents](/tracking/react/plugins/react-router-tracked-components.md)
 
 ## Under the hood
 The Tracker architecture is highly composable.  
@@ -110,5 +110,4 @@ const plugins = [
   rootLocationContextFromURLPlugin
 ];
 const tracker = new Tracker({ trackerId, transport, queue, plugins });
-
 ```
