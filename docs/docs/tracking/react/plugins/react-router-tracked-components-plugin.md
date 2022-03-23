@@ -7,7 +7,7 @@ Optional plugin, for anyone using ReactRouter, providing automatically tracked L
 yarn add @objectiv/plugin-react-router-tracked-components
 ```
 
-### or
+#### or
 ```sh
 npm install @objectiv/plugin-react-router-tracked-components
 ```

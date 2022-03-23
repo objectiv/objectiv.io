@@ -8,7 +8,7 @@ title: Overview
 There are two kind of Plugins: Plugin implementations and Component libraries.
 
 ## Plugin Implementations
-These implement PluginInterface methods:
+These may implement PluginInterface methods:
 - `initialize`, executed when the Plugin is created
 - `enrich`, executed before an event is validated
 - `validate`, executed before an event is sent
