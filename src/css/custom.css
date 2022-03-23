@@ -289,7 +289,11 @@ p, .markdown p {
   }
 }
 
-.blog-post-page article {
+.blog-post-page article header {
+  font-family: "Georgia", serif;
+  line-height: 36px;
+}
+.blog-post-page article p, .blog-post-page article ol, .blog-post-page article ul {
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
