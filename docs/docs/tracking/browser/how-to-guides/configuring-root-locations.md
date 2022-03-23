@@ -28,7 +28,7 @@ To override the default implementation of RootLocationContextFromURLPlugin we si
 
 ```ts
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import { makeDefaultPluginsList } from "@objectiv/tracker-browser";
+import { makeTracker } from "@objectiv/tracker-browser";
 
 makeTracker({
   applicationId: 'app-id',

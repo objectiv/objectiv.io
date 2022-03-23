@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-# React Native Tracker Plugins
+# Browser Tracker Plugins
 
 There are two kind of Plugins: Plugin implementations and Component libraries.
 
@@ -18,11 +18,8 @@ These may implement PluginInterface methods:
 These are simply modules containing pre-made tracked Components, hooks, factories and helpers to ease tracking third party libraries.
 
 ## Included by default
-- Plugin: [ApplicationContextPlugin](/tracking/react/plugins/application-context.md)
-- Plugin: [HttpContextPlugin](/tracking/react/plugins/http-context.md)
-- Plugin: [OpenTaxonomyValidationPlugin](/tracking/react/plugins/open-taxonomy-validation.md)
-- Plugin: [PathContextFromURLPlugin](/tracking/react/plugins/path-context-from-url.md)
-- Plugin: [RootLocationContextFromURLPlugin](/tracking/react/plugins/root-location-context-from-url.md)
-
-## Optional
-- Component library: [ReactRouterTrackedComponents](/tracking/react/plugins/react-router-tracked-components.md)
+- Plugin: [ApplicationContextPlugin](/tracking/browser/plugins/application-context.md)
+- Plugin: [HttpContextPlugin](/tracking/browser/plugins/http-context.md)
+- Plugin: [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation.md)
+- Plugin: [PathContextFromURLPlugin](/tracking/browser/plugins/path-context-from-url.md)
+- Plugin: [RootLocationContextFromURLPlugin](/tracking/browser/plugins/root-location-context-from-url.md)
