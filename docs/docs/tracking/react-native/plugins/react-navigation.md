@@ -9,7 +9,7 @@ yarn add @objectiv/plugin-react-navigation
 
 #### or
 ```sh
-npm install @objectiv/plugin-react-react-navigation
+npm install @objectiv/plugin-react-navigation
 ```
 
 ## Configuring the Plugin

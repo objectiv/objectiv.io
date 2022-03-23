@@ -43,7 +43,15 @@ Implements PluginInterface's `enrich`.
 Creates a new instance of RootLocationContext, where its identifier equals the result of `idFactoryFunction`, and adds it to the Location Stack of the outgoing Event in the first position.
 
 ### validate
-Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/react/plugins/open-taxonomy-validation).
+Nothing. RootLocationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/react/plugins/open-taxonomy-validation.md).
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.
+
+
+### Configuration
+Can be disabled by setting ReactTracker's [trackRootLocationContextFromURL parameter](/tracking/react/api-reference/ReactTracker.md#configuration) to false.
+
+:::caution
+Disabling this plugin implies providing your own implementation, as RootLocationContext is still required.
+:::

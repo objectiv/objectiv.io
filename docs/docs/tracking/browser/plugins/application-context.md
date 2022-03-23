@@ -17,7 +17,14 @@ Creates a new instance of ApplicationContext using the Tracker's `applicationId`
 Adds the previously created ApplicationContext to the list of Global Contexts of the outgoing Event.
 
 ### validate
-Nothing. ApplicationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation).
+Nothing. ApplicationContext validation is performed by [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation.md).
 
 ### isUsable
 Always true; ApplicationContextPlugin is always usable.
+
+### Configuration
+Can be disabled by setting BrowserTracker's [trackApplicationContext parameter](/tracking/browser/api-reference/general/BrowserTracker.md#configuration) to false.  
+
+:::caution
+Disabling this plugin implies providing your own implementation, as ApplicationContext is still required.
+:::

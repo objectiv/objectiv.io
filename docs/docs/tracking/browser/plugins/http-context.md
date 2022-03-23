@@ -18,3 +18,10 @@ Adds the previously created HttpContext to the list of Global Contexts of the ou
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) interfaces are available.
+
+### Configuration
+Can be disabled by setting BrowserTracker's [trackHttpContext parameter](/tracking/browser/api-reference/general/BrowserTracker.md#configuration) to false.
+
+:::caution
+Disabling this plugin implies providing your own implementation, as HttpContext is still required.
+:::

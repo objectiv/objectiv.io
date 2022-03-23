@@ -22,3 +22,10 @@ If this plugin is usable, [PathContext](/taxonomy/reference/global-contexts/Path
 
 ### isUsable
 True if both [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location) interfaces are available.
+
+### Configuration
+Can be disabled by setting ReactTracker's [trackPathContextFromURL parameter](/tracking/react/api-reference/ReactTracker.md#configuration) to false.
+
+:::caution
+Disabling this plugin implies providing your own implementation, as PathContext is still required.
+:::
