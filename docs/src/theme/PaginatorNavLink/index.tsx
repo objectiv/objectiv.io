@@ -9,7 +9,9 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import type {Props} from '@theme/PaginatorNavLink';
 
+// OBJECTIV
 import { tagLink } from "@objectiv/tracker-browser";
+// END OBJECTIV
 
 function PaginatorNavLink(props: Props): JSX.Element {
   const {permalink, title, subLabel} = props;
@@ -17,7 +19,9 @@ function PaginatorNavLink(props: Props): JSX.Element {
     <Link 
       className="pagination-nav__link" 
       to={permalink}
-      {...tagLink({ id: title, href: permalink })}
+      // OBJECTIV
+      {...tagLink({ id: title as string, href: permalink })}
+      // END OBJECTIV
     >
       {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
       <div className="pagination-nav__label">{title}</div>

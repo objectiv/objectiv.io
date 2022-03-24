@@ -22,7 +22,10 @@ import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
 
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
+
+// OBJECTIV
 import { tagContent } from '@objectiv/tracker-browser';
+// END OBJECTIV
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -175,9 +178,10 @@ function DropdownNavbarItemMobile({
   );
 }
 
-function DropdownNavbarItem({mobile = false, ...props}: Props): JSX.Element {
+export default function DropdownNavbarItem({
+  mobile = false,
+  ...props
+}: Props): JSX.Element {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
-
-export default DropdownNavbarItem;

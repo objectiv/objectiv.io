@@ -5,24 +5,26 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { useRouteMatch } from "@docusaurus/router";
 
 import type {Props} from '@theme/EditThisPage';
 
+// OBJECTIV
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { matchPath } from "@docusaurus/router";
 import Link from '@docusaurus/Link';
 import { tagLink, tagContent } from "@objectiv/tracker-browser";
-
 import styles from './styles.module.css';
 import clsx from 'clsx';
+// END OBJECTIV
 
 export default function EditThisPage({editUrl}: Props): JSX.Element {
+  // OBJECTIV
   const context = useDocusaurusContext();
   const {baseUrl, customFields} = context.siteConfig;
 
   // if in the 'modeling' section, edit the source code that is used to auto-generate the docs instead
-  let editThisPageUrl = useRouteMatch(`${baseUrl}modeling`) !== null ? 
+  let editThisPageUrl = matchPath(location.pathname, {path: `${baseUrl}modeling`}) !== null ? 
     useBaseUrl('/home/the-project/update-the-docs') : editUrl;
 
   return (
@@ -59,4 +61,5 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
       </ul>
     </div>
   );
+  // END OBJECTIV
 }
