@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import { useScrollPosition } from '@docusaurus/theme-common';
 
 interface RefObject<T> {
   readonly current: T | null
@@ -22,19 +23,17 @@ function StarUsNotification(props, ref) {
   useEffect(() => {
     const dimensions = starUsAnchorRef.current?.getBoundingClientRect();
     setStarUsAnchorPosition(dimensions.y + offsetY + window.scrollY); // add window.scrollY so position is also correct on refresh
+  }, [starUsAnchorRef, starUsNotificationClosed]);
 
-    const onScroll = () => {
+  useScrollPosition(
+    ({scrollY}) => {
       if (!starUsNotificationClosed) {
-        const scrollCheck = window.scrollY >= starUsAnchorPosition;
+        const scrollCheck = scrollY >= starUsAnchorPosition;
         setStarUsNotificationShown(scrollCheck);
       }
-    };
-
-    document.addEventListener("scroll", onScroll);
-    return () => {
-      document.removeEventListener("scroll", onScroll);
-    };
-  }, [starUsAnchorRef, starUsNotificationClosed]);
+    },
+    [starUsNotificationClosed],
+  );
 
   function closeNotification(e) {
     setStarUsNotificationClosed(true);
