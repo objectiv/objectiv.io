@@ -1,4 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { TrackerConsole, NoopConsoleImplementation } from "@objectiv/tracker-core";
 import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
 import React, { useState } from 'react';
 
@@ -45,10 +46,12 @@ function Root({children}) {
     }
   })
 
+  // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig
+  TrackerConsole.setImplementation(trackerConsoleEnabled && windowExists() ? console : NoopConsoleImplementation);
+
   // Create React Tracker instance
   const tracker = new ReactTracker({
     endpoint: trackerEndPoint as string,
-    console: trackerConsoleEnabled && windowExists() ? console : undefined,
     applicationId: trackerApplicationId as string,
     active: cookiebotStatisticsConsent,
   })

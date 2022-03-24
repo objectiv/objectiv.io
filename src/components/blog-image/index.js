@@ -10,7 +10,8 @@ import styles from "./styles.module.css";
 function BlogImage({
   url,
   caption = '',
-  captionLinks
+  captionLinks,
+  size='normal'
 }) {
   let imageCaption = caption;
   let imageAlt = caption;
@@ -32,9 +33,14 @@ function BlogImage({
     imageCaption = interpolate(caption, links);
   }
 
+  let classNames = clsx(styles.blogImage);
+  if (size == 'large') {
+    classNames = clsx(styles.blogImage, styles.blogImageLarge)
+  }
+
   return (
     <TrackedDiv id={'image: ' + imageAlt}>
-      <img src={useBaseUrl(url)} alt={imageAlt} className={clsx(styles.blogImage)} />
+      <img src={useBaseUrl(url)} alt={imageAlt} className={classNames} />
       {caption && 
         <p className={clsx(styles.imageCaption)}>{imageCaption}</p>
       }

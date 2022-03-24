@@ -1,0 +1,64 @@
+# TrackedKeyboardAvoidingView
+
+Wraps [KeyboardAvoidingView](https://reactnative.dev/docs/keyboardavoidingview) in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
+
+```tsx
+TrackedKeyboardAvoidingView: (props: KeyboardAvoidingViewProps & {
+  id: string,
+}) => KeyboardAvoidingView
+```
+
+## Additional Props
+|               |         | type      | 
+|:-------------:|:--------|:----------|
+| **required**  | **id**  | string    |
+
+## Automatic Events
+none.
+
+## Usage example
+
+```jsx
+import { 
+  TrackedButton, 
+  TrackedKeyboardAvoidingView, 
+  TrackedView
+} from '@objectiv/tracker-react-native';
+```
+
+```tsx
+<TrackedKeyboardAvoidingView id="view-name">
+  <TrackedView id="hero">
+    Welcome back!
+    <TrackedButton
+      onPress={doSomethingHandler}
+      title="Do something!"
+    />
+  </TrackedView>
+  <Separator />
+  <TrackedView id="screen-body">
+    More content here
+    <TrackedButton
+      onPress={doSomethingHandler}
+      title="Do something!"
+    />
+  </TrackedView>
+</TrackedKeyboardAvoidingView>
+```
+
+<br />
+
+:::tip Did you know ?
+`TrackedKeyboardAvoidingView` internally uses [ContentContextWrapper](/tracking/react-native/api-reference/locationWrappers/ContentContextWrapper.md).
+:::
+
+<br />
+
+:::info See also
+- [TrackedFlatList](/tracking/react-native/api-reference/trackedComponents/TrackedFlatList.md)
+- [TrackedSafeAreaView](/tracking/react-native/api-reference/trackedComponents/TrackedSafeAreaView.md)
+- [TrackedScrollView](/tracking/react-native/api-reference/trackedComponents/TrackedScrollView.md)
+- [TrackedSectionList](/tracking/react-native/api-reference/trackedComponents/TrackedSectionList.md)
+- [TrackedView](/tracking/react-native/api-reference/trackedComponents/TrackedView.md)
+- [TrackedVirtualizedList](/tracking/react-native/api-reference/trackedComponents/TrackedVirtualizedList.md)
+:::

@@ -18,11 +18,12 @@ Browser Tracker can [traverse and tag the DOM](/tracking/browser/api-reference/l
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started](/tracking/browser/how-to-guides/getting-started.md)
 - [Tagging Locations](/tracking/browser/how-to-guides/tagging-locations.md)
+- [Configuring Root Locations](/tracking/browser/how-to-guides/configuring-root-locations.md)
+- [Configuring Logging](/tracking/browser/how-to-guides/configuring-logging.md)
 - [Troubleshooting](/tracking/browser/how-to-guides/troubleshooting.md)
 
 ## API References
 - [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
-- [React SDK API Reference](/tracking/react/api-reference/overview.md)
 
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).

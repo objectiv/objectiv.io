@@ -18,12 +18,14 @@ Instrumentation involves an opt-in process of mapping your application to the [o
 ## How-to Guides
 A number of web platforms and frameworks are currently supported, such as JS, React, and Angular - with more support coming. To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
 - [Getting Started with React SDK](/tracking/react/how-to-guides/getting-started.md)
+- [Getting Started with React Native SDK](/tracking/react-native/how-to-guides/getting-started.md)
 - [Getting Started with Browser SDK](/tracking/browser/how-to-guides/getting-started.md)
 - [Getting Started with Angular SDK](/tracking/angular/how-to-guides/getting-started.md)
 
 ## API Reference
 To implement low-level functionality and configuration of the Trackers, all core APIs are open and documented. Check out the API References:
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
+- [React Native SDK API Reference](/tracking/react-native/api-reference/overview.md)
 - [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
 - [Angular SDK API Reference](/tracking/angular/api-reference/overview.md)
 

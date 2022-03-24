@@ -7,9 +7,9 @@
 
 import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
-import Translate from '@docusaurus/Translate';
 import SearchBar from '@theme/SearchBar';
 import Toggle from '@theme/Toggle';
+import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import {
   useThemeConfig,
   useMobileSecondaryMenuRenderer,
@@ -26,9 +26,17 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 
+// OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu 
 import { tagNavigation, tagOverlay, tagPressable } from "@objectiv/tracker-browser";
+import { useLocation } from "@docusaurus/router";
+import { useHistory } from "react-router-dom";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import objectivStyles from './objectiv.styles.module.css';
+import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
+// OBJECTIV END
 
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -155,7 +163,50 @@ function NavbarMobileSidebar({
   toggleSidebar,
 }: NavbarMobileSidebarProps) {
   useLockBodyScroll(sidebarShown);
+
+  // OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu 
+  type NavbarItemProps = {
+    to: string,
+    label: string,
+    waitUntilTracked: boolean
+  }
   const items = useNavbarItems();
+  const {leftItems, rightItems} = splitNavItemsByPosition(items);
+  // Add a link to the Home section at the top
+  leftItems.unshift({
+    label: 'Home',
+    to: '/',
+  });
+
+  let history = useHistory();
+  let location = useLocation();
+  let currentNavCategory = 'Home';
+
+  function getDropDownItems(): LinkLikeNavbarItemProps[] {
+    const dropDownLinks = leftItems.map((item:NavbarItemProps) => {
+      const itemTo = item.to;
+      const urlSlug = "/" +location.pathname.split('/')[2] + "/";
+      if (itemTo == urlSlug) {
+        currentNavCategory = item.label;
+      }
+
+      return {
+        isNavLink: true,
+        label: item.label,
+        to: item.to,
+        isActive: () => item.label == currentNavCategory,
+        onClick: () => {
+          history.push(item.to);
+          toggleSidebar();
+        },
+      };
+    });
+
+    return [...[], ...dropDownLinks, ...[]];
+  }
+
+  const dropDownItems = getDropDownItems();  
+  // END OBJECTIV
 
   const colorModeToggle = useColorModeToggle();
 
@@ -205,33 +256,35 @@ function NavbarMobileSidebar({
         className={clsx('navbar-sidebar__items', {
           'navbar-sidebar__items--show-secondary': secondaryMenu.shown,
         })}>
+        {/* OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu  */}
         <div className="navbar-sidebar__item menu">
-          <ul className="menu__list">
-            {items.map((item, i) => (
-              <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
-            ))}
-          </ul>
         </div>
-
         <div className="navbar-sidebar__item menu">
-          {items.length > 0 && (
-            <button
-              {...tagPressable({ id: 'navbar-back' })}
-              type="button"
-              className="clean-btn navbar-sidebar__back"
-              onClick={secondaryMenu.hide}>
-              <Translate
-                id="theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel"
-                description="The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)">
-                ← Back to main menu
-              </Translate>
-            </button>
-          )}
+          <div className={clsx(objectivStyles.objectivNavCategories)}>
+            <span className={clsx(objectivStyles.objectivSelectIcon)}><img src={useBaseUrl('/img/icons/icon-bookmark.svg')} /></span>
+            <ul className={clsx("menu__list", objectivStyles.objectivNavCategoriesDropDown)}>
+              <DropdownNavbarItem
+                mobile={false}
+                label={currentNavCategory}
+                items={dropDownItems}
+              />
+            </ul>
+          </div>
           {secondaryMenu.content}
+          <div className={clsx(objectivStyles.tertiaryMenu)}>
+            <ul className="menu__list">
+              {rightItems.map((item:NavbarItemProps, i) => (
+                <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
+              ))}
+            </ul>
+          </div>
+          {/* END OBJECTIV */}
         </div>
       </div>
     </div>
   );
+
+  
 }
 
 function Navbar(): JSX.Element {
