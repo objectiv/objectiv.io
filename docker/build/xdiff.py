@@ -120,8 +120,12 @@ def diff_strings(string1, string2, file1, file2):
                         n=context)
     return diff
 
-def main():
+def parse_diff(args):
     n = 0
+
+    added_lines = []
+    removed_lines = []
+
     try:
         tree1 = parse_file(args.file1)
         tree2 = parse_file(args.file2)
@@ -138,15 +142,19 @@ def main():
             elif line.startswith("+++"):
                 if not args.quiet and not args.no_meta:
                     print(term.bold(line), end="")
+                    added_lines.append(line)
             elif line.startswith("---"):
                 if not args.quiet and not args.no_meta:
                     print(term.bold(line), end="")
+                    removed_lines.append(line)
             elif line.startswith("+"):
                 if not args.quiet:
                     print(term.green(line), end="")
+                    added_lines.append(line)
             elif line.startswith("-"):
                 if not args.quiet:
                     print(term.red(line), end="")
+                    removed_lines.append(line)
             else:
                 if not args.quiet:
                     print(line, end="")
@@ -157,6 +165,9 @@ def main():
     else:
         exit = 1
     return exit
+
+def main():
+    return parse_diff(args)
 
 if __name__ == "__main__":
     sys.exit(main())
