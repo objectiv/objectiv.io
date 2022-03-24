@@ -11,6 +11,7 @@ import type {Props} from '@theme/EditThisPage';
 // OBJECTIV
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useLocation } from "@docusaurus/router";
 import { matchPath } from "@docusaurus/router";
 import Link from '@docusaurus/Link';
 import { tagLink, tagContent } from "@objectiv/tracker-browser";
@@ -22,6 +23,7 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
   // OBJECTIV
   const context = useDocusaurusContext();
   const {baseUrl, customFields} = context.siteConfig;
+  const location = useLocation();
 
   // if in the 'modeling' section, edit the source code that is used to auto-generate the docs instead
   let editThisPageUrl = matchPath(location.pathname, {path: `${baseUrl}modeling`}) !== null ? 
