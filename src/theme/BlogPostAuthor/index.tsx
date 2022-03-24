@@ -6,46 +6,66 @@
  */
 
 import React from 'react';
+import Link, {type Props as LinkProps} from '@docusaurus/Link';
 import type {Props} from '@theme/BlogPostAuthor';
 
 import styles from './styles.module.css';
 
+// OBJECTIV
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import { TrackedDiv } from '@objectiv/tracker-react';
+// END OBJECTIV
 
-function BlogPostAuthor({author}: Props): JSX.Element {
-  const {name, title, url, imageURL} = author;
+function MaybeLink(props: LinkProps): JSX.Element {
+  if (props.href) {
+    // return <Link {...props} />;
+    return (
+      <TrackedLink 
+        id={props.title?? props.href}
+        href={props.href} 
+        {...props}>
+      </TrackedLink>
+    )
+  }
+  return <>{props.children}</>;
+}
+
+export default function BlogPostAuthor({author}: Props): JSX.Element {
+  const {name, title, url, imageURL, email} = author;
+  const link = url || (email && `mailto:${email}`) || undefined;
   return (
+    // OBJECTIV
     <TrackedDiv id={'avatar'} className="avatar margin-bottom--sm">
+    {/* END OBJECTIV */}
       {imageURL && (
-        <TrackedLink id={name} className="avatar__photo-link avatar__photo" href={url}>
-          <img className={styles.image} src={imageURL} alt={name} />
-        </TrackedLink>
+        <span className="avatar__photo-link avatar__photo">
+          <MaybeLink href={link} title={name}>
+            <img className={styles.image} src={imageURL} alt={name} />
+          </MaybeLink>
+        </span>
       )}
 
-      {
-        // Note: only legacy author front matter allow empty name (not frontMatter.authors)
-        name && (
-          <div
-            className="avatar__intro"
-            itemProp="author"
-            itemScope
-            itemType="https://schema.org/Person">
-            <TrackedDiv id={'avatar-name'} className="avatar__name">
-              <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
-                <span itemProp="name">{name}</span>
-              </TrackedLink>
-            </TrackedDiv>
-            {title && (
-              <small className="avatar__subtitle" itemProp="description">
-                {title}
-              </small>
-            )}
-          </div>
-        )
-      }
+      {name && (
+        <div
+          className="avatar__intro"
+          itemProp="author"
+          itemScope
+          itemType="https://schema.org/Person">
+          <TrackedDiv id={'avatar-name'} className="avatar__name">
+            <MaybeLink href={link} title={name} itemProp="url">
+              <span itemProp="name">{name}</span>
+            </MaybeLink>
+            {/* <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
+              <span itemProp="name">{name}</span>
+            </TrackedLink> */}
+          </TrackedDiv>
+          {title && (
+            <small className="avatar__subtitle" itemProp="description">
+              {title}
+            </small>
+          )}
+        </div>
+      )}
     </TrackedDiv>
   );
 }
-
-export default BlogPostAuthor;

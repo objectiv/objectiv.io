@@ -10,12 +10,15 @@ import Translate, {translate} from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
 import type {Props} from '@theme/BlogPostPaginator';
 
+// OBJECTIV
 import { TrackedNav } from "@objectiv/tracker-react";
+// END OBJECTIV
 
-function BlogPostPaginator(props: Props): JSX.Element {
+export default function BlogPostPaginator(props: Props): JSX.Element {
   const {nextItem, prevItem} = props;
 
   return (
+    // OBJECTIV
     <TrackedNav
       id={'blog-post-paginator'}
       className="pagination-nav docusaurus-mt-lg"
@@ -24,6 +27,7 @@ function BlogPostPaginator(props: Props): JSX.Element {
         message: 'Blog post page navigation',
         description: 'The ARIA label for the blog posts pagination',
       })}>
+    {/* END OBJECTIV */}
       <div className="pagination-nav__item">
         {prevItem && (
           <PaginatorNavLink
@@ -55,5 +59,3 @@ function BlogPostPaginator(props: Props): JSX.Element {
     </TrackedNav>
   );
 }
-
-export default BlogPostPaginator;

@@ -10,13 +10,16 @@ import Translate, {translate} from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
 import type {Props} from '@theme/BlogListPaginator';
 
+// OBJECTIV
 import { TrackedNav } from "@objectiv/tracker-react";
+// END OBJECTIV
 
-function BlogListPaginator(props: Props): JSX.Element {
+export default function BlogListPaginator(props: Props): JSX.Element {
   const {metadata} = props;
   const {previousPage, nextPage} = metadata;
 
   return (
+    // OBJECTIV
     <TrackedNav id={'blog-list-paginator'}
       className="pagination-nav"
       aria-label={translate({
@@ -24,6 +27,7 @@ function BlogListPaginator(props: Props): JSX.Element {
         message: 'Blog list page navigation',
         description: 'The ARIA label for the blog pagination',
       })}>
+    {/* END OBJECTIV */}
       <div className="pagination-nav__item">
         {previousPage && (
           <PaginatorNavLink
@@ -55,5 +59,3 @@ function BlogListPaginator(props: Props): JSX.Element {
     </TrackedNav>
   );
 }
-
-export default BlogListPaginator;
