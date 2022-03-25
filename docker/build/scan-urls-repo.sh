@@ -24,7 +24,7 @@ if test -f "$URLSFILE"; then
   while IFS="," read -r rec1
   do
     rec1_no_cr="${rec1/$'\r'/}"
-    OUTPUT=$(grep --include=\*.{md,ipynb} --exclude-dir={node_modules,tests} -rnl $DIRECTORY -e $rec1_no_cr)
+    OUTPUT=$(grep --include=\*.{md,mdx,rst,html,ipynb} --exclude-dir={node_modules,tests} -rnl $DIRECTORY -e $rec1_no_cr)
     if [ -z "$OUTPUT" ]
     then
       tput setaf 2
