@@ -1,6 +1,6 @@
 # tagRootLocation
 
-Tags a [BrowserTracker:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
+Tags a [BrowserSDK:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
 
 ```typescript
 tagRootLocation = (parameters: {
@@ -25,18 +25,18 @@ When reconfiguring the RootLocationContextFromURLPlugin is not a viable option, 
 :::
 
 :::info
-This attribute directive builds on top of [BrowserTracker:tagRootLocation](/tracking/browser/api-reference/locationTaggers/tagRootLocation.md)
+This attribute directive builds on top of [BrowserSDK:tagRootLocation](/tracking/browser/api-reference/locationTaggers/tagRootLocation.md)
 :::
 
 ## Parameters
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | 
-| optional | onError | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
+| optional | options | [BrowserSDK:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | 
+| optional | onError | [BrowserSDK:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
-[BrowserTracker:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
+[BrowserSDK:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Examples
 
