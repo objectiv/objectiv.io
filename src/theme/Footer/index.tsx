@@ -21,7 +21,7 @@ import ThemedImage, {type Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
 
 // OBJECTIV
-import { TrackedFooter } from "@objectiv/tracker-react";
+import { TrackedNavigationContext } from "@objectiv/tracker-react";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 // END OBJECTIV
 
@@ -155,7 +155,9 @@ function Footer(): JSX.Element | null {
 
   return (
     // OBJECTIV
-    <TrackedFooter
+    <TrackedNavigationContext 
+      id={'footer'}
+      Component={'footer'} 
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>
@@ -213,7 +215,7 @@ function Footer(): JSX.Element | null {
           </div>
         )}
       </div>
-    </TrackedFooter>
+    </TrackedNavigationContext>
   );
 }
 
