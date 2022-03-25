@@ -1,111 +1,29 @@
----
-sidebar_position: 1
----
+# ReactNavigation
 
-# Getting Started
+Optional plugin, for anyone using ReactNavigation, providing automatic tracking of RootLocationContext, PathContext, Screen listeners for Tabs and Drawers and an automatically tracked Link component.
 
-Follow the step-by-step Guide below to get started with tracking on your React Native application.
-
-## Install Tracker from NPM
-
-```bash
-yarn add @objectiv/tracker-react-native
-
-# or 
-
-npm install @objectiv/tracker-react-native
-```
-
-## Configure the Tracker
-
-In this example we create a new ReactNativeTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md).
-
-```ts
-import { ObjectivProvider, ReactNativeTracker } from '@objectiv/tracker-react-native';
-```
-
-```tsx
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    const tracker = new ReactNativeTracker({
-      endpoint: 'https://collector.app.dev',
-      applicationId: 'app-id'
-    });
-    
-    return (
-      <ObjectivProvider tracker={tracker}>
-        <SafeAreaProvider>
-          <HomeScreen />
-        </SafeAreaProvider>
-      </ObjectivProvider>
-    );
-  }
-}
-```
-
-:::info
-Ideally, the tracker should be configured as early as possible. Best before the Application renders or as high up as possible in the component tree.
-:::
-
-:::tip Just trying things out?
-[React Native Tracker](/tracking/react-native/api-reference/ReactNativeTracker.md) is quite modular, and it's possible to set it up without having a [Collector](/tracking/collector/getting-started.md) running.
-
-In the following example we create a new Tracker instance that simply logs all Events to console.
-
-```tsx
-const loggingTracker = new ReactNativeTracker({
-  applicationId: 'test',
-  transport: {
-    transportName: 'TestLoggingTransport',
-    isUsable: () => true,
-    handle: async (payload) => console.log(payload)
-  }
-});
-```
-
-There's also a [DebugTransport](https://www.npmjs.com/package/@objectiv/transport-debug) available on npm with a similar functionality:
-
-```ts
-import { DebugTransport } from "@objectiv/transport-debug";
-```
-
-```tsx
-const loggingTracker = new ReactNativeTracker({
-  applicationId: 'test',
-  transport: new DebugTransport()
-});
-```
-
-This tracker instance will log all Events to `TrackerConsole.debug`.
-:::
-
-## Installing React Navigation Plugin
-If your Application uses React Navigation we have a Plugin to ease tracking of RootLocationContext, PathContext and Screen listeners for Tabs and Drawers. 
-
-```bash
+## Installation
+```sh
 yarn add @objectiv/plugin-react-navigation
+```
 
-# or 
-
+#### or
+```sh
 npm install @objectiv/plugin-react-navigation
 ```
 
-### Configuring the Plugin
+## Configuring the Plugin
 ```ts
 import { ObjectivProvider, ReactNativeTracker } from '@objectiv/tracker-react-native';
 import { ContextsFromReactNavigationPlugin } from "@objectiv/plugin-react-navigation";
 ```
 
-The plugin uses the NavigationContainerRef to automatically infer RootLocation and Path contexts. We can create one like so: 
+The plugin uses the NavigationContainerRef to automatically infer RootLocation and Path contexts. We can create one like so:
 ```tsx
 const navigationContainerRef = useNavigationContainerRef();
 ```
 
-Then we can simply pass the ref to both the Plugin and the NavigationContainer: 
+Then we can simply pass the ref to both the Plugin and the NavigationContainer:
 ```tsx
 makeTracker({
   applicationId: 'app-id',
@@ -124,8 +42,17 @@ return (
 );
 ```
 
-### Tracking Navigation Links
-If your Application uses React Navigation Links, the Plugin comes with an automatically tracked Link Component.
+## TrackedLink
+`TrackedLink` is designed to be drop-in replacement of the original one.  
+This allows, if desired, to swap components at import level:
+
+```ts
+import { TrackedLink as Link } from "@objectiv/plugin-react-navigation";
+```
+
+It basically performs two main tasks:
+1. Wraps the original implementation in a [LinkContext](/taxonomy/reference/location-contexts/LinkContext.md).
+2. Automatically attaches an onPress handler to track [PressEvents](/taxonomy/reference/events/PressEvent.md).
 
 TrackedLinks have the same props of regular Links. Here are some usage examples:
 ```tsx
@@ -148,7 +75,7 @@ import { TrackedLink } from "@objectiv/plugin-react-navigation";
 </TrackedLink>
 ```
 
-### Tracking Tabs & Drawers
+## Tracking Tabs & Drawers
 The plugin comes with a generic `makeLinkPressListener` factory hook. This can be used for both Tabs and Drawers.
 
 #### Tracking Tabs tabPress listener
@@ -194,7 +121,7 @@ import { makeLinkPressListener } from "@objectiv/plugin-react-navigation";
 ```
 
 #### Tracking Drawers drawerItemPress listener
-Drawers can be tracked in a nearly identical way.  
+Drawers can be tracked in a nearly identical way.
 
 In the following example we:
 - Wrap a Drawer.Navigator in a `NavigationContext`.
@@ -234,8 +161,3 @@ import { makeLinkPressListener } from "@objectiv/plugin-react-navigation";
   )}
 </NavigationContextWrapper>
 ```
-
-## Done
-The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.
-
-Time to start [Tracking Interactions](/tracking/react-native/how-to-guides/tracking-interactions.md)!

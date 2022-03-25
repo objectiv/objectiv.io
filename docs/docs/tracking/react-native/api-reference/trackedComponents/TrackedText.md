@@ -28,31 +28,31 @@ import { TrackedText } from '@objectiv/tracker-react-native';
 
 #### A regular Text
 ```tsx
-<Text 
+<TrackedText 
   onPress={onPressFunction}
 >
   I'm a pressable text!
-</Text>
+</TrackedText>
 ```
 
 #### Non parseable children
 ```tsx
-<Text
+<TrackedText
   onPress={onPressFunction}
   id="thumb-down"
 >
   👎
-</Text>
+</TrackedText>
 ```
 
 #### Custom identifier
 ```tsx
-<Text
+<TrackedText
   onPress={onPressFunction}
   id="custom-analytics-id"
 >
   Press me!
-</Text>
+</TrackedText>
 ```
 
 <br />
