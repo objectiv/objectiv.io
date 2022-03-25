@@ -3,12 +3,14 @@
 # Andreas Nolda 2022-02-07
 # https://hg.sr.ht/~nolda/xdiff
 
+from multiprocessing import parent_process
 import sys
 import argparse
 import re
 from blessings import Terminal
 from lxml import etree
 from difflib import unified_diff
+import csv
 
 version = 2.3
 
@@ -137,37 +139,67 @@ def parse_diff(args):
                 n += 1
                 # disregarding line numbers in string1 and string2 since
                 # they may diverge from line numbers in file1 and file2
-                if not args.quiet and not args.no_meta:
-                    print(term.bold("@@ hunk #{0}:".format(n)))
+                # if not args.quiet and not args.no_meta:
+                #     print(term.bold("@@ hunk #{0}:".format(n)))
             elif line.startswith("+++"):
                 if not args.quiet and not args.no_meta:
-                    print(term.bold(line), end="")
-                    added_lines.append(line)
+                    # print(term.bold(line), end="")
+                    added_lines.append([line])
             elif line.startswith("---"):
                 if not args.quiet and not args.no_meta:
-                    print(term.bold(line), end="")
-                    removed_lines.append(line)
+                    # print(term.bold(line), end="")
+                    removed_lines.append([line])
             elif line.startswith("+"):
                 if not args.quiet:
-                    print(term.green(line), end="")
-                    added_lines.append(line)
+                    # print(term.green(line), end="")
+                    added_lines.append([line])
             elif line.startswith("-"):
                 if not args.quiet:
-                    print(term.red(line), end="")
-                    removed_lines.append(line)
-            else:
-                if not args.quiet:
-                    print(line, end="")
+                    # print(term.red(line), end="")
+                    removed_lines.append([line])
+            # else:
+            #     if not args.quiet:
+            #         print(line, end="")
     except KeyboardInterrupt:
         sys.exit(130)
-    if n == 0:
-        exit = 0
-    else:
-        exit = 1
-    return exit
+    # if n == 0:
+    #     exit = 0
+    # else:
+    #     exit = 1
+    
+    parsed_diff = [added_lines, removed_lines]
+    return parsed_diff
+
+def extract_urls_from_diff(parsed_diff):
+  extracted_urls = []
+  for line in parsed_diff:
+      for str in line:
+          search = re.search("<loc>(.+?)</loc>", str)
+          if (search):
+              print(search.group(1))
+              extracted_urls.append([search.group(1)])
+      
+  return extracted_urls
+
+def write_removed_urls_to_csv(urls):
+    print("Writing removed URLs to CSV")
+
+    header = ['url']
+    with open('./tmp/removed_urls.csv', 'w', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+        # write the header
+        writer.writerow(header)
+        # write multiple rows
+        writer.writerows(urls)
+
+    print("Written to CSV")
 
 def main():
-    return parse_diff(args)
+    parsed_diff = parse_diff(args)
+    removed_urls = extract_urls_from_diff(parsed_diff[1])
+    write_removed_urls_to_csv(removed_urls)
+
+    return 1
 
 if __name__ == "__main__":
     sys.exit(main())
