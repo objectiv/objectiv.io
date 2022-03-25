@@ -36,4 +36,4 @@ export class AppModule {
 }
 ```
 
-For more details and info on how to compose a new set of Plugins, check out the [BrowserTracker: Configuring Root Locations](/tracking/browser/how-to-guides/configuring-root-locations.md) guide.
+For more details and info on how to compose a new set of Plugins, check out the [BrowserSDK: Configuring Root Locations](/tracking/browser/how-to-guides/configuring-root-locations.md) guide.

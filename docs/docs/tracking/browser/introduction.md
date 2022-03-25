@@ -25,6 +25,9 @@ To immediately jump into instrumenting your application, follow the step-by-step
 ## API References
 - [Browser SDK API Reference](/tracking/browser/api-reference/overview.md)
 
+## Plugins
+- [Browser SDK Plugins](/tracking/browser/plugins/overview.md)
+
 ## Core Concepts
 For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
 

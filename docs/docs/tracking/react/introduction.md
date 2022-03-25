@@ -25,5 +25,8 @@ To immediately jump into instrumenting your application, follow the step-by-step
 ## API Reference 
 - [React SDK API Reference](/tracking/react/api-reference/overview.md)
 
+## Plugins
+- [React SDK Plugins](/tracking/react/plugins/overview.md)
+
 ## Core Concepts
 - [Best Practices](/tracking/core-concepts/react/best-practices.md)
