@@ -193,6 +193,7 @@ def write_urls_to_csv(urls, file='./tmp/urls.csv'):
 
 def main():
     parsed_diff = parse_diff(args)
+    print("Parsed diff: ", parsed_diff)
 
     # print and write added URLs
     if(len(parsed_diff[0]) > 0):

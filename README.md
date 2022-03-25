@@ -61,6 +61,8 @@ git pull && make build-docker-build-image build-docker-deploy-image
 # second, compare the sitemap on production to the sitemap in the image, to double-check any URL changes; if 
 # you don't have `blessings` & `lxml` installed yet, do `sudo apt-get install python3-blessings python3-lxml`
 ./docker/build/diff-sitemaps.sh
+# optionally, check if any URLs that are removed appear in the objectiv-analytics repo
+./docker/build/scan-urls-repo.sh -d=../objectiv-analytics -u=tmp/removed_urls.csv
 
 # if URL checks are okay, upload to staging via FTP
 docker run -e SFTP_URL \
