@@ -6,26 +6,31 @@
  */
 
 import React from 'react';
+import type {Props} from '@theme/Logo';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
+
+// OBJECTIV
 import OriginalLogo from '@theme-original/Logo';
 import { tagLink } from "@objectiv/tracker-browser";
-import type {Props} from '@theme/Logo';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// END OBJECTIV
 
-function Logo(props: Props): JSX.Element {
+export default function Logo(props: Props): JSX.Element {
   const {
     siteConfig: {title},
   } = useDocusaurusContext();
   const {
     navbar: {title: navbarTitle, logo = {src: ''}},
   } = useThemeConfig();
+
   const logoLink = useBaseUrl(logo.href || '/');
 
+  // OBJECTIV
   return <OriginalLogo
     {...tagLink({ id: 'logo', href: logoLink })}
     {...props} 
   />
+  // END OBJECTIV
 }
-
-export default Logo;
