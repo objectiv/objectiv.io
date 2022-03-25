@@ -1,6 +1,6 @@
 # TrackedFooter
 
-Generates a `<footer>` Element wrapped in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md) identified as `footer`, unless differently specified. 
+Generates a `<footer>` Element wrapped in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md) identified as `footer`, unless differently specified. 
 
 ```tsx
 TrackedFooter: (props: {
@@ -46,7 +46,7 @@ import { TrackedFooter } from '@objectiv/tracker-react';
 <br />
 
 :::tip Did you know ?
-`TrackedFooter` internally uses [TrackedNavigationContext](/tracking/react/api-reference/trackedContexts/TrackedNavigationContext.md).
+`TrackedFooter` internally uses [TrackedContentContext](/tracking/react/api-reference/trackedContexts/TrackedContentContext.md).
 :::
 
 <br />
