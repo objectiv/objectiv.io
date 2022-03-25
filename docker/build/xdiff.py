@@ -176,29 +176,42 @@ def extract_urls_from_diff(parsed_diff):
       for str in line:
           search = re.search("<loc>(.+?)</loc>", str)
           if (search):
-              print(search.group(1))
               extracted_urls.append([search.group(1)])
       
   return extracted_urls
 
-def write_removed_urls_to_csv(urls):
-    print("Writing removed URLs to CSV")
-
+def write_urls_to_csv(urls, file='./tmp/urls.csv'):
     header = ['url']
-    with open('./tmp/removed_urls.csv', 'w', encoding='UTF8', newline='') as f:
+    with open(file, 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
         # write the header
         writer.writerow(header)
         # write multiple rows
         writer.writerows(urls)
 
-    print("Written to CSV")
+    print("Written to CSV:", file)
 
 def main():
     parsed_diff = parse_diff(args)
-    removed_urls = extract_urls_from_diff(parsed_diff[1])
-    write_removed_urls_to_csv(removed_urls)
 
+    # print and write added URLs
+    if(len(parsed_diff[0]) > 0):
+        print(term.red("Added URLs:"), end="\n")
+        added_urls = extract_urls_from_diff(parsed_diff[0])
+        for url in added_urls:
+            for u in url:
+                print(term.green("- "+u), end="\n")
+        write_urls_to_csv(urls=added_urls, file='./tmp/added_urls.csv')
+
+    # print and write removed URLs
+    if(len(parsed_diff[1]) > 0):
+        removed_urls = extract_urls_from_diff(parsed_diff[1])
+        print(term.red("Removed URLs:"), end="\n")
+        for url in removed_urls:
+            for u in url:
+                print(term.red("- "+u), end="\n")
+        write_urls_to_csv(urls=removed_urls, file='./tmp/removed_urls.csv')
+    
     return 1
 
 if __name__ == "__main__":
