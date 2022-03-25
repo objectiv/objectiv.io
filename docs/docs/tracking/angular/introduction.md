@@ -5,7 +5,7 @@ title: Introduction
 ---
 # Angular SDK
 
-The Angular SDK is a small Angular Module, that comes with an Angular Directive, built on top of the Browser SDK.   
+The Angular SDK is a small Angular Module, that comes with an Angular Directive, built on top of the [Browser SDK](/tracking/browser/introduction.md).
 
 The Module itself makes it easy to [configure the BrowserTracker](/tracking/angular/how-to-guides/getting-started.md#configure-the-tracker) in your application, while the Directive enables using [Browser Tracker:Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) in Angular templates.
 
