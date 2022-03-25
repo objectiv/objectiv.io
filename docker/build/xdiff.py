@@ -3,7 +3,6 @@
 # Andreas Nolda 2022-02-07
 # https://hg.sr.ht/~nolda/xdiff
 
-from multiprocessing import parent_process
 import sys
 import argparse
 import re
@@ -193,11 +192,10 @@ def write_urls_to_csv(urls, file='./tmp/urls.csv'):
 
 def main():
     parsed_diff = parse_diff(args)
-    print("Parsed diff: ", parsed_diff)
 
     # print and write added URLs
     if(len(parsed_diff[0]) > 0):
-        print(term.red("Added URLs:"), end="\n")
+        print(term.green("Added URLs:"), end="\n")
         added_urls = extract_urls_from_diff(parsed_diff[0])
         for url in added_urls:
             for u in url:
