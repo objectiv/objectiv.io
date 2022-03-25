@@ -28,37 +28,37 @@ import { TrackedTouchableNativeFeedback } from '@objectiv/tracker-react-native';
 
 #### A regular TouchableNativeFeedback
 ```tsx
-<TouchableNativeFeedback 
+<TrackedTouchableNativeFeedback 
   onPress={onPressFunction}
 >
   <View>
     <Text>Press me!</Text>
   </View>
-</TouchableNativeFeedback>
+</TrackedTouchableNativeFeedback>
 ```
 
 #### Non parseable children
 ```tsx
-<TouchableNativeFeedback
+<TrackedTouchableNativeFeedback
   onPress={onPressFunction}
   id="thumb-down"
 >
   <View>
     <Text>👎</Text>
   </View>
-</TouchableNativeFeedback>
+</TrackedTouchableNativeFeedback>
 ```
 
 #### Custom identifier
 ```tsx
-<TouchableNativeFeedback
+<TrackedTouchableNativeFeedback
   onPress={onPressFunction}
   id="custom-analytics-id"
 >
   <View>
     <Text>Press me!</Text>
   </View>
-</TouchableNativeFeedback>
+</TrackedTouchableNativeFeedback>
 ```
 
 <br />

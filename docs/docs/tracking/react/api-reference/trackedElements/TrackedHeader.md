@@ -1,6 +1,6 @@
 # TrackedHeader
 
-Generates a `<header>` Element wrapped in a [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md) identified as `header`, unless differently specified. 
+Generates a `<header>` Element wrapped in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md) identified as `header`, unless differently specified. 
 
 ```tsx
 TrackedHeader: (props: {
@@ -46,7 +46,7 @@ import { TrackedHeader } from '@objectiv/tracker-react';
 <br />
 
 :::tip Did you know ?
-`TrackedHeader` internally uses [TrackedNavigationContext](/tracking/react/api-reference/trackedContexts/TrackedNavigationContext.md).
+`TrackedHeader` internally uses [TrackedContentContext](/tracking/react/api-reference/trackedContexts/TrackedContentContext.md).
 :::
 
 <br />
