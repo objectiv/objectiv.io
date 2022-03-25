@@ -1,6 +1,6 @@
 # ReactNavigation
 
-Optional plugin, for anyone using ReactNavigation, providing automatic tracking of RootLocationContext, PathContext, Screen listeners for Tabs and Drawers and an automatically tracked Link components.  
+Optional plugin, for anyone using ReactNavigation, providing automatic tracking of RootLocationContext, PathContext, Screen listeners for Tabs and Drawers and an automatically tracked Link component.
 
 ## Installation
 ```sh
