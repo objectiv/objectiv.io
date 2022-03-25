@@ -14,7 +14,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 
 // OBJECTIV
-import { TrackedLinkContext } from "@objectiv/tracker-react";
+import { TrackedLinkContext, makeTitleFromChildren } from "@objectiv/tracker-react";
 // END OBJECTIV
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -39,12 +39,13 @@ export default function NavbarNavLink({
 
   // OBJECTIV
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
+  const linkTitle = makeTitleFromChildren(label);
   // END OBJECTIV
   return (
     // OBJECTIV
     <TrackedLinkContext
       Component={Link}
-      title={label as string}
+      title={linkTitle}
       href={linkTo}
       {...{
         to: linkTo,
