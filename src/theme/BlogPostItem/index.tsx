@@ -6,7 +6,6 @@
  */
 
 import React, { useEffect } from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
@@ -21,6 +20,8 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
+// OBJECTIV
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { makeIdFromString } from "@objectiv/tracker-core";
 import {
   TrackedHeader,
@@ -30,6 +31,7 @@ import {
   TrackedContentContext,
 } from '@objectiv/tracker-react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
+// END OBJECTIV
 
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
@@ -51,33 +53,7 @@ function useReadingTimePlural() {
   };
 }
 
-function BlogPostItem(props: Props): JSX.Element {
-  const {
-    metadata,
-    isBlogPostPage
-  } = props;
-  const { title } = metadata;
-  const blogPostId = 'post-' + makeIdFromString(title);
-  return (
-    <TrackedContentContext 
-      Component={'article'} 
-      id={`post-${makeIdFromString(title)}`}
-      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
-      itemProp="blogPost"
-      itemScope
-      itemType="http://schema.org/BlogPosting">
-
-      <BlogPostArticle blogPostId={blogPostId} {...props}>
-      </BlogPostArticle>
-
-    </TrackedContentContext>
-  );
-}
-
-function BlogPostArticle(props, blogPostId): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-  const { slackJoinLink } = siteConfig?.customFields ?? {};
-
+export default function BlogPostItem(props: Props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
   const {withBaseUrl} = useBaseUrlUtils();
   const {
@@ -105,6 +81,9 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
   // OBJECTIV: VisibleEvent on blog post load
+  const { siteConfig } = useDocusaurusContext();
+  const { slackJoinLink } = siteConfig?.customFields ?? {};
+  const blogPostId = 'post-' + makeIdFromString(title);
   const trackVisibleEvent = useVisibleEventTracker();
   useEffect(() => {
     if (isBlogPostPage) {
@@ -112,19 +91,29 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
     }
   }, [blogPostId]);
   // END OBJECTIV
-
   return (
-    <>
+    // OBJECTIV
+    <TrackedContentContext 
+      Component={'article'} 
+      id={`post-${makeIdFromString(title)}`}
+      className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
+      itemProp="blogPost"
+      itemScope
+      itemType="http://schema.org/BlogPosting">
+      {/* OBJECTIV */}
       <TrackedContentContext id='blog-post-header' Component='header'>
+      {/* END OBJECTIV */}
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
           ) : (
+            // OBJECTIV
             <TrackedLink 
               itemProp="url" 
               to={permalink}>
               {title}
             </TrackedLink>
+            // END OBJECTIV
           )}
         </TitleHeading>
         <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
@@ -154,7 +143,8 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
 
-      {!truncated && (
+      {/* OBJECTIV: TRY OBJECTIV SECTION */}
+      {(!truncated) && (
         <TrackedDiv
           id={'blog-post-try-objectiv'}
           className={clsx(styles.blogPostFooterCta)}>
@@ -168,7 +158,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
             <TrackedLink 
               to="https://github.com/objectiv/objectiv-analytics"
               target="_self">
-                Objectiv on Github
+                Objectiv on GitHub
               </TrackedLink> - Check out the project and star us for future reference<br />
             <TrackedLink 
               to={slackJoinLink as string}
@@ -178,13 +168,16 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
           </p>
         </TrackedDiv>
       )}
+      {/* END OBJECTIV */}
 
       {(tagsExists || truncated) && (
+        // OBJECTIV
         <TrackedFooter
           id={'blog-post-footer'}
           className={clsx('row docusaurus-mt-lg', {
             [styles.blogPostDetailsFull]: isBlogPostPage,
           })}>
+        {/* END OBJECTIV */}
           {tagsExists && (
             <div className={clsx('col', {'col--9': truncatedPost})}>
               <TagsListInline tags={tags} />
@@ -202,6 +195,7 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
               className={clsx('col text--right', {
                 'col--3': tagsExists,
               })}>
+              {/* OBJECTIV */}
               <TrackedLink
                 id={'read-more'}
                 to={metadata.permalink}
@@ -214,12 +208,11 @@ function BlogPostArticle(props, blogPostId): JSX.Element {
                   </Translate>
                 </b>
               </TrackedLink>
-            </div>
+              {/* END OBJECTIV */}
+              </div>
           )}
         </TrackedFooter>
       )}
-    </>
+    </TrackedContentContext>
   );
 }
-
-export default BlogPostItem;

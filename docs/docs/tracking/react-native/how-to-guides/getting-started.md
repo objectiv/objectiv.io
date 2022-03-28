@@ -235,8 +235,6 @@ import { makeLinkPressListener } from "@objectiv/plugin-react-navigation";
 </NavigationContextWrapper>
 ```
 
-
-
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.
 

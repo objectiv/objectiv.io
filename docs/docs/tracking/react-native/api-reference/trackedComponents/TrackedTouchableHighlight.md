@@ -28,31 +28,31 @@ import { TrackedTouchableHighlight } from '@objectiv/tracker-react-native';
 
 #### A regular TouchableHighlight
 ```tsx
-<TouchableHighlight 
+<TrackedTouchableHighlight 
   onPress={onPressFunction}
 >
   <Text>Press me!</Text>
-</TouchableHighlight>
+</TrackedTouchableHighlight>
 ```
 
 #### Non parseable children
 ```tsx
-<TouchableHighlight
+<TrackedTouchableHighlight
   onPress={onPressFunction}
   id="thumb-down"
 >
   <Text>👎</Text>
-</TouchableHighlight>
+</TrackedTouchableHighlight>
 ```
 
 #### Custom identifier
 ```tsx
-<TouchableHighlight
+<TrackedTouchableHighlight
   onPress={onPressFunction}
   id="custom-analytics-id"
 >
   Press me!
-</TouchableHighlight>
+</TrackedTouchableHighlight>
 ```
 
 <br />

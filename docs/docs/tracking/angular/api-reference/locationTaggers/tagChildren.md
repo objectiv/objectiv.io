@@ -1,13 +1,13 @@
 # tagChildren
 
-Tags a [BrowserTracker:Taggable Element](/tracking/core-concepts/browser/tagging.md#taggable-elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
+Tags a [BrowserSDK:Taggable Element](/tracking/core-concepts/browser/tagging.md#taggable-elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
 
 ```typescript
 tagChildren = (parameters: ChildrenTaggingQueries) => TagLocationReturnValue
 ```
 
 :::info
-This attribute directive builds on top of [BrowserTracker:tagChildren](/tracking/browser/api-reference/locationTaggers/tagChildren.md)
+This attribute directive builds on top of [BrowserSDK:tagChildren](/tracking/browser/api-reference/locationTaggers/tagChildren.md)
 :::
 
 :::warning
@@ -17,8 +17,8 @@ This attribute directive builds on top of [BrowserTracker:tagChildren](/tracking
 ### Parameters
 |          |                | type
 | :-:      | :--            | :--                                                                                       
-| required | **parameters** | [BrowserTracker:ChildrenTaggingQueries](/tracking/browser/api-reference/definitions/ChildrenTaggingQueries.md)
-| optional | onError        | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)
+| required | **parameters** | [BrowserSDK:ChildrenTaggingQueries](/tracking/browser/api-reference/definitions/ChildrenTaggingQueries.md)
+| optional | onError        | [BrowserSDK:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)
 
 ## tagChild - Single query shorthand
 Syntactic sugar API built on top of **tagChildren** which processes a single ChildrenTaggingQuery.
@@ -30,11 +30,11 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ### Parameters
 |          |                | type
 | :-:      | :--            | :--                                                                                       
-| required | **parameters** | [BrowserTracker:ChildrenTaggingQuery](/tracking/browser/api-reference/definitions/ChildrenTaggingQuery.md)
-| optional | onError        | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)
+| required | **parameters** | [BrowserSDK:ChildrenTaggingQuery](/tracking/browser/api-reference/definitions/ChildrenTaggingQuery.md)
+| optional | onError        | [BrowserSDK:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md)
 
 ## Returns
-[BrowserTracker:TagChildrenReturnValue](/tracking/browser/api-reference/definitions/TagChildrenReturnValue.md)
+[BrowserSDK:TagChildrenReturnValue](/tracking/browser/api-reference/definitions/TagChildrenReturnValue.md)
 
 ## Usage example
 
@@ -60,5 +60,5 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 - [Location Taggers](/tracking/angular/api-reference/locationTaggers/overview.md)
 - [tagPressable](/tracking/angular/api-reference/locationTaggers/tagPressable.md)
 - [tagLocation](/tracking/angular/api-reference/locationTaggers/tagLocation.md)
-- [BrowserTracker:tagChildren](/tracking/browser/api-reference/locationTaggers/tagChildren.md)
+- [BrowserSDK:tagChildren](/tracking/browser/api-reference/locationTaggers/tagChildren.md)
 :::

@@ -13,14 +13,18 @@ import PaginatorNavLink from '@theme/PaginatorNavLink';
 // @ts-ignore
 import type {Props} from '@theme/DocPaginator';
 
-import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
+// OBJECTIV
+import { tagNavigation } from "@objectiv/tracker-browser";
+// END OBJECTIV
 
-function DocPaginator(props: Props): JSX.Element {
+export default function DocPaginator(props: Props): JSX.Element {
   const {previous, next} = props;
 
   return (
     <nav
+      // OBJECTIV
       {...tagNavigation({id: 'doc-paginator-navigation'})}
+      // END OBJECTIV
       className="pagination-nav docusaurus-mt-lg"
       aria-label={translate({
         id: 'theme.docs.paginator.navAriaLabel',
@@ -58,5 +62,3 @@ function DocPaginator(props: Props): JSX.Element {
     </nav>
   );
 }
-
-export default DocPaginator;
