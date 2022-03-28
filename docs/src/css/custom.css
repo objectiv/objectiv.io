@@ -252,7 +252,7 @@ nav .DocSearch-Button-Keys span:first-child {
 /** DOCS - Overall **/
 
 /* EditThisPage footer: full width & grey */
-div.docs-wrapper footer {
+div.docs-wrapper footer.theme-doc-footer {
   padding: 20px 0;
   text-align: left;
   background-color: #F5F6F7;
