@@ -65,12 +65,8 @@ function HomeBreadcrumbItem() {
     label: '🏠'
   }];
   const sectionSlug = useLocation().pathname.split('/')[2];
-  const afterSectionSlug = useLocation().pathname.split('/')[3];
-  console.log("after section slug: ",afterSectionSlug);
   if (sectionSlug != 'home' && sectionSlug != '' && sectionSlug != 'category') {
-    const subsectionHref = (sectionSlug != 'home' && afterSectionSlug != '') 
-      ? useBaseUrl("/" + sectionSlug + "/") 
-      : null;
+    const subsectionHref = sectionSlug != 'home' ? useBaseUrl("/" + sectionSlug + "/") : null;
     const subsectionTitle = sectionSlug.charAt(0).toUpperCase() + sectionSlug.slice(1);
     breadcrumbs.push({
       href: subsectionHref,
