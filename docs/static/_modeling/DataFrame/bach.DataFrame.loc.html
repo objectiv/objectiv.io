@@ -1,0 +1,115 @@
+<div>
+                
+  <section id="bach-dataframe-loc">
+<h1>bach.DataFrame.loc<a class="headerlink" href="#bach-dataframe-loc" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.DataFrame.loc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">loc</span></span><a class="headerlink" href="#bach.DataFrame.loc" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">.loc</span></code> accessor offers different methods for label-based selection. The following are
+valid use-cases:</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values</span>
+<span class="go">index</span>
+<span class="go">a           1</span>
+<span class="go">b           2</span>
+<span class="go">c           3</span>
+<span class="go">d           4</span>
+</pre></div>
+</div>
+<p><strong>Getting Values</strong></p>
+<p><strong>Single-label selection</strong>: Returns all rows where the index column is equal to the label.
+This returns a Bach Series, where all selected columns are stacked as a single index column.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">__stacked_index</span>
+<span class="go">values    1</span>
+<span class="go">Name: __stacked, dtype: int64</span>
+</pre></div>
+</div>
+<p><strong>List-label selection</strong>: Returns all rows where the index column is equal to any of
+the labels to be selected. Returns a Bach DataFrame.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values</span>
+<span class="go">index</span>
+<span class="go">a           1</span>
+<span class="go">b           2</span>
+</pre></div>
+</div>
+<p><strong>Slicing selection by labels</strong>: Returns all rows between the start and stop of the slice
+(start and stop are inclusive).</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>  <span class="c1"># slicing is supported only when frame is sorted</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'a'</span><span class="p">:</span><span class="s1">'c'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values</span>
+<span class="go">index</span>
+<span class="go">a           1</span>
+<span class="go">b           2</span>
+<span class="go">c           3</span>
+</pre></div>
+</div>
+<p><strong>Slicing by series boolean</strong>: Returns all rows where the series boolean
+is true.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'values'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values</span>
+<span class="go">index</span>
+<span class="go">b           2</span>
+</pre></div>
+</div>
+<p>For each of the previous types of selection, column selection is supported,
+this can be by just passing a label, list of labels or a slice. For example:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">'extra_col'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'extra_col'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">__stacked_index</span>
+<span class="go">extra_col    1</span>
+<span class="go">Name: __stacked, dtype: int64</span>
+</pre></div>
+</div>
+<p><strong>Setting Values</strong></p>
+<p><strong>Set values for an entire row</strong>: Will modify all columns where index is matched.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values  extra_col</span>
+<span class="go">index</span>
+<span class="go">a           2          2</span>
+<span class="go">b           2          1</span>
+<span class="go">c           3          1</span>
+<span class="go">d           4          1</span>
+</pre></div>
+</div>
+<p><strong>Set values for multiple rows and specific columns</strong>: Modifies only the passed columns.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">],</span> <span class="s1">'values'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">       values  extra_col</span>
+<span class="go">index</span>
+<span class="go">a           2          2</span>
+<span class="go">b          10          1</span>
+<span class="go">c           3          1</span>
+<span class="go">d          10          1</span>
+</pre></div>
+</div>
+<p><strong>Set values for row slice</strong>: Modifies all rows included in the slice.</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'a'</span><span class="p">:</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'values'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="go">        values   extra_col</span>
+<span class="go">index</span>
+<span class="go">a           3           2</span>
+<span class="go">b           3           1</span>
+<span class="go">c           3           1</span>
+<span class="go">d          10           1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>.loc supports access-only for first-level index.</p></li>
+<li><p>Slicing rows is supported-only when the dataframe is sorted.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

@@ -5,7 +5,7 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="bach.SeriesJsonb.json">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SeriesJsonb.</span></span><span class="sig-name descname"><span class="pre">json</span></span><a class="headerlink" href="#bach.SeriesJsonb.json" title="Permalink to this definition">&#182;</a></dt>
-<dd><p>Get access to json operations via the class that&#8217;s return through this accessor.
+<dd><p id="json-accessor">Get access to json operations via the class that&#8217;s return through this accessor.
 Use as <cite>my_series.json.get_value()</cite> or <cite>my_series.json[:2]</cite></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.SeriesJsonb.SeriesJsonb.Json">
@@ -20,21 +20,25 @@ Use as <cite>my_series.json.get_value()</cite> or <cite>my_series.json[:2]</cite
 <dd class="field-odd"><p><strong>key</strong> &#8211; A very mixed key to slice on, please see below.</p>
 </dd>
 </dl>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># slice and show with .head()</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># slice and show with .head()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">jsonb_column</span><span class="o">.</span><span class="n">json</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">_index_0</span>
 <span class="go">0                                            [a, b]</span>
 <span class="go">1                                            [d, e]</span>
 <span class="go">2    [{'h': 'i', 'j': 'k'}, {'l': ['m', 'n', 'o']}]</span>
 <span class="go">Name: jsonb_column, dtype: object</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting one position returns the single entry:</span>
+</pre></div>
+</div>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting one position returns the single entry:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">jsonb_column</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">_index_0</span>
 <span class="go">0                         b</span>
 <span class="go">1                         e</span>
 <span class="go">2    {'l': ['m', 'n', 'o']}</span>
 <span class="go">Name: jsonb_column, dtype: object</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting from objects is done by entering a key:</span>
+</pre></div>
+</div>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting from objects is done by entering a key:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">jsonb_column</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">json</span><span class="p">[</span><span class="s1">'l'</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">_index_0</span>
 <span class="go">0         None</span>
@@ -48,14 +52,16 @@ With this method, a dict is passed in the <cite>.json[]</cite> selector. The val
 the dict to the objects in a json array is returned for the <cite>.json[]</cite> selector. A match is when
 all key/value pairs of the dict are found in an object. This can be used for selecting a subset
 of a json array with objects.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting from arrays by searching objects in the array.</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># selecting from arrays by searching objects in the array.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">jsonb_column</span><span class="o">.</span><span class="n">json</span><span class="p">[:{</span><span class="s2">"j"</span><span class="p">:</span><span class="s2">"k"</span><span class="p">}]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">_index_0</span>
 <span class="go">0                      None</span>
 <span class="go">1                      None</span>
 <span class="go">2    [{'h': 'i', 'j': 'k'}]</span>
 <span class="go">Name: jsonb_column, dtype: object</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># or:</span>
+</pre></div>
+</div>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># or:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">jsonb_column</span><span class="o">.</span><span class="n">json</span><span class="p">[{</span><span class="s2">"l"</span><span class="p">:[</span><span class="s2">"m"</span><span class="p">,</span><span class="s2">"n"</span><span class="p">,</span><span class="s2">"o"</span><span class="p">]}:]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">_index_0</span>
 <span class="go">0                                    None</span>

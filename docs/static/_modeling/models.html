@@ -1,0 +1,71 @@
+<div>
+                
+  <section id="model-overview">
+<span id="models"/><h1>Model overview<a class="headerlink" href="#model-overview" title="Permalink to this headline">&#182;</a></h1>
+<p>The model hub has two main type of functions: <cite>map</cite> and <cite>aggregate</cite>.</p>
+<ul class="simple">
+<li><p><cite>map</cite> functions always return a series with the same shape and index as the DataFrame they are applied to.
+This ensures they can be added as a column to that DataFrame. <cite>map</cite> functions that return SeriesBoolean can
+be used with to filter the data.</p></li>
+<li><p><cite>aggregate</cite> fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
+<cite>agg</cite>.</p></li>
+</ul>
+<section id="mapping">
+<span id="map-models"/><h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">&#182;</a></h2>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.is_first_session.html#modelhub.Map.is_first_session" title="modelhub.Map.is_first_session"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.is_first_session</span></code></a>(data)</p></td>
+<td><p>Labels all hits in a session True if that session is the first session of that user in the data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.is_new_user.html#modelhub.Map.is_new_user" title="modelhub.Map.is_new_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.is_new_user</span></code></a>(data[,&#160;time_aggregation])</p></td>
+<td><p>Labels all hits True if the user is first seen in the period given <cite>time_aggregation</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.is_conversion_event.html#modelhub.Map.is_conversion_event" title="modelhub.Map.is_conversion_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.is_conversion_event</span></code></a>(data,&#160;name)</p></td>
+<td><p>Labels a hit True if it is a conversion event, all other hits are labeled False.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.conversions_counter.html#modelhub.Map.conversions_counter" title="modelhub.Map.conversions_counter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.conversions_counter</span></code></a>(data,&#160;name[,&#160;partition])</p></td>
+<td><p>Counts the total number of conversions given a partition (ie session_id or user_id).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.conversions_in_time.html#modelhub.Map.conversions_in_time" title="modelhub.Map.conversions_in_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.conversions_in_time</span></code></a>(data,&#160;name[,&#160;partition])</p></td>
+<td><p>Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Map.pre_conversion_hit_number.html#modelhub.Map.pre_conversion_hit_number" title="modelhub.Map.pre_conversion_hit_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map.pre_conversion_hit_number</span></code></a>(data,&#160;name[,&#160;...])</p></td>
+<td><p>Returns a count backwards from the first conversion, given the partition.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="aggregation">
+<span id="aggregate-models"/><h2>Aggregation<a class="headerlink" href="#aggregation" title="Permalink to this headline">&#182;</a></h2>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Aggregate.unique_users.html#modelhub.Aggregate.unique_users" title="modelhub.Aggregate.unique_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate.unique_users</span></code></a>(data[,&#160;groupby])</p></td>
+<td><p>Calculate the unique users in the Objectiv <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Aggregate.unique_sessions.html#modelhub.Aggregate.unique_sessions" title="modelhub.Aggregate.unique_sessions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate.unique_sessions</span></code></a>(data[,&#160;groupby])</p></td>
+<td><p>Calculate the unique sessions in the Objectiv <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Aggregate.session_duration.html#modelhub.Aggregate.session_duration" title="modelhub.Aggregate.session_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate.session_duration</span></code></a>(data[,&#160;groupby,&#160;...])</p></td>
+<td><p>Calculate the average duration of sessions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modelhub_api_reference/modelhub.Aggregate.frequency.html#modelhub.Aggregate.frequency" title="modelhub.Aggregate.frequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Aggregate.frequency</span></code></a>(data)</p></td>
+<td><p>Calculate a frequency table for the number of users by number of sessions.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              

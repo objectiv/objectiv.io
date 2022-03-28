@@ -1,0 +1,36 @@
+<div>
+                
+  <section id="modelhub-aggregate-unique-sessions">
+<h1>modelhub.Aggregate.unique_sessions<a class="headerlink" href="#modelhub-aggregate-unique-sessions" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelhub.Aggregate.unique_sessions">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/aggregate.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhub.Aggregate.unique_sessions" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Calculate the unique sessions in the Objectiv <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame"><em>bach.dataframe.DataFrame</em></a>) &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>groupby</strong> (<em>Union</em><em>[</em><em>List</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.series.series.Series"><em>bach.series.series.Series</em></a><em>]</em><em>]</em><em>, </em><em>str</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.series.series.Series"><em>bach.series.series.Series</em></a><em>, </em><em>sql_models.constants.NotSet</em><em>]</em>) &#8211; </p><p>sets the column(s) to group by.</p>
+<ul>
+<li><p>if not_set it defaults to using <a class="reference internal" href="modelhub.ModelHub.time_agg.html#modelhub.ModelHub.time_agg" title="modelhub.ModelHub.time_agg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.time_agg</span></code></a>.</p></li>
+<li><p>if None it aggregates over all data.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>series with results.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bach.series.series_numeric.SeriesInt64</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

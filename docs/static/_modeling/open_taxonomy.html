@@ -1,0 +1,139 @@
+<div>
+                
+  <section id="open-taxonomy-how-to">
+<h1>Open taxonomy how-to<a class="headerlink" href="#open-taxonomy-how-to" title="Permalink to this headline">&#182;</a></h1>
+<p>This example demonstrates what you can do with the Objectiv Bach modeling library and a dataset that was validated against the <a class="reference external" href="https://objectiv.io/docs/taxonomy/">open analytics taxonomy</a>.</p>
+<p>This example is also available in a <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/open-taxonomy-how-to.ipynb">notebook</a>
+to run on your own data or use our
+<a class="reference external" href="https://objectiv.io/docs/home/quickstart-guide/">quickstart</a> to try it out with demo data in 5 minutes.</p>
+<p>At first we have to instantiate the Objectiv DataFrame object. See
+<a class="reference internal" href="example_notebooks.html#get-started-with-objectiv"><span class="std std-ref">Getting started with Objectiv</span></a> for more info on how to instantiate the object.</p>
+<section id="the-data">
+<h2>The data<a class="headerlink" href="#the-data" title="Permalink to this headline">&#182;</a></h2>
+<p>The index contains a unique identifyer for every hit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">index_dtypes</span>
+</pre></div>
+</div>
+<p>The dtypes of columns can be displayed with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>day</cite>: the day of the session as a date.</p></li>
+<li><p><cite>moment</cite>: the exact moment of the event.</p></li>
+<li><p><cite>user_id</cite>: the unique identifyer of the user based on the cookie.</p></li>
+<li><p><cite>global_contexts</cite>: a json-like data column that stores additional information on the event that is logged. This includes data like device data, application data, and cookie information. See below for more detailed explanation.</p></li>
+<li><p><cite>location_stack</cite>: a json-like data column that stores information on the exact location where the event is triggered in the product&#8217;s UI. See below for more detailed explanation.</p></li>
+<li><p><cite>event_type</cite>: the type of event that is logged.</p></li>
+<li><p><cite>stack_event_types</cite>: the parents of the event_type.</p></li>
+<li><p><cite>session_id</cite>: a unique incremented integer id for each session. Starts at 1 for the selected data in the DataFrame.</p></li>
+<li><p><cite>session_hit_number</cite>: a incremented integer id for each hit in session ordered by moment.</p></li>
+</ul>
+<p>Preview of the data. We show the latest PressEvents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">event_type</span> <span class="o">==</span> <span class="s1">'PressEvent'</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'moment'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="the-open-taxonomy">
+<h2>The Open Taxonomy<a class="headerlink" href="#the-open-taxonomy" title="Permalink to this headline">&#182;</a></h2>
+<p>Data in a DataFrame created with <cite>get_objectiv_dataframe()</cite> follows the principles of the <a class="reference external" href="https://objectiv.io/docs/taxonomy/">open analytics taxonomy</a> and is stored as such. Therefore it adheres to the three principles of how events are structured.</p>
+<ul class="simple">
+<li><p><strong>event_type</strong>: describes the kind of interactive or non-interactive event.</p></li>
+<li><p><strong>location_stack</strong>: describes where an event originated from in the visual UI.</p></li>
+<li><p><strong>global_context</strong>: general information to an event.</p></li>
+</ul>
+<p>The following section will go through these concepts one by one.</p>
+<section id="event-type">
+<h3>event_type<a class="headerlink" href="#event-type" title="Permalink to this headline">&#182;</a></h3>
+<p>The event type describes what kind of event is triggered. The goal of the open taxonomy is to label all interactive and non-interactive events in a standardized way. Together with the location stack, the event_type &#8216;defines&#8217; what happened with or on the product.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="s1">'2022-01-10'</span><span class="p">]</span><span class="o">.</span><span class="n">event_type</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="location-stack-global-contexts">
+<h3>location_stack &amp; global_contexts<a class="headerlink" href="#location-stack-global-contexts" title="Permalink to this headline">&#182;</a></h3>
+<p>The location stack and global contexts are stored as json type data. Within the DataFrame, it is easy to access data in json data based on position or content.
+<strong>Slicing the json data</strong>
+With the <cite>.json[]</cite> syntax you can slice the array using integers. Instead of integers, dictionaries can also be passed to &#8216;query&#8217; the json array. If the passed dictionary matches a context object in the stack, all objects of the stack starting (or ending, depending on the slice) at that object will be returned.</p>
+<p>In case a json array does not contain the object, <cite>None</cite> is returned. More info at the <a class="reference internal" href="Series/bach.SeriesJsonb.json.html#json-accessor"><span class="std std-ref">api reference</span></a>.</p>
+</section>
+<section id="location-stack">
+<span id="id2"/><h3>location_stack<a class="headerlink" href="#location-stack" title="Permalink to this headline">&#182;</a></h3>
+<p>The <cite>location_stack</cite> column in the DataFrame stores the information on the exact location where the event is triggered in the product. The example used above is the location stack of the link to the DataFrame api reference in the menu on our docs page.</p>
+<p>Because of the specific way the location information is labeled, validated, and stored using the Open
+Taxonomy, it can be used to slice and group your products&#8217; features in an efficient and easy way. The
+column is set as an <cite>objectiv_location_stack</cite> type, and therefore location stack specific methods can be
+used to access the data from the <cite>location_stack</cite>. These methods can be used using the <cite>.ls</cite> accessor on
+the column. The methods are:</p>
+<ul class="simple">
+<li><p>The property accessors <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesLocationStack.ls.html#ls-navigation-features"><span class="std std-ref">.ls.navigation_features</span></a>, <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesLocationStack.ls.html#ls-feature-stack"><span class="std std-ref">.ls.feature_stack</span></a>, <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesLocationStack.ls.html#ls-nice-name"><span class="std std-ref">.ls.nice_name</span></a>.</p></li>
+<li><p>all <a class="reference internal" href="Series/bach.SeriesJsonb.json.html#json-accessor"><span class="std std-ref">methods</span></a> for the json(b) type can also be accessed using <cite>.ls</cite></p></li>
+</ul>
+<p>For example,</p>
+<blockquote>
+<div><p>df.location_stack.ls.nice_name</p>
+</div></blockquote>
+<p>returns &#8216;<em>Link: how-it-works located at Root Location: page-home =&gt; Content: main =&gt; Content: product-intro</em>&#8217; for the location stack mentioned above.</p>
+<p>The full reference of location stack is <a class="reference external" href="https://objectiv.io/docs/taxonomy/location-contexts">here</a>. An
+example location stack for a PressEvent is queried below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">event_type</span> <span class="o">==</span> <span class="s1">'PressEvent'</span><span class="p">]</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="global-contexts">
+<span id="id3"/><h3>global_contexts<a class="headerlink" href="#global-contexts" title="Permalink to this headline">&#182;</a></h3>
+<p>The <cite>global_contexts</cite> column in the DataFrame contain all information that is relevant to the logged event. As it is set as an <cite>objectiv_global_context</cite> type, specific methods can be used to access the data from the <cite>global_contexts</cite>. These methods can be used using the <cite>.gc</cite> accessor on the column. The methods are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modelhub_api_reference/modelhub.SeriesLocationStack.objectiv.html#get-from-context-with-type-series"><span class="std std-ref">.gc.get_from_context_with_type_series(type, key)</span></a>.</p></li>
+<li><p>The property accessors <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesGlobalContexts.global_contexts.html#gc-cookie-id"><span class="std std-ref">.gc.cookie_id</span></a>, <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesGlobalContexts.global_contexts.html#gc-user-agent"><span class="std std-ref">.gc.user_agent</span></a>, <a class="reference internal" href="modelhub_api_reference/modelhub.SeriesGlobalContexts.global_contexts.html#gc-application"><span class="std std-ref">.gc.application</span></a>.</p></li>
+<li><p>all <a class="reference internal" href="Series/bach.SeriesJsonb.json.html#json-accessor"><span class="std std-ref">methods</span></a> for the json(b) type can also be accessed using <cite>.gc</cite></p></li>
+</ul>
+<p>The full <a class="reference external" href="https://objectiv.io/docs/taxonomy/global-contexts">reference of global contexts is here</a>. An
+example is queried below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sampling">
+<h2>Sampling<a class="headerlink" href="#sampling" title="Permalink to this headline">&#182;</a></h2>
+<p>One of the key features to Objectiv Bach is that it runs on your full data set. There can however be situations where you want to experiment with your data, meaning you have to query the full data set often. This can become slow and/or costly.</p>
+<p>To limit these costs it is possible to do operations on a sample of the full data set. All operations can easily be applied at any time to the full data set if that is desired.</p>
+<p>Below we create a sample that randomly selects ~1% of all the rows in the data. A table containing the sampled is written to the database, therefore the <cite>table_name</cite> must be provided when creating the sample.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df_sample</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">get_sample</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="s1">'sample_data'</span><span class="p">,</span> <span class="n">sample_percentage</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Two new columns are created in the sample.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df_sample</span><span class="p">[</span><span class="s1">'root_location_contexts'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sample</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">json</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">df_sample</span><span class="p">[</span><span class="s1">'application'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sample</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">application</span>
+<span class="n">df_sample</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'moment'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Using <cite>.get_unsampled()</cite>, the operations that are done on the sample (the creation of the two columns), are applied to the entire data set:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df_unsampled</span> <span class="o">=</span> <span class="n">df_sample</span><span class="o">.</span><span class="n">get_unsampled</span><span class="p">()</span>
+<span class="n">df_unsampled</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'moment'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The sample can also be used for grouping and aggregating. The example below counts all hits and the unique event_types in the sample:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df_sample_grouped</span> <span class="o">=</span> <span class="n">df_sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'application'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'event_type'</span><span class="p">:</span><span class="s1">'nunique'</span><span class="p">,</span><span class="s1">'session_hit_number'</span><span class="p">:</span><span class="s1">'count'</span><span class="p">})</span>
+<span class="n">df_sample_grouped</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>As can be seen from the counts, unsampling applies the transformation to the entire data set:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df_unsampled_grouped</span> <span class="o">=</span> <span class="n">df_sample_grouped</span><span class="o">.</span><span class="n">get_unsampled</span><span class="p">()</span>
+<span class="n">df_unsampled_grouped</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This concludes this demo.</p>
+<p>We&#8217;ve demonstrated a handful of the operations that Bach supports and hope you&#8217;ve gotten a taste of what Bach can do for your modeling workflow.</p>
+<p>The full Objectiv Bach API reference is available <a class="reference internal" href="reference.html#bach-api-reference"><span class="std std-ref">here</span></a>.</p>
+<p>There is another example that focuses on using the <a class="reference internal" href="modelhub_basics.html#modelhub-basics"><span class="std std-ref">open model hub</span></a>, demonstrating
+how you can use the model hub and Bach to quickly answer common product analytics questions.</p>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              

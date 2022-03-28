@@ -1,0 +1,138 @@
+<div>
+                
+  <section id="modelhub-modelhub-map">
+<h1>modelhub.ModelHub.map<a class="headerlink" href="#modelhub-modelhub-map" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="modelhub.ModelHub.map">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">map</span></span><a class="headerlink" href="#modelhub.ModelHub.map" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Access map methods from the model hub.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mh</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Methods in this class can be used to map data in a DataFrame with Objectiv data to series values.</p>
+<p>Always returns Series with same index as the DataFrame the method is applied to, so the result can be set
+as columns to that DataFrame.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">conversions_counter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'session_id'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Counts the total number of conversions given a partition (ie session_id
+or user_id).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="modelhub.ModelHub.conversion_events.html#modelhub.ModelHub.conversion_events" title="modelhub.ModelHub.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.conversion_events</span></code></a>.</p></li>
+<li><p><strong>partition</strong> &#8211; the partition over which the number of conversions are counted. Can be any column
+of the ObjectivFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesBoolean</span></code></a> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">conversions_in_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'session_id'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Counts the number of time a user is converted at a moment in time given a partition (ie &#8216;session_id&#8217;
+or &#8216;user_id&#8217;).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>name</strong> &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="modelhub.ModelHub.conversion_events.html#modelhub.ModelHub.conversion_events" title="modelhub.ModelHub.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.conversion_events</span></code></a>.</p></li>
+<li><p><strong>partition</strong> &#8211; the partition over which the number of conversions are counted. Can be any column
+in <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesInt64</span></code> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_conversion_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Labels a hit True if it is a conversion event, all other hits are labeled False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>name</strong> &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="modelhub.ModelHub.conversion_events.html#modelhub.ModelHub.conversion_events" title="modelhub.ModelHub.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.conversion_events</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesBoolean</span></code></a> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_first_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Labels all hits in a session True if that session is the first session of that user in the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesBoolean</span></code></a> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">is_new_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Labels all hits True if the user is first seen in the period given <cite>time_aggregation</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>time_aggregation</strong> &#8211; if None, it uses the <a class="reference internal" href="modelhub.ModelHub.time_aggregation.html#modelhub.ModelHub.time_aggregation" title="modelhub.ModelHub.time_aggregation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.time_aggregation</span></code></a> set in ModelHub
+instance.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesBoolean</span></code></a> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">pre_conversion_hit_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'session_id'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Returns a count backwards from the first conversion, given the partition. I.e. first hit before
+converting is 1, second hit before converting 2, etc. Returns None if there are no conversions
+in the partition or after the first conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>name</strong> &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="modelhub.ModelHub.conversion_events.html#modelhub.ModelHub.conversion_events" title="modelhub.ModelHub.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.conversion_events</span></code></a>.</p></li>
+<li><p><strong>partition</strong> &#8211; the partition over which the number of conversions are counted. Can be any column
+in <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesInt64</span></code> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
