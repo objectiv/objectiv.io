@@ -27,5 +27,5 @@ import Mermaid from '@theme/Mermaid';
 | remote_address | string | (public) IP address of the agent that sent the event.                                              |
 
 :::info setting of properties
-The tracker will set the referrer and user_agent properties, while the collector will set the remote_address.
+The tracker will automatically set the referrer and user_agent properties, while the collector will automatically set the remote_address.
 :::
