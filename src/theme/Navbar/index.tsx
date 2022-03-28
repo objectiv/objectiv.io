@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- import React, {useCallback, useState, useEffect} from 'react';
+import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import SearchBar from '@theme/SearchBar';
-import Toggle from '@theme/Toggle';
+import ColorModeToggle from '@theme/ColorModeToggle';
 import {
   useThemeConfig,
   useMobileSecondaryMenuRenderer,
@@ -28,7 +28,9 @@ import IconClose from '@theme/IconClose';
 
 import styles from './styles.module.css';
 
+// OBJECTIV
 import { TrackedButton, TrackedNav, TrackedOverlayContext } from "@objectiv/tracker-react";
+// END OBJECTIV
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -165,7 +167,13 @@ function NavbarMobileSidebar({
   });
 
   return (
-    <TrackedOverlayContext Component={'div'} id={'hamburger-menu'} isVisible={sidebarShown} className="navbar-sidebar">
+    //  OBJECTIV
+    <TrackedOverlayContext 
+      Component={'div'} 
+      id={'hamburger-menu'} 
+      isVisible={sidebarShown} 
+      className="navbar-sidebar">
+    {/* END OBJECTIV */}
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -173,17 +181,19 @@ function NavbarMobileSidebar({
           titleClassName="navbar__title"
         />
         {!colorModeToggle.disabled && (
-          <Toggle
+          <ColorModeToggle
             className={styles.navbarSidebarToggle}
             checked={colorModeToggle.isDarkTheme}
             onChange={colorModeToggle.toggle}
           />
         )}
+        {/* OBJECTIV */}
         <TrackedButton
           type="button"
           title={'close'}
           className="clean-btn navbar-sidebar__close"
           onClick={toggleSidebar}>
+          {/* END OBJECTIV */}
           <IconClose
             color="var(--ifm-color-emphasis-600)"
             className={styles.navbarSidebarCloseSvg}
@@ -238,6 +248,7 @@ function Navbar(): JSX.Element {
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
 
   return (
+    // OBJECTIV
     <TrackedNav id={'navbar-top'}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
@@ -247,9 +258,11 @@ function Navbar(): JSX.Element {
         [styles.navbarHideable]: hideOnScroll,
         [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
       })}>
+    {/* END OBJECTIV */}
       <div className="navbar__inner">
         <div className="navbar__items">
           {(items?.length > 0 || activeDocPlugin) && (
+            // OBJECTIV
             <TrackedButton
               title={'hamburger'}
               aria-label="Navigation bar toggle"
@@ -260,6 +273,7 @@ function Navbar(): JSX.Element {
               onKeyDown={mobileSidebar.toggle}>
               <IconMenu />
             </TrackedButton>
+            // END OBJECTIV
           )}
           <Logo
             className="navbar__brand"
@@ -275,7 +289,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
           {!colorModeToggle.disabled && (
-            <Toggle
+            <ColorModeToggle
               className={styles.toggle}
               checked={colorModeToggle.isDarkTheme}
               onChange={colorModeToggle.toggle}

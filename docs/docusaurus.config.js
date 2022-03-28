@@ -42,6 +42,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: './docs',
           editUrl: 'https://github.com/objectiv/objectiv.io/edit/main/docs/',
+          breadcrumbs: true,  // enabled in beta.17
           showLastUpdateTime: false,
           showLastUpdateAuthor: false
         },
@@ -165,7 +166,16 @@ const config = {
           // Public API key, safe to commit
         apiKey: '57e02ab0593f5338e36b7bff8235a505',
         indexName: 'objectiv',
-        container: 'main'
+        container: 'main',
+        contextualSearch: true,
+        searchParameters: {
+          optionalWords: ['react', 'react native', 'angular', 'browser'],
+          optionalFilters: [
+            'section:tracking<score=3>',
+            'section:modeling<score=2>',
+            'section:taxonomy<score=1>',
+          ],        
+        },
       },
     }),
 };

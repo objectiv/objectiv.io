@@ -32,6 +32,8 @@ Here is a full recap:
 #### ContentContext
 - [TrackedContentContext](/tracking/react/api-reference/trackedContexts/TrackedContentContext.md)
 - [TrackedDiv](/tracking/react/api-reference/trackedElements/TrackedDiv.md)
+- [TrackedFooter](/tracking/react/api-reference/trackedElements/TrackedFooter.md)
+- [TrackedHeader](/tracking/react/api-reference/trackedElements/TrackedHeader.md)
 - [TrackedMain](/tracking/react/api-reference/trackedElements/TrackedMain.md)
 - [TrackedSection](/tracking/react/api-reference/trackedElements/TrackedSection.md)
 
@@ -52,8 +54,6 @@ Here is a full recap:
 #### NavigationContext
 - [TrackedNavigationContext](/tracking/react/api-reference/trackedContexts/TrackedNavigationContext.md)
 - [TrackedNav](/tracking/react/api-reference/trackedElements/TrackedNav.md)
-- [TrackedFooter](/tracking/react/api-reference/trackedElements/TrackedFooter.md)
-- [TrackedHeader](/tracking/react/api-reference/trackedElements/TrackedHeader.md)
 
 #### OverlayContext
 - [TrackedOverlayContext](/tracking/react/api-reference/trackedContexts/TrackedOverlayContext.md)

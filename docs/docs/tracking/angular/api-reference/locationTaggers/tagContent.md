@@ -1,6 +1,6 @@
 # tagContent
 
-Tags a [BrowserTracker:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
+Tags a [BrowserSDK:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
 
 ```typescript
 tagContent = (parameters: {
@@ -11,18 +11,18 @@ tagContent = (parameters: {
 ```
 
 :::info
-This attribute directive builds on top of [BrowserTracker:tagContent](/tracking/browser/api-reference/locationTaggers/tagContent.md)
+This attribute directive builds on top of [BrowserSDK:tagContent](/tracking/browser/api-reference/locationTaggers/tagContent.md)
 :::
 
 ## Parameters
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   |
-| optional | onError | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
+| optional | options | [BrowserSDK:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   |
+| optional | onError | [BrowserSDK:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
-[BrowserTracker:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
+[BrowserSDK:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Usage example
 

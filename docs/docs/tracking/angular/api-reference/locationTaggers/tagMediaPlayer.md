@@ -1,6 +1,6 @@
 # tagMediaPlayer
 
-Tags a [BrowserTracker:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
+Tags a [BrowserSDK:TaggableElement](/tracking/browser/api-reference/definitions/TaggableElement.md) to be tracked as [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
 
 ```typescript
 tagMediaPlayer = (parameters: {
@@ -11,18 +11,18 @@ tagMediaPlayer = (parameters: {
 ```
 
 :::info
-This attribute directive builds on top of [BrowserTracker:tagMediaPlayer](/tracking/browser/api-reference/locationTaggers/tagMediaPlayer.md)
+This attribute directive builds on top of [BrowserSDK:tagMediaPlayer](/tracking/browser/api-reference/locationTaggers/tagMediaPlayer.md)
 :::
 
 ## Parameters
 |          |         | type                                                                                              | default value
 | :-:      | :--     | :--                                                                                               | :--           
 | required | **id**  | string                                                                                            |
-| optional | options | [BrowserTracker:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | 
-| optional | onError | [BrowserTracker:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
+| optional | options | [BrowserSDK:TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | 
+| optional | onError | [BrowserSDK:TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
 ## Returns
-[BrowserTracker:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
+[BrowserSDK:TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Examples
 
