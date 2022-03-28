@@ -13,7 +13,9 @@ import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 
-import { TrackedLinkContext } from "@objectiv/tracker-react";
+// OBJECTIV
+import { TrackedLinkContext, makeTitleFromChildren } from "@objectiv/tracker-react";
+// END OBJECTIV
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -35,11 +37,15 @@ export default function NavbarNavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
+  // OBJECTIV
   const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
+  const linkTitle = makeTitleFromChildren(label);
+  // END OBJECTIV
   return (
+    // OBJECTIV
     <TrackedLinkContext
       Component={Link}
-      title={label}
+      title={linkTitle}
       href={linkTo}
       {...{
         to: linkTo,
@@ -66,5 +72,6 @@ export default function NavbarNavLink({
         label
       )}
     </TrackedLinkContext>
+    // END OBJECTIV
   );
 }

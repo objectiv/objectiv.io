@@ -42,6 +42,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           path: './docs',
           editUrl: 'https://github.com/objectiv/objectiv.io/edit/main/docs/',
+          breadcrumbs: true,  // enabled in beta.17
           showLastUpdateTime: false,
           showLastUpdateAuthor: false
         },

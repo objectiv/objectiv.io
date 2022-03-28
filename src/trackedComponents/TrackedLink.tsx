@@ -2,7 +2,7 @@
  * Copyright 2021-2022 Objectiv B.V.
  */
 
-import Link, { LinkProps } from "@docusaurus/Link";
+import Link, {type Props as LinkProps} from '@docusaurus/Link';
 import { TrackedLinkContext, TrackedLinkContextProps } from "@objectiv/tracker-react";
 import React from 'react';
 

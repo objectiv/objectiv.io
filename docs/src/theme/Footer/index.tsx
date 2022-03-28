@@ -20,7 +20,9 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {type Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
+// OBJECTIV
 import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
+// END OBJECTIV
 
 function FooterLink({
   to,
@@ -35,7 +37,9 @@ function FooterLink({
   return (
     <Link
       className="footer__link-item"
+      // OBJECTIV
       {...tagLink({ id: label, href: href ? prependBaseUrlToHref ? normalizedHref : href : toUrl })}
+      // END OBJECTIV
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -108,10 +112,9 @@ function SimpleLinks({links}: {links: SimpleFooter['links']}) {
   return (
     <div className="footer__links">
       {links.map((item, key) => (
-        <>
+        <React.Fragment key={key}>
           {item.html ? (
             <span
-              key={key}
               className="footer__link-item"
               // Developer provided the HTML, so assume it's safe.
               // eslint-disable-next-line react/no-danger
@@ -125,7 +128,7 @@ function SimpleLinks({links}: {links: SimpleFooter['links']}) {
           {links.length !== key + 1 && (
             <span className="footer__link-separator">·</span>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
@@ -152,7 +155,9 @@ function Footer(): JSX.Element | null {
 
   return (
     <footer
+      // OBJECTIV
       {...tagNavigation({id: 'footer'})}
+      // END OBJECTIV
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>
@@ -175,7 +180,9 @@ function Footer(): JSX.Element | null {
                 {logo.href ? (
                   <Link 
                     href={logo.href} 
+                    // OBJECTIV
                     {...tagLink({ id: logo.alt, href: logo.href })}
+                    // END OBJECTIV
                     className={styles.footerLogoLink}>
                     <FooterLogo
                       alt={logo.alt}
