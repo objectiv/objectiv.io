@@ -225,6 +225,9 @@ nav .DocSearch-Button-Keys span:first-child {
 .navbar-sidebar .menu__link--sublist:after {
   filter: invert(100%);
 }
+.navbar-sidebar .menu__caret {
+  filter: invert(100%);
+}
 
 /** FOOTER **/
 .footer {
