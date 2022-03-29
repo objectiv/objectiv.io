@@ -1,6 +1,7 @@
 ---
 title: Frequently Asked Questions
 slug: /home/the-project/faq
+description: Frequently Asked Questions
 sidebar_label: FAQ
 sidebar_position: 1
 ---
