@@ -1,0 +1,37 @@
+<div>
+                
+  <section id="modelhub-modelhub-get-objectiv-dataframe">
+<h1>modelhub.ModelHub.get_objectiv_dataframe<a class="headerlink" href="#modelhub-modelhub-get-objectiv-dataframe" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelhub.ModelHub.get_objectiv_dataframe">
+<span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">get_objectiv_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhub.ModelHub.get_objectiv_dataframe" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Sets data from sql table into an <a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> object.</p>
+<p>The created DataFrame points to where the data is stored in the sql database, makes several
+transformations and sets the right data types for all columns. As such, the models from the model hub
+can be applied to a DataFrame created with this method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; the url that indicate database dialect and connection arguments. If not given, env DSN
+is used to create one. If that&#8217;s not there, the default of
+&#8216;postgresql://objectiv:@localhost:5432/objectiv&#8217; will be used.</p></li>
+<li><p><strong>table_name</strong> (<em>str</em>) &#8211; the name of the sql table where the data is stored.</p></li>
+<li><p><strong>start_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; first date for which data is loaded to the DataFrame. If None, data is loaded from
+the first date in the sql table. Format as &#8216;YYYY-MM-DD&#8217;.</p></li>
+<li><p><strong>end_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; last date for which data is loaded to the DataFrame. If None, data is loaded up to
+and including the last date in the sql table. Format as &#8216;YYYY-MM-DD&#8217;.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> with Objectiv data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

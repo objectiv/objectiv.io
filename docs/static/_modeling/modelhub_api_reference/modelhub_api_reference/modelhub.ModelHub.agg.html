@@ -1,0 +1,103 @@
+<div>
+                
+  <section id="modelhub-modelhub-agg">
+<h1>modelhub.ModelHub.agg<a class="headerlink" href="#modelhub-modelhub-agg" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="modelhub.ModelHub.agg">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">agg</span></span><a class="headerlink" href="#modelhub.ModelHub.agg" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>Access aggregation methods from the model hub. Same as <a class="reference internal" href="modelhub.ModelHub.aggregate.html#modelhub.ModelHub.aggregate" title="modelhub.ModelHub.aggregate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">aggregate</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mh</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Models that return aggregated data in some form from the original DataFrame with Objectiv data.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate a frequency table for the number of users by number of sessions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> &#8211; <a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>series with results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">session_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_bounces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the average duration of sessions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>groupby</strong> &#8211; </p><p>sets the column(s) to group by.</p>
+<ul>
+<li><p>if not_set it defaults to using <a class="reference internal" href="modelhub.ModelHub.time_agg.html#modelhub.ModelHub.time_agg" title="modelhub.ModelHub.time_agg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.time_agg</span></code></a>.</p></li>
+<li><p>if None it aggregates over all data.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>series with results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_sessions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the unique sessions in the Objectiv <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>groupby</strong> &#8211; </p><p>sets the column(s) to group by.</p>
+<ul>
+<li><p>if not_set it defaults to using <a class="reference internal" href="modelhub.ModelHub.time_agg.html#modelhub.ModelHub.time_agg" title="modelhub.ModelHub.time_agg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.time_agg</span></code></a>.</p></li>
+<li><p>if None it aggregates over all data.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>series with results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">unique_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the unique users in the Objectiv <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>groupby</strong> &#8211; </p><p>sets the column(s) to group by.</p>
+<ul>
+<li><p>if not_set it defaults to using <a class="reference internal" href="modelhub.ModelHub.time_agg.html#modelhub.ModelHub.time_agg" title="modelhub.ModelHub.time_agg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.time_agg</span></code></a>.</p></li>
+<li><p>if None it aggregates over all data.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>series with results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
