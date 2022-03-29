@@ -15,8 +15,8 @@ This DataFrame points to the data and all operations are done on this object. A 
 optionally be passed to limit the underlying data that is queried. The <cite>time_aggregation</cite> parameter determines
 the default formatting of the timestamp of events. This is useful for grouping to different time aggregations,
 ie. monthly or daily.</p>
-<p>In the examples we assume that Objectiv data is store in a table called &#8216;example&#8217; in a data base that can be
-accessed with <cite>db_url</cite>.</p>
+<p>In the example we assume that the data collected with Objectiv&#8217;s tracker is stored in a table called
+&#8216;example&#8217; in a database that can be accessed with <cite>db_url</cite>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">modelhub</span> <span class="kn">import</span> <span class="n">ModelHub</span>
 <span class="c1"># instantiate the model hub</span>
 <span class="n">modelhub</span> <span class="o">=</span> <span class="n">ModelHub</span><span class="p">(</span><span class="n">time_aggregation</span><span class="o">=</span><span class="s1">'YYYY-MM-DD'</span><span class="p">)</span>
