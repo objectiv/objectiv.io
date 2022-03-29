@@ -1,6 +1,6 @@
 ---
 sidebar_label: Overview
-title: trackedContexts
+title: Tracked Contexts
 sidebar_position: 1
 ---
 
