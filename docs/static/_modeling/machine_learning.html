@@ -2,7 +2,7 @@
                 
   <section id="bach-and-sklearn">
 <span id="machine-learning"/><h1>Bach and sklearn<a class="headerlink" href="#bach-and-sklearn" title="Permalink to this headline">&#182;</a></h1>
-<p>With Objectiv you can do all your analysis and Machine Learning directly on the raw data in your sql store.
+<p>With Objectiv you can do all your analysis and Machine Learning directly on the raw data in your SQL database.
 This example shows in the simplest way possible how you can use Objectiv to create a basic feature set and use
 sklearn to do machine learning on this data set. We also have an example that goes deeper into
 feature engineering <a class="reference external" href="feature_engineering.html">here</a>.</p>
@@ -11,8 +11,9 @@ to run on your own data or use our
 <a class="reference external" href="https://objectiv.io/docs/home/quickstart-guide/">quickstart</a> to try it out with demo data in 5 minutes.</p>
 <p>At first we have to instantiate the Objectiv DataFrame object. See
 <a class="reference internal" href="example_notebooks.html#get-started-with-objectiv"><span class="std std-ref">Getting started with Objectiv</span></a> for more info on how to instantiate the object.</p>
-<p>This object points to all data in the data set. Too large to run in pandas and therefore sklearn. For the
-data set that we need, we aggregate to user level, at which point it is small enough to fit in memory.</p>
+<p>This object points to all data in the data set. Without any aggregation, this dataset is too large to
+for pandas and sklearn. For the data set that we need, we aggregate to user level, at which point it is
+small enough to fit in memory.</p>
 <p>We create a data set of per user all the root locations that the user clicked on.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># extract the root location from the location stack</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'root'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">ls</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'RootLocationContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'id'</span><span class="p">)</span>

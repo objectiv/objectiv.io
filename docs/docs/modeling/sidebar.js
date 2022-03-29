@@ -78,7 +78,7 @@ module.exports = [
                                     },
                                     {
                                         "type": "link",
-                                        "label": " Export models to sql",
+                                        "label": " Export models to SQL",
                                         "href": "/modeling/modelhub_basics#export-models-to-sql"
                                     },
                                     {
