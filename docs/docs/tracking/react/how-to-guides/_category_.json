@@ -2,6 +2,7 @@
   "label": "How-to-Guides",
   "position": 2,
   "link": {
+    "slug": "/tracking/react/how-to-guides",
     "type": "generated-index"
   }
 }
