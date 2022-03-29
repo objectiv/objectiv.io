@@ -63,7 +63,8 @@ const config = {
         // only load the post-build plugin when creating a production build
         path.resolve(__dirname, 'src/plugins/post-build/'),
         {
-            skip: objectivEnvironment !== 'production'
+            skip: objectivEnvironment !== 'production' && objectivEnvironment !== 'testing',
+            environment: objectivEnvironment
         }
     ]
   ],
