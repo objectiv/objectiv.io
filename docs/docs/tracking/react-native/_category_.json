@@ -1,4 +1,8 @@
 {
   "label": "React Native SDK",
-  "position": 3
+  "position": 3,
+  "link": {
+    "type": "doc", 
+    "id": "introduction"
+  }
 }

@@ -1,4 +1,8 @@
 {
   "label": "Browser SDK",
-  "position": 4
+  "position": 4,
+  "link": {
+    "type": "doc", 
+    "id": "introduction"
+  }
 }

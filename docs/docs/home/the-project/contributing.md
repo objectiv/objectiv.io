@@ -1,6 +1,7 @@
 ---
 title: Contributing
 slug: /home/the-project/contribute
+description: How to contribute to Objectiv
 sidebar_label: Contribute
 sidebar_position: 3
 ---

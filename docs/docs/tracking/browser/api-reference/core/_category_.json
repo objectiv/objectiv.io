@@ -1,4 +1,8 @@
 {
   "label": "Core Tracker",
-  "position": 11
+  "position": 11,
+  "link": {
+    "type": "doc", 
+    "id": "overview"
+  }
 }
