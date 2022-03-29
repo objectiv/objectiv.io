@@ -1,6 +1,6 @@
 # HttpContext
 
-[HttpContext](/taxonomy/reference/global-contexts/HttpContext.md) carries information about Referrer and User Agent.
+[HttpContext](/taxonomy/reference/global-contexts/HttpContext.md) carries information about Referrer, User Agent and remote address.
 
 This Plugin automatically retrieves the former from the [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) and the latter from the [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgent).
 

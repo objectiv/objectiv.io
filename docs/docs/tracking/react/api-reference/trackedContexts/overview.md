@@ -1,6 +1,6 @@
 ---
 sidebar_label: Overview
-title: Location Wrappers
+title: Tracked Contexts
 sidebar_position: 1
 ---
 

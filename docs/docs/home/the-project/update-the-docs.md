@@ -1,6 +1,7 @@
 ---
 title: Updating Documentation Pages
 slug: /home/the-project/update-the-docs
+description: How to update these Documentation pages
 sidebar_label: Update Docs
 sidebar_position: 4
 ---

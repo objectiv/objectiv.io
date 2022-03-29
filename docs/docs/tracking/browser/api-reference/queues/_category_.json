@@ -1,4 +1,8 @@
 {
   "label": "Tracker Queues",
-  "position": 9
+  "position": 9,
+  "link": {
+    "type": "doc", 
+    "id": "overview"
+  }
 }
