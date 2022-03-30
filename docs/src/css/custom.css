@@ -306,7 +306,7 @@ h1[id^=bach], h1[id^=modelhub] {
 }
 .hide-toctree-ul {
   display: none;
-}
+} 
 
 /* Hide/show anchors on auto-generated modeling docs */
 .sphinxAnchor:hover > a.headerlink {
