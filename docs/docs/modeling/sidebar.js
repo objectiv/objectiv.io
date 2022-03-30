@@ -8,11 +8,12 @@ module.exports = [
     {
         "type": "category",
         "label": "Example notebooks",
-        "link": {
-            "type": "doc",
-            "id": "modeling/example_notebooks"
-        },
         "items": [
+            {
+                "type": "doc",
+                "label": "Overview",
+                "id": "modeling/example_notebooks"
+            },
             {
                 "type": "link",
                 "label": "Getting started with Objectiv",
@@ -21,176 +22,31 @@ module.exports = [
             {
                 "type": "category",
                 "label": "Examples",
-                "link": {
-                    "type": "generated-index",
-                    "title": "Examples",
-                    "slug": "/modeling/example_notebooks/examples"
-                },
                 "items": [
                     {
-                        "type": "category",
+                        "type": "link",
+                        "label": "Overview",
+                        "href": "/modeling/example_notebooks#examples"
+                    },
+                    {
+                        "type": "doc",
                         "label": "Open model hub basics",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/modelhub_basics"
-                        },
-                        "items": [
-                            {
-                                "type": "link",
-                                "label": "Using the open model hub",
-                                "href": "/modeling/modelhub_basics#using-the-open-model-hub"
-                            },
-                            {
-                                "type": "link",
-                                "label": "A simple aggregation model",
-                                "href": "/modeling/modelhub_basics#a-simple-aggregation-model"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Using",
-                                "href": "/modeling/modelhub_basics#using-map-with-the-model-hub-combining-models"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Map, filter, aggregate",
-                                "href": "/modeling/modelhub_basics#map-filter-aggregate"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Combining model results",
-                                "href": "/modeling/modelhub_basics#combining-model-results"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Using multiple model hub filters",
-                                "href": "/modeling/modelhub_basics#using-multiple-model-hub-filters"
-                            },
-                            {
-                                "type": "link",
-                                "label": "What\u2019s next?",
-                                "href": "/modeling/modelhub_basics#what-s-next"
-                            }
-                        ]
+                        "id": "modeling/modelhub_basics"
                     },
                     {
-                        "type": "category",
+                        "type": "doc",
                         "label": "Basic product analytics",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/product_analytics"
-                        },
-                        "items": [
-                            {
-                                "type": "link",
-                                "label": "Unique users",
-                                "href": "/modeling/product_analytics#unique-users"
-                            },
-                            {
-                                "type": "link",
-                                "label": "User time spent",
-                                "href": "/modeling/product_analytics#user-time-spent"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Top used features",
-                                "href": "/modeling/product_analytics#top-used-features"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Most used product areas",
-                                "href": "/modeling/product_analytics#most-used-product-areas"
-                            },
-                            {
-                                "type": "link",
-                                "label": "User origin",
-                                "href": "/modeling/product_analytics#user-origin"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Marketing",
-                                "href": "/modeling/product_analytics#marketing"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Conversions",
-                                "href": "/modeling/product_analytics#conversions"
-                            }
-                        ]
+                        "id": "modeling/product_analytics"
                     },
                     {
-                        "type": "category",
+                        "type": "doc",
                         "label": "Open taxonomy how-to",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/open_taxonomy"
-                        },
-                        "items": [
-                            {
-                                "type": "link",
-                                "label": "The data",
-                                "href": "/modeling/open_taxonomy#the-data"
-                            },
-                            {
-                                "type": "link",
-                                "label": "The Open Taxonomy",
-                                "href": "/modeling/open_taxonomy#the-open-taxonomy"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Sampling",
-                                "href": "/modeling/open_taxonomy#sampling"
-                            }
-                        ]
+                        "id": "modeling/open_taxonomy"
                     },
                     {
-                        "type": "category",
+                        "type": "doc",
                         "label": "Feature engineering with Bach",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/feature_engineering"
-                        },
-                        "items": [
-                            {
-                                "type": "link",
-                                "label": "Creating a feature set",
-                                "href": "/modeling/feature_engineering#creating-a-feature-set"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Check missing values",
-                                "href": "/modeling/feature_engineering#check-missing-values"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Creating the variables",
-                                "href": "/modeling/feature_engineering#creating-the-variables"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Fill empty values",
-                                "href": "/modeling/feature_engineering#fill-empty-values"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Describe the data set",
-                                "href": "/modeling/feature_engineering#describe-the-data-set"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Visualize the data",
-                                "href": "/modeling/feature_engineering#visualize-the-data"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Add time feature",
-                                "href": "/modeling/feature_engineering#add-time-feature"
-                            },
-                            {
-                                "type": "link",
-                                "label": "Export to pandas for sklearn",
-                                "href": "/modeling/feature_engineering#export-to-pandas-for-sklearn"
-                            }
-                        ]
+                        "id": "modeling/feature_engineering"
                     },
                     {
                         "type": "doc",
@@ -204,20 +60,21 @@ module.exports = [
     {
         "type": "category",
         "label": "Model overview",
-        "link": {
-            "type": "doc",
-            "id": "modeling/models"
-        },
         "items": [
+            {
+                "type": "doc",
+                "label": "Overview",
+                "id": "modeling/models"
+            },
             {
                 "type": "category",
                 "label": "Mapping",
-                "link": {
-                    "type": "generated-index",
-                    "title": "Mapping",
-                    "slug": "/modeling/models/mapping"
-                },
                 "items": [
+                    {
+                        "type": "link",
+                        "label": "Overview",
+                        "href": "/modeling/models#mapping"
+                    },
                     {
                         "type": "doc",
                         "label": "is_first_session",
@@ -253,12 +110,12 @@ module.exports = [
             {
                 "type": "category",
                 "label": "Aggregation",
-                "link": {
-                    "type": "generated-index",
-                    "title": "Aggregation",
-                    "slug": "/modeling/models/aggregation"
-                },
                 "items": [
+                    {
+                        "type": "link",
+                        "label": "Overview",
+                        "href": "/modeling/models#aggregation"
+                    },
                     {
                         "type": "doc",
                         "label": "unique_users",
@@ -286,28 +143,30 @@ module.exports = [
     {
         "type": "category",
         "label": "Open model hub API reference",
-        "link": {
-            "type": "doc",
-            "id": "modeling/modelhub_api_reference"
-        },
         "items": [
+            {
+                "type": "doc",
+                "label": "Overview",
+                "id": "modeling/modelhub_api_reference"
+            },
             {
                 "type": "category",
                 "label": "Reference",
-                "link": {
-                    "type": "generated-index",
-                    "title": "Reference",
-                    "slug": "/modeling/modelhub_api_reference/reference"
-                },
                 "items": [
+                    {
+                        "type": "link",
+                        "label": "Overview",
+                        "href": "/modeling/modelhub_api_reference#reference"
+                    },
                     {
                         "type": "category",
                         "label": "ModelHub",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/modelhub_api_reference/modelhub.ModelHub"
-                        },
                         "items": [
+                            {
+                                "type": "doc",
+                                "label": "Overview",
+                                "id": "modeling/modelhub_api_reference/modelhub.ModelHub"
+                            },
                             {
                                 "type": "doc",
                                 "label": "add_conversion_event",
@@ -358,11 +217,12 @@ module.exports = [
                     {
                         "type": "category",
                         "label": "SeriesGlobalContexts",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts"
-                        },
                         "items": [
+                            {
+                                "type": "doc",
+                                "label": "Overview",
+                                "id": "modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts"
+                            },
                             {
                                 "type": "doc",
                                 "label": "gc",
@@ -388,11 +248,12 @@ module.exports = [
                     {
                         "type": "category",
                         "label": "SeriesLocationStack",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/modelhub_api_reference/modelhub.SeriesLocationStack"
-                        },
                         "items": [
+                            {
+                                "type": "doc",
+                                "label": "Overview",
+                                "id": "modeling/modelhub_api_reference/modelhub.SeriesLocationStack"
+                            },
                             {
                                 "type": "doc",
                                 "label": "location_stack",
@@ -422,19 +283,21 @@ module.exports = [
     {
         "type": "category",
         "label": "Bach",
-        "link": {
-            "type": "doc",
-            "id": "modeling/bach"
-        },
         "items": [
+            {
+                "type": "doc",
+                "label": "Overview",
+                "id": "modeling/bach"
+            },
             {
                 "type": "category",
                 "label": "What is Bach?",
-                "link": {
-                    "type": "doc",
-                    "id": "modeling/bach_whatisbach"
-                },
                 "items": [
+                    {
+                        "type": "doc",
+                        "label": "Overview",
+                        "id": "modeling/bach_whatisbach"
+                    },
                     {
                         "type": "link",
                         "label": "Get started with Bach",
@@ -445,11 +308,12 @@ module.exports = [
             {
                 "type": "category",
                 "label": "Core Concepts",
-                "link": {
-                    "type": "doc",
-                    "id": "modeling/bach_core_concepts"
-                },
                 "items": [
+                    {
+                        "type": "doc",
+                        "label": "Overview",
+                        "id": "modeling/bach_core_concepts"
+                    },
                     {
                         "type": "link",
                         "label": "Delayed database operations",
@@ -465,11 +329,12 @@ module.exports = [
             {
                 "type": "category",
                 "label": "Bach basics",
-                "link": {
-                    "type": "doc",
-                    "id": "modeling/bach_examples"
-                },
                 "items": [
+                    {
+                        "type": "doc",
+                        "label": "Overview",
+                        "id": "modeling/bach_examples"
+                    },
                     {
                         "type": "link",
                         "label": "Create a DataFrame from a database table",
@@ -510,28 +375,30 @@ module.exports = [
             {
                 "type": "category",
                 "label": "API Reference",
-                "link": {
-                    "type": "doc",
-                    "id": "modeling/bach_reference"
-                },
                 "items": [
+                    {
+                        "type": "doc",
+                        "label": "Overview",
+                        "id": "modeling/bach_reference"
+                    },
                     {
                         "type": "category",
                         "label": "DataFrame",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/DataFrame"
-                        },
                         "items": [
+                            {
+                                "type": "doc",
+                                "label": "Overview",
+                                "id": "modeling/DataFrame"
+                            },
                             {
                                 "type": "category",
                                 "label": "Usage",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Usage",
-                                    "slug": "/modeling/DataFrame/usage"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/DataFrame#usage"
+                                    },
                                     {
                                         "type": "link",
                                         "label": "Getting & Setting columns",
@@ -557,20 +424,21 @@ module.exports = [
                             {
                                 "type": "category",
                                 "label": "Reference",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Reference",
-                                    "slug": "/modeling/DataFrame/reference"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/DataFrame#reference"
+                                    },
                                     {
                                         "type": "category",
                                         "label": "DataFrame",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/DataFrame/bach.DataFrame"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/DataFrame/bach.DataFrame"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "agg",
@@ -913,21 +781,21 @@ module.exports = [
                             {
                                 "type": "category",
                                 "label": "Reference by function",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Reference by function",
-                                    "slug": "/modeling/DataFrame/reference-by-function"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/DataFrame#reference-by-function"
+                                    },
                                     {
                                         "type": "category",
                                         "label": "Creation",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Creation",
-                                            "slug": "/modeling/DataFrame/creation"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#creation"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "from_table",
@@ -953,12 +821,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Value accessors",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Value accessors",
-                                            "slug": "/modeling/DataFrame/value-accessors"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#value-accessors"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "head",
@@ -984,12 +852,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Attributes and underlying data",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Attributes and underlying data",
-                                            "slug": "/modeling/DataFrame/attributes-and-underlying-data"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#attributes-and-underlying-data"
+                                            },
                                             {
                                                 "type": "link",
                                                 "label": "Axes",
@@ -1015,12 +883,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Reshaping, indexing, sorting & merging",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Reshaping, indexing, sorting & merging",
-                                            "slug": "/modeling/DataFrame/reshaping-indexing-sorting-merging"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#reshaping-indexing-sorting-merging"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "sort_index",
@@ -1096,12 +964,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Aggregation & windowing",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Aggregation & windowing",
-                                            "slug": "/modeling/DataFrame/aggregation-windowing"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#aggregation-windowing"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "agg",
@@ -1147,12 +1015,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Computations & descriptive stats",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Computations & descriptive stats",
-                                            "slug": "/modeling/DataFrame/computations-descriptive-stats"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/DataFrame#computations-descriptive-stats"
+                                            },
                                             {
                                                 "type": "link",
                                                 "label": "All types",
@@ -1172,20 +1040,21 @@ module.exports = [
                     {
                         "type": "category",
                         "label": "Series",
-                        "link": {
-                            "type": "doc",
-                            "id": "modeling/Series"
-                        },
                         "items": [
+                            {
+                                "type": "doc",
+                                "label": "Overview",
+                                "id": "modeling/Series"
+                            },
                             {
                                 "type": "category",
                                 "label": "Usage",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Usage",
-                                    "slug": "/modeling/Series/usage"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/Series#usage"
+                                    },
                                     {
                                         "type": "link",
                                         "label": "Slicing and index access",
@@ -1221,20 +1090,21 @@ module.exports = [
                             {
                                 "type": "category",
                                 "label": "Reference",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Reference",
-                                    "slug": "/modeling/Series/reference"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/Series#reference"
+                                    },
                                     {
                                         "type": "category",
                                         "label": "Series",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.Series"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.Series"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "agg",
@@ -1505,11 +1375,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "SeriesBoolean",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.SeriesBoolean"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.SeriesBoolean"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "max",
@@ -1525,11 +1396,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "SeriesAbstractNumeric",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.SeriesAbstractNumeric"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.SeriesAbstractNumeric"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "cut",
@@ -1580,11 +1452,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "SeriesAbstractDateTime",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.SeriesAbstractDateTime"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.SeriesAbstractDateTime"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "dt",
@@ -1595,11 +1468,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "SeriesString",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.SeriesString"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.SeriesString"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "str",
@@ -1610,11 +1484,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "SeriesJsonb",
-                                        "link": {
-                                            "type": "doc",
-                                            "id": "modeling/Series/bach.SeriesJsonb"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "Overview",
+                                                "id": "modeling/Series/bach.SeriesJsonb"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "json",
@@ -1632,21 +1507,21 @@ module.exports = [
                             {
                                 "type": "category",
                                 "label": "Reference by function",
-                                "link": {
-                                    "type": "generated-index",
-                                    "title": "Reference by function",
-                                    "slug": "/modeling/Series/reference-by-function"
-                                },
                                 "items": [
+                                    {
+                                        "type": "link",
+                                        "label": "Overview",
+                                        "href": "/modeling/Series#reference-by-function"
+                                    },
                                     {
                                         "type": "category",
                                         "label": "Creation / re-framing",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Creation / re-framing",
-                                            "slug": "/modeling/Series/creation-re-framing"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#creation-re-framing"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "from_const",
@@ -1667,12 +1542,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Value accessors",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Value accessors",
-                                            "slug": "/modeling/Series/value-accessors"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#value-accessors"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "head",
@@ -1703,12 +1578,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Attributes and underlying data",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Attributes and underlying data",
-                                            "slug": "/modeling/Series/attributes-and-underlying-data"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#attributes-and-underlying-data"
+                                            },
                                             {
                                                 "type": "link",
                                                 "label": "Axes",
@@ -1729,12 +1604,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Comparison and set operations",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Comparison and set operations",
-                                            "slug": "/modeling/Series/comparison-and-set-operations"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#comparison-and-set-operations"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "all_values",
@@ -1770,12 +1645,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Conversion, reshaping, sorting",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Conversion, reshaping, sorting",
-                                            "slug": "/modeling/Series/conversion-reshaping-sorting"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#conversion-reshaping-sorting"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "sort_index",
@@ -1816,12 +1691,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Function application, aggregation & windowing",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Function application, aggregation & windowing",
-                                            "slug": "/modeling/Series/function-application-aggregation-windowing"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#function-application-aggregation-windowing"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "agg",
@@ -1842,12 +1717,12 @@ module.exports = [
                                     {
                                         "type": "category",
                                         "label": "Computations & descriptive stats",
-                                        "link": {
-                                            "type": "generated-index",
-                                            "title": "Computations & descriptive stats",
-                                            "slug": "/modeling/Series/computations-descriptive-stats"
-                                        },
                                         "items": [
+                                            {
+                                                "type": "link",
+                                                "label": "Overview",
+                                                "href": "/modeling/Series#computations-descriptive-stats"
+                                            },
                                             {
                                                 "type": "link",
                                                 "label": "All types",

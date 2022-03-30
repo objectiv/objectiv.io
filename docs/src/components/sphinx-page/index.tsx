@@ -133,7 +133,6 @@ const SphinxPage = (props) => {
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
-                    console.log(`found link: ${a.href} // ${currentLocation}` );
                     // a link is internal if the first part matches the current location,
                     // or the tld's match (staging vs production
                     // or if it's a relative URL
@@ -174,8 +173,18 @@ const SphinxPage = (props) => {
 
                         if ( currentPage == '' || currentPage[0] == '#' ){
                             const toRemove = currentPageComponents.pop();
-                            a.href = a.href.replace(toRemove + '/', '');
-                            console.log(`we need to fix this ${toRemove}`);
+                            // see if this component is in the URL, if so, we remove it, and we're done
+                            if ( a.href.indexOf(toRemove) != -1 ) {
+                                a.href = a.href.replace(toRemove + '/', '');
+                            } else {
+                                const toRemove2 = currentPageComponents.pop();
+                                // else, we move further up the URL
+                                // case /modeling/model_hub_api_reference/DataFrame/bach.DataFrame.method
+                                // remove model_hub_api_reference
+                                if ( a.href.indexOf(toRemove2) != -1 ){
+                                    a.href = a.href.replace(toRemove2 + '/', '');
+                                }
+                            }
                         }
 
                         // fix content of (internal) permalinks, change from ¶ to #
