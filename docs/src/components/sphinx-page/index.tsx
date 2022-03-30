@@ -174,8 +174,17 @@ const SphinxPage = (props) => {
 
                         if ( currentPage == '' || currentPage[0] == '#' ){
                             const toRemove = currentPageComponents.pop();
-                            a.href = a.href.replace(toRemove + '/', '');
-                            console.log(`we need to fix this ${toRemove}`);
+                            if ( a.href.indexOf(toRemove) != -1 ) {
+                                a.href = a.href.replace(toRemove + '/', '');
+                                console.log(`removing ${toRemove}`);
+                            } else {
+                                const toRemove2 = currentPageComponents.pop();
+                                if ( a.href.indexOf(toRemove2) != -1 ){
+                                    console.log(`Found something else: ${toRemove2}`);
+                                    a.href = a.href.replace(toRemove2 + '/', '');
+                                }
+                                console.log(`Removing something else ${toRemove2}`);
+                            }
                         }
 
                         // fix content of (internal) permalinks, change from ¶ to #
