@@ -170,8 +170,11 @@ const SphinxPage = (props) => {
                          */
                         const currentPageComponents = currentLocation.split('/');
                         const currentPage = currentPageComponents.pop();
-
-                        if ( currentPage == '' || currentPage[0] == '#' ){
+                        // fix content of (internal) permalinks, change from ¶ to #
+                        if ( a.className == 'headerlink' && a.text == '¶' ){
+                            a.text = '#';
+                        } else if ( currentPage == '' || currentPage[0] == '#' ){
+                            // don't mess with the permalinks, they are fine as they are
                             const toRemove = currentPageComponents.pop();
 
                             // see if this component is in the URL, if so, we remove it, and we're done
@@ -190,10 +193,6 @@ const SphinxPage = (props) => {
                             }
                         }
 
-                        // fix content of (internal) permalinks, change from ¶ to #
-                        if ( a.className == 'headerlink' && a.text == '¶' ){
-                            a.text = '#';
-                        }
                     } else {
                         // add target="_blank" to the <a> link for non-internal links, such as to pandas docs
                         a.target = '_blank';
