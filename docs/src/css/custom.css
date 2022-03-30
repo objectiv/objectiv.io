@@ -304,6 +304,9 @@ div.docs-wrapper footer div.col:nth-child(2) {
 h1[id^=bach], h1[id^=modelhub] {
   font-size: 32px;
 }
+.hide-toctree-ul {
+  display: none;
+}
 
 /* Hide/show anchors on auto-generated modeling docs */
 .sphinxAnchor:hover > a.headerlink {
