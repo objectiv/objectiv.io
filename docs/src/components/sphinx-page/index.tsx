@@ -173,15 +173,18 @@ const SphinxPage = (props) => {
 
                         if ( currentPage == '' || currentPage[0] == '#' ){
                             const toRemove = currentPageComponents.pop();
+
                             // see if this component is in the URL, if so, we remove it, and we're done
-                            if ( a.href.indexOf(toRemove) != -1 ) {
+                            // only remove it, if there's enough parts in the URL. Otherwise we may
+                            // end up removing docs or modeling from the URL
+                            if ( currentPageComponents.length > 4 && a.href.indexOf(toRemove) != -1 ) {
                                 a.href = a.href.replace(toRemove + '/', '');
                             } else {
                                 const toRemove2 = currentPageComponents.pop();
                                 // else, we move further up the URL
                                 // case /modeling/model_hub_api_reference/DataFrame/bach.DataFrame.method
                                 // remove model_hub_api_reference
-                                if ( a.href.indexOf(toRemove2) != -1 ){
+                                if (currentPageComponents.length > 4 &&  a.href.indexOf(toRemove2) != -1 ){
                                     a.href = a.href.replace(toRemove2 + '/', '');
                                 }
                             }
