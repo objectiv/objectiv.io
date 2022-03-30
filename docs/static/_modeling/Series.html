@@ -1,20 +1,20 @@
 <div>
                 
   <section id="series">
-<h1>Series<a class="headerlink" href="#series" title="Permalink to this headline">&#182;</a></h1>
+<h1>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h1>
 <p>A typed representation of a single column of data.</p>
 <p>It can be used as a separate object to just deal with a single list of values. There are many standard
 operations on Series available to do operations like add or subtract, to create aggregations like
 <a class="reference internal" href="Series/bach.Series.nunique.html#bach.Series.nunique" title="bach.Series.nunique"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.nunique()</span></code></a> or <a class="reference internal" href="Series/bach.Series.count.html#bach.Series.count" title="bach.Series.count"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.count()</span></code></a>, or to create new sub-Series,
 like <a class="reference internal" href="Series/bach.Series.unique.html#bach.Series.unique" title="bach.Series.unique"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.unique()</span></code></a>.</p>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">&#182;</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>Almost every operation on a Series will return a Series with the operation set-up, allowing for complex
 combinations of operations.</p>
 <p>It should generally not be required to construct Series instances manually.
 <a class="reference internal" href="DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> will create them for you when required.</p>
 <section id="slicing-and-index-access">
-<h3>Slicing and index access<a class="headerlink" href="#slicing-and-index-access" title="Permalink to this headline">&#182;</a></h3>
+<h3>Slicing and index access<a class="headerlink" href="#slicing-and-index-access" title="Permalink to this headline">#</a></h3>
 <p>Series support a few standard operations to get specific values:
 Series[:3] will return the first 3 values of the Series. Sort order of the Series is important, so use
 <cite>Series.sort_values()</cite> before slicing. Any slice with positive parameters is supported.</p>
@@ -22,7 +22,7 @@ Series[:3] will return the first 3 values of the Series. Sort order of the Serie
 matches &#8216;key&#8217;.</p>
 </section>
 <section id="database-access">
-<h3>Database access<a class="headerlink" href="#database-access" title="Permalink to this headline">&#182;</a></h3>
+<h3>Database access<a class="headerlink" href="#database-access" title="Permalink to this headline">#</a></h3>
 <p>The data of this Series is always held in the database and operations on the data are performed
 by the database, not in local memory. Data will only be transferred to local memory when an
 explicit call is made to one of the functions that transfers data:</p>
@@ -38,7 +38,7 @@ explicit call is made to one of the functions that transfers data:</p>
 generate them, as this will create more flexible code.</p>
 </section>
 <section id="boolean-operations">
-<h3>Boolean Operations<a class="headerlink" href="#boolean-operations" title="Permalink to this headline">&#182;</a></h3>
+<h3>Boolean Operations<a class="headerlink" href="#boolean-operations" title="Permalink to this headline">#</a></h3>
 <p>A special subclass, <a class="reference internal" href="Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">SeriesBoolean</span></code></a>, can be used to filter
 DataFrames, and these Series are easily created using comparison operations like equals (==),
 less-than (&lt;), not(~) on two Series: <cite>boolean_Series = a == b</cite></p>
@@ -47,14 +47,14 @@ less-than (&lt;), not(~) on two Series: <cite>boolean_Series = a == b</cite></p>
 <p>See <a class="reference internal" href="Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">SeriesBoolean</span></code></a> for more info on the operation and syntax.</p>
 </section>
 <section id="aggregations">
-<h3>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">&#182;</a></h3>
+<h3>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">#</a></h3>
 <p>All Series support type-agnostic aggregations, and more specific aggregatations are available via Series
 sub-classes. E.g. Numeric Series support artihmetic aggregation functions.</p>
 <p>When a Series has aggregation setup (inherited from the Dataframe it&#8217;s part of, or passed as an argument
 to the aggregation function), it will use that aggregation instead of an aggregation over the full Series.</p>
 </section>
 <section id="window-functions">
-<h3>Window Functions<a class="headerlink" href="#window-functions" title="Permalink to this headline">&#182;</a></h3>
+<h3>Window Functions<a class="headerlink" href="#window-functions" title="Permalink to this headline">#</a></h3>
 <p>All aggregation can also be used with a <code class="xref py py-class docutils literal notranslate"><span class="pre">partitioning.Window</span></code>. A window defines the
 subset of data on which the aggregation takes place. Unlike an aggregation, a window function returns a
 value for every row in the data set.
@@ -63,7 +63,7 @@ previous row (using <a class="reference internal" href="Series/bach.Series.windo
 Series.window_* namespace.</p>
 </section>
 <section id="types">
-<h3>Types<a class="headerlink" href="#types" title="Permalink to this headline">&#182;</a></h3>
+<h3>Types<a class="headerlink" href="#types" title="Permalink to this headline">#</a></h3>
 <p>Series have a specific type that determines what kind of operations are available. All numeric Series
 support arithmetic operations and aggregations for example. It may or may not be possible to perform
 operations on different types. A comparison or arithmetic operation between a Int64 and Float Series
@@ -72,8 +72,8 @@ is okay, while a comparison operation is not.</p>
 </section>
 </section>
 <section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">&#182;</a></h2>
-<table class="longtable table autosummary">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -104,10 +104,10 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="reference-by-function">
-<h2>Reference by function<a class="headerlink" href="#reference-by-function" title="Permalink to this headline">&#182;</a></h2>
+<h2>Reference by function<a class="headerlink" href="#reference-by-function" title="Permalink to this headline">#</a></h2>
 <section id="creation-re-framing">
-<h3>Creation / re-framing<a class="headerlink" href="#creation-re-framing" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Creation / re-framing<a class="headerlink" href="#creation-re-framing" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -126,8 +126,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="value-accessors">
-<h3>Value accessors<a class="headerlink" href="#value-accessors" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Value accessors<a class="headerlink" href="#value-accessors" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -152,10 +152,10 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="attributes-and-underlying-data">
-<h3>Attributes and underlying data<a class="headerlink" href="#attributes-and-underlying-data" title="Permalink to this headline">&#182;</a></h3>
+<h3>Attributes and underlying data<a class="headerlink" href="#attributes-and-underlying-data" title="Permalink to this headline">#</a></h3>
 <section id="axes">
-<h4>Axes<a class="headerlink" href="#axes" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Axes<a class="headerlink" href="#axes" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -177,8 +177,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="id1">
-<h4>Types<a class="headerlink" href="#id1" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Types<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -194,8 +194,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="sql-model">
-<h4>Sql Model<a class="headerlink" href="#sql-model" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Sql Model<a class="headerlink" href="#sql-model" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -212,8 +212,8 @@ is okay, while a comparison operation is not.</p>
 </section>
 </section>
 <section id="comparison-and-set-operations">
-<h3>Comparison and set operations<a class="headerlink" href="#comparison-and-set-operations" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Comparison and set operations<a class="headerlink" href="#comparison-and-set-operations" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -241,8 +241,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="conversion-reshaping-sorting">
-<h3>Conversion, reshaping, sorting<a class="headerlink" href="#conversion-reshaping-sorting" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Conversion, reshaping, sorting<a class="headerlink" href="#conversion-reshaping-sorting" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -273,8 +273,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="function-application-aggregation-windowing">
-<h3>Function application, aggregation &amp; windowing<a class="headerlink" href="#function-application-aggregation-windowing" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Function application, aggregation &amp; windowing<a class="headerlink" href="#function-application-aggregation-windowing" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -293,10 +293,10 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="computations-descriptive-stats">
-<h3>Computations &amp; descriptive stats<a class="headerlink" href="#computations-descriptive-stats" title="Permalink to this headline">&#182;</a></h3>
+<h3>Computations &amp; descriptive stats<a class="headerlink" href="#computations-descriptive-stats" title="Permalink to this headline">#</a></h3>
 <section id="all-types">
-<h4>All types<a class="headerlink" href="#all-types" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>All types<a class="headerlink" href="#all-types" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -330,8 +330,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="numeric">
-<h4>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -365,8 +365,8 @@ is okay, while a comparison operation is not.</p>
 </table>
 </section>
 <section id="window">
-<h4>Window<a class="headerlink" href="#window" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Window<a class="headerlink" href="#window" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>

@@ -1,7 +1,7 @@
 <div>
                 
   <section id="feature-engineering-with-bach">
-<span id="feature-engineering"/><h1>Feature engineering with Bach<a class="headerlink" href="#feature-engineering-with-bach" title="Permalink to this headline">&#182;</a></h1>
+<span id="feature-engineering"/><h1>Feature engineering with Bach<a class="headerlink" href="#feature-engineering-with-bach" title="Permalink to this headline">#</a></h1>
 <p>This example shows how Bach can be used for feature engineering. We&#8217;ll go through describing the data, finding
 outliers, transforming data and grouping and aggregating data so that a useful feature set is created that
 can be used for machine learning. We have a separate example available that goes into the details of how a
@@ -23,7 +23,7 @@ events. <a class="reference internal" href="open_taxonomy.html#global-contexts">
 </pre></div>
 </div>
 <section id="creating-a-feature-set">
-<h2>Creating a feature set<a class="headerlink" href="#creating-a-feature-set" title="Permalink to this headline">&#182;</a></h2>
+<h2>Creating a feature set<a class="headerlink" href="#creating-a-feature-set" title="Permalink to this headline">#</a></h2>
 <p>We&#8217;d like to create a feature set that describes the behaviour of users in a way. We start with extracting
 the root location from the location stack. This indicates what parts of our website users have visited. Using
 <cite>to_numpy()</cite> shows the results as a numpy array.</p>
@@ -34,7 +34,7 @@ the root location from the location stack. This indicates what parts of our webs
 <p><cite>[&#8216;jobs&#8217;, &#8216;docs&#8217;, &#8216;home&#8217;&#8230;]</cite> etc is returned, the sections of the objectiv.io website.</p>
 </section>
 <section id="check-missing-values">
-<h2>Check missing values<a class="headerlink" href="#check-missing-values" title="Permalink to this headline">&#182;</a></h2>
+<h2>Check missing values<a class="headerlink" href="#check-missing-values" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -47,7 +47,7 @@ overview of the different event types that exist and select the one we are inter
 <p>We are interested in &#8216;PressEvent&#8217;.</p>
 </section>
 <section id="creating-the-variables">
-<h2>Creating the variables<a class="headerlink" href="#creating-the-variables" title="Permalink to this headline">&#182;</a></h2>
+<h2>Creating the variables<a class="headerlink" href="#creating-the-variables" title="Permalink to this headline">#</a></h2>
 <p>The next code block shows that we select only press events and then group
 by &#8216;user_id&#8217; and &#8216;root&#8217; and count the session_hit_number. After that the results are unstacked, resulting in
 a table where each row represents a user (the index is &#8216;user_id&#8217;) and the columns are the different root
@@ -59,7 +59,7 @@ locations and its values are the number of times a user clicked in that sections
 </div>
 </section>
 <section id="fill-empty-values">
-<h2>Fill empty values<a class="headerlink" href="#fill-empty-values" title="Permalink to this headline">&#182;</a></h2>
+<h2>Fill empty values<a class="headerlink" href="#fill-empty-values" title="Permalink to this headline">#</a></h2>
 <p>Now we do have empty values, so we fill them with 0, as empty means that the user did not click in the
 section.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">features_unstacked</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -67,7 +67,7 @@ section.</p>
 </div>
 </section>
 <section id="describe-the-data-set">
-<h2>Describe the data set<a class="headerlink" href="#describe-the-data-set" title="Permalink to this headline">&#182;</a></h2>
+<h2>Describe the data set<a class="headerlink" href="#describe-the-data-set" title="Permalink to this headline">#</a></h2>
 <p>We use describe again to get an impression of out created per-user data set.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">features_unstacked</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -77,7 +77,7 @@ number of clicks seems quite different per root section. This information can be
 variables from our data set or the use scaling or outlier detection. We will plot histograms for the</p>
 </section>
 <section id="visualize-the-data">
-<h2>Visualize the data<a class="headerlink" href="#visualize-the-data" title="Permalink to this headline">&#182;</a></h2>
+<h2>Visualize the data<a class="headerlink" href="#visualize-the-data" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="n">figure</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
@@ -92,7 +92,7 @@ could be a reason to drop some of these observations or resort to scaling method
 the data set as is.</p>
 </section>
 <section id="add-time-feature">
-<h2>Add time feature<a class="headerlink" href="#add-time-feature" title="Permalink to this headline">&#182;</a></h2>
+<h2>Add time feature<a class="headerlink" href="#add-time-feature" title="Permalink to this headline">#</a></h2>
 <p>Now we want to add some time feature to our data set. We add the average session length per user to the data
 set. We can use the model hub for this. <cite>fillna</cite> is used to fill missing values.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">import</span> <span class="nn">datetime</span>
@@ -101,7 +101,7 @@ set. We can use the model hub for this. <cite>fillna</cite> is used to fill miss
 </div>
 </section>
 <section id="export-to-pandas-for-sklearn">
-<h2>Export to pandas for sklearn<a class="headerlink" href="#export-to-pandas-for-sklearn" title="Permalink to this headline">&#182;</a></h2>
+<h2>Export to pandas for sklearn<a class="headerlink" href="#export-to-pandas-for-sklearn" title="Permalink to this headline">#</a></h2>
 <p>Now that we have our data set, we can use it for machine learning, using for example sklearn. To do so
 we call <cite>to_pandas()</cite> to get a pandas DataFrame that can be used in sklearn.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">pdf</span> <span class="o">=</span> <span class="n">features_unstacked</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>

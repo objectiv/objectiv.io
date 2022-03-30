@@ -1,7 +1,7 @@
 <div>
                 
   <section id="basic-product-analytics">
-<h1>Basic product analytics<a class="headerlink" href="#basic-product-analytics" title="Permalink to this headline">&#182;</a></h1>
+<h1>Basic product analytics<a class="headerlink" href="#basic-product-analytics" title="Permalink to this headline">#</a></h1>
 <p>This example shows how the open model hub can be used for basic product analysis.</p>
 <p>This example is also available in a <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/basic-analysis.ipynb">notebook</a>
 to run on your own data or use our
@@ -36,7 +36,7 @@ SQL database using pandas like syntax.</p>
 the results in
 your notebook.</p>
 <section id="unique-users">
-<h2>Unique users<a class="headerlink" href="#unique-users" title="Permalink to this headline">&#182;</a></h2>
+<h2>Unique users<a class="headerlink" href="#unique-users" title="Permalink to this headline">#</a></h2>
 <p>The <cite>daily_users</cite> uses the <cite>time_aggregation</cite> as set when the <cite>of</cite> object was instantiated. In this case the
 formatting was set to days, so the aggregation is daily. For <cite>monthly_users</cite>, the default time_aggregation is
 overridden by using a different <cite>groupby</cite>.</p>
@@ -47,7 +47,7 @@ overridden by using a different <cite>groupby</cite>.</p>
 </div>
 </section>
 <section id="user-time-spent">
-<h2>User time spent<a class="headerlink" href="#user-time-spent" title="Permalink to this headline">&#182;</a></h2>
+<h2>User time spent<a class="headerlink" href="#user-time-spent" title="Permalink to this headline">#</a></h2>
 <p>Similarly we can calculate the average session duration for time intervals. <cite>duration_root_month</cite> gives the
 average time spent per root location per month.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">duration_daily</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -63,7 +63,7 @@ created series contains aggregated data, and it is not allowed to aggregate that
 </div>
 </section>
 <section id="top-used-features">
-<h2>Top used features<a class="headerlink" href="#top-used-features" title="Permalink to this headline">&#182;</a></h2>
+<h2>Top used features<a class="headerlink" href="#top-used-features" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># select only user actions, so stack_event_types must be a superset of ['InteractiveEvent']</span>
 <span class="n">interactive_events</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">stack_event_types</span><span class="o">&gt;=</span><span class="p">[</span><span class="s1">'InteractiveEvent'</span><span class="p">]]</span>
 
@@ -74,7 +74,7 @@ created series contains aggregated data, and it is not allowed to aggregate that
 </div>
 </section>
 <section id="most-used-product-areas">
-<h2>Most used product areas<a class="headerlink" href="#most-used-product-areas" title="Permalink to this headline">&#182;</a></h2>
+<h2>Most used product areas<a class="headerlink" href="#most-used-product-areas" title="Permalink to this headline">#</a></h2>
 <p>First we use the model hub to get the unique users per application, root location, feature, and event type.
 From this prepared dataset, we get show the users for the home page first.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">most_interactions</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">interactive_events</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span><span class="s1">'root_location'</span><span class="p">,</span><span class="s1">'feature_nice_name'</span><span class="p">,</span> <span class="s1">'event_type'</span><span class="p">])</span>
@@ -92,14 +92,14 @@ From this prepared dataset, we get show the users for the home page first.</p>
 </div>
 </section>
 <section id="user-origin">
-<h2>User origin<a class="headerlink" href="#user-origin" title="Permalink to this headline">&#182;</a></h2>
+<h2>User origin<a class="headerlink" href="#user-origin" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># users by referrer</span>
 <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'referrer'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="marketing">
-<h2>Marketing<a class="headerlink" href="#marketing" title="Permalink to this headline">&#182;</a></h2>
+<h2>Marketing<a class="headerlink" href="#marketing" title="Permalink to this headline">#</a></h2>
 <p>Calculate the number of users per campaign.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'utm_source'</span><span class="p">,</span> <span class="s1">'utm_medium'</span><span class="p">,</span> <span class="s1">'utm_campaign'</span><span class="p">,</span> <span class="s1">'utm_content'</span><span class="p">,</span> <span class="s1">'utm_term'</span><span class="p">])</span>
 </pre></div>
@@ -111,7 +111,7 @@ interactions.</p>
 </div>
 </section>
 <section id="conversions">
-<h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this headline">&#182;</a></h2>
+<h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this headline">#</a></h2>
 <p>First we define a conversion event in the Objectiv DataFrame.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">add_conversion_event</span><span class="p">(</span><span class="n">location_stack</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">json</span><span class="p">[{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'objectiv-on-github'</span><span class="p">,</span>
                                                                      <span class="s1">'_type'</span><span class="p">:</span> <span class="s1">'LinkContext'</span><span class="p">}:]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span>

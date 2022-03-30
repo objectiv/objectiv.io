@@ -1,7 +1,7 @@
 <div>
                 
   <section id="bach-basics">
-<span id="bach-examples"/><h1>Bach basics<a class="headerlink" href="#bach-basics" title="Permalink to this headline">&#182;</a></h1>
+<span id="bach-examples"/><h1>Bach basics<a class="headerlink" href="#bach-basics" title="Permalink to this headline">#</a></h1>
 <p>Here we&#8217;ll give some very basic examples of the usage of Bach: creating a DataFrame, basic operations,
 aggregate operations, and getting the resulting data filtered and sorted. For this example there is no
 separate notebook available, but the operations demonstrated here are used in the other example notebooks.</p>
@@ -11,7 +11,7 @@ columns. The SQL to create that table can be found below in <a class="reference 
 on your local machine. It includes our website as a demo app, a Jupyter Notebook environment with working
 models and a Metabase environment to output data to.</p>
 <section id="create-a-dataframe-from-a-database-table">
-<h2>Create a DataFrame from a database table<a class="headerlink" href="#create-a-dataframe-from-a-database-table" title="Permalink to this headline">&#182;</a></h2>
+<h2>Create a DataFrame from a database table<a class="headerlink" href="#create-a-dataframe-from-a-database-table" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">bach</span> <span class="kn">import</span> <span class="n">from_table</span>
 <span class="kn">import</span> <span class="nn">sqlalchemy</span>
 <span class="c1"># Setup database connection</span>
@@ -26,7 +26,7 @@ query any of the data in &#8216;example&#8217;, and this thus works equally well
 existing pandas DataFrame (using <cite>from_pandas</cite>).</p>
 </section>
 <section id="basic-operations">
-<h2>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">&#182;</a></h2>
+<h2>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Adding a new column</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'column_name'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1337</span>
 <span class="c1"># Setting a new column to the value of an existing column</span>
@@ -52,7 +52,7 @@ representation of the data in the DataFrame and its Series.</p>
 should be avoided until the data is needed as it will query the database and transfer all data.</p>
 </section>
 <section id="aggregate-operations">
-<h2>Aggregate operations<a class="headerlink" href="#aggregate-operations" title="Permalink to this headline">&#182;</a></h2>
+<h2>Aggregate operations<a class="headerlink" href="#aggregate-operations" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Group on century, select the 'inhabitants' column, and calculate the maximum value within the group</span>
 <span class="n">df_max</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'century'</span><span class="p">)[[</span><span class="s1">'inhabitants'</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">df_max</span> <span class="o">=</span> <span class="n">df_max</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -75,7 +75,7 @@ the optional debug statement <cite>df.to_pandas()</cite> runs a query, the other
 state of the DataFrame and its Series.</p>
 </section>
 <section id="filtering-sorting-and-output">
-<h2>Filtering, sorting, and output<a class="headerlink" href="#filtering-sorting-and-output" title="Permalink to this headline">&#182;</a></h2>
+<h2>Filtering, sorting, and output<a class="headerlink" href="#filtering-sorting-and-output" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Only keep the rows for which inhabitants == inhabitants_max,</span>
 <span class="c1"># i.e. the cities that are the biggest of all cities founded in the same century</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">inhabitants</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">inhabitants_max</span><span class="p">]</span>
@@ -103,7 +103,7 @@ order of the returned rows is non-deterministic. <cite>view_sql()</cite> can be 
 encompasses all operations done so far.</p>
 </section>
 <section id="filtering-by-index-labels">
-<h2>Filtering by Index Labels<a class="headerlink" href="#filtering-by-index-labels" title="Permalink to this headline">&#182;</a></h2>
+<h2>Filtering by Index Labels<a class="headerlink" href="#filtering-by-index-labels" title="Permalink to this headline">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>In the following examples we call multiple times <code class="docutils literal notranslate"><span class="pre">to_pandas</span></code> method, we do it only for visualization purposes.
@@ -206,7 +206,7 @@ in the frame, this will not raise any error since Bach has no notion of which va
 </div>
 </section>
 <section id="setting-values-to-dataframe-subset">
-<h2>Setting Values to DataFrame Subset<a class="headerlink" href="#setting-values-to-dataframe-subset" title="Permalink to this headline">&#182;</a></h2>
+<h2>Setting Values to DataFrame Subset<a class="headerlink" href="#setting-values-to-dataframe-subset" title="Permalink to this headline">#</a></h2>
 <p>In previous section we played around a bit with <code class="docutils literal notranslate"><span class="pre">loc</span></code> property, by just filtering the frame using labels.
 As in pandas, you are also able to set values to a specific group of rows and update the main frame. This works
 for all types of selections.</p>
@@ -253,7 +253,7 @@ this case.</p>
 </div>
 </section>
 <section id="appendix-example-data">
-<span id="id1"/><h2>Appendix: Example Data<a class="headerlink" href="#appendix-example-data" title="Permalink to this headline">&#182;</a></h2>
+<span id="id1"/><h2>Appendix: Example Data<a class="headerlink" href="#appendix-example-data" title="Permalink to this headline">#</a></h2>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span/><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="p">(</span><span class="w"/>
 <span class="w">    </span><span class="n">city_id</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"/>
 <span class="w">    </span><span class="n">skating_order</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"/>
