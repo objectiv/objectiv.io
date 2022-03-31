@@ -301,12 +301,19 @@ div.docs-wrapper footer div.col:nth-child(2) {
 /** DOCS - Modeling **/
 
 /* Make API reference titles a bit smaller */
-h1[id^=bach], h1[id^=modelhub] {
+h1[id^=bach-dataframe], h1[id^=bach-series], h1[id^=modelhub] {
   font-size: 32px;
 }
+
+/* Hide a TOC tree if it's only used for generating navigation in the sidebar */
 .hide-toctree-ul {
   display: none;
-} 
+}
+
+/* List-items get <p>'s, so let's decrease the margin */
+ul.simple p {
+  margin: 0;
+}
 
 /* Hide/show anchors on auto-generated modeling docs */
 .sphinxAnchor:hover > a.headerlink {
