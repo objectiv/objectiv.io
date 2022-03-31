@@ -70,7 +70,7 @@ If you want to start using Objectiv for your own project, you'll want to set up 
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 
 * [Tracking with Objectiv](/tracking/introduction.md)
-* [Modeling with Objectiv Bach](/modeling/intro.mdx)
+* [Modeling with Objectiv](/modeling/intro.mdx)
 * [The open analytics taxonomy](/taxonomy/introduction.md)
 
 If you have any questions or feedback, please <JoinSlackLink linkText='join us on Slack' />.

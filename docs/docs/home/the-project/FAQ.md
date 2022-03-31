@@ -68,7 +68,7 @@ SQL is widely used, versatile, not overly complex, and with developments in clou
 Objectiv Bach, our modeling library, features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
 
 ### Which Pandas-like operations can I use to build SQL models?
-For all supported pandas operations, check the reference in the [Modeling](/modeling/intro.mdx) section.
+For all supported pandas operations, check the reference in the [Bach documentation](/modeling/bach.mdx) section.
 
 ### Can I run these models in production?
 Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.

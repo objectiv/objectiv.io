@@ -1,19 +1,19 @@
 <div>
                 
   <section id="dataframe">
-<h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">&#182;</a></h1>
+<h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h1>
 <p>A mutable DataFrame representing tabular data in a database and enabling operations on that data.</p>
 <p>A Bach DataFrame object can be used to process large amounts of data on a database, while using an api
 that is based on the pandas api. This allows the database to group and aggregate data, sample data and
 do other operations that are not suitable for in memory processing. At any time it is possible to write
 your Bach DataFrame to a pandas DataFrame.</p>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">&#182;</a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>It should generally not be required to construct Series instances manually. A DataFrame can be constructed
 using the any of the bach classmethods like from_table, from_model, or from_pandas. The returned DataFrame
 can be thought of as a dict-like container for Bach Series objects.</p>
 <section id="getting-setting-columns">
-<h3>Getting &amp; Setting columns<a class="headerlink" href="#getting-setting-columns" title="Permalink to this headline">&#182;</a></h3>
+<h3>Getting &amp; Setting columns<a class="headerlink" href="#getting-setting-columns" title="Permalink to this headline">#</a></h3>
 <p>Getting data works similar to pandas DataFrame. Single columns can be retrieved with df[&#8216;column_name&#8217;]
 as well as df.column_name. This will return a single Bach Series. Multiple columns can be retrieved by
 passing a list of column names like: <cite>df[[&#8216;column_name&#8217;,&#8217;other_column_name&#8217;]]</cite>. This returns a Bach
@@ -26,7 +26,7 @@ boolean_series = a == b. Boolean indexing can be done like df[df.column == 5]. O
 which the condition is true.</p>
 </section>
 <section id="moving-series-around">
-<h3>Moving Series around<a class="headerlink" href="#moving-series-around" title="Permalink to this headline">&#182;</a></h3>
+<h3>Moving Series around<a class="headerlink" href="#moving-series-around" title="Permalink to this headline">#</a></h3>
 <p>Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
 DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
 same base node if they originate from the same data source. In most cases this means that the series
@@ -36,14 +36,14 @@ merge on the index. This works for one level indexes where the dtype of the seri
 DataFrame&#8217;s index dtype.</p>
 </section>
 <section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">&#182;</a></h3>
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">column_name</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">'b'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span>
 </pre></div>
 </div>
 </section>
 <section id="database-access">
-<h3>Database access<a class="headerlink" href="#database-access" title="Permalink to this headline">&#182;</a></h3>
+<h3>Database access<a class="headerlink" href="#database-access" title="Permalink to this headline">#</a></h3>
 <p>The data of this DataFrame is always held in the database and operations on the data are performed
 by the database, not in local memory. Data will only be transferred to local memory when an
 explicit call is made to one of the functions that transfers data:</p>
@@ -64,8 +64,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </section>
 </section>
 <section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">&#182;</a></h2>
-<table class="longtable table autosummary">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -78,10 +78,10 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="reference-by-function">
-<h2>Reference by function<a class="headerlink" href="#reference-by-function" title="Permalink to this headline">&#182;</a></h2>
+<h2>Reference by function<a class="headerlink" href="#reference-by-function" title="Permalink to this headline">#</a></h2>
 <section id="creation">
-<h3>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Creation<a class="headerlink" href="#creation" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -103,8 +103,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="value-accessors">
-<h3>Value accessors<a class="headerlink" href="#value-accessors" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Value accessors<a class="headerlink" href="#value-accessors" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -119,14 +119,17 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.values</span></code></a></p></td>
 <td><p>Return a Numpy representation of the DataFrame akin <code class="xref py py-attr docutils literal notranslate"><span class="pre">pandas.Dataframe.values</span></code></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.loc.html#bach.DataFrame.loc" title="bach.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.loc</span></code></a></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">.loc</span></code> accessor offers different methods for label-based selection.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
 <section id="attributes-and-underlying-data">
-<h3>Attributes and underlying data<a class="headerlink" href="#attributes-and-underlying-data" title="Permalink to this headline">&#182;</a></h3>
+<h3>Attributes and underlying data<a class="headerlink" href="#attributes-and-underlying-data" title="Permalink to this headline">#</a></h3>
 <section id="axes">
-<h4>Axes<a class="headerlink" href="#axes" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Axes<a class="headerlink" href="#axes" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -157,8 +160,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="types">
-<h4>Types<a class="headerlink" href="#types" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Types<a class="headerlink" href="#types" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -177,8 +180,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="sql-model">
-<h4>Sql Model<a class="headerlink" href="#sql-model" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Sql Model<a class="headerlink" href="#sql-model" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -200,8 +203,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="variables">
-<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -221,8 +224,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </section>
 </section>
 <section id="reshaping-indexing-sorting-merging">
-<h3>Reshaping, indexing, sorting &amp; merging<a class="headerlink" href="#reshaping-indexing-sorting-merging" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Reshaping, indexing, sorting &amp; merging<a class="headerlink" href="#reshaping-indexing-sorting-merging" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -274,8 +277,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="aggregation-windowing">
-<h3>Aggregation &amp; windowing<a class="headerlink" href="#aggregation-windowing" title="Permalink to this headline">&#182;</a></h3>
-<table class="longtable table autosummary">
+<h3>Aggregation &amp; windowing<a class="headerlink" href="#aggregation-windowing" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -309,10 +312,10 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="computations-descriptive-stats">
-<span id="dataframe-stats"/><h3>Computations &amp; descriptive stats<a class="headerlink" href="#computations-descriptive-stats" title="Permalink to this headline">&#182;</a></h3>
+<span id="dataframe-stats"/><h3>Computations &amp; descriptive stats<a class="headerlink" href="#computations-descriptive-stats" title="Permalink to this headline">#</a></h3>
 <section id="all-types">
-<h4>All types<a class="headerlink" href="#all-types" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>All types<a class="headerlink" href="#all-types" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -346,8 +349,8 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </table>
 </section>
 <section id="numeric">
-<h4>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">&#182;</a></h4>
-<table class="longtable table autosummary">
+<h4>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">#</a></h4>
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>

@@ -1,0 +1,28 @@
+<div>
+                
+  <section id="modelhub-modelhub-to-metabase">
+<h1>modelhub.ModelHub.to_metabase<a class="headerlink" href="#modelhub-modelhub-to-metabase" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelhub.ModelHub.to_metabase">
+<span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">to_metabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhub.ModelHub.to_metabase" title="Permalink to this definition">#</a></dt>
+<dd><p>Plot data in <code class="docutils literal notranslate"><span class="pre">data</span></code> to Metabase. If a card already exists, it will be updated. If <code class="docutils literal notranslate"><span class="pre">data</span></code> is a
+<a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.Series</span></code></a>, it will call <a class="reference internal" href="../Series/bach.Series.to_frame.html#bach.Series.to_frame" title="bach.Series.to_frame"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bach.Series.to_frame()</span></code></a>.</p>
+<p>Default options can be overridden using the config dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> or <a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.Series</span></code></a> to push to MetaBase.</p></li>
+<li><p><strong>model_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; Preset output to Metabase for a specific model. eg, &#8216;unique_users&#8217;</p></li>
+<li><p><strong>config</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) &#8211; Override default config options for the graph to be added/updated in Metabase.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
