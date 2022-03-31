@@ -175,7 +175,10 @@ def extract_urls_from_diff(parsed_diff):
       for str in line:
           search = re.search("<loc>(.+?)</loc>", str)
           if (search):
-              extracted_urls.append([search.group(1)])
+              url = search.group(1)
+              parsed_url = url.replace('testing.objectiv.io', 'objectiv.io')
+              parsed_url = parsed_url.replace('staging.objectiv.io', 'objectiv.io')
+              extracted_urls.append([parsed_url])
       
   return extracted_urls
 

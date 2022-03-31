@@ -57,6 +57,8 @@ provision the appropriate environment variables for SFTP, and then run:
 # pull any changes, and build the deployable docker images for both website and docs for testing only.
 git pull && make build-docker-test-image build-docker-deploy-image
 
+sh ./docker/build/diff-sitemaps.sh --environment=testing
+
 # then, upload to testing via FTP
 docker run -e SFTP_URL \
     -e SFTP_USERNAME \
@@ -75,7 +77,7 @@ git pull && make build-docker-build-image build-docker-deploy-image
 
 # second, compare the sitemap on production to the sitemap in the image, to double-check any URL changes; if 
 # you don't have `blessings` & `lxml` installed yet, do `sudo apt-get install python3-blessings python3-lxml`
-./docker/build/diff-sitemaps.sh
+sh ./docker/build/diff-sitemaps.sh
 
 # if URL checks are okay, upload to staging via FTP
 docker run -e SFTP_URL \
