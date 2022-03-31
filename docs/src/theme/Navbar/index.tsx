@@ -8,7 +8,7 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import SearchBar from '@theme/SearchBar';
-import Toggle from '@theme/Toggle';
+import ColorModeToggle from '@theme/ColorModeToggle';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import {
   useThemeConfig,
@@ -36,7 +36,6 @@ import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
 // OBJECTIV END
 
 import styles from './styles.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -163,6 +162,7 @@ function NavbarMobileSidebar({
   toggleSidebar,
 }: NavbarMobileSidebarProps) {
   useLockBodyScroll(sidebarShown);
+  const items = useNavbarItems();
 
   // OBJECTIV: use history to navigate to top-level categories via a drop-down in the mobile menu 
   type NavbarItemProps = {
@@ -170,7 +170,6 @@ function NavbarMobileSidebar({
     label: string,
     waitUntilTracked: boolean
   }
-  const items = useNavbarItems();
   const {leftItems, rightItems} = splitNavItemsByPosition(items);
   // Add a link to the Home section at the top
   leftItems.unshift({
@@ -234,7 +233,7 @@ function NavbarMobileSidebar({
           titleClassName="navbar__title"
         />
         {!colorModeToggle.disabled && (
-          <Toggle
+          <ColorModeToggle
             className={styles.navbarSidebarToggle}
             checked={colorModeToggle.isDarkTheme}
             onChange={colorModeToggle.toggle}
@@ -340,7 +339,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
           {!colorModeToggle.disabled && (
-            <Toggle
+            <ColorModeToggle
               className={styles.toggle}
               checked={colorModeToggle.isDarkTheme}
               onChange={colorModeToggle.toggle}

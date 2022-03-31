@@ -1,0 +1,35 @@
+<div>
+                
+  <section id="modelhub-modelhub-time-agg">
+<h1>modelhub.ModelHub.time_agg<a class="headerlink" href="#modelhub-modelhub-time-agg" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelhub.ModelHub.time_agg">
+<span class="sig-prename descclassname"><span class="pre">ModelHub.</span></span><span class="sig-name descname"><span class="pre">time_agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhub.ModelHub.time_agg" title="Permalink to this definition">#</a></dt>
+<dd><p>Formats the moment column in the DataFrame, returns a SeriesString.</p>
+<p>Can be used to aggregate to different time intervals, ie day, month etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame"><em>bach.dataframe.DataFrame</em></a>) &#8211; <a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.DataFrame</span></code></a> to apply the method on.</p></li>
+<li><p><strong>time_aggregation</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; if None, it uses <a class="reference internal" href="modelhub.ModelHub.time_aggregation.html#modelhub.ModelHub.time_aggregation" title="modelhub.ModelHub.time_aggregation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">time_aggregation</span></code></a> set from the
+ModelHub. Use any template for aggregation from:
+<a class="reference external" href="https://www.postgresql.org/docs/14/functions-formatting.html">https://www.postgresql.org/docs/14/functions-formatting.html</a>
+ie. <code class="docutils literal notranslate"><span class="pre">time_aggregation=='YYYY-MM-DD'</span></code> aggregates by date.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>SeriesString.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../Series/bach.SeriesString.html#bach.SeriesString" title="bach.series.series_string.SeriesString">bach.series.series_string.SeriesString</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

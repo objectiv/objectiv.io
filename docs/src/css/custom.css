@@ -225,6 +225,9 @@ nav .DocSearch-Button-Keys span:first-child {
 .navbar-sidebar .menu__link--sublist:after {
   filter: invert(100%);
 }
+.navbar-sidebar .menu__caret {
+  filter: invert(100%);
+}
 
 /** FOOTER **/
 .footer {
@@ -252,7 +255,7 @@ nav .DocSearch-Button-Keys span:first-child {
 /** DOCS - Overall **/
 
 /* EditThisPage footer: full width & grey */
-div.docs-wrapper footer {
+div.docs-wrapper footer.theme-doc-footer {
   padding: 20px 0;
   text-align: left;
   background-color: #F5F6F7;
@@ -296,6 +299,21 @@ div.docs-wrapper footer div.col:nth-child(2) {
 }
 
 /** DOCS - Modeling **/
+
+/* Make API reference titles a bit smaller */
+h1[id^=bach-dataframe], h1[id^=bach-series], h1[id^=modelhub] {
+  font-size: 32px;
+}
+
+/* Hide a TOC tree if it's only used for generating navigation in the sidebar */
+.hide-toctree-ul {
+  display: none;
+}
+
+/* List-items get <p>'s, so let's decrease the margin */
+ul.simple p {
+  margin: 0;
+}
 
 /* Hide/show anchors on auto-generated modeling docs */
 .sphinxAnchor:hover > a.headerlink {

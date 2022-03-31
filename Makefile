@@ -27,6 +27,9 @@ build-docker-build-image:
 	$(info building for ${OBJECTIV_ENVIRONMENT})
 	docker build --build-arg OBJECTIV_ENVIRONMENT=$(OBJECTIV_ENVIRONMENT) --no-cache -t objectiv/website-build:${TAG} -f docker/build/Dockerfile .
 
+build-docker-test-image:
+	$(info building for testing)
+	docker build --build-arg OBJECTIV_ENVIRONMENT=testing --no-cache -t objectiv/website-build:${TAG} -f docker/build/Dockerfile .
 
 
 # build docker container for full website, including docs

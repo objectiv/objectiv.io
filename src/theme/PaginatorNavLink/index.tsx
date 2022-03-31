@@ -8,16 +8,18 @@
 import React from 'react';
 import type {Props} from '@theme/PaginatorNavLink';
 
+// OBJECTIV
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
+// END OBJECTIV
 
-function PaginatorNavLink(props: Props): JSX.Element {
+export default function PaginatorNavLink(props: Props): JSX.Element {
   const {permalink, title, subLabel} = props;
   return (
+    // OBJECTIV
     <TrackedLink className="pagination-nav__link" to={permalink}>
+    {/* END OBJECTIV */}
       {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
       <div className="pagination-nav__label">{title}</div>
     </TrackedLink>
   );
 }
-
-export default PaginatorNavLink;

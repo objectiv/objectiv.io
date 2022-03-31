@@ -133,7 +133,6 @@ const SphinxPage = (props) => {
 
                 // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
-
                     // a link is internal if the first part matches the current location,
                     // or the tld's match (staging vs production
                     // or if it's a relative URL
@@ -160,51 +159,40 @@ const SphinxPage = (props) => {
                         const relative_url = a.href.replace(currentSite[1].slice(0,-1) + baseUrl.baseUrl, '');
                         const relative_parts = relative_url.split('/');
 
-                        /* case 0: all is good (/Class1/bach.Class1.method1)
-                         * --> do nothing
+                        /*
+                         * this fixes 2 cases:
+                         * (current page is http://example.com/page)
+                         * 1. http://example.com/page/#page
+                         * 2. http://example.com/page/
                          *
-                         * case 1: /module1/bach.Class1.method1/bach.Class1.method2
-                         *  --> remove $2 (bach.Class1.method1)
-                         * Example: /modeling/DataFrame/bach.DataFrame.head/bach.DataFrame.to_pandas
-                         * parts: modeling,DataFrame,bach.DataFrame.head,bach.DataFrame.to_pandas#bach.DataFrame.to_pandas
-                         *
-                         * case 2: /module1/module2/bach.Class2.method1
-                         * --> remove $1 (module1)
-                         * Example: /modeling/DataFrame/Series/bach.Series#bach.Series
-                         * Parts: modeling,DataFrame,Series,bach.Series#bach.Series
-                         *
-                         * case 3: /page/module#someanchor
-                         * --> remove page
-                         * Example: /modeling/reference/DataFrame#Usage
-                         * Parts: modeling,reference,DataFrame#Usage
+                         * in cases 1 and 2, the new relative path is broken due to the extra slash
+                         * so we need to remove `page` from the href in the amchor
                          */
-                        if ( relative_parts !== null  ){
-                            if( relative_parts.length > 3 ) {
-                                // case 1
-                                const method1 = relative_parts[2].split('.');
-                                const method2 = relative_parts[3].split('.');
-                                if (method1[0] == method2[0] ) {
-                                    a.href = a.href.replace(relative_parts[2] + '/', '');
-                                }
-                            }
-                            if (relative_parts.length > 2 ){
-                                // case 2 & 3
-                                if ( relative_parts[2][0].match(/[A-Z]/) ){
-                                    a.href = a.href.replace(relative_parts[1] + '/', '');
-                                }
-                            }
-                        }
-
-                        // make sure to add a trailing slash to links with anchors that don't have it.
-                        // to avoid unnecessary redirects
-                        if ( a.href.match(/[a-zA-Z]#/) ){
-                            a.href = a.href.replace('#', '/#');
-                        }
-
+                        const currentPageComponents = currentLocation.split('/');
+                        const currentPage = currentPageComponents.pop();
                         // fix content of (internal) permalinks, change from ¶ to #
                         if ( a.className == 'headerlink' && a.text == '¶' ){
                             a.text = '#';
+                        } else if ( currentPage == '' || currentPage[0] == '#' ){
+                            // don't mess with the permalinks, they are fine as they are
+                            const toRemove = currentPageComponents.pop();
+
+                            // see if this component is in the URL, if so, we remove it, and we're done
+                            // only remove it, if there's enough parts in the URL. Otherwise we may
+                            // end up removing docs or modeling from the URL
+                            if ( currentPageComponents.length > 4 && a.href.indexOf(toRemove) != -1 ) {
+                                a.href = a.href.replace(toRemove + '/', '');
+                            } else {
+                                const toRemove2 = currentPageComponents.pop();
+                                // else, we move further up the URL
+                                // case /modeling/model_hub_api_reference/DataFrame/bach.DataFrame.method
+                                // remove model_hub_api_reference
+                                if (currentPageComponents.length > 4 &&  a.href.indexOf(toRemove2) != -1 ){
+                                    a.href = a.href.replace(toRemove2 + '/', '');
+                                }
+                            }
                         }
+
                     } else {
                         // add target="_blank" to the <a> link for non-internal links, such as to pandas docs
                         a.target = '_blank';

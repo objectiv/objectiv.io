@@ -16,6 +16,7 @@ import {
   ThemeClassNames,
   useThemeConfig,
   useDocSidebarItemsExpandedState,
+  isSamePath,
 } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -29,17 +30,16 @@ import type {
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs';
 
+// OBJECTIV: tracking
 import {
   tagExpandable,
   tagLink,
 } from "@objectiv/tracker-browser";
+// END OBJECTIV
 
 import styles from './styles.module.css';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-// OBJECTIV: use history auto-select the first item in the category if it's a link
-import { useHistory } from "react-router-dom";
-import useBaseUrl from '@docusaurus/useBaseUrl';
-// OBJECTIV END
+import type {SidebarItemHtml} from '@docusaurus/plugin-content-docs/src/sidebars/types';
 
 export default function DocSidebarItem({
   item,
@@ -47,10 +47,9 @@ export default function DocSidebarItem({
 }: Props): JSX.Element | null {
   switch (item.type) {
     case 'category':
-      if (item.items.length === 0) {
-        return null;
-      }
       return <DocSidebarItemCategory item={item} {...props} />;
+    case 'html':
+      return <DocSidebarItemHtml item={item} {...props} />;
     case 'link':
     default:
       return <DocSidebarItemLink item={item} {...props} />;
@@ -76,12 +75,15 @@ function useAutoExpandActiveCategory({
   }, [isActive, wasActive, collapsed, setCollapsed]);
 }
 
-// When a collapsible category has no link, we still link it to its first child during SSR as a temporary fallback
-// This allows to be able to navigate inside the category even when JS fails to load, is delayed or simply disabled
-// React hydration becomes an optional progressive enhancement
-// see https://github.com/facebookincubator/infima/issues/36#issuecomment-772543188
-// see https://github.com/facebook/docusaurus/issues/3030
-function useCategoryHrefWithSSRFallback(
+/**
+ * When a collapsible category has no link, we still link it to its first child
+ * during SSR as a temporary fallback. This allows to be able to navigate inside
+ * the category even when JS fails to load, is delayed or simply disabled
+ * React hydration becomes an optional progressive enhancement
+ * see https://github.com/facebookincubator/infima/issues/36#issuecomment-772543188
+ * see https://github.com/facebook/docusaurus/issues/3030
+ */
+ function useCategoryHrefWithSSRFallback(
   item: PropSidebarItemCategory,
 ): string | undefined {
   const isBrowser = useIsBrowser();
@@ -107,16 +109,10 @@ function DocSidebarItemCategory({
   ...props
 }: Props & {item: PropSidebarItemCategory}) {
   const {items, label, collapsible, className, href} = item;
-  // OBJECTIV: use history auto-select the first item in the category if it's a link
-  let history = useHistory();
-  let firstItemInCategoryLink = "";
-  if (items && items.length > 0 && items[0].type == 'link') {
-    firstItemInCategoryLink = useBaseUrl(items[0].href);
-  }
-  // OBJECTIV END
   const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
 
   const isActive = isActiveSidebarItem(item, activePath);
+  const isCurrentPage = isSamePath(href, activePath);
 
   const {collapsed, setCollapsed} = useCollapsible({
     // active categories are always initialized as expanded
@@ -155,6 +151,7 @@ function DocSidebarItemCategory({
 
   return (
     <li
+      // OBJECTIV
       {...tagExpandable({
         id: item.label,
         options: {
@@ -162,6 +159,7 @@ function DocSidebarItemCategory({
           trackVisibility: { mode: 'manual', isVisible: !collapsed  }
         }
       })}
+      // OBJECTIV END
       className={clsx(
         ThemeClassNames.docs.docSidebarItemCategory,
         ThemeClassNames.docs.docSidebarItemCategoryLevel(level),
@@ -171,13 +169,14 @@ function DocSidebarItemCategory({
         },
         className,
       )}>
-      <div className="menu__list-item-collapsible">
+      <div
+        className={clsx('menu__list-item-collapsible', {
+          'menu__list-item-collapsible--active': isCurrentPage,
+        })}>
         <Link
           className={clsx('menu__link', {
             'menu__link--sublist': collapsible && !href,
             'menu__link--active': isActive,
-            [styles.menuLinkText]: !collapsible,
-            [styles.hasHref]: !!hrefWithSSRFallback,
           })}
           onClick={
             collapsible
@@ -186,9 +185,6 @@ function DocSidebarItemCategory({
                   if (href) {
                     updateCollapsed(false);
                   } else {
-                    // OBJECTIV: auto-select the first item in the category if it's a link
-                    firstItemInCategoryLink != "" ? history.push(firstItemInCategoryLink) : null;
-                    // OBJECTIV END
                     e.preventDefault();
                     updateCollapsed();
                   }
@@ -197,7 +193,7 @@ function DocSidebarItemCategory({
                   onItemClick?.(item);
                 }
           }
-          aria-current={isActive ? 'page' : undefined}
+          aria-current={isCurrentPage ? 'page' : undefined}
           href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
           {...props}>
           {label}
@@ -236,6 +232,29 @@ function DocSidebarItemCategory({
   );
 }
 
+function DocSidebarItemHtml({
+  item,
+  level,
+  index,
+}: Props & {item: SidebarItemHtml}) {
+  const {value, defaultStyle, className} = item;
+  return (
+    <li
+      className={clsx(
+        ThemeClassNames.docs.docSidebarItemLink,
+        ThemeClassNames.docs.docSidebarItemLinkLevel(level),
+        defaultStyle && `${styles.menuHtmlItem} menu__list-item`,
+        className,
+      )}
+      key={index}
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{
+        __html: value,
+      }}
+    />
+  );
+}
+
 function DocSidebarItemLink({
   item,
   onItemClick,
@@ -256,7 +275,9 @@ function DocSidebarItemLink({
       )}
       key={label}>
       <Link
+        // OBJECTIV
         {...tagLink({ id: item.label, href: item.href })}
+        // END OBJECTIV
         className={clsx('menu__link', {
           'menu__link--active': isActive,
         })}

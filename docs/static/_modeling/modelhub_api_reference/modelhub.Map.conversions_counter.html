@@ -1,0 +1,31 @@
+<div>
+                
+  <section id="modelhub-map-conversions-counter">
+<h1>modelhub.Map.conversions_counter<a class="headerlink" href="#modelhub-map-conversions-counter" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="modelhub.Map.conversions_counter">
+<span class="sig-prename descclassname"><span class="pre">Map.</span></span><span class="sig-name descname"><span class="pre">conversions_counter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'session_id'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modelhub.Map.conversions_counter" title="Permalink to this definition">#</a></dt>
+<dd><p>Counts the total number of conversions given a partition (ie session_id
+or user_id).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) &#8211; the name of the conversion to label as set in
+<a class="reference internal" href="modelhub.ModelHub.conversion_events.html#modelhub.ModelHub.conversion_events" title="modelhub.ModelHub.conversion_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">ModelHub.conversion_events</span></code></a>.</p></li>
+<li><p><strong>partition</strong> (<em>str</em>) &#8211; the partition over which the number of conversions are counted. Can be any column
+of the ObjectivFrame</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../Series/bach.SeriesBoolean.html#bach.SeriesBoolean" title="bach.SeriesBoolean"><code class="xref py py-class docutils literal notranslate"><span class="pre">bach.SeriesBoolean</span></code></a> with the same index as <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

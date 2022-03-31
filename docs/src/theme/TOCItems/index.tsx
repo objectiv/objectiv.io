@@ -5,16 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { tagLink } from "@objectiv/tracker-browser";
 import React, {useMemo} from 'react';
-import type {TOCItemsProps} from '@theme/TOCItems';
+import type {Props} from '@theme/TOCItems';
 import type {TOCItem} from '@docusaurus/types';
 import {
   type TOCHighlightConfig,
+  type TOCTreeNode,
   useThemeConfig,
-  useTOCFilter,
   useTOCHighlight,
+  useFilteredAndTreeifiedTOC,
 } from '@docusaurus/theme-common';
+
+// OBJECTIV
+import { tagLink } from "@objectiv/tracker-browser";
+// END OBJECTIV
 
 // Recursive component rendering the toc tree
 /* eslint-disable jsx-a11y/control-has-associated-label */
@@ -24,7 +28,7 @@ function TOCItemList({
   linkClassName,
   isChild,
 }: {
-  readonly toc: readonly TOCItem[];
+  readonly toc: readonly TOCTreeNode[];
   readonly className: string;
   readonly linkClassName: string | null;
   readonly isChild?: boolean;
@@ -64,7 +68,7 @@ export default function TOCItems({
   minHeadingLevel: minHeadingLevelOption,
   maxHeadingLevel: maxHeadingLevelOption,
   ...props
-}: TOCItemsProps): JSX.Element | null {
+}: Props): JSX.Element | null {
   const themeConfig = useThemeConfig();
 
   const minHeadingLevel =
@@ -72,7 +76,11 @@ export default function TOCItems({
   const maxHeadingLevel =
     maxHeadingLevelOption ?? themeConfig.tableOfContents.maxHeadingLevel;
 
-  const tocFiltered = useTOCFilter({toc, minHeadingLevel, maxHeadingLevel});
+  const tocTree = useFilteredAndTreeifiedTOC({
+    toc,
+    minHeadingLevel,
+    maxHeadingLevel,
+  });
 
   const tocHighlightConfig: TOCHighlightConfig | undefined = useMemo(() => {
     if (linkClassName && linkActiveClassName) {
@@ -89,7 +97,7 @@ export default function TOCItems({
 
   return (
     <TOCItemList
-      toc={tocFiltered}
+      toc={tocTree}
       className={className}
       linkClassName={linkClassName}
       {...props}

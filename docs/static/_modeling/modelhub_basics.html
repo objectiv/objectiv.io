@@ -1,0 +1,144 @@
+<div>
+                
+  <section id="open-model-hub-basics">
+<span id="example-modelhub-basics"/><h1>Open model hub basics<a class="headerlink" href="#open-model-hub-basics" title="Permalink to this headline">#</a></h1>
+<p>In this example, we briefly demonstrate how you can use pre-built models from the open model hub in
+conjunction with, <a class="reference internal" href="bach.html#bach"><span class="std std-ref">Bach</span></a>, our modeling library.</p>
+<p>This example uses real, unaltered data that was collected from <a class="reference external" href="https://objectiv.io">https://objectiv.io</a> with Objectiv&#8217;s Tracker. All models
+in the open model hub are compatible with datasets that have been validated against the
+<a class="reference external" href="https://objectiv.io/docs/taxonomy/">open analytics taxonomy</a>.</p>
+<p>This example is also available in a <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/model-hub-demo-notebook.ipynb">notebook</a>
+to run on your own data or use our
+<a class="reference external" href="https://objectiv.io/docs/home/quickstart-guide/">quickstart</a> to try it out with demo data in 5 minutes.</p>
+<p>At first we have to instantiate the Objectiv DataFrame object. See
+<a class="reference internal" href="example_notebooks.html#get-started-with-objectiv"><span class="std std-ref">Getting started with Objectiv</span></a> for more info on how to instantiate the object.</p>
+<section id="using-the-open-model-hub">
+<h2>Using the open model hub<a class="headerlink" href="#using-the-open-model-hub" title="Permalink to this headline">#</a></h2>
+<p>The open model hub is a growing collection of open-source, free to use data models that you can take,
+combine and run for product analysis and exploration. It includes models for a wide range of typical product
+analytics use cases. The source is available for all models and you&#8217;re free to make any changes to them.</p>
+<p>The model hub has two main type of functions: <a class="reference internal" href="models_mapping.html#models-mapping"><span class="std std-ref">Mapping</span></a> and <a class="reference internal" href="models_aggregation.html#models-aggregation"><span class="std std-ref">Aggregation</span></a>.</p>
+<ul class="simple">
+<li><p><cite>map</cite> functions always return a series with the same shape and index as the DataFrame they are applied to.
+This ensures they can be added as a column to that DataFrame. <cite>map</cite> functions that return SeriesBoolean can
+be used with to filter the data.</p></li>
+<li><p><cite>aggregate</cite> fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
+<cite>agg</cite>.</p></li>
+</ul>
+<p>Most of the model hub models take <cite>data</cite> as their first argument: this is the DataFrame with the Objectiv data to apply the model to.</p>
+<p>The next examples demonstrate how to use the model hub by showcasing a selection of the models from the model hub.</p>
+</section>
+<section id="a-simple-aggregation-model">
+<h2>A simple aggregation model<a class="headerlink" href="#a-simple-aggregation-model" title="Permalink to this headline">#</a></h2>
+<p>Calculating the unique users is one of the basic&#210; models in the model hub. As it is an aggregation model, it is called with <cite>model_hub.aggregate.unique_users()</cite>. It uses the <em>time_aggregation</em> that is set when the model hub was instantiated. With <cite>.head()</cite> we immediately query the data to show the results. <cite>.to_pandas()</cite> can be used to use all results as a pandas object in python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-map-with-the-model-hub-combining-models">
+<h2>Using <cite>map</cite> with the model hub &amp; combining models<a class="headerlink" href="#using-map-with-the-model-hub-combining-models" title="Permalink to this headline">#</a></h2>
+<p>This example shows how you use map to label users as a new user. This uses <em>time_aggregation</em>. As <em>time_aggregation</em> was set to &#8216;YYYY-MM-DD&#8217; it means all hits are labeled as new for the entire day in which the user had its first session.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'is_new_user'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">is_new_user</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or we can label conversion events. To do this we first have to define what a conversion is by setting the
+type of event and the location on the product at which this event was triggered with <cite>add_conversion_event</cite>
+(this is called the location stack, see <a class="reference internal" href="open_taxonomy.html#location-stack"><span class="std std-ref">location_stack</span></a> for info).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">add_conversion_event</span><span class="p">(</span><span class="n">location_stack</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">json</span><span class="p">[{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'Quickstart Guide'</span><span class="p">,</span> <span class="s1">'_type'</span><span class="p">:</span> <span class="s1">'LinkContext'</span><span class="p">}:],</span>
+                              <span class="n">event_type</span><span class="o">=</span><span class="s1">'PressEvent'</span><span class="p">,</span>
+                              <span class="n">name</span><span class="o">=</span><span class="s1">'quickstart_presses'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'conversion_events'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">is_conversion_event</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'quickstart_presses'</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="map-filter-aggregate">
+<h2>Map, filter, aggregate<a class="headerlink" href="#map-filter-aggregate" title="Permalink to this headline">#</a></h2>
+<p>As the map functions above retured a SeriesBoolean, they can be used in the model hub combined with a filter and aggregation models. We use the same aggregation model we showed earlier (<cite>unique_users</cite>), but now with the filter <cite>df.conversion_events</cite> applied. This gives the unique converted users per day.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">conversion_events</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Similarly, we can use other aggregation models from the model hub. In the example below, the average session duration is calculated for new users.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_new_user</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="combining-model-results">
+<h2>Combining model results<a class="headerlink" href="#combining-model-results" title="Permalink to this headline">#</a></h2>
+<p>Results from aggregation models can be used together if they share the same index type (similar to pandas). In this example the share of new users per day is calculated.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_new_user</span><span class="p">])</span> <span class="o">/</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-multiple-model-hub-filters">
+<h2>Using multiple model hub filters<a class="headerlink" href="#using-multiple-model-hub-filters" title="Permalink to this headline">#</a></h2>
+<p>The model hub&#8217;s map results can be combined and reused. In this example we set two <cite>map</cite> model results as a column to the original DataFrame and use them both to filter the data and apply an aggregation model.
+In this example we calculate the number of users that were new in a month and also that converted twice on a day.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'is_new_user_month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">is_new_user</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">time_aggregation</span> <span class="o">=</span> <span class="s1">'YYYY-MM'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'is_twice_converted'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">conversions_in_time</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'quickstart_presses'</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span>
+<span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_new_user_month</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">is_twice_converted</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="what-s-next">
+<h2>What&#8217;s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h2>
+<p>There are several options on how to continue working with the data or using the results otherwise, i.e. for visualization.</p>
+<section id="export-models-to-sql">
+<h3>1. Export models to SQL<a class="headerlink" href="#export-models-to-sql" title="Permalink to this headline">#</a></h3>
+<p>As mentioned, all operations and models performed on the DataFrame are run on the SQL data base. Therefore it is possible to view all objects as an SQL statement. For the <cite>new_user_share</cite> results that was created this looks as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">display_sql_as_markdown</span><span class="p">(</span><span class="n">new_user_share</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="export-to-metabase">
+<h3>2. Export to metabase<a class="headerlink" href="#export-to-metabase" title="Permalink to this headline">#</a></h3>
+<p>Aggregation model results can be exported to Metabase, to visualize and share your results. This is done for the unique new users:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">to_metabase</span><span class="p">(</span><span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_new_user</span><span class="p">]),</span>
+                     <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Unique New Users'</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="further-data-crunching-using-the-bach-modeling-library">
+<h3>3. Further data crunching using the Bach Modeling Library<a class="headerlink" href="#further-data-crunching-using-the-bach-modeling-library" title="Permalink to this headline">#</a></h3>
+<p>All results from the model hub are in the form of Bach DataFrames or Series. This makes the model hub and Bach work seamlessly together.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># label the number of time a user is converted in a session at a moment using the model hub.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'conversion_count'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">conversions_in_time</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'quickstart_presses'</span><span class="p">)</span>
+
+<span class="c1"># use Bach to do any supported operation using pandas syntax.</span>
+<span class="c1"># select users that converted</span>
+<span class="n">converted_users</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">conversion_events</span><span class="p">]</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="c1"># select PressEvents of users that converted</span>
+<span class="n">df_selection</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">event_type</span> <span class="o">==</span> <span class="s1">'PressEvent'</span><span class="p">)</span> <span class="o">&amp;</span>
+                  <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">user_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">converted_users</span><span class="p">))]</span>
+<span class="c1"># calculate the number of PressEvents before conversion per session</span>
+<span class="n">presses_per_session</span> <span class="o">=</span> <span class="n">df_selection</span><span class="p">[</span><span class="n">df_selection</span><span class="o">.</span><span class="n">conversion_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'session_id'</span><span class="p">)</span><span class="o">.</span><span class="n">session_hit_number</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Show the results, now the underlying query is executed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">presses_per_session</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There is another <a class="reference internal" href="bach_examples.html#bach-examples"><span class="std std-ref">example</span></a> that demonstrates what you can do with the Bach modeling
+library, or head over to the <a class="reference internal" href="bach_reference.html#bach-api-reference"><span class="std std-ref">API Reference</span></a> for a complete overview of the possibilities.</p>
+</section>
+<section id="export-dataframe-and-model-hub-results-to-pandas-dataframe">
+<h3>4. Export DataFrame and model hub results to pandas DataFrame<a class="headerlink" href="#export-dataframe-and-model-hub-results-to-pandas-dataframe" title="Permalink to this headline">#</a></h3>
+<p>Bach DataFrames and/or model hub results can always be exported to pandas. Since Bach DataFrame operation run on the full dataset in the SQL database, it is recommended to export to pandas if data small enough; ie by aggregation or selection.
+By exporting the data to pandas you can use all the options from pandas as well as pandas compatible ML packages.</p>
+<p>We plot the previously calculated presses per session before conversion using pandas built-in plotting methods.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># presses_per_session_pd is a pandas Series</span>
+<span class="n">presses_per_session_pd</span> <span class="o">=</span> <span class="n">presses_per_session</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">presses_per_session_pd</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This concludes the open model hub demo.</p>
+<p>We hope you&#8217;ve gotten a taste of the power and flexibility of the open model hub to quickly answer common product analytics questions. You can take it a lot further and build highly specific model stacks for in-depth analysis and exploration.</p>
+<p>For a complete overview of all available and upcoming models, check out the <a class="reference internal" href="models.html#models"><span class="std std-ref">Model overview</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              
