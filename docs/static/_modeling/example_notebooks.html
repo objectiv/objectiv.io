@@ -32,8 +32,8 @@ ie. monthly or daily.</p>
 <span class="c1"># instantiate the model hub</span>
 <span class="n">modelhub</span> <span class="o">=</span> <span class="n">ModelHub</span><span class="p">(</span><span class="n">time_aggregation</span><span class="o">=</span><span class="s1">'YYYY-MM-DD'</span><span class="p">)</span>
 <span class="c1"># get the Bach DataFrame with Objectiv data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">get_objectiv_dataframe</span><span class="p">(</span><span class="n">db_url</span><span class="o">=</span><span class="s1">'postgresql://objectiv:@localhost:5432/objectiv'</span>
-                                     <span class="n">start_date</span><span class="o">=</span><span class="s1">'2022-01-04'</span><span class="p">,</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">get_objectiv_dataframe</span><span class="p">(</span><span class="n">db_url</span><span class="o">=</span><span class="s1">'postgresql://objectiv:@localhost:5432/objectiv'</span><span class="p">,</span>
+                                     <span class="n">start_date</span><span class="o">=</span><span class="s1">'2022-03-01'</span><span class="p">,</span>
                                      <span class="n">table_name</span><span class="o">=</span><span class="s1">'example'</span><span class="p">)</span>
 </pre></div>
 </div>
