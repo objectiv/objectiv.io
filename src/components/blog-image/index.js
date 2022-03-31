@@ -41,9 +41,9 @@ function BlogImage({
   return (
     <TrackedDiv id={'image: ' + imageAlt}>
       <img src={useBaseUrl(url)} alt={imageAlt} className={classNames} />
-      {caption && 
-        <p className={clsx(styles.imageCaption)}>{imageCaption}</p>
-      }
+      
+        <p className={clsx(styles.imageCaption)}>{caption && imageCaption}</p>
+      
     </TrackedDiv>
   );
 }
