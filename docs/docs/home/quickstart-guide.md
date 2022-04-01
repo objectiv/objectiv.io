@@ -33,7 +33,7 @@ This will spin up the following containers:
 
 ### Exploring & modeling data
 
-This demo includes [example notebooks](/modeling/example_notebooks/) to demonstrate what Objectiv can do:
+This demo includes [example notebooks](/modeling/example_notebooks.mdx) to demonstrate what Objectiv can do:
 
 To explore the example notebooks, open the following URL in your browser:
 
