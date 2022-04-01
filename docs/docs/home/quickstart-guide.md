@@ -26,19 +26,16 @@ This will spin up the following containers:
 * `objectiv_website` A local version of the objectiv.io website, instrumented with the **Objectiv Tracker** 
 * `objectiv_collector` An **Objectiv Collector** to validate & store event data from the tracker
 * `objectiv_postgres` A PostgreSQL database, pre-filled with anonymized demo user data
-* `objectiv_notebook` A Jupyter Notebook environment to demonstrate **Objectiv Bach** and the **open model hub**
+* `objectiv_notebook` A Jupyter Notebook environment to demonstrate the **open model hub** and **Objectiv Bach**  
 * `objectiv_metabase` A **Metabase** (OSS BI tool) environment to share and visualize your findings   
 
 <img src={useBaseUrl('/img/objectiv-pipeline-bi.svg')} alt="Objectiv Pipeline" />
 
 ### Exploring & modeling data
 
-This demo includes two notebooks to demonstrate what Objectiv can do:
+This demo includes [example notebooks](/modeling/example_notebooks/) to demonstrate what Objectiv can do:
 
-* `open_model_hub_demo.ipynb` Demonstration of using the **open model hub** to build model stacks
-* `open-taxonomy-how-to.ipynb` Demonstration of using the **Objectiv Bach** modeling library
-
-To explore the notebooks, open the following URL in your browser:
+To explore the example notebooks, open the following URL in your browser:
 
 ```bash
 http://localhost:8888/lab/tree/model-hub-demo-notebook.ipynb?token=objectiv
