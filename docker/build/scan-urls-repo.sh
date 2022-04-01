@@ -19,14 +19,14 @@ for i in "$@"; do
   esac
 done
 
-if test -f "$URLSFILE"; then
+if [ -f "$URLSFILE" ]; then
   echo "Scanning directory '$DIRECTORY' from URLs file '$URLSFILE'...";
-  FOUND_URLS=0
+declare -i  FOUND_URLS=0
   while IFS="," read -r rec1
   do
     rec1_no_cr="${rec1/$'\r'/}"
     OUTPUT=$(grep --include=\*.{md,mdx,rst,html,ipynb} --exclude-dir={node_modules,tests} -rnl $DIRECTORY -e $rec1_no_cr)
-    if ! [ -z "$OUTPUT" ]
+    if [ -n "$OUTPUT" ]
     then
       let FOUND_URLS++
       tput setaf 1
@@ -34,7 +34,7 @@ if test -f "$URLSFILE"; then
       echo "$OUTPUT"
     fi
   done < <(cut -d "," -f1,3 $PWD/$URLSFILE | tail -n +2)
-  if [ $FOUND_URLS == 0 ];
+  if [ $FOUND_URLS -eq 0 ];
   then
     tput setaf 2
     echo "No removed URLs found in $DIRECTORY"
