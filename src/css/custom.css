@@ -289,7 +289,11 @@ p, .markdown p {
   }
 }
 
-.blog-post-page article {
+.blog-post-page article header {
+  font-family: "Georgia", serif;
+  line-height: 36px;
+}
+.blog-post-page article p, .blog-post-page article ol, .blog-post-page article ul {
   font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
@@ -312,6 +316,11 @@ p, .markdown p {
 .blog-list-page article header .margin-vert--md, .blog-post-page article header .margin-vert--md { /* blog post date */
   margin-top: 0 !important;
   color:rgb(100, 100, 100);
+}
+
+.blog-post-page pre code {
+  max-height: 600px;
+  font-size: 13px;
 }
 
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
