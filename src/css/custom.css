@@ -318,11 +318,6 @@ p, .markdown p {
   color:rgb(100, 100, 100);
 }
 
-.blog-post-page pre code {
-  max-height: 600px;
-  font-size: 13px;
-}
-
 .blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
   color: var(--ifm-font-color-base);
 }
