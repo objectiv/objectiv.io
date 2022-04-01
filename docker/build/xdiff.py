@@ -9,6 +9,7 @@ import re
 from blessings import Terminal
 from lxml import etree
 from difflib import unified_diff
+import os
 import csv
 
 version = 2.3
@@ -132,6 +133,7 @@ def parse_diff(args):
         tree2 = parse_file(args.file2)
         string1 = canonicalize_tree(tree1)
         string2 = canonicalize_tree(tree2)
+
         diff = diff_strings(string1, string2, args.file1, args.file2)
         for line in diff:
             if line.startswith("@@"):
@@ -184,16 +186,35 @@ def extract_urls_from_diff(parsed_diff):
 
 def write_urls_to_csv(urls, file='./tmp/urls.csv'):
     header = ['url']
-    with open(file, 'w', encoding='UTF8', newline='') as f:
+    file_exists=os.path.exists(file)
+    with open(file, "a" if file_exists else "w", encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
-        # write the header
-        writer.writerow(header)
+        if(not file_exists):
+            # write the header first
+            writer.writerow(header)
+
         # write multiple rows
         writer.writerows(urls)
 
     print("Written to CSV:", file)
 
+def replace_text_in_file(file_to_replace, old_text, new_text):
+    # Read in the file
+    with open(file_to_replace, 'r') as file:
+        filedata = file.read()
+
+    # Replace the target string
+    filedata = filedata.replace(old_text, new_text)
+
+    # Write the file out again
+    with open(file_to_replace, 'w') as file:
+        file.write(filedata)
+
 def main():
+    # replace certain environment lines in the file and write it back
+    replace_text_in_file(args.file1, "testing.objectiv.io", "objectiv.io")
+    replace_text_in_file(args.file2, "testing.objectiv.io", "objectiv.io")
+
     parsed_diff = parse_diff(args)
 
     # print and write added URLs
