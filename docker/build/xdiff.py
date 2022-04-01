@@ -200,15 +200,17 @@ def write_urls_to_csv(urls, file='./tmp/urls.csv'):
 
 def replace_text_in_file(file_to_replace, old_text, new_text):
     # Read in the file
-    with open(file_to_replace, 'r') as file:
+    with open(file_to_replace, 'r+') as file:
         filedata = file.read()
-
-    # Replace the target string
-    filedata = filedata.replace(old_text, new_text)
-
-    # Write the file out again
-    with open(file_to_replace, 'w') as file:
+        # Replace the target string
+        filedata = filedata.replace(old_text, new_text)
+        # Setting the position to the top
+        # of the page to insert data
+        file.seek(0)
+        # Write the file out again
         file.write(filedata)
+        # Truncating the file size
+        file.truncate()
 
 def main():
     # replace certain environment lines in the file and write it back

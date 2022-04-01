@@ -40,5 +40,5 @@ declare -i  FOUND_URLS=0
     echo "No removed URLs found in $DIRECTORY"
   fi
 else
-  echo "No removed URLs to scan (file '$URLSFILE' doesn't exist)"
+  echo "No removed URLs to scan in '$DIRECTORY' (file '$URLSFILE' doesn't exist)"
 fi
