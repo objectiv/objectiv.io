@@ -18,12 +18,6 @@ FQDN_PATHS = ['/', '/docs/']  # list of paths on domain to get sitemap from
 SITEMAP = 'sitemap.xml'  # name of sitemap file
 EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb']  # file extensions to scan for URLs
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--environment", default='production', help="the image's environment, e.g. 'testing'")
-parser.add_argument("--docker-image", default='objectiv/website-deploy', help="the docker image to scan")
-parser.add_argument("--tag", default=datetime.datetime.now().strftime('%Y%m%d'), help="the docker image tag")
-args = parser.parse_args()
-
 
 def has_extension(filename: str, extensions: List[str]) -> bool:
     """Check whether a file has one of the specified extensions
@@ -71,7 +65,6 @@ def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> 
             urls_found_in_files += check_urls_in_file(fn, urls)
 
     return urls_found_in_files
-    # return {fn: check_urls_in_file(fn, urls) for fn in glob.glob(path, recursive=True) if has_extension(fn, extensions)}
 
 
 def compare_urls(source: List[str], target: List[str]) -> List[str]:
@@ -160,6 +153,15 @@ def main() -> int:
     * URLs that are used externally
     * TODO: tracker validation
     """
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--environment", default='production', 
+                        help="the image's environment, e.g. 'testing'")
+    parser.add_argument("--docker-image", default='objectiv/website-deploy', 
+                        help="the docker image to scan")
+    parser.add_argument("--tag", default=datetime.datetime.now().strftime('%Y%m%d'), 
+                        help="the docker image tag")
+    args = parser.parse_args()
 
     term = Terminal()
 
