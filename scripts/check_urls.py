@@ -31,7 +31,7 @@ def has_extension(filename: str, extensions: List[str]) -> bool:
     return extension in extensions
 
 
-def check_urls_in_file(filename: str, urls: List[str]) -> List[str]:
+def check_urls_in_file(filename: str, urls: List[str]) -> List[List[str]]:
     """Get any occurance of the specified URLs in the specified file
 
     :param filename: The file to scan
@@ -49,11 +49,11 @@ def check_urls_in_file(filename: str, urls: List[str]) -> List[str]:
     return found
 
 
-def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> Dict[str,str]:
+def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:
     """Find any occurence of the URLs in the specified path and file types, e.g. in a repo
 
     :param path: The path to scan
-    :param extensions: The file extensions to scan, e.g. ['.md', .ipynb']
+    :param extensions: The file extensions to scan, e.g. ['md', 'ipynb']
     :param urls: The URLs to find in the files
 
     :return: List of URLs found and in which file, e.g. [['https://test.com', '/source/hello.md']]
