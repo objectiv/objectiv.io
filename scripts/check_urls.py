@@ -13,16 +13,17 @@ from blessings import Terminal
 from subprocess import check_output
 
 # Basic configuration
-FQDN = 'https://objectiv.io' # domain to get sitemaps from
-FQDN_PATHS = ['/', '/docs/'] # list of paths on domain to get sitemap from
-SITEMAP = 'sitemap.xml' # name of sitemap file
-EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb'] # file extensions to scan for URLs
+FQDN = 'https://objectiv.io'  # domain to get sitemaps from
+FQDN_PATHS = ['/', '/docs/']  # list of paths on domain to get sitemap from
+SITEMAP = 'sitemap.xml'  # name of sitemap file
+EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb']  # file extensions to scan for URLs
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--environment", default='production', help="the image's environment, e.g. 'testing'")
 parser.add_argument("--docker-image", default='objectiv/website-deploy', help="the docker image to scan")
 parser.add_argument("--tag", default=datetime.datetime.now().strftime('%Y%m%d'), help="the docker image tag")
 args = parser.parse_args()
+
 
 def has_extension(filename: str, extensions: List[str]) -> bool:
     """Check whether a file has one of the specified extensions
@@ -34,6 +35,7 @@ def has_extension(filename: str, extensions: List[str]) -> bool:
     """
     extension = filename.split('.')[-1]
     return extension in extensions
+
 
 def check_urls_in_file(filename: str, urls: List[str]) -> List[str]:
     """Get any occurance of the specified URLs in the specified file
@@ -51,6 +53,7 @@ def check_urls_in_file(filename: str, urls: List[str]) -> List[str]:
             if contents.find(url) != -1:
                 found.append([url, filename])
     return found
+
 
 def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> Dict[str,str]:
     """Find any occurence of the URLs in the specified path and file types, e.g. in a repo
@@ -70,6 +73,7 @@ def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> 
     return urls_found_in_files
     # return {fn: check_urls_in_file(fn, urls) for fn in glob.glob(path, recursive=True) if has_extension(fn, extensions)}
 
+
 def compare_urls(source: List[str], target: List[str]) -> List[str]:
     """Get the URLs not found in source vs target
 
@@ -79,6 +83,7 @@ def compare_urls(source: List[str], target: List[str]) -> List[str]:
     :return: List of URLs missing in source, compared to target
     """
     return [u for u in source if u not in target]
+
 
 def get_base_url(url: str) -> str:
     """Get the base URL from a URL (e.g. 'https://objectiv.io' from 'https://objectiv.io/about')
@@ -90,6 +95,7 @@ def get_base_url(url: str) -> str:
 
     parsed_url = urllib.parse.urlparse(url)
     return f'{parsed_url.scheme}://{parsed_url.netloc}'
+
 
 def make_canonical(url: str, base_url: str = None) -> str:
     """Canonicalize a URL
@@ -104,6 +110,7 @@ def make_canonical(url: str, base_url: str = None) -> str:
         base_url = get_base_url(url)
     return url.replace(base_url, '')
 
+
 def get_urls_from_sitemap(sitemap: str) -> List:
     """Get all the URLs from a sitemap (in text)
 
@@ -114,6 +121,7 @@ def get_urls_from_sitemap(sitemap: str) -> List:
     doc = ElementTree.fromstring(sitemap)
     for url in doc.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc'):
         yield url.text
+
 
 def get_urls_from_docker_image(env: str, path: str, image: str, tag: str = 'latest') -> List[str]:
     """Get all the URLs from a file at the specified Docker image
@@ -131,6 +139,7 @@ def get_urls_from_docker_image(env: str, path: str, image: str, tag: str = 'late
 
     return get_urls_from_sitemap(sitemap.decode('utf-8'))
 
+
 def get_urls_from_url(url: str) -> List:
     """Get all the URLs from a file at the specified URL (i.e. a sitemap)
 
@@ -141,6 +150,7 @@ def get_urls_from_url(url: str) -> List:
     print(f'Fetching URLs from sitemap at {url}')
     r = requests.get(url)
     return get_urls_from_sitemap(r.text)
+
 
 def main() -> int:
     """
@@ -162,8 +172,8 @@ def main() -> int:
     # second, get the URLs from the image's sitemap
     docker_urls = []
     env = args.environment
-    image=args.docker_image
-    tag=args.tag
+    image = args.docker_image
+    tag = args.tag
     for path in FQDN_PATHS:
         docker_urls += get_urls_from_docker_image(env, path=path, image=image, tag=tag)
     docker_urls = [make_canonical(u) for u in docker_urls]
@@ -200,6 +210,7 @@ def main() -> int:
     # TODO: check all removed+added URLs against the ones used in tracker validation
     
     return exitcode
+
 
 if __name__ == "__main__":
     sys.exit(main())
