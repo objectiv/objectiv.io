@@ -1,10 +1,10 @@
 <div>
                 
   <section id="bach-dataframe">
-<h1>bach.DataFrame<a class="headerlink" href="#bach-dataframe" title="Permalink to this headline">&#182;</a></h1>
+<h1>bach.DataFrame<a class="headerlink" href="#bach-dataframe" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.DataFrame">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepoints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">DataFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepoints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame" title="Permalink to this definition">#</a></dt>
 <dd><p>A mutable DataFrame representing tabular data in a database and enabling operations on that data.</p>
 <p>A Bach DataFrame object can be used to process large amounts of data on a database, while using an api
 that is based on the pandas api. This allows the database to group and aggregate data, sample data and
@@ -26,6 +26,12 @@ positive integers are currently accepted in slices.</p>
 operations like equals (<cite>==</cite>), less-than (<cite>&lt;</cite>), not(<cite>~</cite>) on two series, or series with values:
 <code class="docutils literal notranslate"><span class="pre">boolean_series</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>. Boolean indexing can be done like <code class="docutils literal notranslate"><span class="pre">df[df.column</span> <span class="pre">==</span> <span class="pre">5]</span></code>. Only rows are
 returned for which the condition is true.</p>
+<p>Label-based selection is also supported by using the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute. Each label is interpreted
+as a value contained by the index column. Unlike Pandas, if the label is not found,
+no exception will be raised. I.e. <code class="docutils literal notranslate"><span class="pre">df.loc['a']</span></code> returns rows where the index series is equal to <code class="docutils literal notranslate"><span class="pre">a</span></code>.
+Slicing can also be performed (the dataframe must be sorted). I.e. <code class="docutils literal notranslate"><span class="pre">df['a':'d',</span> <span class="pre">'col1:col3']</span></code>. This will
+return all rows/columns included in the slicing, where the start and stop are inclusive.
+For more information about label-based selection, please take a look to <a class="reference internal" href="bach.DataFrame.loc.html#bach.DataFrame.loc" title="bach.DataFrame.loc"><code class="xref py py-attr docutils literal notranslate"><span class="pre">loc</span></code></a>.</p>
 <p><strong>Moving Series around</strong></p>
 <p>Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
 DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
@@ -56,7 +62,7 @@ only when one of the above mentioned data-transfer functions is called.</p>
 <p>The API of this DataFrame is partially compatible with Pandas DataFrames. For more on Pandas
 DataFrames see <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">https://pandas.pydata.org/docs/reference/frame.html</a></p>
 <p class="rubric">Methods</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -224,7 +230,7 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -257,16 +263,19 @@ DataFrames see <a class="reference external" href="https://pandas.pydata.org/doc
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.is_materialized.html#bach.DataFrame.is_materialized" title="bach.DataFrame.is_materialized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_materialized</span></code></a></p></td>
 <td><p>Return true if this DataFrame is in a materialized state, i.e. all information about the DataFrame's values is encoded in self.base_node.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.order_by.html#bach.DataFrame.order_by" title="bach.DataFrame.order_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order_by</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.loc.html#bach.DataFrame.loc" title="bach.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loc</span></code></a></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">.loc</span></code> accessor offers different methods for label-based selection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.order_by.html#bach.DataFrame.order_by" title="bach.DataFrame.order_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order_by</span></code></a></p></td>
 <td><p>Get the current sort order, if any.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.savepoints.html#bach.DataFrame.savepoints" title="bach.DataFrame.savepoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savepoints</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.savepoints.html#bach.DataFrame.savepoints" title="bach.DataFrame.savepoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savepoints</span></code></a></p></td>
 <td><p/></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
 <td><p>Return a Numpy representation of the DataFrame akin <code class="xref py py-attr docutils literal notranslate"><span class="pre">pandas.Dataframe.values</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.DataFrame.variables.html#bach.DataFrame.variables" title="bach.DataFrame.variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variables</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.DataFrame.variables.html#bach.DataFrame.variables" title="bach.DataFrame.variables"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variables</span></code></a></p></td>
 <td><p>Get all variables for which values are set, which will be used when querying the database.</p></td>
 </tr>
 </tbody>

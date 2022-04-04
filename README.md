@@ -50,6 +50,24 @@ make check-broken-links
 This will build and spin up a docker container running a docker build of the website, and check all internal 
 links.
 
+### Testing a branch on testing
+To test a branch on testing, first of course check it out (`git checkout <YOUR_BRANCH>`), make sure to first 
+provision the appropriate environment variables for SFTP, and then run:
+```bash
+# pull any changes, and build the deployable docker images for both website and docs for testing only.
+git pull && make build-docker-test-image build-docker-deploy-image
+
+# check image for any removed/changed URLs that may cause issues
+python3 scripts/check_urls.py --environment=testing
+
+# then, upload to testing via FTP
+docker run -e SFTP_URL \
+    -e SFTP_USERNAME \
+    -e SFTP_PASSWORD \
+    -e SFTP_PUBKEY  \
+    objectiv/website-deploy:$(date +%Y%m%d) deploytesting.sh
+```
+
 
 ### Testing a branch on staging
 To test a branch on staging, first of course check it out (`git checkout <YOUR_BRANCH>`), make sure to first 
@@ -58,7 +76,10 @@ provision the appropriate environment variables for SFTP, and then run:
 # pull any changes, and build the deployable docker images for both website and docs for staging & production.
 git pull && make build-docker-build-image build-docker-deploy-image
 
-# then, upload to staging via FTP
+# check image for any removed/changed URLs that may cause issues
+python3 scripts/check_urls.py --environment=staging
+
+# if URL checks are okay, upload to staging via FTP
 docker run -e SFTP_URL \
     -e SFTP_USERNAME \
     -e SFTP_PASSWORD \

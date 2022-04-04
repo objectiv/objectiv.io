@@ -1,0 +1,66 @@
+<div>
+                
+  <section id="example-notebooks">
+<span id="id1"/><h1>Example notebooks<a class="headerlink" href="#example-notebooks" title="Permalink to this headline">#</a></h1>
+<p>Here are several examples of how you can analyze and model data using the open model hub. All examples are
+also available as Jupyter notebooks from our <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/tree/main/notebooks">GitHub repository</a> and can run if all <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/requirements.txt">requirements</a> are
+installed.</p>
+<p>To get started you will first have to
+instantiate the open model hub and create a Bach DataFrame with Objectiv data. The open
+model hub uses this DataFrame for its models. For a general introduction to Bach DataFrames, see the
+<a class="reference internal" href="bach.html#bach"><span class="std std-ref">Bach</span></a> docs or some basic examples to get started <a class="reference internal" href="bach_examples.html#bach-examples"><span class="std std-ref">here</span></a>.</p>
+<div class="toctree-wrapper hide-toctree-ul compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelhub_basics.html">Open model hub basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="product_analytics.html">Basic product analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_taxonomy.html">Open taxonomy how-to</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">Feature engineering with Bach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning.html">Bach and sklearn</a></li>
+</ul>
+</div>
+<section id="getting-started-with-objectiv">
+<span id="get-started-with-objectiv"/><h2>Getting started with Objectiv<a class="headerlink" href="#getting-started-with-objectiv" title="Permalink to this headline">#</a></h2>
+<p>Here we show how to install and instantiate the model hub.
+The open model hub is installed with</p>
+<blockquote>
+<div><p>pip install objectiv-modelhub</p>
+</div></blockquote>
+<p>Now we can import and instantiate the model hub and create a Bach DataFrame with Objectiv data. This
+DataFrame is used to analyze data collected with Objectiv&#8217;s Tracker.
+The DataFrame points to the data in the SQL database and all operations are done on this object. A start date
+and an end date can
+optionally be passed to limit the underlying data that is queried. The <cite>time_aggregation</cite> parameter determines
+the default formatting of the timestamp of events. This is useful for grouping to different time aggregations,
+ie. monthly or daily.</p>
+<p>In the example we assume that the data collected with Objectiv&#8217;s tracker is stored in a table called
+&#8216;example&#8217; in a database that can be accessed with <cite>db_url</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">modelhub</span> <span class="kn">import</span> <span class="n">ModelHub</span>
+<span class="c1"># instantiate the model hub</span>
+<span class="n">modelhub</span> <span class="o">=</span> <span class="n">ModelHub</span><span class="p">(</span><span class="n">time_aggregation</span><span class="o">=</span><span class="s1">'YYYY-MM-DD'</span><span class="p">)</span>
+<span class="c1"># get the Bach DataFrame with Objectiv data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">get_objectiv_dataframe</span><span class="p">(</span><span class="n">db_url</span><span class="o">=</span><span class="s1">'postgresql://objectiv:@localhost:5432/objectiv'</span><span class="p">,</span>
+                                     <span class="n">start_date</span><span class="o">=</span><span class="s1">'2022-03-01'</span><span class="p">,</span>
+                                     <span class="n">table_name</span><span class="o">=</span><span class="s1">'example'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Your DataFrame is instantiated! We start with showing the first couple of rows from the data set.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Take a look at one of the example notebooks below to see how you can analyze your data. Basic Bach
+introduction examples are <a class="reference internal" href="bach_examples.html#bach-examples"><span class="std std-ref">here</span></a> in the Bach docs.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="modelhub_basics.html#example-modelhub-basics"><span class="std std-ref">Open model hub basics</span></a></p></li>
+<li><p><a class="reference internal" href="product_analytics.html#example-product-analytics"><span class="std std-ref">Basic product analytics</span></a></p></li>
+<li><p><a class="reference internal" href="open_taxonomy.html#example-open-taxonomy"><span class="std std-ref">Open taxonomy how-to</span></a></p></li>
+<li><p><a class="reference internal" href="feature_engineering.html#example-feature-engineering"><span class="std std-ref">Feature engineering with Bach</span></a></p></li>
+<li><p><a class="reference internal" href="machine_learning.html#example-machine-learning"><span class="std std-ref">Bach and sklearn</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              

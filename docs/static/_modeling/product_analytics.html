@@ -1,0 +1,169 @@
+<div>
+                
+  <section id="basic-product-analytics">
+<span id="example-product-analytics"/><h1>Basic product analytics<a class="headerlink" href="#basic-product-analytics" title="Permalink to this headline">#</a></h1>
+<p>This example shows how the open model hub can be used for basic product analysis.</p>
+<p>This example is also available in a <a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/basic-analysis.ipynb">notebook</a>
+to run on your own data or use our
+<a class="reference external" href="https://objectiv.io/docs/home/quickstart-guide/">quickstart</a> to try it out with demo data in 5 minutes.</p>
+<p>At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
+<a class="reference internal" href="example_notebooks.html#get-started-with-objectiv"><span class="std std-ref">Getting started with Objectiv</span></a> for more info on this. The data used in this example is
+based on the data set that comes with our quickstart docker demo.</p>
+<p>First we look at the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'session_id'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The columns &#8216;global_contexts&#8217; and the &#8216;location_stack&#8217; contain most of the event specific data. These columns
+are json type columns and we can extract data from it based on the keys of the json objects using
+<a class="reference internal" href="modelhub_api_reference/modelhub.SeriesLocationStack.objectiv.html#get-from-context-with-type-series"><span class="std std-ref">get_from_context_with_type_series</span></a>. Or use methods
+specific to the <a class="reference internal" href="open_taxonomy.html#location-stack"><span class="std std-ref">location_stack</span></a> or <a class="reference internal" href="open_taxonomy.html#global-contexts"><span class="std std-ref">global_contexts</span></a> to
+extract the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'application'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">application</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'feature_nice_name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">ls</span><span class="o">.</span><span class="n">nice_name</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'root_location'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">ls</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'RootLocationContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'id'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'referrer'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'HttpContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'referrer'</span><span class="p">)</span>
+<span class="c1"># add marketing context as columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'utm_source'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'MarketingContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'source'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'utm_medium'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'MarketingContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'medium'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'utm_campaign'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'MarketingContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'campaign'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'utm_content'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'MarketingContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'content'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'utm_term'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">global_contexts</span><span class="o">.</span><span class="n">gc</span><span class="o">.</span><span class="n">get_from_context_with_type_series</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'MarketingContext'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">'term'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we will go though a bunch of basic analytics metrics. We can use models from the <a class="reference internal" href="models.html#models"><span class="std std-ref">Model overview</span></a> for this purpose or use <a class="reference internal" href="bach.html#bach"><span class="std std-ref">Bach</span></a> to do data analysis directly on the data stored in the
+SQL database using pandas like syntax.</p>
+<p>For each example, <cite>head()</cite>, <cite>to_pandas()</cite> or <cite>to_numpy()</cite> can be used to execute the generated SQL and get
+the results in
+your notebook.</p>
+<section id="unique-users">
+<h2>Unique users<a class="headerlink" href="#unique-users" title="Permalink to this headline">#</a></h2>
+<p>The <cite>daily_users</cite> uses the <cite>time_aggregation</cite> as set when the <cite>of</cite> object was instantiated. In this case the
+formatting was set to days, so the aggregation is daily. For <cite>monthly_users</cite>, the default time_aggregation is
+overridden by using a different <cite>groupby</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">daily_users</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">montly_users</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="n">modelhub</span><span class="o">.</span><span class="n">time_agg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'YYYY-MM'</span><span class="p">))</span>
+<span class="n">users_root</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span> <span class="s1">'root_location'</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="user-time-spent">
+<h2>User time spent<a class="headerlink" href="#user-time-spent" title="Permalink to this headline">#</a></h2>
+<p>Similarly we can calculate the average session duration for time intervals. <cite>duration_root_month</cite> gives the
+average time spent per root location per month.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">duration_daily</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">duration_monthly</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="n">modelhub</span><span class="o">.</span><span class="n">time_agg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'YYYY-MM'</span><span class="p">))</span>
+<span class="n">duration_root_month</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'root_location'</span><span class="p">,</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">time_agg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'YYYY-MM'</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>This example shows the quartiles of time spent. Materialization is needed because the expression of the
+created series contains aggregated data, and it is not allowed to aggregate that.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">session_duration</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'session_id'</span><span class="p">,</span> <span class="n">exclude_bounces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">session_duration</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">materialize</span><span class="p">()[</span><span class="s1">'session_duration'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="top-used-features">
+<h2>Top used features<a class="headerlink" href="#top-used-features" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># select only user actions, so stack_event_types must be a superset of ['InteractiveEvent']</span>
+<span class="n">interactive_events</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">stack_event_types</span><span class="o">&gt;=</span><span class="p">[</span><span class="s1">'InteractiveEvent'</span><span class="p">]]</span>
+
+<span class="c1"># users by feature</span>
+<span class="n">users_feature</span> <span class="o">=</span> <span class="n">interactive_events</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'application'</span><span class="p">,</span> <span class="s1">'feature_nice_name'</span><span class="p">,</span> <span class="s1">'event_type'</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'user_id'</span><span class="p">:</span><span class="s1">'nunique'</span><span class="p">})</span>
+<span class="n">users_feature</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'user_id_nunique'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="most-used-product-areas">
+<h2>Most used product areas<a class="headerlink" href="#most-used-product-areas" title="Permalink to this headline">#</a></h2>
+<p>First we use the model hub to get the unique users per application, root location, feature, and event type.
+From this prepared dataset, we get show the users for the home page first.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">most_interactions</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">interactive_events</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span><span class="s1">'root_location'</span><span class="p">,</span><span class="s1">'feature_nice_name'</span><span class="p">,</span> <span class="s1">'event_type'</span><span class="p">])</span>
+<span class="n">most_interactions</span> <span class="o">=</span> <span class="n">most_interactions</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">home_users</span> <span class="o">=</span> <span class="n">most_interactions</span><span class="p">[(</span><span class="n">most_interactions</span><span class="o">.</span><span class="n">application</span> <span class="o">==</span> <span class="s1">'objectiv-website'</span><span class="p">)</span> <span class="o">&amp;</span>
+                               <span class="p">(</span><span class="n">most_interactions</span><span class="o">.</span><span class="n">root_location</span> <span class="o">==</span> <span class="s1">'home'</span><span class="p">)]</span>
+<span class="n">home_users</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'unique_users'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>From the same <cite>most_interactions</cite> object, we can select the top interactions for the &#8216;docs&#8217; page.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">docs_users</span> <span class="o">=</span> <span class="n">most_interactions</span><span class="p">[</span><span class="n">most_interactions</span><span class="o">.</span><span class="n">application</span> <span class="o">==</span> <span class="s1">'objectiv-docs'</span><span class="p">]</span>
+<span class="n">docs_users</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'unique_users'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="user-origin">
+<h2>User origin<a class="headerlink" href="#user-origin" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># users by referrer</span>
+<span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'referrer'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="marketing">
+<h2>Marketing<a class="headerlink" href="#marketing" title="Permalink to this headline">#</a></h2>
+<p>Calculate the number of users per campaign.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'utm_source'</span><span class="p">,</span> <span class="s1">'utm_medium'</span><span class="p">,</span> <span class="s1">'utm_campaign'</span><span class="p">,</span> <span class="s1">'utm_content'</span><span class="p">,</span> <span class="s1">'utm_term'</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Look at top used features by campaign, using the previously created interactive_events to focus just on user
+interactions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">interactive_events</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'utm_source'</span><span class="p">,</span> <span class="s1">'utm_term'</span><span class="p">,</span> <span class="s1">'feature_nice_name'</span><span class="p">,</span> <span class="s1">'event_type'</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="conversions">
+<h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this headline">#</a></h2>
+<p>First we define a conversion event in the Objectiv DataFrame.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">add_conversion_event</span><span class="p">(</span><span class="n">location_stack</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">json</span><span class="p">[{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'objectiv-on-github'</span><span class="p">,</span>
+                                                                     <span class="s1">'_type'</span><span class="p">:</span> <span class="s1">'LinkContext'</span><span class="p">}:]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span>
+                                             <span class="n">df</span><span class="o">.</span><span class="n">location_stack</span><span class="o">.</span><span class="n">json</span><span class="p">[{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'github'</span><span class="p">,</span> <span class="s1">'_type'</span><span class="p">:</span> <span class="s1">'LinkContext'</span><span class="p">}:]),</span>
+                              <span class="n">event_type</span><span class="o">=</span><span class="s1">'PressEvent'</span><span class="p">,</span>
+                              <span class="n">name</span><span class="o">=</span><span class="s1">'github_press'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This can be used by several models from the model hub using the defined name (&#8216;github_press&#8217;). First we calculate
+the number of unique converted users.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">df</span><span class="p">[</span><span class="s1">'is_conversion_event'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">is_conversion_event</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'github_press'</span><span class="p">)</span>
+<span class="n">conversions</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_conversion_event</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We use the earlier created <cite>daily_users</cite> to calculate the daily conversion rate.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">conversion_rate</span> <span class="o">=</span> <span class="n">conversions</span> <span class="o">/</span> <span class="n">daily_users</span>
+</pre></div>
+</div>
+<p>From where do users convert most?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">conversion_locations</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">is_conversion_event</span><span class="p">],</span>
+                                                 <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span> <span class="s1">'feature_nice_name'</span><span class="p">,</span> <span class="s1">'event_type'</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>We can calculate what users did _before_ converting by combining several models from the model hub.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># label sessions with a conversion</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'converted_users'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">conversions_counter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'github_press'</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">1</span>
+
+<span class="c1"># label hits where at that point in time, there are 0 conversions in the session</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'zero_conversions_at_moment'</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">map</span><span class="o">.</span><span class="n">conversions_in_time</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'github_press'</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span>
+
+<span class="c1"># filter on above created labels</span>
+<span class="n">converted_users</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">converted_users</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">zero_conversions_at_moment</span><span class="p">)]</span>
+
+<span class="c1"># select only user interactions</span>
+<span class="n">converted_users_filtered</span> <span class="o">=</span> <span class="n">converted_users</span><span class="p">[</span><span class="n">converted_users</span><span class="o">.</span><span class="n">stack_event_types</span><span class="o">&gt;=</span><span class="p">[</span><span class="s1">'InteractiveEvent'</span><span class="p">]]</span>
+
+<span class="n">converted_users_features</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">agg</span><span class="o">.</span><span class="n">unique_users</span><span class="p">(</span><span class="n">converted_users_filtered</span><span class="p">,</span>
+                                                     <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span>
+                                                              <span class="s1">'feature_nice_name'</span><span class="p">,</span>
+                                                              <span class="s1">'event_type'</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>At last we want to know how much time users that converted spent on our site before they converted. For this
+we recylcle the object we created above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">converted_users</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              

@@ -30,13 +30,11 @@ import type {
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs';
 
-// OBJECTIV: tracking + use history auto-select the first item in the category if it's a link
+// OBJECTIV: tracking
 import {
   tagExpandable,
   tagLink,
 } from "@objectiv/tracker-browser";
-import { useHistory } from "react-router-dom";
-import useBaseUrl from '@docusaurus/useBaseUrl';
 // END OBJECTIV
 
 import styles from './styles.module.css';
@@ -151,14 +149,6 @@ function DocSidebarItemCategory({
     autoCollapseSidebarCategories,
   ]);
 
-  // OBJECTIV: use history auto-select the first item in the category if it's a link
-  let history = useHistory();
-  let firstItemInCategoryLink = "";
-  if (items && items.length > 0 && items[0].type == 'link') {
-    firstItemInCategoryLink = useBaseUrl(items[0].href);
-  }
-  // OBJECTIV END
-
   return (
     <li
       // OBJECTIV
@@ -195,9 +185,6 @@ function DocSidebarItemCategory({
                   if (href) {
                     updateCollapsed(false);
                   } else {
-                    // OBJECTIV: auto-select the first item in the category if it's a link
-                    firstItemInCategoryLink != "" ? history.push(firstItemInCategoryLink) : null;
-                    // OBJECTIV END
                     e.preventDefault();
                     updateCollapsed();
                   }

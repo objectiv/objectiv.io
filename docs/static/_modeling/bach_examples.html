@@ -1,0 +1,286 @@
+<div>
+                
+  <section id="bach-basics">
+<span id="bach-examples"/><h1>Bach basics<a class="headerlink" href="#bach-basics" title="Permalink to this headline">#</a></h1>
+<p>Here we&#8217;ll give some very basic examples of the usage of Bach: creating a DataFrame, basic operations,
+aggregate operations, and getting the resulting data filtered and sorted. For this example there is no
+separate notebook available, but the operations demonstrated here are used in the other example notebooks.</p>
+<p>In the examples we&#8217;ll assume that the database has a table called &#8216;example&#8217;, with a few specific
+columns. The SQL to create that table can be found below in <a class="reference internal" href="#appendix-example-data"><span class="std std-ref">Appendix: Example Data</span></a>.</p>
+<p>To get a taste of what you can do with Objectiv Bach, There is a <a class="reference external" href="/docs/home/quickstart-guide">demo</a> available that enables you to run the full Objectiv pipeline
+on your local machine. It includes our website as a demo app, a Jupyter Notebook environment with working
+models and a Metabase environment to output data to.</p>
+<section id="create-a-dataframe-from-a-database-table">
+<h2>Create a DataFrame from a database table<a class="headerlink" href="#create-a-dataframe-from-a-database-table" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="kn">from</span> <span class="nn">bach</span> <span class="kn">import</span> <span class="n">from_table</span>
+<span class="kn">import</span> <span class="nn">sqlalchemy</span>
+<span class="c1"># Setup database connection</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="n">DB_URL</span><span class="p">)</span>
+<span class="c1"># Create Bach DataFrame representing all the data in the 'example' table, with the 'city_id' as index</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">from_table</span><span class="p">(</span><span class="n">engine</span><span class="p">,</span> <span class="s1">'example'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'city_id'</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The above fragment queries the database to get the table structure of the &#8216;example&#8217; table. But it does not
+query any of the data in &#8216;example&#8217;, and this thus works equally well for a tiny table as for a huge table.</p>
+<p>It is also possible to create a DataFrame from an arbitrary sql query (using <cite>from_model</cite>) or from an
+existing pandas DataFrame (using <cite>from_pandas</cite>).</p>
+</section>
+<section id="basic-operations">
+<h2>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Adding a new column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'column_name'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1337</span>
+<span class="c1"># Setting a new column to the value of an existing column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'another column'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span>
+<span class="c1"># Add a column 'century' with the result of some arithmetic</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'century'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'founding'</span><span class="p">]</span> <span class="o">//</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1"># Add a column 'concat', with the result of concatenating strings</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'concat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'city'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">' is located in '</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">'municipality'</span><span class="p">]</span>
+<span class="c1"># remove the city column</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'city'</span><span class="p">])</span>
+<span class="c1"># rename the 'another column' column to 'city'</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'another column'</span><span class="p">:</span> <span class="s1">'city'</span><span class="p">})</span>
+
+<span class="c1"># Convert the Bach DataFrame to a pandas DataFrame.</span>
+<span class="c1"># When executing in a notebook this will print the dataframe.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The above operations add/remove/rename some columns of the DataFrame. However no actual query is executed
+on the Database, until <cite>df.to_pandas()</cite> is called. The DataFrame operations merely change the symbolic
+representation of the data in the DataFrame and its Series.</p>
+<p>The call to <cite>df.to_pandas()</cite> here is merely for demonstration purposes, in situations with bigger datasets it
+should be avoided until the data is needed as it will query the database and transfer all data.</p>
+</section>
+<section id="aggregate-operations">
+<h2>Aggregate operations<a class="headerlink" href="#aggregate-operations" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Group on century, select the 'inhabitants' column, and calculate the maximum value within the group</span>
+<span class="n">df_max</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'century'</span><span class="p">)[[</span><span class="s1">'inhabitants'</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">df_max</span> <span class="o">=</span> <span class="n">df_max</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="c1"># df_max has two columns: 'century' and 'inhabitants_max'</span>
+<span class="c1"># merge df_max back into df, the merge will be done on the 'century' column as that is in both df and df_max</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_max</span><span class="p">)</span>
+
+<span class="c1"># Alternative method: use a window function</span>
+<span class="n">century_window</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="s1">'century'</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'inhabitants_max_2'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'inhabitants'</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">century_window</span><span class="p">)</span>
+
+<span class="c1"># Convert the Bach DataFrame to a pandas DataFrame.</span>
+<span class="c1"># When executing in a notebook this will print the dataframe.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The above example demonstrates how we can calculate aggregate functions (in this case <cite>max()</cite>) on a group of
+row within a window that contains rows. Additionally it shows how to merge two DataFrames. Again only
+the optional debug statement <cite>df.to_pandas()</cite> runs a query, the other operations merely update the internal
+state of the DataFrame and its Series.</p>
+</section>
+<section id="filtering-sorting-and-output">
+<h2>Filtering, sorting, and output<a class="headerlink" href="#filtering-sorting-and-output" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># Only keep the rows for which inhabitants == inhabitants_max,</span>
+<span class="c1"># i.e. the cities that are the biggest of all cities founded in the same century</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">inhabitants</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">inhabitants_max</span><span class="p">]</span>
+<span class="c1"># Sort by century</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'century'</span><span class="p">)</span>
+<span class="c1"># Only keep selected columns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'skating_order'</span><span class="p">,</span> <span class="s1">'municipality'</span><span class="p">,</span> <span class="s1">'inhabitants'</span><span class="p">,</span> <span class="s1">'founding'</span><span class="p">,</span> <span class="s1">'city'</span><span class="p">]]</span>
+
+<span class="c1"># Query database.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">())</span>
+<span class="c1"># Expected output:</span>
+<span class="c1">#          skating_order     municipality  inhabitants  founding        city</span>
+<span class="c1"># city_id</span>
+<span class="c1"># 5                    5  S&#250;dwest-Frysl&#226;n          960      1061      Starum</span>
+<span class="c1"># 1                    1       Leeuwarden        93485      1285    Ljouwert</span>
+<span class="c1"># 10                  10        Waadhoeke        12760      1374  Frjentsjer</span>
+<span class="c1"># 2                    2  S&#250;dwest-Frysl&#226;n        33520      1456       Snits</span>
+
+<span class="c1"># Show the SQL query used to generate the above output:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">view_sql</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The above example demonstrates filtering out rows and sorting a DataFrame. Without the <cite>sort_values()</cite> the
+order of the returned rows is non-deterministic. <cite>view_sql()</cite> can be used to show the compiled SQL query that
+encompasses all operations done so far.</p>
+</section>
+<section id="filtering-by-index-labels">
+<h2>Filtering by Index Labels<a class="headerlink" href="#filtering-by-index-labels" title="Permalink to this headline">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In the following examples we call multiple times <code class="docutils literal notranslate"><span class="pre">to_pandas</span></code> method, we do it only for visualization purposes.
+Please use only <code class="docutils literal notranslate"><span class="pre">df.to_pandas</span></code> when necessary, as this will execute the frame&#8217;s current query.</p>
+</div>
+<p>Here we construct a simple dataframe for illustrating the label selection functionality:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="gp">In [2]: </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">   ...: </span>    <span class="s1">'skating_order'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">   ...: </span>    <span class="s1">'city'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Ljouwert'</span><span class="p">,</span> <span class="s1">'Snits'</span><span class="p">,</span> <span class="s1">'Drylts'</span><span class="p">,</span> <span class="s1">'Sleat'</span><span class="p">,</span> <span class="s1">'Starum'</span><span class="p">],</span>
+<span class="gp">   ...: </span>    <span class="s1">'municipality'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Leeuwarden'</span><span class="p">,</span> <span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span> <span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span> <span class="s1">'De Friese Meren'</span><span class="p">,</span> <span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">],</span>
+<span class="gp">   ...: </span>    <span class="s1">'inhabitants'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1285</span><span class="p">,</span> <span class="mi">1456</span><span class="p">,</span> <span class="mi">1268</span><span class="p">,</span> <span class="mi">1426</span><span class="p">,</span> <span class="mi">1061</span><span class="p">],</span>
+<span class="gp">   ...: </span><span class="p">}</span>
+<span class="gp">   ...: </span>
+
+<span class="gp">In [3]: </span><span class="n">pdf</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="gp">In [4]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">pdf</span><span class="p">,</span> <span class="n">convert_objects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="gp">In [5]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'city'</span><span class="p">)</span>
+
+<span class="gp">In [6]: </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[6]: </span><span class="go"/>
+<span class="go">          skating_order     municipality  inhabitants</span>
+<span class="go">city                                                 </span>
+<span class="go">Ljouwert              1       Leeuwarden         1285</span>
+<span class="go">Snits                 2  S&#250;dwest-Frysl&#226;n         1456</span>
+<span class="go">Drylts                3  S&#250;dwest-Frysl&#226;n         1268</span>
+<span class="go">Sleat                 4  De Friese Meren         1426</span>
+<span class="go">Starum                5  S&#250;dwest-Frysl&#226;n         1061</span>
+</pre></div>
+</div>
+<p>If you want to select a specific row from the frame, you can simply pass the label to the <code class="docutils literal notranslate"><span class="pre">loc</span></code> property:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [7]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Drylts'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[7]: </span><span class="go"/>
+<span class="go">__stacked_index</span>
+<span class="go">skating_order                  3</span>
+<span class="go">municipality     S&#250;dwest-Frysl&#226;n</span>
+<span class="go">inhabitants                 1268</span>
+<span class="go">Name: __stacked, dtype: object</span>
+</pre></div>
+</div>
+<p>You can observe that the previous result returned a <strong>Bach Series</strong>, this will always be the return-type for
+<strong>Single-Label Selection</strong>, where all selected columns are stacked into one single index series.</p>
+<p>If you require just a subset of the columns, you can pass them as a second parameter:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [8]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Drylts'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'inhabitants'</span><span class="p">,</span> <span class="s1">'skating_order'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[8]: </span><span class="go"/>
+<span class="go">__stacked_index</span>
+<span class="go">inhabitants      1268</span>
+<span class="go">skating_order       3</span>
+<span class="go">Name: __stacked, dtype: int64</span>
+</pre></div>
+</div>
+<p>This will still return a series, the main difference is that only <code class="docutils literal notranslate"><span class="pre">inhabitants</span></code> and <code class="docutils literal notranslate"><span class="pre">skating_order</span></code> are
+considered in the stacked index.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a column included in the selection does not exist in the frame, this will raise an error.</p>
+</div>
+<p>In case you want to select/filter rows based on multiple labels, you can pass a list of labels:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [9]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">'Drylts'</span><span class="p">,</span> <span class="s1">'Ljouwert'</span><span class="p">],</span> <span class="s1">'municipality'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[9]: </span><span class="go"/>
+<span class="go">             municipality</span>
+<span class="go">city                     </span>
+<span class="go">Ljouwert       Leeuwarden</span>
+<span class="go">Drylts    S&#250;dwest-Frysl&#226;n</span>
+</pre></div>
+</div>
+<p>The code from above will return a <strong>Bach DataFrame</strong> instead, this will always be the return-type for
+<strong>List-Label Selection</strong>.</p>
+<p><strong>Slicing-Selection by labels</strong> is also possible, for both rows and columns. Note the next example:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before slicing a frame&#8217;s rows, you must sort it first. As slicing is a non-deterministic operation.</p>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [10]: </span><span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Sleat'</span><span class="p">:,</span> <span class="s1">'municipality'</span><span class="p">:]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[10]: </span><span class="go"/>
+<span class="go">           municipality  inhabitants</span>
+<span class="go">city                                </span>
+<span class="go">Sleat   De Friese Meren         1426</span>
+<span class="go">Snits   S&#250;dwest-Frysl&#226;n         1456</span>
+<span class="go">Starum  S&#250;dwest-Frysl&#226;n         1061</span>
+</pre></div>
+</div>
+<p>In case you need to select a value based on a condition, a series boolean can also be passed to <code class="docutils literal notranslate"><span class="pre">loc</span></code> property.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [11]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'inhabitants'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1300</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[11]: </span><span class="go"/>
+<span class="go">       skating_order     municipality  inhabitants</span>
+<span class="go">city                                              </span>
+<span class="go">Snits              2  S&#250;dwest-Frysl&#226;n         1456</span>
+<span class="go">Sleat              4  De Friese Meren         1426</span>
+</pre></div>
+</div>
+<p>In previous examples, we selected rows by labels that actually exist in the frame. In case a label doesn&#8217;t exist
+in the frame, this will not raise any error since Bach has no notion of which values exist in the frame.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [12]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[12]: </span><span class="go">Series([], Name: __stacked, dtype: object)</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-values-to-dataframe-subset">
+<h2>Setting Values to DataFrame Subset<a class="headerlink" href="#setting-values-to-dataframe-subset" title="Permalink to this headline">#</a></h2>
+<p>In previous section we played around a bit with <code class="docutils literal notranslate"><span class="pre">loc</span></code> property, by just filtering the frame using labels.
+As in pandas, you are also able to set values to a specific group of rows and update the main frame. This works
+for all types of selections.</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [13]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Drylts'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'x'</span>
+
+<span class="gp">In [14]: </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[14]: </span><span class="go"/>
+<span class="go">         skating_order     municipality inhabitants</span>
+<span class="go">city                                               </span>
+<span class="go">Ljouwert             1       Leeuwarden        1285</span>
+<span class="go">Snits                2  S&#250;dwest-Frysl&#226;n        1456</span>
+<span class="go">Drylts               x                x           x</span>
+<span class="go">Sleat                4  De Friese Meren        1426</span>
+<span class="go">Starum               5  S&#250;dwest-Frysl&#226;n        1061</span>
+</pre></div>
+</div>
+<p>You can see that the previous code block, sets all series to &#8216;x&#8217; where the index is equal to <cite>Drylts</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the value being set has a different <code class="docutils literal notranslate"><span class="pre">dtype</span></code> than the series to be modified, the series&#8217;s <code class="docutils literal notranslate"><span class="pre">dtype</span></code>
+will be changed to <strong>string</strong>. This does not apply if both have a numerical <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span/><span class="gp">In [15]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="gp">In [16]: </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'Sleat'</span><span class="p">:,</span> <span class="s1">'municipality'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Frysl&#226;n'</span>
+
+<span class="gp">In [17]: </span><span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="gh">Out[17]: </span><span class="go"/>
+<span class="go">         skating_order municipality inhabitants</span>
+<span class="go">city                                           </span>
+<span class="go">Drylts               x            x           x</span>
+<span class="go">Ljouwert             1   Leeuwarden        1285</span>
+<span class="go">Sleat                4      Frysl&#226;n        1426</span>
+<span class="go">Snits                2      Frysl&#226;n        1456</span>
+<span class="go">Starum               5      Frysl&#226;n        1061</span>
+</pre></div>
+</div>
+<p>As we mentioned, setting a value is possible for any type of selection. Notice that sorting is also needed for
+this case.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.sort_index().loc['Sleat':,</span> <span class="pre">'municipality']</span> <span class="pre">=</span> <span class="pre">'Frysl&#226;n'</span></code> will have no effect on <code class="docutils literal notranslate"><span class="pre">df</span></code>, since
+<code class="docutils literal notranslate"><span class="pre">df.sort_index()</span></code> returns a new dataframe.</p>
+</div>
+</section>
+<section id="appendix-example-data">
+<span id="id1"/><h2>Appendix: Example Data<a class="headerlink" href="#appendix-example-data" title="Permalink to this headline">#</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span/><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="p">(</span><span class="w"/>
+<span class="w">    </span><span class="n">city_id</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"/>
+<span class="w">    </span><span class="n">skating_order</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"/>
+<span class="w">    </span><span class="n">city</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"/>
+<span class="w">    </span><span class="n">municipality</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"/>
+<span class="w">    </span><span class="n">inhabitants</span><span class="w"> </span><span class="nb">bigint</span><span class="p">,</span><span class="w"/>
+<span class="w">    </span><span class="n">founding</span><span class="w"> </span><span class="nb">bigint</span><span class="w"/>
+<span class="p">);</span><span class="w"/>
+<span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">example</span><span class="p">(</span><span class="n">city_id</span><span class="p">,</span><span class="w"> </span><span class="n">skating_order</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">,</span><span class="w"> </span><span class="n">municipality</span><span class="p">,</span><span class="w"> </span><span class="n">inhabitants</span><span class="p">,</span><span class="w"> </span><span class="n">founding</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"/>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="s1">'Ljouwert'</span><span class="p">,</span><span class="w">   </span><span class="s1">'Leeuwarden'</span><span class="p">,</span><span class="w">        </span><span class="mi">93485</span><span class="p">,</span><span class="w"> </span><span class="mi">1285</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="p">,</span><span class="w">  </span><span class="s1">'Snits'</span><span class="p">,</span><span class="w">      </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">33520</span><span class="p">,</span><span class="w"> </span><span class="mi">1456</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="p">,</span><span class="w">  </span><span class="s1">'Drylts'</span><span class="p">,</span><span class="w">     </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">3055</span><span class="p">,</span><span class="w">  </span><span class="mi">1268</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w">  </span><span class="mi">4</span><span class="p">,</span><span class="w">  </span><span class="s1">'Sleat'</span><span class="p">,</span><span class="w">      </span><span class="s1">'De Friese Meren'</span><span class="p">,</span><span class="w">   </span><span class="mi">700</span><span class="p">,</span><span class="w">   </span><span class="mi">1426</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w">  </span><span class="mi">5</span><span class="p">,</span><span class="w">  </span><span class="s1">'Starum'</span><span class="p">,</span><span class="w">     </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">960</span><span class="p">,</span><span class="w">   </span><span class="mi">1061</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w">  </span><span class="mi">6</span><span class="p">,</span><span class="w">  </span><span class="s1">'Hylpen'</span><span class="p">,</span><span class="w">     </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">870</span><span class="p">,</span><span class="w">   </span><span class="mi">1225</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w">  </span><span class="mi">7</span><span class="p">,</span><span class="w">  </span><span class="s1">'Warkum'</span><span class="p">,</span><span class="w">     </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">4440</span><span class="p">,</span><span class="w">  </span><span class="mi">1399</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w">  </span><span class="mi">8</span><span class="p">,</span><span class="w">  </span><span class="s1">'Boalsert'</span><span class="p">,</span><span class="w">   </span><span class="s1">'S&#250;dwest-Frysl&#226;n'</span><span class="p">,</span><span class="w">   </span><span class="mi">10120</span><span class="p">,</span><span class="w"> </span><span class="mi">1455</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w">  </span><span class="mi">9</span><span class="p">,</span><span class="w">  </span><span class="s1">'Harns'</span><span class="p">,</span><span class="w">      </span><span class="s1">'Harlingen'</span><span class="p">,</span><span class="w">         </span><span class="mi">14740</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="s1">'Frjentsjer'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Waadhoeke'</span><span class="p">,</span><span class="w">         </span><span class="mi">12760</span><span class="p">,</span><span class="w"> </span><span class="mi">1374</span><span class="p">),</span><span class="w"/>
+<span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="s1">'Dokkum'</span><span class="p">,</span><span class="w">     </span><span class="s1">'Noardeast-Frysl&#226;n'</span><span class="p">,</span><span class="w"> </span><span class="mi">12675</span><span class="p">,</span><span class="w"> </span><span class="mi">1298</span><span class="p">);</span><span class="w"/>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              
