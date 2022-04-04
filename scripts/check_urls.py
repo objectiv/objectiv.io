@@ -147,6 +147,7 @@ def main() -> int:
     Check URLs removed & added in a docker image against what's used:
     * On production (website/docs sitemaps)
     * In local repositories (objectiv.io and objectiv-analytics)
+    * URLs that are used externally
     * TODO: tracker validation
     """
 

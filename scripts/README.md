@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Check a website/docs Docker image for URLs that are added/removed compared to production and local repos.
 
-To run:
+To run (from root of repo):
 
 ```bash
 python3 scripts/check_urls.py
