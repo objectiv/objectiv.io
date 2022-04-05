@@ -41,8 +41,7 @@ def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -
                     matches = re.findall("(.*?)\/" + url, contents)
                     for match in matches:
                         before = match.strip()
-                        # non-absolute if: doesn't use `useBaseUrl()` or contains "https://" or Tracking code
-                        # could do more specific URL matching here, but sufficient for this purpose
+                        # non-absolute if: doesn't contain `useBaseUrl()`, "https://" or Tracking code
                         if (before.find("useBaseUrl") == -1 and before.find("https://") == -1 
                             and before.find("<Tracked") == -1):
                             non_abs_urls_found_in_files.append([before + url, filename])
