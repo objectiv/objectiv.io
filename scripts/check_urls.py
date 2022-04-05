@@ -37,7 +37,8 @@ def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -
                 contents = f.read()
                 for url in urls:
                     # find all occurrences of the URL and determine if it's non-absolute
-                    matches = re.findall("(.*?)\/" + url, contents)
+                    matches = re.findall(f'(.*?)\/{url}', contents)
+
                     for match in matches:
                         before = match.strip()
                         # non-absolute if: doesn't contain `useBaseUrl()`, "https://" or Tracking code
