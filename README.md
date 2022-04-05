@@ -59,7 +59,7 @@ git pull && make build-docker-test-image build-docker-deploy-image
 
 # check image for any removed/changed URLs that may cause issues
 cd scripts
-virtualenv check_sitemaps
+# virtualenv check_sitemaps # only if not done yet
 source check_sitemaps/bin/activate
 pip install -r requirements.txt
 cd ../
@@ -84,7 +84,7 @@ git pull && make build-docker-build-image build-docker-deploy-image
 
 # check image for any removed/changed URLs that may cause issues
 cd scripts
-virtualenv check_sitemaps
+# virtualenv check_sitemaps # only if not done yet
 source check_sitemaps/bin/activate
 pip install -r requirements.txt
 cd ../
