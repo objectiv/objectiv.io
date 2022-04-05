@@ -58,7 +58,13 @@ provision the appropriate environment variables for SFTP, and then run:
 git pull && make build-docker-test-image build-docker-deploy-image
 
 # check image for any removed/changed URLs that may cause issues
+cd scripts
+virtualenv check_sitemaps
+source check_sitemaps/bin/activate
+pip install -r requirements.txt
+cd ../
 python3 scripts/check_urls.py --environment=testing
+deactivate
 
 # then, upload to testing via FTP
 docker run -e SFTP_URL \
@@ -77,7 +83,13 @@ provision the appropriate environment variables for SFTP, and then run:
 git pull && make build-docker-build-image build-docker-deploy-image
 
 # check image for any removed/changed URLs that may cause issues
+cd scripts
+virtualenv check_sitemaps
+source check_sitemaps/bin/activate
+pip install -r requirements.txt
+cd ../
 python3 scripts/check_urls.py --environment=staging
+deactivate
 
 # if URL checks are okay, upload to staging via FTP
 docker run -e SFTP_URL \

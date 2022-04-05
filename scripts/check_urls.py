@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ElementTree
 from typing import List, Dict
 import glob
 import urllib.parse
+import re
 from blessings import Terminal
 from subprocess import check_output
 
@@ -17,6 +18,36 @@ FQDN = 'https://objectiv.io'  # domain to get sitemaps from
 FQDN_PATHS = ['/', '/docs/']  # list of paths on domain to get sitemap from
 SITEMAP = 'sitemap.xml'  # name of sitemap file
 EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb']  # file extensions to scan for URLs
+ABS_URL_EXTENSIONS_TO_SCAN = ['md', 'tsx', 'js', 'html']  # file extensions to scan for non-absolute URLs
+
+
+def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:
+    """Find any occurence of non-absolute URLs in the specified path and file types, e.g. in a repo
+
+    :param path: The path to scan
+    :param extensions: The file extensions to scan, e.g. ['md', 'js']
+    :param urls: The URL to scan for
+
+    :return: List of URLs found and in which file, e.g. [['/docs/hello', '/src/pages/index.tsx']]
+    """
+
+    non_abs_urls_found_in_files = []
+    for filename in glob.glob(path, recursive=True):
+        if has_extension(filename, extensions):
+            with open(filename) as f:
+                contents = f.read()
+                for url in urls:
+                    # find all occurences of the URL and determine if it's non-absolute
+                    matches = re.findall("(.*?)\/" + url, contents)
+                    for match in matches:
+                        before = match.strip()
+                        # non-absolute if: doesn't use `useBaseUrl()` or contains "https://" or Tracking code
+                        # could do more specific URL matching here, but sufficient for this purpose
+                        if (before.find("useBaseUrl") == -1 and before.find("https://") == -1 
+                            and before.find("<Tracked") == -1):
+                            non_abs_urls_found_in_files.append([before + url, filename])
+
+    return non_abs_urls_found_in_files
 
 
 def has_extension(filename: str, extensions: List[str]) -> bool:
@@ -164,6 +195,7 @@ def main() -> int:
     args = parser.parse_args()
 
     term = Terminal()
+    exitcode = 0
 
     # first get the URLs from the production domain's sitemap
     prod_urls = []
@@ -184,7 +216,6 @@ def main() -> int:
     removed_urls = compare_urls(prod_urls, docker_urls) # missing URLs prod vs image (i.e. will break)
     added_urls = compare_urls(docker_urls, prod_urls) # missing URLs image vs prod (i.e. are new)
 
-    exitcode = 0
     if removed_urls:
         # these are missing URLs, i.e. they exist on prod, but not in the docker image
         for url in removed_urls:
@@ -210,6 +241,17 @@ def main() -> int:
         exitcode += 1
 
     # TODO: check all removed+added URLs against the ones used in tracker validation
+
+    # Check if there are any non-absolute URLs to /docs in the objectiv.io repo
+    non_abs_urls = check_non_absolute_urls('./src/pages/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
+    non_abs_urls += check_non_absolute_urls('./blog/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
+
+    if non_abs_urls:
+        for hit in non_abs_urls:
+            url = hit[0]
+            file = hit[1]
+            print(term.bold_red(f'{file} uses non-absolute URL: {url}'))
+        exitcode += 1
     
     return exitcode
 
