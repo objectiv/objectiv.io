@@ -32,7 +32,8 @@ export default function BeforeAfterImage({
   afterImageUrl,
   beforeImageMobileUrl = null,
   afterImageMobileUrl = null,
-  caption = '',
+  captionBefore = '',
+  captionAfter = '',
   tabColorsInverted = false
 }) {
   beforeImageMobileUrl = beforeImageMobileUrl ?? beforeImageUrl;
@@ -104,7 +105,24 @@ export default function BeforeAfterImage({
           className={clsx(styles.imgMobile, activeTab == 'after' ? styles.fadeIn : styles.fadeOut)} 
           alt="Workflow after Objectiv" />
       </div>
-      {caption && <p><em>{caption}</em></p>}
+      <div 
+        className={clsx(
+          activeTab == 'before' 
+            ? styles.beforeAfterBefore 
+            : styles.beforeAfterHidden)}>
+        <p className={clsx(activeTab == 'before' ? styles.fadeIn : styles.fadeOut)}>
+          <em>{captionBefore}</em>
+        </p>
+      </div>
+      <div 
+        className={clsx(
+          activeTab == 'after' 
+            ? styles.beforeAfterBefore 
+            : styles.beforeAfterHidden)}>
+        <p className={clsx(activeTab == 'after' ? styles.fadeIn : styles.fadeOut)}>
+          <em>{captionAfter}</em>
+        </p>
+      </div>
     </TrackedDiv>
   );
 }

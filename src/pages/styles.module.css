@@ -300,6 +300,14 @@
 .stackCaptureData .valueRowRight>div:nth-child(2) {
   padding-top: 120px;
 }
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .stackCaptureData .valueRowRight {
+    padding-bottom: 80px;
+  }
+  .stackCaptureData .valueRowRight>div:nth-child(2) {
+    padding-top: 40px;
+  }
+}
 .stackCaptureData .valueRowRight>div:nth-child(2) img {
   margin-top: 80px;
 }
@@ -322,6 +330,9 @@
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .modeling {
     margin-bottom: 0;
+  }
+  .modeling .modelingUSPs .valueRowRight {
+    padding-bottom: 20px;
   }
 }
 

@@ -2,6 +2,11 @@
   text-align: center;
   margin-bottom: 120px;
 }
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .beforeAfter {  
+    margin-bottom: 40px;
+  }
+}
 
 .beforeAfter .beforeAfterHidden {
   display: none;
@@ -46,6 +51,7 @@
 .beforeAfter .switch {
   padding: 20px 0;
   margin: 30px auto 50px auto;
+  min-height: 298px;
 }
 .beforeAfter .imgDesktop {
   display: block;
@@ -63,10 +69,12 @@
     margin: 0 auto;
   }
 }
+
 .beforeAfter .beforeAfterBefore {
-  overflow-y: hidden;
+  overflow: auto;
+  /* overflow-y: hidden;
   overflow-x: auto;
-  white-space: nowrap;
+  white-space: nowrap; */
   max-width: 100%;
 }
 /* Scrollbar customization (supported on Chrome, Edge, Opera, Safari, some on FF) */
@@ -100,12 +108,12 @@
 }
 
 .fadeIn {
-  animation-delay: 2s;
-  animation: fadeInAnim ease 2s;
-  -webkit-animation: fadeInAnim ease 2s;
-  -moz-animation: fadeInAnim ease 2s;
-  -o-animation: fadeInAnim ease 2s;
-  -ms-animation: fadeInAnim ease 2s;
+  animation-delay: 1.5s;
+  animation: fadeInAnim ease 1.5s;
+  -webkit-animation: fadeInAnim ease 1.5s;
+  -moz-animation: fadeInAnim ease 1.5s;
+  -o-animation: fadeInAnim ease 1.5s;
+  -ms-animation: fadeInAnim ease 1.5s;
 }
 
 @keyframes fadeInAnim {
@@ -134,11 +142,11 @@
 }
 
 .fadeOut {
-  animation: fadeOutAnim ease 2s;
-  -webkit-animation: fadeOutAnim ease 2s;
-  -moz-animation: fadeOutAnim ease 2s;
-  -o-animation: fadeOutAnim ease 2s;
-  -ms-animation: fadeOutAnim ease 2s;
+  animation: fadeOutAnim ease 1.5s;
+  -webkit-animation: fadeOutAnim ease 1.5s;
+  -moz-animation: fadeOutAnim ease 1.5s;
+  -o-animation: fadeOutAnim ease 1.5s;
+  -ms-animation: fadeOutAnim ease 1.5s;
 }
 
 @keyframes fadeOutAnim {

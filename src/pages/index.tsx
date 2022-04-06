@@ -71,7 +71,8 @@ export default function Home() {
                   afterImageUrl='img/stack-capture-after.svg'
                   beforeImageMobileUrl='img/stack-capture-before-vertical.svg'
                   afterImageMobileUrl='img/stack-capture-after-vertical.svg'
-                  caption='A typical data collection workflow before using Objectiv' />
+                  captionBefore='A typical data collection workflow before using Objectiv'
+                  captionAfter='A typical data collection workflow after using Objectiv' />
               </div>
 
               <div className={clsx(styles.valueRowRight)}>
@@ -144,7 +145,8 @@ export default function Home() {
                   beforeImageMobileUrl='img/modeling-before-vertical.svg'
                   afterImageMobileUrl='img/modeling-after-vertical.svg'
                   tabColorsInverted={true}
-                  caption='A typical modeling &amp; analysis workflow before using Objectiv' />
+                  captionBefore='A typical modeling &amp; analysis workflow before using Objectiv'
+                  captionAfter='A typical modeling &amp; analysis workflow after using Objectiv' />
               </div>
 
               <StarUsAnchor ref={starUsNotificationAnchorRef} />
