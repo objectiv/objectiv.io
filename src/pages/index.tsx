@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useRef, useState } from 'react';
 import IconHeader from '../components/icon-header';
+import BeforeAfterImage from '../components/before-after-image';
 import VimeoPlayer from '../components/vimeo-player';
 import AnimatedGif from '../components/animated-gif';
 import StarUsNotification, { StarUsAnchor } from '../components/star-us';
@@ -15,13 +16,6 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
   const starUsNotificationAnchorRef = useRef(null);
-
-  const [activeTab, setActiveTab] = useState('captureDataBefore');
-  function toggleActiveTab(e) {
-    console.log("Making tab active:", e.target.id);
-    setActiveTab(e.target.id);
-
-  }
 
   return (
     <div>
@@ -71,42 +65,11 @@ export default function Home() {
                 icon="icon-diamond-yellow" />
 
               <div className={clsx(styles.stackCaptureDataBeforeAfter, styles.whyObjectiv)}>
-                <div className={clsx(styles.whyObjectivTabs)}>
-                  <button 
-                    id='captureDataBefore'
-                    className={clsx(styles.whyObjectivTab, 
-                      activeTab == 'captureDataBefore' ? styles.whyObjectivTabActive : styles.whyObjectivTabInactive)}
-                    onClick={toggleActiveTab}>
-                    BEFORE OBJECTIV
-                  </button>
-                  <button 
-                    id='captureDataAfter'
-                    className={clsx(styles.whyObjectivTab, 
-                      activeTab == 'captureDataAfter' ? styles.whyObjectivTabActive : styles.whyObjectivTabInactive)}
-                    onClick={toggleActiveTab}>
-                    AFTER OBJECTIV
-                  </button>
-                </div>
-
-                <div 
-                  className={clsx(styles.whyObjectivBeforeOrAfter, 
-                    activeTab == 'captureDataBefore' 
-                      ? styles.whyObjectivBefore 
-                      : styles.whyObjectivHidden)}>
-                  <img
-                    src={useBaseUrl("img/stack-capture-before.svg")}
-                    alt="Workflow before Objectiv" />
-                </div>
-                <div 
-                  className={clsx(styles.whyObjectivBeforeOrAfter, 
-                    activeTab == 'captureDataAfter' 
-                      ? styles.whyObjectivAfter 
-                      : styles.whyObjectivHidden)}>
-                  <img
-                    src={useBaseUrl("img/stack-capture-after.svg")}
-                    alt="Workflow after Objectiv" />
-                </div>
-                <p>A typical data collection workflow before using Objectiv</p>
+                <BeforeAfterImage 
+                  id='data-capture-workflow'
+                  beforeImageUrl='img/stack-capture-before.svg'
+                  afterImageUrl='img/stack-capture-after.svg'
+                  caption='A typical data collection workflow before using Objectiv' />
               </div>
 
               <div className={clsx(styles.captureDataUSPs)}>

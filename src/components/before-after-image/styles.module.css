@@ -1,0 +1,145 @@
+.beforeAfter {  
+  text-align: center;
+}
+
+.beforeAfter .beforeAfterHidden {
+  display: none;
+}
+
+.beforeAfter .beforeAfterTabs {
+  position: relative;
+  margin: 0 auto;
+}
+.beforeAfter .beforeAfterTab {
+  width: 200px;
+  height: 42px;
+  padding: 10.5px 20px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-style: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  transition: 1s;
+}
+.beforeAfter .beforeAfterTabActive {
+  background: #fff;
+  color: #333333;
+}
+.beforeAfter .beforeAfterTabInactive {
+  background: #444444;
+  color: #fff;
+}
+
+.beforeAfter .switch {
+  padding: 20px 0;
+  margin: 30px auto 60px auto;
+}
+.beforeAfter .switch img {
+  height: 280px;
+}
+.beforeAfter .beforeAfterBefore {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.beforeAfter .beforeAfterBefore img {
+  min-width: 956px;
+}
+/* Scrollbar customization (supported on Chrome, Edge, Opera, Safari, some on FF) */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+/* the entire scrollbar */
+.beforeAfter .switch::-webkit-scrollbar {
+  height: 10px;
+}
+.beforeAfter .switch { /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width */
+  scrollbar-width: thin;
+}
+/* the buttons on the scrollbar (arrows pointing upwards and downwards) */
+/* not supported on Safari */
+.beforeAfter .switch::-webkit-scrollbar-button {
+}
+/* thumb: the draggable scrollbar itself, e.g. its color */
+/* not supported on Safari */
+.beforeAfter .switch::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}
+.beforeAfter .switch { /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color */
+  scrollbar-color: #f1f1f1;
+}
+/* track: progress bar behind the scrollbar itself, e.g. the background */
+.beforeAfter .switch::-webkit-scrollbar-track {
+  background: #888;
+}
+/* track-piece: part of the track (progress bar) not covered by the handle */
+.beforeAfter .switch::-webkit-scrollbar-track-piece {
+  background: #888;
+}
+
+.fadeIn {
+  animation-delay: 2s;
+  animation: fadeInAnim ease 2s;
+  -webkit-animation: fadeInAnim ease 2s;
+  -moz-animation: fadeInAnim ease 2s;
+  -o-animation: fadeInAnim ease 2s;
+  -ms-animation: fadeInAnim ease 2s;
+}
+
+@keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.fadeOut {
+  animation: fadeOutAnim ease 2s;
+  -webkit-animation: fadeOutAnim ease 2s;
+  -moz-animation: fadeOutAnim ease 2s;
+  -o-animation: fadeOutAnim ease 2s;
+  -ms-animation: fadeOutAnim ease 2s;
+}
+
+@keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-moz-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-webkit-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-o-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-ms-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
