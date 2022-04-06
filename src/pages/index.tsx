@@ -64,39 +64,39 @@ export default function Home() {
                   required." 
                 icon="icon-diamond-yellow" />
 
-              <div className={clsx(styles.stackCaptureDataBeforeAfter, styles.whyObjectiv)}>
+              <div className={clsx(styles.stackCaptureDataBeforeAfter)}>
                 <BeforeAfterImage 
                   id='data-capture-workflow'
                   beforeImageUrl='img/stack-capture-before.svg'
                   afterImageUrl='img/stack-capture-after.svg'
+                  beforeImageMobileUrl='img/stack-capture-before-vertical.svg'
+                  afterImageMobileUrl='img/stack-capture-after-vertical.svg'
                   caption='A typical data collection workflow before using Objectiv' />
               </div>
 
-              <div className={clsx(styles.captureDataUSPs)}>
-                <div className={clsx(styles.valueRowRight)}>
-                  <div>
-                    <img
-                      src={useBaseUrl("img/solution-taxonomy-dark.svg")}
-                      alt="The open analytics taxonomy" />
-                  </div>
-                  <div>
-                    <p>
-                      <strong>A taxonomy for model-ready data</strong> <br />
-                      Objectiv's tracker validates all incoming events against an&nbsp;
-                      <TrackedLink
-                        to={"/docs/taxonomy/"}
-                        waitUntilTracked={true}
-                        target="_self">
-                        open analytics taxonomy
-                      </TrackedLink>. This ensures it is well-structured, clean and ready for modeling.
-                    </p>
-                    <p>It describes classes for common user interactions and their contexts. A tracking plan 
-                      is no longer needed as the requirements for effective analysis are carried by the 
-                      design of the taxonomy.</p>
-                    <img
-                      src={useBaseUrl("img/value-squeaky-clean-model-ready-data.svg")}
-                      alt="The result: squeaky clean model-ready data" />                      
-                  </div>
+              <div className={clsx(styles.valueRowRight)}>
+                <div>
+                  <img
+                    src={useBaseUrl("img/solution-taxonomy-dark.svg")}
+                    alt="The open analytics taxonomy" />
+                </div>
+                <div>
+                  <p>
+                    <strong>A taxonomy for model-ready data</strong> <br />
+                    Objectiv's tracker validates all incoming events against an&nbsp;
+                    <TrackedLink
+                      to={"/docs/taxonomy/"}
+                      waitUntilTracked={true}
+                      target="_self">
+                      open analytics taxonomy
+                    </TrackedLink>. This ensures it is well-structured, clean and ready for modeling.
+                  </p>
+                  <p>It describes classes for common user interactions and their contexts. A tracking plan 
+                    is no longer needed as the requirements for effective analysis are carried by the 
+                    design of the taxonomy.</p>
+                  <img
+                    src={useBaseUrl("img/value-squeaky-clean-model-ready-data.svg")}
+                    alt="The result: squeaky clean model-ready data" />                      
                 </div>
               </div>
 
@@ -130,16 +130,26 @@ export default function Home() {
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
             <TrackedDiv 
-                id={'granular-control'} 
-                className={clsx("container", styles.contentContainer, styles.granularControl)}>
+                id={'modeling'} 
+                className={clsx("container", styles.contentContainer, styles.modeling)}>
               <IconHeader 
-                title="Cut down delivery times of data projects <br />
-                  with reusable &amp; pre-built models" 
+                title="Cut down delivery times of data projects <br /> with reusable &amp; pre-built models" 
                 subTitle="Take granular control over your data with pre-built models that run on the full 
-                  dataset. <br />
-                  Share &amp; reuse any model and convert them to SQL with a single command." 
+                  dataset. <br /> Share &amp; reuse any model and convert them to SQL with a single command." 
                 icon="icon-accelerate" />
-              <div className={clsx(styles.granularControlUSPs)}>
+
+              <div className={clsx(styles.modelingBeforeAfter)}>
+                <BeforeAfterImage 
+                  id='modeling-workflow'
+                  beforeImageUrl='img/modeling-before.svg'
+                  afterImageUrl='img/modeling-after.svg'
+                  beforeImageMobileUrl='img/modeling-before-vertical.svg'
+                  afterImageMobileUrl='img/modeling-after-vertical.svg'
+                  caption='A typical modeling &amp; analysis workflow before using Objectiv' />
+              </div>
+
+                
+              <div className={clsx(styles.modelingUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>

@@ -1,5 +1,20 @@
 .beforeAfter {  
   text-align: center;
+  margin-bottom: 120px;
+}
+.beforeAfterDesktop {
+  display: block;
+}
+.beforeAfterMobile {
+  display: none;
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .beforeAfterDesktop {
+    display: none;
+  }
+  .beforeAfterMobile {
+    display: block;
+  }
 }
 
 .beforeAfter .beforeAfterHidden {
