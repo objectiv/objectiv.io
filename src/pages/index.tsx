@@ -145,10 +145,10 @@ export default function Home() {
                   afterImageUrl='img/modeling-after.svg'
                   beforeImageMobileUrl='img/modeling-before-vertical.svg'
                   afterImageMobileUrl='img/modeling-after-vertical.svg'
+                  tabColorsInverted={true}
                   caption='A typical modeling &amp; analysis workflow before using Objectiv' />
               </div>
 
-                
               <div className={clsx(styles.modelingUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
@@ -159,33 +159,33 @@ export default function Home() {
                     </p>
                     <p>
                       You can build models using dataframes and pandas-like operations and run them on the 
-                      full dataset as SQL. If you know Pandas, you'll feel right at home.</p>
+                      full dataset as SQL. If you know Pandas, you'll feel right at home.
+                    </p>
                   </div>
                   <div>
                     <img
                       src={useBaseUrl("img/value-pandas-like-operations-on-full-dataset.svg")}
                       alt="Pandas-like operations on the full dataset" />
-                    </div>
                   </div>
-                  <div className={clsx(styles.valueRowFull)}>
-                    <AnimatedGif
-                      url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
-                      alt='Example animation of how to call models from the model hub' />
+                </div>
+                <div className={clsx(styles.valueRowFull)}>
+                  <AnimatedGif
+                    url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
+                    alt='Example animation of how to call models from the model hub' />
+                </div>
+                <div className={clsx(styles.valueRowRight)}>
+                  <div>
+                    <img
+                      src={useBaseUrl("img/value-reusable-models.svg")}
+                      alt="Take pre-built models off the shelf" />
                   </div>
-                  <div className={clsx(styles.valueRowRight)}>
-                    <div>
-                      <img
-                        src={useBaseUrl("img/value-reusable-models.svg")}
-                        alt="Take pre-built models off the shelf" />
-                    </div>
-                    <div>
-                      <p>
-                        <strong>Take pre-built models off the shelf</strong> <br />
-                        Objectiv includes pre-built models for a wide range of product analytics use cases. You 
-                        can chain them together to answer common product analytics questions quickly.
-                      </p>
-                      <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
-                    </div>
+                  <div>
+                    <p>
+                      <strong>Take pre-built models off the shelf</strong> <br />
+                      Objectiv includes pre-built models for a wide range of product analytics use cases. You 
+                      can chain them together to answer common product analytics questions quickly.
+                    </p>
+                    <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
                   </div>
                 </div>
                 <div className={clsx(styles.bachIntroVideo)}>
@@ -254,7 +254,8 @@ export default function Home() {
                       enable you to incorporate ML into your analyses faster.
                     </div>
                   </div>
-                </div>
+                </div> 
+              </div>
             </TrackedDiv>
           </div>
 

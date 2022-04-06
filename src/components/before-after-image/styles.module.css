@@ -2,20 +2,6 @@
   text-align: center;
   margin-bottom: 120px;
 }
-.beforeAfterDesktop {
-  display: block;
-}
-.beforeAfterMobile {
-  display: none;
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .beforeAfterDesktop {
-    display: none;
-  }
-  .beforeAfterMobile {
-    display: block;
-  }
-}
 
 .beforeAfter .beforeAfterHidden {
   display: none;
@@ -45,22 +31,40 @@
   background: #444444;
   color: #fff;
 }
+.beforeAfter .beforeAfterTabsInverted .beforeAfterTabActive {
+  background: #444444;
+  color: #fff;
+}
+.beforeAfter .beforeAfterTabsInverted .beforeAfterTabInactive {
+  background: #fff;
+  color: #333333;
+}
 
 .beforeAfter .switch {
   padding: 20px 0;
-  margin: 30px auto 60px auto;
+  margin: 30px auto 50px auto;
 }
-.beforeAfter .switch img {
-  height: 280px;
+.beforeAfter .imgDesktop {
+  display: block;
+  margin: 0 auto;
+}
+.beforeAfter .imgMobile {
+  display: none;
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .beforeAfter .imgDesktop {
+    display: none;
+  }
+  .beforeAfter .imgMobile {
+    display: block;
+    margin: 0 auto;
+  }
 }
 .beforeAfter .beforeAfterBefore {
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
   max-width: 100%;
-}
-.beforeAfter .beforeAfterBefore img {
-  min-width: 956px;
 }
 /* Scrollbar customization (supported on Chrome, Edge, Opera, Safari, some on FF) */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */

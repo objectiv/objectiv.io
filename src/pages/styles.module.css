@@ -310,7 +310,7 @@
 
 /* Section: Modeling */
 .modeling {
-  margin: 0 0 120px 0;
+  margin-bottom: 120px;
 }
 
 .modeling .modelingUSPs .valueRowLeft>div:first-child {
