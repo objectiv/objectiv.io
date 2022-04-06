@@ -32,7 +32,7 @@ export default function Home() {
               src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              Open-source infrastructure <br />
+              Open-source infra&shy;structure <br />
               for product analytics
             </h1>
             <p className={clsx(styles.heroSubTitle)}>

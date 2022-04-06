@@ -167,6 +167,10 @@
   letter-spacing: 0.2em;
   margin: 40px 0 0 0;
   color: #333;
+  /* -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; */
 }
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
@@ -423,13 +427,13 @@
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .eliminateComplexity .eliminateComplexityUSPs {
-    margin-top: -80px;
+    margin-top: -40px;
   }
   .eliminateComplexity .valueRowLeft {
     padding-bottom: 0; 
   }
   .eliminateComplexity .valueRowFull {
-    padding-top: 120px;
+    padding-top: 80px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */
