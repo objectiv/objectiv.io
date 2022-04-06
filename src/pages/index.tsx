@@ -22,7 +22,9 @@ export default function Home() {
       <Layout
         title=''
         description={tagline}>
+
         <StarUsNotification innerRef={starUsNotificationAnchorRef} />
+        
         <TrackedDiv 
           id={'hero'} 
           className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -32,7 +34,7 @@ export default function Home() {
               src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-              Open-source infra&shy;structure <br />
+              Open-source infrastructure <br />
               for product analytics
             </h1>
             <p className={clsx(styles.heroSubTitle)}>
@@ -52,15 +54,17 @@ export default function Home() {
         </TrackedDiv>
 
         <main className={clsx(styles.bodyLarge)}>
+
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
-              id={'why-objectiv'} 
+              id={'capture-data'} 
               className={clsx("container", styles.contentContainer, styles.stackCaptureData)}>
+
               <IconHeader 
                 title="Capture user behavior in detail and feed it <br />straight into the heart of your 
                   analytics stack" 
-                subTitle="Eliminate stack complexity with a tracker that feeds validated user behavior 
-                  data <br /> straight into your warehouse. No cleaning, transformations or tracking plans 
+                subTitle="Eliminate stack complexity with a tracker that feeds validated user behavior data 
+                  <br /> straight into your warehouse. No cleaning, transformations or tracking plans 
                   required." 
                 icon="icon-diamond-yellow" />
 
@@ -86,7 +90,7 @@ export default function Home() {
                     <strong>A taxonomy for model-ready data</strong> <br />
                     Objectiv's tracker validates all incoming events against an&nbsp;
                     <TrackedLink
-                      to={"/docs/taxonomy/"}
+                      to={useBaseUrl("/docs/taxonomy/")}
                       waitUntilTracked={true}
                       target="_self">
                       open analytics taxonomy
@@ -131,6 +135,7 @@ export default function Home() {
             <TrackedDiv 
                 id={'modeling'} 
                 className={clsx("container", styles.contentContainer, styles.modeling)}>
+
               <IconHeader 
                 title="Cut down delivery times of data projects <br /> with reusable &amp; pre-built models" 
                 subTitle="Take granular control over your data with pre-built models that run on the full 
@@ -170,11 +175,13 @@ export default function Home() {
                       alt="Pandas-like operations on the full dataset" />
                   </div>
                 </div>
+
                 <div className={clsx(styles.valueRowFull)}>
                   <AnimatedGif
                     url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
                     alt='Example animation of how to call models from the model hub' />
                 </div>
+
                 <div className={clsx(styles.valueRowRight)}>
                   <div>
                     <img
@@ -190,6 +197,7 @@ export default function Home() {
                     <p>You're free to customize them (or build your own) for specific in-depth analyses.</p>
                   </div>
                 </div>
+
                 <div className={clsx(styles.bachIntroVideo)}>
                   <img
                     className={clsx(styles.objectivIn2Minutes)}
@@ -199,6 +207,7 @@ export default function Home() {
                     <VimeoPlayer id="2-minute-video" videoId="670857141" />
                   </div>
                 </div>
+
                 <div className={clsx(styles.twoColumnItems)}>
                   <div className={clsx(styles.twoColumnItem)}>
                     <div className={clsx(styles.twoColumnIcon)}>
@@ -258,6 +267,7 @@ export default function Home() {
                   </div>
                 </div> 
               </div>
+
             </TrackedDiv>
           </div>
 
@@ -311,6 +321,7 @@ export default function Home() {
                   built-in integration for the open-source BI platform <strong>Metabase</strong>.</p>
                 </div>
               </div>
+
             </TrackedDiv>
           </div>
 
@@ -318,11 +329,13 @@ export default function Home() {
             <TrackedDiv 
               id={'the-stack-quickstart'} 
               className={clsx("container", styles.contentContainer, styles.theProduct, styles.quickStart)}>
+
               <IconHeader 
                 title="What's in the box?" 
                 subTitle="Objectiv is self-hosted. It includes what you need to answer common product 
                 analytics <br /> questions fast and accurately, while providing a solid foundation for 
                 advanced modeling." />
+
               <img 
                 src={useBaseUrl("img/the-stack.svg")} 
                 className={clsx(styles.theStack)}
@@ -379,20 +392,22 @@ export default function Home() {
                 src={useBaseUrl("img/solution-takes-less-than-5-minutes-white.svg")} 
                 className={clsx(styles.takesLessThan5Minutes)}
                 alt="Takes less than 5 minutes" />
+
             </TrackedDiv>
           </div>
 
           <footer className={clsx(styles.slackFooter)}>
             <TrackedDiv id={'slack'} className={clsx("container", styles.contentContainer)}>
+
               <h3>Objectiv is open-source and we're building it in public.</h3>
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <TrackedLink
                 to="/join-slack"
-                className={clsx("button", styles.ctaButton)}
-              >
+                className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-slack.svg")}  alt={'Join us on Slack'}/></span>
                 Join us on Slack
               </TrackedLink>
+
             </TrackedDiv>
           </footer>
 
