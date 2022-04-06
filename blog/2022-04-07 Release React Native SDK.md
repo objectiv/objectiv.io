@@ -14,14 +14,6 @@ authors: ivarpruijn
 
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-*With this release we now provide a Tracker SDK for React Native, so you can use 
-[Objectiv's advanced modeling][modeling] on your mobile app's user behavior data as well.*
-
-Analytics tracking instrumentation shouldn't cost you a lot of time. So we've put a lot of effort into 
-ensuring that it's incredibly simple and quick.
-
-<!--truncate-->
-
 [modeling]: https://objectiv.io/docs/modeling/
 [locations]: https://objectiv.io/docs/tracking/core-concepts/locations
 [config-tracker]: https://objectiv.io/docs/tracking/react-native/how-to-guides/getting-started#configure-the-tracker
@@ -32,6 +24,14 @@ ensuring that it's incredibly simple and quick.
 [hooks]: https://objectiv.io/docs/tracking/react-native/api-reference/hooks/overview/
 [track-events]: https://objectiv.io/docs/tracking/react-native/api-reference/eventTrackers/overview/
 [custom-components]: https://objectiv.io/docs/tracking/react-native/how-to-guides/custom-components
+
+*With this release we now provide a Tracker SDK for React Native, so you can use 
+[Objectiv's advanced modeling][modeling] on your mobile app's user behavior data as well.*
+
+Analytics tracking instrumentation shouldn't cost you a lot of time. So we've put a lot of effort into 
+ensuring that it's incredibly simple and quick.
+
+<!--truncate-->
 
 ## How does it work?
 
