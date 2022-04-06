@@ -2,7 +2,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import IconHeader from '../components/icon-header';
 import VimeoPlayer from '../components/vimeo-player';
 import AnimatedGif from '../components/animated-gif';
@@ -15,7 +15,14 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
   const starUsNotificationAnchorRef = useRef(null);
-  
+
+  const [activeTab, setActiveTab] = useState('captureDataBefore');
+  function toggleActiveTab(e) {
+    console.log("Making tab active:", e.target.id);
+    setActiveTab(e.target.id);
+
+  }
+
   return (
     <div>
       <Layout
@@ -28,14 +35,15 @@ export default function Home() {
           <div className={clsx('container', styles.heroContainer)}>
             <img
               className={clsx(styles.heroImage)}
-              src={useBaseUrl("img/header-applications.svg")}
+              src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
               alt="Product Analytics Pipeline" />
             <h1 className={clsx(styles.heroTitle)}>
-            You can do a lot more with user behavior data <br />
-            when you add data science into the mix
+              Open-source infrastructure <br />
+              for product analytics
             </h1>
             <p className={clsx(styles.heroSubTitle)}>
-              Objectiv is open-source product analytics <strong>for data teams</strong>.
+            Collect rich, model-ready data and feed it straight into your data warehouse. <br />
+            Cut down delivery times of data projects with reusable &amp; prebuilt models.
             </p>
             <TrackedLink
               to="https://github.com/objectiv/objectiv-analytics"
@@ -53,88 +61,67 @@ export default function Home() {
           <div className={clsx(styles.pageSection, styles.pageSectionDarkGrey)}>
             <TrackedDiv 
               id={'why-objectiv'} 
-              className={clsx("container", styles.contentContainer, styles.whyObjectiv)}>
+              className={clsx("container", styles.contentContainer, styles.stackCaptureData)}>
               <IconHeader 
-                title="Effectively integrate data science into <br />your product analytics workflow with 
-                  Objectiv" 
-                subTitle="Objectiv enables data teams to pull in-depth insights with unparalleled speed and 
-                  fidelity." 
-                icon="icon-objectiv-logo-negative" />
-              <div className={clsx(styles.valueRowLeft, styles.whyObjectivSummary)}>
-                <div>
-                  <img
-                    src={useBaseUrl("img/objectiv-notebook.svg")}
-                    alt="Run your product analtyics workflow from a notebook" />
-                </div>
-                <div>
-                  <div className={clsx(styles.whyItems)}>
-                    <div className={clsx(styles.whyItems)}>
-                      <div className={clsx(styles.whyItem)}>
-                        <div className={clsx(styles.iconIcon)}>
-                          <img
-                            src={useBaseUrl("img/icons/icon-diamond-yellow.svg")}
-                            alt="Diamond" />
-                        </div>
-                        <div>
-                          <strong>Unlock a deeper level of insights</strong><br />
-                          Capture rich user behavior data that's designed for modeling without gruntwork.
-                        </div>
-                      </div>
-                    </div>
-                    <div className={clsx(styles.whyItem)}>
-                      <div className={clsx(styles.iconIcon)}>
-                        <img
-                          src={useBaseUrl("img/icons/icon-accelerate.svg")}
-                          alt="Accelerate" />
-                      </div>
-                      <div>
-                        <strong>Build in-depth models in minutes</strong><br />
-                        Take granular control over your full SQL dataset with pre-built models and 
-                        Pandas-like operations.
-                      </div>
-                    </div>
-                  </div>
-                  <div className={clsx(styles.whyItems)}>
-                    <div className={clsx(styles.whyItem)}>
-                      <div className={clsx(styles.iconIcon)}>
-                        <img
-                          src={useBaseUrl("img/icons/icon-abc.svg")}
-                          alt="A-B-C blocks" />
-                      </div>
-                      <div>
-                        <strong>Cut down stack complexity</strong><br />
-                        Make the notebook the headquarters of all your product analytics operations.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </TrackedDiv>
-          </div>
-
-          <div className={clsx(styles.pageSection)}>
-            <StarUsAnchor ref={starUsNotificationAnchorRef} />
-            <TrackedDiv 
-                id={'skip-the-gruntwork'} 
-                className={clsx("container", styles.contentContainer, styles.skipTheGruntWork)}>
-              <IconHeader 
-                title="Unlock a deeper level of insights <br /> without the typical gruntwork" 
-                subTitle="Capture rich user behavior data that’s model-ready. No cleaning, transformations or 
-                  tracking plans required." 
+                title="Capture user behavior in detail and feed it <br />straight into the heart of your 
+                  analytics stack" 
+                subTitle="Eliminate stack complexity with a tracker that feeds validated user behavior 
+                  data <br /> straight into your warehouse. No cleaning, transformations or tracking plans 
+                  required." 
                 icon="icon-diamond-yellow" />
-              <div className={clsx(styles.skipTheGruntWorkUSPs)}>
+
+              <div className={clsx(styles.stackCaptureDataBeforeAfter, styles.whyObjectiv)}>
+                <div className={clsx(styles.whyObjectivTabs)}>
+                  <button 
+                    id='captureDataBefore'
+                    className={clsx(styles.whyObjectivTab, 
+                      activeTab == 'captureDataBefore' ? styles.whyObjectivTabActive : styles.whyObjectivTabInactive)}
+                    onClick={toggleActiveTab}>
+                    BEFORE OBJECTIV
+                  </button>
+                  <button 
+                    id='captureDataAfter'
+                    className={clsx(styles.whyObjectivTab, 
+                      activeTab == 'captureDataAfter' ? styles.whyObjectivTabActive : styles.whyObjectivTabInactive)}
+                    onClick={toggleActiveTab}>
+                    AFTER OBJECTIV
+                  </button>
+                </div>
+
+                <div 
+                  className={clsx(styles.whyObjectivBeforeOrAfter, 
+                    activeTab == 'captureDataBefore' 
+                      ? styles.whyObjectivBefore 
+                      : styles.whyObjectivHidden)}>
+                  <img
+                    src={useBaseUrl("img/stack-capture-before.svg")}
+                    alt="Workflow before Objectiv" />
+                </div>
+                <div 
+                  className={clsx(styles.whyObjectivBeforeOrAfter, 
+                    activeTab == 'captureDataAfter' 
+                      ? styles.whyObjectivAfter 
+                      : styles.whyObjectivHidden)}>
+                  <img
+                    src={useBaseUrl("img/stack-capture-after.svg")}
+                    alt="Workflow after Objectiv" />
+                </div>
+                <p>A typical data collection workflow before using Objectiv</p>
+              </div>
+
+              <div className={clsx(styles.captureDataUSPs)}>
                 <div className={clsx(styles.valueRowRight)}>
                   <div>
                     <img
-                      src={useBaseUrl("img/value-better-data.svg")}
-                      alt="1. validate events againts an open analytics taxonomy" />
+                      src={useBaseUrl("img/solution-taxonomy-dark.svg")}
+                      alt="The open analytics taxonomy" />
                   </div>
                   <div>
                     <p>
                       <strong>A taxonomy for model-ready data</strong> <br />
                       Objectiv's tracker validates all incoming events against an&nbsp;
                       <TrackedLink
-                        to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                        to={"/docs/taxonomy/"}
                         waitUntilTracked={true}
                         target="_self">
                         open analytics taxonomy
@@ -143,65 +130,53 @@ export default function Home() {
                     <p>It describes classes for common user interactions and their contexts. A tracking plan 
                       is no longer needed as the requirements for effective analysis are carried by the 
                       design of the taxonomy.</p>
+                    <img
+                      src={useBaseUrl("img/value-squeaky-clean-model-ready-data.svg")}
+                      alt="The result: squeaky clean model-ready data" />                      
                   </div>
-                </div>
-                <div className={clsx(styles.valueRowFull)}>
-                  <TrackedLink
-                    to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
-                    waitUntilTracked={true}
-                    id="2. collect squeaky clean model-ready data!"
-                    target="_self">
-                    <img
-                      src={useBaseUrl("img/value-taxonomy-highlighted.png")}
-                      className={clsx(styles.valueTaxonomyHighlightedHorizontal)}
-                      alt="2. collect squeaky clean model-ready data!" />
-                    <img
-                      src={useBaseUrl("img/value-taxonomy-highlighted-vertical.png")}
-                      className={clsx(styles.valueTaxonomyHighlightedVertical)}
-                      alt="2. collect squeaky clean model-ready data!" />
-                  </TrackedLink>.
-                </div>
-                <div className={clsx(styles.valueRowLeft)}>
-                  <div>
-                    <p>
-                      <strong>Get the full context</strong><br />
-                      Objectiv's tracker captures the structure of your product's UI inside the dataset. 
-                      Events contain the exact location where they were triggered in a hierarchical stack of 
-                      locations.
-                    </p>
-                    <p>
-                      This not only makes events easily identifiable, it also enables data slicing on a very 
-                      granular level without doing a ton of manual mapping first.
-                    </p>
-                    <img
-                      src={useBaseUrl("img/value-fine-grained-slicing-control.svg")}
-                      alt="Fine-grained slicing control" />
-                  </div>
-                  <div>
-                    <img
-                      src={useBaseUrl("img/value-better-data-event.svg")}
-                      alt="Objectiv Event example" />
-                  </div>  
                 </div>
               </div>
+
+              <div className={clsx(styles.valueRowLeft)}>
+                <div>
+                  <p>
+                    <strong>Get the full context</strong><br />
+                    Objectiv's tracker captures the structure of your product's UI inside the dataset. 
+                    Events contain the exact location where they were triggered in a hierarchical stack of 
+                    locations.
+                  </p>
+                  <p>
+                    This not only makes events easily identifiable, it also enables data slicing on a very 
+                    granular level without doing a ton of manual mapping first.
+                  </p>
+                  <img
+                    src={useBaseUrl("img/value-fine-grained-slicing-control.svg")}
+                    alt="Fine-grained slicing control" />
+                </div>
+                <div>
+                  <img
+                    src={useBaseUrl("img/value-better-data-event-dark.svg")}
+                    alt="Objectiv Event example" />
+                </div>  
+              </div>
+
             </TrackedDiv>
           </div>
+
+          <StarUsAnchor ref={starUsNotificationAnchorRef} />
 
           <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
             <TrackedDiv 
                 id={'granular-control'} 
                 className={clsx("container", styles.contentContainer, styles.granularControl)}>
               <IconHeader 
-                title="Build &amp; run in-depth analyses <br />in minutes, not months" 
-                subTitle="Take granular control over your full SQL dataset with pre-built models and 
-                  Pandas-like operations." 
+                title="Cut down delivery times of data projects <br />
+                  with reusable &amp; pre-built models" 
+                subTitle="Take granular control over your data with pre-built models that run on the full 
+                  dataset. <br />
+                  Share &amp; reuse any model and convert them to SQL with a single command." 
                 icon="icon-accelerate" />
               <div className={clsx(styles.granularControlUSPs)}>
-                <div className={clsx(styles.valueRowFull)}>
-                  <AnimatedGif
-                    url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
-                    alt='Example animation of how to call models from the model hub' />
-                </div>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>
@@ -218,6 +193,11 @@ export default function Home() {
                       src={useBaseUrl("img/value-pandas-like-operations-on-full-dataset.svg")}
                       alt="Pandas-like operations on the full dataset" />
                     </div>
+                  </div>
+                  <div className={clsx(styles.valueRowFull)}>
+                    <AnimatedGif
+                      url={useBaseUrl("img/examples/example-call-models-in-model-hub.gif")}
+                      alt='Example animation of how to call models from the model hub' />
                   </div>
                   <div className={clsx(styles.valueRowRight)}>
                     <div>
@@ -310,14 +290,14 @@ export default function Home() {
                 id={'eliminate-complexity'} 
                 className={clsx("container", styles.contentContainer, styles.eliminateComplexity)}>
               <IconHeader 
-                title="Cut down delivery times by eliminating <br />complexity in your analytics stack" 
-                subTitle="Run your entire product analytics workflow from a notebook." 
-                icon="icon-abc" />
+                title="Make your notebook the headquarters <br /> of your analytics operations" 
+                subTitle="Run &amp; control your entire product analytics workflow from a notebook." 
+                icon="icon-jupyter-notebook-in-browser" />
               <div className={clsx(styles.eliminateComplexityUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
                   <div>
                     <p>
-                      <strong>The notebook as your headquarters</strong><br />
+                      <strong>Convert models to SQL with a single command</strong><br />
                       On command, Objectiv converts your entire model to a production-ready SQL query, which 
                       you can directly use to feed into your tools and products.
                     </p>
