@@ -1,8 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from "clsx";
 import { TrackedDiv } from "@objectiv/tracker-react";
 import styles from "./styles.module.css";
+
+// Handles using/setting state with an interval timer
+// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest function
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
 
 export default function BeforeAfterImage({
   id,
@@ -13,41 +35,30 @@ export default function BeforeAfterImage({
   caption = '',
   tabColorsInverted = false
 }) {
+  beforeImageMobileUrl = beforeImageMobileUrl ?? beforeImageUrl;
+  afterImageMobileUrl = afterImageMobileUrl ?? afterImageUrl;
+
   const [activeTab, setActiveTab] = useState('before');
+
   function toggleActiveTab() {
     setActiveTab(activeTab == 'before' ? 'after' : 'before');
   }
 
-  // let intervalId;
-  // function autoSwitchTab(milliSecondsBetween = 5000) {
-  //   console.log("Starting auto-switch every " + milliSecondsBetween + "ms");
-  //   intervalId = setInterval(() => toggleActiveTab(), milliSecondsBetween);
-  //   console.log("intervalId: " + intervalId);
-  // }
-  // // TODO: stop switching on hover, restart on hover out
-  // function toggleAutoSwitch() {
-  //   if (intervalId != null) {
-  //     console.log("Clearing interval", intervalId);
-  //     clearInterval(intervalId);
-  //   } else {
-  //     autoSwitchTab(5000);
-  //   }
-  // }
-  // // TODO: switch tabs every x seconds
-  // useEffect(() => {
-  //   console.log("intervalId at start: " + intervalId);
-  //   if(!intervalId) autoSwitchTab(5000); // can't be 4000 or lower, because fade out/in length is 2s + 2s wait time.
-  // }, [])
+  const [isRunning, setIsRunning] = useState(true);
 
-  beforeImageMobileUrl = beforeImageMobileUrl ?? beforeImageUrl;
-  afterImageMobileUrl = afterImageMobileUrl ?? afterImageUrl;
+  function handleRunningChange(e) {
+    setIsRunning(!isRunning);
+  }
+
+  useInterval(() => {
+    toggleActiveTab();
+  }, isRunning ? 5000 : null);
 
   return (
     <TrackedDiv id={id + '-before-after'} 
       className={clsx(styles.beforeAfter, styles.beforeAfterDesktop)} 
-      // onMouseEnter={toggleAutoSwitch}
-      // onMouseLeave={toggleAutoSwitch}
-      >
+      onMouseEnter={handleRunningChange}
+      onMouseLeave={handleRunningChange}>
       <div className={clsx(styles.beforeAfterTabs, 
         tabColorsInverted && styles.beforeAfterTabsInverted)}>
         <button 

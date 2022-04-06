@@ -126,8 +126,6 @@ export default function Home() {
             </TrackedDiv>
           </div>
 
-          <StarUsAnchor ref={starUsNotificationAnchorRef} />
-
           <div className={clsx(styles.pageSection, styles.pageSectionLightGrey)}>
             <TrackedDiv 
                 id={'modeling'} 
@@ -148,6 +146,8 @@ export default function Home() {
                   tabColorsInverted={true}
                   caption='A typical modeling &amp; analysis workflow before using Objectiv' />
               </div>
+
+              <StarUsAnchor ref={starUsNotificationAnchorRef} />
 
               <div className={clsx(styles.modelingUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
