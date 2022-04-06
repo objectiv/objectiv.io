@@ -6,10 +6,11 @@ import sys
 import argparse
 import requests
 import xml.etree.ElementTree as ElementTree
-from typing import List, Dict
+from typing import List, Dict, Iterator
 import glob
 import urllib.parse
-from blessings import Terminal
+import re
+from blessings import Terminal  # type: ignore
 from subprocess import check_output
 
 # Basic configuration
@@ -17,11 +18,39 @@ FQDN = 'https://objectiv.io'  # domain to get sitemaps from
 FQDN_PATHS = ['/', '/docs/']  # list of paths on domain to get sitemap from
 SITEMAP = 'sitemap.xml'  # name of sitemap file
 EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb']  # file extensions to scan for URLs
+ABS_URL_EXTENSIONS_TO_SCAN = ['md', 'tsx', 'js', 'html']  # file extensions to scan for non-absolute URLs
+
+
+def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:
+    """Find any occurrence of non-absolute URLs in the specified path and file types, e.g. in a repo
+    :param path: The path to scan
+    :param extensions: The file extensions to scan, e.g. ['md', 'js']
+    :param urls: The URL to scan for
+
+    :return: List of URLs found and in which file, e.g. [['/docs/hello', '/src/pages/index.tsx']]
+    """
+
+    non_abs_urls_found_in_files = []
+    for filename in glob.glob(path, recursive=True):
+        if has_extension(filename, extensions):
+            with open(filename) as f:
+                contents = f.read()
+                for url in urls:
+                    # find all occurrences of the URL and determine if it's non-absolute
+                    matches = re.findall(f'(.*?)\/{url}', contents)
+
+                    for match in matches:
+                        before = match.strip()
+                        # non-absolute if: doesn't contain `useBaseUrl()`, "https://" or Tracking code
+                        if (before.find("useBaseUrl") == -1 and before.find("https://") == -1
+                                and before.find("http://") == -1 and before.find("<Tracked") == -1):
+                            non_abs_urls_found_in_files.append([before + url, filename])
+
+    return non_abs_urls_found_in_files
 
 
 def has_extension(filename: str, extensions: List[str]) -> bool:
     """Check whether a file has one of the specified extensions
-
     :param filename: The file to check
     :param extensions: The file extensions it should have, e.g. ['.md', .ipynb']
 
@@ -32,8 +61,7 @@ def has_extension(filename: str, extensions: List[str]) -> bool:
 
 
 def check_urls_in_file(filename: str, urls: List[str]) -> List[List[str]]:
-    """Get any occurance of the specified URLs in the specified file
-
+    """Get any occurrence of the specified URLs in the specified file
     :param filename: The file to scan
     :param urls: The URLs to find in the file
 
@@ -50,8 +78,7 @@ def check_urls_in_file(filename: str, urls: List[str]) -> List[List[str]]:
 
 
 def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:
-    """Find any occurence of the URLs in the specified path and file types, e.g. in a repo
-
+    """Find any occurrence of the URLs in the specified path and file types, e.g. in a repo
     :param path: The path to scan
     :param extensions: The file extensions to scan, e.g. ['md', 'ipynb']
     :param urls: The URLs to find in the files
@@ -69,7 +96,6 @@ def check_urls_from_files(path: str, extensions: List[str], urls: List[str]) -> 
 
 def compare_urls(source: List[str], target: List[str]) -> List[str]:
     """Get the URLs not found in source vs target
-
     :param source: The source to compare
     :param target: The target to compare to
 
@@ -80,7 +106,6 @@ def compare_urls(source: List[str], target: List[str]) -> List[str]:
 
 def get_base_url(url: str) -> str:
     """Get the base URL from a URL (e.g. 'https://objectiv.io' from 'https://objectiv.io/about')
-
     :param url: The URL to get the base from
 
     :return: the base URL
@@ -92,7 +117,6 @@ def get_base_url(url: str) -> str:
 
 def make_canonical(url: str, base_url: str = None) -> str:
     """Canonicalize a URL
-
     :param url: The URL to make canonical
     :param base_url: The base URL (e.g. 'https://staging.objectiv.io') to replace
 
@@ -104,25 +128,23 @@ def make_canonical(url: str, base_url: str = None) -> str:
     return url.replace(base_url, '')
 
 
-def get_urls_from_sitemap(sitemap: str) -> List:
+def get_urls_from_sitemap(sitemap: str) -> Iterator[str]:
     """Get all the URLs from a sitemap (in text)
-
     :param sitemap: The sitemap (in text) containing the URLs to extract
 
     :return: A list of URLs fetched from the sitemap
     """
     doc = ElementTree.fromstring(sitemap)
     for url in doc.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc'):
-        yield url.text
+        yield str(url.text)
 
 
-def get_urls_from_docker_image(env: str, path: str, image: str, tag: str = 'latest') -> List[str]:
+def get_urls_from_docker_image(env: str, path: str, image: str, tag: str = 'latest') -> Iterator[str]:
     """Get all the URLs from a file at the specified Docker image
-
     :param env: The image environment, e.g. 'docker' or 'testing'
     :param path: The path to the sitemap in the image (without the filename of the sitemap itself)
     :param image: The image name
-    :param tag: The tag of the iamge
+    :param tag: The tag of the image
 
     :return: A list of URLs fetched from the sitemap
     """
@@ -133,9 +155,8 @@ def get_urls_from_docker_image(env: str, path: str, image: str, tag: str = 'late
     return get_urls_from_sitemap(sitemap.decode('utf-8'))
 
 
-def get_urls_from_url(url: str) -> List:
+def get_urls_from_url(url: str) -> Iterator[str]:
     """Get all the URLs from a file at the specified URL (i.e. a sitemap)
-
     :param url: The URL to the file containing the URLs to extract
 
     :return: A list of URLs fetched from the file at the specified URL
@@ -164,15 +185,16 @@ def main() -> int:
     args = parser.parse_args()
 
     term = Terminal()
+    exitcode = 0
 
     # first get the URLs from the production domain's sitemap
-    prod_urls = []
+    prod_urls: List[str] = []
     for path in FQDN_PATHS:
         prod_urls += get_urls_from_url(f'{FQDN}{path}{SITEMAP}')
     prod_urls = [make_canonical(u, FQDN) for u in prod_urls]
 
     # second, get the URLs from the image's sitemap
-    docker_urls = []
+    docker_urls: List[str] = []
     env = args.environment
     image = args.docker_image
     tag = args.tag
@@ -181,10 +203,9 @@ def main() -> int:
     docker_urls = [make_canonical(u) for u in docker_urls]
 
     # third, compare the retrieved URLs from the docker image with the ones on production, and vice versa
-    removed_urls = compare_urls(prod_urls, docker_urls) # missing URLs prod vs image (i.e. will break)
-    added_urls = compare_urls(docker_urls, prod_urls) # missing URLs image vs prod (i.e. are new)
+    removed_urls = compare_urls(prod_urls, docker_urls)  # missing URLs prod vs image (i.e. will break)
+    added_urls = compare_urls(docker_urls, prod_urls)  # missing URLs image vs prod (i.e. are new)
 
-    exitcode = 0
     if removed_urls:
         # these are missing URLs, i.e. they exist on prod, but not in the docker image
         for url in removed_urls:
@@ -192,7 +213,7 @@ def main() -> int:
         exitcode += 1
 
     if added_urls:
-        # these are new URLs, i.e. the exist in the image, but not yet on production
+        # these are new URLs, i.e. they exist in the image, but not yet on production
         for url in added_urls:
             print(term.yellow(f'New URL compared to production sitemap: {url}'))
         exitcode += 1
@@ -210,6 +231,17 @@ def main() -> int:
         exitcode += 1
 
     # TODO: check all removed+added URLs against the ones used in tracker validation
+
+    # Check if there are any non-absolute URLs to /docs in the objectiv.io repo
+    non_abs_urls = check_non_absolute_urls('./src/pages/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
+    non_abs_urls += check_non_absolute_urls('./blog/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
+
+    if non_abs_urls:
+        for hit in non_abs_urls:
+            url = hit[0]
+            file = hit[1]
+            print(term.bold_red(f'{file} uses non-absolute URL: {url}'))
+        exitcode += 1
     
     return exitcode
 

@@ -67,7 +67,7 @@ Here is an example of the same event, but this time collected by Objectiv’s tr
    {
      "_type": "LinkContext",
      "id": "overview",
-     "href": "/docs/modeling/DataFrame""
+     "href": "https://objectiv.io/docs/modeling/DataFrame"
    }
  ]
 }
