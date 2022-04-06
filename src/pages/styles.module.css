@@ -201,7 +201,7 @@
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin: 20px 0 35px 0;
+  margin: 30px 0 35px 0;
   color: #333;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */

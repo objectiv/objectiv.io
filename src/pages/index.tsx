@@ -2,7 +2,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import IconHeader from '../components/icon-header';
 import BeforeAfterImage from '../components/before-after-image';
 import VimeoPlayer from '../components/vimeo-player';
