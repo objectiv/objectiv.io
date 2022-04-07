@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useScrollPosition } from '@docusaurus/theme-common';
-import { TrackedOverlayContext, useVisibilityTracker } from "@objectiv/tracker-react";
+import { PressableContextWrapper, TrackedOverlayContext, trackPressEvent } from "@objectiv/tracker-react";
 
 interface RefObject<T> {
   readonly current: T | null
@@ -42,22 +42,24 @@ function StarUsNotification(props, ref) {
   }
 
   return (
-    <TrackedOverlayContext 
-      Component='div' 
-      id='star-us-notification'
-      isVisible={starUsNotificationShown}
-      style={{opacity: 0}} 
-      onClick={closeNotification}
-      className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
-      <div className={clsx(styles.starUsNotificationSticky)}>
-          <div className={clsx(styles.starUsNotificationStickyPointer)}>
-            <img src={useBaseUrl("img/icons/icon-caret-up.svg")} />
-          </div>
-          <div className={clsx(styles.starUsNotificationStickyContent)}>
-            <img src={useBaseUrl("img/icons/icon-emoticon-smiley-stars.svg")} /> Star us on Github!
-          </div>
-      </div>
-    </TrackedOverlayContext>
+    <PressableContextWrapper id={'star-us-notification'}>
+      <TrackedOverlayContext 
+        Component='div' 
+        id='star-us-notification-overlay'
+        isVisible={starUsNotificationShown}
+        style={{opacity: 0}} 
+        onClick={closeNotification}
+        className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
+        <div className={clsx(styles.starUsNotificationSticky)}>
+            <div className={clsx(styles.starUsNotificationStickyPointer)}>
+              <img src={useBaseUrl("img/icons/icon-caret-up.svg")} />
+            </div>
+            <div className={clsx(styles.starUsNotificationStickyContent)}>
+              <img src={useBaseUrl("img/icons/icon-emoticon-smiley-stars.svg")} /> Star us on Github!
+            </div>
+        </div>
+      </TrackedOverlayContext>
+    </PressableContextWrapper>
   );
 }
 
