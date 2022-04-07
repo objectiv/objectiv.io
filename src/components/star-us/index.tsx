@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useScrollPosition } from '@docusaurus/theme-common';
+import { TrackedOverlayContext, useVisibilityTracker } from "@objectiv/tracker-react";
 
 interface RefObject<T> {
   readonly current: T | null
@@ -41,7 +42,10 @@ function StarUsNotification(props, ref) {
   }
 
   return (
-    <div 
+    <TrackedOverlayContext 
+      Component='div' 
+      id='star-us-notification'
+      isVisible={starUsNotificationShown}
       style={{opacity: 0}} 
       onClick={closeNotification}
       className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
@@ -53,7 +57,7 @@ function StarUsNotification(props, ref) {
             <img src={useBaseUrl("img/icons/icon-emoticon-smiley-stars.svg")} /> Star us on Github!
           </div>
       </div>
-    </div>
+    </TrackedOverlayContext>
   );
 }
 
