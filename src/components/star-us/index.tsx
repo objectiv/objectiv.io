@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { useScrollPosition } from '@docusaurus/theme-common';
-import { PressableContextWrapper, TrackedOverlayContext, trackPressEvent } from "@objectiv/tracker-react";
+import { TrackedPressableContext, TrackedOverlayContext, trackPressEvent } from "@objectiv/tracker-react";
 
 interface RefObject<T> {
   readonly current: T | null
@@ -29,6 +29,8 @@ function StarUsNotification(props, ref) {
   useScrollPosition(
     ({scrollY}) => {
       if (!starUsNotificationClosed) {
+        console.log("scrollY:", scrollY);
+        console.log("starUsAnchorPosition:", starUsAnchorPosition);
         const scrollCheck = scrollY >= starUsAnchorPosition;
         setStarUsNotificationShown(scrollCheck);
       }
@@ -42,13 +44,15 @@ function StarUsNotification(props, ref) {
   }
 
   return (
-    <PressableContextWrapper id={'star-us-notification'}>
+    <TrackedPressableContext 
+      Component='div'  
+      id={'star-us-notification'}
+      onClick={closeNotification}>
       <TrackedOverlayContext 
         Component='div' 
         id='star-us-notification-overlay'
         isVisible={starUsNotificationShown}
         style={{opacity: 0}} 
-        onClick={closeNotification}
         className={clsx(styles.starUsNotification, (starUsNotificationShown ? styles.starUsNotificationShow : null))}>
         <div className={clsx(styles.starUsNotificationSticky)}>
             <div className={clsx(styles.starUsNotificationStickyPointer)}>
@@ -59,7 +63,7 @@ function StarUsNotification(props, ref) {
             </div>
         </div>
       </TrackedOverlayContext>
-    </PressableContextWrapper>
+    </TrackedPressableContext>
   );
 }
 
