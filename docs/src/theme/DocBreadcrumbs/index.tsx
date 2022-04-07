@@ -15,6 +15,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { tagLink, makeIdFromString, tagNavigation } from '@objectiv/tracker-browser';
 
 // OBJECTIV
 import { useLocation } from "@docusaurus/router";
@@ -29,13 +30,22 @@ function BreadcrumbsItemLink({
   href?: string;
 }): JSX.Element {
   const className = clsx('breadcrumbs__link', styles.breadcrumbsItemLink);
+  // OBJECTIV
+  const getNodeText = node => {
+    if (['string', 'number'].includes(typeof node)) return node
+    if (node instanceof Array) return node.map(getNodeText).join('')
+    if (typeof node === 'object' && node) return getNodeText(node.props.children)
+  }
   return href ? (
-    <Link className={className} href={href}>
+    <Link
+      {...tagLink({ id: makeIdFromString(getNodeText(children) + "-" + href), href: href })}
+      className={className} href={href}>
       {children}
     </Link>
   ) : (
     <span className={className}>{children}</span>
   );
+  // END OBJECTIV
 }
 
 // TODO move to design system folder
@@ -97,6 +107,9 @@ export default function DocBreadcrumbs(): JSX.Element | null {
 
   return (
     <nav
+      // OBJECTIV
+      {...tagNavigation({ id: 'breadcrumbs' })}
+      // END OBJECTIV
       className={clsx(
         ThemeClassNames.docs.docBreadcrumbs,
         styles.breadcrumbsContainer,
