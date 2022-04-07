@@ -34,7 +34,7 @@ const trackVisibility = useVisibilityTracker();
 
 <Drawer
   onChange={(isOpen) => {
-    trackVisibility({ isVisibile: isOpen });
+    trackVisibility({ isVisible: isOpen });
   }}
 />
 ```
