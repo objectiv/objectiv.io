@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 // Handles using/setting state with an interval timer
 // https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 function useInterval(callback, delay) {
-  const savedCallback = useRef();
+  const savedCallback = useRef<Function>();
 
   // Remember the latest function
   useEffect(() => {
