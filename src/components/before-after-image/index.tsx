@@ -30,14 +30,12 @@ export default function BeforeAfterImage({
   id,
   beforeImageUrl,
   afterImageUrl,
-  beforeImageMobileUrl = null,
-  afterImageMobileUrl = null,
+  beforeImageMobileUrl,
+  afterImageMobileUrl,
   captionBefore = '',
   captionAfter = '',
   tabColorsInverted = false
 }) {
-  beforeImageMobileUrl = beforeImageMobileUrl ?? beforeImageUrl;
-  afterImageMobileUrl = afterImageMobileUrl ?? afterImageUrl;
 
   const [activeTab, setActiveTab] = useState('before');
 
