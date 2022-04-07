@@ -150,7 +150,7 @@
 
 /* Section: Hero */
 .heroBanner {
-  background-color: #FEF284;
+  background-color: #fff;
   padding: 100px 0;
   text-align: center;
   position: relative;
@@ -159,13 +159,18 @@
 }
 
 .heroTitle {
-  font-family: Roboto, serif;
+  font-family: Bungee;
   font-style: normal;
-  font-weight: 900;
-  font-size: 36px;
+  font-weight: 400;
+  font-size: 32px;
   line-height: 150%;
+  letter-spacing: 0.2em;
   margin: 40px 0 0 0;
   color: #333;
+  /* -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; */
 }
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
@@ -183,6 +188,7 @@
     padding: 80px 0;
   }
   .heroTitle {
+    font-size: 28px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -200,7 +206,7 @@
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin: 20px 0 30px 0;
+  margin: 30px 0 35px 0;
   color: #333;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
@@ -292,162 +298,64 @@
   }
 }
 
-/* Section: Why Objectiv? */
-.whyObjectiv {  
-  text-align: center;
+/* Section: Capture Data */
+.stackCaptureData .valueRowRight {
+  padding-bottom: 180px;
 }
-
-.whyObjectiv h2 {
-  margin: 30px 0;
+.stackCaptureData .valueRowRight>div:nth-child(2) {
+  padding-top: 120px;
 }
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .whyObjectiv {  
-    padding-bottom: 0;
-  }
+.stackCaptureData .valueRowRight>div:nth-child(2) img {
+  margin-top: 80px;
 }
-@media screen and (max-width: 480px) { /* mobile small */
-  .whyObjectiv {  
-    padding-top: 0;
-  }
-}
-
-.whyObjectiv .valueRowLeft:last-child {
-  padding-bottom: 30px; /* Different from design */
-}
-/* Don't shift the content down compared to the image in the Why Objectiv section */
-.whyObjectiv .valueRowLeft>div:nth-child(1) {
-  padding-top: 0;}
-
-
-.whyObjectivSummary {
-  margin-top: 75px;
+.stackCaptureData .valueRowLeft>div:nth-child(1) img {
+  margin-top: 70px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .whyObjectivSummary {
-    margin-top: -50px;
+  .stackCaptureData .valueRowRight {
+    padding-bottom: 80px;
   }
-  .whyObjectivSummary.valueRowLeft {
-    flex-flow: row wrap-reverse;
+  .stackCaptureData .valueRowRight>div:nth-child(2) {
+    padding-top: 40px;
   }
-  .whyObjectivSummary.valueRowLeft>div:first-child {
-    flex: 100%;
-    text-align: center;
-  }
-  .whyObjectivSummary.valueRowLeft>div:first-child img {
-    margin: 20px auto 0 auto;
-    display: block;
-  }
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .whyObjectivSummary.valueRowLeft>div:first-child img {
-    margin: 40px auto 0 auto;
-  }
-}
-
-.whyObjectivSummary .whyItems {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.whyObjectivSummary .whyItem {
-  flex: 50%;
-  display: flex;
-  vertical-align: top;
-  padding: 0;
-}
-
-.whyObjectivSummary .whyItem .iconIcon {
-  min-width: 150px;
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .whyObjectivSummary .whyItem {
-    flex: 100%;
-  }
-}
-@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
-  .whyObjectivSummary .whyItem .iconIcon {
-    min-width: 100px;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .whyObjectivSummary .whyItem {
-    display: block;
-    text-align: center;
-    padding-bottom: 40px;
-  }
-}
-
-
-/* Section: Skip the gruntwork */
-.skipTheGruntWork .valueRowFull {
-  padding-bottom: 120px;
-  text-align: center;
-}
-.skipTheGruntWork .valueRowLeft:last-child { /* Bottom padding for all but the last one */
-  padding-bottom: 0;
-}
-.skipTheGruntWork .valueTaxonomyHighlightedVertical {
-  display: none;
-}
-.skipTheGruntWork .valueRowLeft:last-child>div:first-child img {
-  margin-top: 66px;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .skipTheGruntWork .skipTheGruntWorkUSPs {
-    padding-top: 20px;
-  }
-  .skipTheGruntWork .valueRowRight>div:first-child {
-    margin-top: 0;
-  }
-  .skipTheGruntWork .valueRowRight {
-    padding-bottom: 40px;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .skipTheGruntWork .valueTaxonomyHighlightedVertical {
-    display: inline-block;
-  }
-  .skipTheGruntWork .valueTaxonomyHighlightedHorizontal {
+  .stackCaptureData .valueRowRight>div:nth-child(2) img, .stackCaptureData .valueRowLeft>div:nth-child(1) img {
     display: none;
   }
 }
 
 
-/* Section: Granular Control & Bach */
-.granularControl {
-  margin-bottom: 50px;
+/* Section: Modeling */
+.modeling {
+  margin-bottom: 120px;
 }
-.granularControl .granularControlUSPs .valueRowLeft>div:first-child {
+
+.modeling .modelingUSPs .valueRowLeft>div:first-child {
   padding-top: 40px;
 }
-.granularControl .granularControlUSPs .valueRowLeft>div:first-child img {
+.modeling .modelingUSPs .valueRowLeft>div:first-child img {
   padding-top: 60px;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .granularControl {
+  .modeling {
     margin-bottom: 0;
+  }
+  .modeling .modelingUSPs .valueRowRight {
+    padding-bottom: 20px;
   }
 }
 
-.granularControl .bachIntroVideo {
+.modeling .bachIntroVideo {
   text-align: center;
   margin: 20px 0 50px 0;
 }
-.granularControl .bachIntroVideo .video {
+.modeling .bachIntroVideo .video {
   margin-top: 50px;
 }
-.granularControl .twoColumnItems {
+.modeling .twoColumnItems {
   padding: 50px 0 0 0;
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .granularControl .twoColumnItems .twoColumnItem:nth-child(2) {
+  .modeling .twoColumnItems .twoColumnItem:nth-child(2) {
     padding-bottom: 0; /* Remove unneeded padding between rows on mobile/tablet */
   }
 }
@@ -490,7 +398,7 @@
     text-align: center;
   }
 
-  .granularControl .bachIntroVideo {
+  .modeling .bachIntroVideo {
     margin-top: 0;
   }
 }
@@ -520,13 +428,13 @@
 }
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .eliminateComplexity .eliminateComplexityUSPs {
-    margin-top: -80px;
+    margin-top: -40px;
   }
   .eliminateComplexity .valueRowLeft {
     padding-bottom: 0; 
   }
   .eliminateComplexity .valueRowFull {
-    padding-top: 120px;
+    padding-top: 80px;
   }
 }
 @media screen and (max-width: 480px) { /* mobile small */

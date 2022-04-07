@@ -1,0 +1,174 @@
+.beforeAfter {  
+  text-align: center;
+  margin-bottom: 120px;
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .beforeAfter {  
+    margin-bottom: 40px;
+  }
+}
+
+.beforeAfter .beforeAfterHidden {
+  display: none;
+}
+
+.beforeAfter .beforeAfterTabs {
+  position: relative;
+  margin: 0 auto;
+}
+.beforeAfter .beforeAfterTab {
+  height: 42px;
+  padding: 10.5px 20px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-style: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  transition: 0.5s;
+}
+.beforeAfter .beforeAfterTab:hover {
+  cursor: pointer;
+}
+.beforeAfter .beforeAfterTabActive {
+  background: #fff;
+  color: #333333;
+}
+.beforeAfter .beforeAfterTabInactive {
+  background: #444444;
+  color: #fff;
+}
+.beforeAfter .beforeAfterTabsInverted .beforeAfterTabActive {
+  background: #444444;
+  color: #fff;
+}
+.beforeAfter .beforeAfterTabsInverted .beforeAfterTabInactive {
+  background: #fff;
+  color: #333333;
+}
+
+.beforeAfter .switch {
+  padding: 20px 0;
+  margin: 30px auto 50px auto;
+  min-height: 310px;
+}
+.beforeAfter .imgDesktop {
+  display: block;
+  margin: 0 auto;
+}
+.beforeAfter .imgMobile {
+  display: none;
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .beforeAfter .imgDesktop {
+    display: none;
+  }
+  .beforeAfter .imgMobile {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.beforeAfter .beforeAfterBefore {
+  overflow: auto;
+  /* overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap; */
+  max-width: 100%;
+}
+/* Scrollbar customization (supported on Chrome, Edge, Opera, Safari, some on FF) */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+/* the entire scrollbar */
+.beforeAfter .switch::-webkit-scrollbar {
+  height: 10px;
+}
+.beforeAfter .switch { /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width */
+  scrollbar-width: thin;
+}
+/* the buttons on the scrollbar (arrows pointing upwards and downwards) */
+/* not supported on Safari */
+.beforeAfter .switch::-webkit-scrollbar-button {
+}
+/* thumb: the draggable scrollbar itself, e.g. its color */
+/* not supported on Safari */
+.beforeAfter .switch::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}
+.beforeAfter .switch { /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color */
+  scrollbar-color: #f1f1f1;
+}
+/* track: progress bar behind the scrollbar itself, e.g. the background */
+.beforeAfter .switch::-webkit-scrollbar-track {
+  background: #888;
+}
+/* track-piece: part of the track (progress bar) not covered by the handle */
+.beforeAfter .switch::-webkit-scrollbar-track-piece {
+  background: #888;
+}
+
+.fadeIn {
+  animation-delay: 1.5s;
+  animation: fadeInAnim ease 1.5s;
+  -webkit-animation: fadeInAnim ease 1.5s;
+  -moz-animation: fadeInAnim ease 1.5s;
+  -o-animation: fadeInAnim ease 1.5s;
+  -ms-animation: fadeInAnim ease 1.5s;
+}
+
+@keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeInAnim {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.fadeOut {
+  animation: fadeOutAnim ease 1.5s;
+  -webkit-animation: fadeOutAnim ease 1.5s;
+  -moz-animation: fadeOutAnim ease 1.5s;
+  -o-animation: fadeOutAnim ease 1.5s;
+  -ms-animation: fadeOutAnim ease 1.5s;
+}
+
+@keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-moz-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-webkit-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-o-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@-ms-keyframes fadeOutAnim {
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
