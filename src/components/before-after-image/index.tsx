@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from "clsx";
-import { TrackedDiv } from "@objectiv/tracker-react";
+import { TrackedDiv, TrackedButton } from "@objectiv/tracker-react";
 import styles from "./styles.module.css";
 
 // Handles using/setting state with an interval timer
@@ -60,20 +60,20 @@ export default function BeforeAfterImage({
       onMouseLeave={handleRunningChange}>
       <div className={clsx(styles.beforeAfterTabs, 
         tabColorsInverted && styles.beforeAfterTabsInverted)}>
-        <button 
+        <TrackedButton 
           id='before'
           className={clsx(styles.beforeAfterTab, 
             activeTab == 'before' ? styles.beforeAfterTabActive : styles.beforeAfterTabInactive)}
           onClick={toggleActiveTab}>
           BEFORE
-        </button>
-        <button 
+        </TrackedButton>
+        <TrackedButton 
           id='after'
           className={clsx(styles.beforeAfterTab, 
             activeTab == 'after' ? styles.beforeAfterTabActive : styles.beforeAfterTabInactive)}
           onClick={toggleActiveTab}>
           AFTER
-        </button>
+        </TrackedButton>
       </div>
       <div 
         className={clsx(styles.switch, 

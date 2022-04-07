@@ -15,6 +15,8 @@ import styles from './styles.module.css';
 export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
+  
+  // reference for the 'star us' notification on top
   const starUsNotificationAnchorRef = useRef(null);
 
   return (
@@ -142,6 +144,8 @@ export default function Home() {
                   dataset. <br /> Share &amp; reuse any model and convert them to SQL with a single command." 
                 icon="icon-accelerate" />
 
+              <StarUsAnchor ref={starUsNotificationAnchorRef} />
+
               <div className={clsx(styles.modelingBeforeAfter)}>
                 <BeforeAfterImage 
                   id='modeling-workflow'
@@ -154,7 +158,6 @@ export default function Home() {
                   captionAfter='A typical modeling &amp; analysis workflow after using Objectiv' />
               </div>
 
-              <StarUsAnchor ref={starUsNotificationAnchorRef} />
 
               <div className={clsx(styles.modelingUSPs)}>
                 <div className={clsx(styles.valueRowLeft)}>
