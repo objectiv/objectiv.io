@@ -17,8 +17,10 @@ from subprocess import check_output
 FQDN = 'https://objectiv.io'  # domain to get sitemaps from
 FQDN_PATHS = ['/', '/docs/']  # list of paths on domain to get sitemap from
 SITEMAP = 'sitemap.xml'  # name of sitemap file
-EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb']  # file extensions to scan for URLs
+EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb', 'ts']  # file extensions to scan for URLs
 ABS_URL_EXTENSIONS_TO_SCAN = ['md', 'tsx', 'js', 'html']  # file extensions to scan for non-absolute URLs
+# the files to scan (in the objectiv-analytics repo) that contain all URLs used by the tracker validation
+VALIDATION_FILES_TO_SCAN = ['../objectiv-analytics/tracker/core/developer-tools/src/ContextErrorMessages.ts']
 
 
 def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:
@@ -47,6 +49,36 @@ def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -
                             non_abs_urls_found_in_files.append([before + url, filename])
 
     return non_abs_urls_found_in_files
+
+
+def check_validation_urls_from_files(files: List[str], prod_urls: List[str]) -> List[List[str]]:
+    """Check if there are any URLs in the specified files that are not used on production
+    :param path: The files to scan
+    :param prod_urls: The URLs used in production
+
+    :return: List of URLs not found on production and in which file they're used, 
+        e.g. [['https://test.com', '/source/validation.ts']]
+    """
+
+    # find all the URLs in `files`, and see if they're present in `prod_urls`
+    urls_found_in_files = []
+    for file in files:
+        with open(file) as f:
+            contents = f.read()
+            matches = re.findall(f"(?P<url>https?://[^\s]+)", contents)
+            for match in matches:
+                # remove any characters at the end up until the last occurrence of a dot
+                url = match[:match.rfind(".")]
+                urls_found_in_files.append([url, file])
+
+    urls_not_in_prod = []
+    # now check if each of the found URLs is present in the production URLs
+    for entry in urls_found_in_files:
+        url = make_canonical(entry[0])
+        if url not in prod_urls:
+            urls_not_in_prod.append(entry)
+
+    return urls_not_in_prod
 
 
 def has_extension(filename: str, extensions: List[str]) -> bool:
@@ -172,7 +204,10 @@ def main() -> int:
     * On production (website/docs sitemaps)
     * In local repositories (objectiv.io and objectiv-analytics)
     * URLs that are used externally
-    * TODO: tracker validation
+    * Validation in the Tracker
+    
+    Also checks usage of non-absolute URLs (e.g. /docs instead of https://objectiv.io/docs), as those can't 
+    be followed by our broken-link-checker.
     """
 
     parser = argparse.ArgumentParser()
@@ -230,9 +265,16 @@ def main() -> int:
             print(term.blue(f'{file} uses URL: {url}'))
         exitcode += 1
 
-    # TODO: check all removed+added URLs against the ones used in tracker validation
+    # fifth, check _all_ URLs in the sitemaps against the ones used in tracker validation
+    validation_urls_not_found = check_validation_urls_from_files(VALIDATION_FILES_TO_SCAN, prod_urls)
+    if validation_urls_not_found:
+        for hit in validation_urls_not_found:
+            url = hit[0]
+            file = hit[1]
+            print(term.bold_red(f'Validation file {file} uses a URL not found on production: {url}'))
+        exitcode += 1
 
-    # Check if there are any non-absolute URLs to /docs in the objectiv.io repo
+    # finally, check if there are any non-absolute URLs to /docs in the objectiv.io repo
     non_abs_urls = check_non_absolute_urls('./src/pages/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
     non_abs_urls += check_non_absolute_urls('./blog/**', ABS_URL_EXTENSIONS_TO_SCAN, ["docs/"])
 
@@ -242,6 +284,9 @@ def main() -> int:
             file = hit[1]
             print(term.bold_red(f'{file} uses non-absolute URL: {url}'))
         exitcode += 1
+
+    if(exitcode == 0):
+        print(term.green(f'No URL issues found'))
     
     return exitcode
 
