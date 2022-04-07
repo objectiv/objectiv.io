@@ -13,9 +13,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const config = {
-  title: "Objectiv - Open-source product analytics, designed for data science",
+  title: "Objectiv - Open-source infrastructure for product analytics",
   titleDelimiter: '|',
-  tagline: 'Built to collect model-ready data straight out of the box. No tracking plans, data cleaning or transformations required. Just open your notebook and start modeling on your data right away with pandas-like operations that run on the full SQL dataset.', //meta description, and og:description
+  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable & prebuilt models.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
