@@ -22,7 +22,7 @@ function MaybeLink(props: LinkProps): JSX.Element {
     return (
       <TrackedLink 
         id={props.title?? props.href}
-        href={props.href} 
+        href={props.href}
         {...props}>
       </TrackedLink>
     )

@@ -14,7 +14,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 
 // OBJECTIV
-import { TrackedLinkContext, makeTitleFromChildren } from "@objectiv/tracker-react";
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 // END OBJECTIV
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -25,6 +25,7 @@ export default function NavbarNavLink({
   to,
   href,
   label,
+  html,
   activeClassName = '',
   prependBaseUrlToHref,
   ...props
@@ -37,18 +38,38 @@ export default function NavbarNavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-  // OBJECTIV
-  const linkTo = href ? (prependBaseUrlToHref ? normalizedHref : href) : toUrl;
-  const linkTitle = makeTitleFromChildren(label);
-  // END OBJECTIV
+  // Link content is set through html XOR label
+  const linkContentProps = html
+    ? {dangerouslySetInnerHTML: {__html: html}}
+    : {
+        children: (
+          <>
+            {label}
+            {isExternalLink && (
+              <IconExternalLink
+                {...(isDropdownLink && {width: 12, height: 12})}
+              />
+            )}
+          </>
+        ),
+      };
+
+  if (href) {
+    return (
+      <TrackedLink
+        href={prependBaseUrlToHref ? normalizedHref : href}
+        {...props}
+        {...linkContentProps}
+      />
+    );
+  }
+
   return (
     // OBJECTIV
-    <TrackedLinkContext
-      Component={Link}
-      title={linkTitle}
-      href={linkTo}
+    <TrackedLink
+      href={toUrl}
       {...{
-        to: linkTo,
+        to: toUrl,
         isNavLink: true,
         activeClassName: !props.className?.includes(activeClassName)
           ? activeClassName
@@ -62,16 +83,9 @@ export default function NavbarNavLink({
             }
           : null),
       }}
-      {...props}>
-      {isExternalLink ? (
-        <span>
-          {label}
-          <IconExternalLink {...(isDropdownLink && {width: 12, height: 12})} />
-        </span>
-      ) : (
-        label
-      )}
-    </TrackedLinkContext>
+      {...props}
+      {...linkContentProps}>
+    </TrackedLink>
     // END OBJECTIV
   );
 }
