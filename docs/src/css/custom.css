@@ -278,7 +278,7 @@ div.docs-wrapper footer div.col:nth-child(2) {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.docs-wrapper img {
+.docs-wrapper .main-wrapper img {
   display: block;
   margin: 20px auto;
 }

@@ -276,7 +276,7 @@ function DocSidebarItemLink({
       key={label}>
       <Link
         // OBJECTIV
-        {...tagLink({ id: item.label, href: item.href })}
+        {...tagLink({ id: label, href: href })}
         // END OBJECTIV
         className={clsx('menu__link', {
           'menu__link--active': isActive,

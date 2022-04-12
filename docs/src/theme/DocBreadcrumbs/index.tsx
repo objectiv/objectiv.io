@@ -15,9 +15,9 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { tagLink, makeIdFromString, tagNavigation } from '@objectiv/tracker-browser';
 
 // OBJECTIV
+import { tagLink, makeIdFromString, tagNavigation } from '@objectiv/tracker-browser';
 import { useLocation } from "@docusaurus/router";
 // END OBJECTIV
 
@@ -39,11 +39,15 @@ function BreadcrumbsItemLink({
   return href ? (
     <Link
       {...tagLink({ id: makeIdFromString(getNodeText(children) + "-" + href), href: href })}
-      className={className} href={href}>
-      {children}
+      className={className} 
+      href={href}
+      itemProp="item">
+      <span itemProp="name">{children}</span>
     </Link>
   ) : (
-    <span className={className}>{children}</span>
+    <span className={className} itemProp="item name">
+      {children}
+    </span>
   );
   // END OBJECTIV
 }
@@ -52,16 +56,22 @@ function BreadcrumbsItemLink({
 function BreadcrumbsItem({
   children,
   active,
+  index,
 }: {
   children: ReactNode;
   active?: boolean;
+  index: number;
 }): JSX.Element {
   return (
     <li
+      itemScope
+      itemProp="itemListElement"
+      itemType="https://schema.org/ListItem"
       className={clsx('breadcrumbs__item', {
         'breadcrumbs__item--active': active,
       })}>
       {children}
+      <meta itemProp="position" content={String(index + 1)} />
     </li>
   );
 }
@@ -115,11 +125,18 @@ export default function DocBreadcrumbs(): JSX.Element | null {
         styles.breadcrumbsContainer,
       )}
       aria-label="breadcrumbs">
-      <ul className="breadcrumbs">
+      <ul
+        className="breadcrumbs"
+        itemScope
+        itemType="https://schema.org/BreadcrumbList">
         {homePageRoute && <HomeBreadcrumbItem />}
         {breadcrumbs.map((item, idx) => (
-          <BreadcrumbsItem key={idx} active={idx === breadcrumbs.length - 1}>
-            <BreadcrumbsItemLink href={item.href}>
+          <BreadcrumbsItem 
+            key={idx} 
+            active={idx === breadcrumbs.length - 1}
+            index={idx}>
+            <BreadcrumbsItemLink 
+              href={idx < breadcrumbs.length - 1 ? item.href : undefined}>
               {item.label}
             </BreadcrumbsItemLink>
           </BreadcrumbsItem>
