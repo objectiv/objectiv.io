@@ -28,6 +28,7 @@ High level overview of all the Events & Contexts available in the open analytics
 * [NavigationContext](./location-contexts/NavigationContext.md)
 * [OverlayContext](./location-contexts/OverlayContext.md)
 * [PressableContext](./location-contexts/PressableContext.md)
+* [RootLocationContext](./location-contexts/RootLocationContext.md)
 
 ## Events
 Used to describe interactive and non-interactive [Events](./events/overview.md).
