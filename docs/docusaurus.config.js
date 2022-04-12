@@ -13,9 +13,9 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const config = {
-  title: "Objectiv - Open-source infrastructure for product analytics",
+  title: "Documentation",
   titleDelimiter: '|',
-  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable & prebuilt models.', //meta description, and og:description
+  tagline: 'Objectiv is open-source infrastructure for product analytics. Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable &amp; prebuilt models.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',

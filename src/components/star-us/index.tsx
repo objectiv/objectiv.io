@@ -29,8 +29,6 @@ function StarUsNotification(props, ref) {
   useScrollPosition(
     ({scrollY}) => {
       if (!starUsNotificationClosed) {
-        console.log("scrollY:", scrollY);
-        console.log("starUsAnchorPosition:", starUsAnchorPosition);
         const scrollCheck = scrollY >= starUsAnchorPosition;
         setStarUsNotificationShown(scrollCheck);
       }
