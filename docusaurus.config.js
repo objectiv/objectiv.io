@@ -13,7 +13,7 @@ const slackJoinLink = '/join-slack';
 const config = {
   title: "Objectiv - Open-source infrastructure for product analytics",
   titleDelimiter: '|',
-  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable & prebuilt models.', //meta description, and og:description
+  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable &amp; prebuilt models.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',

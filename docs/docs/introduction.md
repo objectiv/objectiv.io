@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 slug: /
-title: Introduction
+title: ""
+description: Objectiv is open-source infrastructure for product analytics. Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable &amp; prebuilt models.
 ---
 
 # 
@@ -11,22 +12,19 @@ import Mermaid from '@theme/Mermaid';
 
 ![Objectiv Logo](/img/logo-objectiv-large.svg "Objectiv Logo")
 
-## Welcome to the official Objectiv documentation
-Objectiv is a complete, self-hosted product analytics stack designed for
-data science without gruntwork.
+## Objectiv Documentation
+Objectiv is open-source infrastructure for product analytics. Highlights:
+
+* Collect [model-ready user behavior data](/tracking/core-concepts/overview.md) and feed it straight into 
+  your data warehouse.
+* Use [pandas-like operations](/modeling/intro.mdx) and [pre-built models](/modeling/models.mdx) that run on 
+  the full SQL dataset.
+* Instantly convert models to SQL to feed all data consumers from a single source of truth.
+
+Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 <img src={useBaseUrl('/img/objectiv-stack.svg')} alt="The Objectiv Stack"/>
 
-It includes everything you need to answer your product analytics questions with speed and precision.
-Straight from your notebook on the full, raw dataset. No cleaning, transformations or tracking plans required.
-
-### Highlights
-* Collect [model-ready data](/tracking/core-concepts/overview.md) that doesn't require cleaning and transformation
-* Ensure compatibility with many models by validating against an [open analytics taxonomy](/taxonomy/introduction.md)
-* Build reusable models with [Pandas-like modeling](/modeling/intro.mdx) that runs on the full dataset
-* Chain together custom & [pre-built models](/modeling/models.mdx) to answer in-depth questions quickly
-
-Check out [objectiv.io](https://www.objectiv.io) to learn more.
 
 ## Getting Started
 
