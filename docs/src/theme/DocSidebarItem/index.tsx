@@ -56,8 +56,7 @@ export default function DocSidebarItem({
   }
 }
 
-// If we navigate to a category and it becomes active, it should automatically
-// expand itself
+// If we navigate to a category and it becomes active, it should automatically expand itself
 function useAutoExpandActiveCategory({
   isActive,
   collapsed,
