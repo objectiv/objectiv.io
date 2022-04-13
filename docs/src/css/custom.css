@@ -229,6 +229,11 @@ nav .DocSearch-Button-Keys span:first-child {
   filter: invert(100%);
 }
 
+/** DOCS FOOTER **/
+.theme-doc-footer .col:nth-child(2) {
+  display: none;
+}
+
 /** FOOTER **/
 .footer {
   padding: 10px;

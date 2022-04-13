@@ -7,6 +7,7 @@
 import React from 'react';
 
 import type {Props} from '@theme/EditThisPage';
+import {ThemeClassNames} from '@docusaurus/theme-common';
 
 // OBJECTIV
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -38,6 +39,7 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
           <Link
             to={editThisPageUrl}
             {...tagLink({ id: 'edit-docs-page', href: editThisPageUrl })}
+            className={ThemeClassNames.common.editThisPage}
             rel="noreferrer noopener">
             <i className={clsx(styles.icon, styles.iconSuggestEdit)}/> Suggest an edit
           </Link>

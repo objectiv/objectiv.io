@@ -56,7 +56,8 @@ export default function DocSidebarItem({
   }
 }
 
-// If we navigate to a category and it becomes active, it should automatically expand itself
+// If we navigate to a category and it becomes active, it should automatically
+// expand itself
 function useAutoExpandActiveCategory({
   isActive,
   collapsed,
@@ -83,7 +84,7 @@ function useAutoExpandActiveCategory({
  * see https://github.com/facebookincubator/infima/issues/36#issuecomment-772543188
  * see https://github.com/facebook/docusaurus/issues/3030
  */
- function useCategoryHrefWithSSRFallback(
+function useCategoryHrefWithSSRFallback(
   item: PropSidebarItemCategory,
 ): string | undefined {
   const isBrowser = useIsBrowser();
@@ -175,7 +176,8 @@ function DocSidebarItemCategory({
         })}>
         <Link
           className={clsx('menu__link', {
-            'menu__link--sublist': collapsible && !href,
+            'menu__link--sublist': collapsible,
+            'menu__link--sublist-caret': !href,
             'menu__link--active': isActive,
           })}
           onClick={
@@ -194,6 +196,7 @@ function DocSidebarItemCategory({
                 }
           }
           aria-current={isCurrentPage ? 'page' : undefined}
+          aria-expanded={collapsible ? !collapsed : undefined}
           href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
           {...props}>
           {label}
@@ -248,9 +251,7 @@ function DocSidebarItemHtml({
       )}
       key={index}
       // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{
-        __html: value,
-      }}
+      dangerouslySetInnerHTML={{__html: value}}
     />
   );
 }
@@ -265,6 +266,7 @@ function DocSidebarItemLink({
 }: Props & {item: PropSidebarItemLink}) {
   const {href, label, className} = item;
   const isActive = isActiveSidebarItem(item, activePath);
+  const isInternalLink = isInternalUrl(href);
   return (
     <li
       className={clsx(
@@ -276,25 +278,23 @@ function DocSidebarItemLink({
       key={label}>
       <Link
         // OBJECTIV
-        {...tagLink({ id: label, href: href })}
+        {...tagLink({ id: item.label, href: item.href })}
         // END OBJECTIV
-        className={clsx('menu__link', {
-          'menu__link--active': isActive,
-        })}
+        className={clsx(
+          'menu__link',
+          !isInternalLink && styles.menuExternalLink,
+          {
+            'menu__link--active': isActive,
+          },
+        )}
         aria-current={isActive ? 'page' : undefined}
         to={href}
-        {...(isInternalUrl(href) && {
+        {...(isInternalLink && {
           onClick: onItemClick ? () => onItemClick(item) : undefined,
         })}
         {...props}>
-        {isInternalUrl(href) ? (
-          label
-        ) : (
-          <span>
-            {label}
-            <IconExternalLink />
-          </span>
-        )}
+        {label}
+        {!isInternalLink && <IconExternalLink />}
       </Link>
     </li>
   );

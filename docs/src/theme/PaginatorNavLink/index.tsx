@@ -13,7 +13,7 @@ import type {Props} from '@theme/PaginatorNavLink';
 import { tagLink } from "@objectiv/tracker-browser";
 // END OBJECTIV
 
-function PaginatorNavLink(props: Props): JSX.Element {
+export default function PaginatorNavLink(props: Props): JSX.Element {
   const {permalink, title, subLabel} = props;
   return (
     <Link 
@@ -28,5 +28,3 @@ function PaginatorNavLink(props: Props): JSX.Element {
     </Link>
   );
 }
-
-export default PaginatorNavLink;
