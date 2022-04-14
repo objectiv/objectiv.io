@@ -229,6 +229,11 @@ nav .DocSearch-Button-Keys span:first-child {
   filter: invert(100%);
 }
 
+/** DOCS FOOTER **/
+.theme-doc-footer .col:nth-child(2) {
+  display: none;
+}
+
 /** FOOTER **/
 .footer {
   padding: 10px;
@@ -278,7 +283,7 @@ div.docs-wrapper footer div.col:nth-child(2) {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.docs-wrapper img {
+.docs-wrapper .main-wrapper img {
   display: block;
   margin: 20px auto;
 }

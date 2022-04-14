@@ -12,7 +12,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import {usePluralForm} from '@docusaurus/theme-common';
 import {blogPostContainerID} from '@docusaurus/utils-common';
-import MDXComponents from '@theme/MDXComponents';
+import MDXContent from '@theme/MDXContent';
 import EditThisPage from '@theme/EditThisPage';
 import type {Props} from '@theme/BlogPostItem';
 
@@ -140,7 +140,7 @@ export default function BlogPostItem(props: Props): JSX.Element {
         id={isBlogPostPage ? blogPostContainerID : undefined}
         className="markdown"
         itemProp="articleBody">
-        <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+        <MDXContent>{children}</MDXContent>
       </div>
 
       {/* OBJECTIV: TRY OBJECTIV SECTION */}
@@ -199,7 +199,15 @@ export default function BlogPostItem(props: Props): JSX.Element {
               <TrackedLink
                 id={'read-more'}
                 to={metadata.permalink}
-                aria-label={`Read more about ${title}`}>
+                aria-label={translate(
+                  {
+                    message: 'Read more about {title}',
+                    id: 'theme.blog.post.readMoreLabel',
+                    description:
+                      'The ARIA label for the link to full blog posts from excerpts',
+                  },
+                  {title},
+                )}>
                 <b>
                   <Translate
                     id="theme.blog.post.readMore"

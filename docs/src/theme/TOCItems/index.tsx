@@ -7,7 +7,6 @@
 
 import React, {useMemo} from 'react';
 import type {Props} from '@theme/TOCItems';
-import type {TOCItem} from '@docusaurus/types';
 import {
   type TOCHighlightConfig,
   type TOCTreeNode,

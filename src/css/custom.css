@@ -98,6 +98,8 @@ body {
     width: 24px;
     height: 24px;
     padding: 0 24px;
+    font-size: 0;
+    color: transparent; 
   }
   .navbar .navItem span, .navbar .navItem svg {
     display: none;
@@ -220,17 +222,17 @@ p, .markdown p {
 }
 
 /* BLOG */
-.blog-wrapper {
+.blog-wrapper .main-wrapper {
   line-height: 2em;
   letter-spacing: -0.003em;
   margin-top: 40px;
 }
 
-.blog-wrapper header a {
+.blog-wrapper .main-wrapper header a {
   color: var(--ifm-font-color-base);
 }
 
-.blog-wrapper footer {
+.blog-wrapper .main-wrapper footer {
   padding: 0;
   text-align: left;
   background-color: #fff;
