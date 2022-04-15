@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <Layout
-      title=''
+      title=' '
       description={tagline}>
 
       <StarUsNotification innerRef={starUsNotificationAnchorRef} />
@@ -33,14 +33,15 @@ export default function Home() {
           <img
             className={clsx(styles.heroImage)}
             src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
-            alt="Product Analytics Pipeline" />
+            alt="Open-source infrastructure for product analytics" />
           <h1 className={clsx(styles.heroTitle)}>
-            Open-source infrastructure <br />
-            for product analytics
+            Open-source infrastructure for product analytics
           </h1>
           <h2 className={clsx(styles.heroSubTitle)}>
-            Collect rich, model-ready data and feed it straight into your data warehouse. <br />
-            Cut down delivery times of data projects with reusable &amp; prebuilt models.
+            <ul>
+              <li>Collect rich, model-ready data and feed it straight into your data warehouse. </li>
+              <li>Cut down delivery times of data projects with reusable &amp; prebuilt models.</li>
+            </ul>            
           </h2>
           <TrackedLink
             to="https://github.com/objectiv/objectiv-analytics"
@@ -91,7 +92,7 @@ export default function Home() {
                   <strong>A taxonomy for model-ready data</strong> <br />
                   Objectiv's tracker validates all incoming events against an&nbsp;
                   <TrackedLink
-                    to={useBaseUrl("/docs/taxonomy/")}
+                    to={useBaseUrl("/docs/taxonomy/", {absolute: true})} 
                     waitUntilTracked={true}
                     target="_self">
                     open analytics taxonomy

@@ -15,7 +15,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: "Documentation",
   titleDelimiter: '|',
-  tagline: 'Objectiv is open-source infrastructure for product analytics. Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable &amp; prebuilt models.', //meta description, and og:description
+  tagline: 'Objectiv is open-source infrastructure for product analytics. Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable and prebuilt models.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
   favicon: 'img/favicon/favicon.ico',
@@ -81,8 +81,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [{
-        property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
-      }],
+          property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+        },
+        {
+          property: 'robots', content: 'all'
+        }
+      ],
       navbar: {
         title: '',
         logo: {

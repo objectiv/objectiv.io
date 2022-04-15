@@ -13,7 +13,7 @@ const slackJoinLink = '/join-slack';
 const config = {
   title: "Objectiv - Open-source infrastructure for product analytics",
   titleDelimiter: '|',
-  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable &amp; prebuilt models.', //meta description, and og:description
+  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable and prebuilt models.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
@@ -87,8 +87,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
     metadata: [{
-      property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
-    }],
+        property: 'og:image', content: 'https://objectiv.io/img/open-graph/objectiv-og-large.png'
+      },
+      {
+        property: 'robots', content: 'all'
+      }
+    ],
     colorMode: {
       disableSwitch: true,
     },
