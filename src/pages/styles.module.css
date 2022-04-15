@@ -172,6 +172,27 @@
   -webkit-hyphens: auto;
   hyphens: auto; */
 }
+.heroSubTitle {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 150%;
+  margin: 30px 0 35px 0;
+  color: #333;
+}
+.heroSubTitle ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 966px) { /* desktop */
+  .heroTitle {
+    padding: 0 120px;
+  }
+  .heroSubTitle {
+    padding: 0 170px;
+  }
+}
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroBanner {
@@ -181,6 +202,17 @@
     margin-left: 5%;
     margin-right: 5%;
   }  
+  .heroSubTitle {
+    padding: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .heroSubTitle ul li {
+    display: inline;
+  }
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
@@ -201,24 +233,6 @@
 .heroImage {
   width: auto;
   max-width: 99%;
-}
-
-.heroSubTitle {
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 150%;
-  margin: 30px 0 35px 0;
-  color: #333;
-}
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .heroSubTitle {
-    padding: 0;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  .heroTitle br, .heroSubTitle br {
-    display: none
-  }
 }
 
 
