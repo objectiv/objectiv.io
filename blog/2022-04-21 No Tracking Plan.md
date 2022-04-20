@@ -15,7 +15,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 import BlogImage from '@site/src/components/blog-image'
 
 
-*The tracking plan. Every company that’s serious about analytics has one, but because they’re notoriously difficult to properly set up & execute, you would be hard-pressed to find anyone who likes working with them. What if you didn’t need one?*
+*The tracking plan. Every company that’s serious about analytics has one, but they are notoriously difficult to properly set up & execute. What if you didn’t need one?*
 
 <!--truncate-->
 
@@ -61,7 +61,7 @@ Early 2021, we went to the drawing board and asked ourselves:
 * How would you structure it to enable data teams to use it effectively?
 * How do we provide the engineer the context & help required to set up error free instrumentation? 
 
-After countless sessions, iterations and field tests, we came to what we now call *the open analytics taxonomy*.
+After countless sessions, iterations and field tests, we came to what we now call [the open analytics taxonomy](https://objectiv.io/docs/taxonomy/).
 
 ## The open analytics taxonomy
 
@@ -70,7 +70,7 @@ After countless sessions, iterations and field tests, we came to what we now cal
 <BlogImage url='img/blog/open_taxonomy.png'
   caption="The open analytics taxonomy" />
 
-It’s designed to capture rich user behaviour data that covers a broad spectrum of product analytics use cases. Objectiv’s tracker uses it to validate all collected data. This ensures it is ready for modeling without any cleaning or transformation.
+It’s designed to capture rich user behaviour data that covers a broad spectrum of product analytics use cases. Objectiv’s [tracking SDK](https://objectiv.io/docs/tracking/) uses it to [validate all collected data](http://localhost:3000/blog/release-0.0.15-core-tracker-validation/). This ensures it is ready for modeling without any cleaning or transformation.
 
 As a result of high data consistency, all models that embrace the open analytics taxonomy can be shared and reused between teams, projects & platforms.
 
