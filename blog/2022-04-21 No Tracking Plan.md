@@ -27,7 +27,7 @@ The introduction of event-based tracking opened up a whole new level of insights
 
 With this great power came great responsibility. Without proper naming conventions, event-based datasets quickly become an entangled mess that’s impossible to analyze. In order to prevent this, teams started capturing the structure and names of their events in a tracking plan. Sometimes with purpose-built tools, but most of the time in an elaborate excel sheet. These are then handed over to the engineer responsible for setting up the tracker.
 
-<BlogImage url='img/blog/tracking_plan.png'
+<BlogImage url='img/blog/tracking_plan.png' size="large"
   caption="Mixpanel's tracking plan template" />
 
 The goal of the tracking plan is to ensure data sets contain the right information for effective analysis. In practice however, the resulting data sets are often far from perfect.
