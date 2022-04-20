@@ -2,8 +2,7 @@
 title: "What if you don't need a tracking plan?"
 description: "The tracking plan. Every company that’s serious about analytics has one, but because they’re notoriously difficult to properly set up & execute, you would be hard-pressed to find anyone who likes working with them. What if you didn’t need one?"
 slug: no-tracking-plan/
-tags: [releases]
-image: /img/open-graph/og-react-native.png
+image: /img/open-graph/og-no-tracking-plan.png
 authors: vincenthoogsteder
 ---
 
