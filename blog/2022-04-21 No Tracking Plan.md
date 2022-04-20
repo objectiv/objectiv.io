@@ -29,17 +29,17 @@ The introduction of event-based tracking opened up a whole new level of insights
 With this great power came great responsibility. Without proper naming conventions, event-based datasets quickly become an entangled mess that’s impossible to analyze. In order to prevent this, teams started capturing the structure and names of their events in a tracking plan. Sometimes with purpose-built tools, but most of the time in an elaborate excel sheet. These are then handed over to the engineer responsible for setting up the tracker.
 
 <BlogImage url='img/blog/tracking_plan.png'
-  caption="A universal tracking plan template by Avo" />
+  caption="Mixpanel's tracking plan template" />
 
 The goal of the tracking plan is to ensure data sets contain the right information for effective analysis. In practice however, the resulting data sets are often far from perfect.
 
 ## Why most tracking plans fail
 
-** 1. Knowing what you want to know is hard **
+** 1. You only really know what data you need when you start analyzing **
 
 Setting up a tracking plan requires forecasting what kind of analysis and modeling your team would like to do down the road. Even for an experienced team, this is incredibly hard. Misjudgement on these requirements means you will lack vital data at analysis time, and the historical gap is often hard, if not impossible to fix.
 
-** 2. Instrumenting engineers are left in the dark **
+** 2. The instrumenter is often in the dark on the intent of the plan **
 
 Engineers may know every nitty gritty detail of the app that’s being tracked, but don’t always have the full picture when it comes to what’s required from a data perspective. As such, tracking plans are prone to misinterpretation, which leads to errors in the instrumentation as a result.
 
@@ -78,7 +78,7 @@ As a result of high data consistency, all models that embrace the open analytics
 ## Can I use it to replace my tracking plan?
 
 Yes, you can:
-1. [Check out the definitions](https://objectiv.io/docs/taxonomy/) of all events and classes.
+1. Check out the full [documentation](https://objectiv.io/docs/taxonomy/) of the open analytics taxonomy.
 2. Get the [Objectiv tracking SDK](https://objectiv.io/docs/tracking/) to instrument your website, web-app or app
 3. Use the SDK's [validation](https://objectiv.io/blog/release-0.0.15-core-tracker-validation/) to check and debug your instrumentation
 4. Explore the [schema](https://github.com/objectiv/objectiv-analytics/tree/main/schema) that is automatically generated and used for validation of all collected data.
