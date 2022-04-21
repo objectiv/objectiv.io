@@ -1,13 +1,13 @@
 ---
-title: "What if you don't need a tracking plan?"
-description: "The tracking plan. Every company that’s serious about analytics has one, but because they’re notoriously difficult to properly set up & execute, you would be hard-pressed to find anyone who likes working with them. What if you didn’t need one?"
-slug: no-tracking-plan/
+title: "What if you didn't need a tracking plan?"
+description: "The tracking plan. Every company that's serious about analytics has one, but because they're notoriously difficult to properly set up &amp; execute, you would be hard-pressed to find anyone who likes working with them. What if you didn't need one?"
+slug: what-if-you-didn-t-need-a-tracking-plan/
 image: /img/open-graph/og-no-tracking-plan.png
 authors: vincenthoogsteder
 ---
 
 <head>
-  <meta property="og:title" content="What if you don't need a tracking plan?" />
+  <meta property="og:title" content="What if you didn't need a tracking plan?" />
 </head>
 
 
@@ -70,7 +70,7 @@ After countless sessions, iterations and field tests, we came to what we now cal
 <BlogImage url='img/blog/open_taxonomy.png'
   caption="The open analytics taxonomy" />
 
-It’s designed to capture rich user behaviour data that covers a broad spectrum of product analytics use cases. Objectiv’s [tracking SDK](https://objectiv.io/docs/tracking/) uses it to [validate all collected data](http://localhost:3000/blog/release-0.0.15-core-tracker-validation/). This ensures it is ready for modeling without any cleaning or transformation.
+It’s designed to capture rich user behaviour data that covers a broad spectrum of product analytics use cases. Objectiv’s [tracking SDK](https://objectiv.io/docs/tracking/) uses it to [validate all collected data](./2022-03-22%20Release%20v0.0.15%20Tracker%20Validation.md). This ensures it is ready for modeling without any cleaning or transformation.
 
 As a result of high data consistency, all models that embrace the open analytics taxonomy can be shared and reused between teams, projects & platforms.
 
@@ -79,7 +79,7 @@ As a result of high data consistency, all models that embrace the open analytics
 Yes, you can:
 1. Check out the full [documentation](https://objectiv.io/docs/taxonomy/) of the open analytics taxonomy.
 2. Get the [Objectiv tracking SDK](https://objectiv.io/docs/tracking/) to instrument your website, web-app or app
-3. Use the SDK's [validation](https://objectiv.io/blog/release-0.0.15-core-tracker-validation/) to check and debug your instrumentation
+3. Use the SDK's [validation](./2022-03-22%20Release%20v0.0.15%20Tracker%20Validation.md) to check and debug your instrumentation
 4. Explore the [schema](https://github.com/objectiv/objectiv-analytics/tree/main/schema) that is automatically generated and used for validation of all collected data.
 
 The same schema is also used by the [Open Model Hub](https://objectiv.io/docs/modeling/example_notebooks/#example-notebooks), which includes pre-built models for a wide range of common analytics use cases.
