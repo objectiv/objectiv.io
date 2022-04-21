@@ -153,7 +153,7 @@ export default function BlogPostItem(props: Props): JSX.Element {
             <TrackedLink 
               to={withBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
               target="_self">
-                Spin up the Demo
+                Quickstart Guide
             </TrackedLink> - Try Objectiv on your local machine (takes 5 minutes)<br />
             <TrackedLink 
               to="https://github.com/objectiv/objectiv-analytics"
