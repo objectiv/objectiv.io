@@ -11,9 +11,9 @@ const slackJoinLink = '/join-slack';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Objectiv - Open-source infrastructure for product analytics",
+  title: "Open-source product analytics infrastructure with a generic event taxonomy",
   titleDelimiter: '|',
-  tagline: 'Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable and prebuilt models.', //meta description, and og:description
+  tagline: 'Use Objectiv to capture validated user behavior data, feed it straight into your data warehouse, and speed up product analytics projects with pre-built and reusable models.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',

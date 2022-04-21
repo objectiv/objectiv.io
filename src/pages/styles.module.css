@@ -16,6 +16,11 @@
   font-size: 28px;
   margin-bottom: 38px;
 }
+.pageSection h3 { /* more specific class to override the h2 styling from custom.css */
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0;
+}
 
 @media screen and (max-width: 768px) { /* mobile small */
   .pageSection h2 br {
@@ -31,7 +36,7 @@
   background-color: #333333;
   color: #fff;
 }
-.pageSectionDarkGrey h2 {
+.pageSectionDarkGrey h2, .pageSectionDarkGrey h3 {
   color: #fff;
 }
 
@@ -159,18 +164,14 @@
 }
 
 .heroTitle {
-  font-family: Bungee;
+  font-family: Roboto;
   font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 150%;
-  letter-spacing: 0.2em;
+  /* font-weight: 400; */
+  /* letter-spacing: 0.2em; */
   margin: 40px 0 0 0;
   color: #333;
-  /* -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto; */
 }
 .heroSubTitle {
   font-size: 18px;
@@ -187,10 +188,10 @@
 
 @media screen and (min-width: 966px) { /* desktop */
   .heroTitle {
-    padding: 0 120px;
+    padding: 0 110px;
   }
   .heroSubTitle {
-    padding: 0 170px;
+    padding: 0 100px;
   }
 }
 
@@ -206,6 +207,9 @@
     padding: 0;
     margin-left: 5%;
     margin-right: 5%;
+  }
+  .heroSubTitle br {
+    display: none;
   }
 }
 
@@ -233,6 +237,11 @@
 .heroImage {
   width: auto;
   max-width: 99%;
+}
+
+.heroCtaButtons a {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 
