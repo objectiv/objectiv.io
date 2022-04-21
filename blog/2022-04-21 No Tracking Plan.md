@@ -89,5 +89,6 @@ The same schema is also used by the [Open Model Hub](https://objectiv.io/docs/mo
 The Open Analytics Taxonomy is open-source. We’ve started with a taxonomy for product analytics as it’s the bedrock of the user journey, and are currently extending the taxonomy to cover marketing use cases as well. More will follow.
 
 Have questions or want to stay in the loop?
-<JoinSlackLink linkText='Join us on Slack' />
 
+‎<JoinSlackLink linkText='Join us on Slack' /> or 
+[star us on GitHub](https://github.com/objectiv/objectiv-analytics).
