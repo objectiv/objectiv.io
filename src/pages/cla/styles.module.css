@@ -1,0 +1,17 @@
+/**************
+ ABOUT US PAGE 
+***************/
+
+.contentContainer {
+  max-width: 768px;
+  padding-top: 80px;
+}
+
+.highlighted {
+  background-color: yellow;
+}
+
+.footnote {
+  font-size: 0.9em;
+  font-style: italic;
+}
