@@ -21,6 +21,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.exists.html">bach.Series.exists</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.fillna.html">bach.Series.fillna</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.from_const.html">bach.Series.from_const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.get_db_dtype.html">bach.Series.get_db_dtype</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.head.html">bach.Series.head</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.isin.html">bach.Series.isin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.isnull.html">bach.Series.isnull</a></li>
@@ -58,7 +59,6 @@
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.name.html">bach.Series.name</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.sorted_ascending.html">bach.Series.sorted_ascending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.value.html">bach.Series.value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.values.html">bach.Series.values</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Series/bach.SeriesBoolean.html">bach.SeriesBoolean</a><ul>
@@ -69,9 +69,11 @@
 <li class="toctree-l2"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.html">bach.SeriesAbstractNumeric</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.cut.html">bach.SeriesAbstractNumeric.cut</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.mean.html">bach.SeriesAbstractNumeric.mean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.minmax_scale.html">bach.SeriesAbstractNumeric.minmax_scale</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.qcut.html">bach.SeriesAbstractNumeric.qcut</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.quantile.html">bach.SeriesAbstractNumeric.quantile</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.round.html">bach.SeriesAbstractNumeric.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.scale.html">bach.SeriesAbstractNumeric.scale</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sem.html">bach.SeriesAbstractNumeric.sem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.std.html">bach.SeriesAbstractNumeric.std</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sum.html">bach.SeriesAbstractNumeric.sum</a></li>
@@ -83,6 +85,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Series/bach.SeriesString.html">bach.SeriesString</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesString.get_dummies.html">bach.SeriesString.get_dummies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.SeriesString.str.html">bach.SeriesString.str</a></li>
 </ul>
 </li>
@@ -108,7 +111,6 @@
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.head.html">bach.Series.head</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.to_pandas.html">bach.Series.to_pandas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.array.html">bach.Series.array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.values.html">bach.Series.values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Series/bach.Series.value.html">bach.Series.value</a></li>
 </ul>
 </li>
@@ -178,6 +180,8 @@
 <li class="toctree-l4"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.sum.html">bach.SeriesAbstractNumeric.sum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.std.html">bach.SeriesAbstractNumeric.std</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.var.html">bach.SeriesAbstractNumeric.var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.scale.html">bach.SeriesAbstractNumeric.scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.minmax_scale.html">bach.SeriesAbstractNumeric.minmax_scale</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="bach_reference_series_by_function.html#window">Window</a><ul>
@@ -228,8 +232,7 @@ explicit call is made to one of the functions that transfers data:</p>
 <div><ul class="simple">
 <li><p><a class="reference internal" href="DataFrame/bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bach.DataFrame.to_pandas()</span></code></a></p></li>
 <li><p><a class="reference internal" href="DataFrame/bach.DataFrame.head.html#bach.DataFrame.head" title="bach.DataFrame.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bach.DataFrame.head()</span></code></a></p></li>
-<li><p>The property accessors <a class="reference internal" href="Series/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.value</span></code></a> (Series only),
-<a class="reference internal" href="Series/bach.Series.values.html#bach.Series.values" title="bach.Series.values"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.values</span></code></a>, and <a class="reference internal" href="Series/bach.Series.array.html#bach.Series.array" title="bach.Series.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.array</span></code></a></p></li>
+<li><p>The property accessor <a class="reference internal" href="Series/bach.Series.array.html#bach.Series.array" title="bach.Series.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.array</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <p>If you really need the actual values, use the above, but in general it&#8217;s better to use the Series that

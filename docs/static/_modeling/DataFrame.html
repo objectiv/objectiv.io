@@ -26,6 +26,7 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.from_pandas.html">bach.DataFrame.from_pandas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.from_table.html">bach.DataFrame.from_table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.get_all_variable_usage.html">bach.DataFrame.get_all_variable_usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.get_dummies.html">bach.DataFrame.get_dummies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.get_sample.html">bach.DataFrame.get_sample</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.get_unsampled.html">bach.DataFrame.get_unsampled</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.groupby.html">bach.DataFrame.groupby</a></li>
@@ -36,6 +37,7 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.median.html">bach.DataFrame.median</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.merge.html">bach.DataFrame.merge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.min.html">bach.DataFrame.min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.minmax_scale.html">bach.DataFrame.minmax_scale</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.mode.html">bach.DataFrame.mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.nunique.html">bach.DataFrame.nunique</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.quantile.html">bach.DataFrame.quantile</a></li>
@@ -44,6 +46,7 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.rolling.html">bach.DataFrame.rolling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.rollup.html">bach.DataFrame.rollup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.round.html">bach.DataFrame.round</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.scale.html">bach.DataFrame.scale</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.sem.html">bach.DataFrame.sem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.set_index.html">bach.DataFrame.set_index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.set_savepoint.html">bach.DataFrame.set_savepoint</a></li>
@@ -52,9 +55,11 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.sort_values.html">bach.DataFrame.sort_values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.stack.html">bach.DataFrame.stack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.std.html">bach.DataFrame.std</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.std_pop.html">bach.DataFrame.std_pop</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.sum.html">bach.DataFrame.sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.to_numpy.html">bach.DataFrame.to_numpy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.to_pandas.html">bach.DataFrame.to_pandas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.unstack.html">bach.DataFrame.unstack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.value_counts.html">bach.DataFrame.value_counts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.var.html">bach.DataFrame.var</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.view_sql.html">bach.DataFrame.view_sql</a></li>
@@ -70,8 +75,8 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.is_materialized.html">bach.DataFrame.is_materialized</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.loc.html">bach.DataFrame.loc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.order_by.html">bach.DataFrame.order_by</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.plot.html">bach.DataFrame.plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.savepoints.html">bach.DataFrame.savepoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.values.html">bach.DataFrame.values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.variables.html">bach.DataFrame.variables</a></li>
 </ul>
 </li>
@@ -92,7 +97,6 @@
 <li class="toctree-l2"><a class="reference internal" href="bach_reference_dataframe_by_function.html#value-accessors">Value accessors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.head.html">bach.DataFrame.head</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.to_pandas.html">bach.DataFrame.to_pandas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.values.html">bach.DataFrame.values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.loc.html">bach.DataFrame.loc</a></li>
 </ul>
 </li>
@@ -143,6 +147,10 @@
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.ffill.html">bach.DataFrame.ffill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.bfill.html">bach.DataFrame.bfill</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.stack.html">bach.DataFrame.stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.unstack.html">bach.DataFrame.unstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.scale.html">bach.DataFrame.scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.minmax_scale.html">bach.DataFrame.minmax_scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataFrame/bach.DataFrame.get_dummies.html">bach.DataFrame.get_dummies</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="bach_reference_dataframe_by_function.html#aggregation-windowing">Aggregation &amp; windowing</a><ul>
@@ -175,6 +183,10 @@
 <li class="toctree-l4"><a class="reference internal" href="DataFrame/bach.DataFrame.sum.html">bach.DataFrame.sum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataFrame/bach.DataFrame.std.html">bach.DataFrame.std</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DataFrame/bach.DataFrame.var.html">bach.DataFrame.var</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bach_reference_dataframe_by_function.html#visualization">Visualization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DataFrame/bach.DataFrame.plot.html">bach.DataFrame.plot</a></li>
 </ul>
 </li>
 </ul>
@@ -233,8 +245,7 @@ explicit call is made to one of the functions that transfers data:</p>
 <li><p><a class="reference internal" href="DataFrame/bach.DataFrame.head.html#bach.DataFrame.head" title="bach.DataFrame.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code></a></p></li>
 <li><p><a class="reference internal" href="DataFrame/bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_pandas()</span></code></a></p></li>
 <li><p><a class="reference internal" href="DataFrame/bach.DataFrame.get_sample.html#bach.DataFrame.get_sample" title="bach.DataFrame.get_sample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.get_sample()</span></code></a></p></li>
-<li><p>The property accessors <a class="reference internal" href="DataFrame/bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.values</span></code></a>, <a class="reference internal" href="Series/bach.Series.array.html#bach.Series.array" title="bach.Series.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bach.Series.array</span></code></a> and
-<a class="reference internal" href="Series/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bach.Series.value</span></code></a> (Series only),</p></li>
+<li><p>The property accessor <a class="reference internal" href="Series/bach.Series.array.html#bach.Series.array" title="bach.Series.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">bach.Series.array</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <p>Other functions will not transfer data, nor will they trigger any operations to run on the database.

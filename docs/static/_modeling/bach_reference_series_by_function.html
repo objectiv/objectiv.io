@@ -39,10 +39,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.array.html#bach.Series.array" title="bach.Series.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.array</span></code></a></p></td>
 <td><p>.array property accessor akin pandas.Series.array</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.values.html#bach.Series.values" title="bach.Series.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.values</span></code></a></p></td>
-<td><p>.values property accessor akin pandas.Series.values</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.value</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.value</span></code></a></p></td>
 <td><p>Retrieve the actual single value of this series.</p></td>
 </tr>
 </tbody>
@@ -253,10 +250,16 @@
 <td><p>Get the sum of the input values.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.std.html#bach.SeriesAbstractNumeric.std" title="bach.SeriesAbstractNumeric.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.std</span></code></a>([partition,&#160;...])</p></td>
-<td><p>Get the sample standard deviation of the input values Normalized by N-1 by default.</p></td>
+<td><p>Get the standard deviation of the input values Normalized by N-1 by default.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.var.html#bach.SeriesAbstractNumeric.var" title="bach.SeriesAbstractNumeric.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.var</span></code></a>([partition,&#160;...])</p></td>
 <td><p>Get the sample variance of the input values (square of the sample standard deviation) Normalized by N-1 by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.scale.html#bach.SeriesAbstractNumeric.scale" title="bach.SeriesAbstractNumeric.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.scale</span></code></a>([with_mean,&#160;...])</p></td>
+<td><p>Standardizes series based on mean and population standard deviation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Series/bach.SeriesAbstractNumeric.minmax_scale.html#bach.SeriesAbstractNumeric.minmax_scale" title="bach.SeriesAbstractNumeric.minmax_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeriesAbstractNumeric.minmax_scale</span></code></a>([...])</p></td>
+<td><p>Scales series based on a given range.</p></td>
 </tr>
 </tbody>
 </table>

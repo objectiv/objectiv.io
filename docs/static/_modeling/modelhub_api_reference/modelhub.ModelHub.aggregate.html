@@ -26,8 +26,9 @@
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">session_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_bounces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Calculate the average duration of sessions.</p>
+<span class="sig-prename descclassname"><span class="pre">Aggregate.</span></span><span class="sig-name descname"><span class="pre">session_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NotSet.token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_bounces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the duration of sessions.</p>
+<p>With default <cite>method</cite>, it calculates the mean of the session duration over the <cite>groupby</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -38,6 +39,7 @@
 <li><p>if None it aggregates over all data.</p></li>
 </ul>
 </li>
+<li><p><strong>method</strong> &#8211; &#8216;mean&#8217; or &#8216;sum&#8217;</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>

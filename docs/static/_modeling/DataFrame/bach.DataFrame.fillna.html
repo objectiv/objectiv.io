@@ -9,8 +9,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>, </em><em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>bool</em><em>, </em><em>datetime.date</em><em>, </em><em>datetime.datetime</em><em>, </em><em>datetime.time</em><em>, </em><em>uuid.UUID</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>bool</em><em>, </em><em>datetime.date</em><em>, </em><em>datetime.datetime</em><em>, </em><em>datetime.time</em><em>, </em><em>uuid.UUID</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em><em>]</em><em>]</em>) &#8211; A scalar/series to fill all NULL values on each series
-or a dictionary specifying which scalar/series to use for each series.</p></li>
+<li><p><strong>value</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>, </em><em>int</em><em>, </em><em>numpy.int64</em><em>, </em><em>float</em><em>, </em><em>numpy.float64</em><em>, </em><em>bool</em><em>, </em><em>None</em><em>, </em><em>str</em><em>, </em><em>datetime.date</em><em>, </em><em>datetime.time</em><em>, </em><em>datetime.datetime</em><em>, </em><em>datetime.timedelta</em><em>, </em><em>numpy.timedelta64</em><em>, </em><em>uuid.UUID</em><em>, </em><em>dict</em><em>, </em><em>list</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Union</em><em>[</em><em>int</em><em>, </em><em>numpy.int64</em><em>, </em><em>float</em><em>, </em><em>numpy.float64</em><em>, </em><em>bool</em><em>, </em><em>None</em><em>, </em><em>str</em><em>, </em><em>datetime.date</em><em>, </em><em>datetime.time</em><em>, </em><em>datetime.datetime</em><em>, </em><em>datetime.timedelta</em><em>, </em><em>numpy.timedelta64</em><em>, </em><em>uuid.UUID</em><em>, </em><em>dict</em><em>, </em><em>list</em><em>, </em><a class="reference internal" href="../Series/bach.Series.html#bach.Series" title="bach.Series"><em>Series</em></a><em>]</em><em>]</em><em>]</em>) &#8211; A literal/series to fill all NULL values on each series
+or a dictionary specifying which literal/series to use for each series.</p></li>
 <li><p><strong>method</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) &#8211; Method to use for filling NULL values on all DataFrame series. Supported values:
 - &#8220;ffill&#8221;/&#8221;pad&#8221;: Fill missing values by propagating the last non-nullable value in the series.
 - &#8220;bfill&#8221;/&#8221;backfill&#8221;: Fill missing values with the next non-nullable value in the series.</p></li>
@@ -26,7 +26,7 @@ yield different results affecting the values to be propagated when using a filli
 <dd class="field-even"><p>a new dataframe with filled missing values.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><em>Optional</em>[<a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a>]</p>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame">DataFrame</a></p>
 </dd>
 </dl>
 <div class="admonition note">
