@@ -53,12 +53,51 @@ function useReadingTimePlural() {
   };
 }
 
+// OBJECTIV: VisibleEvent on blog post load
+function BlogPostContent(props: Props) {
+  const {
+    children,
+    frontMatter,
+    assets,
+    metadata,
+    isBlogPostPage = false,
+  } = props;
+  const {
+    title,
+  } = metadata;
+  const image = assets.image ?? frontMatter.image;
+  const {withBaseUrl} = useBaseUrlUtils();
+
+  const blogPostId = 'post-' + makeIdFromString(title);
+  const trackVisibleEvent = useVisibleEventTracker();
+  useEffect(() => {
+    if (isBlogPostPage) {
+      trackVisibleEvent();
+    }
+  }, [blogPostId]);
+
+  return (
+    <>
+      {image && (
+        <meta itemProp="image" content={withBaseUrl(image, {absolute: true})} />
+      )}
+
+      <div
+        // This ID is used for the feed generation to locate the main content
+        id={isBlogPostPage ? blogPostContainerID : undefined}
+        className="markdown"
+        itemProp="articleBody">
+        <MDXContent>{children}</MDXContent>
+      </div>
+    </>
+  )
+}
+// END OBJECTIV
+
 export default function BlogPostItem(props: Props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
   const {withBaseUrl} = useBaseUrlUtils();
   const {
-    children,
-    frontMatter,
     assets,
     metadata,
     truncated,
@@ -75,21 +114,13 @@ export default function BlogPostItem(props: Props): JSX.Element {
     authors,
   } = metadata;
 
-  const image = assets.image ?? frontMatter.image;
   const truncatedPost = !isBlogPostPage && truncated;
   const tagsExists = tags.length > 0;
   const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
-  // OBJECTIV: VisibleEvent on blog post load
+  // OBJECTIV
   const { siteConfig } = useDocusaurusContext();
   const { slackJoinLink } = siteConfig?.customFields ?? {};
-  const blogPostId = 'post-' + makeIdFromString(title);
-  const trackVisibleEvent = useVisibleEventTracker();
-  useEffect(() => {
-    if (isBlogPostPage) {
-      trackVisibleEvent();
-    }
-  }, [blogPostId]);
   // END OBJECTIV
   return (
     // OBJECTIV
@@ -131,17 +162,7 @@ export default function BlogPostItem(props: Props): JSX.Element {
         <BlogPostAuthors authors={authors} assets={assets} />
       </TrackedContentContext>
 
-      {image && (
-        <meta itemProp="image" content={withBaseUrl(image, {absolute: true})} />
-      )}
-
-      <div
-        // This ID is used for the feed generation to locate the main content
-        id={isBlogPostPage ? blogPostContainerID : undefined}
-        className="markdown"
-        itemProp="articleBody">
-        <MDXContent>{children}</MDXContent>
-      </div>
+      <BlogPostContent {...props} />
 
       {/* OBJECTIV: TRY OBJECTIV SECTION */}
       {(!truncated) && (
