@@ -34,7 +34,7 @@ extract the data.</p>
 </section>
 <section id="exploring-session-duration">
 <h2>Exploring session duration<a class="headerlink" href="#exploring-session-duration" title="Permalink to this headline">#</a></h2>
-<p>The average <cite>session_duration</cite> model from the <a class="reference internal" href="intro.html#modelhub-intro"><span class="std std-ref">open model hub</span></a> is another good pointer to explore first for user intent.</p>
+<p>The average <cite>session_duration</cite> model from the <a class="reference external" href="/docs/modeling/">open model hub</a> is another good pointer to explore first for user intent.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="p">[</span><span class="s1">'application'</span><span class="p">,</span> <span class="s1">'root_location'</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
