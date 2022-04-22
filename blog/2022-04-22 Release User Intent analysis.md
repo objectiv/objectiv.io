@@ -47,16 +47,16 @@ duration_root = modelhub.aggregate.session_duration(df,
 ```
 ```
 application       root_location
-objectiv-docs     home            	TODO
-                  modeling        	TODO
-                  taxonomy        	TODO
-                  tracking        	TODO
-objectiv-website  about           	TODO
-                  blog            	TODO
-                  home            	TODO
-                  jobs            	TODO
-                  join-slack      	TODO
-                  privacy         	TODO
+objectiv-docs     docs              0 days 00:06:32.101332
+                  home              0 days 00:06:26.184331
+                  modeling          0 days 00:07:49.564281
+                  taxonomy          0 days 00:07:45.415114
+                  tracking          0 days 00:05:47.753501
+objectiv-website  about             0 days 00:02:48.240937
+                  blog              0 days 00:03:54.849918
+                  home              0 days 00:05:32.901595
+                  jobs              0 days 00:02:20.555217
+                  join-slack        0 days 00:02:28.560690
 Name: session_duration, dtype: timedelta64[ns]
 ```
 
@@ -79,12 +79,20 @@ session_duration.to_frame().materialize()['session_duration']
 ```
 ```
 quantile
-TODO
+0.1   0 days 00:00:00.602000
+0.2   0 days 00:00:01.195600
+0.3   0 days 00:00:02.728600
+0.4   0 days 00:00:12.125200
+0.5   0 days 00:00:42.592000
+0.6   0 days 00:02:04.544800
+0.7   0 days 00:03:17.138000
+0.8   0 days 00:05:35.084600
+0.9   0 days 00:19:38.346400
 Name: session_duration, dtype: timedelta64[ns]
 ```
 
 This shows us that the **top 10% of users** spend **more than 19 minutes** in the product, and the 
-**bottom 10% less than two minutes**.
+**bottom 20% less than two minutes**.
 
 ### 2) Defining simple stages of User Intent based on product usage & time spent
 After exploring the time spent both per major product area and in overall quantiles, we can make a basic 
@@ -104,7 +112,10 @@ Based on the simple definitions above, we can now assign a stage of Intent to ea
 use and how much time they spent in it. For details on how that works, have a look at the 
 [example notebook][example-notebook]. See the results below:
 
-[TODO: IMAGE]
+<BlogImage 
+  url='img/blog/releases/20220422-user-intent-results.png'
+  caption="Results for User Intent analysis on our website and documentation pages"
+/>
 
 That's it! You've used the open model hub and Bach to understand where users are spending their time and how 
 it is distributed, and to assign intent to each user. You now know for each user what stage of their journey 
