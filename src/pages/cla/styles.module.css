@@ -3,9 +3,15 @@
 ***************/
 
 .contentContainer {
-  max-width: 996px;
+  max-width: 768px;
+  padding-top: 80px;
 }
 
 .highlighted {
   background-color: yellow;
+}
+
+.footnote {
+  font-size: 0.9em;
+  font-style: italic;
 }
