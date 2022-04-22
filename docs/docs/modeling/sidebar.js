@@ -33,6 +33,15 @@ module.exports = [
             },
             {
                 "type": "category",
+                "label": "Basic user intent analysis",
+                "link": {
+                    "type": "doc",
+                    "id": "modeling/user_intent"
+                },
+                "items": []
+            },
+            {
+                "type": "category",
                 "label": "Open taxonomy how-to",
                 "link": {
                     "type": "doc",
@@ -430,6 +439,11 @@ module.exports = [
                                             },
                                             {
                                                 "type": "doc",
+                                                "label": "get_dummies",
+                                                "id": "modeling/DataFrame/bach.DataFrame.get_dummies"
+                                            },
+                                            {
+                                                "type": "doc",
                                                 "label": "get_sample",
                                                 "id": "modeling/DataFrame/bach.DataFrame.get_sample"
                                             },
@@ -480,6 +494,11 @@ module.exports = [
                                             },
                                             {
                                                 "type": "doc",
+                                                "label": "minmax_scale",
+                                                "id": "modeling/DataFrame/bach.DataFrame.minmax_scale"
+                                            },
+                                            {
+                                                "type": "doc",
                                                 "label": "mode",
                                                 "id": "modeling/DataFrame/bach.DataFrame.mode"
                                             },
@@ -517,6 +536,11 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "round",
                                                 "id": "modeling/DataFrame/bach.DataFrame.round"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "scale",
+                                                "id": "modeling/DataFrame/bach.DataFrame.scale"
                                             },
                                             {
                                                 "type": "doc",
@@ -560,6 +584,11 @@ module.exports = [
                                             },
                                             {
                                                 "type": "doc",
+                                                "label": "std_pop",
+                                                "id": "modeling/DataFrame/bach.DataFrame.std_pop"
+                                            },
+                                            {
+                                                "type": "doc",
                                                 "label": "sum",
                                                 "id": "modeling/DataFrame/bach.DataFrame.sum"
                                             },
@@ -572,6 +601,11 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "to_pandas",
                                                 "id": "modeling/DataFrame/bach.DataFrame.to_pandas"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "unstack",
+                                                "id": "modeling/DataFrame/bach.DataFrame.unstack"
                                             },
                                             {
                                                 "type": "doc",
@@ -650,13 +684,13 @@ module.exports = [
                                             },
                                             {
                                                 "type": "doc",
-                                                "label": "savepoints",
-                                                "id": "modeling/DataFrame/bach.DataFrame.savepoints"
+                                                "label": "plot",
+                                                "id": "modeling/DataFrame/bach.DataFrame.plot"
                                             },
                                             {
                                                 "type": "doc",
-                                                "label": "values",
-                                                "id": "modeling/DataFrame/bach.DataFrame.values"
+                                                "label": "savepoints",
+                                                "id": "modeling/DataFrame/bach.DataFrame.savepoints"
                                             },
                                             {
                                                 "type": "doc",
@@ -714,11 +748,6 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "to_pandas",
                                                 "id": "modeling/DataFrame/bach.DataFrame.to_pandas"
-                                            },
-                                            {
-                                                "type": "doc",
-                                                "label": "values",
-                                                "id": "modeling/DataFrame/bach.DataFrame.values"
                                             },
                                             {
                                                 "type": "doc",
@@ -915,6 +944,26 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "stack",
                                                 "id": "modeling/DataFrame/bach.DataFrame.stack"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "unstack",
+                                                "id": "modeling/DataFrame/bach.DataFrame.unstack"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "scale",
+                                                "id": "modeling/DataFrame/bach.DataFrame.scale"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "minmax_scale",
+                                                "id": "modeling/DataFrame/bach.DataFrame.minmax_scale"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "get_dummies",
+                                                "id": "modeling/DataFrame/bach.DataFrame.get_dummies"
                                             }
                                         ]
                                     },
@@ -1049,6 +1098,17 @@ module.exports = [
                                                         "id": "modeling/DataFrame/bach.DataFrame.var"
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "type": "category",
+                                                "label": "Visualization",
+                                                "items": [
+                                                    {
+                                                        "type": "doc",
+                                                        "label": "plot",
+                                                        "id": "modeling/DataFrame/bach.DataFrame.plot"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -1154,6 +1214,11 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "from_const",
                                                 "id": "modeling/Series/bach.Series.from_const"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "get_db_dtype",
+                                                "id": "modeling/Series/bach.Series.get_db_dtype"
                                             },
                                             {
                                                 "type": "doc",
@@ -1339,11 +1404,6 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "value",
                                                 "id": "modeling/Series/bach.Series.value"
-                                            },
-                                            {
-                                                "type": "doc",
-                                                "label": "values",
-                                                "id": "modeling/Series/bach.Series.values"
                                             }
                                         ]
                                     },
@@ -1387,6 +1447,11 @@ module.exports = [
                                             },
                                             {
                                                 "type": "doc",
+                                                "label": "minmax_scale",
+                                                "id": "modeling/Series/bach.SeriesAbstractNumeric.minmax_scale"
+                                            },
+                                            {
+                                                "type": "doc",
                                                 "label": "qcut",
                                                 "id": "modeling/Series/bach.SeriesAbstractNumeric.qcut"
                                             },
@@ -1399,6 +1464,11 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "round",
                                                 "id": "modeling/Series/bach.SeriesAbstractNumeric.round"
+                                            },
+                                            {
+                                                "type": "doc",
+                                                "label": "scale",
+                                                "id": "modeling/Series/bach.SeriesAbstractNumeric.scale"
                                             },
                                             {
                                                 "type": "doc",
@@ -1445,6 +1515,11 @@ module.exports = [
                                             "id": "modeling/Series/bach.SeriesString"
                                         },
                                         "items": [
+                                            {
+                                                "type": "doc",
+                                                "label": "get_dummies",
+                                                "id": "modeling/Series/bach.SeriesString.get_dummies"
+                                            },
                                             {
                                                 "type": "doc",
                                                 "label": "str",
@@ -1521,11 +1596,6 @@ module.exports = [
                                                 "type": "doc",
                                                 "label": "array",
                                                 "id": "modeling/Series/bach.Series.array"
-                                            },
-                                            {
-                                                "type": "doc",
-                                                "label": "values",
-                                                "id": "modeling/Series/bach.Series.values"
                                             },
                                             {
                                                 "type": "doc",
@@ -1789,6 +1859,16 @@ module.exports = [
                                                         "type": "doc",
                                                         "label": "var",
                                                         "id": "modeling/Series/bach.SeriesAbstractNumeric.var"
+                                                    },
+                                                    {
+                                                        "type": "doc",
+                                                        "label": "scale",
+                                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.scale"
+                                                    },
+                                                    {
+                                                        "type": "doc",
+                                                        "label": "minmax_scale",
+                                                        "id": "modeling/Series/bach.SeriesAbstractNumeric.minmax_scale"
                                                     }
                                                 ]
                                             },

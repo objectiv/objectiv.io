@@ -12,7 +12,7 @@ duplicate index values that are unstacked, <cite>aggregation</cite> is used to a
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>level</strong> (<em>int</em>) &#8211; selects the level of the index that is unstacked. Currently only -1 supported.</p></li>
+<li><p><strong>level</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em>) &#8211; selects the level of the index that is unstacked.</p></li>
 <li><p><strong>fill_value</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>, </em><em>str</em><em>, </em><em>uuid.UUID</em><em>]</em><em>]</em>) &#8211; replace missing values resulting from unstacking. Should be of same type as the
 series that is unstacked.</p></li>
 <li><p><strong>aggregation</strong> (<em>str</em>) &#8211; method of aggregation, in case of duplicate index values. Supports all aggregation
@@ -26,6 +26,10 @@ methods that <a class="reference internal" href="bach.Series.aggregate.html#bach
 <dd class="field-odd"><p><a class="reference internal" href="../DataFrame/bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a></p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function queries the database.</p>
+</div>
 </dd></dl>
 
 </section>

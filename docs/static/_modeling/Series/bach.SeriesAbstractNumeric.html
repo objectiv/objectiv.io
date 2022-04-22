@@ -32,20 +32,26 @@
 <tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.mean.html#bach.SeriesAbstractNumeric.mean" title="bach.SeriesAbstractNumeric.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>([partition,&#160;skipna])</p></td>
 <td><p>Get the mean/average of the input values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.qcut.html#bach.SeriesAbstractNumeric.qcut" title="bach.SeriesAbstractNumeric.qcut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qcut</span></code></a>(q)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.minmax_scale.html#bach.SeriesAbstractNumeric.minmax_scale" title="bach.SeriesAbstractNumeric.minmax_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minmax_scale</span></code></a>([feature_range])</p></td>
+<td><p>Scales series based on a given range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.qcut.html#bach.SeriesAbstractNumeric.qcut" title="bach.SeriesAbstractNumeric.qcut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qcut</span></code></a>(q)</p></td>
 <td><p>Segments values into equal-sized buckets based on rank or sample quantiles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.quantile.html#bach.SeriesAbstractNumeric.quantile" title="bach.SeriesAbstractNumeric.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>([partition,&#160;q])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.quantile.html#bach.SeriesAbstractNumeric.quantile" title="bach.SeriesAbstractNumeric.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>([partition,&#160;q])</p></td>
 <td><p>When q is a float or len(q) == 1, the resultant series index will remain In case multiple quantiles are calculated, the resultant series index will have all calculated quantiles as index values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.round.html#bach.SeriesAbstractNumeric.round" title="bach.SeriesAbstractNumeric.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>([decimals])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.round.html#bach.SeriesAbstractNumeric.round" title="bach.SeriesAbstractNumeric.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>([decimals])</p></td>
 <td><p>Round the value of this series to the given amount of decimals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.scale.html#bach.SeriesAbstractNumeric.scale" title="bach.SeriesAbstractNumeric.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>([with_mean,&#160;with_std])</p></td>
+<td><p>Standardizes series based on mean and population standard deviation.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.sem.html#bach.SeriesAbstractNumeric.sem" title="bach.SeriesAbstractNumeric.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sem</span></code></a>([partition,&#160;skipna,&#160;ddof])</p></td>
 <td><p>Get the unbiased standard error of the mean.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.std.html#bach.SeriesAbstractNumeric.std" title="bach.SeriesAbstractNumeric.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([partition,&#160;skipna,&#160;ddof])</p></td>
-<td><p>Get the sample standard deviation of the input values Normalized by N-1 by default.</p></td>
+<td><p>Get the standard deviation of the input values Normalized by N-1 by default.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesAbstractNumeric.sum.html#bach.SeriesAbstractNumeric.sum" title="bach.SeriesAbstractNumeric.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>([partition,&#160;skipna,&#160;min_count])</p></td>
 <td><p>Get the sum of the input values.</p></td>

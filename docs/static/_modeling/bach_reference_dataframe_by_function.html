@@ -39,10 +39,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_pandas</span></code></a>([limit])</p></td>
 <td><p>Run a SQL query representing the current state of this DataFrame against the database and return the resulting data as a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.values</span></code></a></p></td>
-<td><p>Return a Numpy representation of the DataFrame akin <code class="xref py py-attr docutils literal notranslate"><span class="pre">pandas.Dataframe.values</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.loc.html#bach.DataFrame.loc" title="bach.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.loc</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.loc.html#bach.DataFrame.loc" title="bach.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.loc</span></code></a></p></td>
 <td><p>The <code class="docutils literal notranslate"><span class="pre">.loc</span></code> accessor offers different methods for label-based selection.</p></td>
 </tr>
 </tbody>
@@ -196,6 +193,18 @@
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.stack.html#bach.DataFrame.stack" title="bach.DataFrame.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.stack</span></code></a>([dropna])</p></td>
 <td><p>Stacks all data_columns into a single index series.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.unstack.html#bach.DataFrame.unstack" title="bach.DataFrame.unstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.unstack</span></code></a>([level,&#160;fill_value,&#160;...])</p></td>
+<td><p>Pivot a level of the index labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.scale.html#bach.DataFrame.scale" title="bach.DataFrame.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.scale</span></code></a>([with_mean,&#160;with_std])</p></td>
+<td><p>Standardizes all numeric series based on mean and population standard deviation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.minmax_scale.html#bach.DataFrame.minmax_scale" title="bach.DataFrame.minmax_scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.minmax_scale</span></code></a>([feature_range])</p></td>
+<td><p>Scales all numeric series based on a given range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.get_dummies.html#bach.DataFrame.get_dummies" title="bach.DataFrame.get_dummies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.get_dummies</span></code></a>([prefix,&#160;prefix_sep,&#160;...])</p></td>
+<td><p>Convert each unique category/value from a string series into a dummy/indicator variable.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -296,6 +305,20 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.var.html#bach.DataFrame.var" title="bach.DataFrame.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.var</span></code></a>([axis,&#160;skipna,&#160;level,&#160;ddof,&#160;...])</p></td>
 <td><p>Returns the unbiased variance of each column.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="DataFrame/bach.DataFrame.plot.html#bach.DataFrame.plot" title="bach.DataFrame.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot</span></code></a></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">.plot</span></code> accessor offers different methods for data visualization.</p></td>
 </tr>
 </tbody>
 </table>
