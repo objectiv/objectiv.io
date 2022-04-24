@@ -125,4 +125,10 @@ they're in. All directly on your raw analytics data.
 The models and operations you need are live in the [open model hub][model-hub] and for [Bach][bach]. For 
 running your own analysis, please have a look at the [example notebook][example-notebook].
 
+Don't forget to upgrade the open model hub package if you already have it installed: 
+
+```bash
+pip install --upgrade objectiv-modelhub
+```
+
 Enjoy modeling User Intent!
