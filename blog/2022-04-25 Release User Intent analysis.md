@@ -74,8 +74,9 @@ session_duration = modelhub.aggregate.session_duration(df, groupby='session_id')
 
 # materialization is needed because the expression of the created series 
 # contains aggregated data, and it is not allowed to aggregate that.
-session_duration.to_frame().materialize()['session_duration']
-  .quantile(q=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]).head(10)
+session_duration = session_duration.to_frame().materialize().session_duration
+# show quantiles
+session_duration.quantile(q=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]).head(10)
 ```
 ```
 quantile

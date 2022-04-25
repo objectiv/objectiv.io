@@ -41,9 +41,11 @@ extract the data.</p>
 <p>Now, we can look at the distribution of time spent. We used the Bach quantile operation for this. We&#8217;ll use this distribution to define the different stages of user intent.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="c1"># how is this time spent distributed?</span>
 <span class="n">session_duration</span> <span class="o">=</span> <span class="n">modelhub</span><span class="o">.</span><span class="n">aggregate</span><span class="o">.</span><span class="n">session_duration</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">groupby</span><span class="o">=</span><span class="s1">'session_id'</span><span class="p">)</span>
-
 <span class="c1"># materialization is needed because the expression of the created series contains aggregated data, and it is not allowed to aggregate that.</span>
-<span class="n">session_duration</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">materialize</span><span class="p">()[</span><span class="s1">'session_duration'</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">session_duration</span> <span class="o">=</span> <span class="n">session_duration</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span><span class="o">.</span><span class="n">session_duration</span>
+
+<span class="c1"># show quantiles</span>
+<span class="n">session_duration</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -51,7 +53,7 @@ extract the data.</p>
 <h2>Defining different stages of user intent<a class="headerlink" href="#defining-different-stages-of-user-intent" title="Permalink to this headline">#</a></h2>
 <p>After exploring the <cite>root_location</cite> and <cite>session_duration</cite> (both per root location and quantiles), we can make a simple definition of different stages of user intent.</p>
 <p>Based on the objectiv.io website data in the quickstart:</p>
-<p>We think that users that spent most time (90th percentile) and specifically in our documentation sections are in the Implement phase of Objectiv. If you look at the other quantiles, it feels sensible to deem that users beyond the 50th up to 90th perctile in our documentation sections are Exploring. The remaining users are Informing themselves about the product. Those users are spending less than two minutes in the docs and/or spend any amount of time on our main website.</p>
+<p>We think that users that spent most time (90th percentile) and specifically in our documentation sections are in the Implement phase of Objectiv. As there is a jump beyond the one minute mark at the 70th percentile, it feels sensible to deem that users beyond the 70th up to 90th perctile in our documentation sections are Exploring. The remaining users are Informing themselves about the product. Those users are spending less than 1:40 in the docs and/or spend any amount of time on our main website.</p>
 <table class="colwidths-given table">
 <colgroup>
 <col style="width: 20%"/>
@@ -71,15 +73,15 @@ extract the data.</p>
 </tr>
 <tr class="row-odd"><td><p>1 - Inform</p></td>
 <td><p>Docs: modeling, taxonomy, tracking, home</p></td>
-<td><p>less than 2 minutes</p></td>
+<td><p>less than 1:40</p></td>
 </tr>
 <tr class="row-even"><td><p>2 - Explore</p></td>
 <td><p>Docs: modeling, taxonomy, tracking, home</p></td>
-<td><p>between 2 and 19 minutes</p></td>
+<td><p>between 1:40 and 11:30</p></td>
 </tr>
 <tr class="row-odd"><td><p>3 - Implement</p></td>
 <td><p>Docs: modeling, taxonomy, tracking, home</p></td>
-<td><p>more than 19 minutes</p></td>
+<td><p>more than 11:30</p></td>
 </tr>
 </tbody>
 </table>
@@ -110,9 +112,9 @@ extract the data.</p>
 <span class="n">user_intent_buckets</span><span class="p">[</span><span class="s1">'bucket'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1 - inform'</span>
 
 <span class="c1"># calculate buckets duration</span>
-<span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&gt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">))</span> <span class="o">&amp;</span>
-                        <span class="p">(</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&lt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1140</span><span class="p">)),</span> <span class="s1">'bucket'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2 - explore'</span>
-<span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1140</span><span class="p">),</span> <span class="s1">'bucket'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'3 - implement'</span>
+<span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&gt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span> <span class="o">&amp;</span>
+                        <span class="p">(</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&lt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">690</span><span class="p">)),</span> <span class="s1">'bucket'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'2 - explore'</span>
+<span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">user_intent_buckets</span><span class="o">.</span><span class="n">explore_inform_duration</span> <span class="o">&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">690</span><span class="p">),</span> <span class="s1">'bucket'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'3 - implement'</span>
 </pre></div>
 </div>
 <p>Now, we have assigned intent to each user and can for example look at the total number of users per intent bucket.</p>
