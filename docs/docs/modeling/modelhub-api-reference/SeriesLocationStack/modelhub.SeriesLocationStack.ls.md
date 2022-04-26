@@ -1,0 +1,35 @@
+---
+date: '2022-04-26T12:27:56.237Z'
+id: modelhub-api-reference-series-location-stack-modelhub-series-location-stack-ls
+slug: /modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls/
+title: modelhub.SeriesLocationStack.ls
+---
+
+modelhub.SeriesLocationStack.ls
+
+
+#### _property_ SeriesLocationStack.ls()
+Accessor for Objectiv location stack data. All methods of `json` and [modelhub.SeriesLocationStack.objectiv](#modelhub.SeriesLocationStack.objectiv)`objectiv` can
+also be accessed with this accessor. Same as [modelhub.SeriesLocationStack.location_stack](#modelhub.SeriesLocationStack.location_stack)`location_stack`
+
+
+#### _class_ LocationStack(series_object)
+<!-- !! processed by numpydoc !! -->
+
+#### _property_ LocationStack.feature_stack()
+Returns the feature stack from the location stack. The context objects only contain the _type
+and a id key.
+
+<!-- !! processed by numpydoc !! -->
+
+#### _property_ LocationStack.navigation_features()
+Returns the navigation stack from the location stack.
+
+<!-- !! processed by numpydoc !! -->
+
+#### _property_ LocationStack.nice_name()
+Returns a nice name for the location stack. This is a human readable name for the data in the
+feature stack.
+
+<!-- !! processed by numpydoc !! -->
+<!-- !! processed by numpydoc !! -->

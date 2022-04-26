@@ -33,14 +33,14 @@ This will spin up the following containers:
 
 ### Exploring & modeling data
 
-This demo includes [example notebooks](/modeling/example_notebooks.mdx) to demonstrate what Objectiv can do:
+This demo includes [example notebooks](/modeling/example_notebooks.md) to demonstrate what Objectiv can do:
 
 To explore the example notebooks, open the following URL in your browser:
 
 ```bash
 http://localhost:8888/lab/tree/model-hub-demo-notebook.ipynb?token=objectiv
 ```
-For detailed modeling instructions, check out our [modeling docs](/modeling/intro.mdx).
+For detailed modeling instructions, check out our [modeling docs](/modeling/index.md).
 
 ### Generating Events
 To generate event data yourself, simply go to the local version of the objectiv website and click around:
@@ -67,7 +67,7 @@ If you want to start using Objectiv for your own project, you'll want to set up 
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 
 * [Tracking with Objectiv](/tracking/introduction.md)
-* [Modeling with Objectiv](/modeling/intro.mdx)
+* [Modeling with Objectiv](/modeling/index.md)
 * [The open analytics taxonomy](/taxonomy/introduction.md)
 
 If you have any questions or feedback, please <JoinSlackLink linkText='join us on Slack' />.

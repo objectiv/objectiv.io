@@ -1,0 +1,44 @@
+---
+date: '2022-04-26T12:27:56.237Z'
+id: bach-api-reference-data-frame-bach-data-frame-ffill
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.ffill/
+title: bach.DataFrame.ffill
+---
+
+bach.DataFrame.ffill
+
+
+#### DataFrame.ffill(sort_by=None, ascending=True)
+Fill missing values by propagating the last non-nullable value in each series.
+
+
+* **Parameters**
+
+    
+    * **sort_by** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – series label or sequence of labels used to sort values.
+    Sorting of values is needed since result might be non-deterministic, as rows with NULLs might
+    yield different results affecting the values to be propagated when using a filling method.
+
+
+    * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
+    sort_by must also be a list and `len(ascending) == len(sort_by)`.
+
+
+
+* **Returns**
+
+    a new dataframe with filled missing values.
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+
+
+**NOTE**: sort_by is required if DataFrame has no order_by.
+
+**WARNING**: If sort_by is non-deterministic, this operation might yield different results after
+performing other operations over the resultant dataframe.
+
+<!-- !! processed by numpydoc !! -->
