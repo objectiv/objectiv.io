@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: modelhub-api-reference-series-global-contexts-modelhub-series-global-contexts-obj
 slug: /modeling/modelhub-api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.obj/
 title: modelhub.SeriesGlobalContexts.obj

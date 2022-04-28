@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: models-mapping-modelhub-map-is-conversion-event
 slug: /modeling/models/Mapping/modelhub.Map.is-conversion-event/
 title: modelhub.Map.is_conversion_event

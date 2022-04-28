@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: bach-api-reference-data-frame-bach-data-frame-drop-duplicates
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.drop-duplicates/
 title: bach.DataFrame.drop_duplicates

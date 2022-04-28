@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: models-aggregation-modelhub-aggregate-session-duration
 slug: /modeling/models/Aggregation/modelhub.Aggregate.session-duration/
 title: modelhub.Aggregate.session_duration

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-to-metabase
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.to-metabase/
 title: modelhub.ModelHub.to_metabase

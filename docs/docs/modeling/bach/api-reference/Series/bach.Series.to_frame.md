@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T19:19:08.619Z'
+date: '2022-04-28T19:24:58.840Z'
 id: bach-api-reference-series-bach-series-to-frame
 slug: /modeling/bach/api-reference/Series/bach.Series.to-frame/
 title: bach.Series.to_frame
