@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-append
 slug: /modeling/bach/api-reference/Series/bach.Series.append/
 title: bach.Series.append
@@ -15,7 +15,7 @@ Append rows of other series to the caller series.
 * **Parameters**
 
     
-    * **other** (*Union**[*[*bach.series.series.Series*](bach.Series/#bach.Series)*, **List**[*[*bach.series.series.Series*](bach.Series/#bach.Series)*]**]*) – objects to be added
+    * **other** (*Union**[*[*bach.series.series.Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*, **List**[*[*bach.series.series.Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]**]*) – objects to be added
 
 
     * **ignore_index** (*bool*) – if true, drops indexes of all objects to be appended
@@ -30,7 +30,7 @@ Append rows of other series to the caller series.
 
 * **Return type**
 
-    [bach.series.series.Series](bach.Series/#bach.Series)
+    [bach.series.series.Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
 
 
 <!-- !! processed by numpydoc !! -->

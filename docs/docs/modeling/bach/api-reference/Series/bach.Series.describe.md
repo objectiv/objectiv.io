@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-describe
 slug: /modeling/bach/api-reference/Series/bach.Series.describe/
 title: bach.Series.describe
@@ -30,7 +30,7 @@ Returns descriptive statistics, it will vary based on what is provided
 
 * **Return type**
 
-    [bach.series.series.Series](bach.Series/#bach.Series)
+    [bach.series.series.Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
 
 
 <!-- !! processed by numpydoc !! -->

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-rename
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.rename/
 title: bach.DataFrame.rename
@@ -28,7 +28,7 @@ renaming indexes, so recommended usage is `rename(columns=...)`.
 
     * **columns** (*Optional**[**Union**[**Dict**[**str**, **str**]**, **Callable**[**[**str**]**, **str**]**]**]*) – dict str:str to rename columns, or a function that takes column names as an argument
     and returns the new one. The new column names must not clash with other column names in either
-    `self.`[`data`](bach.DataFrame.data/#bach.DataFrame.data) or `self.`[`index`](bach.DataFrame.index/#bach.DataFrame.index), after renaming is complete.
+    `self.`[`data`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.data/#bach.DataFrame.data) or `self.`[`index`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.index/#bach.DataFrame.index), after renaming is complete.
 
 
     * **axis** (*int*) – `axis=1` is supported, rest is not.
@@ -51,7 +51,7 @@ renaming indexes, so recommended usage is `rename(columns=...)`.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: The copy parameter is not supported since it makes very little sense for db backed series.

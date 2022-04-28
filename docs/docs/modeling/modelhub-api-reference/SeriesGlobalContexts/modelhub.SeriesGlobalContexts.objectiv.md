@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: modelhub-api-reference-series-global-contexts-modelhub-series-global-contexts-objectiv
 slug: /modeling/modelhub-api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.objectiv/
 title: modelhub.SeriesGlobalContexts.objectiv
@@ -10,7 +10,7 @@ title: modelhub.SeriesGlobalContexts.objectiv
 
 #### _property_ SeriesGlobalContexts.objectiv()
 Accessor for Objectiv stack data. All methods of `json` can also be accessed with this
-accessor. Same as [`obj`](modelhub.SeriesGlobalContexts.obj/#modelhub.SeriesGlobalContexts.obj)
+accessor. Same as [`obj`](/docs/modeling/modelhub-api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.obj/#modelhub.SeriesGlobalContexts.obj)
 
 
 #### _class_ ObjectivStack(series_object)

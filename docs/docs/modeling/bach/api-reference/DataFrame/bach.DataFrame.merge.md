@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-merge
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.merge/
 title: bach.DataFrame.merge
@@ -18,7 +18,7 @@ supported: `sort`, `copy`, `indicator`, and `validate`.
 Additionally, when merging two frames that have conflicting columns names, and joining on indices,
 then the resulting columns/column names can differ slightly from Pandas.
 
-If variables are set (see [`DataFrame.variables()`](bach.DataFrame.variables/#bach.DataFrame.variables)), then values from self will be used in cases
+If variables are set (see [`DataFrame.variables()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.variables/#bach.DataFrame.variables)), then values from self will be used in cases
 where a variable name/dtype combination has been defined in both the `self` and `right`
 DataFramesOrSeries.
 
@@ -26,7 +26,7 @@ DataFramesOrSeries.
 * **Parameters**
 
     
-    * **right** (*Union**[*[*DataFrame*](bach.DataFrame/#bach.DataFrame)*, *[*Series*](../Series/bach.Series/#bach.Series)*]*) – DataFrame or Series to join on self
+    * **right** (*Union**[*[*DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*, *[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]*) – DataFrame or Series to join on self
 
 
     * **how** (*str*) – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}
@@ -60,7 +60,7 @@ DataFramesOrSeries.
 
 * **Return type**
 
-    [DataFrame](bach.DataFrame/#bach.DataFrame)
+    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

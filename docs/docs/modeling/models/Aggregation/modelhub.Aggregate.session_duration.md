@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: models-aggregation-modelhub-aggregate-session-duration
 slug: /modeling/models/Aggregation/modelhub.Aggregate.session-duration/
 title: modelhub.Aggregate.session_duration
@@ -17,13 +17,13 @@ With default `method`, it calculates the mean of the session duration over the `
 * **Parameters**
 
     
-    * **data** ([*bach.dataframe.DataFrame*](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
-    * **groupby** (*Union**[**List**[**Union**[**str**, *[*bach.series.series.Series*](../../bach/api-reference/Series/bach.Series/#bach.Series)*]**]**, **str**, *[*bach.series.series.Series*](../../bach/api-reference/Series/bach.Series/#bach.Series)*, **sql_models.constants.NotSet**]*) – sets the column(s) to group by.
+    * **groupby** (*Union**[**List**[**Union**[**str**, *[*bach.series.series.Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]**]**, **str**, *[*bach.series.series.Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*, **sql_models.constants.NotSet**]*) – sets the column(s) to group by.
 
 
-        * if not_set it defaults to using [`ModelHub.time_agg`](../../modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
+        * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
 
         * if None it aggregates over all data.

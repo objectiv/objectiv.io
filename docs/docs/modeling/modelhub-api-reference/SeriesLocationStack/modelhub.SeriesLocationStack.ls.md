@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: modelhub-api-reference-series-location-stack-modelhub-series-location-stack-ls
 slug: /modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls/
 title: modelhub.SeriesLocationStack.ls
@@ -9,8 +9,8 @@ title: modelhub.SeriesLocationStack.ls
 
 
 #### _property_ SeriesLocationStack.ls()
-Accessor for Objectiv location stack data. All methods of `json` and [`objectiv`](modelhub.SeriesLocationStack.objectiv/#modelhub.SeriesLocationStack.objectiv) can
-also be accessed with this accessor. Same as [`location_stack`](modelhub.SeriesLocationStack.location-stack/#modelhub.SeriesLocationStack.location-stack)
+Accessor for Objectiv location stack data. All methods of `json` and [`objectiv`](/docs/modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv/#modelhub.SeriesLocationStack.objectiv) can
+also be accessed with this accessor. Same as [`location_stack`](/docs/modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.location-stack/#modelhub.SeriesLocationStack.location-stack)
 
 
 #### _class_ LocationStack(series_object)

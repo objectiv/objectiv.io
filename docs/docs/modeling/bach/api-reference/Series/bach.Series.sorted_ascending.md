@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-sorted-ascending
 slug: /modeling/bach/api-reference/Series/bach.Series.sorted-ascending/
 title: bach.Series.sorted_ascending

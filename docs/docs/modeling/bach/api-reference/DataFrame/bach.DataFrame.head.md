@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-head
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.head/
 title: bach.DataFrame.head
@@ -9,7 +9,7 @@ title: bach.DataFrame.head
 
 
 #### DataFrame.head(n=5)
-Similar to [`to_pandas()`](bach.DataFrame.to-pandas/#bach.DataFrame.to-pandas) but only returns the first `n` rows.
+Similar to [`to_pandas()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.to-pandas/#bach.DataFrame.to-pandas) but only returns the first `n` rows.
 
 
 * **Parameters**

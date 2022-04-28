@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-reset-index
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.reset_/
 title: bach.DataFrame.reset_index
@@ -12,7 +12,7 @@ title: bach.DataFrame.reset_index
 Drops the current index.
 
 With reset_index, all indexes are removed from the DataFrame, so that the DataFrame does not have any
-index Series. A new index can be set with [`set_index()`](bach.DataFrame.set-index/#bach.DataFrame.set-index).
+index Series. A new index can be set with [`set_index()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.set-index/#bach.DataFrame.set-index).
 
 
 * **Parameters**
@@ -34,7 +34,7 @@ index Series. A new index can be set with [`set_index()`](bach.DataFrame.set-ind
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

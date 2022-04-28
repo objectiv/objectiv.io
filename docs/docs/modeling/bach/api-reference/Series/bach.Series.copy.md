@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-copy
 slug: /modeling/bach/api-reference/Series/bach.Series.copy/
 title: bach.Series.copy
@@ -16,7 +16,7 @@ this is a metadata copy only, no actual data is duplicated and changes to the un
 will represented in both copy and original.
 Changes to index, sorting, grouping etc. on the copy will not affect the original.
 
-If you want to create a snapshot of the data, have a look at [`bach.DataFrame.get_sample()`](../DataFrame/bach.DataFrame.get-sample/#bach.DataFrame.get-sample)
+If you want to create a snapshot of the data, have a look at [`bach.DataFrame.get_sample()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/#bach.DataFrame.get-sample)
 
 
 * **Returns**

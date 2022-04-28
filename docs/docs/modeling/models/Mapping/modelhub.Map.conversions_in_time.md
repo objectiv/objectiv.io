@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: models-mapping-modelhub-map-conversions-in-time
 slug: /modeling/models/Mapping/modelhub.Map.conversions-in-time/
 title: modelhub.Map.conversions_in_time
@@ -16,11 +16,11 @@ or ‘user_id’).
 * **Parameters**
 
     
-    * **data** ([*bach.dataframe.DataFrame*](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** (*str*) – the name of the conversion to label as set in
-    [`ModelHub.conversion_events`](../../modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** (*str*) – the partition over which the number of conversions are counted. Can be any column

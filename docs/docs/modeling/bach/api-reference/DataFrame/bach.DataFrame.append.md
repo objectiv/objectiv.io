@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-append
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.append/
 title: bach.DataFrame.append
@@ -16,7 +16,7 @@ Non-shared columns between dataframes are added to the caller.
 * **Parameters**
 
     
-    * **other** (*Union**[*[*bach.dataframe.DataFrame*](bach.DataFrame/#bach.DataFrame)*, **List**[*[*bach.dataframe.DataFrame*](bach.DataFrame/#bach.DataFrame)*]**]*) – objects to be added
+    * **other** (*Union**[*[*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*, **List**[*[*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*]**]*) – objects to be added
 
 
     * **ignore_index** (*bool*) – if true, drops indexes of all object to be appended
@@ -34,7 +34,7 @@ Non-shared columns between dataframes are added to the caller.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

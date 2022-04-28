@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-agg
 slug: /modeling/bach/api-reference/Series/bach.Series.agg/
 title: bach.Series.agg
@@ -37,7 +37,7 @@ Apply one or more aggregation functions to this Series.
 
 * **Return type**
 
-    *Union*[[DataFrame](../DataFrame/bach.DataFrame/#bach.DataFrame), [Series](bach.Series/#bach.Series)]
+    *Union*[[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]
 
 
 <!-- !! processed by numpydoc !! -->

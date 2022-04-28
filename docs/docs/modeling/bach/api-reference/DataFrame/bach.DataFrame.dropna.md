@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-dropna
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.dropna/
 title: bach.DataFrame.dropna
@@ -42,7 +42,7 @@ Removes rows with missing values (NaN, None and SQL NULL).
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

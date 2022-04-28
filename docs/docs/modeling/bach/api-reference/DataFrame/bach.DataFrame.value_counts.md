@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-value-counts
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/
 title: bach.DataFrame.value_counts
@@ -38,7 +38,7 @@ Returns a series containing counts of each unique row in the DataFrame
 
 * **Return type**
 
-    [Series](../Series/bach.Series/#bach.Series)
+    [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
 
 
 <!-- !! processed by numpydoc !! -->

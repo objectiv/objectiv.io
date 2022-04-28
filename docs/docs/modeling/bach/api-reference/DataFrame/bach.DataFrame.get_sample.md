@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-sample
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/
 title: bach.DataFrame.get_sample
@@ -14,7 +14,7 @@ Returns a DataFrame whose data is a sample of the current DataFrame object.
 For the sample Dataframe to be created, all data is queried once and a persistent table is created to
 store the sample data used for the sampled DataFrame.
 
-Use [`get_unsampled()`](bach.DataFrame.get-unsampled/#bach.DataFrame.get-unsampled) to switch back to the unsampled data later on. This returns a new
+Use [`get_unsampled()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-unsampled/#bach.DataFrame.get-unsampled) to switch back to the unsampled data later on. This returns a new
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
 
@@ -48,7 +48,7 @@ DataFrame with all operations that have been done on the sample, applied to that
 
 * **Return type**
 
-    [DataFrame](bach.DataFrame/#bach.DataFrame)
+    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: All data in the DataFrame to be sampled is queried to create the sample.

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-unstack
 slug: /modeling/bach/api-reference/Series/bach.Series.unstack/
 title: bach.Series.unstack
@@ -28,7 +28,7 @@ Series’ index should be of at least two levels to unstack.
 
 
     * **aggregation** (*str*) – method of aggregation, in case of duplicate index values. Supports all aggregation
-    methods that [`aggregate()`](bach.Series.aggregate/#bach.Series.aggregate) supports.
+    methods that [`aggregate()`](/docs/modeling/bach/api-reference/Series/bach.Series.aggregate/#bach.Series.aggregate) supports.
 
 
 
@@ -40,7 +40,7 @@ Series’ index should be of at least two levels to unstack.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](../DataFrame/bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: This function queries the database.

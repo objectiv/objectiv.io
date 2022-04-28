@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-sort-values
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values/
 title: bach.DataFrame.sort_values
@@ -15,7 +15,7 @@ This does not modify the current DataFrame, instead it returns a new DataFrame.
 
 The sorting will remain in the returned DataFrame as long as no operations are performed on that
 frame that materially change the selected data. Operations that materially change the selected data
-are for example [`groupby()`](bach.DataFrame.groupby/#bach.DataFrame.groupby), [`merge()`](bach.DataFrame.merge/#bach.DataFrame.merge), [`materialize()`](bach.DataFrame.materialize/#bach.DataFrame.materialize), and filtering out rows.
+are for example [`groupby()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.groupby/#bach.DataFrame.groupby), [`merge()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.merge/#bach.DataFrame.merge), [`materialize()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/#bach.DataFrame.materialize), and filtering out rows.
 Adding or removing a column does not materially change the selected data.
 
 
@@ -38,7 +38,7 @@ Adding or removing a column does not materially change the selected data.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

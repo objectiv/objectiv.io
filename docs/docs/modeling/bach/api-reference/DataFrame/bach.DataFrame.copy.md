@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-copy
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.copy/
 title: bach.DataFrame.copy
@@ -17,7 +17,7 @@ will represented in both copy and original.
 Changes to data, index, sorting, grouping etc. on the copy will not affect the original.
 The savepoints on the other hand will be shared by the original and the copy.
 
-If you want to create a snapshot of the data, have a look at [`get_sample()`](bach.DataFrame.get-sample/#bach.DataFrame.get-sample)
+If you want to create a snapshot of the data, have a look at [`get_sample()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/#bach.DataFrame.get-sample)
 
 Calling `copy(df)` will invoke this copy function, i.e. `copy(df)` is implemented as df.copy()
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-series-bach-series-any-value
 slug: /modeling/bach/api-reference/Series/bach.Series.any-value/
 title: bach.Series.any_value

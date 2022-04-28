@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-agg
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.agg/
 title: bach.DataFrame.agg

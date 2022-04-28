@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-index
 sidebar_position: 5
 slug: /modeling/bach/api-reference/
@@ -12,5 +12,5 @@ This is the complete API reference of Bach.
 
 | &nbsp;                                           | &nbsp;                                                                                                                                      |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`DataFrame`](DataFrame/bach.DataFrame/#bach.DataFrame)(engine, base_node, index, series, ...) | A mutable DataFrame representing tabular data in a database and enabling operations on that data.                                           |
-| [`Series`](Series/bach.Series/#bach.Series)(engine, base_node, index, name, ...)      | Series is an abstract class.                                                                                                                |
+| [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)(engine, base_node, index, series, ...) | A mutable DataFrame representing tabular data in a database and enabling operations on that data.                                           |
+| [`Series`](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)(engine, base_node, index, name, ...)      | Series is an abstract class.                                                                                                                |

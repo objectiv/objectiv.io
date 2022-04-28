@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: bach-api-reference-data-frame-bach-data-frame-fillna
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna/
 title: bach.DataFrame.fillna
@@ -15,7 +15,7 @@ Fill any NULL value using a method or with a given value.
 * **Parameters**
 
     
-    * **value** (*Union**[*[*Series*](../Series/bach.Series/#bach.Series)*, **int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**, **Dict**[**str**, **Union**[**int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**, *[*Series*](../Series/bach.Series/#bach.Series)*]**]**]*) – A literal/series to fill all NULL values on each series
+    * **value** (*Union**[*[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*, **int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**, **Dict**[**str**, **Union**[**int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**, *[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]**]**]*) – A literal/series to fill all NULL values on each series
     or a dictionary specifying which literal/series to use for each series.
 
 
@@ -45,7 +45,7 @@ Fill any NULL value using a method or with a given value.
 
 * **Return type**
 
-    [DataFrame](bach.DataFrame/#bach.DataFrame)
+    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: sort_by is required if method is specified and the DataFrame has no order_by.

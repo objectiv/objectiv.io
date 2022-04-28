@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-map
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.map/
 title: modelhub.ModelHub.map
@@ -29,7 +29,7 @@ or user_id).
 
     
     * **name** – the name of the conversion to label as set in
-    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column
@@ -52,11 +52,11 @@ or ‘user_id’).
 * **Parameters**
 
     
-    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column
@@ -78,11 +78,11 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 * **Parameters**
 
     
-    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
 
@@ -99,7 +99,7 @@ Labels all hits in a session True if that session is the first session of that u
 
 * **Parameters**
 
-    **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
 
@@ -117,10 +117,10 @@ Labels all hits True if the user is first seen in the period given `time_aggrega
 * **Parameters**
 
     
-    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
-    * **time_aggregation** – if None, it uses the [`ModelHub.time_aggregation`](modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
+    * **time_aggregation** – if None, it uses the [`ModelHub.time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
     instance.
 
 
@@ -141,11 +141,11 @@ in the partition or after the first conversion.
 * **Parameters**
 
     
-    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-28T14:46:08.106Z'
+date: '2022-04-28T19:19:08.619Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-get-objectiv-dataframe
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.get-objectiv-dataframe/
 title: modelhub.ModelHub.get_objectiv_dataframe
@@ -9,7 +9,7 @@ title: modelhub.ModelHub.get_objectiv_dataframe
 
 
 #### ModelHub.get_objectiv_dataframe(db_url=None, table_name='data', start_date=None, end_date=None)
-Sets data from sql table into an [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) object.
+Sets data from sql table into an [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) object.
 
 The created DataFrame points to where the data is stored in the sql database, makes several
 transformations and sets the right data types for all columns. As such, the models from the model hub
@@ -38,7 +38,7 @@ can be applied to a DataFrame created with this method.
 
 * **Returns**
 
-    [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) with Objectiv data.
+    [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) with Objectiv data.
 
 
 <!-- !! processed by numpydoc !! -->
