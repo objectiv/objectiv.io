@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-window-lead
 slug: /modeling/bach/api-reference/Series/bach.Series.window-lead/
 title: bach.Series.window_lead
 ---
 
-bach.Series.window_lead
+# bach.Series.window_lead
 
 
 #### Series.window_lead(offset=1, default=None, window=None)

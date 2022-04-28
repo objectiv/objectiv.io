@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-var
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.var/
 title: bach.DataFrame.var
 ---
 
-bach.DataFrame.var
+# bach.DataFrame.var
 
 
 #### DataFrame.var(axis=1, skipna=True, level=None, ddof=1, numeric_only=False, \*\*kwargs)

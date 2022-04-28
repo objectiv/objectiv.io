@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-pandas
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-pandas/
 title: bach.DataFrame.from_pandas
 ---
 
-bach.DataFrame.from_pandas
+# bach.DataFrame.from_pandas
 
 
 #### _classmethod_ DataFrame.from_pandas(engine, df, convert_objects, name='loaded_data', materialization='cte', if_exists='fail')
@@ -60,7 +60,7 @@ There are some small differences between how the different materializations hand
     * **materialization** (*str*) – {‘cte’, ‘table’}. How to materialize the data.
 
 
-    * **if_exists** (*str*) – {‘fail’, ‘replace’, ‘append’}. Only applies to materialization=’table’
+    * **if_exists** (*str*) – {‘fail’, ‘replace’, ‘append’}. Only applies to `materialization=’table’`
     How to behave if the table already exists:
 
 
@@ -83,7 +83,7 @@ There are some small differences between how the different materializations hand
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **WARNING**: This method is only suited for small quantities of data.

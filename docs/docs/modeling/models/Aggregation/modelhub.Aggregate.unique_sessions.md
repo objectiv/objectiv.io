@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: models-aggregation-modelhub-aggregate-unique-sessions
 slug: /modeling/models/Aggregation/modelhub.Aggregate.unique-sessions/
 title: modelhub.Aggregate.unique_sessions
 ---
 
-modelhub.Aggregate.unique_sessions
+# modelhub.Aggregate.unique_sessions
 
 
 #### Aggregate.unique_sessions(data, groupby=NotSet.token)
@@ -15,13 +15,13 @@ Calculate the unique sessions in the Objectiv `data`.
 * **Parameters**
 
     
-    * **data** ([bach.dataframe.DataFrame](#bach.DataFrame)*bach.dataframe.DataFrame*) – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** ([*bach.dataframe.DataFrame*](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
-    * **groupby** (*Union**[**List**[**Union**[**str**, *[bach.series.series.Series](#bach.Series)*bach.series.series.Series**]**]**, **str**, *[bach.series.series.Series](#bach.Series)*bach.series.series.Series**, **sql_models.constants.NotSet**]*) – sets the column(s) to group by.
+    * **groupby** (*Union**[**List**[**Union**[**str**, *[*bach.series.series.Series*](../../bach/api-reference/Series/bach.Series/#bach.Series)*]**]**, **str**, *[*bach.series.series.Series*](../../bach/api-reference/Series/bach.Series/#bach.Series)*, **sql_models.constants.NotSet**]*) – sets the column(s) to group by.
 
 
-        * if not_set it defaults to using [modelhub.ModelHub.time_agg](#modelhub.ModelHub.time_agg)`ModelHub.time_agg`.
+        * if not_set it defaults to using [`ModelHub.time_agg`](../../modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
 
         * if None it aggregates over all data.

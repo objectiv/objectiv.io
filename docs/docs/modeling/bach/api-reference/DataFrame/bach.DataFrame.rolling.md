@@ -1,17 +1,17 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-rolling
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.rolling/
 title: bach.DataFrame.rolling
 ---
 
-bach.DataFrame.rolling
+# bach.DataFrame.rolling
 
 
 #### DataFrame.rolling(window, min_periods=None, center=False, closed='right')
 A rolling window of size ‘window’, by default right aligned.
 
-To use grouping as well, first call [bach.DataFrame.group_by](#bach.DataFrame.group_by)`group_by()` on this frame and call rolling on the result.
+To use grouping as well, first call [`group_by()`](bach.DataFrame.group-by/#bach.DataFrame.group-by) on this frame and call rolling on the result.
 
 
 * **Parameters**
@@ -33,17 +33,17 @@ To use grouping as well, first call [bach.DataFrame.group_by](#bach.DataFrame.gr
 
 * **Returns**
 
-    a new DataFrame object with the [bach.DataFrame.group_by](#bach.DataFrame.group_by)`group_by` attribute set with a
+    a new DataFrame object with the [`group_by`](bach.DataFrame.group-by/#bach.DataFrame.group-by) attribute set with a
     `bach.partitioning.Window`.
 
 
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
-**NOTE**: The win_type, axis and method parameters as supported by pandas, are currently not
+**NOTE**: The `win_type`, `axis` and `method` parameters as supported by pandas, are currently not
 implemented.
 
 <!-- !! processed by numpydoc !! -->

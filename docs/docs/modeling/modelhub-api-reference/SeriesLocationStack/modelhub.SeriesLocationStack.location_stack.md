@@ -1,24 +1,24 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-series-location-stack-modelhub-series-location-stack-location-stack
 slug: /modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.location-stack/
 title: modelhub.SeriesLocationStack.location_stack
 ---
 
-modelhub.SeriesLocationStack.location_stack
+# modelhub.SeriesLocationStack.location_stack
 
 
 #### _property_ SeriesLocationStack.location_stack()
-Accessor for Objectiv location stack data. All methods of `json` and [modelhub.SeriesLocationStack.objectiv](#modelhub.SeriesLocationStack.objectiv)`objectiv`
-can also be accessed with this accessor. Same as [modelhub.SeriesLocationStack.ls](#modelhub.SeriesLocationStack.ls)`ls`
+Accessor for Objectiv location stack data. All methods of `json` and [`objectiv`](modelhub.SeriesLocationStack.objectiv/#modelhub.SeriesLocationStack.objectiv)
+can also be accessed with this accessor. Same as [`ls`](modelhub.SeriesLocationStack.ls/#modelhub.SeriesLocationStack.ls)
 
 
 #### _class_ LocationStack(series_object)
 <!-- !! processed by numpydoc !! -->
 
 #### _property_ LocationStack.feature_stack()
-Returns the feature stack from the location stack. The context objects only contain the _type
-and a id key.
+Returns the feature stack from the location stack. The context objects only contain the `_type`
+and a `id` key.
 
 <!-- !! processed by numpydoc !! -->
 

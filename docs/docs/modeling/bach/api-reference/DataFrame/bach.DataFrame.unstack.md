@@ -1,18 +1,18 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-unstack
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack/
 title: bach.DataFrame.unstack
 ---
 
-bach.DataFrame.unstack
+# bach.DataFrame.unstack
 
 
 #### DataFrame.unstack(level=- 1, fill_value=None, aggregation='max')
 Pivot a level of the index labels.
 
 Returns a(n unsorted) DataFrame with the values of the unstacked index as columns. In case of
-duplicate index values that are unstacked, aggregation is used to aggregate the values.
+duplicate index values that are unstacked, `aggregation` is used to aggregate the values.
 
 DataFrame’s index should be of at least two levels to unstack.
 
@@ -28,7 +28,7 @@ DataFrame’s index should be of at least two levels to unstack.
 
 
     * **aggregation** (*str*) – method of aggregation, in case of duplicate index values. Supports all aggregation
-    methods that [bach.DataFrame.aggregate](#bach.DataFrame.aggregate)`aggregate()` supports.
+    methods that [`aggregate()`](bach.DataFrame.aggregate/#bach.DataFrame.aggregate) supports.
 
 
 
@@ -40,7 +40,7 @@ DataFrame’s index should be of at least two levels to unstack.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: This function queries the database.

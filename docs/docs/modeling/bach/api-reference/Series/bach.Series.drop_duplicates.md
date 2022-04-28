@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-drop-duplicates
 slug: /modeling/bach/api-reference/Series/bach.Series.drop-duplicates/
 title: bach.Series.drop_duplicates
 ---
 
-bach.Series.drop_duplicates
+# bach.Series.drop_duplicates
 
 
 #### Series.drop_duplicates(keep='first')
@@ -17,10 +17,10 @@ Return a series with duplicated rows removed.
     **keep** (*Union**[**str**, **bool**]*) – Supported values: “first”, “last” and False. Determines which duplicates to keep:
 
 
-    * first: drop all occurrences except the first one
+    * `first`: drop all occurrences except the first one
 
 
-    * last:  drop all occurrences except the last one
+    * `last`:  drop all occurrences except the last one
 
 
     * False: drops all duplicates

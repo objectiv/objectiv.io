@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-window-nth-value
 slug: /modeling/bach/api-reference/Series/bach.Series.window-nth-value/
 title: bach.Series.window_nth_value
 ---
 
-bach.Series.window_nth_value
+# bach.Series.window_nth_value
 
 
 #### Series.window_nth_value(n, window=None)

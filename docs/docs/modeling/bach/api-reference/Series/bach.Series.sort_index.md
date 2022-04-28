@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-sort-index
 slug: /modeling/bach/api-reference/Series/bach.Series.sort_/
 title: bach.Series.sort_index
 ---
 
-bach.Series.sort_index
+# bach.Series.sort_index
 
 
 #### Series.sort_index(\*, ascending=True)

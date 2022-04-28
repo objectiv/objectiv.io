@@ -1,15 +1,15 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-model
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-model/
 title: bach.DataFrame.from_model
 ---
 
-bach.DataFrame.from_model
+# bach.DataFrame.from_model
 
 
 #### _classmethod_ DataFrame.from_model(engine, model, index, all_dtypes=None)
-Instantiate a new DataFrame based on the result of the query defined in model.
+Instantiate a new DataFrame based on the result of the query defined in `model`.
 
 If all_dtypes is not specified, then a transaction scoped temporary table will be created with
 0 result rows from the model. The meta data of this table will be used to deduce the dtypes.
@@ -42,7 +42,7 @@ If all_dtypes is not specified, then a transaction scoped temporary table will b
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: If all_dtypes is not set, then this will query the database and create and remove a temporary

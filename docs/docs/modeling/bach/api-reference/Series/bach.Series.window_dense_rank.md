@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-window-dense-rank
 slug: /modeling/bach/api-reference/Series/bach.Series.window-dense-rank/
 title: bach.Series.window_dense_rank
 ---
 
-bach.Series.window_dense_rank
+# bach.Series.window_dense_rank
 
 
 #### Series.window_dense_rank(window=None)

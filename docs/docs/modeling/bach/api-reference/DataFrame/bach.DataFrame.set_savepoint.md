@@ -1,15 +1,15 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-savepoint
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set-savepoint/
 title: bach.DataFrame.set_savepoint
 ---
 
-bach.DataFrame.set_savepoint
+# bach.DataFrame.set_savepoint
 
 
 #### DataFrame.set_savepoint(name, materialization=Materialization.CTE)
-Set the current state as a savepoint in self.savepoints.
+Set the current state as a savepoint in `self.savepoints`.
 
 
 * **Parameters**

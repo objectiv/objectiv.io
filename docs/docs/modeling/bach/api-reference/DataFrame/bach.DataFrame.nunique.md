@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-nunique
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.nunique/
 title: bach.DataFrame.nunique
 ---
 
-bach.DataFrame.nunique
+# bach.DataFrame.nunique
 
 
 #### DataFrame.nunique(axis=1, skipna=True, \*\*kwargs)

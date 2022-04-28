@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-stack
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.stack/
 title: bach.DataFrame.stack
 ---
 
-bach.DataFrame.stack
+# bach.DataFrame.stack
 
 
 #### DataFrame.stack(dropna=True)
@@ -29,7 +29,7 @@ Stacks all data_columns into a single index series.
 
 * **Return type**
 
-    [bach.Series](#bach.Series)Series
+    [Series](../Series/bach.Series/#bach.Series)
 
 
 **NOTE**: `level` parameter is not supported since multilevel columns are not allowed.

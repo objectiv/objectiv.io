@@ -1,18 +1,18 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-create-variable
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.create-variable/
 title: bach.DataFrame.create_variable
 ---
 
-bach.DataFrame.create_variable
+# bach.DataFrame.create_variable
 
 
 #### DataFrame.create_variable(name, value, \*, dtype=None)
 Create a Series object that can be used as a variable, within the returned DataFrame. The
-DataFrame will have the variable with the given values set in [bach.DataFrame.variables](#bach.DataFrame.variables)`DataFrame.variables()`.
+DataFrame will have the variable with the given values set in [`DataFrame.variables()`](bach.DataFrame.variables/#bach.DataFrame.variables).
 
-The variable value can later be changed using [bach.DataFrame.set_variable](#bach.DataFrame.set_variable)`DataFrame.set_variable()`
+The variable value can later be changed using [`DataFrame.set_variable()`](bach.DataFrame.set-variable/#bach.DataFrame.set-variable)
 
 **Multiple variables with the same name**
 
@@ -45,7 +45,7 @@ SqlModels that already have variables.
 
 * **Return type**
 
-    *Tuple*[[bach.DataFrame](#bach.DataFrame)DataFrame, [bach.Series](#bach.Series)Series]
+    *Tuple*[[DataFrame](bach.DataFrame/#bach.DataFrame), [Series](../Series/bach.Series/#bach.Series)]
 
 
 <!-- !! processed by numpydoc !! -->

@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-value-counts
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/
 title: bach.DataFrame.value_counts
 ---
 
-bach.DataFrame.value_counts
+# bach.DataFrame.value_counts
 
 
 #### DataFrame.value_counts(subset=None, normalize=False, sort=True, ascending=False)
@@ -38,7 +38,7 @@ Returns a series containing counts of each unique row in the DataFrame
 
 * **Return type**
 
-    [bach.Series](#bach.Series)Series
+    [Series](../Series/bach.Series/#bach.Series)
 
 
 <!-- !! processed by numpydoc !! -->

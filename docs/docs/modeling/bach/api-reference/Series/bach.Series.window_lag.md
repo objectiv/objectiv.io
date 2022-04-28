@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-window-lag
 slug: /modeling/bach/api-reference/Series/bach.Series.window-lag/
 title: bach.Series.window_lag
 ---
 
-bach.Series.window_lag
+# bach.Series.window_lag
 
 
 #### Series.window_lag(offset=1, default=None, window=None)

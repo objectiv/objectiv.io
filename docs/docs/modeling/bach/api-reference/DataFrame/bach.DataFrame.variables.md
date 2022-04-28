@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-variables
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.variables/
 title: bach.DataFrame.variables
 ---
 
-bach.DataFrame.variables
+# bach.DataFrame.variables
 
 
 #### _property_ DataFrame.variables(_: Dict[bach.dataframe.DtypeNamePair, Hashable_ )

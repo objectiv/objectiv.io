@@ -1,16 +1,16 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-series-global-contexts-modelhub-series-global-contexts-global-contexts
 slug: /modeling/modelhub-api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global-contexts/
 title: modelhub.SeriesGlobalContexts.global_contexts
 ---
 
-modelhub.SeriesGlobalContexts.global_contexts
+# modelhub.SeriesGlobalContexts.global_contexts
 
 
 #### _property_ SeriesGlobalContexts.global_contexts()
-Accessor for Objectiv global context data. All methods of `json` and [modelhub.SeriesGlobalContexts.objectiv](#modelhub.SeriesGlobalContexts.objectiv)`objectiv` can
-also be accessed with this accessor. Same as [modelhub.SeriesGlobalContexts.gc](#modelhub.SeriesGlobalContexts.gc)`gc`
+Accessor for Objectiv global context data. All methods of `json` and [`objectiv`](modelhub.SeriesGlobalContexts.objectiv/#modelhub.SeriesGlobalContexts.objectiv) can
+also be accessed with this accessor. Same as [`gc`](modelhub.SeriesGlobalContexts.gc/#modelhub.SeriesGlobalContexts.gc)
 
 
 #### _class_ GlobalContexts(series_object)

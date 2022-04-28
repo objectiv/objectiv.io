@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-all-values
 slug: /modeling/bach/api-reference/Series/bach.Series.all-values/
 title: bach.Series.all_values
 ---
 
-bach.Series.all_values
+# bach.Series.all_values
 
 
 #### Series.all_values()

@@ -1,76 +1,42 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: models-index
 sidebar_position: 3
 slug: /modeling/models//
 title: Model overview
 ---
 
-sidebar_position: 3
-Model overview
+# Model overview
 
-The model hub has two main type of functions: map and aggregate.
+The model hub has two main types of functions: `map` and `aggregate`.
 
 
-* map functions always return a series with the same shape and index as the DataFrame they are applied to.
-This ensures they can be added as a column to that DataFrame. map functions that return SeriesBoolean can
+* `map` functions always return a series with the same shape and index as the DataFrame they are applied to.
+This ensures they can be added as a column to that DataFrame. `map` functions that return SeriesBoolean can
 be used with to filter the data.
 
 
-* aggregate fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
-agg.
+* `aggregate` functions return aggregated data in some form from the DataFrame. Can also be accessed with
+`agg`.
 
-Mapping
+## Mapping
 
-| [modelhub.Map.is_first_session](#modelhub.Map.is_first_session)`Map.is_first_session`(data)
+| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Map.is_first_session`](Mapping/modelhub.Map.is-first-session/#modelhub.Map.is-first-session)(data)                        | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
+| [`Map.is_new_user`](Mapping/modelhub.Map.is-new-user/#modelhub.Map.is-new-user)(data[, time_aggregation])         | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
+| [`Map.is_conversion_event`](Mapping/modelhub.Map.is-conversion-event/#modelhub.Map.is-conversion-event)(data, name)               | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
+| [`Map.conversions_counter`](Mapping/modelhub.Map.conversions-counter/#modelhub.Map.conversions-counter)(data, name[, partition])  | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
+| [`Map.conversions_in_time`](Mapping/modelhub.Map.conversions-in-time/#modelhub.Map.conversions-in-time)(data, name[, partition])  | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
+| [`Map.pre_conversion_hit_number`](Mapping/modelhub.Map.pre-conversion-hit-number/#modelhub.Map.pre-conversion-hit-number)(data, name[, ...])  | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
 
- | Labels all hits in a session True if that session is the first session of that user in the data.
 
- |
-| [modelhub.Map.is_new_user](#modelhub.Map.is_new_user)`Map.is_new_user`(data[, time_aggregation])
 
-         | Labels all hits True if the user is first seen in the period given time_aggregation.
+## Aggregation
 
-                                                                                                                                  |
-| [modelhub.Map.is_conversion_event](#modelhub.Map.is_conversion_event)`Map.is_conversion_event`(data, name)
-
-               | Labels a hit True if it is a conversion event, all other hits are labeled False.
-
-                                                                                                                                      |
-| [modelhub.Map.conversions_counter](#modelhub.Map.conversions_counter)`Map.conversions_counter`(data, name[, partition])
-
-  | Counts the total number of conversions given a partition (ie session_id or user_id).
-
-                                                                                                                                  |
-| [modelhub.Map.conversions_in_time](#modelhub.Map.conversions_in_time)`Map.conversions_in_time`(data, name[, partition])
-
-  | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').
-
-                                                                                                   |
-| [modelhub.Map.pre_conversion_hit_number](#modelhub.Map.pre_conversion_hit_number)`Map.pre_conversion_hit_number`(data, name[, ...])
-
-  | Returns a count backwards from the first conversion, given the partition.
-
-                                                                                                                                             |
-Aggregation
-
-| [modelhub.Aggregate.unique_users](#modelhub.Aggregate.unique_users)`Aggregate.unique_users`(data[, groupby])
-
-           | Calculate the unique users in the Objectiv `data`.
-
-                                                                                                                                                                      |
-| [modelhub.Aggregate.unique_sessions](#modelhub.Aggregate.unique_sessions)`Aggregate.unique_sessions`(data[, groupby])
-
-        | Calculate the unique sessions in the Objectiv `data`.
-
-                                                                                                                                                                   |
-| [modelhub.Aggregate.session_duration](#modelhub.Aggregate.session_duration)`Aggregate.session_duration`(data[, groupby, ...])
-
-  | Calculate the duration of sessions.
-
-                                                                                                                                                                                   |
-| [modelhub.Aggregate.frequency](#modelhub.Aggregate.frequency)`Aggregate.frequency`(data)
-
-                         | Calculate a frequency table for the number of users by number of sessions.
-
-                                                                                                                                            |
+| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Aggregate.unique_users`](Aggregation/modelhub.Aggregate.unique-users/#modelhub.Aggregate.unique-users)(data[, groupby])           | Calculate the unique users in the Objectiv `data`.                                                                                                                                                                       |
+| [`Aggregate.unique_sessions`](Aggregation/modelhub.Aggregate.unique-sessions/#modelhub.Aggregate.unique-sessions)(data[, groupby])        | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
+| [`Aggregate.session_duration`](Aggregation/modelhub.Aggregate.session-duration/#modelhub.Aggregate.session-duration)(data[, groupby, ...])  | Calculate the duration of sessions.                                                                                                                                                                                    |
+| [`Aggregate.frequency`](Aggregation/modelhub.Aggregate.frequency/#modelhub.Aggregate.frequency)(data)                         | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |

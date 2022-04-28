@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-materialize
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/
 title: bach.DataFrame.materialize
 ---
 
-bach.DataFrame.materialize
+# bach.DataFrame.materialize
 
 
 #### DataFrame.materialize(node_name='manual_materialize', inplace=False, limit=None, distinct=False)
@@ -44,10 +44,10 @@ TODO: a known problem is that DataFrames with ‘json’ columns cannot be fully
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
-**NOTE**: Calling materialize() resets the order of the dataframe. Call [bach.DataFrame.sort_values](#bach.DataFrame.sort_values)`sort_values()` again on
+**NOTE**: Calling materialize() resets the order of the dataframe. Call [`sort_values()`](bach.DataFrame.sort-values/#bach.DataFrame.sort-values) again on
 the result if order is important.
 
 <!-- !! processed by numpydoc !! -->

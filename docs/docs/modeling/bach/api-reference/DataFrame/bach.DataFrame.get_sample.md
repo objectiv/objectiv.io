@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-sample
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/
 title: bach.DataFrame.get_sample
 ---
 
-bach.DataFrame.get_sample
+# bach.DataFrame.get_sample
 
 
 #### DataFrame.get_sample(table_name, filter=None, sample_percentage=None, overwrite=False, seed=None)
@@ -14,7 +14,7 @@ Returns a DataFrame whose data is a sample of the current DataFrame object.
 For the sample Dataframe to be created, all data is queried once and a persistent table is created to
 store the sample data used for the sampled DataFrame.
 
-Use [bach.DataFrame.get_unsampled](#bach.DataFrame.get_unsampled)`get_unsampled()` to switch back to the unsampled data later on. This returns a new
+Use [`get_unsampled()`](bach.DataFrame.get-unsampled/#bach.DataFrame.get-unsampled) to switch back to the unsampled data later on. This returns a new
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
 
@@ -24,7 +24,7 @@ DataFrame with all operations that have been done on the sample, applied to that
     * **table_name** (*str*) – the name of the underlying sql table that stores the sampled data.
 
 
-    * **filter** ([bach.SeriesBoolean](#bach.SeriesBoolean)*SeriesBoolean*) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
+    * **filter** (*SeriesBoolean*) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
     sample_percentage is ignored and thus the bernoulli sample creation is skipped.
 
 
@@ -48,7 +48,7 @@ DataFrame with all operations that have been done on the sample, applied to that
 
 * **Return type**
 
-    [bach.DataFrame](#bach.DataFrame)DataFrame
+    [DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: All data in the DataFrame to be sampled is queried to create the sample.

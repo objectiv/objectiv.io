@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-to-pandas
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.to-pandas/
 title: bach.DataFrame.to_pandas
 ---
 
-bach.DataFrame.to_pandas
+# bach.DataFrame.to_pandas
 
 
 #### DataFrame.to_pandas(limit=None)

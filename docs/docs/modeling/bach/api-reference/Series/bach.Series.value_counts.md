@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-value-counts
 slug: /modeling/bach/api-reference/Series/bach.Series.value-counts/
 title: bach.Series.value_counts
 ---
 
-bach.Series.value_counts
+# bach.Series.value_counts
 
 
 #### Series.value_counts(normalize=False, sort=True, ascending=False, bins=None, method='pandas')
@@ -49,7 +49,7 @@ Returns a series containing counts per unique value
 
 * **Return type**
 
-    [bach.series.series.Series](#bach.Series)bach.series.series.Series
+    [bach.series.series.Series](bach.Series/#bach.Series)
 
 
 <!-- !! processed by numpydoc !! -->

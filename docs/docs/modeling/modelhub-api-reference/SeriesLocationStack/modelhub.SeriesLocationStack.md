@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-series-location-stack-modelhub-series-location-stack
 slug: /modeling/modelhub-api-reference/SeriesLocationStack/modelhub.SeriesLocationStack/
 title: modelhub.SeriesLocationStack
 ---
 
-modelhub.SeriesLocationStack
+# modelhub.SeriesLocationStack
 
 
 ### _class_ modelhub.SeriesLocationStack(engine, base_node, index, name, expression, group_by, sorted_ascending, index_sorting)
@@ -15,19 +15,9 @@ Stack.
 <!-- !! processed by numpydoc !! -->
 ### Attributes
 
-| [modelhub.SeriesLocationStack.location_stack](#modelhub.SeriesLocationStack.location_stack)`location_stack`
- | Accessor for Objectiv location stack data.
-
- |
-| [modelhub.SeriesLocationStack.ls](#modelhub.SeriesLocationStack.ls)`ls`
-                                                | Accessor for Objectiv location stack data.
-
-                                                                                                                                                         |
-| [modelhub.SeriesLocationStack.obj](#modelhub.SeriesLocationStack.obj)`obj`
-                                               | Accessor for Objectiv stack data.
-
-                                                                                                                                                                  |
-| [modelhub.SeriesLocationStack.objectiv](#modelhub.SeriesLocationStack.objectiv)`objectiv`
-                                          | Accessor for Objectiv stack data.
-
-                                                                                                                                                                  |
+| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`location_stack`](modelhub.SeriesLocationStack.location-stack/#modelhub.SeriesLocationStack.location-stack)                                    | Accessor for Objectiv location stack data.                                                                                                                                                                             |
+| [`ls`](modelhub.SeriesLocationStack.ls/#modelhub.SeriesLocationStack.ls)                                                | Accessor for Objectiv location stack data.                                                                                                                                                                             |
+| [`obj`](modelhub.SeriesLocationStack.obj/#modelhub.SeriesLocationStack.obj)                                               | Accessor for Objectiv stack data.                                                                                                                                                                                      |
+| [`objectiv`](modelhub.SeriesLocationStack.objectiv/#modelhub.SeriesLocationStack.objectiv)                                          | Accessor for Objectiv stack data.                                                                                                                                                                                      |

@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-agg
 slug: /modeling/bach/api-reference/Series/bach.Series.agg/
 title: bach.Series.agg
 ---
 
-bach.Series.agg
+# bach.Series.agg
 
 
 #### Series.agg(func, group_by=None, \*args, \*\*kwargs)
@@ -37,7 +37,7 @@ Apply one or more aggregation functions to this Series.
 
 * **Return type**
 
-    *Union*[[bach.DataFrame](#bach.DataFrame)DataFrame, [bach.Series](#bach.Series)Series]
+    *Union*[[DataFrame](../DataFrame/bach.DataFrame/#bach.DataFrame), [Series](bach.Series/#bach.Series)]
 
 
 <!-- !! processed by numpydoc !! -->

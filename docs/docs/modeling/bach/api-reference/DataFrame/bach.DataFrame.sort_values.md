@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-sort-values
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values/
 title: bach.DataFrame.sort_values
 ---
 
-bach.DataFrame.sort_values
+# bach.DataFrame.sort_values
 
 
 #### DataFrame.sort_values(by, ascending=True)
@@ -15,7 +15,7 @@ This does not modify the current DataFrame, instead it returns a new DataFrame.
 
 The sorting will remain in the returned DataFrame as long as no operations are performed on that
 frame that materially change the selected data. Operations that materially change the selected data
-are for example [bach.DataFrame.groupby](#bach.DataFrame.groupby)`groupby()`, [bach.DataFrame.merge](#bach.DataFrame.merge)`merge()`, [bach.DataFrame.materialize](#bach.DataFrame.materialize)`materialize()`, and filtering out rows.
+are for example [`groupby()`](bach.DataFrame.groupby/#bach.DataFrame.groupby), [`merge()`](bach.DataFrame.merge/#bach.DataFrame.merge), [`materialize()`](bach.DataFrame.materialize/#bach.DataFrame.materialize), and filtering out rows.
 Adding or removing a column does not materially change the selected data.
 
 
@@ -26,7 +26,7 @@ Adding or removing a column does not materially change the selected data.
 
 
     * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
-    by must also be a list and `len(ascending) == len(by)`.
+    `by` must also be a list and `len(ascending) == len(by)`.
 
 
 
@@ -38,7 +38,7 @@ Adding or removing a column does not materially change the selected data.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

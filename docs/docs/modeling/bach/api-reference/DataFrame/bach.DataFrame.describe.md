@@ -1,16 +1,16 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-describe
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.describe/
 title: bach.DataFrame.describe
 ---
 
-bach.DataFrame.describe
+# bach.DataFrame.describe
 
 
 #### DataFrame.describe(percentiles=None, include=None, exclude=None, datetime_is_numeric=False)
 Returns descriptive statistics.
-The following statistics are considered: count, mean, std, min, max, nunique and mode
+The following statistics are considered: `count`, `mean`, `std`, `min`, `max`, `nunique` and `mode`
 
 
 * **Parameters**
@@ -40,7 +40,7 @@ The following statistics are considered: count, mean, std, min, max, nunique and
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

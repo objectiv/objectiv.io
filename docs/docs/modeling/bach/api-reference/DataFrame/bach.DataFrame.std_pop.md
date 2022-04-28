@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-std-pop
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.std-pop/
 title: bach.DataFrame.std_pop
 ---
 
-bach.DataFrame.std_pop
+# bach.DataFrame.std_pop
 
 
 #### DataFrame.std_pop(axis=1, skipna=True, level=None, ddof=1, numeric_only=False, \*\*kwargs)

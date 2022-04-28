@@ -1,17 +1,17 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-all-variable-usage
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-all-variable-usage/
 title: bach.DataFrame.get_all_variable_usage
 ---
 
-bach.DataFrame.get_all_variable_usage
+# bach.DataFrame.get_all_variable_usage
 
 
 #### DataFrame.get_all_variable_usage()
 Get all variables that influence the values of this DataFrame.
-This includes both variables that are used in the current self.series, but also variables that
-were used in earlier steps, i.e. in the SqlModels of self.base_node.
+This includes both variables that are used in the current `self.series`, but also variables that
+were used in earlier steps, i.e. in the SqlModels of `self.base_node`.
 
 The output of this method can be useful for diagnosing issues with variables. If a variable is used
 multiple times, then it will appear here multiple times. If a variable has conflicting definitions
@@ -28,7 +28,7 @@ This method returns a list of DefinedVariable tuples, the fields in the tuples:
 * dtype: dtype
 
 
-* value: value that is currently set in self.variables, or None if there is no value
+* value: value that is currently set in `self.variables`, or None if there is no value
 
 
 * ref_path: If the variable is used in an already materialized part of the DataFrame, i.e.

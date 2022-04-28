@@ -1,15 +1,15 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-aggregate
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.aggregate/
 title: modelhub.ModelHub.aggregate
 ---
 
-modelhub.ModelHub.aggregate
+# modelhub.ModelHub.aggregate
 
 
 #### _property_ ModelHub.aggregate()
-Access aggregation methods from the model hub. Same as [modelhub.ModelHub.agg](#modelhub.ModelHub.agg)`agg`.
+Access aggregation methods from the model hub. Same as [`agg`](modelhub.ModelHub.agg/#modelhub.ModelHub.agg).
 
 
 #### _class_ Aggregate(mh)
@@ -23,7 +23,7 @@ Calculate a frequency table for the number of users by number of sessions.
 
 * **Parameters**
 
-    **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
 
@@ -37,19 +37,19 @@ Calculate a frequency table for the number of users by number of sessions.
 #### Aggregate.session_duration(data, groupby=NotSet.token, exclude_bounces=True, method='mean')
 Calculate the duration of sessions.
 
-With default method, it calculates the mean of the session duration over the groupby.
+With default `method`, it calculates the mean of the session duration over the `groupby`.
 
 
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **groupby** – sets the column(s) to group by.
 
 
-        * if not_set it defaults to using [modelhub.ModelHub.time_agg](#modelhub.ModelHub.time_agg)`ModelHub.time_agg`.
+        * if not_set it defaults to using [`ModelHub.time_agg`](modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
 
         * if None it aggregates over all data.
@@ -74,13 +74,13 @@ Calculate the unique sessions in the Objectiv `data`.
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **groupby** – sets the column(s) to group by.
 
 
-        * if not_set it defaults to using [modelhub.ModelHub.time_agg](#modelhub.ModelHub.time_agg)`ModelHub.time_agg`.
+        * if not_set it defaults to using [`ModelHub.time_agg`](modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
 
         * if None it aggregates over all data.
@@ -102,13 +102,13 @@ Calculate the unique users in the Objectiv `data`.
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **groupby** – sets the column(s) to group by.
 
 
-        * if not_set it defaults to using [modelhub.ModelHub.time_agg](#modelhub.ModelHub.time_agg)`ModelHub.time_agg`.
+        * if not_set it defaults to using [`ModelHub.time_agg`](modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
 
         * if None it aggregates over all data.

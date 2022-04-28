@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-dummies
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-dummies/
 title: bach.DataFrame.get_dummies
 ---
 
-bach.DataFrame.get_dummies
+# bach.DataFrame.get_dummies
 
 
 #### DataFrame.get_dummies(prefix=None, prefix_sep='_', dummy_na=False, columns=None, dtype='int64')
@@ -40,7 +40,7 @@ Convert each unique category/value from a string series into a dummy/indicator v
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: DataFrame should contain at least one index level.

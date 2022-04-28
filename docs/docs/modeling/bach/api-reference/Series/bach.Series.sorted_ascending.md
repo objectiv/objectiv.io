@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-sorted-ascending
 slug: /modeling/bach/api-reference/Series/bach.Series.sorted-ascending/
 title: bach.Series.sorted_ascending
 ---
 
-bach.Series.sorted_ascending
+# bach.Series.sorted_ascending
 
 
 #### _property_ Series.sorted_ascending(_: Optional[bool_ )

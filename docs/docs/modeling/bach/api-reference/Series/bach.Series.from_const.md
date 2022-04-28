@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-from-const
 slug: /modeling/bach/api-reference/Series/bach.Series.from-const/
 title: bach.Series.from_const
 ---
 
-bach.Series.from_const
+# bach.Series.from_const
 
 
 #### _classmethod_ Series.from_const(base, value, name)

@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-series-bach-series-nunique
 slug: /modeling/bach/api-reference/Series/bach.Series.nunique/
 title: bach.Series.nunique
 ---
 
-bach.Series.nunique
+# bach.Series.nunique
 
 
 #### Series.nunique(partition=None, skipna=True)
@@ -15,7 +15,7 @@ Returns the amount of unique values in each partition or for all values if none 
 * **Parameters**
 
     
-    * **partition** (*Union**[**GroupBy**, *[bach.DataFrame](#bach.DataFrame)*DataFrame**]*) – The partition or window to apply
+    * **partition** (*Union**[**GroupBy**, *[*DataFrame*](../DataFrame/bach.DataFrame/#bach.DataFrame)*]*) – The partition or window to apply
 
 
     * **skipna** (*bool*) – only `skipna=True` supported. This means NULL values are ignored.

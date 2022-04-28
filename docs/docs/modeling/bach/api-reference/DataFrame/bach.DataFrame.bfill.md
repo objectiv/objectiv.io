@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-bfill
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.bfill/
 title: bach.DataFrame.bfill
 ---
 
-bach.DataFrame.bfill
+# bach.DataFrame.bfill
 
 
 #### DataFrame.bfill(sort_by=None, ascending=True)
@@ -21,7 +21,7 @@ Fill missing values by using the next non-nullable value in each series.
 
 
     * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
-    sort_by must also be a list and `len(ascending) == len(sort_by)`.
+    `sort_by` must also be a list and `len(ascending) == len(sort_by)`.
 
 
 
@@ -33,7 +33,7 @@ Fill missing values by using the next non-nullable value in each series.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: sort_by is required if DataFrame has no order_by.

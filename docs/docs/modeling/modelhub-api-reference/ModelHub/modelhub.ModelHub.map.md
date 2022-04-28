@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-map
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.map/
 title: modelhub.ModelHub.map
 ---
 
-modelhub.ModelHub.map
+# modelhub.ModelHub.map
 
 
 #### _property_ ModelHub.map()
@@ -29,7 +29,7 @@ or user_id).
 
     
     * **name** – the name of the conversion to label as set in
-    [modelhub.ModelHub.conversion_events](#modelhub.ModelHub.conversion_events)`ModelHub.conversion_events`.
+    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column
@@ -39,7 +39,7 @@ or user_id).
 
 * **Returns**
 
-    [bach.SeriesBoolean](#bach.SeriesBoolean)`bach.SeriesBoolean` with the same index as `data`.
+    `bach.SeriesBoolean` with the same index as `data`.
 
 
 <!-- !! processed by numpydoc !! -->
@@ -52,11 +52,11 @@ or ‘user_id’).
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [modelhub.ModelHub.conversion_events](#modelhub.ModelHub.conversion_events)`ModelHub.conversion_events`.
+    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column
@@ -78,17 +78,17 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [modelhub.ModelHub.conversion_events](#modelhub.ModelHub.conversion_events)`ModelHub.conversion_events`.
+    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
 
 * **Returns**
 
-    [bach.SeriesBoolean](#bach.SeriesBoolean)`bach.SeriesBoolean` with the same index as `data`.
+    `bach.SeriesBoolean` with the same index as `data`.
 
 
 <!-- !! processed by numpydoc !! -->
@@ -99,35 +99,35 @@ Labels all hits in a session True if that session is the first session of that u
 
 * **Parameters**
 
-    **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
 
 * **Returns**
 
-    [bach.SeriesBoolean](#bach.SeriesBoolean)`bach.SeriesBoolean` with the same index as `data`.
+    `bach.SeriesBoolean` with the same index as `data`.
 
 
 <!-- !! processed by numpydoc !! -->
 
 #### Map.is_new_user(data, time_aggregation=None)
-Labels all hits True if the user is first seen in the period given time_aggregation.
+Labels all hits True if the user is first seen in the period given `time_aggregation`.
 
 
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
-    * **time_aggregation** – if None, it uses the [modelhub.ModelHub.time_aggregation](#modelhub.ModelHub.time_aggregation)`ModelHub.time_aggregation` set in ModelHub
+    * **time_aggregation** – if None, it uses the [`ModelHub.time_aggregation`](modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
     instance.
 
 
 
 * **Returns**
 
-    [bach.SeriesBoolean](#bach.SeriesBoolean)`bach.SeriesBoolean` with the same index as `data`.
+    `bach.SeriesBoolean` with the same index as `data`.
 
 
 <!-- !! processed by numpydoc !! -->
@@ -141,11 +141,11 @@ in the partition or after the first conversion.
 * **Parameters**
 
     
-    * **data** – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
     * **name** – the name of the conversion to label as set in
-    [modelhub.ModelHub.conversion_events](#modelhub.ModelHub.conversion_events)`ModelHub.conversion_events`.
+    [`ModelHub.conversion_events`](modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
 
 
     * **partition** – the partition over which the number of conversions are counted. Can be any column

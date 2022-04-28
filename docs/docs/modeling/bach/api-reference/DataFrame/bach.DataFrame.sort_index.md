@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-sort-index
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_/
 title: bach.DataFrame.sort_index
 ---
 
-bach.DataFrame.sort_index
+# bach.DataFrame.sort_index
 
 
 #### DataFrame.sort_index(level=None, ascending=True)
@@ -20,7 +20,7 @@ Sort dataframe by index levels.
 
 
     * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
-    level must also be a list and `len(ascending) == len(level)`.
+    `level` must also be a list and `len(ascending) == len(level)`.
 
 
 
@@ -33,7 +33,7 @@ Sort dataframe by index levels.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 <!-- !! processed by numpydoc !! -->

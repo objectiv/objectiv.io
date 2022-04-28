@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-table
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-table/
 title: bach.DataFrame.from_table
 ---
 
-bach.DataFrame.from_table
+# bach.DataFrame.from_table
 
 
 #### _classmethod_ DataFrame.from_table(engine, table_name, index, all_dtypes=None)
@@ -42,7 +42,7 @@ schema.
 
 * **Return type**
 
-    [bach.dataframe.DataFrame](#bach.DataFrame)bach.dataframe.DataFrame
+    [bach.dataframe.DataFrame](bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: If all_dtypes is not set, then this will query the database.

@@ -1,11 +1,11 @@
 ---
-date: '2022-04-26T12:27:56.237Z'
+date: '2022-04-28T14:46:08.106Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-time-agg
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/
 title: modelhub.ModelHub.time_agg
 ---
 
-modelhub.ModelHub.time_agg
+# modelhub.ModelHub.time_agg
 
 
 #### ModelHub.time_agg(data, time_aggregation=None)
@@ -17,12 +17,12 @@ Can be used to aggregate to different time intervals, ie day, month etc.
 * **Parameters**
 
     
-    * **data** ([bach.dataframe.DataFrame](#bach.DataFrame)*bach.dataframe.DataFrame*) – [bach.DataFrame](#bach.DataFrame)`bach.DataFrame` to apply the method on.
+    * **data** ([*bach.dataframe.DataFrame*](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](../../bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
-    * **time_aggregation** (*Optional**[**str**]*) – if None, it uses [modelhub.ModelHub.time_aggregation](#modelhub.ModelHub.time_aggregation)`time_aggregation` set from the
+    * **time_aggregation** (*Optional**[**str**]*) – if None, it uses [`time_aggregation`](modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set from the
     ModelHub. Use any template for aggregation from:
-    https://www.postgresql.org/docs/14/functions-formatting.html
+    [https://www.postgresql.org/docs/14/functions-formatting.html](https://www.postgresql.org/docs/14/functions-formatting.html)
     ie. `time_aggregation=='YYYY-MM-DD'` aggregates by date.
 
 
@@ -35,7 +35,7 @@ Can be used to aggregate to different time intervals, ie day, month etc.
 
 * **Return type**
 
-    [bach.series.series_string.SeriesString](#bach.SeriesString)bach.series.series_string.SeriesString
+    bach.series.series_string.SeriesString
 
 
 <!-- !! processed by numpydoc !! -->
