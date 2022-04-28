@@ -2,7 +2,7 @@
 sidebar_position: 1
 slug: /
 title: ""
-description: Objectiv is open-source infrastructure for product analytics. Collect rich, model-ready data and feed it straight into your data warehouse. Cut down delivery times of data projects with reusable and prebuilt models.
+description: Objectiv is product analytics infrastructure with a generic event taxonomy. Capture validated user behavior data straight into your data warehouse, and speed up product analytics projects with pre-built and reusable models.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -13,7 +13,7 @@ const slackJoinLink = '/join-slack';
 const config = {
   title: "Open-source product analytics infrastructure with a generic event taxonomy",
   titleDelimiter: '|',
-  tagline: 'Use Objectiv to capture validated user behavior data, feed it straight into your data warehouse, and speed up product analytics projects with pre-built and reusable models.', //meta description, and og:description
+  tagline: 'Use Objectiv to capture validated user behavior data straight into your data warehouse, and speed up product analytics projects with pre-built and reusable models.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
