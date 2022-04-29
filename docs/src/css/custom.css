@@ -306,7 +306,7 @@ div.docs-wrapper footer div.col:nth-child(2) {
 /** DOCS - Modeling **/
 
 @media screen and (min-width: 966px) { /* desktop */
-  h2.signature-class {
+  h2.signature-class, h2.signature-method {
     margin-top: -40px;
     padding-right: 75px;
   }
