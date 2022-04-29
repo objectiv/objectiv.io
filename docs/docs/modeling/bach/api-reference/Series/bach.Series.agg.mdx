@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-series-bach-series-agg
 slug: /modeling/bach/api-reference/Series/bach.Series.agg/
 title: agg
@@ -8,7 +8,13 @@ title: agg
 # bach.Series.agg
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">agg(</span><small class="parameter-list"><span class="parameter" id="func">func</span>, <span class="parameter" id="group_by">group_by=None</span>, <span class="parameter" id="*">\*args</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">agg(</span><small class="parameter-list"><span class="parameter" id="func">func</span>, <span class="parameter" id="group_by">group_by=None</span>, <span class="parameter" id="*">\*args</span>, <span class="parameter" id="**">\*\*kwargs</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,10 +24,10 @@ Apply one or more aggregation functions to this Series.
 
 ### Parameters
 
-* **`func`** (_Union_[_str_, _Callable_, _List_[_Union_[_Callable_, _str_]_]_]) – the aggregation function to look for on all series.
+* **`func`** (Union[str, Callable, List[Union[Callable, str]]]) – the aggregation function to look for on all series.
 See GroupBy.agg() for supported arguments
 
-* **`group_by`** (_GroupBy) – the group_by to use, or aggregation over full base_node if None
+* **`group_by`** (GroupBy) – the group_by to use, or aggregation over full base_node if None
 
 * **`args`** – Positional arguments to pass through to the aggregation function
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-model
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-model/
 title: from_model
@@ -8,7 +8,13 @@ title: from_model
 # bach.DataFrame.from_model
 
 <div class="method">
-<h2 class="signature-class"><span class="type-annotation"><em>classmethod</em></span> <span class="additional-name">DataFrame.</span><span class="name">from_model(</span><small class="parameter-list"><span class="parameter" id="engine">engine</span>, <span class="parameter" id="model">model</span>, <span class="parameter" id="index">index</span>, <span class="parameter" id="all_dtypes">all_dtypes=None</span></small>)</h2>
+<h2 class="signature-class"><span class="type-annotation"><em>classmethod</em></span> <span class="additional-name">DataFrame.</span><span class="name">from_model(</span><small class="parameter-list"><span class="parameter" id="engine">engine</span>, <span class="parameter" id="model">model</span>, <span class="parameter" id="index">index</span>, <span class="parameter" id="all_dtypes">all_dtypes=None</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -21,14 +27,14 @@ If all_dtypes is not specified, then a transaction scoped temporary table will b
 
 ### Parameters
 
-* **`engine`** (_sqlalchemy.engine.base.Engine) – a sqlalchemy engine for the database.
+* **`engine`** (sqlalchemy.engine.base.Engine) – a sqlalchemy engine for the database.
 
-* **`model`** (_sql_models.model.SqlModel) – an SqlModel that specifies the queries to instantiate as DataFrame.
+* **`model`** (sql_models.model.SqlModel) – an SqlModel that specifies the queries to instantiate as DataFrame.
 
-* **`index`** (_List_[_str_]) – list of column names that make up the index. At least one column needs to be
+* **`index`** (List[str]) – list of column names that make up the index. At least one column needs to be
 selected for the index.
 
-* **`all_dtypes`** (_Optional_[_Dict_[_str_, _str_]_]) – Optional. Mapping from column name to dtype.
+* **`all_dtypes`** (Optional[Dict[str, str]]) – Optional. Mapping from column name to dtype.
 Must contain all index and data columns.
 Must be in same order as the columns appear in the the sql-model.
 

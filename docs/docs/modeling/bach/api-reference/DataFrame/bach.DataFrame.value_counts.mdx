@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-data-frame-bach-data-frame-value-counts
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/
 title: value_counts
@@ -8,7 +8,13 @@ title: value_counts
 # bach.DataFrame.value_counts
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">value_counts(</span><small class="parameter-list"><span class="parameter" id="subset">subset=None</span>, <span class="parameter" id="normalize">normalize=False</span>, <span class="parameter" id="sort">sort=True</span>, <span class="parameter" id="ascending">ascending=False</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">value_counts(</span><small class="parameter-list"><span class="parameter" id="subset">subset=None</span>, <span class="parameter" id="normalize">normalize=False</span>, <span class="parameter" id="sort">sort=True</span>, <span class="parameter" id="ascending">ascending=False</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,15 +24,15 @@ Returns a series containing counts of each unique row in the DataFrame
 
 ### Parameters
 
-* **`subset`** (_Optional_[_List_[_str_]_]) – a list of series labels to be used when counting. If subset is not provided and
+* **`subset`** (Optional[List[str]]) – a list of series labels to be used when counting. If subset is not provided and
 dataframe has no group_by, all data columns will be used. In case the DataFrame has a group_by,
 series in group_by will be added to subset.
 
-* **`normalize`** (_bool) – returns proportions instead of frequencies
+* **`normalize`** (bool) – returns proportions instead of frequencies
 
-* **`sort`** (_bool) – sorts result by frequencies
+* **`sort`** (bool) – sorts result by frequencies
 
-* **`ascending`** (_bool) – sorts values in ascending order if true.
+* **`ascending`** (bool) – sorts values in ascending order if true.
 
 
 

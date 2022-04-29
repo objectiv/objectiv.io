@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-series-bach-series-fillna
 slug: /modeling/bach/api-reference/Series/bach.Series.fillna/
 title: fillna
@@ -8,7 +8,13 @@ title: fillna
 # bach.Series.fillna
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">fillna(</span><small class="parameter-list"><span class="parameter" id="other">other</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">fillna(</span><small class="parameter-list"><span class="parameter" id="other">other</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -20,7 +26,7 @@ In case a Series is given, the value from the same row is used to fill.
 
 ### Parameters
 
-**`other`** (_Union_[_int_, _numpy.int64_, _float_, _numpy.float64_, _bool_, _None_, _str_, _datetime.date_, _datetime.time_, _datetime.datetime_, _datetime.timedelta_, _numpy.timedelta64_, _uuid.UUID_, _dict_, _list_]) – The value to replace the NULL values with. Should be a supported
+**`other`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list]) – The value to replace the NULL values with. Should be a supported
 type by the series, or a TypeError is raised. Can also be another Series
 
 

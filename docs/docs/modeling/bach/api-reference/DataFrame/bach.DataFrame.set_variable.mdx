@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-variable
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set-variable/
 title: set_variable
@@ -8,7 +8,13 @@ title: set_variable
 # bach.DataFrame.set_variable
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">set_variable(</span><small class="parameter-list"><span class="parameter" id="name">name</span>, <span class="parameter" id="value">value</span>, <span class="parameter" id="*">\*</span>, <span class="parameter" id="dtype">dtype=None</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">set_variable(</span><small class="parameter-list"><span class="parameter" id="name">name</span>, <span class="parameter" id="value">value</span>, <span class="parameter" id="*">\*</span>, <span class="parameter" id="dtype">dtype=None</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,11 +24,11 @@ Return a copy of this DataFrame with the variable value updated.
 
 ### Parameters
 
-* **`name`** (_str) – name of variable to update
+* **`name`** (str) – name of variable to update
 
-* **`value`** (_Any) – new value of variable
+* **`value`** (Any) – new value of variable
 
-* **`dtype`** (_Optional_[_str_]) – optional. If not set it will be derived from the value, if set we check that it
+* **`dtype`** (Optional[str]) – optional. If not set it will be derived from the value, if set we check that it
 matches the value. If dtype doesn’t match the value’s dtype, then an Exception is raised.
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-index
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set_/
 title: set_index
@@ -8,7 +8,13 @@ title: set_index
 # bach.DataFrame.set_index
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">set_index(</span><small class="parameter-list"><span class="parameter" id="keys">keys</span>, <span class="parameter" id="drop">drop=True</span>, <span class="parameter" id="append">append=False</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">set_index(</span><small class="parameter-list"><span class="parameter" id="keys">keys</span>, <span class="parameter" id="drop">drop=True</span>, <span class="parameter" id="append">append=False</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,7 +24,7 @@ Set this dataframe’s index to the the index given in keys
 
 ### Parameters
 
-* **`keys`** (_Union_[_str_, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series), Sequence[Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
+* **`keys`** (Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series), Sequence[Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
 Series are passed, they should have the same base node as the DataFrame they are set on.
 
 * **`drop`** (bool) – delete columns to be used as the new index.

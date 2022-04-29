@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-data-frame-bach-data-frame-fillna
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna/
 title: fillna
@@ -8,7 +8,13 @@ title: fillna
 # bach.DataFrame.fillna
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">fillna(</span><small class="parameter-list"><span class="parameter" id="*">\*</span>, <span class="parameter" id="value">value=None</span>, <span class="parameter" id="method">method=None</span>, <span class="parameter" id="axis">axis=0</span>, <span class="parameter" id="sort_by">sort_by=None</span>, <span class="parameter" id="ascending">ascending=True</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">fillna(</span><small class="parameter-list"><span class="parameter" id="*">\*</span>, <span class="parameter" id="value">value=None</span>, <span class="parameter" id="method">method=None</span>, <span class="parameter" id="axis">axis=0</span>, <span class="parameter" id="sort_by">sort_by=None</span>, <span class="parameter" id="ascending">ascending=True</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,7 +24,7 @@ Fill any NULL value using a method or with a given value.
 
 ### Parameters
 
-* **`value`** (_Union_[[Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]]]) – A literal/series to fill all NULL values on each series
+* **`value`** (Union[[Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]]]) – A literal/series to fill all NULL values on each series
 or a dictionary specifying which literal/series to use for each series.
 
 * **`method`** (Optional[str]) – Method to use for filling NULL values on all DataFrame series. Supported values:

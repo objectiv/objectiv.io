@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T14:20:20.782Z'
+date: '2022-04-29T16:21:57.288Z'
 id: bach-api-reference-series-bach-series-value-counts
 slug: /modeling/bach/api-reference/Series/bach.Series.value-counts/
 title: value_counts
@@ -8,7 +8,13 @@ title: value_counts
 # bach.Series.value_counts
 
 <div class="method">
-<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">value_counts(</span><small class="parameter-list"><span class="parameter" id="normalize">normalize=False</span>, <span class="parameter" id="sort">sort=True</span>, <span class="parameter" id="ascending">ascending=False</span>, <span class="parameter" id="bins">bins=None</span>, <span class="parameter" id="method">method='pandas'</span></small>)</h2>
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">value_counts(</span><small class="parameter-list"><span class="parameter" id="normalize">normalize=False</span>, <span class="parameter" id="sort">sort=True</span>, <span class="parameter" id="ascending">ascending=False</span>, <span class="parameter" id="bins">bins=None</span>, <span class="parameter" id="method">method='pandas'</span></small>
+<span class="view-code-link">
+
+[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)
+
+</span>
+)</h2>
 
 
 <div class="content">
@@ -18,16 +24,16 @@ Returns a series containing counts per unique value
 
 ### Parameters
 
-* **`normalize`** (_bool) – returns proportions instead of frequencies
+* **`normalize`** (bool) – returns proportions instead of frequencies
 
-* **`sort`** (_bool) – sorts result by frequencies
+* **`sort`** (bool) – sorts result by frequencies
 
-* **`ascending`** (_bool) – sorts values in ascending order if true.
+* **`ascending`** (bool) – sorts values in ascending order if true.
 
-* **`bins`** (_Optional_[_int_]) – works only with numeric series, groups values into the request amount of bins
+* **`bins`** (Optional[int]) – works only with numeric series, groups values into the request amount of bins
 and counts values based on each range.
 
-* **`method`** (_str) – Method to use for calculating bin ranges.
+* **`method`** (str) – Method to use for calculating bin ranges.
 Supported values:
 
 >   * ”pandas” (default): Performs bound adjustments based on Pandas implementation.
