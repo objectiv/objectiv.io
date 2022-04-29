@@ -305,6 +305,18 @@ div.docs-wrapper footer div.col:nth-child(2) {
 
 /** DOCS - Modeling **/
 
+@media screen and (min-width: 966px) { /* desktop */
+  h2.signature-class {
+    margin-top: -40px;
+    padding-right: 75px;
+  }
+  span.view-source {
+    float: right;
+    margin-top: 5px;
+  }
+}
+
+
 /* Make API reference titles a bit smaller */
 h1[id^=bach-dataframe], h1[id^=bach-series], h1[id^=modelhub] {
   font-size: 32px;
