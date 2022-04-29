@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-value-counts
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/
 title: value_counts
@@ -16,33 +16,29 @@ title: value_counts
 Returns a series containing counts of each unique row in the DataFrame
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **subset** (*Optional**[**List**[**str**]**]*) – a list of series labels to be used when counting. If subset is not provided and
-    dataframe has no group_by, all data columns will be used. In case the DataFrame has a group_by,
-    series in group_by will be added to subset.
+* **`subset`** (_Optional_[_List_[_str_]_]) – a list of series labels to be used when counting. If subset is not provided and
+dataframe has no group_by, all data columns will be used. In case the DataFrame has a group_by,
+series in group_by will be added to subset.
 
+* **`normalize`** (_bool) – returns proportions instead of frequencies
 
-    * **normalize** (*bool*) – returns proportions instead of frequencies
+* **`sort`** (_bool) – sorts result by frequencies
 
-
-    * **sort** (*bool*) – sorts result by frequencies
-
-
-    * **ascending** (*bool*) – sorts values in ascending order if true.
+* **`ascending`** (_bool) – sorts values in ascending order if true.
 
 
 
-* **Returns**
+### Returns
 
-    a series containing all counts per unique row.
+a series containing all counts per unique row.
 
 
 
-* **Return type**
+### Return type
 
-    [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
+[Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
 
 
 

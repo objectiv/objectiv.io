@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-sample
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/
 title: get_sample
@@ -22,37 +22,32 @@ Use [`get_unsampled()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFra
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **table_name** (*str*) – the name of the underlying sql table that stores the sampled data.
+* **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
 
+* **`filter`** (SeriesBoolean) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
+sample_percentage is ignored and thus the bernoulli sample creation is skipped.
 
-    * **filter** (*SeriesBoolean*) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
-    sample_percentage is ignored and thus the bernoulli sample creation is skipped.
+* **`sample_percentage`** (int) – the approximate size of the sample as a proportion of all rows.
+Between 0-100.
 
+* **`overwrite`** (bool) – if True, the sample data is written to table_name, even if that table already
+exists.
 
-    * **sample_percentage** (*int*) – the approximate size of the sample as a proportion of all rows.
-    Between 0-100.
-
-
-    * **overwrite** (*bool*) – if True, the sample data is written to table_name, even if that table already
-    exists.
-
-
-    * **seed** (*int*) – optional seed number used to generate the sample.
+* **`seed`** (int) – optional seed number used to generate the sample.
 
 
 
-* **Returns**
+### Returns
 
-    a sampled DataFrame of the current DataFrame.
+a sampled DataFrame of the current DataFrame.
 
 
 
-* **Return type**
+### Return type
 
-    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: All data in the DataFrame to be sampled is queried to create the sample.

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-table
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-table/
 title: from_table
@@ -19,34 +19,30 @@ If all_dtypes is not specified, the column dtypes are queried from the database�
 schema.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **engine** (*sqlalchemy.engine.base.Engine*) – an sqlalchemy engine for the database.
+* **`engine`** (_sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
 
+* **`table_name`** (_str) – the table name that contains the data to instantiate as DataFrame.
 
-    * **table_name** (*str*) – the table name that contains the data to instantiate as DataFrame.
+* **`index`** (_List_[_str_]) – list of column names that make up the index. At least one column needs to be
+selected for the index.
 
-
-    * **index** (*List**[**str**]*) – list of column names that make up the index. At least one column needs to be
-    selected for the index.
-
-
-    * **all_dtypes** (*Optional**[**Dict**[**str**, **str**]**]*) – Optional. Mapping from column name to dtype.
-    Must contain all index and data columns.
-    Must be in same order as the columns appear in the the sql-model.
+* **`all_dtypes`** (_Optional_[_Dict_[_str_, _str_]_]) – Optional. Mapping from column name to dtype.
+Must contain all index and data columns.
+Must be in same order as the columns appear in the the sql-model.
 
 
 
-* **Returns**
+### Returns
 
-    A DataFrame based on a sql table.
+A DataFrame based on a sql table.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: If all_dtypes is not set, then this will query the database.

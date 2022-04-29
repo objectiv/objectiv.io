@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-agg
 slug: /modeling/bach/api-reference/Series/bach.Series.agg/
 title: agg
@@ -16,32 +16,28 @@ title: agg
 Apply one or more aggregation functions to this Series.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **func** (*Union**[**str**, **Callable**, **List**[**Union**[**Callable**, **str**]**]**]*) – the aggregation function to look for on all series.
-    See GroupBy.agg() for supported arguments
+* **`func`** (_Union_[_str_, _Callable_, _List_[_Union_[_Callable_, _str_]_]_]) – the aggregation function to look for on all series.
+See GroupBy.agg() for supported arguments
 
+* **`group_by`** (_GroupBy) – the group_by to use, or aggregation over full base_node if None
 
-    * **group_by** (*GroupBy*) – the group_by to use, or aggregation over full base_node if None
+* **`args`** – Positional arguments to pass through to the aggregation function
 
-
-    * **args** – Positional arguments to pass through to the aggregation function
-
-
-    * **kwargs** – Keyword arguments to pass through to the aggregation function
+* **`kwargs`** – Keyword arguments to pass through to the aggregation function
 
 
 
-* **Returns**
+### Returns
 
-    Aggregated Series, or DataFrame if multiple series are returned
+Aggregated Series, or DataFrame if multiple series are returned
 
 
 
-* **Return type**
+### Return type
 
-    *Union*[[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]
+*Union*[[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]
 
 
 

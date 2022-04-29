@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-index
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set_/
 title: set_index
@@ -16,29 +16,26 @@ title: set_index
 Set this dataframe’s index to the the index given in keys
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **keys** (*Union**[**str**, *[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*, **Sequence**[**Union**[**str**, *[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]**]**]*) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
-    Series are passed, they should have the same base node as the DataFrame they are set on.
+* **`keys`** (_Union_[_str_, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series), Sequence[Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
+Series are passed, they should have the same base node as the DataFrame they are set on.
 
+* **`drop`** (bool) – delete columns to be used as the new index.
 
-    * **drop** (*bool*) – delete columns to be used as the new index.
-
-
-    * **append** (*bool*) – whether to append to the existing index or replace.
+* **`append`** (bool) – whether to append to the existing index or replace.
 
 
 
-* **Returns**
+### Returns
 
-    a DataFrame with the new index.
+a DataFrame with the new index.
 
 
 
-* **Return type**
+### Return type
 
-    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

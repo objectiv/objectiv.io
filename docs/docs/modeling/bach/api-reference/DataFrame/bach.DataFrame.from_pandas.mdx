@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-pandas
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-pandas/
 title: from_pandas
@@ -21,10 +21,8 @@ convert_objects is set to True, other columns are converted to supported data ty
 
 How the data is loaded depends on the chosen materialization:
 
-
 1. ‘table’: This will first write the data to a database table using pandas
 `pandas.DataFrame.to_sql()` method.
-
 
 2. ‘cte’: The data will be represented using a common table expression of the form
 `select \* from values` in future queries.
@@ -38,56 +36,45 @@ There are some small differences between how the different materializations hand
 ‘cte’ does not support those for non-numeric columns, whereas ‘table’ converts them to ‘NULL’.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **engine** (*sqlalchemy.engine.base.Engine*) – an sqlalchemy engine for the database.
+* **`engine`** (_sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
 
+* **`df`** (_pandas.core.frame.DataFrame) – Pandas DataFrame to instantiate as DataFrame.
 
-    * **df** (*pandas.core.frame.DataFrame*) – Pandas DataFrame to instantiate as DataFrame.
+* **`convert_objects`** (_bool) – If True, the data in the columns with dtypes not in the list of supported
+dtypes are checked they contain supported data types. ‘Object’ columns that contain strings are
+converted to the ‘string’ dtype and loaded accordingly. Other types can only be loaded if
+materialization is ‘cte’ and the type is supported as Bach Series.
 
+* **`name`** (_str) –   * For ‘table’ materialization: name of the table that Pandas will write the data to.
 
-    * **convert_objects** (*bool*) – If True, the data in the columns with dtypes not in the list of supported
-    dtypes are checked they contain supported data types. ‘Object’ columns that contain strings are
-    converted to the ‘string’ dtype and loaded accordingly. Other types can only be loaded if
-    materialization is ‘cte’ and the type is supported as Bach Series.
-
-
-    * **name** (*str*) – 
-        * For ‘table’ materialization: name of the table that Pandas will write the data to.
+  * For ‘cte’ materialization: name of the node in the underlying SqlModel graph.
 
 
-        * For ‘cte’ materialization: name of the node in the underlying SqlModel graph.
+* **`materialization`** (_str) – {‘cte’, ‘table’}. How to materialize the data.
 
+* **`if_exists`** (_str) – {‘fail’, ‘replace’, ‘append’}. Only applies to `materialization=’table’`
+How to behave if the table already exists:
 
+  * fail: Raise a ValueError.
 
-    * **materialization** (*str*) – {‘cte’, ‘table’}. How to materialize the data.
+  * replace: Drop the table before inserting new values.
 
-
-    * **if_exists** (*str*) – {‘fail’, ‘replace’, ‘append’}. Only applies to `materialization=’table’`
-    How to behave if the table already exists:
-
-
-        * fail: Raise a ValueError.
-
-
-        * replace: Drop the table before inserting new values.
-
-
-        * append: Insert new values to the existing table.
+  * append: Insert new values to the existing table.
 
 
 
 
-* **Returns**
+### Returns
 
-    A DataFrame based on a pandas DataFrame
+A DataFrame based on a pandas DataFrame
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **WARNING**: This method is only suited for small quantities of data.

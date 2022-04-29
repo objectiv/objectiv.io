@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-minmax-scale
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.minmax-scale/
 title: minmax_scale
@@ -16,21 +16,21 @@ title: minmax_scale
 Scales all numeric series based on a given range.
 
 
-* **Parameters**
+### Parameters
 
-    **feature_range** (*Tuple**[**int**, **int**]*) – `tuple(min, max)` desired range to use for scaling.
-
-
-
-* **Returns**
-
-    DataFrame
+**`feature_range`** (_Tuple_[_int_, _int_]) – `tuple(min, max)` desired range to use for scaling.
 
 
 
-* **Return type**
+### Returns
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+DataFrame
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 Each transformation per feature is performed as follows:
@@ -42,15 +42,11 @@ Each transformation per feature is performed as follows:
 ```
 
 Where:
-
 * `feature` is the series to be scaled
-
 
 * `feature_min` is the minimum value of `feature`
 
-
 * `feature_max` is the maximum value of `feature`
-
 
 * `range_min, range_max` = `feature_range`
 

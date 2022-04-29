@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: models-mapping-modelhub-map-is-new-user
 slug: /modeling/models/Mapping/modelhub.Map.is-new-user/
 title: is_new_user
@@ -16,26 +16,24 @@ title: is_new_user
 Labels all hits True if the user is first seen in the period given `time_aggregation`.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+* **`data`** ([bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
-
-    * **time_aggregation** (*Optional**[**str**]*) – if None, it uses the [`ModelHub.time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
-    instance.
+* **`time_aggregation`** (Optional[str]) – if None, it uses the [`ModelHub.time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
+instance.
 
 
 
-* **Returns**
+### Returns
 
-    `bach.SeriesBoolean` with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
-* **Return type**
+### Return type
 
-    bach.series.series_boolean.SeriesBoolean
+bach.series.series_boolean.SeriesBoolean
 
 
 

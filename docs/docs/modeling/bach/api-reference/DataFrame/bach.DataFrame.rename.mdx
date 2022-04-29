@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-rename
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.rename/
 title: rename
@@ -19,43 +19,37 @@ The interface is similar to Panda’s `pandas.DataFrame.rename()`. However we do
 renaming indexes, so recommended usage is `rename(columns=...)`.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **mapper** (*Optional**[**Union**[**Dict**[**str**, **str**]**, **Callable**[**[**str**]**, **str**]**]**]*) – dict to apply to that axis’ values. Use mapper and axis to specify the axis to target
-    with mapper. Currently mapper is only supported with `axis=1`, which is similar to using
-    columns.
+* **`mapper`** (_Optional_[_Union_[_Dict_[_str_, _str_]_, _Callable_[_[_str_]_, _str_]_]_]) – dict to apply to that axis’ values. Use mapper and axis to specify the axis to target
+with mapper. Currently mapper is only supported with `axis=1`, which is similar to using
+columns.
 
+* **`index`** (_Optional_[_Union_[_Dict_[_str_, _str_]_, _Callable_[_[_str_]_, _str_]_]_]) – not supported.
 
-    * **index** (*Optional**[**Union**[**Dict**[**str**, **str**]**, **Callable**[**[**str**]**, **str**]**]**]*) – not supported.
+* **`columns`** (_Optional_[_Union_[_Dict_[_str_, _str_]_, _Callable_[_[_str_]_, _str_]_]_]) – dict str:str to rename columns, or a function that takes column names as an argument
+and returns the new one. The new column names must not clash with other column names in either
+`self.`[`data`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.data/#bach.DataFrame.data) or `self.`[`index`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.index/#bach.DataFrame.index), after renaming is complete.
 
+* **`axis`** (int) – `axis=1` is supported, rest is not.
 
-    * **columns** (*Optional**[**Union**[**Dict**[**str**, **str**]**, **Callable**[**[**str**]**, **str**]**]**]*) – dict str:str to rename columns, or a function that takes column names as an argument
-    and returns the new one. The new column names must not clash with other column names in either
-    `self.`[`data`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.data/#bach.DataFrame.data) or `self.`[`index`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.index/#bach.DataFrame.index), after renaming is complete.
+* **`level`** (Optional[int]) – not supported
 
-
-    * **axis** (*int*) – `axis=1` is supported, rest is not.
-
-
-    * **level** (*Optional**[**int**]*) – not supported
-
-
-    * **errors** (*str*) – Either ‘ignore’ or ‘raise’. When set to ‘ignore’ KeyErrors about non-existing
-    column names in `columns` or `mapper` are ignored. Errors thrown in the mapper function or
-    about invalid target column names are not suppressed.
+* **`errors`** (str) – Either ‘ignore’ or ‘raise’. When set to ‘ignore’ KeyErrors about non-existing
+column names in `columns` or `mapper` are ignored. Errors thrown in the mapper function or
+about invalid target column names are not suppressed.
 
 
 
-* **Returns**
+### Returns
 
-    DataFrame with the renamed axis labels.
+DataFrame with the renamed axis labels.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: The copy parameter is not supported since it makes very little sense for db backed series.

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-unstack
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack/
 title: unstack
@@ -21,30 +21,27 @@ duplicate index values that are unstacked, `aggregation` is used to aggregate th
 DataFrame’s index should be of at least two levels to unstack.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **level** (*Union**[**str**, **int**]*) – selects the level of the index that is unstacked.
+* **`level`** (_Union_[_str_, _int_]) – selects the level of the index that is unstacked.
 
+* **`fill_value`** (_Union_[_int_, _numpy.int64_, _float_, _numpy.float64_, _bool_, _None_, _str_, _datetime.date_, _datetime.time_, _datetime.datetime_, _datetime.timedelta_, _numpy.timedelta64_, _uuid.UUID_, _dict_, _list_]) – replace missing values resulting from unstacking. Should be of same type as the
+series that is unstacked.
 
-    * **fill_value** (*Union**[**int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**]*) – replace missing values resulting from unstacking. Should be of same type as the
-    series that is unstacked.
-
-
-    * **aggregation** (*str*) – method of aggregation, in case of duplicate index values. Supports all aggregation
-    methods that [`aggregate()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate/#bach.DataFrame.aggregate) supports.
+* **`aggregation`** (_str) – method of aggregation, in case of duplicate index values. Supports all aggregation
+methods that [`aggregate()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate/#bach.DataFrame.aggregate) supports.
 
 
 
-* **Returns**
+### Returns
 
-    DataFrame
+DataFrame
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: This function queries the database.

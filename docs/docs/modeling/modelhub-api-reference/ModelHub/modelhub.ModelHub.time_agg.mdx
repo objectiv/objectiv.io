@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-time-agg
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/
 title: time_agg
@@ -18,28 +18,26 @@ Formats the moment column in the DataFrame, returns a SeriesString.
 Can be used to aggregate to different time intervals, ie day, month etc.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+* **`data`** ([bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
-
-    * **time_aggregation** (*Optional**[**str**]*) – if None, it uses [`time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set from the
-    ModelHub. Use any template for aggregation from:
-    [https://www.postgresql.org/docs/14/functions-formatting.html](https://www.postgresql.org/docs/14/functions-formatting.html)
-    ie. `time_aggregation=='YYYY-MM-DD'` aggregates by date.
+* **`time_aggregation`** (Optional[str]) – if None, it uses [`time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set from the
+ModelHub. Use any template for aggregation from:
+[https://www.postgresql.org/docs/14/functions-formatting.html](https://www.postgresql.org/docs/14/functions-formatting.html)
+ie. `time_aggregation=='YYYY-MM-DD'` aggregates by date.
 
 
 
-* **Returns**
+### Returns
 
-    SeriesString.
+SeriesString.
 
 
 
-* **Return type**
+### Return type
 
-    bach.series.series_string.SeriesString
+bach.series.series_string.SeriesString
 
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-dropna
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.dropna/
 title: dropna
@@ -16,37 +16,33 @@ title: dropna
 Removes rows with missing values (NaN, None and SQL NULL).
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **axis** (*int*) – only `axis=0` is supported. This means rows that contain missing values are dropped.
+* **`axis`** (_int) – only `axis=0` is supported. This means rows that contain missing values are dropped.
 
+* **`how`** (_str) – determines when a row is removed. Supported values:
+- ‘any’: rows with at least one missing value are removed
+- ‘all’: rows with all missing values are removed
 
-    * **how** (*str*) – determines when a row is removed. Supported values:
-    - ‘any’: rows with at least one missing value are removed
-    - ‘all’: rows with all missing values are removed
+* **`thresh`** (_Optional_[_int_]) – determines the least amount of non-missing values a row needs to have
+in order to be kept
 
-
-    * **thresh** (*Optional**[**int**]*) – determines the least amount of non-missing values a row needs to have
-    in order to be kept
-
-
-    * **subset** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – series label or sequence of labels to be considered for missing values.
-    If subset is None, all DataFrame’s series labels will be used.
-    In case subset is an empty list, a copy from the DataFrame will
-    be returned.
+* **`subset`** (_Optional_[_Union_[_str_, _Sequence_[_str_]_]_]) – series label or sequence of labels to be considered for missing values.
+If subset is None, all DataFrame’s series labels will be used.
+In case subset is an empty list, a copy from the DataFrame will
+be returned.
 
 
 
-* **Returns**
+### Returns
 
-    a new dataframe with dropped rows.
+a new dataframe with dropped rows.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

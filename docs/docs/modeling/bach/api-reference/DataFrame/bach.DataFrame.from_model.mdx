@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-model
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-model/
 title: from_model
@@ -19,34 +19,30 @@ If all_dtypes is not specified, then a transaction scoped temporary table will b
 0 result rows from the model. The meta data of this table will be used to deduce the dtypes.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **engine** (*sqlalchemy.engine.base.Engine*) – a sqlalchemy engine for the database.
+* **`engine`** (_sqlalchemy.engine.base.Engine) – a sqlalchemy engine for the database.
 
+* **`model`** (_sql_models.model.SqlModel) – an SqlModel that specifies the queries to instantiate as DataFrame.
 
-    * **model** (*sql_models.model.SqlModel*) – an SqlModel that specifies the queries to instantiate as DataFrame.
+* **`index`** (_List_[_str_]) – list of column names that make up the index. At least one column needs to be
+selected for the index.
 
-
-    * **index** (*List**[**str**]*) – list of column names that make up the index. At least one column needs to be
-    selected for the index.
-
-
-    * **all_dtypes** (*Optional**[**Dict**[**str**, **str**]**]*) – Optional. Mapping from column name to dtype.
-    Must contain all index and data columns.
-    Must be in same order as the columns appear in the the sql-model.
+* **`all_dtypes`** (_Optional_[_Dict_[_str_, _str_]_]) – Optional. Mapping from column name to dtype.
+Must contain all index and data columns.
+Must be in same order as the columns appear in the the sql-model.
 
 
 
-* **Returns**
+### Returns
 
-    A DataFrame based on an SqlModel
+A DataFrame based on an SqlModel
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: If all_dtypes is not set, then this will query the database and create and remove a temporary

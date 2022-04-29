@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-append
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.append/
 title: append
@@ -17,28 +17,25 @@ Append rows of other dataframes to the the caller dataframe.
 Non-shared columns between dataframes are added to the caller.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **other** (*Union**[*[*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*, **List**[*[*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*]**]*) – objects to be added
+* **`other`** (_Union_[[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame), List[[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)]]) – objects to be added
 
+* **`ignore_index`** (bool) – if true, drops indexes of all object to be appended
 
-    * **ignore_index** (*bool*) – if true, drops indexes of all object to be appended
-
-
-    * **sort** (*bool*) – if true, columns are sorted alphanumerically
+* **`sort`** (bool) – if true, columns are sorted alphanumerically
 
 
 
-* **Returns**
+### Returns
 
-    a new dataframe with all rows from appended Dataframes.
+a new dataframe with all rows from appended Dataframes.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

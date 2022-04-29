@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-unstack
 slug: /modeling/bach/api-reference/Series/bach.Series.unstack/
 title: unstack
@@ -21,30 +21,27 @@ duplicate index values that are unstacked, `aggregation` is used to aggregate th
 Series’ index should be of at least two levels to unstack.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **level** (*Union**[**int**, **str**]*) – selects the level of the index that is unstacked.
+* **`level`** (_Union_[_int_, _str_]) – selects the level of the index that is unstacked.
 
+* **`fill_value`** (_Optional_[_Union_[_int_, _float_, _str_, _uuid.UUID_]_]) – replace missing values resulting from unstacking. Should be of same type as the
+series that is unstacked.
 
-    * **fill_value** (*Optional**[**Union**[**int**, **float**, **str**, **uuid.UUID**]**]*) – replace missing values resulting from unstacking. Should be of same type as the
-    series that is unstacked.
-
-
-    * **aggregation** (*str*) – method of aggregation, in case of duplicate index values. Supports all aggregation
-    methods that [`aggregate()`](/docs/modeling/bach/api-reference/Series/bach.Series.aggregate/#bach.Series.aggregate) supports.
+* **`aggregation`** (_str) – method of aggregation, in case of duplicate index values. Supports all aggregation
+methods that [`aggregate()`](/docs/modeling/bach/api-reference/Series/bach.Series.aggregate/#bach.Series.aggregate) supports.
 
 
 
-* **Returns**
+### Returns
 
-    DataFrame
+DataFrame
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: This function queries the database.

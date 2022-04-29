@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-astype
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.astype/
 title: astype
@@ -20,28 +20,26 @@ Only data columns can be cast, index columns cannot be cast.
 This does not modify the current DataFrame, instead it returns a new DataFrame.
 
 
-* **Parameters**
+### Parameters
 
-    **dtype** (*Union**[**str**, **Dict**[**str**, **str**]**]*) – either:
+**`dtype`** (_Union_[_str_, _Dict_[_str_, _str_]_]) – either:
 
+* A single str, in which case all data columns are cast to this dtype.
 
-    * A single str, in which case all data columns are cast to this dtype.
-
-
-    * A dictionary mapping column labels to dtype.
+* A dictionary mapping column labels to dtype.
 
 
 
 
-* **Returns**
+### Returns
 
-    New DataFrame with the specified column(s) cast to the specified dtype
+New DataFrame with the specified column(s) cast to the specified dtype
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

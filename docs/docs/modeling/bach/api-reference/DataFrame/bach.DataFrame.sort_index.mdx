@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-sort-index
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_/
 title: sort_index
@@ -16,28 +16,26 @@ title: sort_index
 Sort dataframe by index levels.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **level** (*Optional**[**Union**[**int**, **List**[**int**]**, **str**, **List**[**str**]**]**]*) – int or level name or list of ints or level names.
-    If not specified, all index series are used
+* **`level`** (_Optional_[_Union_[_int_, _List_[_int_]_, _str_, _List_[_str_]_]_]) – int or level name or list of ints or level names.
+If not specified, all index series are used
 
-
-    * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
-    `level` must also be a list and `len(ascending) == len(level)`.
+* **`ascending`** (_Union_[_bool_, _List_[_bool_]_]) – Whether to sort ascending (True) or descending (False). If this is a list, then the
+`level` must also be a list and `len(ascending) == len(level)`.
 
 
 
-* **Returns**
+### Returns
 
-    a new DataFrame with the specified ordering,
-    otherwise it updates the original and returns None.
+a new DataFrame with the specified ordering,
+otherwise it updates the original and returns None.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: models-index
 sidebar_position: 3
 slug: /modeling/models//
@@ -10,11 +10,9 @@ title: Model overview
 
 The model hub has two main types of functions: `map` and `aggregate`.
 
-
 * `map` functions always return a series with the same shape and index as the DataFrame they are applied to.
 This ensures they can be added as a column to that DataFrame. `map` functions that return SeriesBoolean can
 be used with to filter the data.
-
 
 * `aggregate` functions return aggregated data in some form from the DataFrame. Can also be accessed with
 `agg`.
@@ -29,8 +27,6 @@ be used with to filter the data.
 | [`Map.conversions_counter`](/docs/modeling/models/Mapping/modelhub.Map.conversions-counter/#modelhub.Map.conversions-counter)(data, name[, partition])  | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
 | [`Map.conversions_in_time`](/docs/modeling/models/Mapping/modelhub.Map.conversions-in-time/#modelhub.Map.conversions-in-time)(data, name[, partition])  | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
 | [`Map.pre_conversion_hit_number`](/docs/modeling/models/Mapping/modelhub.Map.pre-conversion-hit-number/#modelhub.Map.pre-conversion-hit-number)(data, name[, ...])  | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
-
-
 
 ## Aggregation
 

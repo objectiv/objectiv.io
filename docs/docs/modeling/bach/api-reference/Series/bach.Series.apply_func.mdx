@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-apply-func
 slug: /modeling/bach/api-reference/Series/bach.Series.apply-func/
 title: apply_func
@@ -17,17 +17,14 @@ Apply the given functions to this Series.
 If multiple are given, a list of multiple new series will be returned.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **func** (*Union**[**str**, **Callable**, **List**[**Union**[**Callable**, **str**]**]**]*) – the function to look for on all series, either as a str, or callable,
-    or a list of such
+* **`func`** (_Union_[_str_, _Callable_, _List_[_Union_[_Callable_, _str_]_]_]) – the function to look for on all series, either as a str, or callable,
+or a list of such
 
+* **`args`** – Positional arguments to pass through to the aggregation function
 
-    * **args** – Positional arguments to pass through to the aggregation function
-
-
-    * **kwargs** – Keyword arguments to pass through to the aggregation function
+* **`kwargs`** – Keyword arguments to pass through to the aggregation function
 
 
 **WARNING**: You should probably not use this method directly.

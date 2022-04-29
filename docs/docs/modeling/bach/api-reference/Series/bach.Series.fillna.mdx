@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-fillna
 slug: /modeling/bach/api-reference/Series/bach.Series.fillna/
 title: fillna
@@ -18,10 +18,10 @@ Fill any NULL value with the given constant or other compatible Series
 In case a Series is given, the value from the same row is used to fill.
 
 
-* **Parameters**
+### Parameters
 
-    **other** (*Union**[**int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**]*) – The value to replace the NULL values with. Should be a supported
-    type by the series, or a TypeError is raised. Can also be another Series
+**`other`** (_Union_[_int_, _numpy.int64_, _float_, _numpy.float64_, _bool_, _None_, _str_, _datetime.date_, _datetime.time_, _datetime.datetime_, _datetime.timedelta_, _numpy.timedelta64_, _uuid.UUID_, _dict_, _list_]) – The value to replace the NULL values with. Should be a supported
+type by the series, or a TypeError is raised. Can also be another Series
 
 
 **NOTE**: Pandas replaces numpy.nan values, we can only replace NULL.

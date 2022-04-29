@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-agg
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.agg/
 title: agg
@@ -16,36 +16,27 @@ title: agg
 Aggregate using one or more operations over the specified axis.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **func** (*Union**[**str**, **Callable**, **List**[**Union**[**Callable**, **str**]**]**, **Dict**[**str**, **Union**[**str**, **Callable**, **List**[**Union**[**Callable**, **str**]**]**]**]**]*) – the aggregations to apply on all series. Accepted combinations are:
+* **`func`** (_Union_[_str_, _Callable_, _List_[_Union_[_Callable_, _str_]_]_, _Dict_[_str_, _Union_[_str_, _Callable_, _List_[_Union_[_Callable_, _str_]_]_]_]_]) – the aggregations to apply on all series. Accepted combinations are:
 
+  * function, e.g. `SeriesInt64.sum`
 
-        * function, e.g. `SeriesInt64.sum`
+  * function name
 
+  * list of functions and/or function names, e.g. [`SeriesInt64.sum`, ‘mean’]
 
-        * function name
-
-
-        * list of functions and/or function names, e.g. [`SeriesInt64.sum`, ‘mean’]
+  * dict of axis labels -> functions, function names or list of such.
 
 
-        * dict of axis labels -> functions, function names or list of such.
+* **`axis`** (_int) – the aggregation axis. If `axis=1` the index is aggregated as well. Only `axis=1`
+supported at the moment.
 
+* **`numeric_only`** (_bool) – whether to aggregate numeric series only, or attempt all.
 
+* **`args`** – Positional arguments to pass through to the aggregation function
 
-    * **axis** (*int*) – the aggregation axis. If `axis=1` the index is aggregated as well. Only `axis=1`
-    supported at the moment.
-
-
-    * **numeric_only** (*bool*) – whether to aggregate numeric series only, or attempt all.
-
-
-    * **args** – Positional arguments to pass through to the aggregation function
-
-
-    * **kwargs** – Keyword arguments to pass through to the aggregation function
+* **`kwargs`** – Keyword arguments to pass through to the aggregation function
 
 
 **NOTE**: Pandas has `numeric_only=None` to attempt all columns but ignore failing ones

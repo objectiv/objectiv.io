@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-agg
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.agg/
 title: agg
@@ -32,15 +32,15 @@ Models that return aggregated data in some form from the original DataFrame with
 Calculate a frequency table for the number of users by number of sessions.
 
 
-* **Parameters**
+### Parameters
 
-    **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+**`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
 
 
-* **Returns**
+### Returns
 
-    series with results.
+series with results.
 
 
 
@@ -58,29 +58,24 @@ Calculate the duration of sessions.
 With default `method`, it calculates the mean of the session duration over the `groupby`.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
+* **`groupby`** – sets the column(s) to group by.
 
-    * **groupby** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
-
-        * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
-
-
-        * if None it aggregates over all data.
+  * if None it aggregates over all data.
 
 
-
-    * **method** – ‘mean’ or ‘sum’
+* **`method`** – ‘mean’ or ‘sum’
 
 
 
-* **Returns**
+### Returns
 
-    series with results.
+series with results.
 
 
 
@@ -96,26 +91,22 @@ With default `method`, it calculates the mean of the session duration over the `
 Calculate the unique sessions in the Objectiv `data`.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
+* **`groupby`** – sets the column(s) to group by.
 
-    * **groupby** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
-
-        * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
-
-
-        * if None it aggregates over all data.
+  * if None it aggregates over all data.
 
 
 
 
-* **Returns**
+### Returns
 
-    series with results.
+series with results.
 
 
 
@@ -131,26 +122,22 @@ Calculate the unique sessions in the Objectiv `data`.
 Calculate the unique users in the Objectiv `data`.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
 
+* **`groupby`** – sets the column(s) to group by.
 
-    * **groupby** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
 
-
-        * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg).
-
-
-        * if None it aggregates over all data.
+  * if None it aggregates over all data.
 
 
 
 
-* **Returns**
+### Returns
 
-    series with results.
+series with results.
 
 
 

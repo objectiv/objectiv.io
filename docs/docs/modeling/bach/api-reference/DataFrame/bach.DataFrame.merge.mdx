@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-merge
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.merge/
 title: merge
@@ -27,44 +27,36 @@ where a variable name/dtype combination has been defined in both the `self` and 
 DataFramesOrSeries.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **right** (*Union**[*[*DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*, *[*Series*](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)*]*) – DataFrame or Series to join on self
+* **`right`** (Union[[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)]) – DataFrame or Series to join on self
 
+* **`how`** (str) – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}
 
-    * **how** (*str*) – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}
+* **`on`** (Union[str, SeriesBoolean, List[Union[str, SeriesBoolean]]]) – optional, column(s) to join left and right on.
 
+* **`left_on`** (Union[str, List[str]]) – optional, column(s) from the left df to join on
 
-    * **on** (*Union**[**str**, **SeriesBoolean**, **List**[**Union**[**str**, **SeriesBoolean**]**]**]*) – optional, column(s) to join left and right on.
+* **`right_on`** (Union[str, List[str]]) – optional, column(s) from the right df/series to join on
 
+* **`left_index`** (bool) – If true uses the index of the left df as columns to join on
 
-    * **left_on** (*Union**[**str**, **List**[**str**]**]*) – optional, column(s) from the left df to join on
+* **`right_index`** (bool) – If true uses the index of the right df/series as columns to join on
 
-
-    * **right_on** (*Union**[**str**, **List**[**str**]**]*) – optional, column(s) from the right df/series to join on
-
-
-    * **left_index** (*bool*) – If true uses the index of the left df as columns to join on
-
-
-    * **right_index** (*bool*) – If true uses the index of the right df/series as columns to join on
-
-
-    * **suffixes** (*Tuple**[**str**, **str**]*) – Tuple of two strings. Will be used to suffix duplicate column names. Must make
-    column names unique
+* **`suffixes`** (Tuple[str, str]) – Tuple of two strings. Will be used to suffix duplicate column names. Must make
+column names unique
 
 
 
-* **Returns**
+### Returns
 
-    A new Dataframe. The original frames are not modified.
+A new Dataframe. The original frames are not modified.
 
 
 
-* **Return type**
+### Return type
 
-    [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

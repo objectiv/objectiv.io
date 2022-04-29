@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-abstract-numeric-var
 slug: /modeling/bach/api-reference/Series/bach.SeriesAbstractNumeric.var/
 title: var
@@ -17,17 +17,14 @@ Get the sample variance of the input values (square of the sample standard devia
 Normalized by N-1 by default.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **partition** (*Union**[**GroupBy**, *[*DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*]*) – The partition or window to apply
+* **`partition`** (_Union_[_GroupBy_, [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)]) – The partition or window to apply
 
+* **`skipna`** (bool) – Exclude NA/NULL values
 
-    * **skipna** (*bool*) – Exclude NA/NULL values
-
-
-    * **ddof** (*int*) – Delta degrees of freedom. he divisor used in calculations is N - ddof,
-    where N represents the number of elements
+* **`ddof`** (int) – Delta degrees of freedom. he divisor used in calculations is N - ddof,
+where N represents the number of elements
 
 
 

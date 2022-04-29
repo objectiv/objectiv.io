@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-index
 slug: /modeling/bach/api-reference/Series//
 title: Series
@@ -21,8 +21,6 @@ title: Series
 | [`Series.to_frame`](/docs/modeling/bach/api-reference/Series/bach.Series.to-frame/#bach.Series.to-frame)()                                 | Create a DataFrame with the index and data from this Series.                                                                                |
 | [`Series.copy`](/docs/modeling/bach/api-reference/Series/bach.Series.copy/#bach.Series.copy)()                                     | Return a copy of this Series.                                                                                                               |
 
-
-
 ### Value accessors
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -31,8 +29,6 @@ title: Series
 | [`Series.to_pandas`](/docs/modeling/bach/api-reference/Series/bach.Series.to-pandas/#bach.Series.to-pandas)([limit])                         | Get the data from this series as a pandas.Series :param limit: The limit to apply, either as a max amount of rows or a slice.               |
 | [`Series.array`](/docs/modeling/bach/api-reference/Series/bach.Series.array/#bach.Series.array)                                      | .array property accessor akin pandas.Series.array                                                                                           |
 | [`Series.value`](/docs/modeling/bach/api-reference/Series/bach.Series.value/#bach.Series.value)                                      | Retrieve the actual single value of this series.                                                                                            |
-
-
 
 ### Attributes and underlying data
 
@@ -45,8 +41,6 @@ title: Series
 | [`Series.group_by`](/docs/modeling/bach/api-reference/Series/bach.Series.group-by/#bach.Series.group-by)                                   | Get this Series' group_by, if any.                                                                                                          |
 | [`Series.sorted_ascending`](/docs/modeling/bach/api-reference/Series/bach.Series.sorted-ascending/#bach.Series.sorted-ascending)                           | Get this Series' sorting by value.                                                                                                          |
 
-
-
 #### Types
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -54,18 +48,12 @@ title: Series
 | [`Series.dtype`](/docs/modeling/bach/api-reference/Series/bach.Series.dtype/#bach.Series.dtype)                                      | The dtype of this Series.                                                                                                                   |
 | [`Series.astype`](/docs/modeling/bach/api-reference/Series/bach.Series.astype/#bach.Series.astype)(dtype)                              | Convert this Series to another type.                                                                                                        |
 
-
-
 #### Sql Model
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`Series.base_node`](/docs/modeling/bach/api-reference/Series/bach.Series.base-node/#bach.Series.base-node)                                  | Get this Series' base_node                                                                                                                  |
 | [`Series.view_sql`](/docs/modeling/bach/api-reference/Series/bach.Series.view-sql/#bach.Series.view-sql)()                                 |                                                                                                                                             |
-
-
-
-
 
 ### Comparison and set operations
 
@@ -77,8 +65,6 @@ title: Series
 | [`Series.isin`](/docs/modeling/bach/api-reference/Series/bach.Series.isin/#bach.Series.isin)(other)                                | Evaluate for every row in this series whether the value is contained in other                                                               |
 | [`Series.isnull`](/docs/modeling/bach/api-reference/Series/bach.Series.isnull/#bach.Series.isnull)()                                   | Evaluate for every row in this series whether the value is missing or NULL.                                                                 |
 | [`Series.notnull`](/docs/modeling/bach/api-reference/Series/bach.Series.notnull/#bach.Series.notnull)()                                  | Evaluate for every row in this series whether the value is not missing or NULL.                                                             |
-
-
 
 ### Conversion, reshaping, sorting
 
@@ -92,8 +78,6 @@ title: Series
 | [`Series.dropna`](/docs/modeling/bach/api-reference/Series/bach.Series.dropna/#bach.Series.dropna)()                                   | Removes rows with missing values.                                                                                                           |
 | [`Series.unstack`](/docs/modeling/bach/api-reference/Series/bach.Series.unstack/#bach.Series.unstack)([level, fill_value, aggregation])  | Pivot a level of the index labels.                                                                                                          |
 
-
-
 ### Function application, aggregation & windowing
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -101,8 +85,6 @@ title: Series
 | [`Series.agg`](/docs/modeling/bach/api-reference/Series/bach.Series.agg/#bach.Series.agg)(func[, group_by])                      | Apply one or more aggregation functions to this Series.                                                                                     |
 | [`Series.aggregate`](/docs/modeling/bach/api-reference/Series/bach.Series.aggregate/#bach.Series.aggregate)(func[, group_by])                | Alias for `agg()`.                                                                                                                            |
 | [`Series.apply_func`](/docs/modeling/bach/api-reference/Series/bach.Series.apply-func/#bach.Series.apply-func)(func, \*args, \*\*kwargs)          | Apply the given functions to this Series.                                                                                                   |
-
-
 
 ### Computations & descriptive stats
 
@@ -119,8 +101,6 @@ title: Series
 | [`Series.nunique`](/docs/modeling/bach/api-reference/Series/bach.Series.nunique/#bach.Series.nunique)([partition, skipna])               | Returns the amount of unique values in each partition or for all values if none is given.                                                   |
 | [`Series.value_counts`](/docs/modeling/bach/api-reference/Series/bach.Series.value-counts/#bach.Series.value-counts)([normalize, sort, ...])       | Returns a series containing counts per unique value                                                                                         |
 
-
-
 #### Numeric
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -135,8 +115,6 @@ title: Series
 | [`SeriesAbstractNumeric.var`](/docs/modeling/bach/api-reference/Series/bach.SeriesAbstractNumeric.var/#bach.SeriesAbstractNumeric.var)([partition, ...])       | Get the sample variance of the input values (square of the sample standard deviation) Normalized by N-1 by default.                                                                                 |
 | [`SeriesAbstractNumeric.scale`](/docs/modeling/bach/api-reference/Series/bach.SeriesAbstractNumeric.scale/#bach.SeriesAbstractNumeric.scale)([with_mean, ...])     | Standardizes series based on mean and population standard deviation.                                                                                                                                |
 | [`SeriesAbstractNumeric.minmax_scale`](/docs/modeling/bach/api-reference/Series/bach.SeriesAbstractNumeric.minmax-scale/#bach.SeriesAbstractNumeric.minmax-scale)([...])         | Scales series based on a given range.                                                                                                                                                               |
-
-
 
 #### Window
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-count
 slug: /modeling/bach/api-reference/Series/bach.Series.count/
 title: count
@@ -16,19 +16,17 @@ title: count
 Returns the amount of rows in each partition or for all values if none is given.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **partition** (*Union**[**GroupBy**, *[*DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)*]*) – The partition or window to apply
+* **`partition`** (_Union_[_GroupBy_, [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)]) – The partition or window to apply
 
-
-    * **skipna** (*bool*) – only `skipna=True` supported. This means NULL values are ignored.
+* **`skipna`** (bool) – only `skipna=True` supported. This means NULL values are ignored.
 
 
 
-* **Returns**
+### Returns
 
-    a new Series with the aggregation applied
+a new Series with the aggregation applied
 
 
 

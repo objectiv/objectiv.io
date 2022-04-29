@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-index
 slug: /modeling/bach/api-reference/DataFrame//
 title: DataFrame
@@ -22,8 +22,6 @@ title: DataFrame
 | [`DataFrame.from_pandas`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.from-pandas/#bach.DataFrame.from-pandas)(engine, df, ...[, ...])     | Instantiate a new DataFrame based on the content of a Pandas DataFrame.                                                                     |
 | [`DataFrame.copy`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.copy/#bach.DataFrame.copy)()                                  | Return a copy of this DataFrame.                                                                                                            |
 
-
-
 ### Value accessors
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -31,8 +29,6 @@ title: DataFrame
 | [`DataFrame.head`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.head/#bach.DataFrame.head)([n])                               | Similar to `to_pandas()` but only returns the first `n` rows.                                                                                   |
 | [`DataFrame.to_pandas`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.to-pandas/#bach.DataFrame.to-pandas)([limit])                      | Run a SQL query representing the current state of this DataFrame against the database and return the resulting data as a Pandas DataFrame.  |
 | [`DataFrame.loc`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc/#bach.DataFrame.loc)                                     | The `.loc` accessor offers different methods for label-based selection.                                                                       |
-
-
 
 ### Attributes and underlying data
 
@@ -48,8 +44,6 @@ title: DataFrame
 | [`DataFrame.group_by`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.group-by/#bach.DataFrame.group-by)                                | Get this DataFrame's grouping, if any.                                                                                                      |
 | [`DataFrame.order_by`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.order-by/#bach.DataFrame.order-by)                                | Get the current sort order, if any.                                                                                                         |
 
-
-
 #### Types
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -57,8 +51,6 @@ title: DataFrame
 | [`DataFrame.dtypes`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.dtypes/#bach.DataFrame.dtypes)                                  | Get the data Series' dtypes in a dictionary `{name: dtype}`                                                                                   |
 | [`DataFrame.index_dtypes`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.index-dtypes/#bach.DataFrame.index-dtypes)                            | Get the index Series' dtypes in a dictionary `{name: dtype}`                                                                                  |
 | [`DataFrame.astype`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.astype/#bach.DataFrame.astype)(dtype)                           | Cast all or some of the data columns to a certain dtype.                                                                                    |
-
-
 
 #### Sql Model
 
@@ -69,8 +61,6 @@ title: DataFrame
 | [`DataFrame.get_unsampled`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-unsampled/#bach.DataFrame.get-unsampled)()                         | Return a copy of the current sampled DataFrame, that undoes calling `get_sample()` earlier.                                                   |
 | [`DataFrame.view_sql`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.view-sql/#bach.DataFrame.view-sql)([limit])                       | Translate the current state of this DataFrame into a SQL query.                                                                             |
 
-
-
 #### Variables
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -78,10 +68,6 @@ title: DataFrame
 | [`DataFrame.create_variable`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.create-variable/#bach.DataFrame.create-variable)(name, value, \*[, ...])  | Create a Series object that can be used as a variable, within the returned DataFrame.                                                       |
 | [`DataFrame.set_variable`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.set-variable/#bach.DataFrame.set-variable)(name, value, \*[, dtype])   | Return a copy of this DataFrame with the variable value updated.                                                                            |
 | [`DataFrame.get_all_variable_usage`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-all-variable-usage/#bach.DataFrame.get-all-variable-usage)()                | Get all variables that influence the values of this DataFrame.                                                                              |
-
-
-
-
 
 ### Reshaping, indexing, sorting & merging
 
@@ -106,8 +92,6 @@ title: DataFrame
 | [`DataFrame.minmax_scale`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.minmax-scale/#bach.DataFrame.minmax-scale)([feature_range])           | Scales all numeric series based on a given range.                                                                                           |
 | [`DataFrame.get_dummies`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-dummies/#bach.DataFrame.get-dummies)([prefix, prefix_sep, ...])  | Convert each unique category/value from a string series into a dummy/indicator variable.                                                    |
 
-
-
 ### Aggregation & windowing
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -120,8 +104,6 @@ title: DataFrame
 | [`DataFrame.window`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.window/#bach.DataFrame.window)(\*\*frame_args)                    | Create a window on the current dataframe grouping and its sorting.                                                                          |
 | [`DataFrame.rolling`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.rolling/#bach.DataFrame.rolling)(window[, min_periods, ...])     | A rolling window of size 'window', by default right aligned.                                                                                |
 | [`DataFrame.expanding`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.expanding/#bach.DataFrame.expanding)([min_periods, center])        | Create an expanding window starting with the first row in the group, with at least `min_period` observations.                                 |
-
-
 
 ### Computations & descriptive stats
 
@@ -138,8 +120,6 @@ title: DataFrame
 | [`DataFrame.nunique`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.nunique/#bach.DataFrame.nunique)([axis, skipna])                 | Returns the number of unique values in each column.                                                                                         |
 | [`DataFrame.value_counts`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/#bach.DataFrame.value-counts)([subset, normalize, ...])  | Returns a series containing counts of each unique row in the DataFrame                                                                      |
 
-
-
 #### Numeric
 
 | &nbsp;                                            | &nbsp;                                                                                                                                      |
@@ -150,8 +130,6 @@ title: DataFrame
 | [`DataFrame.sum`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.sum/#bach.DataFrame.sum)([axis, skipna, level, ...])         | Returns the sum of all values in each column.                                                                                               |
 | [`DataFrame.std`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.std/#bach.DataFrame.std)([axis, skipna, level, ddof, ...])   | Returns the sample standard deviation of each column.                                                                                       |
 | [`DataFrame.var`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.var/#bach.DataFrame.var)([axis, skipna, level, ddof, ...])   | Returns the unbiased variance of each column.                                                                                               |
-
-
 
 #### Visualization
 

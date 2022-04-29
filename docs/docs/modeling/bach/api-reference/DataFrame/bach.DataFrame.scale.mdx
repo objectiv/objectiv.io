@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-scale
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.scale/
 title: scale
@@ -16,25 +16,23 @@ title: scale
 Standardizes all numeric series based on mean and population standard deviation.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **with_mean** (*bool*) – if true, each feature value will be centered before scaling
+* **`with_mean`** (_bool) – if true, each feature value will be centered before scaling
 
-
-    * **with_std** (*bool*) – if true, each feature value will be scaled to unit variance
+* **`with_std`** (_bool) – if true, each feature value will be scaled to unit variance
 
 
 
-* **Returns**
+### Returns
 
-    DataFrame
+DataFrame
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 Each transformation per feature is performed as follows:
@@ -49,12 +47,9 @@ Each transformation per feature is performed as follows:
 ```
 
 Where:
-
 * `feature` is the series to be scaled
 
-
 * `mean_feature` is the mean of `feature`
-
 
 * `std_feature` is the (population-based) stardard deviation of `feature`
 

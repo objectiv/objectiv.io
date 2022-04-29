@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub-to-metabase
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.to-metabase/
 title: to_metabase
@@ -19,16 +19,13 @@ Plot data in `data` to Metabase. If a card already exists, it will be updated. I
 Default options can be overridden using the config dictionary.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **data** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) or [`bach.Series`](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series) to push to MetaBase.
+* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) or [`bach.Series`](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series) to push to MetaBase.
 
+* **`model_type`** (Optional[str]) – Preset output to Metabase for a specific model. eg, ‘unique_users’
 
-    * **model_type** (*Optional**[**str**]*) – Preset output to Metabase for a specific model. eg, ‘unique_users’
-
-
-    * **config** (*Optional**[**dict**]*) – Override default config options for the graph to be added/updated in Metabase.
+* **`config`** (Optional[dict]) – Override default config options for the graph to be added/updated in Metabase.
 
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-describe
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.describe/
 title: describe
@@ -17,34 +17,30 @@ Returns descriptive statistics.
 The following statistics are considered: `count`, `mean`, `std`, `min`, `max`, `nunique` and `mode`
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **percentiles** (*Optional**[**Sequence**[**float**]**]*) – list of percentiles to be calculated. Values must be between 0 and 1.
+* **`percentiles`** (_Optional_[_Sequence_[_float_]_]) – list of percentiles to be calculated. Values must be between 0 and 1.
 
+* **`include`** (_Optional_[_Union_[_str_, _Sequence_[_str_]_]_]) – dtypes to be included.
+Either a sequence of dtypes, a single dtype, or the special value ‘all’.
+By default calculations will be based on numerical columns, if there are any
+numerical columns and on all columns if there are no numerical columns.
 
-    * **include** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – dtypes to be included.
-    Either a sequence of dtypes, a single dtype, or the special value ‘all’.
-    By default calculations will be based on numerical columns, if there are any
-    numerical columns and on all columns if there are no numerical columns.
+* **`exclude`** (_Optional_[_Union_[_str_, _Sequence_[_str_]_]_]) – dtypes to be excluded. Either a sequence of dtypes, a single dtype, or None.
 
-
-    * **exclude** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – dtypes to be excluded. Either a sequence of dtypes, a single dtype, or None.
-
-
-    * **datetime_is_numeric** (*bool*) – not supported
+* **`datetime_is_numeric`** (_bool) – not supported
 
 
 
-* **Returns**
+### Returns
 
-    a new DataFrame with the descriptive statistics
+a new DataFrame with the descriptive statistics
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 

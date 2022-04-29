@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-series-bach-series-value-counts
 slug: /modeling/bach/api-reference/Series/bach.Series.value-counts/
 title: value_counts
@@ -16,44 +16,37 @@ title: value_counts
 Returns a series containing counts per unique value
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **normalize** (*bool*) – returns proportions instead of frequencies
+* **`normalize`** (_bool) – returns proportions instead of frequencies
 
+* **`sort`** (_bool) – sorts result by frequencies
 
-    * **sort** (*bool*) – sorts result by frequencies
+* **`ascending`** (_bool) – sorts values in ascending order if true.
 
+* **`bins`** (_Optional_[_int_]) – works only with numeric series, groups values into the request amount of bins
+and counts values based on each range.
 
-    * **ascending** (*bool*) – sorts values in ascending order if true.
+* **`method`** (_str) – Method to use for calculating bin ranges.
+Supported values:
 
+>   * ”pandas” (default): Performs bound adjustments based on Pandas implementation.
 
-    * **bins** (*Optional**[**int**]*) – works only with numeric series, groups values into the request amount of bins
-    and counts values based on each range.
-
-
-    * **method** (*str*) – Method to use for calculating bin ranges.
-    Supported values:
-
-    > 
-    >     * ”pandas” (default): Performs bound adjustments based on Pandas implementation.
-
-
-    >     * ”bach”: No bound adjustments are performed. Instead, first interval includes both
-    > lower and upper bounds.
+>   * ”bach”: No bound adjustments are performed. Instead, first interval includes both
+> lower and upper bounds.
 
 
 
 
-* **Returns**
+### Returns
 
-    a series containing all counts per unique row.
+a series containing all counts per unique row.
 
 
 
-* **Return type**
+### Return type
 
-    [bach.series.series.Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
+[bach.series.series.Series](/docs/modeling/bach/api-reference/Series/bach.Series/#bach.Series)
 
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T12:34:20.901Z'
+date: '2022-04-29T14:20:20.782Z'
 id: bach-api-reference-data-frame-bach-data-frame-materialize
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/
 title: materialize
@@ -24,31 +24,27 @@ make sense for very large expressions, or for non-deterministic expressions (e.g
 TODO: a known problem is that DataFrames with ‘json’ columns cannot be fully materialized.
 
 
-* **Parameters**
+### Parameters
 
-    
-    * **node_name** – The name of the node that’s going to be created
+* **`node_name`** – The name of the node that’s going to be created
 
+* **`inplace`** – Perform operation on self if `inplace=True`, or create a copy.
 
-    * **inplace** – Perform operation on self if `inplace=True`, or create a copy.
+* **`limit`** (_Optional_[_Any_]) – The limit (slice, int) to apply.
 
-
-    * **limit** (*Optional**[**Any**]*) – The limit (slice, int) to apply.
-
-
-    * **distinct** (*bool*) – Apply distinct statement if `distinct=True`
+* **`distinct`** (_bool) – Apply distinct statement if `distinct=True`
 
 
 
-* **Returns**
+### Returns
 
-    DataFrame with the current DataFrame’s state as base_node
+DataFrame with the current DataFrame’s state as base_node
 
 
 
-* **Return type**
+### Return type
 
-    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
 **NOTE**: Calling materialize() resets the order of the dataframe. Call [`sort_values()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values/#bach.DataFrame.sort-values) again on
