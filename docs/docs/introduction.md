@@ -16,7 +16,7 @@ import Mermaid from '@theme/Mermaid';
 
 * Collect [model-ready user behavior data](/tracking/core-concepts/overview.md) and feed it straight into 
   your data warehouse.
-* Use [pandas-like operations](/modeling/index.md) and [pre-built models](./modeling/models/index.md) that run on 
+* Use [pandas-like operations](/modeling/index.mdx) and [pre-built models](./modeling/models/index.mdx) that run on 
   the full SQL dataset.
 * Instantly convert models to SQL to feed all data consumers from a single source of truth.
 

@@ -21,7 +21,7 @@ The open taxonomy for analytics is our proposal for a common way to collect, str
 
 It describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
 
-Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/home/quickstart-guide.md) to set up Objectiv locally and see how it's used in practice.
+Check out the [Taxonomy](/taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/home/quickstart-guide.md) to set up Objectiv locally and see how it's used in practice.
 
 ### Why an open taxonomy for analytics?
 When it comes to product analytics, we noticed that most data teams have similar goals (optimize conversion, increase engagement, reduce churn, etc.) yet their data and models all look different. Models are often built from scratch. Someone in your field has probably already written a very similar analysis, but data teams keep reinventing the wheel because there is no common way to structure and model data. This leads to isolated knowledge and no meaningful way for data scientists to collaborate. 
@@ -68,7 +68,7 @@ SQL is widely used, versatile, not overly complex, and with developments in clou
 Objectiv Bach, our modeling library, features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
 
 ### Which Pandas-like operations can I use to build SQL models?
-For all supported pandas operations, check the reference in the [Bach documentation](/modeling/bach/index.md) section.
+For all supported pandas operations, check the reference in the [Bach documentation](/modeling/bach/index.mdx) section.
 
 ### Can I run these models in production?
 Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.
