@@ -1,0 +1,51 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-series-bach-series-drop-duplicates
+slug: /modeling/bach/api-reference/Series/bach.Series.drop-duplicates/
+title: drop_duplicates
+---
+
+# bach.Series.drop_duplicates
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">drop_duplicates(</span><small class="parameter-list"><span class="parameter" id="keep">keep='first'</span></small>)</h2>
+
+
+<div class="content">
+
+Return a series with duplicated rows removed.
+
+
+* **Parameters**
+
+    **keep** (*Union**[**str**, **bool**]*) – Supported values: “first”, “last” and False. Determines which duplicates to keep:
+
+
+    * `first`: drop all occurrences except the first one
+
+
+    * `last`:  drop all occurrences except the last one
+
+
+    * False: drops all duplicates
+
+    If no value is provided, first occurrences will be kept by default.
+
+
+
+
+* **Returns**
+
+    a new series with dropped duplicates
+
+
+
+* **Return type**
+
+    bach.series.series.T
+
+
+
+</div>
+
+</div>

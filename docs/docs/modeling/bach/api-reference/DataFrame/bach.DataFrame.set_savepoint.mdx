@@ -1,0 +1,37 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-set-savepoint
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set-savepoint/
+title: set_savepoint
+---
+
+# bach.DataFrame.set_savepoint
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">set_savepoint(</span><small class="parameter-list"><span class="parameter" id="name">name</span>, <span class="parameter" id="materialization">materialization=Materialization.CTE</span></small>)</h2>
+
+
+<div class="content">
+
+Set the current state as a savepoint in `self.savepoints`.
+
+
+* **Parameters**
+
+    
+    * **save_points** – Savepoints object that’s responsible for tracking all savepoints.
+
+
+    * **name** (*str*) – Name for the savepoint. This will be the name of the table or view if that’s set as
+    materialization. Must be unique both within the Savepoints and within the base_node.
+
+
+    * **materialization** (*Union**[**sql_models.model.Materialization**, **str**]*) – Optional materialization of the savepoint in the database. This doesn’t do
+    anything unless self.savepoints.write_to_db() gets called and the savepoints are actually
+    materialized into the database.
+
+
+
+</div>
+
+</div>

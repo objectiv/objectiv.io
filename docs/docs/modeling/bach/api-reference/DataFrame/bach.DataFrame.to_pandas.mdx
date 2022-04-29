@@ -1,0 +1,42 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-to-pandas
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.to-pandas/
+title: to_pandas
+---
+
+# bach.DataFrame.to_pandas
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">to_pandas(</span><small class="parameter-list"><span class="parameter" id="limit">limit=None</span></small>)</h2>
+
+
+<div class="content">
+
+Run a SQL query representing the current state of this DataFrame against the database and return the
+resulting data as a Pandas DataFrame.
+
+
+* **Parameters**
+
+    **limit** (*Optional**[**Union**[**int**, **slice**]**]*) – the limit to apply, either as a max amount of rows or a slice of the data.
+
+
+
+* **Returns**
+
+    a pandas DataFrame.
+
+
+
+* **Return type**
+
+    pandas.core.frame.DataFrame
+
+
+**NOTE**: This function queries the database.
+
+
+</div>
+
+</div>

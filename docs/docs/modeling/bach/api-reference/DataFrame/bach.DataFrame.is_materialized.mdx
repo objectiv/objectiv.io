@@ -1,0 +1,37 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-is-materialized
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.is-materialized/
+title: is_materialized
+---
+
+# bach.DataFrame.is_materialized
+
+<div>
+<h2 class="signature-class"><span class="type-annotation"><em>property</em></span> <span class="additional-name">DataFrame.</span><span class="name">is_materialized(</span><span class="type-annotation"><em>: boo</em></span> )</h2>
+
+
+<div class="content">
+
+Return true if this DataFrame is in a materialized state, i.e. all information about the
+DataFrame’s values is encoded in self.base_node.
+
+A DataFrame that’s freshly constructed with [`from_table()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.from-table/#bach.DataFrame.from-table),
+[`from_model()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.from-model/#bach.DataFrame.from-model), or [`from_pandas()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.from-pandas/#bach.DataFrame.from-pandas) will be in a materialized state. Operations on such
+a DataFrame will change it to be not materialized. Calling [`materialize()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/#bach.DataFrame.materialize) on a
+non-materialized DataFrame will return a new DataFrame that is materialized.
+
+TODO: a known problem is that DataFrames with ‘json’ columns are never in a materialized state, and
+cannot be materialized with materialize()
+
+
+
+* **Returns**
+
+    True if this DataFrame is in a materialized state, False otherwise
+
+
+
+</div>
+
+</div>

@@ -1,0 +1,55 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-unstack
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack/
+title: unstack
+---
+
+# bach.DataFrame.unstack
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">unstack(</span><small class="parameter-list"><span class="parameter" id="level">level=- 1</span>, <span class="parameter" id="fill_value">fill_value=None</span>, <span class="parameter" id="aggregation">aggregation='max'</span></small>)</h2>
+
+
+<div class="content">
+
+Pivot a level of the index labels.
+
+Returns a(n unsorted) DataFrame with the values of the unstacked index as columns. In case of
+duplicate index values that are unstacked, `aggregation` is used to aggregate the values.
+
+DataFrame’s index should be of at least two levels to unstack.
+
+
+* **Parameters**
+
+    
+    * **level** (*Union**[**str**, **int**]*) – selects the level of the index that is unstacked.
+
+
+    * **fill_value** (*Union**[**int**, **numpy.int64**, **float**, **numpy.float64**, **bool**, **None**, **str**, **datetime.date**, **datetime.time**, **datetime.datetime**, **datetime.timedelta**, **numpy.timedelta64**, **uuid.UUID**, **dict**, **list**]*) – replace missing values resulting from unstacking. Should be of same type as the
+    series that is unstacked.
+
+
+    * **aggregation** (*str*) – method of aggregation, in case of duplicate index values. Supports all aggregation
+    methods that [`aggregate()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate/#bach.DataFrame.aggregate) supports.
+
+
+
+* **Returns**
+
+    DataFrame
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+**NOTE**: This function queries the database.
+
+
+</div>
+
+</div>

@@ -1,0 +1,34 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-series-bach-series-copy
+slug: /modeling/bach/api-reference/Series/bach.Series.copy/
+title: copy
+---
+
+# bach.Series.copy
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">copy(</span><small class="parameter-list"></small>)</h2>
+
+
+<div class="content">
+
+Return a copy of this Series.
+
+As this series only represents data in the backing SQL store, and does not contain any data,
+this is a metadata copy only, no actual data is duplicated and changes to the underlying data
+will represented in both copy and original.
+Changes to index, sorting, grouping etc. on the copy will not affect the original.
+
+If you want to create a snapshot of the data, have a look at [`bach.DataFrame.get_sample()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/#bach.DataFrame.get-sample)
+
+
+* **Returns**
+
+    a copy of the series
+
+
+
+</div>
+
+</div>

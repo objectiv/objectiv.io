@@ -1,0 +1,38 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-series-bach-series-apply-func
+slug: /modeling/bach/api-reference/Series/bach.Series.apply-func/
+title: apply_func
+---
+
+# bach.Series.apply_func
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">apply_func(</span><small class="parameter-list"><span class="parameter" id="func">func</span>, <span class="parameter" id="*">\*args</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+
+
+<div class="content">
+
+Apply the given functions to this Series.
+If multiple are given, a list of multiple new series will be returned.
+
+
+* **Parameters**
+
+    
+    * **func** (*Union**[**str**, **Callable**, **List**[**Union**[**Callable**, **str**]**]**]*) – the function to look for on all series, either as a str, or callable,
+    or a list of such
+
+
+    * **args** – Positional arguments to pass through to the aggregation function
+
+
+    * **kwargs** – Keyword arguments to pass through to the aggregation function
+
+
+**WARNING**: You should probably not use this method directly.
+
+
+</div>
+
+</div>

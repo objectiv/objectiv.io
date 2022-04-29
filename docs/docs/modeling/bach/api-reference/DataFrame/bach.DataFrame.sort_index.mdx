@@ -1,0 +1,46 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-sort-index
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_/
+title: sort_index
+---
+
+# bach.DataFrame.sort_index
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">sort_index(</span><small class="parameter-list"><span class="parameter" id="level">level=None</span>, <span class="parameter" id="ascending">ascending=True</span></small>)</h2>
+
+
+<div class="content">
+
+Sort dataframe by index levels.
+
+
+* **Parameters**
+
+    
+    * **level** (*Optional**[**Union**[**int**, **List**[**int**]**, **str**, **List**[**str**]**]**]*) – int or level name or list of ints or level names.
+    If not specified, all index series are used
+
+
+    * **ascending** (*Union**[**bool**, **List**[**bool**]**]*) – Whether to sort ascending (True) or descending (False). If this is a list, then the
+    `level` must also be a list and `len(ascending) == len(level)`.
+
+
+
+* **Returns**
+
+    a new DataFrame with the specified ordering,
+    otherwise it updates the original and returns None.
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+
+</div>
+
+</div>

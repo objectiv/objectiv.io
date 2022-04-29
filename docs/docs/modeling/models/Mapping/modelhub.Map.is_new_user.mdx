@@ -1,0 +1,44 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: models-mapping-modelhub-map-is-new-user
+slug: /modeling/models/Mapping/modelhub.Map.is-new-user/
+title: is_new_user
+---
+
+# modelhub.Map.is_new_user
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Map.</span><span class="name">is_new_user(</span><small class="parameter-list"><span class="parameter" id="data">data</span>, <span class="parameter" id="time_aggregation">time_aggregation=None</span></small>)</h2>
+
+
+<div class="content">
+
+Labels all hits True if the user is first seen in the period given `time_aggregation`.
+
+
+* **Parameters**
+
+    
+    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+
+
+    * **time_aggregation** (*Optional**[**str**]*) – if None, it uses the [`ModelHub.time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation) set in ModelHub
+    instance.
+
+
+
+* **Returns**
+
+    `bach.SeriesBoolean` with the same index as `data`.
+
+
+
+* **Return type**
+
+    bach.series.series_boolean.SeriesBoolean
+
+
+
+</div>
+
+</div>

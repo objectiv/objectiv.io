@@ -1,0 +1,55 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-dropna
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.dropna/
+title: dropna
+---
+
+# bach.DataFrame.dropna
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">dropna(</span><small class="parameter-list"><span class="parameter" id="*">\*</span>, <span class="parameter" id="axis">axis=0</span>, <span class="parameter" id="how">how='any'</span>, <span class="parameter" id="thresh">thresh=None</span>, <span class="parameter" id="subset">subset=None</span></small>)</h2>
+
+
+<div class="content">
+
+Removes rows with missing values (NaN, None and SQL NULL).
+
+
+* **Parameters**
+
+    
+    * **axis** (*int*) – only `axis=0` is supported. This means rows that contain missing values are dropped.
+
+
+    * **how** (*str*) – determines when a row is removed. Supported values:
+    - ‘any’: rows with at least one missing value are removed
+    - ‘all’: rows with all missing values are removed
+
+
+    * **thresh** (*Optional**[**int**]*) – determines the least amount of non-missing values a row needs to have
+    in order to be kept
+
+
+    * **subset** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – series label or sequence of labels to be considered for missing values.
+    If subset is None, all DataFrame’s series labels will be used.
+    In case subset is an empty list, a copy from the DataFrame will
+    be returned.
+
+
+
+* **Returns**
+
+    a new dataframe with dropped rows.
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+
+</div>
+
+</div>

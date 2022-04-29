@@ -1,0 +1,53 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-describe
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.describe/
+title: describe
+---
+
+# bach.DataFrame.describe
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">describe(</span><small class="parameter-list"><span class="parameter" id="percentiles">percentiles=None</span>, <span class="parameter" id="include">include=None</span>, <span class="parameter" id="exclude">exclude=None</span>, <span class="parameter" id="datetime_is_numeric">datetime_is_numeric=False</span></small>)</h2>
+
+
+<div class="content">
+
+Returns descriptive statistics.
+The following statistics are considered: `count`, `mean`, `std`, `min`, `max`, `nunique` and `mode`
+
+
+* **Parameters**
+
+    
+    * **percentiles** (*Optional**[**Sequence**[**float**]**]*) – list of percentiles to be calculated. Values must be between 0 and 1.
+
+
+    * **include** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – dtypes to be included.
+    Either a sequence of dtypes, a single dtype, or the special value ‘all’.
+    By default calculations will be based on numerical columns, if there are any
+    numerical columns and on all columns if there are no numerical columns.
+
+
+    * **exclude** (*Optional**[**Union**[**str**, **Sequence**[**str**]**]**]*) – dtypes to be excluded. Either a sequence of dtypes, a single dtype, or None.
+
+
+    * **datetime_is_numeric** (*bool*) – not supported
+
+
+
+* **Returns**
+
+    a new DataFrame with the descriptive statistics
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+
+</div>
+
+</div>

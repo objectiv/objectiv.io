@@ -1,0 +1,27 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-series-bach-series-window-lead
+slug: /modeling/bach/api-reference/Series/bach.Series.window-lead/
+title: window_lead
+---
+
+# bach.Series.window_lead
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Series.</span><span class="name">window_lead(</span><small class="parameter-list"><span class="parameter" id="offset">offset=1</span>, <span class="parameter" id="default">default=None</span>, <span class="parameter" id="window">window=None</span></small>)</h2>
+
+
+<div class="content">
+
+Returns value evaluated at the row that is offset rows after the current row within the window.
+
+If there is no such row, instead returns default (which must be of the same type as value).
+Both offset and default are evaluated with respect to the current row.
+:param offset: The amount of rows to look forward, default 1
+:param default: The value to return if no value is available, can be a constant value or Series.
+Defaults to None
+
+
+</div>
+
+</div>

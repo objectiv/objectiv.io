@@ -1,0 +1,49 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: models-mapping-modelhub-map-conversions-in-time
+slug: /modeling/models/Mapping/modelhub.Map.conversions-in-time/
+title: conversions_in_time
+---
+
+# modelhub.Map.conversions_in_time
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">Map.</span><span class="name">conversions_in_time(</span><small class="parameter-list"><span class="parameter" id="data">data</span>, <span class="parameter" id="name">name</span>, <span class="parameter" id="partition">partition='session_id'</span></small>)</h2>
+
+
+<div class="content">
+
+Counts the number of time a user is converted at a moment in time given a partition (ie ‘session_id’
+or ‘user_id’).
+
+
+* **Parameters**
+
+    
+    * **data** ([*bach.dataframe.DataFrame*](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) to apply the method on.
+
+
+    * **name** (*str*) – the name of the conversion to label as set in
+    [`ModelHub.conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events).
+
+
+    * **partition** (*str*) – the partition over which the number of conversions are counted. Can be any column
+    in `data`.
+
+
+
+* **Returns**
+
+    `bach.SeriesInt64` with the same index as `data`.
+
+
+
+* **Return type**
+
+    bach.series.series_numeric.SeriesInt64
+
+
+
+</div>
+
+</div>

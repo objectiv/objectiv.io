@@ -1,0 +1,58 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-from-model
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-model/
+title: from_model
+---
+
+# bach.DataFrame.from_model
+
+<div class="method">
+<h2 class="signature-class"><span class="type-annotation"><em>classmethod</em></span> <span class="additional-name">DataFrame.</span><span class="name">from_model(</span><small class="parameter-list"><span class="parameter" id="engine">engine</span>, <span class="parameter" id="model">model</span>, <span class="parameter" id="index">index</span>, <span class="parameter" id="all_dtypes">all_dtypes=None</span></small>)</h2>
+
+
+<div class="content">
+
+Instantiate a new DataFrame based on the result of the query defined in `model`.
+
+If all_dtypes is not specified, then a transaction scoped temporary table will be created with
+0 result rows from the model. The meta data of this table will be used to deduce the dtypes.
+
+
+* **Parameters**
+
+    
+    * **engine** (*sqlalchemy.engine.base.Engine*) – a sqlalchemy engine for the database.
+
+
+    * **model** (*sql_models.model.SqlModel*) – an SqlModel that specifies the queries to instantiate as DataFrame.
+
+
+    * **index** (*List**[**str**]*) – list of column names that make up the index. At least one column needs to be
+    selected for the index.
+
+
+    * **all_dtypes** (*Optional**[**Dict**[**str**, **str**]**]*) – Optional. Mapping from column name to dtype.
+    Must contain all index and data columns.
+    Must be in same order as the columns appear in the the sql-model.
+
+
+
+* **Returns**
+
+    A DataFrame based on an SqlModel
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+**NOTE**: If all_dtypes is not set, then this will query the database and create and remove a temporary
+table.
+
+
+</div>
+
+</div>

@@ -1,0 +1,55 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-get-dummies
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-dummies/
+title: get_dummies
+---
+
+# bach.DataFrame.get_dummies
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">get_dummies(</span><small class="parameter-list"><span class="parameter" id="prefix">prefix=None</span>, <span class="parameter" id="prefix_sep">prefix_sep='_'</span>, <span class="parameter" id="dummy_na">dummy_na=False</span>, <span class="parameter" id="columns">columns=None</span>, <span class="parameter" id="dtype">dtype='int64'</span></small>)</h2>
+
+
+<div class="content">
+
+Convert each unique category/value from a string series into a dummy/indicator variable.
+
+
+* **Parameters**
+
+    
+    * **prefix** (*Optional**[**Union**[**str**, **List**[**str**]**, **Dict**[**str**, **str**]**]**]*) – String to append to each new column name. By default, the prefix will be the name of
+    the series the category is originated from.
+
+
+    * **prefix_sep** (*str*) – Separated between the prefix and label.
+
+
+    * **dummy_na** (*bool*) – If true, it will include `nan` as a variable.
+
+
+    * **columns** (*Optional**[**List**[**str**]**]*) – List of string series to be converted.
+
+
+    * **dtype** (*str*) – dtype of all new columns
+
+
+
+* **Returns**
+
+    DataFrame
+
+
+
+* **Return type**
+
+    [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
+
+
+**NOTE**: DataFrame should contain at least one index level.
+
+
+</div>
+
+</div>

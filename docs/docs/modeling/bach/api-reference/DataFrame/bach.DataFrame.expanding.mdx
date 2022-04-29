@@ -1,0 +1,34 @@
+---
+date: '2022-04-29T11:17:49.055Z'
+id: bach-api-reference-data-frame-bach-data-frame-expanding
+slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.expanding/
+title: expanding
+---
+
+# bach.DataFrame.expanding
+
+<div class="method">
+<h2 class="signature-class"><span class="additional-name">DataFrame.</span><span class="name">expanding(</span><small class="parameter-list"><span class="parameter" id="min_periods">min_periods=1</span>, <span class="parameter" id="center">center=False</span></small>)</h2>
+
+
+<div class="content">
+
+Create an expanding window starting with the first row in the group, with at least `min_period`
+observations. The result will be right-aligned in the window.
+
+To use grouping as well, first call [`group_by()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.group-by/#bach.DataFrame.group-by) on this frame and call rolling on the result.
+
+
+* **Parameters**
+
+    
+    * **min_periods** (*int*) – the minimum amount of observations in the window before a value is reported.
+
+
+    * **center** (*bool*) – whether to center the result, currently not supported.
+
+
+
+</div>
+
+</div>
