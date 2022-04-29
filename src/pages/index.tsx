@@ -38,7 +38,7 @@ export default function Home() {
             Open-source product analytics infrastructure with a generic event taxonomy
           </h1>
           <h2 className={clsx(styles.heroSubTitle)}>
-            Use Objectiv to capture validated user behavior data, feed it straight into your data warehouse, 
+            Use Objectiv to capture validated user behavior data straight into your data warehouse, 
             <br /> and speed up product analytics projects with pre-built &amp; reusable models.
           </h2>
           <div className={clsx(styles.heroCtaButtons)}>
