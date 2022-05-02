@@ -1,4 +1,8 @@
 /* EditThisPage footer */
+.editThisPage {
+  background-color: var(--ifm-color-gray-100);
+  padding: 20px 0;
+}
 .editLinks {
   padding: 0 0 0 24px;
   margin: 0;

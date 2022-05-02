@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T20:56:28.716Z'
+date: '2022-05-02T08:02:18.777Z'
 id: bach-api-reference-data-frame-bach-data-frame
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame/
 title: DataFrame
@@ -94,8 +94,10 @@ DataFrames see [https://pandas.pydata.org/docs/reference/frame.html](https://pan
 
 ## Methods
 
-| &nbsp; | &nbsp;  |
-| ------ | ------ |
+<div class="table-autosummary">
+
+|   |    |
+| - | - |
 | [`agg`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.agg/#bach.DataFrame.agg)(func[, axis, numeric_only]) | Aggregate using one or more operations over the specified axis.  |
 | [`aggregate`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate/#bach.DataFrame.aggregate)(func[, axis, numeric_only]) | Alias for [`agg()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.agg/#bach.DataFrame.agg)                                                  |
 | [`append`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.append/#bach.DataFrame.append)(other[, ignore_index, sort])   | Append rows of other dataframes to the the caller dataframe.     |
@@ -155,9 +157,14 @@ DataFrames see [https://pandas.pydata.org/docs/reference/frame.html](https://pan
 | [`view_sql`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.view-sql/#bach.DataFrame.view-sql)([limit])                                | Translate the current state of this DataFrame into a SQL query.                                                                             |
 | [`window`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.window/#bach.DataFrame.window)(\*\*frame_args)                             | Create a window on the current dataframe grouping and its sorting.                                                                          |
 
+
+</div>
+
 ## Attributes
 
-| &nbsp;                                           | &nbsp;                                                                                                                                      |
+<div class="table-autosummary">
+
+|                                                  |                                                                                                                                             |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`all_series`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.all-series/#bach.DataFrame.all-series)                                       | Get all index and data Series in a dictionary `{name: Series}`                                                                                |
 | [`data`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.data/#bach.DataFrame.data)                                             | Get the data dictionary `{name: Series}`                                                                                                      |
@@ -173,6 +180,9 @@ DataFrames see [https://pandas.pydata.org/docs/reference/frame.html](https://pan
 | [`plot`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.plot/#bach.DataFrame.plot)                                             | The `.plot` accessor offers different methods for data visualization.                                                                         |
 | [`savepoints`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.savepoints/#bach.DataFrame.savepoints)                                       |                                                                                                                                             |
 | [`variables`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.variables/#bach.DataFrame.variables)                                        | Get all variables for which values are set, which will be used when querying the database.                                                  |
+
+
+</div>
 
 
 </div>

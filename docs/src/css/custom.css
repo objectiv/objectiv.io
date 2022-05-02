@@ -305,167 +305,73 @@ div.docs-wrapper footer div.col:nth-child(2) {
 
 /** DOCS - Modeling **/
 
-.method h2.signature-class, .class h2.signature-class, .class h2.signature-method {
-  margin-bottom: 0px;
+/* Make API reference titles a bit smaller */
+html[class*='docs-doc-id-modeling/models/Aggregation'] h1, 
+html[class*='docs-doc-id-modeling/models/Mapping'] h1 {
+  font-size: 32px;
+}
+html[class*='docs-doc-id-modeling/modelhub-api-reference/ModelHub'] h1, 
+html[class*='docs-doc-id-modeling/modelhub-api-reference/Series'] h1 {
+  font-size: 32px;
+}
+
+/* Class - overall */
+div.class {
+  border-top: 1px solid var(--ifm-font-color-base);
+  margin: 40px 0 100px 0;
+  padding-top: 0px;
+}
+
+/* Class - heading */
+div.method h2.signature-class, div.class h2.signature-class, div.class h2.signature-method {
+  margin: 40px 0 0 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Class - type & signature-class - type */
+div.class .type-annotation em, h2.signature-class .type-annotation em {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+/* Class heading */
+div.class h2 {
+  margin-top: 40px;
+}
+div.class h2.signature-method, div.class h2.signature-class, div.method h2.signature-class {
+  font-family: 'Roboto Mono';
+  letter-spacing: -1px;
+}
+div.class h2.signature-method .parameter-list {
+  font-size: 18px;
+  text-transform: none;
 }
 span.view-source {
   font-size: 0.8em;
 }
 
-
-/* Make API reference titles a bit smaller */
-h1[id^=bach-dataframe], h1[id^=bach-series], h1[id^=modelhub] {
-  font-size: 32px;
-}
-
-/* Hide a TOC tree if it's only used for generating navigation in the sidebar */
-.hide-toctree-ul {
-  display: none;
-}
-
-/* List-items get <p>'s, so let's decrease the margin */
-ul.simple p {
-  margin: 0;
-}
-
-/* Hide/show anchors on auto-generated modeling docs */
-.sphinxAnchor:hover > a.headerlink {
-  display: inline-block;
-  margin-left: 5px;
-}
-.sphinxAnchor .headerlink {
-  display: none;
-}
-.reference:hover > a.headerlink {
-  display: inline-block;
-}
-.reference .headerlink {
-  display: none;
-}
-
-/* Remove bottom margin for content in auto-generated admonitions */
-.admonition>:last-child {
-  margin-bottom: 0;
-}
-
-/* Summary table */
-.autosummary {
-  margin-bottom: 60px;
-}
-.autosummary p {
-  margin-bottom: 0;
-}
-
-/* Heading for a page with classes */
-p.rubric {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 24px 0;
-}
-
-/* Class element */
-dl.class {
-  margin: 40px 0 100px 0;
-  border-top: 1px solid var(--ifm-font-color-base);
-  padding-top: 40px;
-}
-/* Class heading */
-dl.class dt.sig {
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0 0 0.5em 0;
-}
-/* Class heading - type (=class) */
-dl.class .property .pre {
-  font-size: 14px;
-  color: var(--ifm-font-color-light);
-}
-/* Class heading - class name */
-dl.class .descname {
-  font-family: 'Roboto Mono';
-}
-
-/* Class heading - function parameters */
-dl.class dl.property .property .pre, dl.class dl.property .descname .pre, dl.class dl.property .descname .viewcode-link {
-  font-size: 18px;
-  text-transform: none;
-}
-.sig-paren, .sig-param, .sig-return {
-  font-size: 14px;
-  font-weight: normal;
-  color: var(--ifm-font-color-light);
-}
-/* Class - properties & attributes */
-dl.class .property, dl.class .property dt.sig, dl.class .attribute, dl.class .attribute dt.sig {
-  font-style: normal;
-  font-weight: normal;
-  margin-top: 40px;
-  font-size: 18px;
-}
-dl.class dl.property .pre, dl.class dl.attribute .pre {
-  color: #000;
-}
-dl.class dl.attribute .pre {
-  font-style: italic;
-}
-/* Class - properties - override class heading breaks (keep on one line) */
-dl.class dl.property .pre::after, dl.class dl.property .descname::after, dl.class dl.attribute .pre::after, dl.class dl.attribute .descname::after {
-  content: "";
-  white-space: normal;
-}
-
-/* Class & function headings - function parameters - link to source & permalink */
-dl.class .reference, dl.class .headerlink, dl.function .reference, dl.method .reference {
-  font-size: 14px;
-  font-weight: normal; 
-}
-
-/* Functions (in classes) */
-dl.method, dl.function {
+div.method {
   margin-top: 40px;
 }
-/* Function content */
-dl.method dd, dl.function dd {
-  margin-inline-start: 40px;
+
+
+.table-autosummary thead {
+  display: none
 }
-/* Function content heading */
-dl.method dt, dl.function dt {
-  font-weight: bold;
+.table-autosummary tbody tr td:first-child {
+  width: 40%;
 }
-/* Function fields (e.g. parameters or notes) */
-dl.method .field-list dd, dl.function .field-list dd {
-  margin-inline-start: 0;
+.table-autosummary tbody tr td:nth-child(2) {
+  width: 60%;
 }
-dl.method .field-list dd strong, dl.function .field-list dd strong {
-  font-family: 'Roboto Mono';
-  font-weight: normal;
-  font-style: italic;
-}
-dl.method dd blockquote, dl.function dd blockquote {
-  border: none;
-}
-/* Function - function namespace (do not show) */
-dl.function .descname {
-  font-family: 'Roboto Mono';
-  font-size: 20px;
-}
-dl.function .descclassname {
-  display: none;
+.table-autosummary {
+  margin: 20px 0;
 }
 
-span.viewcode-link {
-  float: right;
-}
-
-/* Content of a class or function */
-dd {
-  margin-inline-start: 0;
-  font-size: 16px;
-}
-
-dl blockquote {
-  padding: 0 0.5em;
-}
 
 /** DIAGRAM (MERMAID) MARKUP **/
 

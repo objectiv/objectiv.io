@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T20:56:28.716Z'
+date: '2022-05-02T08:02:18.777Z'
 id: bach-api-reference-series-bach-series
 slug: /modeling/bach/api-reference/Series/bach.Series/
 title: Series
@@ -25,7 +25,9 @@ operations on Series available to do operations like add or subtract, to create 
 
 ## Methods
 
-| &nbsp;                                            | &nbsp;                                                                                                                                      |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                             |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`agg`](/docs/modeling/bach/api-reference/Series/bach.Series.agg/#bach.Series.agg)(func[, group_by])                             | Apply one or more aggregation functions to this Series.                                                                                     |
 | [`aggregate`](/docs/modeling/bach/api-reference/Series/bach.Series.aggregate/#bach.Series.aggregate)(func[, group_by])                       | Alias for [`agg()`](/docs/modeling/bach/api-reference/Series/bach.Series.agg/#bach.Series.agg).                                                                                                                            |
@@ -73,9 +75,14 @@ operations on Series available to do operations like add or subtract, to create 
 | [`window_rank`](/docs/modeling/bach/api-reference/Series/bach.Series.window-rank/#bach.Series.window-rank)([window])                             | Returns the rank of the current row, with gaps; that is, the row_number of the first row in its peer group.                                 |
 | [`window_row_number`](/docs/modeling/bach/api-reference/Series/bach.Series.window-row-number/#bach.Series.window-row-number)([window])                       | Returns the number of the current row within its window, counting from 1.                                                                   |
 
+
+</div>
+
 ## Attributes
 
-| &nbsp;                                            | &nbsp;                                                                                                                                      |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                             |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [`array`](/docs/modeling/bach/api-reference/Series/bach.Series.array/#bach.Series.array)                                             | .array property accessor akin pandas.Series.array                                                                                           |
 | [`base_node`](/docs/modeling/bach/api-reference/Series/bach.Series.base-node/#bach.Series.base-node)                                         | Get this Series' base_node                                                                                                                  |
@@ -85,6 +92,9 @@ operations on Series available to do operations like add or subtract, to create 
 | [`name`](/docs/modeling/bach/api-reference/Series/bach.Series.name/#bach.Series.name)                                              | Get this Series' name                                                                                                                       |
 | [`sorted_ascending`](/docs/modeling/bach/api-reference/Series/bach.Series.sorted-ascending/#bach.Series.sorted-ascending)                                  | Get this Series' sorting by value.                                                                                                          |
 | [`value`](/docs/modeling/bach/api-reference/Series/bach.Series.value/#bach.Series.value)                                             | Retrieve the actual single value of this series.                                                                                            |
+
+
+</div>
 
 
 </div>

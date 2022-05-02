@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T20:56:28.716Z'
+date: '2022-05-02T08:02:18.777Z'
 id: models-index
 sidebar_position: 3
 slug: /modeling/models//
@@ -19,7 +19,9 @@ be used with to filter the data.
 
 ## Mapping
 
-| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`Map.is_first_session`](/docs/modeling/models/Mapping/modelhub.Map.is-first-session/#modelhub.Map.is-first-session)(data)                        | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
 | [`Map.is_new_user`](/docs/modeling/models/Mapping/modelhub.Map.is-new-user/#modelhub.Map.is-new-user)(data[, time_aggregation])         | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
@@ -28,11 +30,19 @@ be used with to filter the data.
 | [`Map.conversions_in_time`](/docs/modeling/models/Mapping/modelhub.Map.conversions-in-time/#modelhub.Map.conversions-in-time)(data, name[, partition])  | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
 | [`Map.pre_conversion_hit_number`](/docs/modeling/models/Mapping/modelhub.Map.pre-conversion-hit-number/#modelhub.Map.pre-conversion-hit-number)(data, name[, ...])  | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
 
+
+</div>
+
 ## Aggregation
 
-| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`Aggregate.unique_users`](/docs/modeling/models/Aggregation/modelhub.Aggregate.unique-users/#modelhub.Aggregate.unique-users)(data[, groupby])           | Calculate the unique users in the Objectiv `data`.                                                                                                                                                                       |
 | [`Aggregate.unique_sessions`](/docs/modeling/models/Aggregation/modelhub.Aggregate.unique-sessions/#modelhub.Aggregate.unique-sessions)(data[, groupby])        | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
 | [`Aggregate.session_duration`](/docs/modeling/models/Aggregation/modelhub.Aggregate.session-duration/#modelhub.Aggregate.session-duration)(data[, groupby, ...])  | Calculate the duration of sessions.                                                                                                                                                                                    |
 | [`Aggregate.frequency`](/docs/modeling/models/Aggregation/modelhub.Aggregate.frequency/#modelhub.Aggregate.frequency)(data)                         | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |
+
+
+</div>

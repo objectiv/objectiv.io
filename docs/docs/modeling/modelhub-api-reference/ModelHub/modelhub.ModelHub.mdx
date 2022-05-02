@@ -1,5 +1,5 @@
 ---
-date: '2022-04-29T20:56:28.716Z'
+date: '2022-05-02T08:02:18.777Z'
 id: modelhub-api-reference-model-hub-modelhub-model-hub
 slug: /modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub/
 title: ModelHub
@@ -36,22 +36,32 @@ from. This ensures they can be added as a column to that DataFrame.
 
 ## Methods
 
-| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`add_conversion_event`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.add-conversion-event/#modelhub.ModelHub.add-conversion-event)([location_stack, ...])       | Label events that are used as conversions.                                                                                                                                                                             |
 | [`get_objectiv_dataframe`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.get-objectiv-dataframe/#modelhub.ModelHub.get-objectiv-dataframe)([db_url, table_name, ...]) | Sets data from sql table into an [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame) object.                                                                                                                                                                |
 | [`time_agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-agg/#modelhub.ModelHub.time-agg)(data[, time_aggregation])                | Formats the moment column in the DataFrame, returns a SeriesString.                                                                                                                                                    |
 | [`to_metabase`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.to-metabase/#modelhub.ModelHub.to-metabase)(data[, model_type, config])           | Plot data in `data` to Metabase.                                                                                                                                                                                         |
 
+
+</div>
+
 ## Attributes
 
-| &nbsp;                                            | &nbsp;                                                                                                                                                                                                                 |
+<div class="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`agg`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.agg/#modelhub.ModelHub.agg)                                               | Access aggregation methods from the model hub.                                                                                                                                                                         |
 | [`aggregate`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.aggregate/#modelhub.ModelHub.aggregate)                                         | Access aggregation methods from the model hub.                                                                                                                                                                         |
 | [`conversion_events`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.conversion-events/#modelhub.ModelHub.conversion-events)                                 | Dictionary of all events that are labeled as conversion.                                                                                                                                                               |
 | [`map`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.map/#modelhub.ModelHub.map)                                               | Access map methods from the model hub.                                                                                                                                                                                 |
 | [`time_aggregation`](/docs/modeling/modelhub-api-reference/ModelHub/modelhub.ModelHub.time-aggregation/#modelhub.ModelHub.time-aggregation)                                  | Time aggregation used for aggregation models, set when object is instantiated.                                                                                                                                         |
+
+
+</div>
 
 
 </div>
