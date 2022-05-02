@@ -253,7 +253,7 @@ def main() -> int:
             print(term.yellow(f'New URL compared to production sitemap: {url}'))
         exitcode += 1
 
-    # fourth, check all removed+added URLs against the objectiv.io repository (i.e. the docs or site)
+    # fourth, check all removed+added URLs against the objectiv-analytics repository
     urls_to_check = removed_urls + added_urls
     urls_in_use = check_urls_from_files('**', EXTENSIONS_TO_SCAN, urls_to_check)
     urls_in_use += check_urls_from_files('../objectiv-analytics/**', EXTENSIONS_TO_SCAN, urls_to_check)

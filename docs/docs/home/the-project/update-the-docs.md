@@ -11,7 +11,7 @@ First off, thank you for considering to update the Documentation pages.
 As some of the pages are automatically generated, below a very short How-To.
 
 ## Update Modeling docs
-The [Modeling](/modeling/index.md) docs are automatically generated from the comments in 
+The [Modeling](/modeling/index.mdx) docs are automatically generated from the comments in 
 the [Bach](https://github.com/objectiv/objectiv-analytics/tree/main/bach) and 
 [model hub](https://github.com/objectiv/objectiv-analytics/tree/main/modelhub) source code. 
 
