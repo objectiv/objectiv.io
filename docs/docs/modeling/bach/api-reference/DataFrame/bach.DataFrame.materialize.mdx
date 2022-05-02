@@ -1,5 +1,5 @@
 ---
-date: '2022-05-02T10:34:16.896Z'
+date: '2022-05-02T11:54:10.543Z'
 id: bach-api-reference-data-frame-bach-data-frame-materialize
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/
 title: materialize
@@ -50,8 +50,13 @@ DataFrame with the current DataFrame’s state as base_node
 [bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
-**NOTE**: Calling materialize() resets the order of the dataframe. Call [`sort_values()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values/#bach.DataFrame.sort-values) again on
+:::note
+
+Calling materialize() resets the order of the dataframe. Call [`sort_values()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values/#bach.DataFrame.sort-values) again on
 the result if order is important.
+
+
+:::
 
 
 </div>

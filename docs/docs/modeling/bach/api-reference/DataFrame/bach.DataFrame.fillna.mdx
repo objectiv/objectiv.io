@@ -1,5 +1,5 @@
 ---
-date: '2022-05-02T10:34:16.896Z'
+date: '2022-05-02T11:54:10.543Z'
 id: bach-api-reference-data-frame-bach-data-frame-fillna
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna/
 title: fillna
@@ -50,10 +50,20 @@ a new dataframe with filled missing values.
 [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame/#bach.DataFrame)
 
 
-**NOTE**: sort_by is required if method is specified and the DataFrame has no order_by.
+:::note
 
-**WARNING**: If sort_by is non-deterministic, this operation might yield different results after
+`sort_by` is required if method is specified and the DataFrame has no order_by.
+
+
+:::
+
+:::warning
+
+If `sort_by` is non-deterministic, this operation might yield different results after
 performing other operations over the resultant dataframe.
+
+
+:::
 
 
 </div>

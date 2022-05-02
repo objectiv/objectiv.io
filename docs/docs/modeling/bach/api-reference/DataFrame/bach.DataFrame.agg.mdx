@@ -1,5 +1,5 @@
 ---
-date: '2022-05-02T10:34:16.896Z'
+date: '2022-05-02T11:54:10.543Z'
 id: bach-api-reference-data-frame-bach-data-frame-agg
 slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.agg/
 title: agg
@@ -42,10 +42,20 @@ supported at the moment.
 * **`kwargs`** – Keyword arguments to pass through to the aggregation function
 
 
-**NOTE**: Pandas has `numeric_only=None` to attempt all columns but ignore failing ones
+:::note
+
+Pandas has `numeric_only=None` to attempt all columns but ignore failing ones
 silently. This is currently not implemented.
 
-**NOTE**: The `axis` parameter defaults to 1, because 0 is currently unsupported
+
+:::
+
+:::note
+
+The `axis` parameter defaults to 1, because 0 is currently unsupported
+
+
+:::
 
 
 </div>
