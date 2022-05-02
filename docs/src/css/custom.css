@@ -322,25 +322,35 @@ div.class {
   padding-top: 0px;
 }
 
-/* Class - heading */
-div.method h2.signature-class, div.class h2.signature-class, div.class h2.signature-method {
+/* Class/method/property - heading */
+div.class h2, div.method h2, div.property h2 {
+  margin-top: 40px;
+}
+div.class h2 p, div.method h2 p, div.property h2 p {
+  display: inline-block;
+}
+
+/* Class/method/property - signature */
+div.method h2.signature-class, 
+div.class h2.signature-class, 
+div.class h2.signature-method {
   margin: 40px 0 0 0;
   font-weight: bold;
   font-size: 24px;
 }
 
 /* Class - type & signature-class - type */
-div.class .type-annotation em, h2.signature-class .type-annotation em {
+div.class .type-annotation *, 
+div.method .type-annotation *,
+div.property .type-annotation *,
+h2.signature-class .type-annotation *, 
+h2.signature-method .type-annotation *, 
+h2.signature-property .type-annotation * {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   letter-spacing: 0;
-}
-
-/* Class heading */
-div.class h2 {
-  margin-top: 40px;
 }
 div.class h2.signature-method, div.class h2.signature-class, div.method h2.signature-class {
   font-family: 'Roboto Mono';
@@ -350,6 +360,7 @@ div.class h2.signature-method .parameter-list {
   font-size: 18px;
   text-transform: none;
 }
+
 span.view-source {
   font-size: 0.8em;
 }
@@ -357,7 +368,6 @@ span.view-source {
 div.method {
   margin-top: 40px;
 }
-
 
 .table-autosummary thead {
   display: none
