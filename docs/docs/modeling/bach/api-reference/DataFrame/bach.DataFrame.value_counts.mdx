@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-value-counts
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.value-counts/
+slug: /modeling/bach/api-reference/DataFrame/value_counts/
 title: value_counts
 ---
 
 # bach.DataFrame.value_counts
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">value_counts(</span><small class="parameter-list"><span class="parameter" id="subset">subset=None</span>, <span class="parameter" id="normalize">normalize=False</span>, <span class="parameter" id="sort">sort=True</span>, <span class="parameter" id="ascending">ascending=False</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">value_counts(</span><small className="parameter-list"><span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="normalize">normalize=False</span>, <span className="parameter" id="sort">sort=True</span>, <span className="parameter" id="ascending">ascending=False</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Returns a series containing counts of each unique row in the DataFrame
 
@@ -25,11 +25,16 @@ Returns a series containing counts of each unique row in the DataFrame
 dataframe has no group_by, all data columns will be used. In case the DataFrame has a group_by,
 series in group_by will be added to subset.
 
+
 * **`normalize`** (bool) – returns proportions instead of frequencies
+
 
 * **`sort`** (bool) – sorts result by frequencies
 
+
 * **`ascending`** (bool) – sorts values in ascending order if true.
+
+
 
 
 
@@ -41,10 +46,11 @@ a series containing all counts per unique row.
 
 ### Return type
 
-[Series](/docs/modeling/bach/api-reference/Series/bach.Series)
+[Series](/docs/modeling/bach/api-reference/Series)
 
 
 
 </div>
+
 
 </div>

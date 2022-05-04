@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-mode
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.mode/
+slug: /modeling/bach/api-reference/DataFrame/mode/
 title: mode
 ---
 
 # bach.DataFrame.mode
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">mode(</span><small class="parameter-list"><span class="parameter" id="axis">axis=1</span>, <span class="parameter" id="skipna">skipna=True</span>, <span class="parameter" id="level">level=None</span>, <span class="parameter" id="numeric_only">numeric_only=False</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">mode(</span><small className="parameter-list"><span className="parameter" id="axis">axis=1</span>, <span className="parameter" id="skipna">skipna=True</span>, <span className="parameter" id="level">level=None</span>, <span className="parameter" id="numeric_only">numeric_only=False</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Returns the mode of all values in each column.
 
@@ -23,11 +23,16 @@ Returns the mode of all values in each column.
 
 * **`axis`** – only `axis=1` is supported. This means columns are aggregated.
 
+
 * **`skipna`** – only `skipna=True` supported. This means NULL values are ignored.
+
 
 * **`level`** – not supported.
 
+
 * **`numeric_only`** – whether to aggregate numeric series only, or attempt all.
+
+
 
 
 
@@ -38,5 +43,6 @@ a new DataFrame with the aggregation applied to all selected columns.
 
 
 </div>
+
 
 </div>

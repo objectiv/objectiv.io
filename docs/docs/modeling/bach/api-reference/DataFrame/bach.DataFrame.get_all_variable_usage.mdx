@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-all-variable-usage
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-all-variable-usage/
+slug: /modeling/bach/api-reference/DataFrame/get_all_variable_usage/
 title: get_all_variable_usage
 ---
 
 # bach.DataFrame.get_all_variable_usage
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">get_all_variable_usage(</span><small class="parameter-list"></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">get_all_variable_usage(</span><small className="parameter-list"></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Get all variables that influence the values of this DataFrame.
 This includes both variables that are used in the current `self.series`, but also variables that
@@ -30,18 +30,24 @@ This method returns a list of DefinedVariable tuples, the fields in the tuples:
 
 * name: name of the variable
 
+
 * dtype: dtype
 
+
 * value: value that is currently set in `self.variables`, or None if there is no value
+
 
 * ref_path: If the variable is used in an already materialized part of the DataFrame, i.e.
 the usage is in self.base_node, then this is the reference path from self.base_node to the
 SqlModel in which the variable usage occurs. If the variable is used in self.series instead,
 then this is None
 
+
 * old_value: If the variable is used in an already materialized part of the DataFrame, then it
 also has a value already. That is this value. Will be None if this variable usage is not in
 self.base_node.
+
+
 
 
 ### Returns
@@ -57,5 +63,6 @@ List with all usages of variables in this DataFrame.
 
 
 </div>
+
 
 </div>

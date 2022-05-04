@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-minmax-scale
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.minmax-scale/
+slug: /modeling/bach/api-reference/DataFrame/minmax_scale/
 title: minmax_scale
 ---
 
 # bach.DataFrame.minmax_scale
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">minmax_scale(</span><small class="parameter-list"><span class="parameter" id="feature_range">feature_range=(0, 1)</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">minmax_scale(</span><small className="parameter-list"><span className="parameter" id="feature_range">feature_range=(0, 1)</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Scales all numeric series based on a given range.
 
@@ -33,7 +33,7 @@ DataFrame
 
 ### Return type
 
-[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.minmax_scale/)
 
 
 Each transformation per feature is performed as follows:
@@ -47,14 +47,20 @@ Each transformation per feature is performed as follows:
 Where:
 * `feature` is the series to be scaled
 
+
 * `feature_min` is the minimum value of `feature`
 
+
 * `feature_max` is the maximum value of `feature`
+
 
 * `range_min, range_max` = `feature_range`
 
 
 
+
+
 </div>
+
 
 </div>

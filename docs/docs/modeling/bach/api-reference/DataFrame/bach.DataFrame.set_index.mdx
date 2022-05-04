@@ -1,32 +1,36 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-index
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.set-index/
+slug: /modeling/bach/api-reference/DataFrame/set_index/
 title: set_index
 ---
 
 # bach.DataFrame.set_index
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">set_index(</span><small class="parameter-list"><span class="parameter" id="keys">keys</span>, <span class="parameter" id="drop">drop=True</span>, <span class="parameter" id="append">append=False</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">set_index(</span><small className="parameter-list"><span className="parameter" id="keys">keys</span>, <span className="parameter" id="drop">drop=True</span>, <span className="parameter" id="append">append=False</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Set this dataframe’s index to the the index given in keys
 
 
 ### Parameters
 
-* **`keys`** (Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series), Sequence[Union[str, [Series](/docs/modeling/bach/api-reference/Series/bach.Series)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
+* **`keys`** (Union[str, [Series](/docs/modeling/bach/api-reference/Series), Sequence[Union[str, [Series](/docs/modeling/bach/api-reference/Series)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
 Series are passed, they should have the same base node as the DataFrame they are set on.
+
 
 * **`drop`** (bool) – delete columns to be used as the new index.
 
+
 * **`append`** (bool) – whether to append to the existing index or replace.
+
+
 
 
 
@@ -38,10 +42,11 @@ a DataFrame with the new index.
 
 ### Return type
 
-[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.set_index/)
 
 
 
 </div>
+
 
 </div>

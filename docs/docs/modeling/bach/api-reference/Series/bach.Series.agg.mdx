@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-series-bach-series-agg
-slug: /modeling/bach/api-reference/Series/bach.Series.agg/
+slug: /modeling/bach/api-reference/Series/agg/
 title: agg
 ---
 
 # bach.Series.agg
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">Series.</span><span class="name">agg(</span><small class="parameter-list"><span class="parameter" id="func">func</span>, <span class="parameter" id="group_by">group_by=None</span>, <span class="parameter" id="*">\*args</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">Series.</span><span className="name">agg(</span><small className="parameter-list"><span className="parameter" id="func">func</span>, <span className="parameter" id="group_by">group_by=None</span>, <span className="parameter" id="*">\*args</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
 
-<div class="content">
+<div className="content">
 
 Apply one or more aggregation functions to this Series.
 
@@ -24,11 +24,16 @@ Apply one or more aggregation functions to this Series.
 * **`func`** (Union[str, Callable, List[Union[Callable, str]]]) – the aggregation function to look for on all series.
 See GroupBy.agg() for supported arguments
 
+
 * **`group_by`** (GroupBy) – the group_by to use, or aggregation over full base_node if None
+
 
 * **`args`** – Positional arguments to pass through to the aggregation function
 
+
 * **`kwargs`** – Keyword arguments to pass through to the aggregation function
+
+
 
 
 
@@ -40,10 +45,11 @@ Aggregated Series, or DataFrame if multiple series are returned
 
 ### Return type
 
-*Union*[[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series)]
+*Union*[[DataFrame](/docs/modeling/bach/api-reference/DataFrame), [Series](/docs/modeling/bach/api-reference/Series/bach.Series.agg/)]
 
 
 
 </div>
+
 
 </div>

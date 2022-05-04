@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-series-bach-series-apply-func
-slug: /modeling/bach/api-reference/Series/bach.Series.apply-func/
+slug: /modeling/bach/api-reference/Series/apply_func/
 title: apply_func
 ---
 
 # bach.Series.apply_func
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">Series.</span><span class="name">apply_func(</span><small class="parameter-list"><span class="parameter" id="func">func</span>, <span class="parameter" id="*">\*args</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">Series.</span><span className="name">apply_func(</span><small className="parameter-list"><span className="parameter" id="func">func</span>, <span className="parameter" id="*">\*args</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
 
-<div class="content">
+<div className="content">
 
 Apply the given functions to this Series.
 If multiple are given, a list of multiple new series will be returned.
@@ -25,9 +25,13 @@ If multiple are given, a list of multiple new series will be returned.
 * **`func`** (Union[str, Callable, List[Union[Callable, str]]]) – the function to look for on all series, either as a str, or callable,
 or a list of such
 
+
 * **`args`** – Positional arguments to pass through to the aggregation function
 
+
 * **`kwargs`** – Keyword arguments to pass through to the aggregation function
+
+
 
 
 :::warning
@@ -39,5 +43,6 @@ You should probably not use this method directly.
 
 
 </div>
+
 
 </div>

@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-table
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.from-table/
+slug: /modeling/bach/api-reference/DataFrame/from_table/
 title: from_table
 ---
 
 # bach.DataFrame.from_table
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="type-annotation"><em>classmethod</em></span> <span class="additional-name">DataFrame.</span><span class="name">from_table(</span><small class="parameter-list"><span class="parameter" id="engine">engine</span>, <span class="parameter" id="table_name">table_name</span>, <span class="parameter" id="index">index</span>, <span class="parameter" id="all_dtypes">all_dtypes=None</span></small>)</h2>
+<h2 className="signature-method"><span className="type-annotation"><em>classmethod</em></span> <span className="additional-name">DataFrame.</span><span className="name">from_table(</span><small className="parameter-list"><span className="parameter" id="engine">engine</span>, <span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="all_dtypes">all_dtypes=None</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Instantiate a new DataFrame based on the content of an existing table in the database.
 
@@ -26,14 +26,19 @@ schema.
 
 * **`engine`** (sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
 
+
 * **`table_name`** (str) – the table name that contains the data to instantiate as DataFrame.
+
 
 * **`index`** (List[str]) – list of column names that make up the index. At least one column needs to be
 selected for the index.
 
+
 * **`all_dtypes`** (Optional[Dict[str, str]]) – Optional. Mapping from column name to dtype.
 Must contain all index and data columns.
 Must be in same order as the columns appear in the the sql-model.
+
+
 
 
 
@@ -45,7 +50,7 @@ A DataFrame based on a sql table.
 
 ### Return type
 
-[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_table/)
 
 
 :::note
@@ -57,5 +62,6 @@ If all_dtypes is not set, then this will query the database.
 
 
 </div>
+
 
 </div>

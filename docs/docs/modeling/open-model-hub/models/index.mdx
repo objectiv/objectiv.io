@@ -1,0 +1,53 @@
+---
+date: '2022-05-04T15:23:34.763Z'
+id: open-model-hub-models-index
+sidebar_position: 2
+slug: /modeling/open-model-hub/models/
+title: Models
+---
+
+# Models
+
+The [open model hub](/docs/modeling/open-model-hub) has two main types of functions:
+[map](/docs/modeling/open-model-hub/models/Mapping) and [aggregate](/docs/modeling/open-model-hub/models/Aggregation).
+
+* [map](/docs/modeling/open-model-hub/models/Mapping) functions always return a series with the same shape and index as the
+[`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) they are applied to. This ensures they can be added as a column to that
+[`DataFrame`](/docs/modeling/bach/api-reference/DataFrame). [map](/docs/modeling/open-model-hub/models/Mapping) functions that return
+[`DataFrame`](/docs/modeling/bach/api-reference/Series/Boolean) can be used with to filter the data.
+
+
+* [aggregate](/docs/modeling/open-model-hub/models/Aggregation) functions return aggregated data in some form from the
+[`DataFrame`](/docs/modeling/bach/api-reference/DataFrame). Can also be accessed with [`agg`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg).
+
+
+
+## Map
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`is_first_session`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-first-session)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
+| [`is_new_user`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-new-user)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
+| [`is_conversion_event`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-conversion-event)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
+| [`conversions_counter`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions-counter)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
+| [`conversions_in_time`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions-in-time)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
+| [`pre_conversion_hit_number`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.pre-conversion-hit-number)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
+
+
+</div>
+
+## Aggregate
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`unique_users`](/docs/modeling/open-model-hub/models/Aggregation/modelhub.Aggregate.unique-users)(data[, groupby])                     | Calculate the unique users in the Objectiv `data`.                                                                                                                                                                       |
+| [`unique_sessions`](/docs/modeling/open-model-hub/models/Aggregation/modelhub.Aggregate.unique-sessions)(data[, groupby])                  | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
+| [`session_duration`](/docs/modeling/open-model-hub/models/Aggregation/modelhub.Aggregate.session-duration)(data[, groupby, ...])            | Calculate the duration of sessions.                                                                                                                                                                                    |
+| [`frequency`](/docs/modeling/open-model-hub/models/Aggregation/modelhub.Aggregate.frequency)(data)                                   | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |
+
+
+</div>

@@ -306,19 +306,19 @@ div.docs-wrapper footer div.col:nth-child(2) {
 /** DOCS - Modeling **/
 
 /* Make API reference titles a bit smaller */
-html[class*='docs-doc-id-modeling/models/Aggregation'] h1, 
-html[class*='docs-doc-id-modeling/models/Mapping'] h1 {
+html[class*='docs-doc-id-modeling/open-model-hub/models/Aggregation'] h1, 
+html[class*='docs-doc-id-modeling/open-model-hub/models/Mapping'] h1 {
   font-size: 32px;
 }
-html[class*='docs-doc-id-modeling/modelhub-api-reference/ModelHub'] h1, 
-html[class*='docs-doc-id-modeling/modelhub-api-reference/Series'] h1 {
+html[class*='docs-doc-id-modeling/open-model-hub/api-reference/ModelHub'] h1, 
+html[class*='docs-doc-id-modeling/open-model-hub/api-reference/Series'] h1 {
   font-size: 32px;
 }
 
 /* Class - overall */
 div.class {
   border-top: 1px solid var(--ifm-font-color-base);
-  margin: 40px 0 100px 0;
+  margin: 40px 0 60px 0;
   padding-top: 0px;
 }
 

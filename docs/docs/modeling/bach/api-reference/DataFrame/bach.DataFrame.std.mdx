@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-std
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.std/
+slug: /modeling/bach/api-reference/DataFrame/std/
 title: std
 ---
 
 # bach.DataFrame.std
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">std(</span><small class="parameter-list"><span class="parameter" id="axis">axis=1</span>, <span class="parameter" id="skipna">skipna=True</span>, <span class="parameter" id="level">level=None</span>, <span class="parameter" id="ddof">ddof=1</span>, <span class="parameter" id="numeric_only">numeric_only=False</span>, <span class="parameter" id="**">\*\*kwargs</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">std(</span><small className="parameter-list"><span className="parameter" id="axis">axis=1</span>, <span className="parameter" id="skipna">skipna=True</span>, <span className="parameter" id="level">level=None</span>, <span className="parameter" id="ddof">ddof=1</span>, <span className="parameter" id="numeric_only">numeric_only=False</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Returns the sample standard deviation of each column.
 
@@ -23,13 +23,19 @@ Returns the sample standard deviation of each column.
 
 * **`axis`** – only `axis=1` is supported. This means columns are aggregated.
 
+
 * **`skipna`** – only `skipna=True` supported. This means NULL values are ignored.
+
 
 * **`level`** – not supported.
 
+
 * **`ddof`** (int) – Delta Degrees of Freedom. Only 1 is supported.
 
+
 * **`numeric_only`** – whether to aggregate numeric series only, or attempt all.
+
+
 
 
 
@@ -40,5 +46,6 @@ a new DataFrame with the aggregation applied to all selected columns.
 
 
 </div>
+
 
 </div>

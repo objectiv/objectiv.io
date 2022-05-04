@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-materialize
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/
+slug: /modeling/bach/api-reference/DataFrame/materialize/
 title: materialize
 ---
 
 # bach.DataFrame.materialize
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">materialize(</span><small class="parameter-list"><span class="parameter" id="node_name">node_name='manual_materialize'</span>, <span class="parameter" id="inplace">inplace=False</span>, <span class="parameter" id="limit">limit=None</span>, <span class="parameter" id="distinct">distinct=False</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">materialize(</span><small className="parameter-list"><span className="parameter" id="node_name">node_name='manual_materialize'</span>, <span className="parameter" id="inplace">inplace=False</span>, <span className="parameter" id="limit">limit=None</span>, <span className="parameter" id="distinct">distinct=False</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Create a copy of this DataFrame with as base_node the current DataFrame’s state.
 
@@ -31,11 +31,16 @@ TODO: a known problem is that DataFrames with ‘json’ columns cannot be fully
 
 * **`node_name`** – The name of the node that’s going to be created
 
+
 * **`inplace`** – Perform operation on self if `inplace=True`, or create a copy.
+
 
 * **`limit`** (Optional[Any]) – The limit (slice, int) to apply.
 
+
 * **`distinct`** (bool) – Apply distinct statement if `distinct=True`
+
+
 
 
 
@@ -47,7 +52,7 @@ DataFrame with the current DataFrame’s state as base_node
 
 ### Return type
 
-[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize/)
 
 
 :::note
@@ -60,5 +65,6 @@ the result if order is important.
 
 
 </div>
+
 
 </div>

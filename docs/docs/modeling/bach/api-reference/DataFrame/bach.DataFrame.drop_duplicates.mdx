@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-drop-duplicates
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.drop-duplicates/
+slug: /modeling/bach/api-reference/DataFrame/drop_duplicates/
 title: drop_duplicates
 ---
 
 # bach.DataFrame.drop_duplicates
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">drop_duplicates(</span><small class="parameter-list"><span class="parameter" id="subset">subset=None</span>, <span class="parameter" id="keep">keep='first'</span>, <span class="parameter" id="ignore_index">ignore_index=False</span>, <span class="parameter" id="sort_by">sort_by=None</span>, <span class="parameter" id="ascending">ascending=True</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">drop_duplicates(</span><small className="parameter-list"><span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="keep">keep='first'</span>, <span className="parameter" id="ignore_index">ignore_index=False</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Return a dataframe with duplicated rows removed based on all series labels or a subset of labels.
 
@@ -25,18 +25,25 @@ Return a dataframe with duplicated rows removed based on all series labels or a 
 Duplications to be dropped are based on the combination of the subset of series.
 If not provided, all series labels will be used by default.
 
+
 * **`keep`** (Union[str, bool]) – Supported values: “first”, “last” and False. Determines which duplicates to keep:
 
   * `first`: drop all occurrences except the first one
 
+
   * `last`:  drop all occurrences except the last one
 
+
   * False: drops all duplicates
+
+
 
 If no value is provided, first occurrences will be kept by default.
 
 
+
 * **`ignore_index`** (bool) – if true, drops indexes of the result
+
 
 * **`sort_by`** (Optional[Union[str, Sequence[str]]]) – series label or sequence of labels used to sort values.
 Sorting of values is needed since result might be non-deterministic
@@ -44,8 +51,11 @@ when keep == “first” or keep == “last”. If not provided:
 1. If dataframe has already an order_by, first and last values will be performed based on it
 2. Else all series not considered in duplication will be used instead.
 
+
 * **`ascending`** (Union[bool, List[bool]]) – Whether to sort ascending (True) or descending (False). If this is a list, then the
 `by` must also be a list and `len(ascending) == len(by)`.
+
+
 
 
 
@@ -57,10 +67,11 @@ a new dataframe with dropped duplicates.
 
 ### Return type
 
-[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.drop_duplicates/)
 
 
 
 </div>
+
 
 </div>

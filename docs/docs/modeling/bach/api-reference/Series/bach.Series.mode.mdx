@@ -1,29 +1,32 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-series-bach-series-mode
-slug: /modeling/bach/api-reference/Series/bach.Series.mode/
+slug: /modeling/bach/api-reference/Series/mode/
 title: mode
 ---
 
 # bach.Series.mode
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">Series.</span><span class="name">mode(</span><small class="parameter-list"><span class="parameter" id="partition">partition=None</span>, <span class="parameter" id="skipna">skipna=True</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">Series.</span><span className="name">mode(</span><small className="parameter-list"><span className="parameter" id="partition">partition=None</span>, <span className="parameter" id="skipna">skipna=True</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
 
-<div class="content">
+<div className="content">
 
 Returns the mode in each partition or for all values if none is given.
 
 
 ### Parameters
 
-* **`partition`** (Union[GroupBy, [DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)]) – The partition or window to apply
+* **`partition`** (Union[GroupBy, [DataFrame](/docs/modeling/bach/api-reference/DataFrame)]) – The partition or window to apply
+
 
 * **`skipna`** (bool) – only `skipna=True` supported. This means NULL values are ignored.
+
+
 
 
 
@@ -34,5 +37,6 @@ a new Series with the aggregation applied
 
 
 </div>
+
 
 </div>

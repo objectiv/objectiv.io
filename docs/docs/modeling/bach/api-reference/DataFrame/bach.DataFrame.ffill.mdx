@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-ffill
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.ffill/
+slug: /modeling/bach/api-reference/DataFrame/ffill/
 title: ffill
 ---
 
 # bach.DataFrame.ffill
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">ffill(</span><small class="parameter-list"><span class="parameter" id="sort_by">sort_by=None</span>, <span class="parameter" id="ascending">ascending=True</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">ffill(</span><small className="parameter-list"><span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Fill missing values by propagating the last non-nullable value in each series.
 
@@ -25,8 +25,11 @@ Fill missing values by propagating the last non-nullable value in each series.
 Sorting of values is needed since result might be non-deterministic, as rows with NULLs might
 yield different results affecting the values to be propagated when using a filling method.
 
+
 * **`ascending`** (Union[bool, List[bool]]) – Whether to sort ascending (True) or descending (False). If this is a list, then the
 `sort_by` must also be a list and `len(ascending) == len(sort_by)`.
+
+
 
 
 
@@ -38,7 +41,7 @@ a new dataframe with filled missing values.
 
 ### Return type
 
-[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.ffill/)
 
 
 :::note
@@ -58,5 +61,6 @@ performing other operations over the resultant dataframe.
 
 
 </div>
+
 
 </div>

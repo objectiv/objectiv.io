@@ -1,0 +1,53 @@
+---
+date: '2022-05-04T15:23:34.763Z'
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub-time-agg
+slug: /modeling/open-model-hub/api-reference/ModelHub/time_agg/
+title: time_agg
+---
+
+# modelhub.ModelHub.time_agg
+
+<div className="method">
+
+<h2 className="signature-method"><span className="additional-name">ModelHub.</span><span className="name">time_agg(</span><small className="parameter-list"><span className="parameter" id="data">data</span>, <span className="parameter" id="time_aggregation">time_aggregation=None</span></small>)</h2>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
+
+<div className="content">
+
+Formats the moment column in the DataFrame, returns a SeriesString.
+
+Can be used to aggregate to different time intervals, ie day, month etc.
+
+
+### Parameters
+
+* **`data`** ([bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+
+
+* **`time_aggregation`** (Optional[str]) – if None, it uses [`time_aggregation`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time-aggregation) set from the
+ModelHub. Use any template for aggregation from:
+[https://www.postgresql.org/docs/14/functions-formatting.html](https://www.postgresql.org/docs/14/functions-formatting.html)
+ie. `time_aggregation=='YYYY-MM-DD'` aggregates by date.
+
+
+
+
+
+### Returns
+
+SeriesString.
+
+
+
+### Return type
+
+[bach.series.series_string.SeriesString](/docs/modeling/bach/api-reference/Series/String)
+
+
+
+</div>
+
+
+</div>

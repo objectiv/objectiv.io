@@ -1,20 +1,20 @@
 ---
-date: '2022-05-02T12:52:16.459Z'
+date: '2022-05-04T15:23:34.763Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-sample
-slug: /modeling/bach/api-reference/DataFrame/bach.DataFrame.get-sample/
+slug: /modeling/bach/api-reference/DataFrame/get_sample/
 title: get_sample
 ---
 
 # bach.DataFrame.get_sample
 
-<div class="method">
+<div className="method">
 
-<h2 class="signature-method"><span class="additional-name">DataFrame.</span><span class="name">get_sample(</span><small class="parameter-list"><span class="parameter" id="table_name">table_name</span>, <span class="parameter" id="filter">filter=None</span>, <span class="parameter" id="sample_percentage">sample_percentage=None</span>, <span class="parameter" id="overwrite">overwrite=False</span>, <span class="parameter" id="seed">seed=None</span></small>)</h2>
+<h2 className="signature-method"><span className="additional-name">DataFrame.</span><span className="name">get_sample(</span><small className="parameter-list"><span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="filter">filter=None</span>, <span className="parameter" id="sample_percentage">sample_percentage=None</span>, <span className="parameter" id="overwrite">overwrite=False</span>, <span className="parameter" id="seed">seed=None</span></small>)</h2>
 
 
-&#8203;<span class="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
 
-<div class="content">
+<div className="content">
 
 Returns a DataFrame whose data is a sample of the current DataFrame object.
 
@@ -29,16 +29,22 @@ DataFrame with all operations that have been done on the sample, applied to that
 
 * **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
 
-* **`filter`** (SeriesBoolean) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
+
+* **`filter`** ([SeriesBoolean](/docs/modeling/bach/api-reference/Series/Boolean)) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
 sample_percentage is ignored and thus the bernoulli sample creation is skipped.
+
 
 * **`sample_percentage`** (int) – the approximate size of the sample as a proportion of all rows.
 Between 0-100.
 
+
 * **`overwrite`** (bool) – if True, the sample data is written to table_name, even if that table already
 exists.
 
+
 * **`seed`** (int) – optional seed number used to generate the sample.
+
+
 
 
 
@@ -50,7 +56,7 @@ a sampled DataFrame of the current DataFrame.
 
 ### Return type
 
-[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame)
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample/)
 
 
 :::note
@@ -62,5 +68,6 @@ All data in the DataFrame to be sampled is queried to create the sample.
 
 
 </div>
+
 
 </div>

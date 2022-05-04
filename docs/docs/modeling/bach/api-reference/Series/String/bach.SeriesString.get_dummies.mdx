@@ -1,0 +1,62 @@
+---
+date: '2022-05-04T15:23:34.763Z'
+id: bach-api-reference-series-string-bach-series-string-get-dummies
+slug: /modeling/bach/api-reference/Series/String/get_dummies/
+title: get_dummies
+---
+
+# bach.SeriesString.get_dummies
+
+<div className="method">
+
+<h2 className="signature-method"><span className="additional-name">SeriesString.</span><span className="name">get_dummies(</span><small className="parameter-list"><span className="parameter" id="prefix">prefix=None</span>, <span className="parameter" id="prefix_sep">prefix_sep='_'</span>, <span className="parameter" id="dummy_na">dummy_na=False</span>, <span className="parameter" id="dtype">dtype='int64'</span></small>)</h2>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_string.py)</span>
+
+<div className="content">
+
+Convert each unique category/value from the series into a dummy/indicator variable.
+
+
+### Parameters
+
+* **`prefix`** (Optional[str]) – String to append to each new column name. By default, the prefix will be the name of
+the caller.
+
+
+* **`prefix_sep`** (str) – Separated between the prefix and label.
+
+
+* **`dummy_na`** (bool) – If true, it will include `nan` as a variable.
+
+
+* **`dtype`** (str) – dtype of all new columns
+
+
+
+
+
+### Returns
+
+DataFrame
+
+
+
+### Return type
+
+[DataFrame](/docs/modeling/bach/api-reference/DataFrame)
+
+
+:::note
+
+Series should contain at least one index level.
+
+
+:::
+
+
+</div>
+
+
+</div>

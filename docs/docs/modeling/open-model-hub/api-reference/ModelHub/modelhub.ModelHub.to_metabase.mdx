@@ -1,0 +1,42 @@
+---
+date: '2022-05-04T15:23:34.763Z'
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub-to-metabase
+slug: /modeling/open-model-hub/api-reference/ModelHub/to_metabase/
+title: to_metabase
+---
+
+# modelhub.ModelHub.to_metabase
+
+<div className="method">
+
+<h2 className="signature-method"><span className="additional-name">ModelHub.</span><span className="name">to_metabase(</span><small className="parameter-list"><span className="parameter" id="data">data</span>, <span className="parameter" id="model_type">model_type=None</span>, <span className="parameter" id="config">config=None</span></small>)</h2>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
+
+<div className="content">
+
+Plot data in `data` to Metabase. If a card already exists, it will be updated. If `data` is a
+[`bach.Series`](/docs/modeling/bach/api-reference/Series), it will call [`bach.Series.to_frame()`](/docs/modeling/bach/api-reference/Series/bach.Series.to-frame).
+
+Default options can be overridden using the config dictionary.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) or [`bach.Series`](/docs/modeling/bach/api-reference/Series) to push to MetaBase.
+
+
+* **`model_type`** (Optional[str]) – Preset output to Metabase for a specific model. eg, ‘unique_users’
+
+
+* **`config`** (Optional[dict]) – Override default config options for the graph to be added/updated in Metabase.
+
+
+
+
+
+</div>
+
+
+</div>
