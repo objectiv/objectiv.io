@@ -12,19 +12,27 @@ import Mermaid from '@theme/Mermaid';
 
 # Objectiv Documentation
 
-#### Objectiv is open-source infrastructure for product analytics. 
+Objectiv is open-source product analytics infrastructure, built around [a generic taxonomy](/taxonomy/).
 
-* Collect [model-ready user behavior data](/tracking/core-concepts/overview.md) and feed it straight into 
-  your data warehouse.
-* Use [pandas-like operations](/modeling/intro.mdx) and [pre-built models](/modeling/models.mdx) that run on 
-  the full SQL dataset.
-* Instantly convert models to SQL to feed all data consumers from a single source of truth.
 
-Check out [objectiv.io](https://www.objectiv.io) to learn more.
+* Collect [validated user behavior](/tracking/core-concepts/validation) data with a [generic event structure](/taxonomy/)
+* Feed it directly [into your data warehouse](/tracking/collector) without cleaning & transformation
+* Take & run [pre-built models](/modeling/example_notebooks) off the shelf to speed up data projects
+* [Reuse and share](/taxonomy/) any model between teams, products and platforms
+* Use [pandas-like operations](/modeling/bach) that run on the full SQL dataset
+* Convert models to SQL with [one command](/modeling/DataFrame/bach.DataFrame.view_sql#bach.DataFrame.view_sql) to feed data consumers from a single source of truth
 
 <img src={useBaseUrl('/img/objectiv-stack.svg')} alt="The Objectiv Stack"/>
 
+Objectiv is self-hosted, 100% free to use and fully open-source. 
 
-## Getting Started
 
-Follow the easy steps in our [Quickstart Guide](/home/quickstart-guide.md) to locally run the full Objectiv stack dockerized.
+### Getting started
+
+Follow our [Quickstart Guide](/home/quickstart-guide.md) to spin up a fully functional dockerized demo in under 5 minutes.
+
+### Resources
+
+* [Objectiv on Github](https://github.com/objectiv/objectiv-analytics) - Objectiv's official repository.
+* [Objectiv on Slack](/join-slack) - Get help & join the discussion on where to take Objectiv next.
+* [Objectiv.io](https://objectiv.io) - Objectiv's official website
