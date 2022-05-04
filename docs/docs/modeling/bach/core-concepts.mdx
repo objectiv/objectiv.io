@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: bach-core-concepts
 sidebar_position: 3
 slug: /modeling/bach/core-concepts/
@@ -18,19 +18,19 @@ transfer any data from the database to Bach. All operations are combined and com
 which is executed only when one of a few specific data-transfer functions is called on either a DataFrame or
 a Series object:
 
-* [`DataFrame.to_pandas()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.to-pandas) or [`Series.to_pandas()`](/docs/modeling/bach/api-reference/Series/bach.Series.to-pandas)
+* [`DataFrame.to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) or [`Series.to_pandas()`](/modeling/bach/api-reference/Series/bach.Series.to_pandas.mdx)
 
 
-* [`DataFrame.head()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.head) or [`Series.head()`](/docs/modeling/bach/api-reference/Series/bach.Series.head)
+* [`DataFrame.head()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.head.mdx) or [`Series.head()`](/modeling/bach/api-reference/Series/bach.Series.head.mdx)
 
 
 * `DataFrame.to_numpy()` or `Series.to_numpy()`
 
 
-* The property accessors [`Series.array`](/docs/modeling/bach/api-reference/Series/bach.Series.array)
+* The property accessors [`Series.array`](/modeling/bach/api-reference/Series/bach.Series.array.mdx)
 
 
-* [`DataFrame.unstack()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack) or [`Series.unstack()`](/docs/modeling/bach/api-reference/Series/bach.Series.unstack)
+* [`DataFrame.unstack()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack.mdx) or [`Series.unstack()`](/modeling/bach/api-reference/Series/bach.Series.unstack.mdx)
 
 
 
@@ -51,8 +51,8 @@ database. This also results in a few differences in how DataFrames form both lib
 situations:
 
 * The order of rows in a Bach DataFrame can be non-deterministic. If there is not a deterministic
-[`DataFrame.sort_values()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort-values) or [`DataFrame.fillna()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna) call, then the order of the rows that the data-transfer
-functions return can be unpredictable. In case for [`DataFrame.fillna()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna), methods `ffill` and `bfill` might fill gaps
+[`DataFrame.sort_values()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_values.mdx) or [`DataFrame.fillna()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna.mdx) call, then the order of the rows that the data-transfer
+functions return can be unpredictable. In case for [`DataFrame.fillna()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna.mdx), methods `ffill` and `bfill` might fill gaps
 with different values since rows containing `NULL`/`None` can yield a different order of rows.
 
 

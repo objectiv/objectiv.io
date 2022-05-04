@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: open-model-hub-models-aggregation-modelhub-aggregate-unique-users
 slug: /modeling/open-model-hub/models/Aggregation/unique_users/
 title: unique_users
@@ -21,12 +21,12 @@ Calculate the unique users in the Objectiv `data`.
 
 ### Parameters
 
-* **`data`** ([bach.dataframe.DataFrame](/docs/modeling/bach/api-reference/DataFrame)) – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
 
 
-* **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/docs/modeling/bach/api-reference/Series)]], str, [bach.series.series.Series](/docs/modeling/bach/api-reference/Series), sql_models.constants.NotSet]) – sets the column(s) to group by.
+* **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/modeling/bach/api-reference/Series/index.mdx)]], str, [bach.series.series.Series](/modeling/bach/api-reference/Series/index.mdx), sql_models.constants.NotSet]) – sets the column(s) to group by.
 
-  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time-agg).
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
 
 
   * if None it aggregates over all data.

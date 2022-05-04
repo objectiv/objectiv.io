@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: open-model-hub-api-reference-model-hub-modelhub-model-hub-agg
 slug: /modeling/open-model-hub/api-reference/ModelHub/agg/
 title: agg
@@ -14,7 +14,7 @@ title: agg
 
 <div className="content">
 
-Access aggregation methods from the model hub. Same as [`aggregate`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate).
+Access aggregation methods from the model hub. Same as [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx).
 
 <div className="class">
 
@@ -37,7 +37,7 @@ Calculate a frequency table for the number of users by number of sessions.
 
 ### Parameters
 
-**`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
 
 
 
@@ -66,12 +66,12 @@ With default `method`, it calculates the mean of the session duration over the `
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
 
 
 * **`groupby`** – sets the column(s) to group by.
 
-  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time-agg).
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
 
 
   * if None it aggregates over all data.
@@ -109,12 +109,12 @@ Calculate the unique sessions in the Objectiv `data`.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
 
 
 * **`groupby`** – sets the column(s) to group by.
 
-  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time-agg).
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
 
 
   * if None it aggregates over all data.
@@ -149,12 +149,12 @@ Calculate the unique users in the Objectiv `data`.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/docs/modeling/bach/api-reference/DataFrame) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
 
 
 * **`groupby`** – sets the column(s) to group by.
 
-  * if not_set it defaults to using [`ModelHub.time_agg`](/docs/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time-agg).
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
 
 
   * if None it aggregates over all data.

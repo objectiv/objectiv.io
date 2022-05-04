@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: example-notebooks-index
 sidebar_position: 4
 slug: /modeling/example-notebooks/
@@ -9,29 +9,29 @@ title: Example notebooks
 # Example notebooks
 
 Here are several examples of how you can analyze and model data using the
-[open model hub](/docs/modeling/open-model-hub). All examples are also available as Jupyter notebooks from our [GitHub
+[open model hub](/modeling/open-model-hub/index.mdx). All examples are also available as Jupyter notebooks from our [GitHub
 repository](https://github.com/objectiv/objectiv-analytics/tree/main/notebooks) and can run if all
 [requirements](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/requirements.txt) are
 installed.
 
-To get started you will first have to instantiate the [open model hub](/docs/modeling/open-model-hub) and create a
-Bach [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) with Objectiv data. The [open model hub](/docs/modeling/open-model-hub) uses
-this [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) for its models. For a general introduction to
-Bach [`DataFrames`](/docs/modeling/bach/api-reference/DataFrame), see the [Bach](/docs/modeling/bach) docs or some basic examples to get
-started [here](/docs/modeling/bach/examples).
+To get started you will first have to instantiate the [open model hub](/modeling/open-model-hub/index.mdx) and create a
+Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) with Objectiv data. The [open model hub](/modeling/open-model-hub/index.mdx) uses
+this [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) for its models. For a general introduction to
+Bach [`DataFrames`](/modeling/bach/api-reference/DataFrame/index.mdx), see the [Bach](/modeling/bach/index.mdx) docs or some basic examples to get
+started [here](/modeling/bach/examples.mdx).
 
 ## Getting started with Objectiv
 
 Here we show how to install and instantiate the model hub.
-The [open model hub](/docs/modeling/open-model-hub) is installed with:
+The [open model hub](/modeling/open-model-hub/index.mdx) is installed with:
 
 ```console
 pip install objectiv-modelhub
 ```
 
-Now we can import and instantiate the model hub and create a Bach [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) with
-Objectiv data. This [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) is used to analyze data collected with Objectiv’s
-Tracker. The [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) points to the data in the SQL database and all operations
+Now we can import and instantiate the model hub and create a Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) with
+Objectiv data. This [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) is used to analyze data collected with Objectiv’s
+Tracker. The [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) points to the data in the SQL database and all operations
 are done on this object. A start date and an end date can optionally be passed to limit the underlying data
 that is queried. The `time_aggregation` parameter determines the default formatting of the timestamp of
 events. This is useful for grouping to different time aggregations, i.e. monthly or daily.
@@ -49,7 +49,7 @@ df = modelhub.get_objectiv_dataframe(db_url='postgresql://objectiv:@localhost:54
                                      table_name='example')
 ```
 
-Your [`DataFrame`](/docs/modeling/bach/api-reference/DataFrame) is instantiated! We start with showing the first couple of rows
+Your [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) is instantiated! We start with showing the first couple of rows
 from the data set.
 
 ```python
@@ -57,11 +57,11 @@ df.head()
 ```
 
 Take a look at one of the example notebooks below to see how you can analyze your data. Basic Bach
-introduction examples are [here](/docs/modeling/bach/examples).
+introduction examples are [here](/modeling/bach/examples.mdx).
 
-* [Open model hub basics](/docs/modeling/example-notebooks/modelhub-basics)
-* [Basic product analytics](/docs/modeling/example-notebooks/product-analytics)
-* [Basic user intent analysis](/docs/modeling/example-notebooks/user-intent)
-* [Open taxonomy how-to](/docs/modeling/example-notebooks/open-taxonomy)
-* [Feature engineering with Bach](/docs/modeling/example-notebooks/feature-engineering)
-* [Bach and sklearn](/docs/modeling/example-notebooks/machine-learning)
+* [Open model hub basics](/modeling/example-notebooks/modelhub-basics.mdx)
+* [Basic product analytics](/modeling/example-notebooks/product-analytics.mdx)
+* [Basic user intent analysis](/modeling/example-notebooks/user-intent.mdx)
+* [Open taxonomy how-to](/modeling/example-notebooks/open-taxonomy.mdx)
+* [Feature engineering with Bach](/modeling/example-notebooks/feature-engineering.mdx)
+* [Bach and sklearn](/modeling/example-notebooks/machine-learning.mdx)

@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: example-notebooks-modelhub-basics
 slug: /modeling/example-notebooks/modelhub-basics/
 title: Open model hub basics
@@ -8,7 +8,7 @@ title: Open model hub basics
 # Open model hub basics
 
 In this example, we briefly demonstrate how you can use pre-built models from the open model hub in
-conjunction with, [Bach](/docs/modeling/bach), our modeling library.
+conjunction with, [Bach](/modeling/bach/index.mdx), our modeling library.
 
 This example uses real, unaltered data that was collected from [https://objectiv.io](https://objectiv.io) with Objectiv’s Tracker. All models
 in the open model hub are compatible with datasets that have been validated against the
@@ -19,7 +19,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/docs/modeling/example-notebooks/modelhub-basics/) for more info on this.
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this.
 
 ## Using the open model hub
 
@@ -27,8 +27,8 @@ The open model hub is a growing collection of open-source, free to use data mode
 combine and run for product analysis and exploration. It includes models for a wide range of typical product
 analytics use cases. The source is available for all models and you’re free to make any changes to them.
 
-The model hub has two main type of functions: [Mapping](/docs/modeling/open-model-hub/models/Mapping) and
-[Aggregation](/docs/modeling/open-model-hub/models/Aggregation).
+The model hub has two main type of functions: [Mapping](/modeling/open-model-hub/models/Mapping/index.mdx) and
+[Aggregation](/modeling/open-model-hub/models/Aggregation/index.mdx).
 
 * `map` functions always return a series with the same shape and index as the DataFrame they are applied to.
 This ensures they can be added as a column to that DataFrame. `map` functions that return SeriesBoolean can
@@ -62,7 +62,7 @@ df['is_new_user'] = modelhub.map.is_new_user(df)
 
 Or we can label conversion events. To do this we first have to define what a conversion is by setting the
 type of event and the location on the product at which this event was triggered with `add_conversion_event`
-(this is called the location stack, see [location_stack](/docs/modeling/example-notebooks/open-taxonomy) for info).
+(this is called the location stack, see [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) for info).
 
 ```python
 modelhub.add_conversion_event(location_stack=df.location_stack.json[{'id': 'Quickstart Guide', '_type': 'LinkContext'}:],
@@ -149,8 +149,8 @@ Show the results, now the underlying query is executed.
 presses_per_session.head()
 ```
 
-There is another [example](/docs/modeling/bach/examples) that demonstrates what you can do with the Bach modeling
-library, or head over to the [Bach API reference](/docs/modeling/bach/api-reference) for a complete overview of the possibilities.
+There is another [example](/modeling/bach/examples.mdx) that demonstrates what you can do with the Bach modeling
+library, or head over to the [Bach API reference](/modeling/bach/api-reference/index.mdx) for a complete overview of the possibilities.
 
 ### 4. Export DataFrame and model hub results to pandas DataFrame
 
@@ -169,4 +169,4 @@ This concludes the open model hub demo.
 
 We hope you’ve gotten a taste of the power and flexibility of the open model hub to quickly answer common product analytics questions. You can take it a lot further and build highly specific model stacks for in-depth analysis and exploration.
 
-For a complete overview of all available and upcoming models, check out the [models](/docs/modeling/open-model-hub/models).
+For a complete overview of all available and upcoming models, check out the [models](/modeling/open-model-hub/models/index.mdx).

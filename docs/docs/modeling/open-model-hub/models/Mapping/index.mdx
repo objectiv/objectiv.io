@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: open-model-hub-models-mapping-index
 slug: /modeling/open-model-hub/models/Mapping/
 title: Mapping
@@ -31,12 +31,12 @@ as columns to that DataFrame.
 
 |                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`is_first_session`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-first-session)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
-| [`is_new_user`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-new-user)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
-| [`is_conversion_event`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.is-conversion-event)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
-| [`conversions_counter`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions-counter)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
-| [`conversions_in_time`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions-in-time)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
-| [`pre_conversion_hit_number`](/docs/modeling/open-model-hub/models/Mapping/modelhub.Map.pre-conversion-hit-number)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
+| [`is_first_session`](/modeling/open-model-hub/models/Mapping/modelhub.Map.is_first_session.mdx)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
+| [`is_new_user`](/modeling/open-model-hub/models/Mapping/modelhub.Map.is_new_user.mdx)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
+| [`is_conversion_event`](/modeling/open-model-hub/models/Mapping/modelhub.Map.is_conversion_event.mdx)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
+| [`conversions_counter`](/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions_counter.mdx)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
+| [`conversions_in_time`](/modeling/open-model-hub/models/Mapping/modelhub.Map.conversions_in_time.mdx)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
+| [`pre_conversion_hit_number`](/modeling/open-model-hub/models/Mapping/modelhub.Map.pre_conversion_hit_number.mdx)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
 
 
 </div>

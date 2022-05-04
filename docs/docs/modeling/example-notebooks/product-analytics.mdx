@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: example-notebooks-product-analytics
 slug: /modeling/example-notebooks/product-analytics/
 title: Basic product analytics
@@ -14,7 +14,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/docs/modeling/example-notebooks/product-analytics/) for more info on this. The data used in this example is
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this. The data used in this example is
 based on the data set that comes with our quickstart docker demo.
 
 First we look at the data.
@@ -25,8 +25,8 @@ df.sort_values('session_id', ascending=False).head()
 
 The columns ‘global_contexts’ and the ‘location_stack’ contain most of the event specific data. These columns
 are json type columns and we can extract data from it based on the keys of the json objects using
-[get_from_context_with_type_series](/docs/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv). Or use methods
-specific to the [location_stack](/docs/modeling/example-notebooks/open-taxonomy) or [global_contexts](/docs/modeling/example-notebooks/open-taxonomy) to
+[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx). Or use methods
+specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx) to
 extract the data.
 
 ```python
@@ -42,8 +42,8 @@ df['utm_content'] = df.global_contexts.gc.get_from_context_with_type_series(type
 df['utm_term'] = df.global_contexts.gc.get_from_context_with_type_series(type='MarketingContext', key='term')
 ```
 
-Now we will go though a bunch of basic analytics metrics. We can use models from the [models](/docs/modeling/open-model-hub/models)
-for this purpose or use [Bach](/docs/modeling/bach) to do data analysis directly on the data stored in the SQL database using
+Now we will go though a bunch of basic analytics metrics. We can use models from the [models](/modeling/open-model-hub/models/index.mdx)
+for this purpose or use [Bach](/modeling/bach/index.mdx) to do data analysis directly on the data stored in the SQL database using
 pandas-like syntax.
 
 For each example, `head()`, `to_pandas()` or `to_numpy()` can be used to execute the generated SQL and get

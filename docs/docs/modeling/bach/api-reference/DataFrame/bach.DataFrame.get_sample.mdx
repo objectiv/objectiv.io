@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T15:23:34.763Z'
+date: '2022-05-04T21:05:19.211Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-sample
 slug: /modeling/bach/api-reference/DataFrame/get_sample/
 title: get_sample
@@ -21,7 +21,7 @@ Returns a DataFrame whose data is a sample of the current DataFrame object.
 For the sample Dataframe to be created, all data is queried once and a persistent table is created to
 store the sample data used for the sampled DataFrame.
 
-Use [`get_unsampled()`](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get-unsampled) to switch back to the unsampled data later on. This returns a new
+Use [`get_unsampled()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_unsampled.mdx) to switch back to the unsampled data later on. This returns a new
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
 
@@ -30,7 +30,7 @@ DataFrame with all operations that have been done on the sample, applied to that
 * **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
 
 
-* **`filter`** ([SeriesBoolean](/docs/modeling/bach/api-reference/Series/Boolean)) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
+* **`filter`** ([SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx)) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
 sample_percentage is ignored and thus the bernoulli sample creation is skipped.
 
 
@@ -56,7 +56,7 @@ a sampled DataFrame of the current DataFrame.
 
 ### Return type
 
-[DataFrame](/docs/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample/)
+[DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)
 
 
 :::note
