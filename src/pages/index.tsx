@@ -3,6 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useRef } from 'react';
+import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
 import BeforeAfterImage from '../components/before-after-image';
 import VimeoPlayer from '../components/vimeo-player';
@@ -43,15 +44,6 @@ export default function Home() {
           </h2>
           <div className={clsx(styles.heroCtaButtons)}>
             <TrackedLink
-              to="https://github.com/objectiv/objectiv-analytics"
-              waitUntilTracked={true}
-              target="_self"
-              className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  
-                alt={'Objectiv on GitHub'}/></span>
-              Star us on GitHub
-            </TrackedLink>
-            <TrackedLink
               to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
               waitUntilTracked={true}
               target="_self"
@@ -60,6 +52,7 @@ export default function Home() {
                 alt={'Objectiv Quickstart Guide'}/></span>
               Spin up the Demo
             </TrackedLink>
+            <GitHubStargazers cta='Star us on GitHub' />
           </div>
         </div>
       </TrackedHeader>
