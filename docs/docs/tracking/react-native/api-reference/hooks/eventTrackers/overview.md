@@ -4,7 +4,7 @@ title: Event Trackers
 sidebar_position: 1
 ---
 
-These hooks can be used to obtain ready-to-trigger callbacks for all [Taxonomy Events](/taxonomy/reference/events/overview.md).
+These hooks can be used to obtain ready-to-trigger callbacks for all [Events](/taxonomy/reference/events/overview.md).
 
 :::danger
 Be careful when using [LocationWrappers](/tracking/react-native/api-reference/overview.md#location-wrappers) and Event Tracking hooks in the same Component. 

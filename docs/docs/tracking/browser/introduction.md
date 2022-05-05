@@ -10,7 +10,7 @@ The Browser SDK is designed to work without a specific UI Kit, or framework, wit
 [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) can be used to enrich DOM elements with [Tagging Attributes](/tracking/browser/api-reference/definitions/TaggingAttribute.md).  
 These are later used to reconstruct the Location of where an Event originated by traversing the DOM.
 
-Most events are [triggered automatically](/tracking/browser/api-reference/locationTaggers/tagLocation.md#events), although all the automation is configurable. For special cases [Event Trackers](/tracking/browser/api-reference/eventTrackers/overview.md) are provided for manually triggering any of the [Open Taxonomy events](/taxonomy/reference/events/overview.md).
+Most events are [triggered automatically](/tracking/browser/api-reference/locationTaggers/tagLocation.md#events), although all the automation is configurable. For special cases [Event Trackers](/tracking/browser/api-reference/eventTrackers/overview.md) are provided for manually triggering any of the [Events](/taxonomy/reference/events/overview.md).
 
 Browser Tracker can [traverse and tag the DOM](/tracking/browser/api-reference/locationTaggers/tagChildren.md) for you, making it ideal for instrumenting static or pre-generated content.
 

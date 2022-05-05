@@ -1,6 +1,6 @@
 # Core Factories
 
-Automatically generated factories based on the [Taxonomy](/taxonomy/introduction.md) schema. 
+Automatically generated factories based on the [taxonomy](/taxonomy/introduction.md) schema. 
 
 :::caution
 These are core-level APIs needed only when diving into low-level tracking via [tagLocation](/tracking/browser/api-reference/locationTaggers/tagLocation.md) or [trackEvent](/tracking/browser/api-reference/eventTrackers/trackEvent.md).   

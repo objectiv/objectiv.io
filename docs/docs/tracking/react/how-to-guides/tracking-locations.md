@@ -21,7 +21,7 @@ This is where our LocationStack comes in handy in the form of Tracked Context an
 
 ## Tracked Contexts and Elements
 
-Our [Taxonomy](/taxonomy/introduction.md) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
+Our [taxonomy](/taxonomy/introduction.md) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
 
 For each of these, the React SDK offers a TrackedContext component.     
 
