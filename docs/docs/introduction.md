@@ -13,7 +13,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 
 # Objectiv Documentation
 
-Objectiv is open-source product analytics infrastructure, built around [a generic event taxonomy](/taxonomy/).
+Objectiv is open-source product analytics infrastructure, built around [a generic event taxonomy](/taxonomy/introduction.md).
 
 
 * Collect [validated user behavior](/tracking/core-concepts/validation.md) data with a [generic event structure](/taxonomy/introduction.md)

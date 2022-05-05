@@ -48,7 +48,7 @@ In most cases, the recurring discussion on what to track and how to track it can
 ### Does the tracker auto-capture events?
 No. While setting up auto-capture trackers is very convenient, the data sets they collect are often incomplete, overcomplete unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling & analysis. 
 
-Instrumenting Objectiv's tracker involves [mapping sections of your product's UI](/tracking/core-concepts/locations) and tagging events. Our tracking SDK provides tools to make this process as efficient as possible. 
+Instrumenting Objectiv's tracker involves [mapping sections of your product's UI](/tracking/core-concepts/locations.md) and tagging events. Our tracking SDK provides tools to make this process as efficient as possible. 
 
 Tagging sections and events serves multiple purposes:
 
