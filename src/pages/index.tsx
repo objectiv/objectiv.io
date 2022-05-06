@@ -91,8 +91,8 @@ export default function Home() {
                   alt="The open analytics taxonomy" />
               </div>
               <div>
+                <h3>A taxonomy to ensure quality &amp; consistency</h3>
                 <p>
-                  <h3>A taxonomy to ensure quality &amp; consistency</h3>
                   Objectiv's tracker validates all incoming events against an&nbsp;
                   <TrackedLink
                     to={useBaseUrl("/docs/taxonomy/", {absolute: true})} 
@@ -112,8 +112,8 @@ export default function Home() {
 
             <div className={clsx(styles.valueRowLeft)}>
               <div>
+                <h3>Get the full context</h3>
                 <p>
-                  <h3>Get the full context</h3>
                   Objectiv's tracker captures the structure of your product's UI inside the dataset. 
                   Events contain the exact location where they were triggered in a hierarchical stack of 
                   locations.
@@ -165,8 +165,8 @@ export default function Home() {
             <div className={clsx(styles.modelingUSPs)}>
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
+                  <h3>Pandas-like modeling on the full SQL dataset</h3>
                   <p>
-                    <h3>Pandas-like modeling on the full SQL dataset</h3>
                     The Objectiv Bach modeling library combines the scalability of SQL with the agility of 
                     Pandas.
                   </p>
@@ -195,8 +195,8 @@ export default function Home() {
                     alt="Take pre-built models off the shelf" />
                 </div>
                 <div>
+                  <h3>Take pre-built models off the shelf</h3>
                   <p>
-                    <h3>Take pre-built models off the shelf</h3>
                     Objectiv&nbsp;
                     <TrackedLink
                       to={useBaseUrl("/docs/modeling/example_notebooks/", {absolute: true})}
@@ -294,8 +294,8 @@ export default function Home() {
             <div className={clsx(styles.eliminateComplexityUSPs)}>
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
+                  <h3>Convert models to SQL with a single command</h3>
                   <p>
-                    <h3>Convert models to SQL with a single command</h3>
                     On command, Objectiv converts your entire model to a production-ready SQL query, which 
                     you can directly use to feed into your tools and products.
                   </p>
