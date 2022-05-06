@@ -81,7 +81,6 @@ const config = {
     trackerEndPoint: envConfig.trackerEndPoint,
     trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true',
     slackJoinLink: slackJoinLink,
-    gitHubSecretKey: "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",
     gitHubRepo: "objectiv-analytics"
   },
 
