@@ -28,9 +28,8 @@ function Stargazers(cta) {
 
   const [getStargazersCount, setStargazersCount] = useState(null);
 
-  const formatResponse = (res) => {
-    return res.stargazers_count.toLocaleString()
-    // return JSON.stringify(res, null, 2);
+  const formatResponse = (result) => {
+    return result.data.stargazers_count.toLocaleString();
   };
 
   const trackFailureEvent = useFailureEventTracker({
@@ -65,7 +64,7 @@ function Stargazers(cta) {
   );
 
   useEffect(() => {
-    if (isLoadingStargazers) setStargazersCount("..");
+    if (isLoadingStargazers) setStargazersCount("...");
   }, [isLoadingStargazers]);
 
   // load on mount
