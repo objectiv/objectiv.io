@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-bach-data-frame-get-all-variable-usage
 slug: /modeling/bach/api-reference/DataFrame/get_all_variable_usage/
 title: get_all_variable_usage
@@ -29,25 +29,15 @@ then the conflicting dtypes and/or values are all returned.
 This method returns a list of DefinedVariable tuples, the fields in the tuples:
 
 * name: name of the variable
-
-
 * dtype: dtype
-
-
 * value: value that is currently set in `self.variables`, or None if there is no value
-
-
 * ref_path: If the variable is used in an already materialized part of the DataFrame, i.e.
 the usage is in self.base_node, then this is the reference path from self.base_node to the
 SqlModel in which the variable usage occurs. If the variable is used in self.series instead,
 then this is None
-
-
 * old_value: If the variable is used in an already materialized part of the DataFrame, then it
 also has a value already. That is this value. Will be None if this variable usage is not in
 self.base_node.
-
-
 
 
 ### Returns

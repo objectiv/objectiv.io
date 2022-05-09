@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-bach-data-frame-merge
 slug: /modeling/bach/api-reference/DataFrame/merge/
 title: merge
@@ -33,30 +33,14 @@ DataFramesOrSeries.
 ### Parameters
 
 * **`right`** (Union[[DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx), [Series](/modeling/bach/api-reference/Series/index.mdx)]) – DataFrame or Series to join on self
-
-
 * **`how`** (str) – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}
-
-
 * **`on`** (Union[str, [SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx), List[Union[str, [SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx)]]]) – optional, column(s) to join left and right on.
-
-
 * **`left_on`** (Union[str, List[str]]) – optional, column(s) from the left df to join on
-
-
 * **`right_on`** (Union[str, List[str]]) – optional, column(s) from the right df/series to join on
-
-
 * **`left_index`** (bool) – If true uses the index of the left df as columns to join on
-
-
 * **`right_index`** (bool) – If true uses the index of the right df/series as columns to join on
-
-
 * **`suffixes`** (Tuple[str, str]) – Tuple of two strings. Will be used to suffix duplicate column names. Must make
 column names unique
-
-
 
 
 

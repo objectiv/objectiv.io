@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: example-notebooks-user-intent
 slug: /modeling/example-notebooks/user-intent/
 title: Basic user intent analysis
@@ -58,9 +58,11 @@ Now, we can look at the distribution of time spent. We used the Bach quantile op
 ```python
 # how is this time spent distributed?
 session_duration = modelhub.aggregate.session_duration(df, groupby='session_id')
-
 # materialization is needed because the expression of the created series contains aggregated data, and it is not allowed to aggregate that.
-session_duration.to_frame().materialize()['session_duration'].quantile(q=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]).head(10)
+session_duration = session_duration.to_frame().materialize().session_duration
+
+# show quantiles
+session_duration.quantile(q=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]).head(10)
 ```
 
 ## Defining different stages of user intent
@@ -69,14 +71,14 @@ After exploring the `root_location` and `session_duration` (both per root locati
 
 Based on the objectiv.io website data in the quickstart:
 
-We think that users that spent most time (90th percentile) and specifically in our documentation sections are in the Implement phase of Objectiv. If you look at the other quantiles, it feels sensible to deem that users beyond the 50th up to 90th perctile in our documentation sections are Exploring. The remaining users are Informing themselves about the product. Those users are spending less than two minutes in the docs and/or spend any amount of time on our main website.
+We think that users that spent most time (90th percentile) and specifically in our documentation sections are in the Implement phase of Objectiv. As there is a jump beyond the one minute mark at the 70th percentile, it feels sensible to deem that users beyond the 70th up to 90th perctile in our documentation sections are Exploring. The remaining users are Informing themselves about the product. Those users are spending less than 1:40 in the docs and/or spend any amount of time on our main website.
 
 | User intent                                       | Root locations                                                                                                                                                                                     | Duration  |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | 1 - Inform                                        | *all sections other than the ones mentioned below*                                                                                                                                                   | *any time spent*  |
-| 1 - Inform                                        | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | less than 2 minutes  |
-| 2 - Explore                                       | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | between 2 and 19 minutes  |
-| 3 - Implement                                     | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | more than 19 minutes      |
+| 1 - Inform                                        | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | less than 1:40  |
+| 2 - Explore                                       | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | between 1:40 and 11:30  |
+| 3 - Implement                                     | Docs: modeling, taxonomy, tracking, home                                                                                                                                                           | more than 11:30         |
 
 This is just for illustration purposes, you can adjust these definitions based on your own collected data.
 
@@ -107,9 +109,9 @@ user_intent_buckets['explore_inform_duration'] = explore_inform_users_session_du
 user_intent_buckets['bucket'] = '1 - inform'
 
 # calculate buckets duration
-user_intent_buckets.loc[(user_intent_buckets.explore_inform_duration >= timedelta(0, 120)) &
-                        (user_intent_buckets.explore_inform_duration <= timedelta(0, 1140)), 'bucket'] = '2 - explore'
-user_intent_buckets.loc[user_intent_buckets.explore_inform_duration > timedelta(0, 1140), 'bucket'] = '3 - implement'
+user_intent_buckets.loc[(user_intent_buckets.explore_inform_duration >= timedelta(0, 100)) &
+                        (user_intent_buckets.explore_inform_duration <= timedelta(0, 690)), 'bucket'] = '2 - explore'
+user_intent_buckets.loc[user_intent_buckets.explore_inform_duration > timedelta(0, 690), 'bucket'] = '3 - implement'
 ```
 
 Now, we have assigned intent to each user and can for example look at the total number of users per intent bucket.
@@ -124,14 +126,8 @@ user_intent_buckets.groupby('bucket').agg({'user_id': 'nunique'}).head()
 The are many next possible analysis steps, for example:
 
 * What product features do each of the intent groups use?
-
-
 * What kind of intent users come from different marketing campaigns?
-
-
 * How can we drive more users to the ‘Implement’ stage? Look at different product features that users with the ‘Implement’ intent use, compared to ‘Explore’.
-
-
 
 A good starting point for these analyses on top of the user intent buckets is the basic product analytics example in the [example notebooks](/modeling/example-notebooks/index.mdx).
 

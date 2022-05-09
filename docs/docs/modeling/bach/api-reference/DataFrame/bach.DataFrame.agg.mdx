@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-bach-data-frame-agg
 slug: /modeling/bach/api-reference/DataFrame/agg/
 title: agg
@@ -22,35 +22,16 @@ Aggregate using one or more operations over the specified axis.
 ### Parameters
 
 * **`func`** (Union[str, Callable, List[Union[Callable, str]], Dict[str, Union[str, Callable, List[Union[Callable, str]]]]]) – the aggregations to apply on all series. Accepted combinations are:
-
   * function, e.g. `SeriesInt64.sum`
-
-
   * function name
-
-
   * list of functions and/or function names, e.g. [`SeriesInt64.sum`, ‘mean’]
-
-
   * dict of axis labels -> functions, function names or list of such.
-
-
-
-
 
 * **`axis`** (int) – the aggregation axis. If `axis=1` the index is aggregated as well. Only `axis=1`
 supported at the moment.
-
-
 * **`numeric_only`** (bool) – whether to aggregate numeric series only, or attempt all.
-
-
 * **`args`** – Positional arguments to pass through to the aggregation function
-
-
 * **`kwargs`** – Keyword arguments to pass through to the aggregation function
-
-
 
 
 :::note

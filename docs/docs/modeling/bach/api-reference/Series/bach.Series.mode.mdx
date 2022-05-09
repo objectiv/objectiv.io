@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-series-bach-series-mode
 slug: /modeling/bach/api-reference/Series/mode/
 title: mode
@@ -22,17 +22,27 @@ Returns the mode in each partition or for all values if none is given.
 ### Parameters
 
 * **`partition`** (Union[GroupBy, [DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)]) – The partition or window to apply
-
-
 * **`skipna`** (bool) – only `skipna=True` supported. This means NULL values are ignored.
-
-
 
 
 
 ### Returns
 
 a new Series with the aggregation applied
+
+
+..warning::
+    The result of this function might be non-deterministic if there are multiple values with
+    the same frequency.
+
+
+..note::
+    BigQuery has no support for aggregation function `MODE`, therefore `APPROX_TOP_COUNT`
+    approximate aggregate function is used instead. Which means that an approximate result will
+    be produced instead of exact results.
+
+    For more information:
+    [https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count](https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count)
 
 
 

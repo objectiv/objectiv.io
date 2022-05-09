@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: example-notebooks-open-taxonomy
 slug: /modeling/example-notebooks/open-taxonomy/
 title: Open taxonomy how-to
@@ -31,32 +31,14 @@ df.dtypes
 ```
 
 * `day`: the day of the session as a date.
-
-
 * `moment`: the exact moment of the event.
-
-
 * `user_id`: the unique identifyer of the user based on the cookie.
-
-
 * `global_contexts`: a json-like data column that stores additional information on the event that is logged. This includes data like device data, application data, and cookie information. See below for more detailed explanation.
-
-
 * `location_stack`: a json-like data column that stores information on the exact location where the event is triggered in the product’s UI. See below for more detailed explanation.
-
-
 * `event_type`: the type of event that is logged.
-
-
 * `stack_event_types`: the parents of the event_type.
-
-
 * `session_id`: a unique incremented integer id for each session. Starts at 1 for the selected data in the DataFrame.
-
-
 * `session_hit_number`: a incremented integer id for each hit in session ordered by moment.
-
-
 
 Preview of the data. We show the latest PressEvents.
 
@@ -69,14 +51,8 @@ df[df.event_type == 'PressEvent'].sort_values('moment', ascending=False).head()
 Data in a DataFrame created with `get_objectiv_dataframe()` follows the principles of the [open analytics taxonomy](https://objectiv.io/docs/taxonomy/) and is stored as such. Therefore it adheres to the three principles of how events are structured.
 
 * **event_type**: describes the kind of interactive or non-interactive event.
-
-
 * **location_stack**: describes where an event originated from in the visual UI.
-
-
 * **global_context**: general information to an event.
-
-
 
 The following section will go through these concepts one by one.
 
@@ -107,21 +83,12 @@ used to access the data from the `location_stack`. These methods can be used usi
 the column. The methods are:
 
 * The property accessors:
-  * [.ls.navigation_features](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
-
-
-  * [.ls.feature_stack](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
-
-
-  * [.ls.nice_name](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
-
-
-
+      * [.ls.navigation_features](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
+      * [.ls.feature_stack](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
+      * [.ls.nice_name](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
 
 
 * all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx) for the json(b) type can also be accessed using `.ls`
-
-
 
 For example,
 
@@ -143,20 +110,13 @@ df[df.event_type == 'PressEvent'].location_stack.head(1)[0]
 The `global_contexts` column in the DataFrame contain all information that is relevant to the logged event. As it is set as an `objectiv_global_context` type, specific methods can be used to access the data from the `global_contexts`. These methods can be used using the `.gc` accessor on the column. The methods are:
 
 * [.gc.get_from_context_with_type_series(type, key)](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx).
-
-
 * The property accessors:
-  * [.gc.cookie_id](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
-  * [.gc.user_agent](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
-  * [.gc.application](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
-
-
-
+      * [.gc.cookie_id](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
+      * [.gc.user_agent](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
+      * [.gc.application](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
 
 
 * all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx) for the json(b) type can also be accessed using `.gc`
-
-
 
 The full [reference of global contexts is here](https://objectiv.io/docs/taxonomy/global-contexts). An
 example is queried below:

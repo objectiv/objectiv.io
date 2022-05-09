@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-core-concepts
 sidebar_position: 3
 slug: /modeling/bach/core-concepts/
@@ -19,20 +19,10 @@ which is executed only when one of a few specific data-transfer functions is cal
 a Series object:
 
 * [`DataFrame.to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) or [`Series.to_pandas()`](/modeling/bach/api-reference/Series/bach.Series.to_pandas.mdx)
-
-
 * [`DataFrame.head()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.head.mdx) or [`Series.head()`](/modeling/bach/api-reference/Series/bach.Series.head.mdx)
-
-
 * `DataFrame.to_numpy()` or `Series.to_numpy()`
-
-
 * The property accessors [`Series.array`](/modeling/bach/api-reference/Series/bach.Series.array.mdx)
-
-
 * [`DataFrame.unstack()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack.mdx) or [`Series.unstack()`](/modeling/bach/api-reference/Series/bach.Series.unstack.mdx)
-
-
 
 Typical usage would be to do all heavy lifting inside the database, and only query the aggregated/summarized
 output.
@@ -54,11 +44,7 @@ situations:
 [`DataFrame.sort_values()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_values.mdx) or [`DataFrame.fillna()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna.mdx) call, then the order of the rows that the data-transfer
 functions return can be unpredictable. In case for [`DataFrame.fillna()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna.mdx), methods `ffill` and `bfill` might fill gaps
 with different values since rows containing `NULL`/`None` can yield a different order of rows.
-
-
 * Bach DataFrames can distinguish between `NULL`/`None` and Not-a-Number (`NaN`). Pandas generally doesn’t
 and mainly uses NaN. When outputting data from a Bach DataFrame to a pandas DataFrame, most of this
 distinction is lost again.
-
-
 * In a Bach DataFrame column names must be unique, in pandas this is not the case

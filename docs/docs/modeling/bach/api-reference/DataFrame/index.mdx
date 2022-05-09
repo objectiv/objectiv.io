@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-index
 slug: /modeling/bach/api-reference/DataFrame/
 title: DataFrame
@@ -23,14 +23,14 @@ that is based on the pandas api. This allows the database to group and aggregate
 do other operations that are not suitable for in memory processing. At any time it is possible to write
 your Bach DataFrame to a pandas DataFrame.
 
-## Usage
+**Usage**
 
 It should generally not be required to construct DataFrame instances manually. A DataFrame can be
 constructed using the any of the bach classmethods like [`from_table()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_table.mdx), [`from_model()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_model.mdx), or
 [`from_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_pandas.mdx). The returned DataFrame can be thought of as a dict-like container for Bach
 Series objects.
 
-## Getting & Setting columns
+**Getting & Setting columns**
 
 Getting data works similar to pandas DataFrame. Single columns can be retrieved with `df['column_name']`
 as well as `df.column_name`. This will return a single Bach Series. Multiple columns can be retrieved by
@@ -52,7 +52,7 @@ Slicing can also be performed (the dataframe must be sorted). I.e. `df['a':'d', 
 return all rows/columns included in the slicing, where the start and stop are inclusive.
 For more information about label-based selection, please take a look to [`loc`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx).
 
-## Moving Series around
+**Moving Series around**
 
 Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
 DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
@@ -62,34 +62,24 @@ If a Series or DataFrame do not share the same base node, the new column is or c
 merge on the index. This works for one level indexes where the dtype of the series is the same as the
 DataFrame’s index dtype.
 
-## Examples
+**Examples**
 
 ```python
 df['a'] = df.column_name + 5
 df['b'] = ''
 ```
 
-## Database access
+**Database access**
 
 The data of this DataFrame is always held in the database and operations on the data are performed
 by the database, not in local memory. Data will only be transferred to local memory when an
 explicit call is made to one of the functions that transfers data:
 
 * [`head()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.head.mdx)
-
-
 * [`to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx)
-
-
 * `to_numpy()`
-
-
 * [`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx)
-
-
 * The property accessors [`Series.value`](/modeling/bach/api-reference/Series/bach.Series.value.mdx) (Series only), `values`
-
-
 
 Other functions will not transfer data, nor will they trigger any operations to run on the database.
 Operations on the DataFrame are combined and translated to a single SQL query, which is executed

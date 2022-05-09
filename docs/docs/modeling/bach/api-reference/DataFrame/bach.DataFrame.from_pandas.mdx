@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-bach-data-frame-from-pandas
 slug: /modeling/bach/api-reference/DataFrame/from_pandas/
 title: from_pandas
@@ -26,12 +26,8 @@ How the data is loaded depends on the chosen materialization:
 
 1. ‘table’: This will first write the data to a database table using pandas
 `pandas.DataFrame.to_sql()` method.
-
-
 2. ‘cte’: The data will be represented using a common table expression of the form
 `select \* from values` in future queries.
-
-
 The ‘table’ method requires database write access. The ‘cte’ method is side-effect free and doesn’t
 interact with the database at all. However the ‘cte’ method is only suitable for small quantities
 of data. For anything over a dozen kilobytes of data it is recommended to store the data in a table
@@ -44,43 +40,20 @@ There are some small differences between how the different materializations hand
 ### Parameters
 
 * **`engine`** (sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
-
-
 * **`df`** (pandas.core.frame.DataFrame) – Pandas DataFrame to instantiate as DataFrame.
-
-
 * **`convert_objects`** (bool) – If True, the data in the columns with dtypes not in the list of supported
 dtypes are checked they contain supported data types. ‘Object’ columns that contain strings are
 converted to the ‘string’ dtype and loaded accordingly. Other types can only be loaded if
 materialization is ‘cte’ and the type is supported as Bach Series.
-
-
 * **`name`** (str) –   * For ‘table’ materialization: name of the table that Pandas will write the data to.
-
-
   * For ‘cte’ materialization: name of the node in the underlying SqlModel graph.
 
-
-
-
-
 * **`materialization`** (str) – {‘cte’, ‘table’}. How to materialize the data.
-
-
 * **`if_exists`** (str) – {‘fail’, ‘replace’, ‘append’}. Only applies to `materialization=’table’`
 How to behave if the table already exists:
-
   * fail: Raise a ValueError.
-
-
   * replace: Drop the table before inserting new values.
-
-
   * append: Insert new values to the existing table.
-
-
-
-
 
 
 

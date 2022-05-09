@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: bach-api-reference-data-frame-bach-data-frame-rename
 slug: /modeling/bach/api-reference/DataFrame/rename/
 title: rename
@@ -27,27 +27,15 @@ renaming indexes, so recommended usage is `rename(columns=...)`.
 * **`mapper`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – dict to apply to that axis’ values. Use mapper and axis to specify the axis to target
 with mapper. Currently mapper is only supported with `axis=1`, which is similar to using
 columns.
-
-
 * **`index`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – not supported.
-
-
 * **`columns`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – dict str:str to rename columns, or a function that takes column names as an argument
 and returns the new one. The new column names must not clash with other column names in either
 `self.`[`data`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.data.mdx) or `self.`[`index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.index.mdx), after renaming is complete.
-
-
 * **`axis`** (int) – `axis=1` is supported, rest is not.
-
-
 * **`level`** (Optional[int]) – not supported
-
-
 * **`errors`** (str) – Either ‘ignore’ or ‘raise’. When set to ‘ignore’ KeyErrors about non-existing
 column names in `columns` or `mapper` are ignored. Errors thrown in the mapper function or
 about invalid target column names are not suppressed.
-
-
 
 
 

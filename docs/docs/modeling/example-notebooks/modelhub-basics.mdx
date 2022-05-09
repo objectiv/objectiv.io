@@ -1,5 +1,5 @@
 ---
-date: '2022-05-04T21:05:19.211Z'
+date: '2022-05-09T18:59:01.117Z'
 id: example-notebooks-modelhub-basics
 slug: /modeling/example-notebooks/modelhub-basics/
 title: Open model hub basics
@@ -33,12 +33,8 @@ The model hub has two main type of functions: [Mapping](/modeling/open-model-hub
 * `map` functions always return a series with the same shape and index as the DataFrame they are applied to.
 This ensures they can be added as a column to that DataFrame. `map` functions that return SeriesBoolean can
 be used with to filter the data.
-
-
 * `aggregate` fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
 `agg`.
-
-
 
 Most of the model hub models take `data` as their first argument: this is the DataFrame with the Objectiv data to apply the model to.
 
