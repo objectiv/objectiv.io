@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: bach-api-reference-data-frame-bach-data-frame-set-index
 slug: /modeling/bach/api-reference/DataFrame/set_index/
 title: set_index
@@ -23,7 +23,7 @@ Set this dataframe’s index to the the index given in keys
 
 ### Parameters
 
-* **`keys`** (Union[str, [Series](/modeling/bach/api-reference/Series/index.mdx), Sequence[Union[str, [Series](/modeling/bach/api-reference/Series/index.mdx)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
+* **`keys`** (Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx), Sequence[Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
 Series are passed, they should have the same base node as the DataFrame they are set on.
 * **`drop`** (bool) – delete columns to be used as the new index.
 * **`append`** (bool) – whether to append to the existing index or replace.
@@ -38,7 +38,7 @@ a DataFrame with the new index.
 
 ### Return type
 
-[DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)
+[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 
 
 

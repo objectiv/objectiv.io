@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: bach-api-reference-data-frame-bach-data-frame-fillna
 slug: /modeling/bach/api-reference/DataFrame/fillna/
 title: fillna
@@ -23,7 +23,7 @@ Fill any NULL value using a method or with a given value.
 
 ### Parameters
 
-* **`value`** (Union[[Series](/modeling/bach/api-reference/Series/index.mdx), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/modeling/bach/api-reference/Series/index.mdx)]]]) – A literal/series to fill all NULL values on each series
+* **`value`** (Union[[Series](/modeling/bach/api-reference/Series/bach.Series.mdx), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]) – A literal/series to fill all NULL values on each series
 or a dictionary specifying which literal/series to use for each series.
 * **`method`** (Optional[str]) – Method to use for filling NULL values on all DataFrame series. Supported values:
 - “ffill”/”pad”: Fill missing values by propagating the last non-nullable value in the series.
@@ -45,7 +45,7 @@ a new dataframe with filled missing values.
 
 ### Return type
 
-[DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)
+[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 
 
 :::note

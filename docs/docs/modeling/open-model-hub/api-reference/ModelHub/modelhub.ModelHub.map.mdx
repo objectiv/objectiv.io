@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: open-model-hub-api-reference-model-hub-modelhub-model-hub-map
 slug: /modeling/open-model-hub/api-reference/ModelHub/map/
 title: map
@@ -56,7 +56,7 @@ of the ObjectivFrame
 
 ### Returns
 
-[`bach.SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx) with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
@@ -80,7 +80,7 @@ or ‘user_id’).
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
 * **`partition`** – the partition over which the number of conversions are counted. Can be any column
@@ -113,7 +113,7 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
 
@@ -121,7 +121,7 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 ### Returns
 
-[`bach.SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx) with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
@@ -144,13 +144,13 @@ Labels all hits in a session True if that session is the first session of that u
 
 ### Parameters
 
-**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 
 
 
 ### Returns
 
-[`bach.SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx) with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
@@ -173,7 +173,7 @@ Labels all hits True if the user is first seen in the period given `time_aggrega
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`time_aggregation`** – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
 instance.
 
@@ -181,7 +181,7 @@ instance.
 
 ### Returns
 
-[`bach.SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx) with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
@@ -206,7 +206,7 @@ in the partition or after the first conversion.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
 * **`partition`** – the partition over which the number of conversions are counted. Can be any column

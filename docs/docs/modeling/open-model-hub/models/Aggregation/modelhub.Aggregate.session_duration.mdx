@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: open-model-hub-models-aggregation-modelhub-aggregate-session-duration
 slug: /modeling/open-model-hub/models/Aggregation/session_duration/
 title: session_duration
@@ -25,8 +25,8 @@ With default `method`, it calculates the mean of the session duration over the `
 
 ### Parameters
 
-* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
-* **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/modeling/bach/api-reference/Series/index.mdx)]], str, [bach.series.series.Series](/modeling/bach/api-reference/Series/index.mdx), sql_models.constants.NotSet]) – sets the column(s) to group by.
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]], str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx), sql_models.constants.NotSet]) – sets the column(s) to group by.
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: example-notebooks-index
 sidebar_position: 4
 slug: /modeling/example-notebooks/
@@ -15,9 +15,9 @@ repository](https://github.com/objectiv/objectiv-analytics/tree/main/notebooks) 
 installed.
 
 To get started you will first have to instantiate the [open model hub](/modeling/open-model-hub/index.mdx) and create a
-Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) with Objectiv data. The [open model hub](/modeling/open-model-hub/index.mdx) uses
-this [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) for its models. For a general introduction to
-Bach [`DataFrames`](/modeling/bach/api-reference/DataFrame/index.mdx), see the [Bach](/modeling/bach/index.mdx) docs or some basic examples to get
+Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with Objectiv data. The [open model hub](/modeling/open-model-hub/index.mdx) uses
+this [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) for its models. For a general introduction to
+Bach [`DataFrames`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), see the [Bach](/modeling/bach/index.mdx) docs or some basic examples to get
 started [here](/modeling/bach/examples.mdx).
 
 ## Getting started with Objectiv
@@ -29,9 +29,9 @@ The [open model hub](/modeling/open-model-hub/index.mdx) is installed with:
 pip install objectiv-modelhub
 ```
 
-Now we can import and instantiate the model hub and create a Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) with
-Objectiv data. This [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) is used to analyze data collected with Objectiv’s
-Tracker. The [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) points to the data in the SQL database and all operations
+Now we can import and instantiate the model hub and create a Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with
+Objectiv data. This [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) is used to analyze data collected with Objectiv’s
+Tracker. The [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) points to the data in the SQL database and all operations
 are done on this object. A start date and an end date can optionally be passed to limit the underlying data
 that is queried. The `time_aggregation` parameter determines the default formatting of the timestamp of
 events. This is useful for grouping to different time aggregations, i.e. monthly or daily.
@@ -49,7 +49,7 @@ df = modelhub.get_objectiv_dataframe(db_url='postgresql://objectiv:@localhost:54
                                      table_name='example')
 ```
 
-Your [`DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) is instantiated! We start with showing the first couple of rows
+Your [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) is instantiated! We start with showing the first couple of rows
 from the data set.
 
 ```python

@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: open-model-hub-api-reference-model-hub-modelhub-model-hub-aggregate
 slug: /modeling/open-model-hub/api-reference/ModelHub/aggregate/
 title: aggregate
@@ -43,7 +43,7 @@ Calculate a frequency table for the number of users by number of sessions.
 
 ### Parameters
 
-**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 
 
 
@@ -74,7 +74,7 @@ With default `method`, it calculates the mean of the session duration over the `
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.
@@ -108,7 +108,7 @@ Calculate the unique sessions in the Objectiv `data`.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.
@@ -141,7 +141,7 @@ Calculate the unique users in the Objectiv `data`.
 
 ### Parameters
 
-* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.

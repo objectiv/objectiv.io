@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: example-notebooks-machine-learning
 sidebar_position: 1
 slug: /modeling/example-notebooks/machine-learning/
@@ -30,7 +30,7 @@ We create a data set of per user all the root locations that the user clicked on
 # extract the root location from the location stack
 df['root'] = df.location_stack.ls.get_from_context_with_type_series(type='RootLocationContext', key='id')
 # only look at press events and count the root locations
-features = features = df[(df.event_type=='PressEvent')].groupby('user_id').root.value_counts()
+features = df[(df.event_type=='PressEvent')].groupby('user_id').root.value_counts()
 # unstack the series, to create a DataFrame with the number of clicks per root location as columns
 features_unstacked = features.unstack(fill_value=0)
 ```

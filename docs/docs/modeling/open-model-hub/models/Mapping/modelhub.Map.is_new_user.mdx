@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: open-model-hub-models-mapping-modelhub-map-is-new-user
 slug: /modeling/open-model-hub/models/Mapping/is_new_user/
 title: is_new_user
@@ -23,7 +23,7 @@ Labels all hits True if the user is first seen in the period given `time_aggrega
 
 ### Parameters
 
-* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/index.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/index.mdx) to apply the method on.
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`time_aggregation`** (Optional[str]) – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
 instance.
 
@@ -31,13 +31,13 @@ instance.
 
 ### Returns
 
-[`bach.SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx) with the same index as `data`.
+`bach.SeriesBoolean` with the same index as `data`.
 
 
 
 ### Return type
 
-[bach.series.series_boolean.SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx)
+bach.series.series_boolean.SeriesBoolean
 
 
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: bach-api-reference-series-index
 slug: /modeling/bach/api-reference/Series/
 title: Series
@@ -23,7 +23,7 @@ used to represent specific types of data and enable operations on that data.
 
 It can be used as a separate object to just deal with a single list of values. There are many standard
 operations on Series available to do operations like add or subtract, to create aggregations like
-[`nunique()`](/modeling/bach/api-reference/Series/bach.Series.nunique.mdx) or [`count()`](/modeling/bach/api-reference/Series/bach.Series.count.mdx), or to create new sub-Series, like `unique()`.
+[`nunique()`](/modeling/bach/api-reference/Series/bach.Series.nunique.mdx) or [`count()`](/modeling/bach/api-reference/Series/bach.Series.count.mdx), or to create new sub-Series, like [`unique()`](/modeling/bach/api-reference/Series/bach.Series.unique.mdx).
 
 
 </div>
@@ -39,7 +39,6 @@ operations on Series available to do operations like add or subtract, to create 
 
 |                                                   |                                                                                                                                                                                                     |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Series.from_const`](/modeling/bach/api-reference/Series/bach.Series.from_const.mdx)(base, value, name)              | Create an instance of this class, that represents a column with the given value.                                                                                                                    |
 | [`Series.to_frame`](/modeling/bach/api-reference/Series/bach.Series.to_frame.mdx)()                                 | Create a DataFrame with the index and data from this Series.                                                                                                                                        |
 | [`Series.copy`](/modeling/bach/api-reference/Series/bach.Series.copy.mdx)()                                     | Return a copy of this Series.                                                                                                                                                                       |
 

@@ -1,5 +1,5 @@
 ---
-date: '2022-05-11T12:15:58.554Z'
+date: '2022-05-11T18:35:56.636Z'
 id: example-notebooks-product-analytics
 sidebar_position: 2
 slug: /modeling/example-notebooks/product-analytics/
@@ -8,9 +8,9 @@ title: Basic product analytics
 
 # Basic product analytics
 
-This example shows how the open model hub can be used for basic product analysis.
+This example shows how the open model hub can be used for basic product analytics.
 
-This example is also available in a [notebook](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/basic-analysis.ipynb)
+This example is also available in a [notebook](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/basic-product-analytics.ipynb)
 to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
@@ -43,7 +43,7 @@ df['utm_content'] = df.global_contexts.gc.get_from_context_with_type_series(type
 df['utm_term'] = df.global_contexts.gc.get_from_context_with_type_series(type='MarketingContext', key='term')
 ```
 
-Now we will go though a bunch of basic analytics metrics. We can use models from the [models](/modeling/open-model-hub/models/index.mdx)
+Now we will go though a selection of basic analytics metrics. We can use models from the [models](/modeling/open-model-hub/models/index.mdx)
 for this purpose or use [Bach](/modeling/bach/index.mdx) to do data analysis directly on the data stored in the SQL database using
 pandas-like syntax.
 
@@ -52,9 +52,9 @@ the results in your notebook.
 
 ## Unique users
 
-The `daily_users` uses the `time_aggregation` as set when the `of` object was instantiated. In this case the
-formatting was set to days, so the aggregation is daily. For `monthly_users`, the default time_aggregation is
-overridden by using a different `groupby`.
+The `daily_users` uses the `time_aggregation` as set when the model hub was instantiated. In this case
+`time_aggregation` was set to ‘YYYY-MM-DD’, so the aggregation is daily. For `monthly_users`, the
+default time_aggregation is overridden by using a different `groupby`.
 
 ```python
 daily_users = modelhub.aggregate.unique_users(df)
@@ -95,7 +95,7 @@ users_feature.sort_values('user_id_nunique', ascending=False).head()
 ## Most used product areas
 
 First we use the model hub to get the unique users per application, root location, feature, and event type.
-From this prepared dataset, we get show the users for the home page first.
+From this prepared dataset, we show the users for the home page first.
 
 ```python
 most_interactions = modelhub.agg.unique_users(interactive_events, groupby=['application','root_location','feature_nice_name', 'event_type'])
@@ -190,7 +190,7 @@ converted_users_features = modelhub.agg.unique_users(converted_users_filtered,
 ```
 
 At last we want to know how much time users that converted spent on our site before they converted. For this
-we recylcle the object we created above.
+we reuse the object we created above.
 
 ```python
 modelhub.aggregate.session_duration(converted_users, groupby=None).to_frame().head()
