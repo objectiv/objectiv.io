@@ -9,19 +9,19 @@ RewriteRule ^(.*)$ https://objectiv.io/$1 [R]
 
 # /docs/modeling/models_aggregation -> /docs/modeling/open-model-hub/models/Aggregation
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/models_aggregation)(\/?)$
-RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregation [L,R=301]
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregation/ [L,R=301]
 # /docs/modeling/models_mapping     -> /docs/modeling/open-model-hub/models/Mapping
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/models_mapping)(\/?)$
-RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Mapping [L,R=301]
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Mapping/ [L,R=301]
 # /docs/modeling/models             -> /docs/modeling/open-model-hub/models/
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/models)([a-zA-Z]*)
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/%2 [L,R=301]
 
 # /docs/modeling/modelhub_api_reference/modelhub.Aggregate.frequency            -> /docs/modeling/open-model-hub/models/Aggregation/frequency
-RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Aggregate(?:\.([\S]+))?)?$
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Aggregate(?:\.([\S]+))?)
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregation/%2 [L,R=301]
 # /docs/modeling/modelhub_api_reference/modelhub.Map.conversions_counter        -> /docs/modeling/open-model-hub/models/Mapping/conversions_counter
-RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Map(?:\.([\S]+))?)?$
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Map(?:\.([\S]+))?)
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Mapping/%2 [L,R=301]
 # /docs/modeling/modelhub_api_reference/modelhub.ModelHub                       -> /docs/modeling/open-model-hub/api-reference/ModelHub
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub.ModelHub)(\/?)$
