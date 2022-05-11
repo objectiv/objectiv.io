@@ -93,7 +93,7 @@ Name: session_duration, dtype: timedelta64[ns]
 ```
 
 This shows us that the **top 10% of users** spend **more than 19 minutes** in the product, and the 
-**bottom 20% less than two minutes**.
+**bottom 60% less than two minutes**.
 
 ### 2) Defining simple stages of User Intent based on product usage & time spent
 After exploring the time spent both per major product area and in overall quantiles, we can make a basic 
