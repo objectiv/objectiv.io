@@ -23,10 +23,13 @@ RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregation/%2 [L,R=301]
 # /docs/modeling/modelhub_api_reference/modelhub.Map.conversions_counter        -> /docs/modeling/open-model-hub/models/Mapping/conversions_counter
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Map(?:\.([\S]+))?)?$
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Mapping/%2 [L,R=301]
+# /docs/modeling/modelhub_api_reference/modelhub.ModelHub                       -> /docs/modeling/open-model-hub/api-reference/ModelHub
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub.ModelHub)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/ModelHub/ [L,R=301]
 # /docs/modeling/modelhub_api_reference/                                        -> /docs/modeling/open-model-hub/api-reference
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/ [L,R=301]
-# /docs/modeling/modelhub_api_reference/modelhub.ModelHub                       -> /docs/modeling/open-model-hub/api-reference/ModelHub/ModelHub
+
 # /docs/modeling/modelhub_api_reference/modelhub.ModelHub.add_conversion_event  -> /docs/modeling/open-model-hub/api-reference/ModelHub/add_conversion_event
 # /docs/modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts           -> /docs/modeling/open-model-hub/api-reference/SeriesGlobalContexts/
 # /docs/modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts.gc        -> /docs/modeling/open-model-hub/api-reference/SeriesGlobalContexts/gc
