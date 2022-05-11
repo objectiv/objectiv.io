@@ -206,7 +206,7 @@ export default function Home() {
                     <h3>Take pre-built models off the shelf</h3>
                     Objectiv&nbsp;
                     <TrackedLink
-                      to={useBaseUrl("/docs/modeling/example_notebooks/", {absolute: true})}
+                      to={useBaseUrl("/docs/modeling/example-notebooks/", {absolute: true})}
                       waitUntilTracked={true}
                       target="_self">
                       includes pre-built models

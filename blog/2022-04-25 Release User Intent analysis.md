@@ -13,13 +13,13 @@ authors: ivarpruijn
 
 import BlogImage from '@site/src/components/blog-image'
 
-[example-notebook]: https://objectiv.io/docs/modeling/user_intent
+[example-notebook]: https://objectiv.io/docs/modeling/example-notebooks/user-intent/
 [locations]: https://objectiv.io/docs/tracking/core-concepts/locations
 [root_location]: https://objectiv.io/docs/taxonomy/reference/location-contexts/RootLocationContext/
-[session_duration]: https://objectiv.io/docs/modeling/modelhub_api_reference/modelhub.Aggregate.session_duration/#modelhub-aggregate-session-duration
-[quantile]: https://objectiv.io/docs/modeling/DataFrame/bach.DataFrame.quantile/#bach-dataframe-quantile
+[session_duration]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregation/session_duration/
+[quantile]: https://objectiv.io/docs/modeling/bach/api-reference/DataFrame/quantile/
 [model-hub]: https://objectiv.io/docs/modeling/
-[bach]: https://objectiv.io/docs/modeling/bach
+[bach]: https://objectiv.io/docs/modeling/bach/
 
 *In this release we add new functionality to [modeling library Bach][bach] and the [open model hub][model-hub] 
 that enable User Intent analysis on your raw analytics data. It comes with an example notebook to get started 
