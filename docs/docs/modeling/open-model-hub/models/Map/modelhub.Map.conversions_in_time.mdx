@@ -1,15 +1,15 @@
 ---
-date: '2022-05-11T18:35:56.636Z'
-id: open-model-hub-models-mapping-modelhub-map-conversions-counter
-slug: /modeling/open-model-hub/models/Mapping/conversions_counter/
-title: conversions_counter
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-models-map-modelhub-map-conversions-in-time
+slug: /modeling/open-model-hub/models/Map/conversions_in_time/
+title: conversions_in_time
 ---
 
-# modelhub.Map.conversions_counter
+# modelhub.Map.conversions_in_time
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">conversions_counter</span>
+## <span className="additional-name">Map.</span><span className="name">conversions_in_time</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -18,22 +18,29 @@ title: conversions_counter
 
 <div className="content">
 
-Counts the total number of conversions given a partition (ie session_id
-or user_id).
+Counts the number of time a user is converted at a moment in time given a partition (ie ‘session_id’
+or ‘user_id’).
 
 
 ### Parameters
 
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** (str) – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
 * **`partition`** (str) – the partition over which the number of conversions are counted. Can be any column
-of the ObjectivFrame
+in `data`.
 
 
 
 ### Returns
 
-`bach.SeriesBoolean` with the same index as `data`.
+`bach.SeriesInt64` with the same index as `data`.
+
+
+
+### Return type
+
+bach.series.series_numeric.SeriesInt64
 
 
 
