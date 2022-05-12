@@ -60,10 +60,12 @@ const config = {
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
     [
-        // only load the post-build plugin when creating a production build
+        // only load the post-build plugin when creating a production, staging, or testing build
         path.resolve(__dirname, 'src/plugins/post-build/'),
         {
-            skip: objectivEnvironment !== 'production' && objectivEnvironment !== 'testing',
+            skip: objectivEnvironment !== 'production' 
+              && objectivEnvironment !== 'staging' 
+              && objectivEnvironment !== 'testing',
             environment: objectivEnvironment
         }
     ]
