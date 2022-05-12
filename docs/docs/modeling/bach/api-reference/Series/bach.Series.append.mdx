@@ -1,0 +1,46 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-bach-series-append
+slug: /modeling/bach/api-reference/Series/append/
+title: append
+---
+
+# bach.Series.append
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">append</span>
+
+<small className="parameter-list">(<span className="parameter" id="other">other</span>, <span className="parameter" id="ignore_index">ignore_index=False</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Append rows of other series to the caller series.
+
+
+### Parameters
+
+* **`other`** (Union[[bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx), List[[bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]) – objects to be added
+* **`ignore_index`** (bool) – if true, drops indexes of all objects to be appended
+
+
+
+### Returns
+
+a new series with all rows from appended other or self if other is empty.
+
+
+
+### Return type
+
+[bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)
+
+
+
+</div>
+
+
+</div>

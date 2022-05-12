@@ -55,8 +55,7 @@ const config = {
     ],
   ],
   plugins: [
-    path.resolve(__dirname, 'src/plugins/favicons/'),
-    path.resolve(__dirname, 'src/plugins/post-build/')
+    path.resolve(__dirname, 'src/plugins/favicons/')
   ],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',

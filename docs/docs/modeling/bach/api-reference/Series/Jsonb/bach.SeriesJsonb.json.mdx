@@ -1,0 +1,152 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-jsonb-bach-series-jsonb-json
+slug: /modeling/bach/api-reference/Series/Jsonb/json/
+title: json
+---
+
+# bach.SeriesJsonb.json
+
+<div className="property">
+
+## <span className="type-annotation"><em>property </em></span> <span className="additional-name">SeriesJsonb.</span><span className="name">json</span>
+
+
+
+
+<div className="content">
+
+Get access to json operations via the class that’s return through this accessor.
+Use as `my_series.json.get_value()` or `my_series.json[:2]`
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">Json</span>
+
+<small className="parameter-list">(<span className="parameter" id="series_object">series_object</span></small>)
+
+
+<div className="content">
+
+class with accessor methods to json(b) type data columns.
+
+<div className="method">
+
+## <span className="additional-name">Json.</span><span className="name">\__getitem__</span>
+
+<small className="parameter-list">(<span className="parameter" id="key">key</span></small>)
+
+
+<div className="content">
+
+Slice this jsonb database object in pythonic ways:
+
+
+### Parameters
+
+**`key`** – A very mixed key to slice on, please see below.
+
+
+```pycon3
+>>> # slice and show with .head()
+>>> df.jsonb_column.json[:2].head()
+_index_0
+0                                            [a, b]
+1                                            [d, e]
+2    [{'h': 'i', 'j': 'k'}, {'l': ['m', 'n', 'o']}]
+Name: jsonb_column, dtype: object
+```
+
+```pycon3
+>>> # selecting one position returns the single entry:
+>>> df.jsonb_column.json[1].head()
+_index_0
+0                         b
+1                         e
+2    {'l': ['m', 'n', 'o']}
+Name: jsonb_column, dtype: object
+```
+
+```pycon3
+>>> # selecting from objects is done by entering a key:
+>>> df.jsonb_column.json[1].json['l'].head()
+_index_0
+0         None
+1         None
+2    [m, n, o]
+Name: jsonb_column, dtype: object
+```
+
+Or select based on the objects *in* an array.
+With this method, a dict is passed in the `.json[]` selector. The value of the first match with
+the dict to the objects in a json array is returned for the `.json[]` selector. A match is when
+all key/value pairs of the dict are found in an object. This can be used for selecting a subset
+of a json array with objects.
+
+```pycon3
+>>> # selecting from arrays by searching objects in the array.
+>>> df.jsonb_column.json[:{"j":"k"}].head()
+_index_0
+0                      None
+1                      None
+2    [{'h': 'i', 'j': 'k'}]
+Name: jsonb_column, dtype: object
+```
+
+```pycon3
+>>> # or:
+>>> df.jsonb_column.json[{"l":["m","n","o"]}:].head()
+_index_0
+0                                    None
+1                                    None
+2    [{'l': ['m', 'n', 'o']}, {'p': 'q'}]
+Name: jsonb_column, dtype: object
+```
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Json.</span><span className="name">get_value</span>
+
+<small className="parameter-list">(<span className="parameter" id="key">key</span>, <span className="parameter" id="as_str">as_str=False</span></small>)
+
+
+<div className="content">
+
+Select values from objects by key. Same as using `.json[key]` on the json column.
+
+
+### Parameters
+
+* **`key`** – the key to return the values for.
+* **`as_str`** – if True, it returns a string Series, jsonb otherwise.
+
+
+
+### Returns
+
+series with the selected object value.
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>

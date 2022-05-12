@@ -1,0 +1,46 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-rollup
+slug: /modeling/bach/api-reference/DataFrame/rollup/
+title: rollup
+---
+
+# bach.DataFrame.rollup
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">rollup</span>
+
+<small className="parameter-list">(<span className="parameter" id="by">by</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Group by and roll up over the column(s) `by`, replacing any current grouping.
+
+
+### Parameters
+
+**`by`** (Optional[Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx), List[Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]]) – the series to group by and roll up. Can be a column or index name str, a Series or a list
+of any of those. If Series are passed, they should have the same base node as the DataFrame.
+
+
+
+### Returns
+
+a new DataFrame object with the [`group_by`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.group_by.mdx) attribute set.
+
+
+
+### Return type
+
+[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

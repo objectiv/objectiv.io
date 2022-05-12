@@ -1,0 +1,66 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-abstract-numeric-index
+slug: /modeling/bach/api-reference/Series/AbstractNumeric/
+title: AbstractNumeric
+---
+
+# AbstractNumeric
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">bach.</span><span className="name">SeriesAbstractNumeric</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="base_node">base_node</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="expression">expression</span>, <span className="parameter" id="group_by">group_by</span>, <span className="parameter" id="sorted_ascending">sorted_ascending</span>, <span className="parameter" id="index_sorting">index_sorting</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_numeric.py)</span>
+
+<div className="content">
+
+A Series that represents the base numeric types and its specific operations
+
+\*\* Operations \*\*
+
+All common arithmetic operations are supported, as well as the most common aggregation operations:
+
+* add (+), subtract (-)
+* multiply (\*), divide (/), floordiv (//)
+* lshift (<<) and rshift(>>) for Integer types
+
+And the aggregations/statistical functions:
+
+* [`sum()`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.sum.mdx)
+* [`mean()`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.mean.mdx)
+* [`sem()`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.sem.mdx)
+* [`std()`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.std.mdx)
+* [`var()`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.var.mdx)
+
+Integer types also support lshift (<<) and rshift(>>)
+
+
+</div>
+
+
+</div>
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`SeriesAbstractNumeric.cut`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.cut.mdx)(bins[, right])          | Segments values into bins.                                                                                                                  |
+| [`SeriesAbstractNumeric.mean`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.mean.mdx)([partition, skipna])   | Get the mean/average of the input values.                                                                                                   |
+| [`SeriesAbstractNumeric.minmax_scale`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.minmax_scale.mdx)([...])         | Scales series based on a given range.                                                                                                       |
+| [`SeriesAbstractNumeric.round`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.round.mdx)([decimals])           | Round the value of this series to the given amount of decimals.                                                                             |
+| [`SeriesAbstractNumeric.scale`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.scale.mdx)([with_mean, ...])     | Standardizes series based on mean and population standard deviation.                                                                        |
+| [`SeriesAbstractNumeric.sem`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.sem.mdx)([partition, ...])       | Get the unbiased standard error of the mean.                                                                                                |
+| [`SeriesAbstractNumeric.std`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.std.mdx)([partition, ...])       | Get the standard deviation of the input values Normalized by N-1 by default.                                                                |
+| [`SeriesAbstractNumeric.sum`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.sum.mdx)([partition, ...])       | Get the sum of the input values.                                                                                                            |
+| [`SeriesAbstractNumeric.var`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.var.mdx)([partition, ...])       | Get the sample variance of the input values (square of the sample standard deviation) Normalized by N-1 by default.                         |
+| [`SeriesAbstractNumeric.qcut`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.qcut.mdx)(q)                     | Segments values into equal-sized buckets based on rank or sample quantiles.                                                                 |
+| [`SeriesAbstractNumeric.quantile`](/modeling/bach/api-reference/Series/AbstractNumeric/bach.SeriesAbstractNumeric.quantile.mdx)([partition, q])    | When q is a float or len(q) == 1, the resultant series index will remain In case multiple quantiles are calculated, the resultant series index will have all calculated quantiles as index values.  |
+
+
+</div>

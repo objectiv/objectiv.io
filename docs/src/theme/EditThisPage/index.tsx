@@ -33,6 +33,7 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
   return (
     <div 
       {...tagContent({id: 'edit-this-page'})}
+      className={clsx(styles.editThisPage)}
     >
       <ul className={clsx(styles.editLinks)}>
         <li>

@@ -1,0 +1,43 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-copy
+slug: /modeling/bach/api-reference/DataFrame/copy/
+title: copy
+---
+
+# bach.DataFrame.copy
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">copy</span>
+
+<small className="parameter-list">(</small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Return a copy of this DataFrame.
+
+As this dataframe only represents data in the backing SQL store, and does not contain any data,
+this is a metadata copy only, no actual data is duplicated and changes to the underlying data
+will represented in both copy and original.
+Changes to data, index, sorting, grouping etc. on the copy will not affect the original.
+The savepoints on the other hand will be shared by the original and the copy.
+
+If you want to create a snapshot of the data, have a look at [`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx)
+
+Calling `copy(df)` will invoke this copy function, i.e. `copy(df)` is implemented as df.copy()
+
+
+### Returns
+
+a copy of the dataframe
+
+
+
+</div>
+
+
+</div>

@@ -1,0 +1,50 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-reset-index
+slug: /modeling/bach/api-reference/DataFrame/reset_index/
+title: reset_index
+---
+
+# bach.DataFrame.reset_index
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">reset_index</span>
+
+<small className="parameter-list">(<span className="parameter" id="level">level=None</span>, <span className="parameter" id="drop">drop=False</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Drops the current index.
+
+With reset_index, all indexes are removed from the DataFrame, so that the DataFrame does not have any
+index Series. A new index can be set with [`set_index()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.set_index.mdx).
+
+
+### Parameters
+
+* **`level`** (Optional[Union[str, Sequence[str]]]) – Removes given levels from index. Removes all levels by default
+* **`drop`** (bool) – if False, the dropped index is added to the data columns of the DataFrame. If True it
+is removed.
+
+
+
+### Returns
+
+DataFrame with the index dropped.
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

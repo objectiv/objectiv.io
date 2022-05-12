@@ -1,0 +1,278 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-index
+slug: /modeling/bach/api-reference/DataFrame/
+title: DataFrame
+---
+
+# DataFrame
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">bach.</span><span className="name">DataFrame</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="base_node">base_node</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="series">series</span>, <span className="parameter" id="group_by">group_by</span>, <span className="parameter" id="order_by">order_by</span>, <span className="parameter" id="savepoints">savepoints</span>, <span className="parameter" id="variables">variables=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+A mutable DataFrame representing tabular data in a database and enabling operations on that data.
+
+A Bach DataFrame object can be used to process large amounts of data on a database, while using an api
+that is based on the pandas api. This allows the database to group and aggregate data, sample data and
+do other operations that are not suitable for in memory processing. At any time it is possible to write
+your Bach DataFrame to a pandas DataFrame.
+
+**Usage**
+
+It should generally not be required to construct DataFrame instances manually. A DataFrame can be
+constructed using the any of the bach classmethods like [`from_table()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_table.mdx), [`from_model()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_model.mdx), or
+[`from_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_pandas.mdx). The returned DataFrame can be thought of as a dict-like container for Bach
+Series objects.
+
+**Getting & Setting columns**
+
+Getting data works similar to pandas DataFrame. Single columns can be retrieved with `df['column_name']`
+as well as `df.column_name`. This will return a single Bach Series. Multiple columns can be retrieved by
+passing a list of column names like: `df[['column_name','other_column_name']]`. This returns a Bach
+DataFrame.
+
+A selection of rows can be selected with python slicing. I.e. `df[2:5]` returns row 2 to 5. Only
+positive integers are currently accepted in slices.
+
+SeriesBoolean can also be used to filter DataFrames, and these Series are easily created using comparison
+operations like equals (`==`), less-than (`<`), not(`~`) on two series, or series with values:
+`boolean_series = a == b`. Boolean indexing can be done like `df[df.column == 5]`. Only rows are
+returned for which the condition is true.
+
+Label-based selection is also supported by using the `.loc` attribute. Each label is interpreted
+as a value contained by the index column. Unlike Pandas, if the label is not found,
+no exception will be raised. I.e. `df.loc['a']` returns rows where the index series is equal to `a`.
+Slicing can also be performed (the dataframe must be sorted). I.e. `df['a':'d', 'col1:col3']`. This will
+return all rows/columns included in the slicing, where the start and stop are inclusive.
+For more information about label-based selection, please take a look to [`loc`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx).
+
+**Moving Series around**
+
+Values, Series or DataFrames can be set to another DataFrame. Setting Series or DataFrames to another
+DataFrame is possible if they share the same base node or index dtype. DataFrames and Series share the
+same base node if they originate from the same data source. In most cases this means that the series
+that is to be set to the DataFrame is a result of operations on the DataFrame that is started with.
+If a Series or DataFrame do not share the same base node, the new column is or columns are set using a
+merge on the index. This works for one level indexes where the dtype of the series is the same as the
+DataFrame’s index dtype.
+
+**Examples**
+
+```python
+df['a'] = df.column_name + 5
+df['b'] = ''
+```
+
+**Database access**
+
+The data of this DataFrame is always held in the database and operations on the data are performed
+by the database, not in local memory. Data will only be transferred to local memory when an
+explicit call is made to one of the functions that transfers data:
+
+* [`head()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.head.mdx)
+* [`to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx)
+* [`to_numpy()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_numpy.mdx)
+* [`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx)
+* The property accessors [`Series.value`](/modeling/bach/api-reference/Series/bach.Series.value.mdx) (Series only), `values`
+
+Other functions will not transfer data, nor will they trigger any operations to run on the database.
+Operations on the DataFrame are combined and translated to a single SQL query, which is executed
+only when one of the above mentioned data-transfer functions is called.
+
+The API of this DataFrame is partially compatible with Pandas DataFrames. For more on Pandas
+DataFrames see [https://pandas.pydata.org/docs/reference/frame.html](https://pandas.pydata.org/docs/reference/frame.html)
+
+
+</div>
+
+
+</div>
+
+## Reference by function
+
+### Creation
+
+<div className="table-autosummary">
+
+|                                                  |                                                                                                                                             |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.from_table`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_table.mdx)(engine, table_name, index)  | Instantiate a new DataFrame based on the content of an existing table in the database.                                                      |
+| [`DataFrame.from_model`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_model.mdx)(engine, model, index[, ...]) | Instantiate a new DataFrame based on the result of the query defined in `model`.                                                              |
+| [`DataFrame.from_pandas`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_pandas.mdx)(engine, df, ...[, ...])     | Instantiate a new DataFrame based on the content of a Pandas DataFrame.                                                                     |
+| [`DataFrame.copy`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.copy.mdx)()                                  | Return a copy of this DataFrame.                                                                                                            |
+
+
+</div>
+
+### Value accessors
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.head`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.head.mdx)([n])                               | Similar to `to_pandas()` but only returns the first `n` rows.                                                                                   |
+| [`DataFrame.to_pandas`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx)([limit])                      | Run a SQL query representing the current state of this DataFrame against the database and return the resulting data as a Pandas DataFrame.  |
+| [`DataFrame.loc`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx)                                     | The `.loc` accessor offers different methods for label-based selection.                                                                       |
+
+
+</div>
+
+### Attributes and underlying data
+
+#### Axes
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.index.mdx)                                   | Get the index dictionary `{name: Series}`                                                                                                     |
+| [`DataFrame.data`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.data.mdx)                                    | Get the data dictionary `{name: Series}`                                                                                                      |
+| [`DataFrame.all_series`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.all_series.mdx)                              | Get all index and data Series in a dictionary `{name: Series}`                                                                                |
+| [`DataFrame.index_columns`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.index_columns.mdx)                           | Get all the index columns' names in a List                                                                                                  |
+| [`DataFrame.data_columns`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.data_columns.mdx)                            | Get all the data Series' names in a List                                                                                                    |
+| [`DataFrame.group_by`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.group_by.mdx)                                | Get this DataFrame's grouping, if any.                                                                                                      |
+| [`DataFrame.order_by`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.order_by.mdx)                                | Get the current sort order, if any.                                                                                                         |
+
+
+</div>
+
+#### Types
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.dtypes`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.dtypes.mdx)                                  | Get the data Series' dtypes in a dictionary `{name: dtype}`                                                                                   |
+| [`DataFrame.index_dtypes`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.index_dtypes.mdx)                            | Get the index Series' dtypes in a dictionary `{name: dtype}`                                                                                  |
+| [`DataFrame.astype`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.astype.mdx)(dtype)                           | Cast all or some of the data columns to a certain dtype.                                                                                    |
+
+
+</div>
+
+#### Sql Model
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.materialize`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize.mdx)([node_name, inplace, ...])  | Create a copy of this DataFrame with as base_node the current DataFrame's state.                                                            |
+| [`DataFrame.get_sample`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx)(table_name[, filter, ...])   | Returns a DataFrame whose data is a sample of the current DataFrame object.                                                                 |
+| [`DataFrame.get_unsampled`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_unsampled.mdx)()                         | Return a copy of the current sampled DataFrame, that undoes calling `get_sample()` earlier.                                                   |
+| [`DataFrame.view_sql`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.view_sql.mdx)([limit])                       | Translate the current state of this DataFrame into a SQL query.                                                                             |
+
+
+</div>
+
+#### Variables
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.create_variable`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.create_variable.mdx)(name, value, \*[, ...])  | Create a Series object that can be used as a variable, within the returned DataFrame.                                                       |
+| [`DataFrame.set_variable`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.set_variable.mdx)(name, value, \*[, dtype])   | Return a copy of this DataFrame with the variable value updated.                                                                            |
+| [`DataFrame.get_all_variable_usage`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_all_variable_usage.mdx)()                | Get all variables that influence the values of this DataFrame.                                                                              |
+
+
+</div>
+
+### Reshaping, indexing, sorting & merging
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.sort_index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_index.mdx)([level, ascending])          | Sort dataframe by index levels.                                                                                                             |
+| [`DataFrame.sort_values`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_values.mdx)(by[, ascending])            | Create a new DataFrame with the specified sorting order.                                                                                    |
+| [`DataFrame.rename`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.rename.mdx)([mapper, index, columns, ...])   | Rename columns.                                                                                                                             |
+| [`DataFrame.drop`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.drop.mdx)([labels, index, columns, ...])     | Drop columns from the DataFrame                                                                                                             |
+| [`DataFrame.drop_duplicates`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.drop_duplicates.mdx)([subset, keep, ...])    | Return a dataframe with duplicated rows removed based on all series labels or a subset of labels.                                           |
+| [`DataFrame.dropna`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.dropna.mdx)(\*[, axis, how, thresh, subset])  | Removes rows with missing values (NaN, None and SQL NULL).                                                                                  |
+| [`DataFrame.reset_index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.reset_index.mdx)([level, drop])              | Drops the current index.                                                                                                                    |
+| [`DataFrame.set_index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.set_index.mdx)(keys[, drop, append])         | Set this dataframe's index to the the index given in keys                                                                                   |
+| [`DataFrame.merge`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.merge.mdx)(right[, how, on, left_on, ...])   | Join the right Dataframe or Series on self.                                                                                                 |
+| [`DataFrame.append`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.append.mdx)(other[, ignore_index, sort])     | Append rows of other dataframes to the the caller dataframe.                                                                                |
+| [`DataFrame.fillna`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.fillna.mdx)(\*[, value, method, axis, ...])   | Fill any NULL value using a method or with a given value.                                                                                   |
+| [`DataFrame.ffill`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.ffill.mdx)([sort_by, ascending])             | Fill missing values by propagating the last non-nullable value in each series.                                                              |
+| [`DataFrame.bfill`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.bfill.mdx)([sort_by, ascending])             | Fill missing values by using the next non-nullable value in each series.                                                                    |
+| [`DataFrame.stack`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.stack.mdx)([dropna])                         | Stacks all data_columns into a single index series.                                                                                         |
+| [`DataFrame.unstack`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.unstack.mdx)([level, fill_value, ...])       | Pivot a level of the index labels.                                                                                                          |
+| [`DataFrame.scale`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.scale.mdx)([with_mean, with_std])            | Standardizes all numeric series based on mean and population standard deviation.                                                            |
+| [`DataFrame.minmax_scale`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.minmax_scale.mdx)([feature_range])           | Scales all numeric series based on a given range.                                                                                           |
+| [`DataFrame.get_dummies`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_dummies.mdx)([prefix, prefix_sep, ...])  | Convert each unique category/value from a string series into a dummy/indicator variable.                                                    |
+
+
+</div>
+
+### Aggregation & windowing
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.agg`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.agg.mdx)(func[, axis, numeric_only])         | Aggregate using one or more operations over the specified axis.                                                                             |
+| [`DataFrame.aggregate`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate.mdx)(func[, axis, numeric_only])   | Alias for `agg()`                                                                                                                             |
+| [`DataFrame.groupby`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.groupby.mdx)([by])                           | Group by any of the series currently in this DataDrame, both from index as well as data.                                                    |
+| [`DataFrame.rollup`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.rollup.mdx)(by)                              | Group by and roll up over the column(s) `by`, replacing any current grouping.                                                                 |
+| [`DataFrame.cube`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.cube.mdx)(by)                                | Group by and cube over the column(s) `by`.                                                                                                    |
+| [`DataFrame.window`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.window.mdx)(\*\*frame_args)                    | Create a window on the current dataframe grouping and its sorting.                                                                          |
+| [`DataFrame.rolling`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.rolling.mdx)(window[, min_periods, ...])     | A rolling window of size 'window', by default right aligned.                                                                                |
+| [`DataFrame.expanding`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.expanding.mdx)([min_periods, center])        | Create an expanding window starting with the first row in the group, with at least `min_period` observations.                                 |
+
+
+</div>
+
+### Computations & descriptive stats
+
+#### All types
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.describe`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.describe.mdx)([percentiles, include, ...])   | Returns descriptive statistics.                                                                                                             |
+| [`DataFrame.count`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.count.mdx)([axis, level, numeric_only])      | Count all non-NULL values in each column.                                                                                                   |
+| [`DataFrame.min`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.min.mdx)([axis, skipna, level, ...])         | Returns the minimum of all values in each column.                                                                                           |
+| [`DataFrame.max`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.max.mdx)([axis, skipna, level, ...])         | Returns the maximum of all values in each column.                                                                                           |
+| [`DataFrame.median`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.median.mdx)([axis, skipna, level, ...])      | Returns the median of all values in each column.                                                                                            |
+| [`DataFrame.mode`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mode.mdx)([axis, skipna, level, ...])        | Returns the mode of all values in each column.                                                                                              |
+| [`DataFrame.nunique`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.nunique.mdx)([axis, skipna])                 | Returns the number of unique values in each column.                                                                                         |
+| [`DataFrame.value_counts`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.value_counts.mdx)([subset, normalize, ...])  | Returns a series containing counts of each unique row in the DataFrame                                                                      |
+
+
+</div>
+
+#### Numeric
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.mean`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mean.mdx)([axis, skipna, level, ...])        | Returns the mean of all values in each column.                                                                                              |
+| [`DataFrame.quantile`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.quantile.mdx)([q, axis])                     | Returns the quantile per numeric/timedelta column.                                                                                          |
+| [`DataFrame.sem`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sem.mdx)([axis, skipna, level, ddof, ...])   | Returns the unbiased standard error of the mean of each column.                                                                             |
+| [`DataFrame.sum`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sum.mdx)([axis, skipna, level, ...])         | Returns the sum of all values in each column.                                                                                               |
+| [`DataFrame.std`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.std.mdx)([axis, skipna, level, ddof, ...])   | Returns the sample standard deviation of each column.                                                                                       |
+| [`DataFrame.var`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.var.mdx)([axis, skipna, level, ddof, ...])   | Returns the unbiased variance of each column.                                                                                               |
+
+
+</div>
+
+#### Visualization
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`DataFrame.plot`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.plot.mdx)                                    | The `.plot` accessor offers different methods for data visualization.                                                                         |
+
+
+</div>

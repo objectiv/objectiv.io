@@ -82,7 +82,8 @@ Yes, you can:
 3. Use the SDK's [validation](./2022-03-22%20Release%20v0.0.15%20Tracker%20Validation.md) to check and debug your instrumentation
 4. Explore the [schema](https://github.com/objectiv/objectiv-analytics/tree/main/schema) that is automatically generated and used for validation of all collected data.
 
-The same schema is also used by the [Open Model Hub](https://objectiv.io/docs/modeling/example_notebooks/#example-notebooks), which includes pre-built models for a wide range of common analytics use cases.
+The same schema is also used by the [Open Model Hub](https://objectiv.io/docs/modeling/example-notebooks/), 
+which includes pre-built models for a wide range of common analytics use cases.
 
 ---
 

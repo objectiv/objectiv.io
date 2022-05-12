@@ -1,0 +1,50 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-bach-series-fillna
+slug: /modeling/bach/api-reference/Series/fillna/
+title: fillna
+---
+
+# bach.Series.fillna
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">fillna</span>
+
+<small className="parameter-list">(<span className="parameter" id="other">other</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Fill any NULL value with the given constant or other compatible Series
+
+In case a Series is given, the value from the same row is used to fill.
+
+
+### Parameters
+
+**`other`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list]) – The value to replace the NULL values with. Should be a supported
+type by the series, or a TypeError is raised. Can also be another Series
+
+
+:::note
+
+Pandas replaces numpy.nan values, we can only replace NULL.
+
+
+:::
+
+:::note
+
+You can replace None with None, have fun, forever!
+
+
+:::
+
+
+</div>
+
+
+</div>

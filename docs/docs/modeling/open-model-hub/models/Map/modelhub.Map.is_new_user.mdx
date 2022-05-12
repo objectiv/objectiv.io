@@ -1,0 +1,47 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-models-map-modelhub-map-is-new-user
+slug: /modeling/open-model-hub/models/Map/is_new_user/
+title: is_new_user
+---
+
+# modelhub.Map.is_new_user
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">is_new_user</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="time_aggregation">time_aggregation=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py)</span>
+
+<div className="content">
+
+Labels all hits True if the user is first seen in the period given `time_aggregation`.
+
+
+### Parameters
+
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`time_aggregation`** (Optional[str]) – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
+instance.
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+### Return type
+
+bach.series.series_boolean.SeriesBoolean
+
+
+
+</div>
+
+
+</div>

@@ -1,0 +1,47 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-models-map-modelhub-map-is-conversion-event
+slug: /modeling/open-model-hub/models/Map/is_conversion_event/
+title: is_conversion_event
+---
+
+# modelhub.Map.is_conversion_event
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">is_conversion_event</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py)</span>
+
+<div className="content">
+
+Labels a hit True if it is a conversion event, all other hits are labeled False.
+
+
+### Parameters
+
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** (str) – the name of the conversion to label as set in
+[`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+### Return type
+
+bach.series.series_boolean.SeriesBoolean
+
+
+
+</div>
+
+
+</div>

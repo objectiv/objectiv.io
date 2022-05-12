@@ -1,0 +1,33 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-bach-series-window-lag
+slug: /modeling/bach/api-reference/Series/window_lag/
+title: window_lag
+---
+
+# bach.Series.window_lag
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">window_lag</span>
+
+<small className="parameter-list">(<span className="parameter" id="offset">offset=1</span>, <span className="parameter" id="default">default=None</span>, <span className="parameter" id="window">window=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Returns value evaluated at the row that is offset rows before the current row within the window
+
+If there is no such row, instead returns default (which must be of the same type as value).
+Both offset and default are evaluated with respect to the current row.
+:param offset: The amount of rows to look back, default 1
+:param default: The value to return if no value is available, can be a constant value or Series.
+Defaults to None
+
+
+</div>
+
+
+</div>

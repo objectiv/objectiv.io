@@ -1,0 +1,48 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-set-index
+slug: /modeling/bach/api-reference/DataFrame/set_index/
+title: set_index
+---
+
+# bach.DataFrame.set_index
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">set_index</span>
+
+<small className="parameter-list">(<span className="parameter" id="keys">keys</span>, <span className="parameter" id="drop">drop=True</span>, <span className="parameter" id="append">append=False</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Set this dataframe’s index to the the index given in keys
+
+
+### Parameters
+
+* **`keys`** (Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx), Sequence[Union[str, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]) – the keys of the new index. Can be a column name str, a Series, or a list of those. If
+Series are passed, they should have the same base node as the DataFrame they are set on.
+* **`drop`** (bool) – delete columns to be used as the new index.
+* **`append`** (bool) – whether to append to the existing index or replace.
+
+
+
+### Returns
+
+a DataFrame with the new index.
+
+
+
+### Return type
+
+[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

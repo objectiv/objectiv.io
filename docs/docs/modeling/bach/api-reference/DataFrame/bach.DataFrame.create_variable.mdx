@@ -1,0 +1,59 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-create-variable
+slug: /modeling/bach/api-reference/DataFrame/create_variable/
+title: create_variable
+---
+
+# bach.DataFrame.create_variable
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">create_variable</span>
+
+<small className="parameter-list">(<span className="parameter" id="name">name</span>, <span className="parameter" id="value">value</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="dtype">dtype=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Create a Series object that can be used as a variable, within the returned DataFrame. The
+DataFrame will have the variable with the given values set in [`DataFrame.variables()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.variables.mdx).
+
+The variable value can later be changed using [`DataFrame.set_variable()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.set_variable.mdx)
+
+**Multiple variables with the same name**
+
+For variables the combination (name, dtype) uniquely identifies a variable. That means that there
+can be multiple variables with the same name, if they are of different types. This is counter to
+how a lot of programming languages handle variables. But it prevents a lot of error conditions and
+edge cases around merging DataFrames and Series with the same variables, and building on top of
+SqlModels that already have variables.
+
+
+### Parameters
+
+* **`name`** (str) – name of variable to update
+* **`value`** (Any) – value of variable
+* **`dtype`** (Optional[str]) – optional. If not set it will be derived from the value, if set we check that it
+matches the value. If dtype doesn’t match the value’s dtype, then an Exception is raised.
+
+
+
+### Returns
+
+Tuple with DataFrame and the Series object that can be used as a variable.
+
+
+
+### Return type
+
+*Tuple*[[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]
+
+
+
+</div>
+
+
+</div>

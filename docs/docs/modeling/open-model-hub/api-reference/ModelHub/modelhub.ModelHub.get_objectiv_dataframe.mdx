@@ -1,0 +1,50 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub-get-objectiv-dataframe
+slug: /modeling/open-model-hub/api-reference/ModelHub/get_objectiv_dataframe/
+title: get_objectiv_dataframe
+---
+
+# modelhub.ModelHub.get_objectiv_dataframe
+
+<div className="method">
+
+## <span className="additional-name">ModelHub.</span><span className="name">get_objectiv_dataframe</span>
+
+<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name='data'</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
+
+<div className="content">
+
+Sets data from sql table into an [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) object.
+
+The created DataFrame points to where the data is stored in the sql database, makes several
+transformations and sets the right data types for all columns. As such, the models from the model hub
+can be applied to a DataFrame created with this method.
+
+
+### Parameters
+
+* **`db_url`** (Optional[str]) – the url that indicate database dialect and connection arguments. If not given, env DSN
+is used to create one. If that’s not there, the default of
+‘postgresql://objectiv:@localhost:5432/objectiv’ will be used.
+* **`table_name`** (str) – the name of the sql table where the data is stored.
+* **`start_date`** (Optional[str]) – first date for which data is loaded to the DataFrame. If None, data is loaded from
+the first date in the sql table. Format as ‘YYYY-MM-DD’.
+* **`end_date`** (Optional[str]) – last date for which data is loaded to the DataFrame. If None, data is loaded up to
+and including the last date in the sql table. Format as ‘YYYY-MM-DD’.
+
+
+
+### Returns
+
+[`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with Objectiv data.
+
+
+
+</div>
+
+
+</div>

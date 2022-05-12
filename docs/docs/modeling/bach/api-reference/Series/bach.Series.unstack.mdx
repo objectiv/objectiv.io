@@ -1,0 +1,61 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-bach-series-unstack
+slug: /modeling/bach/api-reference/Series/unstack/
+title: unstack
+---
+
+# bach.Series.unstack
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">unstack</span>
+
+<small className="parameter-list">(<span className="parameter" id="level">level=- 1</span>, <span className="parameter" id="fill_value">fill_value=None</span>, <span className="parameter" id="aggregation">aggregation='max'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Pivot a level of the index labels.
+
+Returns a(n unsorted) DataFrame with the values of the unstacked index as columns. In case of
+duplicate index values that are unstacked, `aggregation` is used to aggregate the values.
+
+Series’ index should be of at least two levels to unstack.
+
+
+### Parameters
+
+* **`level`** (Union[int, str]) – selects the level of the index that is unstacked.
+* **`fill_value`** (Optional[Union[int, float, str, uuid.UUID]]) – replace missing values resulting from unstacking. Should be of same type as the
+series that is unstacked.
+* **`aggregation`** (str) – method of aggregation, in case of duplicate index values. Supports all aggregation
+methods that [`aggregate()`](/modeling/bach/api-reference/Series/bach.Series.aggregate.mdx) supports.
+
+
+
+### Returns
+
+DataFrame
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+:::note
+
+This function queries the database.
+
+
+:::
+
+
+</div>
+
+
+</div>

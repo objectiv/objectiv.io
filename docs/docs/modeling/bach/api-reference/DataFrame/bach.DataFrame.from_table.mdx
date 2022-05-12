@@ -1,0 +1,63 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-from-table
+slug: /modeling/bach/api-reference/DataFrame/from_table/
+title: from_table
+---
+
+# bach.DataFrame.from_table
+
+<div className="method">
+
+## <span className="type-annotation"><em>classmethod</em></span> <span className="additional-name">DataFrame.</span><span className="name">from_table</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="all_dtypes">all_dtypes=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="bq_dataset">bq_dataset=None</span>, <span className="parameter" id="bq_project_id">bq_project_id=None</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Instantiate a new DataFrame based on the content of an existing table in the database.
+
+If all_dtypes is not specified, the column dtypes are queried from the database’s information
+schema.
+
+
+### Parameters
+
+* **`engine`** (sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
+* **`table_name`** (str) – the table name that contains the data to instantiate as DataFrame.
+* **`index`** (List[str]) – list of column names that make up the index. At least one column needs to be
+selected for the index.
+* **`all_dtypes`** (Optional[Dict[str, str]]) – Optional. Mapping from column name to dtype.
+Must contain all index and data columns.
+Must be in same order as the columns appear in the the sql-model.
+* **`bq_dataset`** (Optional[str]) – BigQuery-only. Dataset in which the table resides, if different from engine.url
+* **`bq_project_id`** (Optional[str]) – BigQuery-only. Project of dataset, if different from engine.url
+
+
+
+### Returns
+
+A DataFrame based on a sql table.
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+:::note
+
+If all_dtypes is not set, then this will query the database.
+
+
+:::
+
+
+</div>
+
+
+</div>

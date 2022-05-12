@@ -1,0 +1,52 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-series-bach-series-drop-duplicates
+slug: /modeling/bach/api-reference/Series/drop_duplicates/
+title: drop_duplicates
+---
+
+# bach.Series.drop_duplicates
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">drop_duplicates</span>
+
+<small className="parameter-list">(<span className="parameter" id="keep">keep='first'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Return a series with duplicated rows removed.
+
+
+### Parameters
+
+**`keep`** (Union[str, bool]) – Supported values: “first”, “last” and False. Determines which duplicates to keep:
+
+* `first`: drop all occurrences except the first one
+* `last`:  drop all occurrences except the last one
+* False: drops all duplicates
+
+If no value is provided, first occurrences will be kept by default.
+
+
+
+
+### Returns
+
+a new series with dropped duplicates
+
+
+
+### Return type
+
+bach.series.series.T
+
+
+
+</div>
+
+
+</div>

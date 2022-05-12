@@ -1,0 +1,58 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-agg
+slug: /modeling/bach/api-reference/DataFrame/agg/
+title: agg
+---
+
+# bach.DataFrame.agg
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">agg</span>
+
+<small className="parameter-list">(<span className="parameter" id="func">func</span>, <span className="parameter" id="axis">axis=1</span>, <span className="parameter" id="numeric_only">numeric_only=False</span>, <span className="parameter" id="*">\*args</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Aggregate using one or more operations over the specified axis.
+
+
+### Parameters
+
+* **`func`** (Union[str, Callable, List[Union[Callable, str]], Dict[str, Union[str, Callable, List[Union[Callable, str]]]]]) – the aggregations to apply on all series. Accepted combinations are:
+  * function, e.g. `SeriesInt64.sum`
+  * function name
+  * list of functions and/or function names, e.g. [`SeriesInt64.sum`, ‘mean’]
+  * dict of axis labels -> functions, function names or list of such.
+
+* **`axis`** (int) – the aggregation axis. If `axis=1` the index is aggregated as well. Only `axis=1`
+supported at the moment.
+* **`numeric_only`** (bool) – whether to aggregate numeric series only, or attempt all.
+* **`args`** – Positional arguments to pass through to the aggregation function
+* **`kwargs`** – Keyword arguments to pass through to the aggregation function
+
+
+:::note
+
+Pandas has `numeric_only=None` to attempt all columns but ignore failing ones
+silently. This is currently not implemented.
+
+
+:::
+
+:::note
+
+The `axis` parameter defaults to 1, because 0 is currently unsupported
+
+
+:::
+
+
+</div>
+
+
+</div>

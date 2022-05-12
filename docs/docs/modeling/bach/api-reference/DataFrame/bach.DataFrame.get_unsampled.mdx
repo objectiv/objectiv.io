@@ -1,0 +1,46 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-get-unsampled
+slug: /modeling/bach/api-reference/DataFrame/get_unsampled/
+title: get_unsampled
+---
+
+# bach.DataFrame.get_unsampled
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">get_unsampled</span>
+
+<small className="parameter-list">(</small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Return a copy of the current sampled DataFrame, that undoes calling [`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx) earlier.
+
+All other operations that have been done on the sample DataFrame will be applied on the DataFrame
+that is returned. This does not remove the table that was written to the database by
+[`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx), the new DataFrame just does not query that table anymore.
+
+Will raise an error if the current DataFrame is not sample data of another DataFrame, i.e.
+[`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx) has not been called.
+
+
+### Returns
+
+an unsampled copy of the current sampled DataFrame.
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

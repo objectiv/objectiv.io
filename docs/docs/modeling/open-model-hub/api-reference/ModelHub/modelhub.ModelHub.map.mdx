@@ -1,0 +1,238 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub-map
+slug: /modeling/open-model-hub/api-reference/ModelHub/map/
+title: map
+---
+
+# modelhub.ModelHub.map
+
+<div className="property">
+
+## <span className="type-annotation"><em>property </em></span> <span className="additional-name">ModelHub.</span><span className="name">map</span>
+
+
+
+
+<div className="content">
+
+Access map methods from the model hub.
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">Map</span>
+
+<small className="parameter-list">(<span className="parameter" id="mh">mh</span></small>)
+
+
+<div className="content">
+
+Methods in this class can be used to map data in a DataFrame with Objectiv data to series values.
+
+Always returns Series with same index as the DataFrame the method is applied to, so the result can be set
+as columns to that DataFrame.
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">conversions_counter</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
+
+
+<div className="content">
+
+Counts the total number of conversions given a partition (ie session_id
+or user_id).
+
+
+### Parameters
+
+* **`name`** – the name of the conversion to label as set in
+[`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
+* **`partition`** – the partition over which the number of conversions are counted. Can be any column
+of the ObjectivFrame
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">conversions_in_time</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
+
+
+<div className="content">
+
+Counts the number of time a user is converted at a moment in time given a partition (ie ‘session_id’
+or ‘user_id’).
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** – the name of the conversion to label as set in
+[`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
+* **`partition`** – the partition over which the number of conversions are counted. Can be any column
+in `data`.
+
+
+
+### Returns
+
+`bach.SeriesInt64` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">is_conversion_event</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span></small>)
+
+
+<div className="content">
+
+Labels a hit True if it is a conversion event, all other hits are labeled False.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** – the name of the conversion to label as set in
+[`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">is_first_session</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span></small>)
+
+
+<div className="content">
+
+Labels all hits in a session True if that session is the first session of that user in the data.
+
+
+### Parameters
+
+**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">is_new_user</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="time_aggregation">time_aggregation=None</span></small>)
+
+
+<div className="content">
+
+Labels all hits True if the user is first seen in the period given `time_aggregation`.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`time_aggregation`** – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
+instance.
+
+
+
+### Returns
+
+`bach.SeriesBoolean` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Map.</span><span className="name">pre_conversion_hit_number</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
+
+
+<div className="content">
+
+Returns a count backwards from the first conversion, given the partition. I.e. first hit before
+converting is 1, second hit before converting 2, etc. Returns None if there are no conversions
+in the partition or after the first conversion.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** – the name of the conversion to label as set in
+[`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
+* **`partition`** – the partition over which the number of conversions are counted. Can be any column
+in `data`.
+
+
+
+### Returns
+
+`bach.SeriesInt64` with the same index as `data`.
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>

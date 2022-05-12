@@ -1,0 +1,41 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-count
+slug: /modeling/bach/api-reference/DataFrame/count/
+title: count
+---
+
+# bach.DataFrame.count
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">count</span>
+
+<small className="parameter-list">(<span className="parameter" id="axis">axis=1</span>, <span className="parameter" id="level">level=None</span>, <span className="parameter" id="numeric_only">numeric_only=False</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Count all non-NULL values in each column.
+
+
+### Parameters
+
+* **`axis`** – only `axis=1` is supported. This means columns are aggregated.
+* **`level`** – not supported.
+* **`numeric_only`** – whether to aggregate numeric series only, or attempt all.
+
+
+
+### Returns
+
+a new DataFrame with the aggregation applied to all selected columns.
+
+
+
+</div>
+
+
+</div>

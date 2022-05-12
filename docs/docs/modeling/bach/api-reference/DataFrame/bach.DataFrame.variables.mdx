@@ -1,0 +1,33 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: bach-api-reference-data-frame-bach-data-frame-variables
+slug: /modeling/bach/api-reference/DataFrame/variables/
+title: variables
+---
+
+# bach.DataFrame.variables
+
+<div className="property">
+
+## <span className="type-annotation"><em>property </em></span> <span className="additional-name">DataFrame.</span><span className="name">variables</span>
+
+<span className="type-annotation"><em>
+
+: Dict[bach.dataframe.DtypeNamePair, Hashable]
+
+</em></span> 
+
+
+<div className="content">
+
+Get all variables for which values are set, which will be used when querying the database.
+
+Note that there might also be variables defined earlier in self.base_node, that already have a value.
+Those variables values will not be changed, unless they are listed here. To get an overview of all
+variables on which the values in this DataFrame depend use `get_all_defined_variables()`
+
+
+</div>
+
+
+</div>

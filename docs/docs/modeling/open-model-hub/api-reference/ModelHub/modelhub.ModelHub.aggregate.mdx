@@ -1,0 +1,173 @@
+---
+date: '2022-05-12T08:00:13.746Z'
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub-aggregate
+slug: /modeling/open-model-hub/api-reference/ModelHub/aggregate/
+title: aggregate
+---
+
+# modelhub.ModelHub.aggregate
+
+<div className="property">
+
+## <span className="type-annotation"><em>property </em></span> <span className="additional-name">ModelHub.</span><span className="name">aggregate</span>
+
+
+
+
+<div className="content">
+
+Access aggregation methods from the model hub. Same as [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx).
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">Aggregate</span>
+
+<small className="parameter-list">(<span className="parameter" id="mh">mh</span></small>)
+
+
+<div className="content">
+
+Models that return aggregated data in some form from the original DataFrame with Objectiv data.
+
+<div className="method">
+
+## <span className="additional-name">Aggregate.</span><span className="name">frequency</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span></small>)
+
+
+<div className="content">
+
+Calculate a frequency table for the number of users by number of sessions.
+
+
+### Parameters
+
+**`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+
+
+
+### Returns
+
+series with results.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Aggregate.</span><span className="name">session_duration</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>, <span className="parameter" id="exclude_bounces">exclude_bounces=True</span>, <span className="parameter" id="method">method='mean'</span></small>)
+
+
+<div className="content">
+
+Calculate the duration of sessions.
+
+With default `method`, it calculates the mean of the session duration over the `groupby`.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`groupby`** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
+  * if None it aggregates over all data.
+
+* **`method`** – ‘mean’ or ‘sum’
+
+
+
+### Returns
+
+series with results.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Aggregate.</span><span className="name">unique_sessions</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span></small>)
+
+
+<div className="content">
+
+Calculate the unique sessions in the Objectiv `data`.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`groupby`** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
+  * if None it aggregates over all data.
+
+
+
+
+### Returns
+
+series with results.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+## <span className="additional-name">Aggregate.</span><span className="name">unique_users</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span></small>)
+
+
+<div className="content">
+
+Calculate the unique users in the Objectiv `data`.
+
+
+### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`groupby`** – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
+  * if None it aggregates over all data.
+
+
+
+
+### Returns
+
+series with results.
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
