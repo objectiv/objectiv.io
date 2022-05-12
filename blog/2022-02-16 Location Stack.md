@@ -67,7 +67,7 @@ Here is an example of the same event, but this time collected by Objectiv’s tr
    {
      "_type": "LinkContext",
      "id": "overview",
-     "href": "https://objectiv.io/docs/modeling/DataFrame"
+     "href": "https://objectiv.io/docs/modeling/bach/api-reference/DataFrame/"
    }
  ]
 }
@@ -94,7 +94,7 @@ export default function sidebarMenu() {
       <TrackedNav id={'docs-sidebar'}>
         <TrackedSideBarCategory text='API Reference'>
           <TrackedSideBarCategory text='DataFrame'>
-            <TrackedAnchor href="/docs/modeling/DataFrame">
+            <TrackedAnchor href="/docs/modeling/bach/api-reference/DataFrame/">
               Overview
             </TrackedAnchor>
           </TrackedSideBarCategory>
