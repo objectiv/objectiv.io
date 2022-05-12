@@ -1,5 +1,4 @@
 ---
-date: '2022-05-12T08:00:13.746Z'
 id: example-notebooks-user-intent
 sidebar_position: 3
 slug: /modeling/example-notebooks/user-intent/
@@ -48,7 +47,7 @@ modelhub.aggregate.unique_users(df, groupby=['application', 'root_location']).he
 
 ## Exploring session duration
 
-The average `session_duration` model from the [open model hub](/docs/modeling/) is another good pointer to explore first for user intent.
+The average `session_duration` model from the [open model hub](/docs/modeling/open-model-hub/) is another good pointer to explore first for user intent.
 
 ```python
 modelhub.aggregate.session_duration(df, groupby=['application', 'root_location']).sort_index().head()
