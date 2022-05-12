@@ -74,6 +74,9 @@ RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/Series/bach.Series)([a-zA-Z+]+)(?:\.([\S]+))?
 RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/%2/%3 [L,R=301]
 
+# /docs/modeling/bach                      -> /docs/modeling/bach/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach)$
+RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
 # /docs/modeling/DataFrame                      -> /docs/modeling/bach/api-reference/DataFrame/
 # /docs/modeling/DataFrame/bach.DataFrame       -> /docs/modeling/bach/api-reference/DataFrame/
 # /docs/modeling/DataFrame/bach.DataFrame.max   -> /docs/modeling/bach/api-reference/DataFrame/max 
