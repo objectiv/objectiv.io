@@ -11,14 +11,14 @@ This example shows how Bach can be used for feature engineering. We’ll go thro
 outliers, transforming data and grouping and aggregating data so that a useful feature set is created that
 can be used for machine learning. We have a separate example available that goes into the details of how a
 data set prepared in Bach can be used for machine learning with sklearn
-[here](/modeling/example-notebooks/machine-learning.mdx).
+[here](/modeling/example-notebooks/machine-learning.mdx#example-machine-learning).
 
 This example is also available in a [notebook](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/feature-engineering.ipynb)
 to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this.
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this.
 
 This object points to all data in the data set. Too large to run in pandas and therefore sklearn. For the
 data set that we need, we aggregate to user level, at which point it is small enough to fit in memory.
@@ -30,7 +30,7 @@ df.head()
 ```
 
 Columns of interest are ‘user_id’, this is what we will aggregate to. ‘moment’ contains timestamp info for the
-events. [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx) and the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) contain most of the event specific data.
+events. [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) and the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) contain most of the event specific data.
 
 ```python
 df.describe(include='all').head()

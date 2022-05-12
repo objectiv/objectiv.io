@@ -14,7 +14,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this. The data used in this example is
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this. The data used in this example is
 based on the data set that comes with our quickstart docker demo.
 
 Besides the open model hub, we have to import the following packages for this example:
@@ -28,8 +28,8 @@ from datetime import timedelta
 
 The columns ‘global_contexts’ and the ‘location_stack’ contain most of the event specific data. These columns
 are json type columns and we can extract data from it based on the keys of the json objects using
-[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx). Or use methods
-specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx) to
+[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx#get-from-context-with-type-series). Or use methods
+specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) to
 extract the data.
 
 ```python
@@ -129,7 +129,7 @@ The are many next possible analysis steps, for example:
 * What kind of intent users come from different marketing campaigns?
 * How can we drive more users to the ‘Implement’ stage? Look at different product features that users with the ‘Implement’ intent use, compared to ‘Explore’.
 
-A good starting point for these analyses on top of the user intent buckets is the basic product analytics example in the [example notebooks](/modeling/example-notebooks/index.mdx).
+A good starting point for these analyses on top of the user intent buckets is the basic product analytics example in the [example notebooks](/modeling/example-notebooks/index.mdx#example-notebooks).
 
 ## Get the SQL for this user intent analysis
 

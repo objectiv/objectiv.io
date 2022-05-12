@@ -14,7 +14,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this.
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this.
 
 ## The data
 
@@ -70,7 +70,9 @@ The location stack and global contexts are stored as json type data. Within the 
 **Slicing the json data**
 With the `.json[]` syntax you can slice the array using integers. Instead of integers, dictionaries can also be passed to ‘query’ the json array. If the passed dictionary matches a context object in the stack, all objects of the stack starting (or ending, depending on the slice) at that object will be returned.
 
-In case a json array does not contain the object, `None` is returned. More info at the [API reference](/modeling/bach/api-reference/Series/Jsonb/index.mdx).
+In case a json array does not contain the object, `None` is returned. More info at the [API reference](/modeling/bach/api-reference/Series/Jsonb/index.mdx#json-accessor).
+
+<div id="location-stack" className="hidden-anchor"></div>
 
 ### location_stack
 
@@ -83,12 +85,12 @@ used to access the data from the `location_stack`. These methods can be used usi
 the column. The methods are:
 
 * The property accessors:
-      * [.ls.navigation_features](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
-      * [.ls.feature_stack](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
-      * [.ls.nice_name](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx)
+      * [.ls.navigation_features](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx#ls-navigation-features)
+      * [.ls.feature_stack](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx#ls-feature-stack)
+      * [.ls.nice_name](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx#ls-nice-name)
 
 
-* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx) for the json(b) type can also be accessed using `.ls`
+* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx#json-accessor) for the json(b) type can also be accessed using `.ls`
 
 For example,
 
@@ -105,18 +107,20 @@ example location stack for a PressEvent is queried below:
 df[df.event_type == 'PressEvent'].location_stack.head(1)[0]
 ```
 
+<div id="global-contexts" className="hidden-anchor"></div>
+
 ### global_contexts
 
 The `global_contexts` column in the DataFrame contain all information that is relevant to the logged event. As it is set as an `objectiv_global_context` type, specific methods can be used to access the data from the `global_contexts`. These methods can be used using the `.gc` accessor on the column. The methods are:
 
-* [.gc.get_from_context_with_type_series(type, key)](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx).
+* [.gc.get_from_context_with_type_series(type, key)](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx#get-from-context-with-type-series).
 * The property accessors:
-      * [.gc.cookie_id](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
-      * [.gc.user_agent](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
-      * [.gc.application](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx)
+      * [.gc.cookie_id](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-cookie-id)
+      * [.gc.user_agent](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-user-agent)
+      * [.gc.application](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-application)
 
 
-* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx) for the json(b) type can also be accessed using `.gc`
+* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx#json-accessor) for the json(b) type can also be accessed using `.gc`
 
 The full [reference of global contexts is here](https://objectiv.io/docs/taxonomy/global-contexts). An
 example is queried below:
@@ -170,7 +174,7 @@ This concludes this demo.
 
 We’ve demonstrated a handful of the operations that Bach supports and hope you’ve gotten a taste of what Bach can do for your modeling workflow.
 
-The full Objectiv Bach API reference is available [here](/modeling/bach/api-reference/index.mdx).
+The full Objectiv Bach API reference is available [here](/modeling/bach/api-reference/index.mdx#bach-api-reference).
 
-There is another example that focuses on using the [open model hub](/modeling/example-notebooks/modelhub-basics.mdx),
+There is another example that focuses on using the [open model hub](/modeling/example-notebooks/modelhub-basics.mdx#example-modelhub-basics),
 demonstrating how you can use the model hub and Bach to quickly answer common product analytics questions.
