@@ -8,7 +8,7 @@ title: pre_conversion_hit_number
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">pre_conversion_hit_number</span>
+### <span className="name">pre_conversion_hit_number</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -22,7 +22,7 @@ converting is 1, second hit before converting 2, etc. Returns None if there are 
 in the partition or after the first conversion.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** (str) – the name of the conversion to label as set in
@@ -32,13 +32,13 @@ in `data`.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesInt64` with the same index as `data`.
 
 
 
-### Return type
+#### Return type
 
 bach.series.series_numeric.SeriesInt64
 

@@ -8,7 +8,7 @@ title: json
 
 <div className="property">
 
-## <span className="type-annotation"><em>property </em></span> <span className="additional-name">SeriesJsonb.</span><span className="name">json</span>
+### <span className="type-annotation"><em>property </em></span> <span className="name">json</span>
 
 
 
@@ -33,7 +33,7 @@ class with accessor methods to json(b) type data columns.
 
 <div className="method">
 
-## <span className="additional-name">Json.</span><span className="name">\__getitem__</span>
+### <span className="name">\__getitem__</span>
 
 <small className="parameter-list">(<span className="parameter" id="key">key</span></small>)
 
@@ -43,7 +43,7 @@ class with accessor methods to json(b) type data columns.
 Slice this jsonb database object in pythonic ways:
 
 
-### Parameters
+#### Parameters
 
 **`key`** – A very mixed key to slice on, please see below.
 
@@ -112,7 +112,7 @@ Name: jsonb_column, dtype: object
 
 <div className="method">
 
-## <span className="additional-name">Json.</span><span className="name">get_value</span>
+### <span className="name">get_value</span>
 
 <small className="parameter-list">(<span className="parameter" id="key">key</span>, <span className="parameter" id="as_str">as_str=False</span></small>)
 
@@ -122,14 +122,14 @@ Name: jsonb_column, dtype: object
 Select values from objects by key. Same as using `.json[key]` on the json column.
 
 
-### Parameters
+#### Parameters
 
 * **`key`** – the key to return the values for.
 * **`as_str`** – if True, it returns a string Series, jsonb otherwise.
 
 
 
-### Returns
+#### Returns
 
 series with the selected object value.
 

@@ -8,7 +8,7 @@ title: create_variable
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">create_variable</span>
+### <span className="name">create_variable</span>
 
 <small className="parameter-list">(<span className="parameter" id="name">name</span>, <span className="parameter" id="value">value</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="dtype">dtype=None</span></small>)
 
@@ -31,7 +31,7 @@ edge cases around merging DataFrames and Series with the same variables, and bui
 SqlModels that already have variables.
 
 
-### Parameters
+#### Parameters
 
 * **`name`** (str) – name of variable to update
 * **`value`** (Any) – value of variable
@@ -40,13 +40,13 @@ matches the value. If dtype doesn’t match the value’s dtype, then an Excepti
 
 
 
-### Returns
+#### Returns
 
 Tuple with DataFrame and the Series object that can be used as a variable.
 
 
 
-### Return type
+#### Return type
 
 *Tuple*[[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]
 

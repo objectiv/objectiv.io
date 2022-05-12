@@ -8,7 +8,7 @@ title: from_model
 
 <div className="method">
 
-## <span className="type-annotation"><em>classmethod</em></span> <span className="additional-name">DataFrame.</span><span className="name">from_model</span>
+### <span className="type-annotation"><em>classmethod</em></span> <span className="name">from_model</span>
 
 <small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="model">model</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="all_dtypes">all_dtypes=None</span></small>)
 
@@ -23,7 +23,7 @@ If all_dtypes is not specified, then a transaction scoped temporary table will b
 0 result rows from the model. The meta data of this table will be used to deduce the dtypes.
 
 
-### Parameters
+#### Parameters
 
 * **`engine`** (sqlalchemy.engine.base.Engine) – a sqlalchemy engine for the database.
 * **`model`** (sql_models.model.SqlModel) – an SqlModel that specifies the queries to instantiate as DataFrame.
@@ -35,13 +35,13 @@ Must be in same order as the columns appear in the the sql-model.
 
 
 
-### Returns
+#### Returns
 
 A DataFrame based on an SqlModel
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

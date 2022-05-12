@@ -8,7 +8,7 @@ title: agg
 
 <div className="method">
 
-## <span className="additional-name">Series.</span><span className="name">agg</span>
+### <span className="name">agg</span>
 
 <small className="parameter-list">(<span className="parameter" id="func">func</span>, <span className="parameter" id="group_by">group_by=None</span>, <span className="parameter" id="*">\*args</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
 
@@ -20,7 +20,7 @@ title: agg
 Apply one or more aggregation functions to this Series.
 
 
-### Parameters
+#### Parameters
 
 * **`func`** (Union[str, Callable, List[Union[Callable, str]]]) – the aggregation function to look for on all series.
 See GroupBy.agg() for supported arguments
@@ -30,13 +30,13 @@ See GroupBy.agg() for supported arguments
 
 
 
-### Returns
+#### Returns
 
 Aggregated Series, or DataFrame if multiple series are returned
 
 
 
-### Return type
+#### Return type
 
 *Union*[[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]
 

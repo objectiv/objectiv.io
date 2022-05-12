@@ -8,7 +8,7 @@ title: materialize
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">materialize</span>
+### <span className="name">materialize</span>
 
 <small className="parameter-list">(<span className="parameter" id="node_name">node_name='manual_materialize'</span>, <span className="parameter" id="inplace">inplace=False</span>, <span className="parameter" id="limit">limit=None</span>, <span className="parameter" id="distinct">distinct=False</span></small>)
 
@@ -28,7 +28,7 @@ make sense for very large expressions, or for non-deterministic expressions (e.g
 TODO: a known problem is that DataFrames with ‘json’ columns cannot be fully materialized.
 
 
-### Parameters
+#### Parameters
 
 * **`node_name`** – The name of the node that’s going to be created
 * **`inplace`** – Perform operation on self if `inplace=True`, or create a copy.
@@ -37,13 +37,13 @@ TODO: a known problem is that DataFrames with ‘json’ columns cannot be fully
 
 
 
-### Returns
+#### Returns
 
 DataFrame with the current DataFrame’s state as base_node
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

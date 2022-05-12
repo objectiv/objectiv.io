@@ -8,7 +8,7 @@ title: is_new_user
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">is_new_user</span>
+### <span className="name">is_new_user</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="time_aggregation">time_aggregation=None</span></small>)
 
@@ -20,7 +20,7 @@ title: is_new_user
 Labels all hits True if the user is first seen in the period given `time_aggregation`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`time_aggregation`** (Optional[str]) – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
@@ -28,13 +28,13 @@ instance.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
 
 
-### Return type
+#### Return type
 
 bach.series.series_boolean.SeriesBoolean
 

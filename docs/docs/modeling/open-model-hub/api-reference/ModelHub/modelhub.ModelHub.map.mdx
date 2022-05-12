@@ -8,7 +8,7 @@ title: map
 
 <div className="property">
 
-## <span className="type-annotation"><em>property </em></span> <span className="additional-name">ModelHub.</span><span className="name">map</span>
+### <span className="type-annotation"><em>property </em></span> <span className="name">map</span>
 
 
 
@@ -33,7 +33,7 @@ as columns to that DataFrame.
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">conversions_counter</span>
+### <span className="name">conversions_counter</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -44,7 +44,7 @@ Counts the total number of conversions given a partition (ie session_id
 or user_id).
 
 
-### Parameters
+#### Parameters
 
 * **`name`** – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
@@ -53,7 +53,7 @@ of the ObjectivFrame
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
@@ -66,7 +66,7 @@ of the ObjectivFrame
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">conversions_in_time</span>
+### <span className="name">conversions_in_time</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -77,7 +77,7 @@ Counts the number of time a user is converted at a moment in time given a partit
 or ‘user_id’).
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
@@ -87,7 +87,7 @@ in `data`.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesInt64` with the same index as `data`.
 
@@ -100,7 +100,7 @@ in `data`.
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">is_conversion_event</span>
+### <span className="name">is_conversion_event</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span></small>)
 
@@ -110,7 +110,7 @@ in `data`.
 Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
@@ -118,7 +118,7 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
@@ -131,7 +131,7 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">is_first_session</span>
+### <span className="name">is_first_session</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span></small>)
 
@@ -141,13 +141,13 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 Labels all hits in a session True if that session is the first session of that user in the data.
 
 
-### Parameters
+#### Parameters
 
 **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
@@ -160,7 +160,7 @@ Labels all hits in a session True if that session is the first session of that u
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">is_new_user</span>
+### <span className="name">is_new_user</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="time_aggregation">time_aggregation=None</span></small>)
 
@@ -170,7 +170,7 @@ Labels all hits in a session True if that session is the first session of that u
 Labels all hits True if the user is first seen in the period given `time_aggregation`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`time_aggregation`** – if None, it uses the [`ModelHub.time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx) set in ModelHub
@@ -178,7 +178,7 @@ instance.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
@@ -191,7 +191,7 @@ instance.
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">pre_conversion_hit_number</span>
+### <span className="name">pre_conversion_hit_number</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -203,7 +203,7 @@ converting is 1, second hit before converting 2, etc. Returns None if there are 
 in the partition or after the first conversion.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** – the name of the conversion to label as set in
@@ -213,7 +213,7 @@ in `data`.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesInt64` with the same index as `data`.
 

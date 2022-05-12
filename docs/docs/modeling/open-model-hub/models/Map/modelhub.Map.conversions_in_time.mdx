@@ -8,7 +8,7 @@ title: conversions_in_time
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">conversions_in_time</span>
+### <span className="name">conversions_in_time</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
 
@@ -21,7 +21,7 @@ Counts the number of time a user is converted at a moment in time given a partit
 or ‘user_id’).
 
 
-### Parameters
+#### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** (str) – the name of the conversion to label as set in
@@ -31,13 +31,13 @@ in `data`.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesInt64` with the same index as `data`.
 
 
 
-### Return type
+#### Return type
 
 bach.series.series_numeric.SeriesInt64
 
