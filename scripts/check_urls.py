@@ -20,7 +20,7 @@ SITEMAP = 'sitemap.xml'  # name of sitemap file
 EXTENSIONS_TO_SCAN = ['md', 'html', 'rst', 'ipynb', 'ts']  # file extensions to scan for URLs
 ABS_URL_EXTENSIONS_TO_SCAN = ['md', 'tsx', 'js', 'html']  # file extensions to scan for non-absolute URLs
 # the files to scan (in the objectiv-analytics repo) that contain all URLs used by the tracker validation
-VALIDATION_FILES_TO_SCAN = ['../objectiv-analytics/tracker/core/developer-tools/src/ContextErrorMessages.ts']
+VALIDATION_FILES_TO_SCAN = [] # DISABLE UNTIL THIS IS MERGED ['../objectiv-analytics/tracker/core/developer-tools/src/ContextErrorMessages.ts']
 
 
 def check_non_absolute_urls(path: str, extensions: List[str], urls: List[str]) -> List[List[str]]:

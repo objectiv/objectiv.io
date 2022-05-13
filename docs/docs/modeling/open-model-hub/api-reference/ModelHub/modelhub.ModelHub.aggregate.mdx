@@ -8,7 +8,7 @@ title: aggregate
 
 <div className="property">
 
-## <span className="type-annotation"><em>property </em></span> <span className="additional-name">ModelHub.</span><span className="name">aggregate</span>
+### <span className="type-annotation"><em>property </em></span> <span className="name">aggregate</span>
 
 
 
@@ -21,7 +21,7 @@ Access aggregation methods from the model hub. Same as [`agg`](/modeling/open-mo
 
 ## <span className="type-annotation"><em>class</em></span> <span className="name">Aggregate</span>
 
-<small className="parameter-list">(<span className="parameter" id="mh">mh</span></small>)
+<small className="parameter-list">(<span className="parameter" id="mh">mh</span>)</small>
 
 
 <div className="content">
@@ -30,9 +30,9 @@ Models that return aggregated data in some form from the original DataFrame with
 
 <div className="method">
 
-## <span className="additional-name">Aggregate.</span><span className="name">frequency</span>
+### <span className="name">frequency</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>)</small>
 
 
 <div className="content">
@@ -40,13 +40,13 @@ Models that return aggregated data in some form from the original DataFrame with
 Calculate a frequency table for the number of users by number of sessions.
 
 
-### Parameters
+#### Parameters
 
 **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 
 
 
-### Returns
+#### Returns
 
 series with results.
 
@@ -59,9 +59,9 @@ series with results.
 
 <div className="method">
 
-## <span className="additional-name">Aggregate.</span><span className="name">session_duration</span>
+### <span className="name">session_duration</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>, <span className="parameter" id="exclude_bounces">exclude_bounces=True</span>, <span className="parameter" id="method">method='mean'</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>, <span className="parameter" id="exclude_bounces">exclude_bounces=True</span>, <span className="parameter" id="method">method='mean'</span>)</small>
 
 
 <div className="content">
@@ -71,7 +71,7 @@ Calculate the duration of sessions.
 With default `method`, it calculates the mean of the session duration over the `groupby`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
@@ -82,7 +82,7 @@ With default `method`, it calculates the mean of the session duration over the `
 
 
 
-### Returns
+#### Returns
 
 series with results.
 
@@ -95,9 +95,9 @@ series with results.
 
 <div className="method">
 
-## <span className="additional-name">Aggregate.</span><span className="name">unique_sessions</span>
+### <span className="name">unique_sessions</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>)</small>
 
 
 <div className="content">
@@ -105,7 +105,7 @@ series with results.
 Calculate the unique sessions in the Objectiv `data`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
@@ -115,7 +115,7 @@ Calculate the unique sessions in the Objectiv `data`.
 
 
 
-### Returns
+#### Returns
 
 series with results.
 
@@ -128,9 +128,9 @@ series with results.
 
 <div className="method">
 
-## <span className="additional-name">Aggregate.</span><span className="name">unique_users</span>
+### <span className="name">unique_users</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>)</small>
 
 
 <div className="content">
@@ -138,7 +138,7 @@ series with results.
 Calculate the unique users in the Objectiv `data`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** – sets the column(s) to group by.
@@ -148,7 +148,7 @@ Calculate the unique users in the Objectiv `data`.
 
 
 
-### Returns
+#### Returns
 
 series with results.
 

@@ -8,9 +8,9 @@ title: bfill
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">bfill</span>
+### <span className="name">bfill</span>
 
-<small className="parameter-list">(<span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)
+<small className="parameter-list">(<span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -20,7 +20,7 @@ title: bfill
 Fill missing values by using the next non-nullable value in each series.
 
 
-### Parameters
+#### Parameters
 
 * **`sort_by`** (Optional[Union[str, Sequence[str]]]) – series label or sequence of labels used to sort values.
 Sorting of values is needed since result might be non-deterministic, as rows with NULLs might
@@ -30,13 +30,13 @@ yield different results affecting the values to be propagated when using a filli
 
 
 
-### Returns
+#### Returns
 
 a new dataframe with filled missing values.
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

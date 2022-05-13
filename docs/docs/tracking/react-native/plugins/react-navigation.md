@@ -7,7 +7,8 @@ Optional plugin, for anyone using ReactNavigation, providing automatic tracking 
 yarn add @objectiv/plugin-react-navigation
 ```
 
-#### or
+**or**
+
 ```sh
 npm install @objectiv/plugin-react-navigation
 ```

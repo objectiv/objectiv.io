@@ -46,7 +46,9 @@ Both of them can work, but the implementation will differ quite a bit. As a rule
 - Hook Event Trackers should not be used in Components enriching Locations in their JSX.
 
 
-#### <span style={{ color: 'red'}}>A broken example</span> 
+<p style={{ color: 'red', fontWeight: 'bold'}}>A broken example</p> 
+
+
 Let's take a look at why is that so important. First let's `hook` our Component to the hook-based Event Trackers. 
 
 ```tsx
@@ -89,7 +91,8 @@ Simply because hooks have generated those callbacks before the JSX has been exec
 
 What actually happens here is that the `trackMediaLoadEvent`, `trackMediaStartEvent`, `trackMediaStartEvent` and `trackMediaStopEvent` callbacks cannot know about `MediaPlayerContextWrapper`, as that Element didn't even exist when they got factored.  
 
-#### Two possible solutions
+**Two possible solutions**
+
 There are two ways of solving this issue:
 
 1. Split the `<video>` component and the hooks calls in a separate component.

@@ -8,9 +8,9 @@ title: from_table
 
 <div className="method">
 
-## <span className="type-annotation"><em>classmethod</em></span> <span className="additional-name">DataFrame.</span><span className="name">from_table</span>
+### <span className="type-annotation"><em>classmethod</em></span> <span className="name">from_table</span>
 
-<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="all_dtypes">all_dtypes=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="bq_dataset">bq_dataset=None</span>, <span className="parameter" id="bq_project_id">bq_project_id=None</span></small>)
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="all_dtypes">all_dtypes=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="bq_dataset">bq_dataset=None</span>, <span className="parameter" id="bq_project_id">bq_project_id=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -23,7 +23,7 @@ If all_dtypes is not specified, the column dtypes are queried from the database�
 schema.
 
 
-### Parameters
+#### Parameters
 
 * **`engine`** (sqlalchemy.engine.base.Engine) – an sqlalchemy engine for the database.
 * **`table_name`** (str) – the table name that contains the data to instantiate as DataFrame.
@@ -37,13 +37,13 @@ Must be in same order as the columns appear in the the sql-model.
 
 
 
-### Returns
+#### Returns
 
 A DataFrame based on a sql table.
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

@@ -8,9 +8,9 @@ title: value_counts
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">value_counts</span>
+### <span className="name">value_counts</span>
 
-<small className="parameter-list">(<span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="normalize">normalize=False</span>, <span className="parameter" id="sort">sort=True</span>, <span className="parameter" id="ascending">ascending=False</span></small>)
+<small className="parameter-list">(<span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="normalize">normalize=False</span>, <span className="parameter" id="sort">sort=True</span>, <span className="parameter" id="ascending">ascending=False</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -20,7 +20,7 @@ title: value_counts
 Returns a series containing counts of each unique row in the DataFrame
 
 
-### Parameters
+#### Parameters
 
 * **`subset`** (Optional[List[str]]) – a list of series labels to be used when counting. If subset is not provided and
 dataframe has no group_by, all data columns will be used. In case the DataFrame has a group_by,
@@ -31,13 +31,13 @@ series in group_by will be added to subset.
 
 
 
-### Returns
+#### Returns
 
 a series containing all counts per unique row.
 
 
 
-### Return type
+#### Return type
 
 [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)
 
