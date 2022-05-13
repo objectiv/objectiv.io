@@ -25,9 +25,8 @@ df.sort_values('session_id', ascending=False).head()
 
 The columns ‘global_contexts’ and the ‘location_stack’ contain most of the event specific data. These columns
 are json type columns and we can extract data from it based on the keys of the json objects using
-[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx#get-from-context-with-type-series). Or use methods
-specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) to
-extract the data.
+[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.objectiv.mdx).
+Or use methods specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) to extract the data.
 
 ```python
 df['application'] = df.global_contexts.gc.application

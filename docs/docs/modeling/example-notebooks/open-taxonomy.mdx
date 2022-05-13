@@ -113,7 +113,7 @@ df[df.event_type == 'PressEvent'].location_stack.head(1)[0]
 
 The `global_contexts` column in the DataFrame contain all information that is relevant to the logged event. As it is set as an `objectiv_global_context` type, specific methods can be used to access the data from the `global_contexts`. These methods can be used using the `.gc` accessor on the column. The methods are:
 
-* [.gc.get_from_context_with_type_series(type, key)](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx#get-from-context-with-type-series).
+* [.gc.get_from_context_with_type_series(type, key)](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.objectiv.mdx).
 * The property accessors:
       * [.gc.cookie_id](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-cookie-id)
       * [.gc.user_agent](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-user-agent)
