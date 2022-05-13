@@ -314,6 +314,10 @@ html[class*='docs-doc-id-modeling/open-model-hub/api-reference/ModelHub'] h1,
 html[class*='docs-doc-id-modeling/open-model-hub/api-reference/Series'] h1 {
   font-size: 32px;
 }
+html[class*='docs-doc-id-modeling/bach/api-reference/DataFrame'] h1, 
+html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
+  font-size: 32px;
+}
 
 /* Class - overall */
 div.class {
