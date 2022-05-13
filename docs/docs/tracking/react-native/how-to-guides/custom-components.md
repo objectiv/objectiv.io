@@ -62,8 +62,8 @@ Both of them can work, but the implementation will differ quite a bit. As a rule
 
 - Hook Event Trackers should not be used in Components enriching Locations in their JSX.
 
+<p style={{ color: 'red', fontWeight: 'bold'}}>A broken example</p> 
 
-#### <span style={{ color: 'red'}}>A broken example</span> 
 Let's take a look at why is that so important. First let's `hook` our Component to the hook-based Event Trackers. 
 
 ```tsx
@@ -102,7 +102,8 @@ Simply because hooks have generated those callbacks before the JSX has been exec
 
 What actually happens here is that the `trackPressEvent` callback cannot know about `PressableContextWrapper`, as that Component will be created later on.  
 
-#### Two possible solutions
+**Two possible solutions**
+
 There are two ways of solving this issue:
 
 1. Split the `<Image>` component and the hooks calls in a separate component.
