@@ -1,3 +1,4 @@
+# GZIP compression on TransIP: https://www.transip.nl/knowledgebase/artikel/366-gzip-gebruiken-in-wordpress/
 <IfModule mod_deflate.c>
   # force deflate for mangled headers
   # developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
