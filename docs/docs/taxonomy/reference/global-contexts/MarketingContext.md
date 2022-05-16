@@ -7,7 +7,7 @@ import Mermaid from '@theme/Mermaid';
 <Mermaid chart={`
 	graph LR
 	    AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term?: string<br>content?: string</span>"];
+        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term?: string<br>content?: string<br>source_platform?: string<br>creative_format?: string<br>marketing_tactic?: string<br></span>"];
      class MarketingContext diagramActive;
 `} 
   caption="Diagram: MarketingContext inheritance" 
