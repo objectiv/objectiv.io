@@ -13,11 +13,7 @@ The open analytics taxonomy is a generic classifification of common event types 
 
 <img src={useBaseUrl('/img/open-taxonomy.svg')} alt="Objectiv Pipeline" />
 
-<<<<<<< HEAD
 Each Event and Context type has its own [properties, requirements and relations](./taxonomy/reference/overview.md). These definitions are used to [validate the collected data and to debug the tracking instrumentation](./tracking/core-concepts/validation.md). This ensures the resulting data set is ready for modeling without cleaning or transformations. 
-=======
-Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/collector) and the [open model hub](/modeling/index.mdx) are built around the open taxonomy and support it out of the box.
->>>>>>> main
 
 The open analytics taxonomy is based on the compounded knowledge of over 50 data teams and has been designed and tested to cover a wide range of product analytics use cases. We're currently working on expanding it to cover online marketing use cases as well, and plan to expand further into other areas (payments, catalogs, CRM, etc.)
 
