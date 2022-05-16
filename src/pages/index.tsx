@@ -3,6 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useRef } from 'react';
+import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
 import BeforeAfterImage from '../components/before-after-image';
 import VimeoPlayer from '../components/vimeo-player';
@@ -43,15 +44,6 @@ export default function Home() {
           </h2>
           <div className={clsx(styles.heroCtaButtons)}>
             <TrackedLink
-              to="https://github.com/objectiv/objectiv-analytics"
-              waitUntilTracked={true}
-              target="_self"
-              className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  
-                alt={'Objectiv on GitHub'}/></span>
-              Star us on GitHub
-            </TrackedLink>
-            <TrackedLink
               to={useBaseUrl("/docs/home/quickstart-guide/", {absolute: true})}
               waitUntilTracked={true}
               target="_self"
@@ -60,6 +52,7 @@ export default function Home() {
                 alt={'Objectiv Quickstart Guide'}/></span>
               Spin up the Demo
             </TrackedLink>
+            <GitHubStargazers cta='Star us on GitHub' />
           </div>
         </div>
       </TrackedHeader>
@@ -98,8 +91,8 @@ export default function Home() {
                   alt="The open analytics taxonomy" />
               </div>
               <div>
+                <h3>A taxonomy to ensure quality &amp; consistency</h3>
                 <p>
-                  <h3>A taxonomy to ensure quality &amp; consistency</h3>
                   Objectiv's tracker validates all incoming events against an&nbsp;
                   <TrackedLink
                     to={useBaseUrl("/docs/taxonomy/", {absolute: true})} 
@@ -119,8 +112,8 @@ export default function Home() {
 
             <div className={clsx(styles.valueRowLeft)}>
               <div>
+                <h3>Get the full context</h3>
                 <p>
-                  <h3>Get the full context</h3>
                   Objectiv's tracker captures the structure of your product's UI inside the dataset. 
                   Events contain the exact location where they were triggered in a hierarchical stack of 
                   locations.
@@ -172,8 +165,8 @@ export default function Home() {
             <div className={clsx(styles.modelingUSPs)}>
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
+                  <h3>Pandas-like modeling on the full SQL dataset</h3>
                   <p>
-                    <h3>Pandas-like modeling on the full SQL dataset</h3>
                     The Objectiv Bach modeling library combines the scalability of SQL with the agility of 
                     Pandas.
                   </p>
@@ -202,11 +195,11 @@ export default function Home() {
                     alt="Take pre-built models off the shelf" />
                 </div>
                 <div>
+                  <h3>Take pre-built models off the shelf</h3>
                   <p>
-                    <h3>Take pre-built models off the shelf</h3>
                     Objectiv&nbsp;
                     <TrackedLink
-                      to={useBaseUrl("/docs/modeling/example_notebooks/", {absolute: true})}
+                      to={useBaseUrl("/docs/modeling/example-notebooks/", {absolute: true})}
                       waitUntilTracked={true}
                       target="_self">
                       includes pre-built models
@@ -301,8 +294,8 @@ export default function Home() {
             <div className={clsx(styles.eliminateComplexityUSPs)}>
               <div className={clsx(styles.valueRowLeft)}>
                 <div>
+                  <h3>Convert models to SQL with a single command</h3>
                   <p>
-                    <h3>Convert models to SQL with a single command</h3>
                     On command, Objectiv converts your entire model to a production-ready SQL query, which 
                     you can directly use to feed into your tools and products.
                   </p>

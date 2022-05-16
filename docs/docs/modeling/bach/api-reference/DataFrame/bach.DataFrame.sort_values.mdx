@@ -1,0 +1,53 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-sort-values
+slug: /modeling/bach/api-reference/DataFrame/sort_values/
+title: sort_values
+---
+
+# bach.DataFrame.sort_values
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">sort_values</span>
+
+<small className="parameter-list">(<span className="parameter" id="by">by</span>, <span className="parameter" id="ascending">ascending=True</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Create a new DataFrame with the specified sorting order.
+
+This does not modify the current DataFrame, instead it returns a new DataFrame.
+
+The sorting will remain in the returned DataFrame as long as no operations are performed on that
+frame that materially change the selected data. Operations that materially change the selected data
+are for example [`groupby()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.groupby.mdx), [`merge()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.merge.mdx), [`materialize()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize.mdx), and filtering out rows.
+Adding or removing a column does not materially change the selected data.
+
+
+### Parameters
+
+* **`by`** (Union[str, List[str]]) – column label or list of labels to sort by.
+* **`ascending`** (Union[bool, List[bool]]) – Whether to sort ascending (True) or descending (False). If this is a list, then the
+`by` must also be a list and `len(ascending) == len(by)`.
+
+
+
+### Returns
+
+a new DataFrame with the specified ordering.
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

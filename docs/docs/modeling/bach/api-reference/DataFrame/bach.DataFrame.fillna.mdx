@@ -1,0 +1,69 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-fillna
+slug: /modeling/bach/api-reference/DataFrame/fillna/
+title: fillna
+---
+
+# bach.DataFrame.fillna
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">fillna</span>
+
+<small className="parameter-list">(<span className="parameter" id="*">\*</span>, <span className="parameter" id="value">value=None</span>, <span className="parameter" id="method">method=None</span>, <span className="parameter" id="axis">axis=0</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Fill any NULL value using a method or with a given value.
+
+
+### Parameters
+
+* **`value`** (Union[[Series](/modeling/bach/api-reference/Series/bach.Series.mdx), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]) – A literal/series to fill all NULL values on each series
+or a dictionary specifying which literal/series to use for each series.
+* **`method`** (Optional[str]) – Method to use for filling NULL values on all DataFrame series. Supported values:
+- “ffill”/”pad”: Fill missing values by propagating the last non-nullable value in the series.
+- “bfill”/”backfill”: Fill missing values with the next non-nullable value in the series.
+* **`axis`** (int) – only `axis=0` is supported.
+* **`sort_by`** (Optional[Union[str, Sequence[str]]]) – series label or sequence of labels used to sort values.
+Sorting of values is needed since result might be non-deterministic, as rows with NULLs might
+yield different results affecting the values to be propagated when using a filling method.
+* **`ascending`** (Union[bool, List[bool]]) – Whether to sort ascending (True) or descending (False). If this is a list, then the
+`sort_by` must also be a list and `len(ascending) == len(sort_by)`.
+
+
+
+### Returns
+
+a new dataframe with filled missing values.
+
+
+
+### Return type
+
+[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+:::note
+
+sort_by is required if method is specified and the DataFrame has no order_by.
+
+
+:::
+
+:::warning
+
+If sort_by is non-deterministic, this operation might yield different results after
+performing other operations over the resultant dataframe.
+
+
+:::
+
+
+</div>
+
+
+</div>

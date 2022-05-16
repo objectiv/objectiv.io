@@ -1,0 +1,51 @@
+---
+id: bach-api-reference-series-string-index
+slug: /modeling/bach/api-reference/Series/String/
+title: String
+---
+
+# String
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">bach.</span><span className="name">SeriesString</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="base_node">base_node</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="expression">expression</span>, <span className="parameter" id="group_by">group_by</span>, <span className="parameter" id="sorted_ascending">sorted_ascending</span>, <span className="parameter" id="index_sorting">index_sorting</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_string.py)</span>
+
+<div className="content">
+
+A Series that represents the string type and its specific operations
+
+**Operations**
+
+Strings can be concatenated using the ‘+’ operator, and the ‘str’ accessor can be used to get access
+to slices.
+
+Example:
+
+```python
+c = a + b  # concat the strings.
+a.str[3]   # get one char
+a.str[3:5] # get a slice from char 3-5
+```
+
+
+</div>
+
+
+</div>
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                     |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`SeriesString.get_dummies`](/modeling/bach/api-reference/Series/String/bach.SeriesString.get_dummies.mdx)([prefix, ...])           | Convert each unique category/value from the series into a dummy/indicator variable.                                                                                                                 |
+| [`SeriesString.str`](/modeling/bach/api-reference/Series/String/bach.SeriesString.str.mdx)                                  | Get access to string operations.                                                                                                                                                                    |
+
+
+</div>

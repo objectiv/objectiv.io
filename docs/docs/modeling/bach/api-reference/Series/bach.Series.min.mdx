@@ -1,0 +1,39 @@
+---
+id: bach-api-reference-series-bach-series-min
+slug: /modeling/bach/api-reference/Series/min/
+title: min
+---
+
+# bach.Series.min
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">min</span>
+
+<small className="parameter-list">(<span className="parameter" id="partition">partition=None</span>, <span className="parameter" id="skipna">skipna=True</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Returns the minimum value in each partition or for all values if none is given.
+
+
+### Parameters
+
+* **`partition`** (Union[GroupBy, [DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)]) – The partition or window to apply
+* **`skipna`** (bool) – only `skipna=True` supported. This means NULL values are ignored.
+
+
+
+### Returns
+
+a new Series with the aggregation applied
+
+
+
+</div>
+
+
+</div>

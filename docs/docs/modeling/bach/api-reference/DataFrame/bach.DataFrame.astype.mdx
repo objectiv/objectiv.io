@@ -1,0 +1,52 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-astype
+slug: /modeling/bach/api-reference/DataFrame/astype/
+title: astype
+---
+
+# bach.DataFrame.astype
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">astype</span>
+
+<small className="parameter-list">(<span className="parameter" id="dtype">dtype</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Cast all or some of the data columns to a certain dtype.
+
+Only data columns can be cast, index columns cannot be cast.
+
+This does not modify the current DataFrame, instead it returns a new DataFrame.
+
+
+### Parameters
+
+**`dtype`** (Union[str, Dict[str, str]]) – either:
+
+* A single str, in which case all data columns are cast to this dtype.
+* A dictionary mapping column labels to dtype.
+
+
+
+
+### Returns
+
+New DataFrame with the specified column(s) cast to the specified dtype
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+
+</div>
+
+
+</div>

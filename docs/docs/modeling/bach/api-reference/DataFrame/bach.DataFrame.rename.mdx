@@ -1,0 +1,65 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-rename
+slug: /modeling/bach/api-reference/DataFrame/rename/
+title: rename
+---
+
+# bach.DataFrame.rename
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">rename</span>
+
+<small className="parameter-list">(<span className="parameter" id="mapper">mapper=None</span>, <span className="parameter" id="index">index=None</span>, <span className="parameter" id="columns">columns=None</span>, <span className="parameter" id="axis">axis=0</span>, <span className="parameter" id="level">level=None</span>, <span className="parameter" id="errors">errors='ignore'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Rename columns.
+
+The interface is similar to Panda’s `pandas.DataFrame.rename()`. However we don’t support
+renaming indexes, so recommended usage is `rename(columns=...)`.
+
+
+### Parameters
+
+* **`mapper`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – dict to apply to that axis’ values. Use mapper and axis to specify the axis to target
+with mapper. Currently mapper is only supported with `axis=1`, which is similar to using
+columns.
+* **`index`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – not supported.
+* **`columns`** (Optional[Union[Dict[str, str], Callable[[str], str]]]) – dict str:str to rename columns, or a function that takes column names as an argument
+and returns the new one. The new column names must not clash with other column names in either
+`self.`[`data`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.data.mdx) or `self.`[`index`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.index.mdx), after renaming is complete.
+* **`axis`** (int) – `axis=1` is supported, rest is not.
+* **`level`** (Optional[int]) – not supported
+* **`errors`** (str) – Either ‘ignore’ or ‘raise’. When set to ‘ignore’ KeyErrors about non-existing
+column names in `columns` or `mapper` are ignored. Errors thrown in the mapper function or
+about invalid target column names are not suppressed.
+
+
+
+### Returns
+
+DataFrame with the renamed axis labels.
+
+
+
+### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+:::note
+
+The copy parameter is not supported since it makes very little sense for db backed series.
+
+
+:::
+
+
+</div>
+
+
+</div>

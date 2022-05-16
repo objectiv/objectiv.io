@@ -1,0 +1,54 @@
+---
+id: bach-api-reference-series-bach-series-value-counts
+slug: /modeling/bach/api-reference/Series/value_counts/
+title: value_counts
+---
+
+# bach.Series.value_counts
+
+<div className="method">
+
+## <span className="additional-name">Series.</span><span className="name">value_counts</span>
+
+<small className="parameter-list">(<span className="parameter" id="normalize">normalize=False</span>, <span className="parameter" id="sort">sort=True</span>, <span className="parameter" id="ascending">ascending=False</span>, <span className="parameter" id="bins">bins=None</span>, <span className="parameter" id="method">method='pandas'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Returns a series containing counts per unique value
+
+
+### Parameters
+
+* **`normalize`** (bool) – returns proportions instead of frequencies
+* **`sort`** (bool) – sorts result by frequencies
+* **`ascending`** (bool) – sorts values in ascending order if true.
+* **`bins`** (Optional[int]) – works only with numeric series, groups values into the request amount of bins
+and counts values based on each range.
+* **`method`** (str) – Method to use for calculating bin ranges.
+Supported values:
+>   * ”pandas” (default): Performs bound adjustments based on Pandas implementation.
+>   * ”bach”: No bound adjustments are performed. Instead, first interval includes both
+> lower and upper bounds.
+
+
+
+
+### Returns
+
+a series containing all counts per unique row.
+
+
+
+### Return type
+
+[bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)
+
+
+
+</div>
+
+
+</div>

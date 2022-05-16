@@ -1,0 +1,104 @@
+---
+id: bach-api-reference-series-bach-series
+slug: /modeling/bach/api-reference/Series/Series/
+title: Series
+---
+
+# bach.Series
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">bach.</span><span className="name">Series</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="base_node">base_node</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="expression">expression</span>, <span className="parameter" id="group_by">group_by</span>, <span className="parameter" id="sorted_ascending">sorted_ascending</span>, <span className="parameter" id="index_sorting">index_sorting</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
+
+<div className="content">
+
+Series is an abstract class. An instance of Series represents a column of data. Specific subclasses are
+used to represent specific types of data and enable operations on that data.
+
+It can be used as a separate object to just deal with a single list of values. There are many standard
+operations on Series available to do operations like add or subtract, to create aggregations like
+[`nunique()`](/modeling/bach/api-reference/Series/bach.Series.nunique.mdx) or [`count()`](/modeling/bach/api-reference/Series/bach.Series.count.mdx), or to create new sub-Series, like [`unique()`](/modeling/bach/api-reference/Series/bach.Series.unique.mdx).
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                     |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`agg`](/modeling/bach/api-reference/Series/bach.Series.agg.mdx)(func[, group_by])                             | Apply one or more aggregation functions to this Series.                                                                                                                                             |
+| [`aggregate`](/modeling/bach/api-reference/Series/bach.Series.aggregate.mdx)(func[, group_by])                       | Alias for [`agg()`](/modeling/bach/api-reference/Series/bach.Series.agg.mdx).                                                                                                                                                                                    |
+| [`all_values`](/modeling/bach/api-reference/Series/bach.Series.all_values.mdx)()                                      | For every row in this Series, do multiple evaluations where _all_ sub-evaluations should be True                                                                                                    |
+| [`any_value`](/modeling/bach/api-reference/Series/bach.Series.any_value.mdx)()                                       | For every row in this Series, do multiple evaluations where _any_ sub-evaluation should be True                                                                                                     |
+| [`append`](/modeling/bach/api-reference/Series/bach.Series.append.mdx)(other[, ignore_index])                     | Append rows of other series to the caller series.                                                                                                                                                   |
+| [`apply_func`](/modeling/bach/api-reference/Series/bach.Series.apply_func.mdx)(func, \*args, \*\*kwargs)                 | Apply the given functions to this Series.                                                                                                                                                           |
+| [`astype`](/modeling/bach/api-reference/Series/bach.Series.astype.mdx)(dtype)                                     | Convert this Series to another type.                                                                                                                                                                |
+| [`copy`](/modeling/bach/api-reference/Series/bach.Series.copy.mdx)()                                            | Return a copy of this Series.                                                                                                                                                                       |
+| [`count`](/modeling/bach/api-reference/Series/bach.Series.count.mdx)([partition, skipna])                        | Returns the amount of rows in each partition or for all values if none is given.                                                                                                                    |
+| [`describe`](/modeling/bach/api-reference/Series/bach.Series.describe.mdx)([percentiles, datetime_is_numeric])      | Returns descriptive statistics, it will vary based on what is provided                                                                                                                              |
+| [`drop_duplicates`](/modeling/bach/api-reference/Series/bach.Series.drop_duplicates.mdx)([keep])                           | Return a series with duplicated rows removed.                                                                                                                                                       |
+| [`dropna`](/modeling/bach/api-reference/Series/bach.Series.dropna.mdx)()                                          | Removes rows with missing values.                                                                                                                                                                   |
+| [`exists`](/modeling/bach/api-reference/Series/bach.Series.exists.mdx)()                                          | Boolean operation that returns True if there are one or more values in this Series                                                                                                                  |
+| [`fillna`](/modeling/bach/api-reference/Series/bach.Series.fillna.mdx)(other)                                     | Fill any NULL value with the given constant or other compatible Series                                                                                                                              |
+| [`from_value`](/modeling/bach/api-reference/Series/bach.Series.from_value.mdx)(base, value, name)                     | Create an instance of this class, that represents a column with the given value.                                                                                                                    |
+| [`get_db_dtype`](/modeling/bach/api-reference/Series/bach.Series.get_db_dtype.mdx)(dialect)                             | Give the static db_dtype of this Series, for the given database dialect.                                                                                                                            |
+| [`head`](/modeling/bach/api-reference/Series/bach.Series.head.mdx)([n])                                         | Get the first n rows from this Series as a pandas.Series.                                                                                                                                           |
+| [`isin`](/modeling/bach/api-reference/Series/bach.Series.isin.mdx)(other)                                       | Evaluate for every row in this series whether the value is contained in other                                                                                                                       |
+| [`isnull`](/modeling/bach/api-reference/Series/bach.Series.isnull.mdx)()                                          | Evaluate for every row in this series whether the value is missing or NULL.                                                                                                                         |
+| [`max`](/modeling/bach/api-reference/Series/bach.Series.max.mdx)([partition, skipna])                          | Returns the maximum value in each partition or for all values if none is given.                                                                                                                     |
+| [`median`](/modeling/bach/api-reference/Series/bach.Series.median.mdx)([partition, skipna])                       | Returns the median in each partition or for all values if none is given.                                                                                                                            |
+| [`min`](/modeling/bach/api-reference/Series/bach.Series.min.mdx)([partition, skipna])                          | Returns the minimum value in each partition or for all values if none is given.                                                                                                                     |
+| [`mode`](/modeling/bach/api-reference/Series/bach.Series.mode.mdx)([partition, skipna])                         | Returns the mode in each partition or for all values if none is given.                                                                                                                              |
+| [`notnull`](/modeling/bach/api-reference/Series/bach.Series.notnull.mdx)()                                         | Evaluate for every row in this series whether the value is not missing or NULL.                                                                                                                     |
+| [`nunique`](/modeling/bach/api-reference/Series/bach.Series.nunique.mdx)([partition, skipna])                      | Returns the amount of unique values in each partition or for all values if none is given.                                                                                                           |
+| [`sort_index`](/modeling/bach/api-reference/Series/bach.Series.sort_index.mdx)(\*[, ascending])                        | Sort this Series by its index.                                                                                                                                                                      |
+| [`sort_values`](/modeling/bach/api-reference/Series/bach.Series.sort_values.mdx)(\*[, ascending])                       | Sort this Series by its values.                                                                                                                                                                     |
+| [`to_frame`](/modeling/bach/api-reference/Series/bach.Series.to_frame.mdx)()                                        | Create a DataFrame with the index and data from this Series.                                                                                                                                        |
+| [`to_numpy`](/modeling/bach/api-reference/Series/bach.Series.to_numpy.mdx)()                                        | Return a Numpy representation of the Series akin `pandas.Series.to_numpy`                                                                                                                             |
+| [`to_pandas`](/modeling/bach/api-reference/Series/bach.Series.to_pandas.mdx)([limit])                                | Get the data from this series as a pandas.Series :param limit: The limit to apply, either as a max amount of rows or a slice.                                                                       |
+| [`unique`](/modeling/bach/api-reference/Series/bach.Series.unique.mdx)([partition, skipna])                       | Return all unique values in this Series.                                                                                                                                                            |
+| [`unstack`](/modeling/bach/api-reference/Series/bach.Series.unstack.mdx)([level, fill_value, aggregation])         | Pivot a level of the index labels.                                                                                                                                                                  |
+| [`value_counts`](/modeling/bach/api-reference/Series/bach.Series.value_counts.mdx)([normalize, sort, ascending, ...])   | Returns a series containing counts per unique value                                                                                                                                                 |
+| [`view_sql`](/modeling/bach/api-reference/Series/bach.Series.view_sql.mdx)()                                        |                                                                                                                                                                                                     |
+| [`window_cume_dist`](/modeling/bach/api-reference/Series/bach.Series.window_cume_dist.mdx)([window])                        | Returns the cumulative distribution, that is (number of partition rows preceding or peers with current row) / (total partition rows).                                                               |
+| [`window_dense_rank`](/modeling/bach/api-reference/Series/bach.Series.window_dense_rank.mdx)([window])                       | Returns the rank of the current row, without gaps; this function effectively counts peer groups.                                                                                                    |
+| [`window_first_value`](/modeling/bach/api-reference/Series/bach.Series.window_first_value.mdx)([window])                      | Returns value evaluated at the row that is the first row of the window frame.                                                                                                                       |
+| [`window_lag`](/modeling/bach/api-reference/Series/bach.Series.window_lag.mdx)([offset, default, window])             | Returns value evaluated at the row that is offset rows before the current row within the window                                                                                                     |
+| [`window_last_value`](/modeling/bach/api-reference/Series/bach.Series.window_last_value.mdx)([window])                       | Returns value evaluated at the row that is the last row of the window frame.                                                                                                                        |
+| [`window_lead`](/modeling/bach/api-reference/Series/bach.Series.window_lead.mdx)([offset, default, window])            | Returns value evaluated at the row that is offset rows after the current row within the window.                                                                                                     |
+| [`window_nth_value`](/modeling/bach/api-reference/Series/bach.Series.window_nth_value.mdx)(n[, window])                     | Returns value evaluated at the row that is the n'th row of the window frame.                                                                                                                        |
+| [`window_ntile`](/modeling/bach/api-reference/Series/bach.Series.window_ntile.mdx)([num_buckets, window])               | Returns an integer ranging from 1 to the argument value, dividing the partition as equally as possible.                                                                                             |
+| [`window_percent_rank`](/modeling/bach/api-reference/Series/bach.Series.window_percent_rank.mdx)([window])                     | Returns the relative rank of the current row, that is (rank - 1) / (total partition rows - 1).                                                                                                      |
+| [`window_rank`](/modeling/bach/api-reference/Series/bach.Series.window_rank.mdx)([window])                             | Returns the rank of the current row, with gaps; that is, the row_number of the first row in its peer group.                                                                                         |
+| [`window_row_number`](/modeling/bach/api-reference/Series/bach.Series.window_row_number.mdx)([window])                       | Returns the number of the current row within its window, counting from 1.                                                                                                                           |
+
+
+</div>
+
+## Attributes
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                     |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`array`](/modeling/bach/api-reference/Series/bach.Series.array.mdx)                                             | .array property accessor akin pandas.Series.array                                                                                                                                                   |
+| [`base_node`](/modeling/bach/api-reference/Series/bach.Series.base_node.mdx)                                         | Get this Series' base_node                                                                                                                                                                          |
+| [`group_by`](/modeling/bach/api-reference/Series/bach.Series.group_by.mdx)                                          | Get this Series' group_by, if any.                                                                                                                                                                  |
+| [`index`](/modeling/bach/api-reference/Series/bach.Series.index.mdx)                                             | Get this Series' index dictionary {name: Series}                                                                                                                                                    |
+| [`index_sorting`](/modeling/bach/api-reference/Series/bach.Series.index_sorting.mdx)                                     | Get this Series' index sorting.                                                                                                                                                                     |
+| [`name`](/modeling/bach/api-reference/Series/bach.Series.name.mdx)                                              | Get this Series' name                                                                                                                                                                               |
+| [`sorted_ascending`](/modeling/bach/api-reference/Series/bach.Series.sorted_ascending.mdx)                                  | Get this Series' sorting by value.                                                                                                                                                                  |
+| [`value`](/modeling/bach/api-reference/Series/bach.Series.value.mdx)                                             | Retrieve the actual single value of this series.                                                                                                                                                    |
+
+
+</div>
+
+
+</div>
+
+
+</div>

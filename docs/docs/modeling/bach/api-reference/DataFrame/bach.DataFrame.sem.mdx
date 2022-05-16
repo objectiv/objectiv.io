@@ -1,0 +1,42 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-sem
+slug: /modeling/bach/api-reference/DataFrame/sem/
+title: sem
+---
+
+# bach.DataFrame.sem
+
+<div className="method">
+
+## <span className="additional-name">DataFrame.</span><span className="name">sem</span>
+
+<small className="parameter-list">(<span className="parameter" id="axis">axis=1</span>, <span className="parameter" id="skipna">skipna=True</span>, <span className="parameter" id="level">level=None</span>, <span className="parameter" id="ddof">ddof=1</span>, <span className="parameter" id="numeric_only">numeric_only=False</span>, <span className="parameter" id="**">\*\*kwargs</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Returns the unbiased standard error of the mean of each column.
+
+
+### Parameters
+
+* **`axis`** – only `axis=1` is supported. This means columns are aggregated.
+* **`skipna`** – only `skipna=True` supported. This means NULL values are ignored.
+* **`level`** – not supported.
+* **`ddof`** (int) – Delta Degrees of Freedom. Only 1 is supported.
+* **`numeric_only`** – whether to aggregate numeric series only, or attempt all.
+
+
+
+### Returns
+
+a new DataFrame with the aggregation applied to all selected columns.
+
+
+
+</div>
+
+
+</div>

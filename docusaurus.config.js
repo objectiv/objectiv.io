@@ -79,8 +79,9 @@ const config = {
   customFields: {
     trackerApplicationId: envConfig.trackerApplicationId,
     trackerEndPoint: envConfig.trackerEndPoint,
+    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true',
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: envConfig.trackerConsoleEnabled === 'true'
+    gitHubRepo: "objectiv-analytics"
   },
 
   themeConfig:

@@ -1,0 +1,70 @@
+---
+id: open-model-hub-api-reference-model-hub-modelhub-model-hub
+slug: /modeling/open-model-hub/api-reference/ModelHub/ModelHub/
+title: ModelHub
+---
+
+# modelhub.ModelHub
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">modelhub.</span><span className="name">ModelHub</span>
+
+<small className="parameter-list">(<span className="parameter" id="time_aggregation">time_aggregation='YYYY-MM-DD HH24:MI:SS.MS'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
+
+<div className="content">
+
+The model hub contains collection of data models and convenience functions that you can take, combine and
+run on Bach data frames to quickly build highly specific model stacks for product analysis and
+exploration.
+It includes models for a wide range of typical product analytics use cases.
+
+All models from the model hub can run on Bach DataFrames that contain data collected by the Objectiv
+tracker. To instantiate a DataFrame with Objectiv data use `ModelHub.from_objectiv_data()`. Models
+from the model hub assume that at least the columns of a DataFrame instantiated with this method are
+available in order to run properly. These columns are:
+
+The model hub has two main type of functions: [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) and [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx).
+
+* `map` functions always return a series with the same shape and index as the DataFrame they originate
+from. This ensures they can be added as a column to that DataFrame.
+* `aggregate` fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
+`agg`.
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`add_conversion_event`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.add_conversion_event.mdx)([location_stack, ...])       | Label events that are used as conversions.                                                                                                                                                                             |
+| [`get_objectiv_dataframe`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_objectiv_dataframe.mdx)([db_url, table_name, ...]) | Sets data from sql table into an [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) object.                                                                                                                                                                |
+| [`time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx)(data[, time_aggregation])                | Formats the moment column in the DataFrame, returns a SeriesString.                                                                                                                                                    |
+| [`to_metabase`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.to_metabase.mdx)(data[, model_type, config])           | Plot data in `data` to Metabase.                                                                                                                                                                                         |
+
+
+</div>
+
+## Attributes
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx)                                               | Access aggregation methods from the model hub.                                                                                                                                                                         |
+| [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx)                                         | Access aggregation methods from the model hub.                                                                                                                                                                         |
+| [`conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx)                                 | Dictionary of all events that are labeled as conversion.                                                                                                                                                               |
+| [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx)                                               | Access map methods from the model hub.                                                                                                                                                                                 |
+| [`time_aggregation`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_aggregation.mdx)                                  | Time aggregation used for aggregation models, set when object is instantiated.                                                                                                                                         |
+
+
+</div>
+
+
+</div>
+
+
+</div>

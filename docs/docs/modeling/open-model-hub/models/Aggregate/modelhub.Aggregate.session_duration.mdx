@@ -1,0 +1,51 @@
+---
+id: open-model-hub-models-aggregate-modelhub-aggregate-session-duration
+slug: /modeling/open-model-hub/models/Aggregate/session_duration/
+title: session_duration
+---
+
+# modelhub.Aggregate.session_duration
+
+<div className="method">
+
+## <span className="additional-name">Aggregate.</span><span className="name">session_duration</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>, <span className="parameter" id="exclude_bounces">exclude_bounces=True</span>, <span className="parameter" id="method">method='mean'</span></small>)
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/aggregate.py)</span>
+
+<div className="content">
+
+Calculate the duration of sessions.
+
+With default `method`, it calculates the mean of the session duration over the `groupby`.
+
+
+### Parameters
+
+* **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]], str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx), sql_models.constants.NotSet]) – sets the column(s) to group by.
+  * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
+  * if None it aggregates over all data.
+
+* **`method`** (str) – ‘mean’ or ‘sum’
+
+
+
+### Returns
+
+series with results.
+
+
+
+### Return type
+
+bach.series.series_numeric.SeriesInt64
+
+
+
+</div>
+
+
+</div>
