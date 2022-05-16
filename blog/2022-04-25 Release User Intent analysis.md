@@ -16,7 +16,7 @@ import BlogImage from '@site/src/components/blog-image'
 [example-notebook]: https://objectiv.io/docs/modeling/example-notebooks/user-intent/
 [locations]: https://objectiv.io/docs/tracking/core-concepts/locations
 [root_location]: https://objectiv.io/docs/taxonomy/reference/location-contexts/RootLocationContext/
-[session_duration]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregation/session_duration/
+[session_duration]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/session_duration/
 [quantile]: https://objectiv.io/docs/modeling/bach/api-reference/DataFrame/quantile/
 [model-hub]: https://objectiv.io/docs/modeling/
 [bach]: https://objectiv.io/docs/modeling/bach/
