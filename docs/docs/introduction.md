@@ -32,6 +32,6 @@ Follow our [Quickstart Guide](/home/quickstart-guide.md) to spin up a fully func
 
 ### Resources
 
-* [Objectiv on Github](https://github.com/objectiv/objectiv-analytics) - Objectiv's official repository
+* [Objectiv on GitHub](https://github.com/objectiv/objectiv-analytics) - Objectiv's official repository
 * <JoinSlackLink linkText='Objectiv on Slack' /> - Get help & join the discussion on where to take Objectiv next
 * [Objectiv.io](https://objectiv.io) - Objectiv's official website

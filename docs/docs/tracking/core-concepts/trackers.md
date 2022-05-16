@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Objectiv currently supports four trackers:
 * [React Tracker](#react-tracker) for installation into React web apps.
-* [React Native Tracker](#react-tracker) for installation into React Native apps.
+* [React Native Tracker](#react-native-tracker) for installation into React Native apps.
 * [Browser Tracker](#browser-tracker) for installation into websites and JS web apps via npm.
 * [Angular Tracker](#angular-tracker) for installation into Angular web apps.
 

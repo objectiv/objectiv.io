@@ -35,7 +35,7 @@ We believe a widespread adoption of an [open analytics taxonomy](/taxonomy/intro
 ## Tracking
 
 #### Does Objectiv work for mobile and web?
-Objectiv currently has Tracking SDKs for React, React Native, Angular and Browser(JavaScript). They're built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and have minimal dependencies. You can combine data from various platforms and devices in your analyses without additional transformation.
+Objectiv currently has Tracking SDKs for React, React Native, Angular and Browser (JavaScript). They're built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and have minimal dependencies. You can combine data from various platforms and devices in your analyses without additional transformation.
 
 #### Do I need to replace my existing analytics tracker?
 No. You can typically instrument Objectiv’s tracker and leave your existing tracking instrumentation alone and both will work fine. You can start small and expand as you go.
