@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Avatar from 'react-avatar';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
-import AnnouncementBar from '../../components/announcement-bar';
 
 let contributors = require('./contributors.json');
 
@@ -60,13 +59,6 @@ export default function AboutUs() {
       <Layout
         title={siteConfig?.title}
         description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
-
-        <AnnouncementBar 
-          title="We're Hiring!"
-          content="Join our mission crew as a Data Scientist."
-          ctaLink='/jobs'
-          ctaText='Check the vacancy'
-        />
 
         <header className={clsx('hero hero--primary', styles.aboutUsBanner)}>
           <div className={clsx('container', styles.contentContainer)}>
