@@ -199,7 +199,7 @@ export default function Home() {
                   <p>
                     Objectiv&nbsp;
                     <TrackedLink
-                      to={useBaseUrl("/docs/modeling/example-notebooks/", {absolute: true})}
+                      to={useBaseUrl("/docs/modeling/open-model-hub/", {absolute: true})}
                       waitUntilTracked={true}
                       target="_self">
                       includes pre-built models
