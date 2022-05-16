@@ -154,6 +154,10 @@ RewriteRule ^.*?$ /docs/modeling/example-notebooks/product-analytics [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/user_intent)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/user-intent [L,R=301]
 
+# redirect old Taxonomy docs URLs
+# /docs/taxonomy/core_concepts -> /docs/taxonomy/
+RewriteCond %{REQUEST_URI} ^/(docs/taxonomy/core-concepts)(\/?)$
+RewriteRule ^.*?$ /docs/taxonomy/ [L,R=301]
 
 # set hsts header, to prevent client from returning to http
 Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
