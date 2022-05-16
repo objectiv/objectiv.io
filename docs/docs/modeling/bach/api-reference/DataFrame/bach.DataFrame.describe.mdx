@@ -8,9 +8,9 @@ title: describe
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">describe</span>
+### <span className="name">describe</span>
 
-<small className="parameter-list">(<span className="parameter" id="percentiles">percentiles=None</span>, <span className="parameter" id="include">include=None</span>, <span className="parameter" id="exclude">exclude=None</span>, <span className="parameter" id="datetime_is_numeric">datetime_is_numeric=False</span></small>)
+<small className="parameter-list">(<span className="parameter" id="percentiles">percentiles=None</span>, <span className="parameter" id="include">include=None</span>, <span className="parameter" id="exclude">exclude=None</span>, <span className="parameter" id="datetime_is_numeric">datetime_is_numeric=False</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -21,7 +21,7 @@ Returns descriptive statistics.
 The following statistics are considered: `count`, `mean`, `std`, `min`, `max`, `nunique` and `mode`
 
 
-### Parameters
+#### Parameters
 
 * **`percentiles`** (Optional[Sequence[float]]) – list of percentiles to be calculated. Values must be between 0 and 1.
 * **`include`** (Optional[Union[str, Sequence[str]]]) – dtypes to be included.
@@ -33,13 +33,13 @@ numerical columns and on all columns if there are no numerical columns.
 
 
 
-### Returns
+#### Returns
 
 a new DataFrame with the descriptive statistics
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

@@ -1,7 +1,11 @@
-.ctaButton {
+.starsButtonsContainer {
+  display: inline-block;
+}
+
+.starsButton {
   height: 48px;
   line-height: 28px;
-  padding: 10px 25px 10px 20px;
+  padding: 0;
   background: #FAFAFA;
   border: none;
   border-radius: 4px;
@@ -14,57 +18,28 @@
   color: black;
 }
 
-.ctaButton:hover {
-  background: #F7FDFF;
+.starsButton:hover {
   box-shadow: 1px 2px 3px rgba(51, 51, 51, 0.25);
   color: #000;
   cursor: pointer;
   text-decoration: none;
 }
 
-.ctaButton span:nth-child(1) { /* the icon */
+.starsButtonContent {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+}
+
+.starsButtonContent span:nth-child(1) { /* the icon */
   margin: 0 16px 0 0;
   float: left;
 }
 
-.starsButtonsContainer {
-  display: inline-block;
-}
-
 .starCount {
-  position: relative !important;
-  margin-left: 0 !important;
-  background-color: #333 !important;
-  color: #fff;
-}
-.starCount:hover {
-  color: #fff;
-  background-color: rgb(70, 70, 70) !important;
-}
-
-.starCount::before, .starCount::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
   display: inline-block;
-}
-
-.starCount::before {
-  left: -6px;
-  margin-top: -6px;
-  border-width: 6px 6px 6px 0;
-  border-right-color: #333;
-}
-
-.starCount::after {
-  left: -7px;
-  margin-top: -7px;
-  border-width: 7px 7px 7px 0;
-  z-index: -1;
-  border-right-color: #d4d4d4;
+  padding: 10px 16px 10px 16px;
+  margin: 0 0 0 -6px;
+  background-color: #EEEEEE;
+  color: #333333;
+  font-weight: bold;
 }

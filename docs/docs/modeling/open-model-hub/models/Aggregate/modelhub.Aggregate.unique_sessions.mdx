@@ -8,9 +8,9 @@ title: unique_sessions
 
 <div className="method">
 
-## <span className="additional-name">Aggregate.</span><span className="name">unique_sessions</span>
+### <span className="name">unique_sessions</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/aggregate.py)</span>
@@ -20,7 +20,7 @@ title: unique_sessions
 Calculate the unique sessions in the Objectiv `data`.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`groupby`** (Union[List[Union[str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]], str, [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx), sql_models.constants.NotSet]) – sets the column(s) to group by.
@@ -30,13 +30,13 @@ Calculate the unique sessions in the Objectiv `data`.
 
 
 
-### Returns
+#### Returns
 
 series with results.
 
 
 
-### Return type
+#### Return type
 
 bach.series.series_numeric.SeriesInt64
 

@@ -8,9 +8,9 @@ title: fillna
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">fillna</span>
+### <span className="name">fillna</span>
 
-<small className="parameter-list">(<span className="parameter" id="*">\*</span>, <span className="parameter" id="value">value=None</span>, <span className="parameter" id="method">method=None</span>, <span className="parameter" id="axis">axis=0</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)
+<small className="parameter-list">(<span className="parameter" id="*">\*</span>, <span className="parameter" id="value">value=None</span>, <span className="parameter" id="method">method=None</span>, <span className="parameter" id="axis">axis=0</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -20,7 +20,7 @@ title: fillna
 Fill any NULL value using a method or with a given value.
 
 
-### Parameters
+#### Parameters
 
 * **`value`** (Union[[Series](/modeling/bach/api-reference/Series/bach.Series.mdx), int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, Dict[str, Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list, [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]]]) – A literal/series to fill all NULL values on each series
 or a dictionary specifying which literal/series to use for each series.
@@ -36,13 +36,13 @@ yield different results affecting the values to be propagated when using a filli
 
 
 
-### Returns
+#### Returns
 
 a new dataframe with filled missing values.
 
 
 
-### Return type
+#### Return type
 
 [DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

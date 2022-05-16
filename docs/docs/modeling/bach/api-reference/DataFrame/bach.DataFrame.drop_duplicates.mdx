@@ -8,9 +8,9 @@ title: drop_duplicates
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">drop_duplicates</span>
+### <span className="name">drop_duplicates</span>
 
-<small className="parameter-list">(<span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="keep">keep='first'</span>, <span className="parameter" id="ignore_index">ignore_index=False</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span></small>)
+<small className="parameter-list">(<span className="parameter" id="subset">subset=None</span>, <span className="parameter" id="keep">keep='first'</span>, <span className="parameter" id="ignore_index">ignore_index=False</span>, <span className="parameter" id="sort_by">sort_by=None</span>, <span className="parameter" id="ascending">ascending=True</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -20,7 +20,7 @@ title: drop_duplicates
 Return a dataframe with duplicated rows removed based on all series labels or a subset of labels.
 
 
-### Parameters
+#### Parameters
 
 * **`subset`** (Optional[Union[str, Sequence[str]]]) – series label or sequence of labels.
 Duplications to be dropped are based on the combination of the subset of series.
@@ -42,13 +42,13 @@ when keep == “first” or keep == “last”. If not provided:
 
 
 
-### Returns
+#### Returns
 
 a new dataframe with dropped duplicates.
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

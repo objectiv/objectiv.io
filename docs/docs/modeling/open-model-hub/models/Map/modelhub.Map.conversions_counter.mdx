@@ -8,9 +8,9 @@ title: conversions_counter
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">conversions_counter</span>
+### <span className="name">conversions_counter</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py)</span>
@@ -21,7 +21,7 @@ Counts the total number of conversions given a partition (ie session_id
 or user_id).
 
 
-### Parameters
+#### Parameters
 
 * **`name`** (str) – the name of the conversion to label as set in
 [`ModelHub.conversion_events`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.conversion_events.mdx).
@@ -30,7 +30,7 @@ of the ObjectivFrame
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 

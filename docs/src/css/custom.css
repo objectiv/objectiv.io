@@ -314,6 +314,10 @@ html[class*='docs-doc-id-modeling/open-model-hub/api-reference/ModelHub'] h1,
 html[class*='docs-doc-id-modeling/open-model-hub/api-reference/Series'] h1 {
   font-size: 32px;
 }
+html[class*='docs-doc-id-modeling/bach/api-reference/DataFrame'] h1, 
+html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
+  font-size: 32px;
+}
 
 /* Class - overall */
 div.class {
@@ -323,16 +327,37 @@ div.class {
 }
 
 /* Class/method/property - heading */
-div.class h2, div.method h2, div.property h2 {
+div.class h2, 
+div.method h2, 
+div.property h2, 
+div.attribute h2, 
+div.class h3, 
+div.method h3, 
+div.property h3,
+div.attribute h3 {
   margin-top: 40px;
   display: inline;
 }
-div.class h2 p, div.method h2 p, div.property h2 p {
+div.class h2 p, 
+div.method h2 p, 
+div.property h2 p, 
+div.attribute h2 p, 
+div.class h3 p, 
+div.method h3 p, 
+div.property h3 p,
+div.attribute h3 p {
   display: inline-block;
 }
 
-div.class h2 .hash-link, div.method h2 .hash-link, div.property h2 .hash-link {
-  display: none;
+div.class h2 .hash-link, 
+div.method h2 .hash-link, 
+div.property h2 .hash-link, 
+div.attribute h2 .hash-link, 
+div.class h3 .hash-link, 
+div.method h3 .hash-link, 
+div.property h3 .hash-link,
+div.attribute h3 .hash-link {
+    display: none;
 }
 
 /* Class/method/property - signature */
@@ -347,7 +372,8 @@ div.class h2.signature-method {
 /* Class - type & signature-class - type */
 div.class .type-annotation *, 
 div.method .type-annotation *,
-div.property .type-annotation * {
+div.property .type-annotation *,
+div.attribute .type-annotation * {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
