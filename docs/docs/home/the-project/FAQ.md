@@ -17,9 +17,7 @@ Objectiv’s tracker collects clean, well-structured data that’s ready for mod
 ##### TAXONOMY
 
 ### What is the open analytics taxonomy?
-The [open analytics taxonomy](/taxonomy/introduction.md) is our proposal for a common way to collect & structure data. 
-
-It describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
+The [open analytics taxonomy](/taxonomy/introduction.md) is a generic classifification of common event types and the contexts in which they can happen. It is a proposal for a common way to collect & structure analytics data in an effort to enable models to be universally shared and reused between projects, teams and companies.
 
 Check out the [Taxonomy](/taxonomy/introduction.md) section of our Docs to see what it looks like, or try the [Quickstart Guide](/home/quickstart-guide.md) to spin up a fully functional dockerized demo and see it in practice (takes 5 minutes).
 
@@ -75,7 +73,7 @@ Objectiv Bach, our modeling library, features an SQL abstraction layer that enab
 For all supported pandas operations, check the reference in the [Bach documentation](/modeling/bach.mdx) section.
 
 ### Can I run these models in production?
-Yes. You can use [DBT](https://www.getdbt.com/) for example to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future.
+Yes. You can use [dbt](https://www.getdbt.com/) for example to run these in production. We plan to offer seamless integration for [dbt](https://www.getdbt.com/) in the future.
 
 ### Does Objectiv include any data visualisation/dashboards for BI purposes?
 Objectiv does not include its own data visualisation tools as we believe there are many excellent solutions out there already that serve this purpose. We have instead focused our efforts on enabling you to easily feed your Objectiv data into your BI tool of choice. 
@@ -98,6 +96,9 @@ Objectiv is licensed under the [Apache License, Version 2.0](https://www.apache.
 
 ### Does it work with my stack?
 Objectiv currently requires a PostgreSQL database and works in any environment where you can run containers. We're working on support for Snowplow and BigQuery for event handling at scale. Amazon Redshift is planned next and more will follow.
+
+### What's the fastest way to test-drive Objectiv with my current app/website?
+If you want to test Objectiv with your own project, we're here to help out. We can set up a test collector & back-end for you. All you'll have to do is instrument Objectiv's tracker to a part of your app. Join our slack channel and reach out if you're interested.
 
 ### Does it scale?
 Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. 
