@@ -26,7 +26,10 @@ import Mermaid from '@theme/Mermaid';
 | **medium**    | string      | Advertising or marketing medium: cpc, banner, email newsletter, etc.
 | **campaign**    | string      | Campaign name, slogan, promo code, etc.
 | **term**    | string      | _[optional]_ Search keywords. 
-| **content**    | string      | _[optional]_ To differentiate similar content, or links within the same ad. 
+| **content**    | string      | _[optional]_ To differentiate similar content, or links within the same ad.
+| **source_platform** | string | _[optional]_ Identifies the platform where the marketing activity was undertaken.
+| **creative_format** | string | _[optional]_ Identifies the creative used (e.g., skyscraper, banner, etc).
+| **marketing_tactic** | string | _[optional]_ Identifies the marketing tactic used (e.g., onboarding, retention, acquisition etc).
 
 :::info setting of the properties
 The backend will automatically set all the properties based on the UTM parameters in the PathContext.
