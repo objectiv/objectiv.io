@@ -32,19 +32,25 @@ Returns the mode in each partition or for all values if none is given.
 a new Series with the aggregation applied
 
 
-..warning::
-    The result of this function might be non-deterministic if there are multiple values with
-    the same frequency.
+:::warning
+
+The result of this function might be non-deterministic if there are multiple values with
+the same frequency.
 
 
-..note::
-    BigQuery has no support for aggregation function `MODE`, therefore `APPROX_TOP_COUNT`
-    approximate aggregate function is used instead. Which means that an approximate result will
-    be produced instead of exact results.
+:::
 
-    For more information:
-    [https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count](https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count)
+:::note
 
+BigQuery has no support for aggregation function `MODE`, therefore `APPROX_TOP_COUNT`
+approximate aggregate function is used instead. Which means that an approximate result will
+be produced instead of exact results.
+
+For more information:
+[https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count](https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count)
+
+
+:::
 
 
 </div>
