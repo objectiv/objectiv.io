@@ -221,7 +221,7 @@ on Click, will display its content / children to the user with an animation.
 </FAQItem>
 ```
 
-Objectiv Taxonomy has a Context specifically meant for tracking expandable elements, let's use that:
+The taxonomy has a Context specifically meant for tracking expandable elements, let's use that:
 ```jsx
 <FAQItem
   {...tagExpandable({ id: 'faq-track-3rd-party-components' })}
