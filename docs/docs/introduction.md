@@ -16,7 +16,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 Objectiv is open-source product analytics infrastructure, built around [a generic event taxonomy](/taxonomy/introduction.md).
 
 * Feed it directly [into your data warehouse](/tracking/collector/introduction.md) without cleaning & transformation
-* Take & run [pre-built models](./modeling/open-model-hub/models/index.mdx) off the shelf to speed up data projects
+* Take & run [pre-built models](./modeling/open-model-hub/index.mdx) off the shelf to speed up data projects
 * [Reuse and share](/taxonomy/introduction.md) any model between teams, products and platforms
 * Use [pandas-like operations](/modeling/bach/index.mdx) that run on the full SQL dataset
 * Convert models to SQL with [one command](/modeling/bach/api-reference/DataFrame/bach.DataFrame.view_sql.mdx) to feed data consumers from a single source of truth
