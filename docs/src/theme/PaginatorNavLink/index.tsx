@@ -20,7 +20,7 @@ export default function PaginatorNavLink(props: Props): JSX.Element {
       className="pagination-nav__link" 
       to={permalink}
       // OBJECTIV
-      {...tagLink({ id: title as string, href: permalink })}
+      {...tagLink({ id: (title as string != "" ? title as string : "[no title]"), href: permalink })}
       // END OBJECTIV
     >
       {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
