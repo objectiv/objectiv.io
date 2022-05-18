@@ -10,7 +10,7 @@ title: from_value
 
 ### <span className="type-annotation"><em>classmethod</em></span> <span className="name">from_value</span>
 
-<small className="parameter-list">(<span className="parameter" id="base">base</span>, <span className="parameter" id="value">value</span>, <span className="parameter" id="name">name</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="base">base</span>, <span className="parameter" id="value">value</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="dtype">dtype=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
@@ -18,11 +18,16 @@ title: from_value
 <div className="content">
 
 Create an instance of this class, that represents a column with the given value.
-The returned Series will be similar to the Series given as base. In case a DataFrame is given,
-it can be used immediately with that frame.
-:param base:    The DataFrame or Series that the internal parameters are taken from
-:param value:   The value that this constant Series will have
-:param name:    The name that it will be known by (only for representation)
+The given base Series/DataFrame will be used to set the engine, base_node, and index.
+
+
+#### Parameters
+
+* **`base`** (Union[[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), [bach.series.series.Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]) – The DataFrame or Series that the internal parameters are taken from
+* **`value`** (Any) – The value that this constant Series will have
+* **`name`** (str) – The name that it will be known by (only for representation)
+* **`dtype`** (Optional[Union[List[Any], Mapping[str, Any], str]]) – Optional dtype for structural types. Will default to cls.dtype
+
 
 
 </div>

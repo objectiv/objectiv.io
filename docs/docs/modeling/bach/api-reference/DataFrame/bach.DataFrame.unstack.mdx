@@ -28,7 +28,7 @@ DataFrame’s index should be of at least two levels to unstack.
 #### Parameters
 
 * **`level`** (Union[str, int]) – selects the level of the index that is unstacked.
-* **`fill_value`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list]) – replace missing values resulting from unstacking. Should be of same type as the
+* **`fill_value`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, pandas._libs.interval.Interval, dict, list]) – replace missing values resulting from unstacking. Should be of same type as the
 series that is unstacked.
 * **`aggregation`** (str) – method of aggregation, in case of duplicate index values. Supports all aggregation
 methods that [`aggregate()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate.mdx) supports.

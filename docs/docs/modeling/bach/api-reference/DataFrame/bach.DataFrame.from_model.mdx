@@ -29,7 +29,7 @@ If all_dtypes is not specified, then a transaction scoped temporary table will b
 * **`model`** (sql_models.model.SqlModel) – an SqlModel that specifies the queries to instantiate as DataFrame.
 * **`index`** (List[str]) – list of column names that make up the index. At least one column needs to be
 selected for the index.
-* **`all_dtypes`** (Optional[Dict[str, str]]) – Optional. Mapping from column name to dtype.
+* **`all_dtypes`** (Optional[Mapping[str, Union[List[Any], Mapping[str, Any], str]]]) – Optional. Mapping from column name to dtype.
 Must contain all index and data columns.
 Must be in same order as the columns appear in the the sql-model.
 

@@ -29,7 +29,7 @@ schema.
 * **`table_name`** (str) – the table name that contains the data to instantiate as DataFrame.
 * **`index`** (List[str]) – list of column names that make up the index. At least one column needs to be
 selected for the index.
-* **`all_dtypes`** (Optional[Dict[str, str]]) – Optional. Mapping from column name to dtype.
+* **`all_dtypes`** (Optional[Mapping[str, Union[List[Any], Mapping[str, Any], str]]]) – Optional. Mapping from column name to dtype.
 Must contain all index and data columns.
 Must be in same order as the columns appear in the the sql-model.
 * **`bq_dataset`** (Optional[str]) – BigQuery-only. Dataset in which the table resides, if different from engine.url
