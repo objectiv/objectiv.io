@@ -28,9 +28,9 @@ Give the static db_dtype of this Series, for the given database dialect.
 
 #### Returns
 
-database type as string, or None if this Series has no database type for which it is the 
-standard Series for that database, or if that type is a structural type whose exact type depends 
-on the data of the subtypes (e.g. SeriesList will return None on BigQuery, as it can handle all 
+database type as string, or None if this Series has no database type for which it is the
+standard Series for that database, or if that type is a structural type whose exact type depends
+on the data of the subtypes (e.g. SeriesList will return None on BigQuery, as it can handle all
 ARRAY<\*> subtypes)
 
 
