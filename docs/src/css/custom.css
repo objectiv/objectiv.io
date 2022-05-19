@@ -319,6 +319,11 @@ html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
   font-size: 32px;
 }
 
+/* Break long API reference titles on any character */
+html[class*='docs-doc-id-modeling'] .theme-doc-sidebar-item-link {
+  word-break: break-all; 
+}
+
 /* Class - overall */
 div.class {
   border-top: 1px solid var(--ifm-font-color-base);
