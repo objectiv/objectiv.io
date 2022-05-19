@@ -35,6 +35,7 @@ const cookiebotConsentStatistics = (): boolean => {
 }
 
 function Root({children}) {
+  const [trackerInitialized, setTrackerInitialized] = useState<boolean>(false);
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
@@ -47,7 +48,7 @@ function Root({children}) {
   })
 
   // Initialize Tracker only if we have all required configuration variables, and we are not in SSR.
-  if (trackerEndPoint && trackerDocsApplicationId && trackerEndPoint && windowExists()) {
+  if (!trackerInitialized && trackerEndPoint && trackerDocsApplicationId && trackerEndPoint && windowExists()) {
 
     // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig.
     TrackerConsole.setImplementation(trackerConsoleEnabled ? console : NoopConsoleImplementation);
@@ -67,6 +68,8 @@ function Root({children}) {
         })
       ]
     });
+
+    setTrackerInitialized(true);
   }
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
