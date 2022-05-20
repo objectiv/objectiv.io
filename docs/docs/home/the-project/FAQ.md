@@ -10,7 +10,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 
 #### How is Objectiv different from product analytics tools?
 
-Many data teams extract data out of their SaaS analytics tools to perform analyses that are outside of its scope, but the data sets collected by these tools were never designed for this purpose. As a result, significant grunt work is required to get that data ready for in-depth analysis and andvanced modeling.
+Many data teams extract data out of their SaaS analytics tools to perform analyses that are outside of its scope, but the data sets collected by these tools were never designed for this purpose. As a result, significant grunt work is required to get that data ready for in-depth analysis and advanced modeling.
 
 Objectiv’s tracker collects clean, well-structured data that’s ready for modeling without any additional cleaning and transformation, and feeds it straight into your data warehouse. It embraces a [generic event taxonomy](/taxonomy/introduction.md) that enables all models to be shared and reused between projects, teams and companies. This enables data teams to skip the grunt work and build on shared knowledge to speed up their data projects.
 - - -
