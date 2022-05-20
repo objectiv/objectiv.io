@@ -4,28 +4,6 @@ import clsx from "clsx";
 import { TrackedDiv, TrackedButton } from "@objectiv/tracker-react";
 import styles from "./styles.module.css";
 
-// Handles using/setting state with an interval timer
-// https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-function useInterval(callback, delay) {
-  const savedCallback = useRef<Function>();
-
-  // Remember the latest function
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  // Set up the interval
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-}
-
 export default function BeforeAfterImage({
   id,
   beforeImageUrl,
@@ -48,10 +26,6 @@ export default function BeforeAfterImage({
   function handleRunningChange(e) {
     setIsRunning(!isRunning);
   }
-
-  useInterval(() => {
-    toggleActiveTab();
-  }, isRunning ? 5000 : null);
 
   return (
     <TrackedDiv id={id + '-before-after'} 
