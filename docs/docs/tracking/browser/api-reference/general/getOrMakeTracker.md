@@ -15,8 +15,12 @@ It's safe to be called multiple times a long as the given configuration remains 
 
 Internally uses [compareTrackerConfig](/tracking/browser/api-reference/common/compareTrackerConfigs.md) to determine configuration equality.
 
-## Throws
-Error. If the given Tracker ID exists in [TrackerRepository](/tracking/browser/api-reference/core/TrackerRepository.md) but its configuration doesn't match the given one.
+### Tracker configuration collisions
+An error will be logged if the given Tracker ID exists in [TrackerRepository](/tracking/browser/api-reference/core/TrackerRepository.md) but its configuration doesn't match the given one.  
+
+This usually means that `getOrMakeTracker` is unstable and has been called multiple times with different configurations. 
+
+When this happens, the new configuration will be ignored and the existing Tracker instance will be returned.
 
 <br/>
 
