@@ -13,13 +13,13 @@ useFailureEventTracker = (parameters: {
 ```
 
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **message**    | string            |               |
-| optional | tracker        | ReactNativeTracker      |               |
-| optional | options        | TrackEventOptions |               |
-| optional | locationStack  | LocationStack     |               |
-| optional | globalContexts | GlobalContexts    |               |
+|          |                | type               | default value |
+|:--------:|:---------------|:-------------------|:--------------|
+| required | **message**    | string             |               |
+| optional | tracker        | ReactNativeTracker |               |
+| optional | options        | TrackEventOptions  |               |
+| optional | locationStack  | LocationStack      |               |
+| optional | globalContexts | GlobalContexts     |               |
 
 ## Returns
 `Function`

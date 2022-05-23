@@ -5,6 +5,7 @@ Tracks a [SuccessEvent](/taxonomy/reference/events/SuccessEvent.md).
 ```ts
 trackSuccessEvent = (parameters: {
   tracker: Tracker,
+  message: string,
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
   options?: TrackEventOptions,
@@ -21,6 +22,7 @@ This is a lower-level API.
 |          |                | type              |
 |:--------:|:---------------|:------------------|
 | required | **tracker**    | ReactTracker      |
+| required | **message**    | string            |
 | optional | options        | TrackEventOptions |
 | optional | locationStack  | LocationStack     |
 | optional | globalContexts | GlobalContexts    |
