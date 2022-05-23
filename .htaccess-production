@@ -139,6 +139,7 @@ RewriteRule ^.*?$ /%1/bach/api-reference/%2/%3 [L,R=301]
 # /docs/modeling/open_taxonomy        -> /docs/modeling/example-notebooks/open-taxonomy
 # /docs/modeling/product_analytics    -> /docs/modeling/example-notebooks/product-analytics
 # /docs/modeling/user_intent          -> /docs/modeling/example-notebooks/user-intent
+# /docs/modeling/feature_importance   -> /docs/modeling/example-notebooks/feature-importance
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/example_notebooks)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_engineering)(\/?)$
@@ -153,6 +154,8 @@ RewriteCond %{REQUEST_URI} ^/(docs/modeling/product_analytics)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/product-analytics [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/user_intent)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/user-intent [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_importance)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-importance [L,R=301]
 
 # redirect old Taxonomy docs URLs
 # /docs/taxonomy/core_concepts -> /docs/taxonomy/
