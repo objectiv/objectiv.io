@@ -9,7 +9,7 @@ useSuccessEventTracker = (parameters: {
   options?: TrackEventOptions,
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
-} = {}) => Function
+} = {}) => ({ message: string }) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -22,7 +22,9 @@ useSuccessEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+```ts
+({ message: string }) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts

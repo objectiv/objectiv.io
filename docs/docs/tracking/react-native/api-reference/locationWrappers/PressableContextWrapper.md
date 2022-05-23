@@ -55,9 +55,15 @@ import {
       const response = await doIt();
 
       if (response.ok) {
-        trackSuccessEvent(trackingContext);
+        trackSuccessEvent({
+          message: response.statusText,
+          ...trackingContext
+        });
       } else {
-        trackFailureEvent(trackingContext);
+        trackFailureEvent({
+          message: error.message,
+          ...trackingContext
+        });
       }
     }}>
       Do it
