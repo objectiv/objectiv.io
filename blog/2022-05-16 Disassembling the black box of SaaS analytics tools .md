@@ -2,7 +2,7 @@
 title: Disassembling the black box of SaaS analytics tools
 description: The modern data stack is on the rise. Many companies use raw data from their SaaS analytics tools as input for their data warehouse, but this introduces problems downstream. Are there better ways?
 slug: disassembling-the-black-box-of-saas-analytics-tools
-image: /img/open-graph/og-sherlock.png
+image: /img/open-graph/og-saas-black-box.png
 authors: vincenthoogsteder
 ---
 
