@@ -14,7 +14,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this. The data used in this example is
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this. The data used in this example is
 based on the data set that comes with our quickstart docker demo.
 
 Besides the open model hub, we have to import the following packages for this example:
@@ -28,9 +28,8 @@ from datetime import timedelta
 
 The columns ‘global_contexts’ and the ‘location_stack’ contain most of the event specific data. These columns
 are json type columns and we can extract data from it based on the keys of the json objects using
-[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx). Or use methods
-specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx) to
-extract the data.
+[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.objectiv.mdx).
+Or use methods specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) to extract the data.
 
 ```python
 df['application'] = df.global_contexts.gc.application
@@ -59,7 +58,7 @@ Now, we can look at the distribution of time spent. We used the Bach quantile op
 # how is this time spent distributed?
 session_duration = modelhub.aggregate.session_duration(df, groupby='session_id')
 # materialization is needed because the expression of the created series contains aggregated data, and it is not allowed to aggregate that.
-session_duration = session_duration.to_frame().materialize().session_duration
+session_duration = session_duration.materialize()
 
 # show quantiles
 session_duration.quantile(q=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]).head(10)
@@ -118,7 +117,7 @@ Now, we have assigned intent to each user and can for example look at the total 
 
 ```python
 # total number of users per intent bucket
-user_intent_buckets.groupby('bucket').agg({'user_id': 'nunique'}).head()
+user_intent_buckets.reset_index().groupby('bucket').agg({'user_id': 'nunique'}).head()
 ```
 
 ## What’s next?

@@ -13,7 +13,7 @@ Objectiv comes with a set of tools that help you set up error-free user behavior
 
 <img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" className="img-l" />
 
-Instrumentation involves an opt-in process of mapping your application to the [open taxonomy for analytics](/taxonomy/introduction.md) to ensure the collected data is clean, well-structured and ready for modeling. [Learn more](/tracking/core-concepts/overview.md).
+Instrumentation involves an opt-in process of mapping your application to the [open analytics taxonomy](/taxonomy/introduction.md) to ensure the collected data is clean, well-structured and ready for modeling. To learn more, check out the [core concepts](/tracking/core-concepts/overview.md) of Objectiv's tracking.
 
 ## How-to Guides
 A number of web platforms and frameworks are currently supported, such as JS, React, and Angular - with more support coming. To immediately jump into instrumenting your application, follow the step-by-step How-to Guides:
@@ -30,4 +30,4 @@ To implement low-level functionality and configuration of the Trackers, all core
 - [Angular SDK API Reference](/tracking/angular/api-reference/overview.md)
 
 ## Core Concepts
-For more details on how our tracker works and the rationale behind it, [read about the underlying core concepts](/tracking/core-concepts/overview.md).
+For more details on how our tracker works and the rationale behind it, read about the underlying [core concepts](/tracking/core-concepts/overview.md).

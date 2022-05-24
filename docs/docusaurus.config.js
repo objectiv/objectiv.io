@@ -139,6 +139,9 @@ const config = {
           }
         ],
       },
+      tableOfContents: {
+        maxHeadingLevel: 4,
+      },
       footer: {
         style: 'light',
         copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,

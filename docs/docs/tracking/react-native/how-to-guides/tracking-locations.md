@@ -21,9 +21,9 @@ This is where our LocationStack comes in handy with Tracked Location Components.
 
 ## Tracked Location Components
 
-Our [Taxonomy](/taxonomy/introduction.md) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
+Our [taxonomy](/taxonomy/introduction.md) comes with a number of [LocationContexts](/taxonomy/reference/location-contexts/overview.md) aimed at describing the UI unambiguously.
 
-Here is how we mapped React Native Components to our Taxonomy LocationContexts:
+Here is how we mapped React Native Components to our LocationContexts:
 
 #### ContentContext
 - [TrackedFlatList](/tracking/react-native/api-reference/trackedComponents/TrackedFlatList.md)

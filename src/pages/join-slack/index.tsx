@@ -7,7 +7,8 @@ import { useSuccessEventTracker } from "@objectiv/tracker-react";
 
 export default function JoinSlack() {
   const slackJoinLink = 
-    'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
+    'https://join.slack.com/t/objectiv-io/shared_invite/zt-19agzjvbn-jfIPqrYUOlrqeun2fZakCw'
+    // 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
   const trackSuccessEvent = useSuccessEventTracker({message: 'Redirect to Slack'});
 
   useEffect(() => {

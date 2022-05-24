@@ -9,30 +9,22 @@ title: Introduction
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-The open analytics taxonomy is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
-validate analytics data. Adoption of the open analytics taxonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
+The open analytics taxonomy is a generic classifification of common event types and the contexts in which they can happen. It is a proposal for a common way to collect & structure analytics data in an effort to enable models to be universally shared and reused between projects, teams and companies.
 
-Each common event type and the contexts in which they can happen are defined in a class, which describes their properties, requirements and relationships with other classes.
+<img src={useBaseUrl('/img/open-taxonomy.svg')} alt="Objectiv Pipeline" />
 
-Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/collector) and the [open model hub](/modeling/index.mdx) are built around the open taxonomy and support it out of the box.
+Each Event and Context type has its own [properties, requirements and relations](./taxonomy/reference/overview.md). These definitions are used to [validate the collected data and to debug the tracking instrumentation](./tracking/core-concepts/validation.md). This ensures the resulting data set is ready for modeling without cleaning or transformations. 
 
-<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" className="img-l" />
+The open analytics taxonomy is based on the compounded knowledge of over 50 data teams and has been designed and tested to cover a wide range of product analytics use cases. We're currently working on expanding it to cover online marketing use cases as well, and plan to expand further into other areas (payments, catalogs, CRM, etc.)
 
-## Principles
-To help ensure that the open analytics taxonomy will meet its goals, we’ve created a set of principles to guide our development decisions.
+It can be extended to cover more specific use cases as well.
 
-[Read up on the Principles](./core-principles.md)
-
-## Core Concepts
-To understand in more detail how the taxonomy works, read about the underlying core concepts.
-
-[Read up on the Core Concepts](./core-concepts.md)
-
-## Taxonomy Reference
-Find out everything about the taxonomy: all Contexts and Events are open and documented. 
-
-[Check out the Reference](./reference/overview.md)
+### Taxonomy Reference
+All Contexts and Events are open and documented. [Check out the Reference](./reference/overview.md).
 
 :::info join the discussion
 Objectiv and the open analytics taxonomy are open-source and we're building them in public. Have opinions on where we should take this next? <JoinSlackLink linkText='Join us on Slack' />.
 :::
+
+
+

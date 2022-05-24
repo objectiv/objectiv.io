@@ -5,7 +5,7 @@ title: Introduction
 ---
 # React Native SDK
 
-The React Native SDK leverages React Context Providers for mapping Native Components to the [Open Taxonomy](/taxonomy/introduction.md).
+The React Native SDK leverages React Context Providers for mapping Native Components to the [open taxonomy](/taxonomy/introduction.md).
 
 It provides generic [Wrappers](/tracking/react-native/api-reference/locationWrappers/overview.md) and automatically tracked Native [Components](/tracking/react-native/api-reference/trackedComponents/overview.md) to easily track most commonly used UI Components. 
 

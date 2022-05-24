@@ -1,6 +1,7 @@
 ---
 title: Getting Help
 slug: /home/the-project/get-help
+description: How to get help from the team & community
 sidebar_label: Get Help
 sidebar_position: 2
 ---

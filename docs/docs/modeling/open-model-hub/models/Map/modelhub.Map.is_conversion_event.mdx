@@ -8,9 +8,9 @@ title: is_conversion_event
 
 <div className="method">
 
-## <span className="additional-name">Map.</span><span className="name">is_conversion_event</span>
+### <span className="name">is_conversion_event</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span></small>)
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py)</span>
@@ -20,7 +20,7 @@ title: is_conversion_event
 Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 
-### Parameters
+#### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
 * **`name`** (str) – the name of the conversion to label as set in
@@ -28,13 +28,13 @@ Labels a hit True if it is a conversion event, all other hits are labeled False.
 
 
 
-### Returns
+#### Returns
 
 `bach.SeriesBoolean` with the same index as `data`.
 
 
 
-### Return type
+#### Return type
 
 bach.series.series_boolean.SeriesBoolean
 

@@ -8,9 +8,9 @@ title: unstack
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">unstack</span>
+### <span className="name">unstack</span>
 
-<small className="parameter-list">(<span className="parameter" id="level">level=- 1</span>, <span className="parameter" id="fill_value">fill_value=None</span>, <span className="parameter" id="aggregation">aggregation='max'</span></small>)
+<small className="parameter-list">(<span className="parameter" id="level">level=- 1</span>, <span className="parameter" id="fill_value">fill_value=None</span>, <span className="parameter" id="aggregation">aggregation='max'</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -25,23 +25,23 @@ duplicate index values that are unstacked, `aggregation` is used to aggregate th
 DataFrame’s index should be of at least two levels to unstack.
 
 
-### Parameters
+#### Parameters
 
 * **`level`** (Union[str, int]) – selects the level of the index that is unstacked.
-* **`fill_value`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, dict, list]) – replace missing values resulting from unstacking. Should be of same type as the
+* **`fill_value`** (Union[int, numpy.int64, float, numpy.float64, bool, None, str, datetime.date, datetime.time, datetime.datetime, numpy.datetime64, datetime.timedelta, numpy.timedelta64, uuid.UUID, pandas._libs.interval.Interval, dict, list]) – replace missing values resulting from unstacking. Should be of same type as the
 series that is unstacked.
 * **`aggregation`** (str) – method of aggregation, in case of duplicate index values. Supports all aggregation
 methods that [`aggregate()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.aggregate.mdx) supports.
 
 
 
-### Returns
+#### Returns
 
 DataFrame
 
 
 
-### Return type
+#### Return type
 
 [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

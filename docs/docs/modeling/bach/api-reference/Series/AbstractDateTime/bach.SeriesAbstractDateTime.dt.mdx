@@ -8,7 +8,7 @@ title: dt
 
 <div className="property">
 
-## <span className="type-annotation"><em>property </em></span> <span className="additional-name">SeriesAbstractDateTime.</span><span className="name">dt</span>
+### <span className="type-annotation"><em>property </em></span> <span className="name">dt</span>
 
 <span className="type-annotation"><em>
 
@@ -25,16 +25,16 @@ Get access to date operations.
 
 ## <span className="type-annotation"><em>class</em></span> <span className="name">DateTimeOperation</span>
 
-<small className="parameter-list">(<span className="parameter" id="series">series</span></small>)
+<small className="parameter-list">(<span className="parameter" id="series">series</span>)</small>
 
 
 <div className="content">
 
 <div className="method">
 
-## <span className="additional-name">DateTimeOperation.</span><span className="name">sql_format</span>
+### <span className="name">sql_format</span>
 
-<small className="parameter-list">(<span className="parameter" id="format_str">format_str</span></small>)
+<small className="parameter-list">(<span className="parameter" id="format_str">format_str</span>)</small>
 
 
 <div className="content">
@@ -42,7 +42,7 @@ Get access to date operations.
 Allow formatting of this Series (to a string type).
 
 
-### Parameters
+#### Parameters
 
 **`format_str`** – The format to apply to the date/time column.
 Currently, this uses Postgres’ data format string syntax:
@@ -55,7 +55,7 @@ df['date'] = df.some_date_series.dt.sql_format('YYYYMMDD')  # return date
 ```
 
 
-### Returns
+#### Returns
 
 a SeriesString containing the formatted date.
 

@@ -8,9 +8,9 @@ title: mode
 
 <div className="method">
 
-## <span className="additional-name">Series.</span><span className="name">mode</span>
+### <span className="name">mode</span>
 
-<small className="parameter-list">(<span className="parameter" id="partition">partition=None</span>, <span className="parameter" id="skipna">skipna=True</span></small>)
+<small className="parameter-list">(<span className="parameter" id="partition">partition=None</span>, <span className="parameter" id="skipna">skipna=True</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
@@ -20,31 +20,37 @@ title: mode
 Returns the mode in each partition or for all values if none is given.
 
 
-### Parameters
+#### Parameters
 
 * **`partition`** (Union[GroupBy, [DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)]) – The partition or window to apply
 * **`skipna`** (bool) – only `skipna=True` supported. This means NULL values are ignored.
 
 
 
-### Returns
+#### Returns
 
 a new Series with the aggregation applied
 
 
-..warning::
-    The result of this function might be non-deterministic if there are multiple values with
-    the same frequency.
+:::warning
+
+The result of this function might be non-deterministic if there are multiple values with
+the same frequency.
 
 
-..note::
-    BigQuery has no support for aggregation function `MODE`, therefore `APPROX_TOP_COUNT`
-    approximate aggregate function is used instead. Which means that an approximate result will
-    be produced instead of exact results.
+:::
 
-    For more information:
-    [https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count](https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count)
+:::note
 
+BigQuery has no support for aggregation function `MODE`, therefore `APPROX_TOP_COUNT`
+approximate aggregate function is used instead. Which means that an approximate result will
+be produced instead of exact results.
+
+For more information:
+[https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count](https://cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions#approx_top_count)
+
+
+:::
 
 
 </div>

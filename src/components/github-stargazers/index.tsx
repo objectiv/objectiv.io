@@ -75,24 +75,22 @@ function Stargazers(cta) {
   return (
     <div className={clsx(styles.starsButtonsContainer)}>
       <TrackedLink
+        id={'star-us'}
         to="https://github.com/objectiv/objectiv-analytics"
         waitUntilTracked={true}
         target="_self"
-        className={clsx("button", styles.ctaButton)}>
-        <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  
-          alt={'Objectiv on GitHub'}/></span>
-        {cta.cta}
+        className={clsx("button", styles.starsButton)}>
+          <div className={clsx(styles.starsButtonContent)}>
+            <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  
+              alt={'Objectiv on GitHub'}/></span>
+            {cta.cta}
+          </div>
+          {getStargazersCount && (
+            <div className={clsx(styles.starCount)}>
+              {getStargazersCount}
+            </div>
+          )}
       </TrackedLink>
-      {getStargazersCount && (
-        <TrackedLink
-          to="https://github.com/objectiv/objectiv-analytics"
-          waitUntilTracked={true}
-          target="_self"
-          id={'starCount'}
-          className={clsx("button", styles.ctaButton, styles.starCount)}>
-            {getStargazersCount}
-        </TrackedLink>
-      )}
     </div>
   );
 }

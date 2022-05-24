@@ -27,7 +27,7 @@ We aim to support more storage solutions in the near future.
 
 ## Validation
 Objectiv's [Collector](/tracking/collector/getting-started.md) validates any incoming Event against the 
-[Taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond with an 
+[taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond with an 
 error, and store the Event in the `NOK` folder on disk.
 
 This means no Event sent to the Collector is ever discarded. This enables you to for instance 'repair' any 

@@ -8,9 +8,9 @@ title: get_sample
 
 <div className="method">
 
-## <span className="additional-name">DataFrame.</span><span className="name">get_sample</span>
+### <span className="name">get_sample</span>
 
-<small className="parameter-list">(<span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="filter">filter=None</span>, <span className="parameter" id="sample_percentage">sample_percentage=None</span>, <span className="parameter" id="overwrite">overwrite=False</span>, <span className="parameter" id="seed">seed=None</span></small>)
+<small className="parameter-list">(<span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="filter">filter=None</span>, <span className="parameter" id="sample_percentage">sample_percentage=None</span>, <span className="parameter" id="overwrite">overwrite=False</span>, <span className="parameter" id="seed">seed=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -26,7 +26,7 @@ Use [`get_unsampled()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.ge
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
 
-### Parameters
+#### Parameters
 
 * **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
 * **`filter`** (SeriesBoolean) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
@@ -39,13 +39,13 @@ exists.
 
 
 
-### Returns
+#### Returns
 
 a sampled DataFrame of the current DataFrame.
 
 
 
-### Return type
+#### Return type
 
 [DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 

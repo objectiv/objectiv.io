@@ -8,9 +8,9 @@ title: get_objectiv_dataframe
 
 <div className="method">
 
-## <span className="additional-name">ModelHub.</span><span className="name">get_objectiv_dataframe</span>
+### <span className="name">get_objectiv_dataframe</span>
 
-<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name='data'</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span></small>)
+<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name='data'</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
@@ -24,7 +24,7 @@ transformations and sets the right data types for all columns. As such, the mode
 can be applied to a DataFrame created with this method.
 
 
-### Parameters
+#### Parameters
 
 * **`db_url`** (Optional[str]) – the url that indicate database dialect and connection arguments. If not given, env DSN
 is used to create one. If that’s not there, the default of
@@ -37,7 +37,7 @@ and including the last date in the sql table. Format as ‘YYYY-MM-DD’.
 
 
 
-### Returns
+#### Returns
 
 [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with Objectiv data.
 

@@ -7,7 +7,7 @@ title: Version check
 
 # Version check
 
-The Objectiv [ModelHub](/modeling/open-model-hub/api-reference/ModelHub/index.mdx) package comes with a built-in version checker.
+The Objectiv [ModelHub](/modeling/open-model-hub/api-reference/ModelHub/index.mdx#modelhub-reference-modelhub) package comes with a built-in version checker.
 During import, it automatically checks if the loaded version is the most recent version.
 
 **Why?**
@@ -17,7 +17,7 @@ notify you when new models & taxonomy operations are available to use.
 
 **How?**
 
-An asynchronous HTTP request to [https://version-check.objectiv.io](https://version-check.objectiv.io) is sent on package import. A Python warning
+An HTTP request to [https://version-check.objectiv.io](https://version-check.objectiv.io) is sent on package import. A Python warning
 message is issued in case a new version is available.
 
 **What data is being sent?**

@@ -8,9 +8,9 @@ title: get_db_dtype
 
 <div className="method">
 
-## <span className="type-annotation"><em>classmethod</em></span> <span className="additional-name">Series.</span><span className="name">get_db_dtype</span>
+### <span className="type-annotation"><em>classmethod</em></span> <span className="name">get_db_dtype</span>
 
-<small className="parameter-list">(<span className="parameter" id="dialect">dialect</span></small>)
+<small className="parameter-list">(<span className="parameter" id="dialect">dialect</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series.py)</span>
@@ -18,7 +18,27 @@ title: get_db_dtype
 <div className="content">
 
 Give the static db_dtype of this Series, for the given database dialect.
-:raises DatabaseNotSupportedException:  If the db_dtype is not defined for the given dialect.
+
+
+#### Raises
+
+**`DatabaseNotSupportedException`** – If the Series subclass doesn’t support the database dialect.
+
+
+
+#### Returns
+
+database type as string, or None if this Series has no database type for which it is the
+standard Series for that database, or if that type is a structural type whose exact type depends
+on the data of the subtypes (e.g. SeriesList will return None on BigQuery, as it can handle all
+ARRAY<\*> subtypes)
+
+
+
+#### Return type
+
+*Optional*[str]
+
 
 
 </div>

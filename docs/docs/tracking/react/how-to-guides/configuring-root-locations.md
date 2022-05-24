@@ -103,7 +103,7 @@ const tracker = new ReactTracker({
 ```
 
 :::caution
-Missing RootLocationContext will be reported as an error. All LocationStacks must contain a RootLocationContext as first Element, as defined by the [Open Taxonomy](/taxonomy/introduction.md).  
+Missing RootLocationContext will be reported as an error. All LocationStacks must contain a RootLocationContext as first Element, as defined by the [open analytics taxonomy](/taxonomy/introduction.md).  
 
 There are several ways to track them without RootLocationContextFromURLPlugin:
 - Wrap logical pages in [RootLocationContextWrapper](/tracking/react/api-reference/locationWrappers/RootLocationContextWrapper.md).

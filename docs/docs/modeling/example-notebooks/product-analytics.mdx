@@ -14,7 +14,7 @@ to run on your own data or use our
 [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
 
 At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx) for more info on this. The data used in this example is
+[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this. The data used in this example is
 based on the data set that comes with our quickstart docker demo.
 
 First we look at the data.
@@ -25,9 +25,8 @@ df.sort_values('session_id', ascending=False).head()
 
 The columns ‘global_contexts’ and the ‘location_stack’ contain most of the event specific data. These columns
 are json type columns and we can extract data from it based on the keys of the json objects using
-[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.objectiv.mdx). Or use methods
-specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx) to
-extract the data.
+[get_from_context_with_type_series](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.objectiv.mdx).
+Or use methods specific to the [location_stack](/modeling/example-notebooks/open-taxonomy.mdx#location-stack) or [global_contexts](/modeling/example-notebooks/open-taxonomy.mdx#global-contexts) to extract the data.
 
 ```python
 df['application'] = df.global_contexts.gc.application
@@ -77,7 +76,7 @@ created series contains aggregated data, and it is not allowed to aggregate that
 
 ```python
 session_duration = modelhub.aggregate.session_duration(df, groupby='session_id', exclude_bounces=False)
-session_duration.to_frame().materialize()['session_duration'].quantile(q=[0.25, 0.50, 0.75]).head()
+session_duration.materialize().quantile(q=[0.25, 0.50, 0.75]).head()
 ```
 
 ## Top used features
@@ -98,7 +97,7 @@ From this prepared dataset, we show the users for the home page first.
 
 ```python
 most_interactions = modelhub.agg.unique_users(interactive_events, groupby=['application','root_location','feature_nice_name', 'event_type'])
-most_interactions = most_interactions.to_frame().reset_index()
+most_interactions = most_interactions.reset_index()
 
 home_users = most_interactions[(most_interactions.application == 'objectiv-website') &
                                (most_interactions.root_location == 'home')]

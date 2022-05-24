@@ -1,0 +1,167 @@
+# GZIP compression on TransIP: https://www.transip.nl/knowledgebase/artikel/366-gzip-gebruiken-in-wordpress/
+<IfModule mod_deflate.c>
+  # force deflate for mangled headers
+  # developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
+  <IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+  </IfModule>
+
+  # HTML, TXT, CSS, JavaScript, JSON, XML, HTC:
+  <IfModule filter_module>
+    FilterDeclare   COMPRESS
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/html'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/css'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/plain'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'text/x-component'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/javascript'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/json'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/xhtml+xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/rss+xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/atom+xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/vnd.ms-fontobject'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'image/svg+xml'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'application/x-font-ttf'"
+FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'font/opentype'"
+    FilterChain     COMPRESS
+    FilterProtocol  COMPRESS  DEFLATE change=yes;byteranges=no
+  </IfModule>
+
+  <IfModule !mod_filter.c>
+    # Legacy versions of Apache
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font-ttf font/opentype
+  </IfModule>
+</IfModule>
+
+
+# redirect to https
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^staging.objectiv.io [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://staging.objectiv.io/$1 [R]
+
+# redirect old Modeling docs URLs
+
+# /docs/modeling/models_aggregation -> /docs/modeling/open-model-hub/models/Aggregate
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/models_aggregation)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregate/ [L,R=301]
+# /docs/modeling/models_mapping     -> /docs/modeling/open-model-hub/models/Map
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/models_mapping)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Map/ [L,R=301]
+# /docs/modeling/models             -> /docs/modeling/open-model-hub/models/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/models)([a-zA-Z]*)
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/%2 [L,R=301]
+
+# /docs/modeling/modelhub_api_reference/modelhub.Aggregate.frequency            -> /docs/modeling/open-model-hub/models/Aggregate/frequency
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Aggregate(?:\.([\S]+))?)
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Aggregate/%2 [L,R=301]
+# /docs/modeling/modelhub_api_reference/modelhub.Map.conversions_counter        -> /docs/modeling/open-model-hub/models/Map/conversions_counter
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub\.Map(?:\.([\S]+))?)
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/Map/%2 [L,R=301]
+# /docs/modeling/modelhub_api_reference/modelhub.ModelHub                       -> /docs/modeling/open-model-hub/api-reference/ModelHub
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference/modelhub.ModelHub)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/ModelHub/ [L,R=301]
+# /docs/modeling/modelhub_api_reference/                                        -> /docs/modeling/open-model-hub/api-reference
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/ [L,R=301]
+
+# /docs/modeling/modelhub_api_reference/modelhub.ModelHub.add_conversion_event  -> /docs/modeling/open-model-hub/api-reference/ModelHub/add_conversion_event
+# /docs/modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts           -> /docs/modeling/open-model-hub/api-reference/SeriesGlobalContexts/
+# /docs/modeling/modelhub_api_reference/modelhub.SeriesGlobalContexts.gc        -> /docs/modeling/open-model-hub/api-reference/SeriesGlobalContexts/gc
+# /docs/modeling/modelhub_api_reference/modelhub.SeriesLocationStack            -> /docs/modeling/open-model-hub/api-reference/SeriesLocationStack/
+# /docs/modeling/modelhub_api_reference/modelhub.SeriesLocationStack.ls         -> /docs/modeling/open-model-hub/api-reference/SeriesLocationStack/ls
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference)(?:/modelhub\.([a-zA-Z]+)(?:\.([\S]+))?)?$
+RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/%2/%3 [L,R=301]
+
+# /docs/modeling/bach_whatisbach                      -> /docs/modeling/bach/what-is-bach
+# /docs/modeling/bach_core_concepts                   -> /docs/modeling/bach/core-concepts
+# /docs/modeling/bach_examples                        -> /docs/modeling/bach/examples
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_whatisbach)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/bach/what-is-bach/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_core_concepts)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/bach/core-concepts/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_examples)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/bach/examples/ [L,R=301]
+
+# /docs/modeling/bach_reference                       -> /docs/modeling/bach/api-reference/
+# /docs/modeling/bach_reference_dataframe             -> /docs/modeling/bach/api-reference/DataFrame/
+# /docs/modeling/bach_reference_dataframe_by_function -> /docs/modeling/bach/api-reference/DataFrame/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_reference)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_reference_dataframe)
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/DataFrame/ [L,R=301]
+# /docs/modeling/bach_reference_series             -> /docs/modeling/bach/api-reference/Series/
+# /docs/modeling/bach_reference_series_by_function -> /docs/modeling/bach/api-reference/Series/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_reference_series)
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/ [L,R=301]
+
+# /docs/modeling/Series/bach.SeriesAbstractDateTime     -> /docs/modeling/bach/api-reference/Series/AbstractDateTime
+# /docs/modeling/Series/bach.SeriesAbstractDateTime.dt  -> /docs/modeling/bach/api-reference/Series/AbstractDateTime/dt
+# /docs/modeling/Series/bach.SeriesAbstractNumeric      -> /docs/modeling/bach/api-reference/Series/AbstractNumeric
+# /docs/modeling/Series/bach.SeriesAbstractNumeric.cut  -> /docs/modeling/bach/api-reference/Series/AbstractNumeric/cut
+# /docs/modeling/Series/bach.SeriesBoolean  	          -> /docs/modeling/bach/api-reference/Series/Boolean
+# /docs/modeling/Series/bach.SeriesBoolean.max          -> /docs/modeling/bach/api-reference/Series/Boolean/max
+# /docs/modeling/Series/bach.SeriesJson                 -> /docs/modeling/bach/api-reference/Series/Json
+# /docs/modeling/Series/bach.SeriesJsonb                -> /docs/modeling/bach/api-reference/Series/Jsonb
+# /docs/modeling/Series/bach.SeriesJsonb.json           -> /docs/modeling/bach/api-reference/Series/Jsonb/json
+# /docs/modeling/Series/bach.SeriesString               -> /docs/modeling/bach/api-reference/Series/String
+# /docs/modeling/Series/bach.SeriesString.get_dummies   -> /docs/modeling/bach/api-reference/Series/String/get_dummies
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/Series/bach.Series)([a-zA-Z+]+)(?:\.([\S]+))?
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/%2/%3 [L,R=301]
+
+# /docs/modeling/bach                      -> /docs/modeling/bach/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach)$
+RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
+# /docs/modeling/DataFrame                      -> /docs/modeling/bach/api-reference/DataFrame/
+# /docs/modeling/DataFrame/bach.DataFrame       -> /docs/modeling/bach/api-reference/DataFrame/
+# /docs/modeling/DataFrame/bach.DataFrame.max   -> /docs/modeling/bach/api-reference/DataFrame/max 
+# /docs/modeling/Series                         -> /docs/modeling/bach/api-reference/Series/
+# /docs/modeling/Series/bach.Series             -> /docs/modeling/bach/api-reference/Series/
+# /docs/modeling/Series/bach.Series.agg         -> /docs/modeling/bach/api-reference/Series/agg
+RewriteCond %{REQUEST_URI} ^/(docs/modeling)/([a-zA-Z]+)(?:/bach\.[a-zA-Z]+(?:\.([\S]+))?)?$
+RewriteRule ^.*?$ /%1/bach/api-reference/%2/%3 [L,R=301]
+
+# /docs/modeling/example_notebooks    -> /docs/modeling/example-notebooks/
+# /docs/modeling/feature_engineering  -> /docs/modeling/example-notebooks/feature-engineering
+# /docs/modeling/machine_learning     -> /docs/modeling/example-notebooks/machine-learning
+# /docs/modeling/modelhub_basics      -> /docs/modeling/example-notebooks/modelhub-basics
+# /docs/modeling/open_taxonomy        -> /docs/modeling/example-notebooks/open-taxonomy
+# /docs/modeling/product_analytics    -> /docs/modeling/example-notebooks/product-analytics
+# /docs/modeling/user_intent          -> /docs/modeling/example-notebooks/user-intent
+# /docs/modeling/feature_importance   -> /docs/modeling/example-notebooks/feature-importance
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/example_notebooks)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_engineering)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-engineering [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/machine_learning)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/machine-learning [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_basics)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/modelhub-basics [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/open_taxonomy)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/open-taxonomy [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/product_analytics)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/product-analytics [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/user_intent)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/user-intent [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_importance)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-importance [L,R=301]
+
+
+# redirect old Taxonomy docs URLs
+# /docs/taxonomy/core_concepts -> /docs/taxonomy/
+RewriteCond %{REQUEST_URI} ^/(docs/taxonomy/core-concepts)(\/?)$
+RewriteRule ^.*?$ /docs/taxonomy/ [L,R=301]
+
+# set hsts header, to prevent client from returning to http
+Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
