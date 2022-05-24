@@ -29,11 +29,7 @@ Ease-of-use and low barrier of entry were two of its main drivers. Instrumentati
 ## The big shift towards data warehousing
 While SaaS analytics tools are still very popular and widely used, their wild growth has left the data analysis landscape highly fragmented. Most companies have numerous tools collecting data, and each of them have a different way of analyzing & consuming it. As a result, it’s very hard to get a holistic view of what all that combined data is telling you.
 
-<<<<<<< HEAD:blog/2022-05-25 Disassembling the black box of SaaS analytics tools .md
 We’re seeing a major shift where companies export data from their SaaS analytics tools to use as input for their data warehouse. Not only to create a single source of truth for all data consumers, but also to unlock the potential of raw data. By combining full raw data sets, you can go way beyond the scope of your SaaS analytics tools. You’re technically only limited by the quality and completeness of the data.
-=======
-We’re seeing a major shift where companies are pulling data out of their SaaS analytics into their data warehouse. Not only to create a single source of truth for all data consumers, but also to unlock the potential of raw data. By combining full raw data sets, you can go way beyond the scope of your SaaS analytics tools. You’re technically only limited by the quality and completeness of the data.
->>>>>>> ffa130b3a4a9f6d7736b4c1e6acf88906e7476bc:blog/2022-05-16 Disassembling the black box of SaaS analytics tools .md
 
 ## The rise of the modern data stack
 The big shift towards data warehousing is represented by the upsurge of companies that operate in this space and how fast they’re growing. [Over 10.000 companies now use Snowplow](https://snowplowanalytics.com/) to process events at scale and send them straight into the DWH. dbt now has over [9.000 weekly active data transformation projects](https://www.getdbt.com/blog/next-layer-of-the-modern-data-stack/). [13.000+ sites and apps are running RudderStack](https://www.rudderstack.com/) to pull data from SaaS tools and send it into data warehouses. The list goes on.
@@ -46,7 +42,7 @@ The big shift towards data warehousing is represented by the upsurge of companie
 Most data warehouses are fed with data that’s collected by all-in-one-box SaaS analytics tools. While historically explainable, this often causes problems downstream.
 
 ## The data they collect is not designed for advanced modeling
-There is a big difference between what data teams want their raw data to look like and what it actually looks like when it comes from SaaS analytics tools. The data sets they collect were never designed for advanced modeling on the raw data. It is often incomplete or overcomplete, unstructured and ambiguous. Significant grunt work is typically required before it can be used for modeling.
+There is a big difference between what data teams want their raw data to look like and what it actually looks like when it comes from SaaS analytics tools. The data sets they collect were never designed for advanced modeling on the raw data. It is often incompgitlete or overcomplete, unstructured and ambiguous. Significant grunt work is typically required before it can be used for modeling.
 
 ## Data duplication frustrates adoption of a single source of truth
 By extracting data from SaaS tools and loading it into a data warehouse, you’re effectively duplicating a source.
