@@ -42,7 +42,7 @@ The big shift towards data warehousing is represented by the upsurge of companie
 Most data warehouses are fed with data that’s collected by all-in-one-box SaaS analytics tools. While historically explainable, this often causes problems downstream.
 
 ## The data they collect is not designed for advanced modeling
-There is a big difference between what data teams want their raw data to look like and what it actually looks like when it comes from SaaS analytics tools. The data sets they collect were never designed for advanced modeling on the raw data. It is often incompgitlete or overcomplete, unstructured and ambiguous. Significant grunt work is typically required before it can be used for modeling.
+There is a big difference between what data teams want their raw data to look like and what it actually looks like when it comes from SaaS analytics tools. The data sets they collect were never designed for advanced modeling on the raw data. It is often incomplete or overcomplete, unstructured and ambiguous. Significant grunt work is typically required before it can be used for modeling.
 
 ## Data duplication frustrates adoption of a single source of truth
 By extracting data from SaaS tools and loading it into a data warehouse, you’re effectively duplicating a source.
