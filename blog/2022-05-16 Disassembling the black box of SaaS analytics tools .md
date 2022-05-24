@@ -12,7 +12,7 @@ authors: vincenthoogsteder
 
 import BlogImage from '@site/src/components/blog-image'
 
-*The modern data stack is on the rise. Many companies use raw data from their SaaS analytics tools as input for their data warehouse, but this introduces problems downstream. Are there better ways?*
+*Analytics tools today take the form of a 20 year old concept: a SaaS offering that does everything in one black box. The data landscape has changed and it's time to disassemble it.*
 
 <!--truncate-->
 
@@ -29,7 +29,7 @@ Ease-of-use and low barrier of entry were two of the main drivers behind its pop
 ## The big shift towards data warehousing
 While SaaS analytics tools are still very popular and widely used, their wild growth has left the data analysis landscape highly fragmented. Most companies have numerous tools collecting data, and each of them have a different way of analyzing & consuming it. As a result, it’s very hard to get a holistic view of what all that combined data is telling you.
 
-We’re seeing a major shift where companies are pulling data out of their SaaS analytics tools to get it into their data warehouses. Not only to create a single source of truth for all data consumers, but also to unlock the potential of raw data. By combining full raw data sets, you can go way beyond the scope of your SaaS analytics tools. You’re technically only limited by the quality and completeness of the data.
+We’re seeing a major shift where companies are pulling data out of their SaaS analytics into their data warehouse. Not only to create a single source of truth for all data consumers, but also to unlock the potential of raw data. By combining full raw data sets, you can go way beyond the scope of your SaaS analytics tools. You’re technically only limited by the quality and completeness of the data.
 
 ## The rise of the modern data stack
 The big shift towards data warehousing is represented by the upsurge of companies that operate in this space and how fast they’re growing. [Over 10.000 companies now use Snowplow](https://snowplowanalytics.com/) to process events at scale and send them straight into the DWH. Dbt now has over [9.000 weekly active data transformation projects](https://www.getdbt.com/blog/next-layer-of-the-modern-data-stack/). [13.000+ sites and apps are running RudderStack](https://www.rudderstack.com/) to pull data from SaaS tools and send it into data warehouses. The list goes on.
