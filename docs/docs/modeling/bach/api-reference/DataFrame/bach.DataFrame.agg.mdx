@@ -28,8 +28,7 @@ Aggregate using one or more operations over the specified axis.
   * list of functions and/or function names, e.g. [`SeriesInt64.sum`, ‘mean’]
   * dict of axis labels -> functions, function names or list of such.
 
-* **`axis`** (int) – the aggregation axis. If `axis=1` the index is aggregated as well. Only `axis=1`
-supported at the moment.
+* **`axis`** (int) – the aggregation axis. Only `axis=1` supported at the moment.
 * **`numeric_only`** (bool) – whether to aggregate numeric series only, or attempt all.
 * **`args`** – Positional arguments to pass through to the aggregation function
 * **`kwargs`** – Keyword arguments to pass through to the aggregation function
