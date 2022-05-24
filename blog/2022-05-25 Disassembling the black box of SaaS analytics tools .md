@@ -7,7 +7,7 @@ authors: vincenthoogsteder
 ---
 
 <head>
-  <meta property="og:title" content="Why Objectiv captures the logical structure of your product inside your dataset" />
+  <meta property="og:title" content="Disassembling the black box of SaaS analytics tools" />
 </head>
 
 import BlogImage from '@site/src/components/blog-image'
