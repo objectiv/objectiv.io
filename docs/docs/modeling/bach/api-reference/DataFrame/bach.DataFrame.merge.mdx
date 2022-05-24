@@ -35,7 +35,9 @@ DataFramesOrSeries.
 
 * **`right`** (Union[[DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), [Series](/modeling/bach/api-reference/Series/bach.Series.mdx)]) – DataFrame or Series to join on self
 * **`how`** (str) – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}
-* **`on`** (Union[str, SeriesBoolean, List[Union[str, SeriesBoolean]]]) – optional, column(s) to join left and right on.
+* **`on`** (Union[str, SeriesBoolean, List[Union[str, SeriesBoolean]]]) – optional, column(s) or condition(s) to join left and right on.
+If *on* is based on a condition (`SeriesBoolean`), the condition MUST make reference to both
+nodes involved in the merge.
 * **`left_on`** (Union[str, List[str]]) – optional, column(s) from the left df to join on
 * **`right_on`** (Union[str, List[str]]) – optional, column(s) from the right df/series to join on
 * **`left_index`** (bool) – If true uses the index of the left df as columns to join on
