@@ -1,0 +1,79 @@
+---
+id: bach-api-reference-series-date-bach-series-date-dt
+slug: /modeling/bach/api-reference/Series/Date/dt/
+title: dt
+---
+
+# bach.SeriesDate.dt
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">dt</span>
+
+<span className="type-annotation"><em>
+
+: bach.series.series_datetime.DateTimeOperation
+
+</em></span> 
+
+
+<div className="content">
+
+Get access to date operations.
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">DateTimeOperation</span>
+
+<small className="parameter-list">(<span className="parameter" id="series">series</span>)</small>
+
+
+<div className="content">
+
+<div className="method">
+
+### <span className="name">sql_format</span>
+
+<small className="parameter-list">(<span className="parameter" id="format_str">format_str</span>)</small>
+
+
+<div className="content">
+
+Allow formatting of this Series (to a string type).
+
+
+#### Parameters
+
+**`format_str`** – The format to apply to the date/time column.
+Currently, this uses Postgres’ data format string syntax:
+[https://www.postgresql.org/docs/14/functions-formatting.html](https://www.postgresql.org/docs/14/functions-formatting.html)
+
+
+```python
+df['year'] = df.some_date_series.dt.sql_format('YYYY')  # return year
+df['date'] = df.some_date_series.dt.sql_format('YYYYMMDD')  # return date
+```
+
+
+#### Returns
+
+a SeriesString containing the formatted date.
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>

@@ -29,7 +29,7 @@ DataFrame with all operations that have been done on the sample, applied to that
 #### Parameters
 
 * **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
-* **`filter`** (SeriesBoolean) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
+* **`filter`** ([SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean)) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
 sample_percentage is ignored and thus the bernoulli sample creation is skipped.
 * **`sample_percentage`** (int) – the approximate size of the sample as a proportion of all rows.
 Between 0-100.

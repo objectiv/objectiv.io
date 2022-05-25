@@ -70,7 +70,7 @@ The location stack and global contexts are stored as json type data. Within the 
 **Slicing the json data**
 With the `.json[]` syntax you can slice the array using integers. Instead of integers, dictionaries can also be passed to ‘query’ the json array. If the passed dictionary matches a context object in the stack, all objects of the stack starting (or ending, depending on the slice) at that object will be returned.
 
-In case a json array does not contain the object, `None` is returned. More info at the [API reference](/modeling/bach/api-reference/Series/Jsonb/index.mdx).
+In case a json array does not contain the object, `None` is returned. More info at the API reference.
 
 <div id="location-stack" className="hidden-anchor"></div>
 
@@ -90,7 +90,7 @@ the column. The methods are:
       * [.ls.nice_name](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.ls.mdx#ls-nice-name)
 
 
-* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx#json-accessor) for the json(b) type can also be accessed using `.ls`
+* all methods for the json(b) type can also be accessed using `.ls`
 
 For example,
 
@@ -120,7 +120,7 @@ The `global_contexts` column in the DataFrame contain all information that is re
       * [.gc.application](/modeling/open-model-hub/api-reference/SeriesGlobalContexts/modelhub.SeriesGlobalContexts.global_contexts.mdx#gc-application)
 
 
-* all [methods](/modeling/bach/api-reference/Series/Jsonb/index.mdx#json-accessor) for the json(b) type can also be accessed using `.gc`
+* all methods for the json(b) type can also be accessed using `.gc`
 
 The full [reference of global contexts is here](https://objectiv.io/docs/taxonomy/global-contexts). An
 example is queried below:
