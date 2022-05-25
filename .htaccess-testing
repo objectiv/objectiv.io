@@ -153,7 +153,7 @@ RewriteCond %{REQUEST_URI} ^/(docs/modeling/product_analytics)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/product-analytics [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/user_intent)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/user-intent [L,R=301]
-RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_importance)(\/?)$
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/example-notebooks/feature_importance)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-importance [L,R=301]
 
 
