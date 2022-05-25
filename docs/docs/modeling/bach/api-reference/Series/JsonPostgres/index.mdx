@@ -17,16 +17,21 @@ title: JsonPostgres
 
 <div className="content">
 
-A Series that represents the json type.
+A special Series that represents the ‘json’ database type on Postgres.
 
-When `json` data is encountered in a sql table, this dtype is used. In the underlying sql, the data is
-cast to the jsonb type. As a result all methods of the `SeriesJsonb` can also be used with this
-`json` type series.
+:::note
 
-**Database support and types**
+Generally, it is advised to use `JsonSeries` instead. Given a `SeriesJsonPostgres` object,
+calling `json_series_pg.astype(‘json’)` will return a `JsonSeries` class representing the same data.
 
-* Postgres: utilizes the ‘json’ database type.
-* BigQuery: support coming soon
+
+:::
+
+When `json` data is encountered in a sql table, this dtype is used. On Postgres for all operations the
+data is first cast to jsonb type. Therefore, it is recommended to cast to `JsonSeries` directly.
+
+The public interface of this class is the same as the [`SeriesJson`](/modeling/bach/api-reference/Series/Json/index.mdx#bach.SeriesJson) class. See the docstring
+of that class for more information.
 
 
 </div>

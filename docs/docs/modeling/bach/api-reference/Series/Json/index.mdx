@@ -17,9 +17,24 @@ title: Json
 
 <div className="content">
 
-A Series that represents the postgres jsonb type and its specific operations.
+A Series that represents the JSON type and its specific operations.
 
-This is the standard and recommended type to use for handling json like data.
+Depending on the database this Series is backed by different database types:
+
+* On Postgres this utilizes the native ‘jsonb’ database type.
+* On BigQuery this utilizes the generic ‘STRING’ database type.
+
+:::note
+
+On Postgres, SeriesJson does not use the ‘json’ database type, but the ‘jsonb’ type, As the ‘json’
+type has limited functionality.
+
+This class is the standard and recommended type to use for handling json like data. Having said that,
+there is a special SeriesJsonPostgres type that uses the ‘json’ data type on Postgres, but internally
+that casts all data to ‘jsonb’ too.
+
+
+:::
 
 **Getting data**
 
@@ -103,11 +118,6 @@ _index_0
 2    [{'l': ['m', 'n', 'o']}, {'p': 'q'}]
 Name: jsonb_column, dtype: object
 ```
-
-**Database support and types**
-
-* Postgres: utilizes the ‘jsonb’ database type.
-* BigQuery: json support coming soon
 
 
 </div>
