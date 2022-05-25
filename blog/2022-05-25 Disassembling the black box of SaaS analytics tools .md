@@ -67,7 +67,7 @@ By separating data collection, all collected data can be sent straight into the 
 <BlogImage url='img/blog/after-saas.png' size="large" />
 
 ## Shifting from vendor-locked tools to raw data and code
-Disassembling the black boxes also provides a big opportunity for the adoption of open standards. Shifting from vendor-locked tools to raw data and code enables data teams to adopt generic ways of structuring data to share and reuse each others’ tools, models and analyses.
+Unbundling the black boxes also provides a big opportunity for the adoption of open standards. Shifting from vendor-locked tools to raw data and code enables data teams to adopt generic ways of structuring data to share and reuse each others’ tools, models and analyses.
 
 We think the future of analytics is open and data warehouse-native, and there are clear signals we’re already on the way. It’s time to enable meaningful collaboration and to unbundle SaaS analytics.
 
