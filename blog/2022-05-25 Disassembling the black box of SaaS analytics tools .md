@@ -1,18 +1,18 @@
 ---
-title: Disassembling the black box of SaaS analytics tools
-description: "Analytics tools today take the form of a 20 year old concept: a SaaS offering that does everything in one black box. The data landscape has changed and it's time to disassemble it."
-slug: disassembling-the-black-box-of-saas-analytics-tools/
+title: The Unbundling of SaaS Analytics
+description: "The modern data stack is on the rise. Many companies use raw data from their SaaS analytics tools as input for their data warehouse, but this introduces problems downstream. Are there better ways?"
+slug: unbundling-saas-analytics/
 image: /img/open-graph/og-saas-black-box.png
 authors: vincenthoogsteder
 ---
 
 <head>
-  <meta property="og:title" content="Disassembling the black box of SaaS analytics tools" />
+  <meta property="og:title" content="The Unbundling of SaaS Analytics" />
 </head>
 
 import BlogImage from '@site/src/components/blog-image'
 
-*Analytics tools today take the form of a 20 year old concept: a SaaS offering that does everything in one black box. The data landscape has changed and it's time to disassemble it.*
+*The modern data stack is on the rise. Many companies use raw data from their SaaS analytics tools as input for their data warehouse, but this introduces problems downstream. Are there better ways?*
 
 <!--truncate-->
 
@@ -59,7 +59,7 @@ SaaS analytics tools typically don’t disclose the actual models behind an anal
 ---
 
 ## Unbundling SaaS analytics tools
-The way data is used has evolved, and the all-in-one-box model that SaaS analytics tools use no longer fits. In order to effectively combine and analyze data from multiple sources and truly serve all data consumers from a single source of truth, we need to disassemble the black box and separate data collection, storage, modeling and visualization.
+The way data is used has evolved, and the all-in-one-box model that SaaS analytics tools use no longer fits. In order to effectively combine and analyze data from multiple sources and truly serve all data consumers from a single source of truth, we need to unbundle the black box and separate data collection, storage, modeling and visualization.
 
 ## Moving all data consumption downstream
 By separating data collection, all collected data can be sent straight into the data warehouse without stopovers. This eliminates source duplication and moves data consumption downstream. It enables *all* analysis & visualization to occur on a single source of truth: the data warehouse.
@@ -67,7 +67,7 @@ By separating data collection, all collected data can be sent straight into the 
 <BlogImage url='img/blog/after-saas.png' size="large" />
 
 ## Shifting from vendor-locked tools to raw data and code
-Disassembling the black boxes also provides a big opportunity for the adoption of open standards. Shifting from vendor-locked tools to raw data and code enables data teams to adopt generic ways of structuring data to share and reuse each others’ tools, models and analyses.
+Unbundling the black boxes also provides a big opportunity for the adoption of open standards. Shifting from vendor-locked tools to raw data and code enables data teams to adopt generic ways of structuring data to share and reuse each others’ tools, models and analyses.
 
-We think the future of analytics is open and data warehouse-native, and there are clear signals we’re already on the way. It’s time to enable meaningful collaboration and to disassemble the black box of SaaS analytics tools.
+We think the future of analytics is open and data warehouse-native, and there are clear signals we’re already on the way. It’s time to enable meaningful collaboration and to unbundle SaaS analytics.
 
