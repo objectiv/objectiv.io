@@ -238,7 +238,7 @@ import { makeLinkPressListener } from "@objectiv/plugin-react-navigation";
 ## Enable logging and validation
 While developing in a browser, or when running tests, it may be useful to enable more logging for debugging purposes.
 
-to do so, simply require the Developer Tools package before creating the tracker. 
+To do so, simply require the Developer Tools package before creating the tracker. 
 
 ```ts
 if (process.env.NODE_ENV.startsWith('dev')) {
