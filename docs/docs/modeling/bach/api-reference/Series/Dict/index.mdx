@@ -1,0 +1,52 @@
+---
+id: bach-api-reference-series-dict-index
+slug: /modeling/bach/api-reference/Series/Dict/
+title: Dict
+---
+
+# Dict
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">bach.</span><span className="name">SeriesDict</span>
+
+<small className="parameter-list">(<span className="parameter" id="engine">engine</span>, <span className="parameter" id="base_node">base_node</span>, <span className="parameter" id="index">index</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="expression">expression</span>, <span className="parameter" id="group_by">group_by</span>, <span className="parameter" id="sorted_ascending">sorted_ascending</span>, <span className="parameter" id="index_sorting">index_sorting</span>, <span className="parameter" id="instance_dtype">instance_dtype</span>, <span className="parameter" id="**">\*\*kwargs</span>)</small>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_dict.py)</span>
+
+<div className="content">
+
+A Series that represents a dictionary-like type and its specific operations.
+On BigQuery this is backed by the STRUCT data type. On other databases this type is not supported.
+
+**instance_dtype:**
+An instance of this class expects an `instance_dtype` that’s a dictionary. With each key being the
+name of a field, and the value being an instance-dtype describing that field. The values represented by
+such a Series must then be dictionaries with the exact same field names as the instance-dtype, and the
+specified data types for the fields.
+
+Example -
+BigQuery db_dtype: `'STRUCT<a INT64, b ARRAY[FLOAT64], c <STRUCT x BOOL, y: INT64>>'`
+instance_dtype: `{'a': 'int64', b: ['float64'], 'c': {'x': 'bool', 'y': 'int64'}`
+
+**Database support and types**
+
+* Postgres: not supported. Use [`SeriesJson`](/modeling/bach/api-reference/Series/Json/index.mdx#bach.SeriesJson) for similar functionality.
+* BigQuery: utilizes the ‘STRUCT’ database type.
+
+
+</div>
+
+
+</div>
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                     |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+
+</div>

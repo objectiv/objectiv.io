@@ -12,7 +12,7 @@ module.exports = function (context, { skip, environment }) {
       // destination will be created or overwritten by default.
       fs.copyFile('.htaccess-'+environment, path.join('build', '.htaccess'), (err) => {
         if (err) throw err;
-        console.log('.htaccess file was copied to the build directory');
+        console.log('.htaccess-'+environment + ' file was copied to the build directory as .htaccess');
       });
       try {
         if (fs.existsSync('.htpasswd-'+environment)) {

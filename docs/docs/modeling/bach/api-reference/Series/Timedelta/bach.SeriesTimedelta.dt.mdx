@@ -1,0 +1,153 @@
+---
+id: bach-api-reference-series-timedelta-bach-series-timedelta-dt
+slug: /modeling/bach/api-reference/Series/Timedelta/dt/
+title: dt
+---
+
+# bach.SeriesTimedelta.dt
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">dt</span>
+
+<span className="type-annotation"><em>
+
+: bach.series.series_datetime.TimedeltaOperation
+
+</em></span> 
+
+
+<div className="content">
+
+Get access to date operations.
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">TimedeltaOperation</span>
+
+<small className="parameter-list">(<span className="parameter" id="series">series</span>)</small>
+
+
+<div className="content">
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">components</span>
+
+<span className="type-annotation"><em>
+
+: [bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+</em></span> 
+
+
+<div className="content">
+
+
+#### Returns
+
+a DataFrame containing all date parts from the timedelta.
+
+
+
+</div>
+
+
+</div>
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">days</span>
+
+<span className="type-annotation"><em>
+
+: [bach.series.series_numeric.SeriesInt64](/modeling/bach/api-reference/Series/Int/index.mdx#bach.SeriesInt64)
+
+</em></span> 
+
+
+<div className="content">
+
+converts total seconds into days and returns only the integral part of the result
+
+
+</div>
+
+
+</div>
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">microseconds</span>
+
+<span className="type-annotation"><em>
+
+: [bach.series.series_numeric.SeriesInt64](/modeling/bach/api-reference/Series/Int/index.mdx#bach.SeriesInt64)
+
+</em></span> 
+
+
+<div className="content">
+
+considers only the fractional part of the total seconds and converts it into microseconds
+
+
+</div>
+
+
+</div>
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">seconds</span>
+
+<span className="type-annotation"><em>
+
+: [bach.series.series_numeric.SeriesInt64](/modeling/bach/api-reference/Series/Int/index.mdx#bach.SeriesInt64)
+
+</em></span> 
+
+
+<div className="content">
+
+removes days from total seconds (self.total_seconds % _SECONDS_IN_DAY)
+and returns only the integral part of the result
+
+
+</div>
+
+
+</div>
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">total_seconds</span>
+
+<span className="type-annotation"><em>
+
+: [bach.series.series_numeric.SeriesFloat64](/modeling/bach/api-reference/Series/Float/index.mdx#bach.SeriesFloat64)
+
+</em></span> 
+
+
+<div className="content">
+
+returns the total amount of seconds in the interval
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
