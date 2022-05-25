@@ -118,11 +118,14 @@ You can even create your own implementation, for example to log to an external s
 In the following example we swap the default implementation with a custom one.
 
 ```ts
-import { CustomConsole } from "./CustomConsole";
 import { ReactNativeTracker } from "@objectiv/tracker-react-native";
 import { TRACKER_APPLICATION_ID, TRACKER_ENDPOINT } from "@env"
 
-globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+  const { CustomConsole } = require('./CustomConsole');
+  globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+}
 
 const tracker = new ReactNativeTracker({
   applicationId: TRACKER_APPLICATION_ID,

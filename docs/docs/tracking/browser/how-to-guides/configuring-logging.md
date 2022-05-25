@@ -118,10 +118,13 @@ You can even create your own implementation, for example to log to an external s
 In the following example we swap the default implementation with a custom one.
 
 ```ts
-import { CustomConsole } from './CustomConsole';
 import { makeTracker } from "@objectiv/tracker-browser";
 
-globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+  const { CustomConsole } = require('./CustomConsole');
+  globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+}
 
 makeTracker({
   applicationId: process.env.TRACKER_APPLICATION_ID,

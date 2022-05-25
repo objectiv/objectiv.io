@@ -63,6 +63,26 @@ const App = () => {
 }
 ```
 
+## Enable logging and validation
+While developing in a browser, or when running tests, it may be useful to enable more logging for debugging purposes.
+
+to do so, simply require the Developer Tools package before creating the tracker. 
+
+```ts
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+}
+
+const tracker = makeTracker({
+  applicationId: 'app-id',
+  endpoint: 'https://collector.app.dev',
+});
+```
+
+The tracker instance will automatically detect their presence and log more info to the console and perform early validation.
+
+For more details check out [how-to configure logging](/tracking/browser/how-to-guides/configuring-logging.md).
+
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.
 

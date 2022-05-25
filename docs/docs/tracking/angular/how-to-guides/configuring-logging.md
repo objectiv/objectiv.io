@@ -118,10 +118,13 @@ You can even create your own implementation, for example to log to an external s
 In the following example we swap the default implementation with a custom one. 
 
 ```typescript
-import { CustomConsole } from './CustomConsole';
 import { ObjectivTrackerModule } from '@objectiv/tracker-angular';
 
-globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+  const { CustomConsole } = require('./CustomConsole');
+  globalThis.objectiv?.TrackerConsole.setImplementation(CustomConsole);
+}
 
 ...
 
