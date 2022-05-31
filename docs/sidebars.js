@@ -20,6 +20,11 @@
       label: 'Quickstart Guide',
     },
     {
+      type: 'doc',
+      id: 'home/get-a-launchpad',
+      label: 'Get a Launchpad',
+    },
+    {
       type: 'category',
       label: 'The Project',
       collapsed: false,

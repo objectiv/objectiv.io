@@ -64,6 +64,10 @@ We hope you enjoyed playing around with Objectiv. You can use `docker-compose do
 
 If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/tracking/collector/getting-started.md) to get started.
 
+:::info
+Want to test Objectiv on your own app/website without setting up a Collector and data store? [Get a Launchpad](/home/get-a-launchpad.md)
+:::
+
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 
 * [Tracking with Objectiv](/tracking/introduction.md)
