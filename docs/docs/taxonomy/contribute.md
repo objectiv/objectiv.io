@@ -22,5 +22,5 @@ suggestion on what to add or change, please follow these steps:
 3. We will develop the changes to the corresponding components (e.g. Tracker and/or Collector) with our team, 
    and will keep you posted <JoinSlackLink linkText='on Slack' />.
 
-Thanks for helping us build a complete and generic open tracking standard, so we can share and reuse data 
+Many thanks for your contribution to build a complete and generic open tracking standard, so we can all share and reuse data 
 models!
