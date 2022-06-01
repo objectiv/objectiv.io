@@ -1,57 +1,14 @@
-import React, {type ComponentProps} from 'react';
-import clsx from 'clsx';
-import NavbarMobileSidebar from '@theme/Navbar/MobileSidebar';
-import type {Props} from '@theme/Navbar/Layout';
-import {
-  useThemeConfig,
-  useHideableNavbar,
-  useNavbarMobileSidebar,
-} from '@docusaurus/theme-common';
+import React, {ComponentProps} from 'react';
+import Layout from '@theme-original/Navbar/Layout';
+import type LayoutType from '@theme/Navbar/Layout';
+import { TrackedNav } from '@objectiv/tracker-react';
 
-// OBJECTIV
-import { tagNavigation } from "@objectiv/tracker-browser";
-// END OBJECTIV
+type Props = ComponentProps<typeof LayoutType>;
 
-import styles from './styles.module.css';
-
-function NavbarBackdrop(props: ComponentProps<'div'>) {
+export default function LayoutWrapper(props: Props): JSX.Element {
   return (
-    <div
-      role="presentation"
-      {...props}
-      className={clsx('navbar-sidebar__backdrop', props.className)}
-    />
-  );
-}
-
-export default function NavbarLayout({children}: Props): JSX.Element {
-  const {
-    navbar: {hideOnScroll, style},
-  } = useThemeConfig();
-  const mobileSidebar = useNavbarMobileSidebar();
-  const {navbarRef, isNavbarVisible} = useHideableNavbar(hideOnScroll);
-  return (
-    <nav
-      // OBJECTIV
-      {...tagNavigation({id: 'navbar-top'})} 
-      // END OBJECTIV
-      ref={navbarRef}
-      className={clsx(
-        'navbar',
-        'navbar--fixed-top',
-        hideOnScroll && [
-          styles.navbarHideable,
-          !isNavbarVisible && styles.navbarHidden,
-        ],
-        {
-          'navbar--dark': style === 'dark',
-          'navbar--primary': style === 'primary',
-          'navbar-sidebar--show': mobileSidebar.shown,
-        },
-      )}>
-      {children}
-      <NavbarBackdrop onClick={mobileSidebar.toggle} />
-      <NavbarMobileSidebar />
-    </nav>
+    <TrackedNav id={'navbar-top'}>
+      <Layout {...props} />
+    </TrackedNav>
   );
 }
