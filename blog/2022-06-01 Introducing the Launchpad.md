@@ -27,7 +27,7 @@ With the introduction of the Launchpad, you can now run Objectiv on your own web
 <BlogImage url='img/blog/launchpad.svg' size="large"/>
 
 ## How it works
-On request, Objectiv will set up your Launchpad and provide instructions on how to connect to it. You can then instrument Objectiv’s [tracking SDK](https://objectiv.io/docs/tracking/) to a part of your site or app to start collecting data. On average, this takes existing users a few hours.
+On request, Objectiv will set up your Launchpad and provide instructions on how to connect to it. You can then instrument Objectiv’s [tracker](https://objectiv.io/docs/tracking/) to a part of your site or app to start collecting data. On average, this takes existing users a few hours.
 
 After collecting testing data, you can take any of the [example notebooks](https://objectiv.io/docs/modeling/example-notebooks/) and run them on your own data set. You can also build and run your own models by using the [Bach](https://objectiv.io/docs/modeling/bach/) modeling library.
 
