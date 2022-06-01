@@ -510,7 +510,8 @@ div.method {
   }
 }
 
-.sphinxAnchor {
+/* Fix an offset issue with the top nav when using Sphinx anchors */
+.hidden-anchor, .anchor {
   scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
 }
 
