@@ -13,11 +13,11 @@ import {
 } from '@docusaurus/theme-common';
 import styles from './styles.module.css';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // OBJECTIV
-import { tagLink, makeIdFromString, tagNavigation } from '@objectiv/tracker-browser';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedNav } from '@objectiv/tracker-react';
 import { useLocation } from "@docusaurus/router";
 // END OBJECTIV
 
@@ -37,13 +37,13 @@ function BreadcrumbsItemLink({
     if (typeof node === 'object' && node) return getNodeText(node.props.children)
   }
   return href ? (
-    <Link
-      {...tagLink({ id: makeIdFromString(getNodeText(children) + "-" + href), href: href })}
-      className={className} 
+    <TrackedLink
+      id={getNodeText(children) + "-" + href}
       href={href}
+      className={className} 
       itemProp="item">
       <span itemProp="name">{children}</span>
-    </Link>
+    </TrackedLink>
   ) : (
     <span className={className} itemProp="item name">
       {children}
@@ -116,9 +116,9 @@ export default function DocBreadcrumbs(): JSX.Element | null {
   }
 
   return (
-    <nav
-      // OBJECTIV
-      {...tagNavigation({ id: 'breadcrumbs' })}
+    // OBJECTIV
+    <TrackedNav
+      id={'breadcrumbs'}
       // END OBJECTIV
       className={clsx(
         ThemeClassNames.docs.docBreadcrumbs,
@@ -142,6 +142,6 @@ export default function DocBreadcrumbs(): JSX.Element | null {
           </BreadcrumbsItem>
         ))}
       </ul>
-    </nav>
+    </TrackedNav>
   );
 }
