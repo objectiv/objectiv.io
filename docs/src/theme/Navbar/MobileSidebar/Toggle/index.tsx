@@ -1,32 +1,16 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import React, {ComponentProps} from 'react';
+import Toggle from '@theme-original/Navbar/MobileSidebar/Toggle';
+import type ToggleType from '@theme/Navbar/MobileSidebar/Toggle';
+import { TrackedPressableContext } from '@objectiv/tracker-react';
 
-import React from 'react';
-import IconMenu from '@theme/IconMenu';
-import {useNavbarMobileSidebar} from '@docusaurus/theme-common';
+type Props = ComponentProps<typeof ToggleType>;
 
-// OBJECTIV
-import { tagPressable } from '@objectiv/tracker-browser';
-// END OBJECTIV
-
-export default function MobileSidebarToggle(): JSX.Element {
-  const mobileSidebar = useNavbarMobileSidebar();
+export default function ToggleWrapper(props: Props): JSX.Element {
   return (
-    <button
-      // OBJECTIV
-      {...tagPressable({ id: 'navbar-toggle' })}
-      // END OBJECTIV
-      onClick={mobileSidebar.toggle}
-      onKeyDown={mobileSidebar.toggle}
-      aria-label="Navigation bar toggle"
-      className="navbar__toggle clean-btn"
-      type="button"
-      tabIndex={0}>
-      <IconMenu />
-    </button>
+    <TrackedPressableContext
+      id={'navbar-toggle'}
+      Component={'div'}>
+      <Toggle {...props} />
+    </TrackedPressableContext>
   );
 }

@@ -1,41 +1,16 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import React, {ComponentProps} from 'react';
+import Header from '@theme-original/Navbar/MobileSidebar/Header';
+import type HeaderType from '@theme/Navbar/MobileSidebar/Header';
+import { TrackedPressableContext } from '@objectiv/tracker-react';
 
-import React from 'react';
-import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
-import IconClose from '@theme/IconClose';
-import NavbarLogo from '@theme/Navbar/Logo';
-import {useNavbarMobileSidebar} from '@docusaurus/theme-common';
+type Props = ComponentProps<typeof HeaderType>;
 
-// OBJECTIV
-import { tagPressable } from '@objectiv/tracker-browser';
-// END OBJECTIV
-
-function CloseButton() {
-  const mobileSidebar = useNavbarMobileSidebar();
+export default function HeaderWrapper(props: Props): JSX.Element {
   return (
-    <button
-      // OBJECTIV
-      {...tagPressable({ id: 'navbar-close' })}
-      // END OBJECTIV
-      type="button"
-      className="clean-btn navbar-sidebar__close"
-      onClick={() => mobileSidebar.toggle()}>
-      <IconClose color="var(--ifm-color-emphasis-600)" />
-    </button>
-  );
-}
-
-export default function NavbarMobileSidebarHeader(): JSX.Element {
-  return (
-    <div className="navbar-sidebar__brand">
-      <NavbarLogo />
-      <NavbarColorModeToggle className="margin-right--md" />
-      <CloseButton />
-    </div>
+    <TrackedPressableContext
+      Component={'div'}
+      id={'navbar-close'}>
+        <Header {...props} />
+    </TrackedPressableContext>
   );
 }
