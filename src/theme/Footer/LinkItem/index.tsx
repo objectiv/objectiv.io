@@ -7,7 +7,6 @@
 
 import React from 'react';
 
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/IconExternalLink';

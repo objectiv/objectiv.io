@@ -1,41 +1,14 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import React, {ComponentProps} from 'react';
+import Layout from '@theme-original/Footer/Layout';
+import type LayoutType from '@theme/Footer/Layout';
+import { TrackedNav } from "@objectiv/tracker-react";
 
-import React from 'react';
-import clsx from 'clsx';
-import type {Props} from '@theme/Footer/Layout';
+type Props = ComponentProps<typeof LayoutType>;
 
-// OBJECTIV
-import { tagNavigation } from "@objectiv/tracker-browser";
-// END OBJECTIV
-
-export default function FooterLayout({
-  style,
-  links,
-  logo,
-  copyright,
-}: Props): JSX.Element {
+export default function LayoutWrapper(props: Props): JSX.Element {
   return (
-    <footer
-      // OBJECTIV
-      {...tagNavigation({id: 'footer'})}
-      // END OBJECTIV
-      className={clsx('footer', {
-        'footer--dark': style === 'dark',
-      })}>
-      <div className="container container-fluid">
-        {links}
-        {(logo || copyright) && (
-          <div className="footer__bottom text--center">
-            {logo && <div className="margin-bottom--sm">{logo}</div>}
-            {copyright}
-          </div>
-        )}
-      </div>
-    </footer>
+    <TrackedNav id={'footer'}>
+      <Layout {...props} />
+    </TrackedNav>
   );
 }

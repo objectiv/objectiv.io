@@ -7,14 +7,13 @@
 
 import React from 'react';
 
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/IconExternalLink';
 import type {Props} from '@theme/Footer/LinkItem';
 
 // OBJECTIV
-import { tagLink } from "@objectiv/tracker-browser";
+import { TrackedLink } from "../../../trackedComponents/TrackedLink";
 // END OBJECTIV
 
 export default function FooterLinkItem({item}: Props): JSX.Element {
@@ -23,10 +22,8 @@ export default function FooterLinkItem({item}: Props): JSX.Element {
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
 
   return (
-    <Link
-      // OBJECTIV
-      {...tagLink({ id: label, href: href ? prependBaseUrlToHref ? normalizedHref : href : toUrl })}
-      // END OBJECTIV
+    // OBJECTIV
+    <TrackedLink
       className="footer__link-item"
       {...(href
         ? {
@@ -38,6 +35,7 @@ export default function FooterLinkItem({item}: Props): JSX.Element {
       {...props}>
       {label}
       {href && !isInternalUrl(href) && <IconExternalLink />}
-    </Link>
+    </TrackedLink>
+    // END OBJECTIV
   );
 }
