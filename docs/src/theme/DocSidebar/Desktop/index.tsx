@@ -7,7 +7,7 @@ type Props = ComponentProps<typeof DesktopType>
 
 export default function DesktopWrapper(props: Props): JSX.Element {
   return (
-    <TrackedNav>
+    <TrackedNav id={'docs-sidebar'}>
       <Desktop {...props} />
     </TrackedNav>
   );
