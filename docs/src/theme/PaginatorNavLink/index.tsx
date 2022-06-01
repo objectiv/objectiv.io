@@ -1,30 +1,15 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import React, {ComponentProps} from 'react';
+import type PaginatorNavLinkType from '@theme/PaginatorNavLink';
+import PaginatorNavLink from '@theme-original/PaginatorNavLink';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 
-import React from 'react';
-import Link from '@docusaurus/Link';
-import type {Props} from '@theme/PaginatorNavLink';
+type Props = ComponentProps<typeof PaginatorNavLinkType>
 
-// OBJECTIV
-import { tagLink } from "@objectiv/tracker-browser";
-// END OBJECTIV
-
-export default function PaginatorNavLink(props: Props): JSX.Element {
-  const {permalink, title, subLabel} = props;
+export default function PaginatorNavLinkWrapper(props: Props): JSX.Element {
+  const { title } = props;
   return (
-    <Link 
-      className="pagination-nav__link" 
-      to={permalink}
-      // OBJECTIV
-      {...tagLink({ id: (title as string != "" ? title as string : "[no title]"), href: permalink })}
-      // END OBJECTIV
-    >
-      {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
-      <div className="pagination-nav__label">{title}</div>
-    </Link>
+    <TrackedLink id={(title as string != "" ? title as string : "[no title]")}>
+      <PaginatorNavLink {...props} />
+    </TrackedLink>
   );
 }
