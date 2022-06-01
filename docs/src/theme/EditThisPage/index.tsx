@@ -15,7 +15,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from "@docusaurus/router";
 import { matchPath } from "@docusaurus/router";
 import Link from '@docusaurus/Link';
-import { tagLink, tagContent } from "@objectiv/tracker-browser";
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedDiv } from "@objectiv/tracker-react";
 import styles from './styles.module.css';
 import clsx from 'clsx';
 // END OBJECTIV
@@ -31,40 +32,38 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
     useBaseUrl('/home/the-project/update-the-docs') : editUrl;
 
   return (
-    <div 
-      {...tagContent({id: 'edit-this-page'})}
+    <TrackedDiv 
+      id={'edit-this-page'}
       className={clsx(styles.editThisPage)}
     >
       <ul className={clsx(styles.editLinks)}>
         <li>
-          <Link
+          <TrackedLink
+            id={'edit-docs-page'}
             to={editThisPageUrl}
-            {...tagLink({ id: 'edit-docs-page', href: editThisPageUrl })}
             className={ThemeClassNames.common.editThisPage}
             rel="noreferrer noopener">
-            <i className={clsx(styles.icon, styles.iconSuggestEdit)}/> Suggest an edit
-          </Link>
+              <i className={clsx(styles.icon, styles.iconSuggestEdit)}/> Suggest an edit
+          </TrackedLink>
         </li>
         <li>
-          <Link
-            to={customFields.slackJoinLink as string}
-            target="_blank"
-            {...tagLink({ id: 'get-help', href: customFields.slackJoinLink as string })}
-          >
+        <TrackedLink
+          id={'get-help'}
+          to={customFields.slackJoinLink as string}
+          target="_blank">
             <i className={clsx(styles.icon, styles.iconGetHelp)}/> Get help on Slack
-          </Link>
+          </TrackedLink>
         </li>
         <li>
-          <Link
+          <TrackedLink
+            id={'submit-idea-or-bug-report'}
             to={'https://github.com/objectiv/objectiv-analytics'}
-            target="_blank"
-            {...tagLink({ id: 'submit-idea-or-bug-report', href: 'https://github.com/objectiv/objectiv-analytics' })}
-          >
-            <i className={clsx(styles.icon, styles.iconTriangle)}/> Request feature or report issue
-          </Link>
+            target="_blank">
+              <i className={clsx(styles.icon, styles.iconTriangle)}/> Request feature or report issue
+          </TrackedLink>
         </li>
       </ul>
-    </div>
+    </TrackedDiv>
   );
   // END OBJECTIV
 }
