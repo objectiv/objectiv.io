@@ -4,7 +4,6 @@ Returns a ready-to-trigger [trackFailureEvent](/tracking/react/api-reference/eve
 
 ```ts
 useFailureEventTracker = (parameters: {
-  message: string;
   tracker?: Tracker,
   options?: TrackEventOptions,
   locationStack?: LocationStack;
@@ -15,7 +14,6 @@ useFailureEventTracker = (parameters: {
 ## Parameters
 |          |                | type              | default value |
 |:--------:|:---------------|:------------------|:--------------|
-| required | **message**    | string            |               |
 | optional | tracker        | ReactTracker      |               |
 | optional | options        | TrackEventOptions |               |
 | optional | locationStack  | LocationStack     |               |
