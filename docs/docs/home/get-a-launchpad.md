@@ -7,13 +7,13 @@ title: Get a Launchpad
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-A Launchpad is a **fully managed Objectiv back-end and data store** that’s ready to use without any setup or configuration. Our Launchpads are free to use and enable you to quickly test-drive Objectiv on your own app or website without needing to worry about the OPS part.
+A Launchpad is a **fully managed Objectiv back-end and data store** that’s ready to use without any setup or configuration. Our Launchpads are free to use and enable you to quickly test-drive Objectiv on your own app or website without needing to worry about the Ops part.
 
 ![Objectiv Launchpad](/img/launchpad.svg "Objectiv Launchpad")
 
 ### How does it work?
 
-Objectiv will set up your Launchpad and provide instructions on how to connect to it. You can then [instrument Objectiv’s tracking SDK](/tracking/) to a part of your site or app to start collecting data. On average, this takes existing users a few hours.
+Objectiv will set up your Launchpad and provide instructions on how to connect to it. You can then [instrument Objectiv’s tracker](/tracking/) to a part of your site or app to start collecting data. On average, this takes existing users a few hours.
 
 After collecting testing data, you can take any of the [example notebooks](/modeling/example-notebooks/) and run them on your own data set. You can also build and run your own models by using the [Bach](/modeling/bach/) modeling library.
 

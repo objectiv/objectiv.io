@@ -1,6 +1,6 @@
 ---
 title: Introducing the Launchpad - a lightweight way to test Objectiv on your own app or website
-description: "Want to test Objectiv on your own app or website without worrying about the OPS part? Get a Launchpad: A free-to-use, fully managed Objectiv back-end and data store that’s ready to use for testing without any setup or configuration."
+description: "Want to test Objectiv on your own app or website without worrying about the Ops part? Get a Launchpad: A free-to-use, fully managed Objectiv back-end and data store that’s ready to use for testing without any setup or configuration."
 slug: introducing-the-launchpad
 image: /img/open-graph/objectiv-og-large.png
 authors: ivarpruijn
@@ -14,7 +14,7 @@ import BlogImage from '@site/src/components/blog-image'
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
 
-*Want to test Objectiv on your own app or website without worrying about the OPS part? Get a Launchpad: a free-to-use, fully managed Objectiv back-end and data store that’s ready to use for testing without any setup or configuration.*
+*Want to test Objectiv on your own app or website without worrying about the Ops part? Get a Launchpad: a free-to-use, fully managed Objectiv back-end and data store that’s ready to use for testing without any setup or configuration.*
 
 <!--truncate-->
 
