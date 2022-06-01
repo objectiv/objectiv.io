@@ -1720,6 +1720,28 @@
     "@objectiv/schema" "^0.0.19"
     uuid "^8.3.2"
 
+"@objectiv/tracker-react-core@~0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react-core/-/tracker-react-core-0.0.19.tgz#1213ffc35783ebf1db7cf6047ded837ea1a6a949"
+  integrity sha512-vfs1TGbvhSwkF1xf68Fqj/6DpEtSCfN+BDDyZm/hZy4vP7kDZGZZgakFbt28j3o/QdWPnuT+kZJ7ePR7tyVURQ==
+  dependencies:
+    "@objectiv/tracker-core" "~0.0.19"
+    fast-deep-equal "^3.1.3"
+
+"@objectiv/tracker-react@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react/-/tracker-react-0.0.19.tgz#b0206392221214171b2f42a802318d8b0d7c0336"
+  integrity sha512-zesqQnJjBNeLjXm6TxZQqM/Aq1iTocjCCmq5TKAz1NFgPtmNOa4gh3niNRStxCEH61ORRkL8ukUt4okZga2njw==
+  dependencies:
+    "@objectiv/plugin-http-context" "^0.0.19"
+    "@objectiv/plugin-path-context-from-url" "^0.0.19"
+    "@objectiv/plugin-root-location-context-from-url" "^0.0.19"
+    "@objectiv/queue-local-storage" "^0.0.19"
+    "@objectiv/tracker-core" "~0.0.19"
+    "@objectiv/tracker-react-core" "~0.0.19"
+    "@objectiv/transport-fetch" "^0.0.19"
+    "@objectiv/transport-xhr" "^0.0.19"
+
 "@objectiv/transport-debug@^0.0.19":
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/@objectiv/transport-debug/-/transport-debug-0.0.19.tgz#2555e5dab56f709ec0f4d9041164348fdfddff95"
