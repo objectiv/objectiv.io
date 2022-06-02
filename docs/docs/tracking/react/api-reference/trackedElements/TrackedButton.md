@@ -63,7 +63,7 @@ import { TrackedButton } from '@objectiv/tracker-react';
 </div>
 ```
 
-By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+By default, all Tracked Elements automatically normalize their Context identifiers to a kebab-cased format.
 
 This can be disabled via the  `normalizeId` option:
 
