@@ -1,41 +1,20 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import React, {ComponentProps} from 'react';
+import LinkItem from '@theme-original/Footer/LinkItem';
+import type LinkItemType from '@theme/Footer/LinkItem';
+import { TrackedLinkContext } from '@objectiv/tracker-react';
 
-import React from 'react';
+type Props = ComponentProps<typeof LinkItemType>;
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import isInternalUrl from '@docusaurus/isInternalUrl';
-import IconExternalLink from '@theme/IconExternalLink';
-import type {Props} from '@theme/Footer/LinkItem';
-
-// OBJECTIV
-import { TrackedLink } from "../../../trackedComponents/TrackedLink";
-// END OBJECTIV
-
-export default function FooterLinkItem({item}: Props): JSX.Element {
-  const {to, href, label, prependBaseUrlToHref, ...props} = item;
-  const toUrl = useBaseUrl(to);
-  const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
-
+export default function LinkItemWrapper(props: Props): JSX.Element {
+  const {item} = props;
+  const label = item.label;
+  const href = item.href;
   return (
-    // OBJECTIV
-    <TrackedLink
-      className="footer__link-item"
-      {...(href
-        ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
-        : {
-            to: toUrl,
-          })}
-      {...props}>
-      {label}
-      {href && !isInternalUrl(href) && <IconExternalLink />}
-    </TrackedLink>
-    // END OBJECTIV
+    <TrackedLinkContext
+      Component={'div'}
+      id={label}
+      href={href}>
+        <LinkItem {...props} />
+    </TrackedLinkContext>
   );
 }
