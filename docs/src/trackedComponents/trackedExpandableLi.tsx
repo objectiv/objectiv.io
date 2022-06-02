@@ -10,6 +10,7 @@ import {
   useOnChange,
   useTracker
 } from "@objectiv/tracker-react";
+import { makeIdFromString } from '@objectiv/tracker-core';
 import React, { useState } from "react";
 
 // TODO: remove this override on the next Tracker update
@@ -46,7 +47,7 @@ export type TrackedExpandableLiProps = LiProps & {
 }
 
 export const TrackedExpandableLi = ({ id, ...props }: TrackedExpandableLiProps) => (
-  <ExpandableContextWrapper id={id}>
+  <ExpandableContextWrapper id={makeIdFromString(id)}>
     <TrackedLi {...props} />
   </ExpandableContextWrapper>
 );
