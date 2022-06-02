@@ -8,13 +8,13 @@ function AnnouncementBar({title, content, ctaLink, ctaText, icon='icon-star'}) {
   return (
     <TrackedDiv id={'announcement-bar'}>
       <div className={clsx(styles.announcement)}>
-        <span className={styles.announcementStar}><img src={"/img/icons/" + icon + ".svg"} alt='star' /></span>
+        <span className={clsx(styles.announcementStar, styles.announcementStarStart)}><img src={"/img/icons/" + icon + ".svg"} alt='star' /></span>
           <strong>{title}</strong>&nbsp;
           {content}&nbsp;
           <TrackedLink to={ctaLink} waitUntilTracked={true}>
             {ctaText}
           </TrackedLink>
-        <span className={styles.announcementStar}><img src={"/img/icons/" + icon + ".svg"} alt='star' /></span>
+        <span className={clsx(styles.announcementStar, styles.announcementStarEnd)}><img src={"/img/icons/" + icon + ".svg"} alt='star' /></span>
       </div>
     </TrackedDiv>
   );
