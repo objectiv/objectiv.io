@@ -12,7 +12,8 @@ TrackedLinkContext: (props: {
   forwardHref?: boolean
   title?: string,
   forwardTitle?: boolean,
-  waitUntilTracked?: boolean
+  waitUntilTracked?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -23,17 +24,18 @@ We are currently working on improving these definitions to enable support for an
 :::
 
 ## Parameters
-|          |                  | type                                 | default value                       |
-|:--------:|:-----------------|:-------------------------------------|:------------------------------------|
-| required | **children**     | ReactNode                            |                                     |
-| required | **Component**    | ComponentType &vert; keyof ReactHTML |                                     |
-| optional | id               | string                               | inferred from `children` or `title` |
-| optional | forwardId        | boolean                              | `false`                             |
-| required | **href**         | string                               |                                     |
-| optional | forwardHref      | boolean                              | `false`                             |
-| optional | title            | string                               |                                     |
-| optional | forwardTitle     | boolean                              | `false`                             |
-| optional | waitUntilTracked | boolean                              | `false`                             |
+|          |                  | type                                   | default value                       |
+|:--------:|:-----------------|:---------------------------------------|:------------------------------------|
+| required | **children**     | ReactNode                              |                                     |
+| required | **Component**    | ComponentType &vert; keyof ReactHTML   |                                     |
+| optional | id               | string                                 | inferred from `children` or `title` |
+| optional | forwardId        | boolean                                | `false`                             |
+| required | **href**         | string                                 |                                     |
+| optional | forwardHref      | boolean                                | `false`                             |
+| optional | title            | string                                 |                                     |
+| optional | forwardTitle     | boolean                                | `false`                             |
+| optional | waitUntilTracked | boolean                                | `false`                             |
+| optional | normalizeId      | boolean                                | `true`                              |
 
 ## Returns
 `ReactElement`
@@ -54,13 +56,31 @@ import { TrackedLinkContext } from '@objectiv/tracker-react';
   Privacy
 </TrackedLinkContext>
 
-// Whenever inferring 'id' is not possible, e.g. children without text, a `title` can be specified
+// A `title` can be specified whenever inferring 'id' is not possible 
 <TrackedLinkContext Component={'a'} href={'/privacy'} title={'privacy'}>
   <img src="/lock.jpg"/>
 </TrackedLinkContext>
 
 // Or just a manual `id`, either one will do the job
 <TrackedLinkContext Component={'a'} href={'/privacy'} id={'privacy'}>
+  <img src="/lock.jpg"/>
+</TrackedLinkContext>
+```
+
+By default, all Tracked Context Components automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedLinkContext Component={'a'} href={'/privacy'} normalizeId={false}>
+  Privacy Policy
+</TrackedLinkContext>
+
+<TrackedLinkContext Component={'a'} href={'/privacy'} title={'Privacy Policy'} normalizeId={false}>
+  <img src="/lock.jpg"/>
+</TrackedLinkContext>
+
+<TrackedLinkContext Component={'a'} href={'/privacy'} id={'Privacy Policy'} normalizeId={false}>
   <img src="/lock.jpg"/>
 </TrackedLinkContext>
 ```

@@ -6,16 +6,18 @@ Generates a `<header>` Element wrapped in a [ContentContext](/taxonomy/reference
 TrackedHeader: (props: {
   children: ReactNode,
   id?: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type                                 | default value |
-|:--------:|:-------------|:-------------------------------------|:--------------|
-| required | **children** | ReactNode                            |               |
-| optional | id           | string                               | `header`      |
-| optional | forwardId    | boolean                              | `false`       |
+|          |              | type       | default value |
+|:--------:|:-------------|:-----------|:--------------|
+| required | **children** | ReactNode  |               |
+| optional | id           | string     | `header`      |
+| optional | forwardId    | boolean    | `false`       |
+| optional | normalizeId  | boolean    | `true`        |
 
 ## Returns
 `ReactElement`
@@ -34,12 +36,27 @@ import { TrackedHeader } from '@objectiv/tracker-react';
   <TrackedHeader>
     ...
   </TrackedHeader>
+  <TrackedHeader id={'Secondary Header'}>
+    ...
+  </TrackedHeader>
   <main>
     ...
   </main>
   <footer>
     ...
   </footer>
+</div>
+```
+
+By default, all Tracked Elements automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedHeader id={'Main Header'} normalizeId={false}>
+    ...
+  </TrackedHeader>
 </div>
 ```
 
