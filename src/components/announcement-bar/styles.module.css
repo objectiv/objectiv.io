@@ -21,7 +21,7 @@
   color: #a09536;
 }
 @media screen and (max-width: 768px) {
-  .announcement span.announcementStar {
+  .announcement span.announcementStarStart {
     display: block;
     margin-bottom: 10px;
   }
