@@ -2407,21 +2407,7 @@
   resolved "https://registry.yarnpkg.com/@objectiv/schema/-/schema-0.0.19.tgz#ff67c47094858f92f0ded76c235f71f877c2e613"
   integrity sha512-HAgycbVgbcavUQVJXBxurSaE855Vvf5HylF7f7DD7a65FxUCMU6pnvkptO/OKV0wmLZddsXKlMNGu0w4gbgjYA==
 
-"@objectiv/tracker-browser@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/tracker-browser/-/tracker-browser-0.0.19.tgz#1b66535e638e7279345016915778450ffcdc9126"
-  integrity sha512-5T5lyWpY/pKeRA5V/J5KjPBrTEIgobObcU7wqv++P7ntH/S4C7S4sZqsC6CDoAbxIjdVDZqXXsVD3qoXIQPnQg==
-  dependencies:
-    "@objectiv/plugin-http-context" "^0.0.19"
-    "@objectiv/plugin-path-context-from-url" "^0.0.19"
-    "@objectiv/plugin-root-location-context-from-url" "^0.0.19"
-    "@objectiv/queue-local-storage" "^0.0.19"
-    "@objectiv/tracker-core" "^0.0.19"
-    "@objectiv/transport-debug" "^0.0.19"
-    "@objectiv/transport-fetch" "^0.0.19"
-    "@objectiv/transport-xhr" "^0.0.19"
-
-"@objectiv/tracker-core@^0.0.19", "@objectiv/tracker-core@~0.0.19":
+"@objectiv/tracker-core@~0.0.19":
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.19.tgz#f20327dfb4254c50dc981eef53c30cda7b209fb0"
   integrity sha512-rq9sKEwPd6VDn/E1/OPmwJy1pqELCa6OZ/ELFc9FJT9s2+q6Yh0PCbB4wbYAYQSaltyJ/M2d+YwfjtxFBdWmPw==
@@ -2450,13 +2436,6 @@
     "@objectiv/tracker-react-core" "~0.0.19"
     "@objectiv/transport-fetch" "^0.0.19"
     "@objectiv/transport-xhr" "^0.0.19"
-
-"@objectiv/transport-debug@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/transport-debug/-/transport-debug-0.0.19.tgz#2555e5dab56f709ec0f4d9041164348fdfddff95"
-  integrity sha512-yP3NXhtcZ23VCy6X8vkRke4r1tNIJT8VSFl/vi2dc/ESKvfQdIeNi6wGh1Q3cnN0+YQxDnBJoORBKfy8RGhp9w==
-  dependencies:
-    "@objectiv/tracker-core" "~0.0.19"
 
 "@objectiv/transport-fetch@^0.0.19":
   version "0.0.19"
