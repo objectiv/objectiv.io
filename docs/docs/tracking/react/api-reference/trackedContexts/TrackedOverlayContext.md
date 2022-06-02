@@ -8,7 +8,8 @@ TrackedOverlayContext: (props: {
   Component: ComponentType | keyof ReactHTML,
   id: string,
   forwardId?: boolean,
-  isVisible?: boolean
+  isVisible?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -25,6 +26,7 @@ We are currently working on improving these definitions to enable support for an
 | required | **Component** | ComponentType &vert; keyof ReactHTML |               |
 | required | **id**        | string                               |               |
 | optional | forwardId     | boolean                              | `false`       |
+| optional | normalizeId   | boolean                              | `true`        |
 
 ## Returns
 `ReactElement`
@@ -46,6 +48,16 @@ import { TrackedOverlayContext } from '@objectiv/tracker-react';
 
 ```jsx
 <TrackedOverlayContext Component={'div'} id={'modal'}>
+  ...
+</TrackedOverlayContext>
+```
+
+By default, all Tracked Context Components automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedOverlayContext Component={'div'} id={'Login Modal'} normalizeId={false}>
   ...
 </TrackedOverlayContext>
 ```

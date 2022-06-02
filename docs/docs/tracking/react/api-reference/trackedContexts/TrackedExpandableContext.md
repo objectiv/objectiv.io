@@ -9,7 +9,8 @@ TrackedExpandableContext: (props: {
   Component: ComponentType | keyof ReactHTML,
   id: string,
   forwardId?: boolean,
-  isVisible?: boolean
+  isVisible?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -27,6 +28,7 @@ We are currently working on improving these definitions to enable support for an
 | required | **id**        | string                               |               |
 | optional | forwardId     | boolean                              | `false`       |
 | optional | isVisible     | boolean                              | `undefined`   |
+| optional | normalizeId   | boolean                              | `true`        |
 
 ## Returns
 `ReactElement`
@@ -35,7 +37,7 @@ We are currently working on improving these definitions to enable support for an
 - [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) when `isVisible` switches from `true` to `false`. 
 - [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) when `isVisible` switches from `false` to `true`.
 
-:::caution
+:::info
 The `isVisible` state of a TrackedExpandableContext is ignored on mount. Only actual changes and tracked.
 :::
 
@@ -48,6 +50,16 @@ import { TrackedExpandableContext } from '@objectiv/tracker-react';
 ```jsx
 <TrackedExpandableContext Component={'ul'} id={'list'}>
   ...
+</TrackedExpandableContext>
+```
+
+By default, all Tracked Context Components automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedExpandableContext Component={'ul'} id={'Main Menu'} normalizeId={false}>
+...
 </TrackedExpandableContext>
 ```
 
