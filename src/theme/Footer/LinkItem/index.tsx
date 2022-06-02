@@ -8,13 +8,12 @@ type Props = ComponentProps<typeof LinkItemType>;
 
 export default function LinkItemWrapper(props: Props): JSX.Element {
   const {item} = props;
-  const label = makeIdFromString(item.label);
   const normalizedTo = useBaseUrl(item.to, {forcePrependBaseUrl: true});
 
   return (
     <TrackedLink
       className="footer__link-item"
-      id={label}
+      id={makeIdFromString(item.label)}
       to={normalizedTo}
       {...props}
     >
