@@ -12,6 +12,7 @@ import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
+import AnnouncementBar from '../components/announcement-bar';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -26,6 +27,13 @@ export default function Home() {
       description={tagline}>
 
       <StarUsNotification innerRef={starUsNotificationAnchorRef} />
+
+      <AnnouncementBar 
+        title={'The Launchpad:'} 
+        content={'a managed back-end and data store to simplify testing Objectiv.'} 
+        ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
+        ctaText={'Learn more'} 
+        icon={'icon-new-banner'} />
       
       <TrackedHeader 
         id={'hero'} 
