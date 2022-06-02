@@ -11,7 +11,8 @@ TrackedAnchor: (props: {
   forwardHref?: boolean
   title?: string,
   forwardTitle?: boolean,
-  waitUntilTracked?: boolean
+  waitUntilTracked?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -26,6 +27,7 @@ TrackedAnchor: (props: {
 | optional | title            | string    |                                     |
 | optional | forwardTitle     | boolean   | `false`                             |
 | optional | waitUntilTracked | boolean   | `false`                             |
+| optional | normalizeId      | boolean   | `true`                              |
 
 ## Returns
 `ReactElement`
@@ -62,6 +64,25 @@ import { TrackedAnchor } from '@objectiv/tracker-react';
   </footer>
 </div>
 ```
+
+By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedAnchor href={'/'} normalizeId={false}>Back to home</TrackedAnchor>
+  
+  <TrackedAnchor href={'/privacy'} title={'Privacy settings'} normalizeId={false}>
+    <img src="/lock.jpg"/>
+  </TrackedAnchor>
+
+  <TrackedAnchor href={'/profile'} id={'Profile settings'} normalizeId={false}>
+    <img src="/profile.jpg"/>
+  </TrackedAnchor>
+</div>
+```
+
 
 <br />
 

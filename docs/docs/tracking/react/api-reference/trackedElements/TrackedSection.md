@@ -6,16 +6,18 @@ Generates a `<section>` Element wrapped in a [ContentContext](/taxonomy/referenc
 TrackedSection: (props: {
   children: ReactNode,
   id: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |               | type                                 | default value |
-|:--------:|:--------------|:-------------------------------------|:--------------|
-| required | **children**  | ReactNode                            |               |
-| required | **id**        | string                               |               |
-| optional | forwardId     | boolean                              | `false`       |
+|          |              | type      | default value |
+|:--------:|:-------------|:----------|:--------------|
+| required | **children** | ReactNode |               |
+| required | **id**       | string    |               |
+| optional | forwardId    | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -36,6 +38,18 @@ import { TrackedSection } from '@objectiv/tracker-react';
     ...
   </TrackedSection>
 </TrackedSection>
+```
+
+By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedSection id={'Another Section'} normalizeId={false}>
+    ...
+  </TrackedSection>
+</div>
 ```
 
 <br />

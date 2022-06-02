@@ -6,7 +6,8 @@ Generates a `<main>` Element wrapped in a [ContentContext](/taxonomy/reference/l
 TrackedMain: (props: {
   children: ReactNode,
   id?: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -16,6 +17,7 @@ TrackedMain: (props: {
 | required | **children** | ReactNode |               |
 | optional | id           | string    | `main`        |
 | optional | forwardId    | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -37,9 +39,24 @@ import { TrackedMain } from '@objectiv/tracker-react';
   <TrackedMain>
     ...
   </TrackedMain>
+  <TrackedMain id={'Another Main Section'}>
+    ...
+  </TrackedMain>
   <footer>
     ...
   </footer>
+</div>
+```
+
+By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedMain id={'Main Section'} normalizeId={false}>
+    ...
+  </TrackedMain>
 </div>
 ```
 

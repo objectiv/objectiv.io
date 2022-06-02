@@ -9,7 +9,8 @@ TrackedButton: (props: {
   forwardId?: boolean,
   title?: string,
   forwardTitle?: boolean,
-  waitUntilTracked?: boolean
+  waitUntilTracked?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -22,6 +23,7 @@ TrackedButton: (props: {
 | optional | title            | string    |                                     |
 | optional | forwardTitle     | boolean   | `false`                             |
 | optional | waitUntilTracked | boolean   | `false`                             |
+| optional | normalizeId      | boolean   | `true`                              |
 
 ## Returns
 `ReactElement`
@@ -60,6 +62,29 @@ import { TrackedButton } from '@objectiv/tracker-react';
   </footer>
 </div>
 ```
+
+By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedButton onClick={ () => doIt() } normalizeId={false}>
+    Do it
+  </TrackedButton>
+
+  {/* Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified */}
+  <TrackedButton onClick={ () => doIt() } title={'Do it'} normalizeId={false}>
+    <img src="/do-it.jpg"/>
+  </TrackedButton>
+    
+  {/* Or just a manual `id`, either one will do the job */}
+  <TrackedButton onClick={ () => doIt() } id={'Do it'} normalizeId={false}>
+    <img src="/button.jpg"/>
+  </TrackedButton>
+</div>
+```
+
 
 <br />
 

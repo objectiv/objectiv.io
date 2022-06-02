@@ -7,8 +7,9 @@ TrackedInput: (props: {
   children: ReactNode,
   id: string,
   forwardId?: boolean,
-  title?: string;
-  forwardTitle?: boolean;
+  title?: string,
+  forwardTitle?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -20,6 +21,7 @@ TrackedInput: (props: {
 | optional | forwardId    | boolean   | `false`       |
 | optional | title        | string    |               |
 | optional | forwardTitle | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -48,6 +50,15 @@ import { TrackedInput } from '@objectiv/tracker-react';
 </div>
 ```
 
+By default, all Tracked Elements automatically normalize their Content identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedInput id={'Email Address'} normalizeId={false} name={'email'} />
+</div>
+```
 <br />
 
 :::tip Did you know ?
