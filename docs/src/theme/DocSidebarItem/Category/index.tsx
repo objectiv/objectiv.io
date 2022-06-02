@@ -17,7 +17,8 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type {Props} from '@theme/DocSidebarItem/Category';
 // OBJECTIV
-import { TrackedExpandableLi } from '../../../trackedComponents/trackedExpandableLi';
+import { makeIdFromString } from '@objectiv/tracker-core';
+import { TrackedExpandableContext } from '@objectiv/tracker-react';
 // END OBJECTIV
 
 // If we navigate to a category and it becomes active, it should automatically
@@ -140,8 +141,9 @@ export default function DocSidebarItemCategory({
 
   return (
     // OBJECTIV
-    <TrackedExpandableLi
-      id={label}
+    <TrackedExpandableContext
+      Component={'li'}
+      id={makeIdFromString(label)}
       isVisible={!collapsed}
     // END OBJECTIV
       className={clsx(
@@ -204,6 +206,6 @@ export default function DocSidebarItemCategory({
           level={level + 1}
         />
       </Collapsible>
-    </TrackedExpandableLi>
+    </TrackedExpandableContext>
   );
 }
