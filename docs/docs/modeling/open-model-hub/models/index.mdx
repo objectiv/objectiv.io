@@ -7,24 +7,19 @@ title: Models
 
 # Models
 
-The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two main types of models:
-1. A collection of helper functions that perform multiple Bach instructions to make data analysis and
-product analytics on data collected with Objectiv’s Tracker as easy as possible.
-2. Machine learning models that can be used with Bach data.
+The open model hub is  toolkit that contains functions and models that can be applied on data collected
+with Objectiv’s Tracker. There are three types of functions/models:
+1. [Map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) functions. These helper functions simplify manipulating and analyzing
+the data tracked by Objectiv’s tracker.
+2. [Aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation) models. These models consist of a combination of Bach
+instructions that run some of the more common data analyses or product analytics metrics.
+3. Machine learning models that can be used with Bach data.
 
-## Helper functions
+## Map
 
-There are two main type of helper functions:
-[map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) and [aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation).
-
-* [map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) functions always return a series with the same shape and index as the
-[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) they are applied to. This ensures they can be added as a column to that
-[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx). [map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) functions that return
-[`DataFrame`](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean) can be used with to filter the data.
-* [aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation) functions return aggregated data in some form from the
-[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx). Can also be accessed with [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx).
-
-### Map
+Map functions always return a series with the same shape and index as the
+[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) they are applied to. This ensures they can be added as a column to that DataFrame. Map
+functions that return [`SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean) can be used to filter the data.
 
 <div className="table-autosummary">
 
@@ -40,7 +35,11 @@ There are two main type of helper functions:
 
 </div>
 
-### Aggregate
+## Aggregate
+
+Aggregate models perform multiple Bach instructions that run some of the more common data analyses or
+product analytics metrics. Always return aggregated data in some form from the
+[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) the model is applied to.
 
 <div className="table-autosummary">
 
@@ -50,7 +49,8 @@ There are two main type of helper functions:
 | [`unique_sessions`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.unique_sessions.mdx)(data[, groupby])                  | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
 | [`session_duration`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.session_duration.mdx)(data[, groupby, ...])            | Calculate the duration of sessions.                                                                                                                                                                                    |
 | [`frequency`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.frequency.mdx)(data)                                   | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |
-| [`top_used_product_features`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.top_used_product_features.mdx)(data[, ...])            | Calculate the top used features in the product.                                                                                                                                                                        |
+| [`top_product_features`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.top_product_features.mdx)(data[, location_stack, ...]) | Calculate the top used features in the product.                                                                                                                                                                        |
+| [`top_product_features_before_conversion`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.top_product_features_before_conversion.mdx)(data, ...) | Calculates what users did before converting by combining several models from the model hub.                                                                                                                            |
 
 
 </div>
