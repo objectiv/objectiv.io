@@ -7,7 +7,14 @@ title: Models
 
 # Models
 
-The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two main types of functions:
+The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two main types of models:
+1. A collection of helper functions that perform multiple Bach instructions to make data analysis and
+product analytics on data collected with Objectiv’s Tracker as easy as possible.
+2. Machine learning models that can be used with Bach data.
+
+## Helper functions
+
+There are two main type of helper functions:
 [map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) and [aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation).
 
 * [map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) functions always return a series with the same shape and index as the
@@ -17,7 +24,7 @@ The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two 
 * [aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation) functions return aggregated data in some form from the
 [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx). Can also be accessed with [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx).
 
-## Map
+### Map
 
 <div className="table-autosummary">
 
@@ -33,7 +40,7 @@ The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two 
 
 </div>
 
-## Aggregate
+### Aggregate
 
 <div className="table-autosummary">
 
@@ -47,3 +54,7 @@ The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) has two 
 
 
 </div>
+
+## Machine Learning
+
+Currently we support  [logistic regression](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/index.mdx#modelhub-reference-logistic-regression) directly on Bach DataFrames and Series.
