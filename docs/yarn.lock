@@ -2380,76 +2380,89 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv/plugin-http-context@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/plugin-http-context/-/plugin-http-context-0.0.19.tgz#893af21ea654124b2ceb5455164dc6e8ae2fd69e"
-  integrity sha512-qBh8kQMDws2dSJ9MYqBSB9CLm/XHsXLQ1n+IXrlmdluQE0WZBbpx4grrxMRcWMBVxBMehgtNYA9EJiLwOa8fCg==
+"@objectiv/developer-tools@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/developer-tools/-/developer-tools-0.0.20-3.tgz#b0aaf80ee4df83e1d0444a7b2654acdc75bf4425"
+  integrity sha512-giGAOWlMA1++WqJ8+re+X4R0/xyXqaVFz6dzJCz1IR+fkmfamONIrmwur+fKMpDGAwWfPti7nN56EnL8Bqadgw==
 
-"@objectiv/plugin-path-context-from-url@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/plugin-path-context-from-url/-/plugin-path-context-from-url-0.0.19.tgz#e5c132996ee579ced363cc11d5c8e5c2566a7355"
-  integrity sha512-mVkHkaFy7/lnv80b+F0+AHaw0FAjjcXZA8Yn37guaMLZDjrqswDvvsC9Tn6oRlQQ4yPQVPRv9ZE7yiGyBnXlCg==
+"@objectiv/plugin-application-context@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-application-context/-/plugin-application-context-0.0.20-3.tgz#8e55df19ed16d00450c14e3eec0266cf38f8f1b0"
+  integrity sha512-abSo7aAVv/bNFt2Y0E2Q+4MqMUFgdEez4KaYOaECL+BY7eLExWNgUNFOmUqtReqavJ+52LUSpBiI95e4Gux50A==
 
-"@objectiv/plugin-root-location-context-from-url@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/plugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.19.tgz#de1ccd7980019a3597ad67aef96cfc15b8500e81"
-  integrity sha512-X0JxUkdXZ2v29lU2jYJZxatZNuafT04d0yCbxCHzcYMRZscxFvVT+zicJDufWOhbKsvWtY6JQQ4ytLAbyIfidw==
+"@objectiv/plugin-http-context@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-http-context/-/plugin-http-context-0.0.20-3.tgz#ca906d4cf146a4b8f947a238b34213c0863eb458"
+  integrity sha512-bsSzK17Q1dLC/5CkvEta0sBXyVSpHTQjzuWoj4/hwrFO8dyW8eMyC6sQ710wd7jAziwsg8pRkuGDGLqnjLdzrw==
 
-"@objectiv/queue-local-storage@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/queue-local-storage/-/queue-local-storage-0.0.19.tgz#a29c9128b5258f0e00d4c031cd7393bf367d4934"
-  integrity sha512-WAy9Gp7et8P3HvVZZBqzXgZXxBLydredD/1CxeLPiGebXqndlznhjiMeUC3dEdiOO/ptgotNezL+pfswA8SNjA==
+"@objectiv/plugin-path-context-from-url@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-path-context-from-url/-/plugin-path-context-from-url-0.0.20-3.tgz#83a9d12ec197c4db6948feaa1610b0d4646e9b0b"
+  integrity sha512-5xr5zLPhKGaQp0I3LEMoOnH7LlY6LPkEU6NK1b5N/GAA7HDbhiejJsmTjFm8bWjh587ZA90A7ULvpUND1GcLkQ==
+
+"@objectiv/plugin-root-location-context-from-url@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/plugin-root-location-context-from-url/-/plugin-root-location-context-from-url-0.0.20-3.tgz#4b6831065a9da9987775cd607d1e27a47ddda995"
+  integrity sha512-WQs3fTY+ReOTrvKrMij2MMEOa8TOcG78r51VrGG/fdroDnP8p0NF7x0/xbo7gVNHhebQ8vkn5NoPQfj47VNS1A==
+
+"@objectiv/queue-local-storage@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/queue-local-storage/-/queue-local-storage-0.0.20-3.tgz#d704e613ba8ceed8c92d8ccce0719d033c101278"
+  integrity sha512-/L8R5ApNc+3bScRN+/cKZ6KExse4olTXMiB4vWGCL+b/7jtBNpBMFpIEjGcJpd1g5K6bXn6x1/qknm528kvKfQ==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.19"
+    "@objectiv/tracker-core" "~0.0.20-3"
 
-"@objectiv/schema@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/schema/-/schema-0.0.19.tgz#ff67c47094858f92f0ded76c235f71f877c2e613"
-  integrity sha512-HAgycbVgbcavUQVJXBxurSaE855Vvf5HylF7f7DD7a65FxUCMU6pnvkptO/OKV0wmLZddsXKlMNGu0w4gbgjYA==
+"@objectiv/schema@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/schema/-/schema-0.0.20-3.tgz#c83bc81cd0bfc69c61456b3253725553b917922a"
+  integrity sha512-Mc9mLqDwcmOAYVe2KRxdvbNu4bUUf2/pcdGonOfHLn0mmrPIy+Bi/L1IBM7anxwnOL1jFiyCjlq51fKnGgiZcg==
 
-"@objectiv/tracker-core@^0.0.19", "@objectiv/tracker-core@~0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.19.tgz#f20327dfb4254c50dc981eef53c30cda7b209fb0"
-  integrity sha512-rq9sKEwPd6VDn/E1/OPmwJy1pqELCa6OZ/ELFc9FJT9s2+q6Yh0PCbB4wbYAYQSaltyJ/M2d+YwfjtxFBdWmPw==
+"@objectiv/tracker-core@~0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.20-3.tgz#25b232fca70cc7c26e052081a058dba1c2dcad77"
+  integrity sha512-4N77/YWOGQs7k5ffdj7Jm6fI1f14BBFTOR+/lfyoVxrbvVOXDEL/zPxu4dp8/KK3Yi5w5ezhugFQlile8Rm3ig==
   dependencies:
-    "@objectiv/schema" "^0.0.19"
+    "@objectiv/developer-tools" "^0.0.20-3"
+    "@objectiv/plugin-application-context" "^0.0.20-3"
+    "@objectiv/schema" "^0.0.20-3"
     uuid "^8.3.2"
 
-"@objectiv/tracker-react-core@~0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react-core/-/tracker-react-core-0.0.19.tgz#1213ffc35783ebf1db7cf6047ded837ea1a6a949"
-  integrity sha512-vfs1TGbvhSwkF1xf68Fqj/6DpEtSCfN+BDDyZm/hZy4vP7kDZGZZgakFbt28j3o/QdWPnuT+kZJ7ePR7tyVURQ==
+"@objectiv/tracker-react-core@~0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react-core/-/tracker-react-core-0.0.20-3.tgz#83e43251b9d7ef9d679aa624960ce4a4d859a6ad"
+  integrity sha512-7K7zLwqONjZThWVyq5dLPk+GzZNKWtYzSUMdq/d5zRSuHjsVmT2o85tHaTCZzVnJhRoatQBqmLQfsTHMG20bRA==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.19"
+    "@objectiv/schema" "^0.0.20-3"
+    "@objectiv/tracker-core" "~0.0.20-3"
     fast-deep-equal "^3.1.3"
 
-"@objectiv/tracker-react@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react/-/tracker-react-0.0.19.tgz#b0206392221214171b2f42a802318d8b0d7c0336"
-  integrity sha512-zesqQnJjBNeLjXm6TxZQqM/Aq1iTocjCCmq5TKAz1NFgPtmNOa4gh3niNRStxCEH61ORRkL8ukUt4okZga2njw==
+"@objectiv/tracker-react@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/tracker-react/-/tracker-react-0.0.20-3.tgz#30740dbd4959eacaf5919ea20d557c387ae1b7fc"
+  integrity sha512-RJzMxXqK67GizHclo3Jw4O2KW8jwC1p5mLozVazhOgFI6k3FSR1QMa9GU0aMBo37VqwpVJh1Y/aPl9FDLKu9CQ==
   dependencies:
-    "@objectiv/plugin-http-context" "^0.0.19"
-    "@objectiv/plugin-path-context-from-url" "^0.0.19"
-    "@objectiv/plugin-root-location-context-from-url" "^0.0.19"
-    "@objectiv/queue-local-storage" "^0.0.19"
-    "@objectiv/tracker-core" "~0.0.19"
-    "@objectiv/tracker-react-core" "~0.0.19"
-    "@objectiv/transport-fetch" "^0.0.19"
-    "@objectiv/transport-xhr" "^0.0.19"
+    "@objectiv/plugin-http-context" "^0.0.20-3"
+    "@objectiv/plugin-path-context-from-url" "^0.0.20-3"
+    "@objectiv/plugin-root-location-context-from-url" "^0.0.20-3"
+    "@objectiv/queue-local-storage" "^0.0.20-3"
+    "@objectiv/tracker-core" "~0.0.20-3"
+    "@objectiv/tracker-react-core" "~0.0.20-3"
+    "@objectiv/transport-fetch" "^0.0.20-3"
+    "@objectiv/transport-xhr" "^0.0.20-3"
 
-"@objectiv/transport-fetch@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/transport-fetch/-/transport-fetch-0.0.19.tgz#06cd961caa3b352bbcd3ba6532d6e8ff39f92ddb"
-  integrity sha512-b7n2wXEeT/fNvx9mBsJ7G868CsMGHyzVsWnUmgSUFEO+OlEIxjdJRIwAqCuZGIY0bfsFegSDrKQR14ATx33CnQ==
+"@objectiv/transport-fetch@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/transport-fetch/-/transport-fetch-0.0.20-3.tgz#4f87817ad3cc904c609644a589c45d7da1bece82"
+  integrity sha512-DjZta3sUiVpMBJNX/Cp4JoAmp1cdu6NcdM7iXXcHgZ5ljNMMPPu6wX/WKVSMphLx/fJAwkvaNB0npCx5ShCCSQ==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.19"
+    "@objectiv/tracker-core" "~0.0.20-3"
 
-"@objectiv/transport-xhr@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@objectiv/transport-xhr/-/transport-xhr-0.0.19.tgz#7ff4eacb87f1294115e8f61f8c59441fac47c032"
-  integrity sha512-y6XOlujerGvQWeDTiDaV6O/CU/jiOaEc1t6xJD+QMoZSDWTilUC7aFEM0GuxFxL4XKu+xrXH0mAYSjW9XEIHlg==
+"@objectiv/transport-xhr@^0.0.20-3":
+  version "0.0.20-3"
+  resolved "https://registry.yarnpkg.com/@objectiv/transport-xhr/-/transport-xhr-0.0.20-3.tgz#ea59cc89713476aed67adcd4ae25ad3c572a7c75"
+  integrity sha512-BNV7xECXWx2zmFqwM/bS2yaHOLkdpfhISMMKNH0SsZ8oL8N2kKV+i9yNdrzXBC2y/8KK2vLJLSWGTL4CGhbE/Q==
   dependencies:
-    "@objectiv/tracker-core" "~0.0.19"
+    "@objectiv/tracker-core" "~0.0.20-3"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"

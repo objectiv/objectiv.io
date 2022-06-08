@@ -1,7 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { TrackerConsole, NoopConsoleImplementation } from "@objectiv/tracker-core";
-import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
+import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
 import React, { useState } from 'react';
 
 export const windowExists = () => typeof window !== 'undefined';
@@ -39,6 +38,7 @@ function Root({children}) {
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
+  const [tracker, setTracker] = useState<ReactTracker>();
 
   // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
   registerCookiebotEventListeners(function () {
@@ -48,10 +48,13 @@ function Root({children}) {
   })
 
   // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig
-  TrackerConsole.setImplementation(trackerConsoleEnabled && windowExists() ? console : NoopConsoleImplementation);
+  if(trackerConsoleEnabled && windowExists()) {
+    require('@objectiv/developer-tools');
+  }
 
-    // Create React Tracker instance
-    const tracker = new ReactTracker({
+  // Create React Tracker instance
+  if(!tracker) {
+    setTracker(new ReactTracker({
       endpoint: trackerEndPoint as string,
       applicationId: trackerDocsApplicationId as string,
       active: cookiebotStatisticsConsent,
@@ -64,17 +67,17 @@ function Root({children}) {
           }
         })
       ]
-    })
-  
-    // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-    useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
-  
-    return (
-      <ObjectivProvider tracker={tracker}>
-        {children}
-      </ObjectivProvider>
-    );
-  
+    }))
+  }
+
+  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
+  useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
+
+  return (
+    <ObjectivProvider tracker={tracker}>
+      {children}
+    </ObjectivProvider>
+  );
 }
 
 export default Root;
