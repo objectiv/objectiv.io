@@ -31,13 +31,11 @@ Use as `my_series.json.get_value()` or `my_series.json[:2]`
 
 <div className="content">
 
-Abstract class with accessor methods to JSON type data.
-
-Database specific subclasses implement the abstract functions.
+Class with accessor methods to JSON type data.
 
 <div className="method">
 
-### <span className="type-annotation"><em>abstract</em></span> <span className="name">get_array_length</span>
+### <span className="name">get_array_length</span>
 
 <small className="parameter-list">()</small>
 
@@ -57,7 +55,7 @@ that’s not the case!
 
 <div className="method">
 
-### <span className="type-annotation"><em>abstract</em></span> <span className="name">get_value</span>
+### <span className="name">get_value</span>
 
 <small className="parameter-list">(<span className="parameter" id="key">key</span>, <span className="parameter" id="as_str">as_str=False</span>)</small>
 
@@ -70,7 +68,9 @@ Get item from toplevel object by key.
 #### Parameters
 
 * **`key`** – the key to return the values for.
-* **`as_str`** – if True, it returns a string Series, json otherwise.
+* **`as_str`** – if True, it returns a string Series, json otherwise. Particular useful if the returned
+value is in fact a string. In json the string will be represented as a quoted string, if this
+field is set to true, the returned SeriesString will not have additional quotes.
 
 
 

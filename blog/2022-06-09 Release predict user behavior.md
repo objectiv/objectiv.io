@@ -16,7 +16,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 
 [logistic-regression-model]: https://objectiv.io/docs/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/LogisticRegression/
 [logistic-regression-notebook]: https://objectiv.io/docs/modeling/example-notebooks/logistic-regression/
-[top-used-features-model]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/top_used_product_features/
+[top-used-features-model]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/top_product_features/
 [top-features-before-conversion-model]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/top_product_features_before_conversion/
 [model-hub]: https://objectiv.io/docs/modeling/open-model-hub/
 [modeling]: https://objectiv.io/docs/modeling/
@@ -86,14 +86,14 @@ That’s all there is to running a logistic regression model on the full data se
 tracker, using the [open model hub][model-hub].
 
 ## Top Used Product Features
-The second model added to the open model hub is [`top_used_product_features`][top-used-features-model]. It 
+The second model added to the open model hub is [`top_product_features`][top-used-features-model]. It 
 enables you to understand which features are used the most in your full product, a subset of your product 
 (using the [location stack][location-stack]), or a selection of users (e.g. new users).
 
 As an example:
 
 ```python
-top_product_features = modelhub.aggregate.top_used_product_features(df)
+top_product_features = modelhub.aggregate.top_product_features(df)
 top_product_features.head()
 ```
 
@@ -141,7 +141,7 @@ top_features_before_conversion.head()
 
 <BlogImage url="/img/blog/releases/20220609/results-tfbc.png" size="large" />
 
-Similar to the [`top_used_product_features`][top-used-features-model] model, you can also slice on subsets of 
+Similar to the [`top_product_features`][top-used-features-model] model, you can also slice on subsets of 
 your product (using the location stack) or a selection of users.
 
 
