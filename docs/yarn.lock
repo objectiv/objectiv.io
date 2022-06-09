@@ -2407,7 +2407,7 @@
   resolved "https://registry.yarnpkg.com/@objectiv/schema/-/schema-0.0.19.tgz#ff67c47094858f92f0ded76c235f71f877c2e613"
   integrity sha512-HAgycbVgbcavUQVJXBxurSaE855Vvf5HylF7f7DD7a65FxUCMU6pnvkptO/OKV0wmLZddsXKlMNGu0w4gbgjYA==
 
-"@objectiv/tracker-core@^0.0.19", "@objectiv/tracker-core@~0.0.19":
+"@objectiv/tracker-core@~0.0.19":
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/@objectiv/tracker-core/-/tracker-core-0.0.19.tgz#f20327dfb4254c50dc981eef53c30cda7b209fb0"
   integrity sha512-rq9sKEwPd6VDn/E1/OPmwJy1pqELCa6OZ/ELFc9FJT9s2+q6Yh0PCbB4wbYAYQSaltyJ/M2d+YwfjtxFBdWmPw==
