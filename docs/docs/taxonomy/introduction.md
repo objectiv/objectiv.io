@@ -9,7 +9,7 @@ title: Introduction
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-The open analytics taxonomy is a generic classifification of common event types and the contexts in which they can happen. It is a proposal for a common way to collect & structure analytics data in an effort to enable models to be universally shared and reused between projects, teams and companies.
+The open analytics taxonomy is a generic classification of common event types and the contexts in which they can happen. It is a proposal for a common way to collect & structure analytics data in an effort to enable models to be universally shared and reused between projects, teams and companies.
 
 <img src={useBaseUrl('/img/open-taxonomy.svg')} alt="Objectiv Pipeline" />
 

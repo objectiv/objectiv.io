@@ -43,7 +43,7 @@ In the example we assume that the data collected with Objectiv’s tracker is st
 ```python
 from modelhub import ModelHub
 # instantiate the model hub
-modelhub = ModelHub(time_aggregation='YYYY-MM-DD')
+modelhub = ModelHub(time_aggregation='%Y-%m-%d')
 # get the Bach DataFrame with Objectiv data
 df = modelhub.get_objectiv_dataframe(db_url='postgresql://objectiv:@localhost:5432/objectiv',
                                      start_date='2022-03-01',
@@ -65,5 +65,6 @@ introduction examples are [here](/modeling/bach/examples.mdx).
 * [Basic user intent analysis](/modeling/example-notebooks/user-intent.mdx)
 * [Feature engineering with Bach](/modeling/example-notebooks/feature-engineering.mdx)
 * [Open model hub basics](/modeling/example-notebooks/modelhub-basics.mdx)
-* [Open taxonomy how-to](/modeling/example-notebooks/open-taxonomy.mdx)
 * [Modeling feature importance](/modeling/example-notebooks/feature-importance.mdx)
+* [Open taxonomy how-to](/modeling/example-notebooks/open-taxonomy.mdx)
+* [Logistic Regression](/modeling/example-notebooks/logistic-regression.mdx)
