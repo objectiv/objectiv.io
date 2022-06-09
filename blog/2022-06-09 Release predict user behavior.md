@@ -173,5 +173,5 @@ Objectiv, we now have [Release Office Hours][release-office-hours] every Thursda
 you can freely dial in to. If you're in a timezone that doesn’t fit well, just ping us 
 on <JoinSlackLink linkText="Slack" /> and we'll send over an invite for a better moment.
 
-[Join the open office hours][release-office-hours]
+[Join the Release Office Hours][release-office-hours]
 
