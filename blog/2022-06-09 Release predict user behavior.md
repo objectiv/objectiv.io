@@ -26,7 +26,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 [bach]: https://objectiv.io/docs/modeling/bach/
 [sklearn-log-reg]: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
 [launchpad]: https://objectiv.io/blog/introducing-the-launchpad/
-[release-office-hours]: https://cal.com/objectiv/release-office-hours?date=2022-06-16%2B0200
+[release-office-hours]: https://meet.google.com/sgc-jqgb-mtc
 [website]: https://www.objectiv.io
 
 
