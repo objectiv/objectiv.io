@@ -31,7 +31,7 @@ import { usePressEventTracker } from "@objectiv/tracker-react-native";
 const trackPressEvent = usePressEventTracker();
 
 <DownloadButton
-  onClick={() => {
+  onPress={() => {
     trackPressEvent();
   }}
 >

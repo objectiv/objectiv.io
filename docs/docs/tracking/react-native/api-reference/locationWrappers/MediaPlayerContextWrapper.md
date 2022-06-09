@@ -29,7 +29,7 @@ import { MediaPlayerContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <MediaPlayerContextWrapper id={'video'}>
-  <video src={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} />
+  <Video source={{uri: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}} />
 </MediaPlayerContextWrapper>
 ```
 
@@ -48,12 +48,17 @@ import {
 ```jsx
 <MediaPlayerContextWrapper id={'video'}>
   {(trackingContext) => (
-    <video 
-      src={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} 
+    <Video 
+      source={{uri: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}} 
       onLoad={() => trackMediaLoadEvent(trackingContext)}
-      onPlay={() => trackMediaStartEvent(trackingContext)}
-      onPause={() => trackMediaPauseEvent(trackingContext)}
-      onEnded={() => trackMediaStopEvent(trackingContext)}
+      onPlaybackStateChanged={({isPlaying}) => {
+        if(isPlaying) {
+          trackMediaStartEvent(trackingContext);
+        } else {
+          trackMediaPauseEvent(trackingContext);
+        } 
+      }}
+      onEnd={() => trackMediaStopEvent(trackingContext)}
     />
   )}
 </MediaPlayerContextWrapper>

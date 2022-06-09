@@ -29,15 +29,15 @@ import { ContentContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <ContentContextWrapper id={'content'}>
-  <div>
-    <ContentContextWrapper id={'sub-content'}>
-      ...
-      <a href={'/new-location'}>Go!</a>
-    </ContentContextWrapper>
-  </div>
-  <span>
+  <View>
     ...
-  </span>
+    <ContentContextWrapper id={'sub-content'}>
+      <Button title={'Go!'} onPress={doSomething}/>
+    </ContentContextWrapper>
+  </View>
+  <View>
+    ...
+  </View>
 </ContentContextWrapper>
 ```
 
@@ -51,18 +51,21 @@ import {
 
 ```jsx
 <ContentContextWrapper id={'content'}>
-  <div>
+  <View>
     <ContentContextWrapper id={'sub-content'}>
       {(trackingContext) => (
-        <div onClick={() => trackPressEvent(trackingContext)}>
-          Hi!
-        </div>
+        <Button
+          title={'Hi!'}  
+          onPress={() => { 
+          trackPressEvent(trackingContext); 
+          doSomethingElse();
+        }}/>
       )}
     </ContentContextWrapper>
-  </div>
-  <span>
+  </View>
+  <View>
     ...
-  </span>
+  </View>
 </ContentContextWrapper>
 ```
 
