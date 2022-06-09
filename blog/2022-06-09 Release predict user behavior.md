@@ -169,9 +169,9 @@ setup or configuration.
 
 ## Introducing: Release Office Hours
 If you have any questions about this release or anything else, or if you just want to say 'Hi!' to team 
-Objectiv, we now have [Release Office Hours][release-office-hours] every Thursday that you can freely dial in 
-to. If you're in a timezone that doesn’t fit well, just ping us on <JoinSlackLink linkText="Slack" /> and 
-we'll send over an invite for a better moment.
+Objectiv, we now have [Release Office Hours][release-office-hours] every Thursday at 4pm CET, 10am EST that 
+you can freely dial in to. If you're in a timezone that doesn’t fit well, just ping us 
+on <JoinSlackLink linkText="Slack" /> and we'll send over an invite for a better moment.
 
 [Join the open office hours][release-office-hours]
 
