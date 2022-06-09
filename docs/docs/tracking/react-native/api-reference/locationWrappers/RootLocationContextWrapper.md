@@ -59,12 +59,12 @@ import {
       <Layout>
         ...
       </Layout>
-      <SupportChatOverlay
+      <ChatModal
         onShow={() => trackVisibleEvent(trackingContext)}
         onHide={() => trackHiddenEvent(trackingContext)}
       >
         ...
-      </SupportChatOverlay>
+      </ChatModal>
     </>
   )}
 </RootLocationContextWrapper>

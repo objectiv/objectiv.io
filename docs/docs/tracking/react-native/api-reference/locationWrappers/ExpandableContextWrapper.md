@@ -49,7 +49,7 @@ import {
 <ExpandableContextWrapper id={'accordion'}>
   {(trackingContext) => (
     <Accordion
-      onClick={() => trackPressEvent(trackingContext)}  
+      onPress={() => trackPressEvent(trackingContext)}  
       onToggle={(isOpen) => trackVisibility({ 
         ...trackingContext, 
         isVisible: isOpen

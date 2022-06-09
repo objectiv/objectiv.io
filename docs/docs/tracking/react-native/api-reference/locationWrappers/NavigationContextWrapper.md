@@ -29,11 +29,11 @@ import { NavigationContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <NavigationContextWrapper id={'footer'}>
-  <nav>
-    <a href={'/'}>Homepage</a>
-    <a href={'/privacy'}>Privacy</a>
-    <a href={'/contact'}>Contact</a>
-  </nav>
+  <View>
+    <Link to={'Home'}>Home</Link>
+    <Link to={'Privacy'}>Privacy</Link>
+    <Link to={'Contact'}>Contact</Link>
+  </View>
 </NavigationContextWrapper>
 ```
 
@@ -50,14 +50,14 @@ import {
 ```jsx
 <NavigationContextWrapper id={'drawer'}>
   {(trackingContext) => (
-    <Drawer
-      onShow={() => trackVisibleEvent(trackingContext)}
-      onHide={() => trackHiddenEvent(trackingContext)}
+    <DrawerLayoutAndroid
+      onDrawerOpen={() => trackVisibleEvent(trackingContext)}
+      onDrawerClose={() => trackHiddenEvent(trackingContext)}
     >
-      <a href={'/'}>Homepage</a>
-      <a href={'/privacy'}>Privacy</a>
-      <a href={'/contact'}>Contact</a>
-    </Drawer>
+        <Link to={'Home'}>Home</Link>
+        <Link to={'Privacy'}>Privacy</Link>
+        <Link to={'Contact'}>Contact</Link>
+    </DrawerLayoutAndroid>
   )}
 </NavigationContextWrapper>
 ```
