@@ -132,9 +132,6 @@ did _before_ converting. You can specify which Event represents conversion, and 
 As an example we can calculate which features were most used before clicking a link leading to our blog:
 
 ```python
-modelhub.add_conversion_event(location-stack=df.location-stack.json[{'id': 'blog', '_type': 'LinkContext'}:],
-                              event_type='PressEvent',
-                              name='blog_press')
 top_features_before_conversion = modelhub.agg.top_product_features_before_conversion(df, name='blog_press')
 top_features_before_conversion.head()
 ```
