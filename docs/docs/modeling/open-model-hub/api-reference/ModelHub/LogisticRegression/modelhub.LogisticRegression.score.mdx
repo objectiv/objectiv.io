@@ -1,0 +1,52 @@
+---
+id: open-model-hub-api-reference-model-hub-logistic-regression-modelhub-logistic-regression-score
+slug: /modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/score/
+title: score
+---
+
+# modelhub.LogisticRegression.score
+
+<div className="method">
+
+### <span className="name">score</span>
+
+<small className="parameter-list">(<span className="parameter" id="X">X</span>, <span className="parameter" id="y">y</span>)</small>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/models/logistic_regression.py)</span>
+
+<div className="content">
+
+Returns the accuracy score from a series of true values compared to predicted values.
+
+
+#### Parameters
+
+* **`X`** ([DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – DataFrame with the same features as the training data set.
+* **`y`** ([SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean)) – Series with the true target variable.
+
+
+
+#### Returns
+
+a single value with the proportion of correct predicted labels.
+
+
+
+#### Return type
+
+float
+
+
+:::note
+
+This function queries the database.
+
+
+:::
+
+
+</div>
+
+
+</div>

@@ -3,6 +3,7 @@ title: "Release: User Intent Analysis"
 description: "We added new functionality to enable User Intent analysis on your raw analytics data. See the example notebook to get started."
 slug: release-user-intent-analytics/
 image: /img/open-graph/og-user-intent.png
+tags: [releases]
 authors: ivarpruijn
 ---
 

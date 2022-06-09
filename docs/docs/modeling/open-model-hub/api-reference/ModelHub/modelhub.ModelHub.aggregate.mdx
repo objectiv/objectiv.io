@@ -95,6 +95,77 @@ series with results.
 
 <div className="method">
 
+### <span className="name">top_product_features</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="location_stack">location_stack=None</span>, <span className="parameter" id="event_type">event_type='InteractiveEvent'</span>)</small>
+
+
+<div className="content">
+
+Calculate the top used features in the product.
+
+
+#### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`location_stack`** – the location stack
+  * can be any slice of a [`modelhub.SeriesLocationStack`](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.mdx) type column
+  * if None - the whole location stack is taken.
+
+* **`event_type`** – event type. Must be a valid event_type (either parent or child).
+
+
+
+#### Returns
+
+bach DataFrame with results.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+### <span className="name">top_product_features_before_conversion</span>
+
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="location_stack">location_stack=None</span>, <span className="parameter" id="event_type">event_type='InteractiveEvent'</span>)</small>
+
+
+<div className="content">
+
+Calculates what users did before converting by
+combining several models from the model hub.
+
+
+#### Parameters
+
+* **`data`** – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** – label of the conversion event.
+* **`location_stack`** – the location stack
+  * can be any slice of a [`modelhub.SeriesLocationStack`](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.mdx) type column
+  * if None - the whole location stack is taken.
+
+* **`event_type`** – event type. Must be a valid event_type
+(either parent or child).
+
+
+
+#### Returns
+
+bach DataFrame with results.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
 ### <span className="name">unique_sessions</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>)</small>
