@@ -316,6 +316,11 @@ html[class*='docs-doc-id-modeling/open-model-hub/api-reference/ModelHub'] h1,
 html[class*='docs-doc-id-modeling/open-model-hub/api-reference/Series'] h1 {
   font-size: 32px;
 }
+html[class*='docs-doc-id-modeling/open-model-hub/models/helper-functions'] h1,
+html[class*='docs-doc-id-modeling/open-model-hub/models/aggregation'] h1,
+html[class*='docs-doc-id-modeling/open-model-hub/models/machine-learning'] h1 {
+  font-size: 32px;
+}
 html[class*='docs-doc-id-modeling/bach/api-reference/DataFrame'] h1, 
 html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
   font-size: 32px;

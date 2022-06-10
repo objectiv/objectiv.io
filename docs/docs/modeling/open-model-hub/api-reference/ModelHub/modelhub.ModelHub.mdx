@@ -23,16 +23,20 @@ exploration.
 It includes models for a wide range of typical product analytics use cases.
 
 All models from the model hub can run on Bach DataFrames that contain data collected by the Objectiv
-tracker. To instantiate a DataFrame with Objectiv data use `ModelHub.from_objectiv_data()`. Models
+tracker. To instantiate a DataFrame with Objectiv data use [`get_objectiv_dataframe()`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_objectiv_dataframe.mdx). Models
 from the model hub assume that at least the columns of a DataFrame instantiated with this method are
 available in order to run properly. These columns are:
 
-The model hub has two main type of functions: [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) and [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx).
+The model hub has three main type of functions: helper functions, aggregation models and
+machine learning models.
 
-* `map` functions always return a series with the same shape and index as the DataFrame they originate
-from. This ensures they can be added as a column to that DataFrame.
-* `aggregate` fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
-`agg`.
+* Helper functions always return a series with the same shape and index as the DataFrame they originate
+from. This ensures they can be added as a column to that DataFrame. The helper functions can be accessed
+with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) accessor from a model hub instance.
+* Aggregation models return aggregated data in some form from the DataFrame. The aggregation models can be
+accessed with the [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx) or [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx) accessor from a model hub instance.
+* Machine learning models can be instantiated from the modelhub directly using the model’s name,
+i.e. : [`get_logistic_regression()`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_logistic_regression.mdx).
 
 ## Methods
 
@@ -41,7 +45,7 @@ from. This ensures they can be added as a column to that DataFrame.
 |                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`add_conversion_event`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.add_conversion_event.mdx)([location_stack, ...])       | Label events that are used as conversions.                                                                                                                                                                             |
-| [`get_logistic_regression`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_logistic_regression.mdx)(\*args, \*\*kwargs)          | Return an instance of the [`LogisticRegression`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.mdx) from the model hub.                                                                                                                                                       |
+| [`get_logistic_regression`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_logistic_regression.mdx)(\*args, \*\*kwargs)          | Return an instance of the [`LogisticRegression`](/modeling/open-model-hub/models/machine-learning/LogisticRegression/modelhub.LogisticRegression.mdx) from the model hub.                                                                                                                                                       |
 | [`get_objectiv_dataframe`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_objectiv_dataframe.mdx)([db_url, table_name, ...]) | Sets data from sql table into an [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) object.                                                                                                                                                                |
 | [`time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx)(data[, time_aggregation])                | Formats the moment column in the DataFrame, returns a SeriesString.                                                                                                                                                    |
 | [`to_metabase`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.to_metabase.mdx)(data[, model_type, config])           | Plot data in `data` to Metabase.                                                                                                                                                                                         |

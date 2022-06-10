@@ -9,30 +9,30 @@ title: Models
 
 The open model hub is  toolkit that contains functions and models that can be applied on data collected
 with Objectiv’s Tracker. There are three types of functions/models:
-1. Helper functions. These helper functions simplify manipulating and analyzing
-the data.
-2. Aggregation models. These models consist of a combination of Bach
+1. [Helper functions](/modeling/open-model-hub/models/helper-functions/index.mdx). These helper functions simplify manipulating and
+analyzing the data.
+2. [Aggregation models](/modeling/open-model-hub/models/aggregation/index.mdx). These models consist of a combination of Bach
 instructions that run some of the more common data analyses or product analytics metrics.
-3. Machine learning models.
+3. [Machine learning models](/modeling/open-model-hub/models/machine-learning/index.mdx).
 
 ## Helper functions
 
 Helper functions always return a series with the same shape and index as the
 [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) they are applied to. This ensures they can be added as a column to that
 DataFrame. Helper functions that return [`SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean) can be used to filter
-the data. The helper functions can be accessed with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx)
-accessor from a model hub instance.
+the data. The helper functions can be accessed with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) accessor from a
+model hub instance.
 
 <div className="table-autosummary">
 
 |                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`is_first_session`](/modeling/open-model-hub/models/Map/modelhub.Map.is_first_session.mdx)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
-| [`is_new_user`](/modeling/open-model-hub/models/Map/modelhub.Map.is_new_user.mdx)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
-| [`is_conversion_event`](/modeling/open-model-hub/models/Map/modelhub.Map.is_conversion_event.mdx)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
-| [`conversions_counter`](/modeling/open-model-hub/models/Map/modelhub.Map.conversions_counter.mdx)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
-| [`conversions_in_time`](/modeling/open-model-hub/models/Map/modelhub.Map.conversions_in_time.mdx)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
-| [`pre_conversion_hit_number`](/modeling/open-model-hub/models/Map/modelhub.Map.pre_conversion_hit_number.mdx)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
+| [`is_first_session`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_first_session.mdx)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
+| [`is_new_user`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_new_user.mdx)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
+| [`is_conversion_event`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_conversion_event.mdx)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
+| [`conversions_counter`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.conversions_counter.mdx)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
+| [`conversions_in_time`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.conversions_in_time.mdx)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
+| [`pre_conversion_hit_number`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.pre_conversion_hit_number.mdx)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
 
 
 </div>
@@ -48,16 +48,17 @@ product analytics metrics. Always return aggregated data in some form from the
 
 |                                                   |                                                                                                                                                                                                                        |
 | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`unique_users`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.unique_users.mdx)(data[, groupby])                     | Calculate the unique users in the Objectiv `data`.                                                                                                                                                                       |
-| [`unique_sessions`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.unique_sessions.mdx)(data[, groupby])                  | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
-| [`session_duration`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.session_duration.mdx)(data[, groupby, ...])            | Calculate the duration of sessions.                                                                                                                                                                                    |
-| [`frequency`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.frequency.mdx)(data)                                   | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |
-| [`top_product_features`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.top_product_features.mdx)(data[, location_stack, ...]) | Calculate the top used features in the product.                                                                                                                                                                        |
-| [`top_product_features_before_conversion`](/modeling/open-model-hub/models/Aggregate/modelhub.Aggregate.top_product_features_before_conversion.mdx)(data, ...) | Calculates what users did before converting by combining several models from the model hub.                                                                                                                            |
+| [`unique_users`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.unique_users.mdx)(data[, groupby])                     | Calculate the unique users in the Objectiv `data`.                                                                                                                                                                       |
+| [`unique_sessions`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.unique_sessions.mdx)(data[, groupby])                  | Calculate the unique sessions in the Objectiv `data`.                                                                                                                                                                    |
+| [`session_duration`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.session_duration.mdx)(data[, groupby, ...])            | Calculate the duration of sessions.                                                                                                                                                                                    |
+| [`frequency`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.frequency.mdx)(data)                                   | Calculate a frequency table for the number of users by number of sessions.                                                                                                                                             |
+| [`top_product_features`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.top_product_features.mdx)(data[, location_stack, ...]) | Calculate the top used features in the product.                                                                                                                                                                        |
+| [`top_product_features_before_conversion`](/modeling/open-model-hub/models/aggregation/modelhub.Aggregate.top_product_features_before_conversion.mdx)(data, ...) | Calculates what users did before converting by combining several models from the model hub.                                                                                                                            |
 
 
 </div>
 
 ## Machine learning models
 
-Currently we support  [logistic regression](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/index.mdx#modelhub-reference-logistic-regression) directly on Bach DataFrames and Series.
+Currently we support [`LogisticRegression`](/modeling/open-model-hub/models/machine-learning/LogisticRegression/modelhub.LogisticRegression.mdx) directly on Bach DataFrames
+and Series.

@@ -14,10 +14,10 @@ authors: ivarpruijn
 import BlogImage from '@site/src/components/blog-image'
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-[logistic-regression-model]: https://objectiv.io/docs/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/LogisticRegression/
+[logistic-regression-model]: https://objectiv.io/docs/modeling/open-model-hub/models/machine-learning/LogisticRegression/LogisticRegression/
 [logistic-regression-notebook]: https://objectiv.io/docs/modeling/example-notebooks/logistic-regression/
-[top-used-features-model]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/top_product_features/
-[top-features-before-conversion-model]: https://objectiv.io/docs/modeling/open-model-hub/models/Aggregate/top_product_features_before_conversion/
+[top-used-features-model]: https://objectiv.io/docs/modeling/open-model-hub/models/aggregation/top_product_features/
+[top-features-before-conversion-model]: https://objectiv.io/docs/modeling/open-model-hub/models/aggregation/top_product_features_before_conversion/
 [model-hub]: https://objectiv.io/docs/modeling/open-model-hub/
 [modeling]: https://objectiv.io/docs/modeling/
 [root-location]: https://objectiv.io/docs/taxonomy/reference/location-contexts/RootLocationContext/
