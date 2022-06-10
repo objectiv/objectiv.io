@@ -14,20 +14,16 @@ import {
   isRegexpStringMatch,
   useLocalPathname,
 } from '@docusaurus/theme-common';
+import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
+import NavbarItem, {type LinkLikeNavbarItemProps} from '@theme/NavbarItem';
 import type {
   DesktopOrMobileNavBarItemProps,
   Props,
 } from '@theme/NavbarItem/DropdownNavbarItem';
-import type {LinkLikeNavbarItemProps} from '@theme/NavbarItem';
-
-import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
-import NavbarItem from '@theme/NavbarItem';
 
 // OBJECTIV
-import { tagContent } from '@objectiv/tracker-browser';
+import { TrackedContentContext } from '@objectiv/tracker-react';
 // END OBJECTIV
-
-const dropdownLinkActiveClass = 'dropdown__link--active';
 
 function isItemActive(
   item: LinkLikeNavbarItemProps,
@@ -56,6 +52,7 @@ function DropdownNavbarItemDesktop({
   items,
   position,
   className,
+  onClick,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -89,6 +86,9 @@ function DropdownNavbarItemDesktop({
         'dropdown--show': showDropdown,
       })}>
       <NavbarNavLink
+        aria-haspopup="true"
+        aria-expanded={showDropdown}
+        role="button"
         href={props.to ? undefined : '#'}
         className={clsx('navbar__link', className)}
         {...props}
@@ -102,7 +102,10 @@ function DropdownNavbarItemDesktop({
         {props.children ?? props.label}
       </NavbarNavLink>
       {/* OBJECTIV: prevent collisions with active link on top of dropdown */}
-      <ul {...tagContent({ id: 'dropdown-menu' })} className="dropdown__menu">
+      <TrackedContentContext 
+        Component={'ul'} 
+        id={'dropdown-menu'} 
+        className="dropdown__menu">
       {/* END OBJECTIV */}
         {items.map((childItemProps, i) => (
           <NavbarItem
@@ -113,16 +116,22 @@ function DropdownNavbarItemDesktop({
                 setShowDropdown(false);
                 const nextNavbarItem = dropdownRef.current!.nextElementSibling;
                 if (nextNavbarItem) {
-                  (nextNavbarItem as HTMLElement).focus();
+                  const targetItem =
+                    nextNavbarItem instanceof HTMLAnchorElement
+                      ? nextNavbarItem
+                      : // Next item is another dropdown; focus on the inner
+                        // anchor element instead so there's outline
+                        nextNavbarItem.querySelector('a')!;
+                  targetItem.focus();
                 }
               }
             }}
-            activeClassName={dropdownLinkActiveClass}
+            activeClassName={'dropdown__link--active'}
             {...childItemProps}
             key={i}
           />
         ))}
-      </ul>
+      </TrackedContentContext>
     </div>
   );
 }
@@ -130,7 +139,8 @@ function DropdownNavbarItemDesktop({
 function DropdownNavbarItemMobile({
   items,
   className,
-  position: _position, // Need to destructure position from props so that it doesn't get passed on.
+  position, // Need to destructure position from props so that it doesn't get passed on.
+  onClick,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const localPathname = useLocalPathname();
@@ -154,7 +164,10 @@ function DropdownNavbarItemMobile({
       })}>
       <NavbarNavLink
         role="button"
-        className={clsx('menu__link menu__link--sublist', className)}
+        className={clsx(
+          'menu__link menu__link--sublist menu__link--sublist-caret',
+          className,
+        )}
         {...props}
         onClick={(e) => {
           e.preventDefault();
@@ -167,7 +180,7 @@ function DropdownNavbarItemMobile({
           <NavbarItem
             mobile
             isDropdownItem
-            onClick={props.onClick}
+            onClick={onClick}
             activeClassName="menu__link--active"
             {...childItemProps}
             key={i}

@@ -1,9 +1,10 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { TrackerConsole, NoopConsoleImplementation } from "@objectiv/tracker-core";
+import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
-import { getLocationHref, getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
-import { NoopConsoleImplementation, TrackerConsole } from "@objectiv/tracker-core";
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
+import React, { useState } from 'react';
+
+export const windowExists = () => typeof window !== 'undefined';
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -35,7 +36,6 @@ const cookiebotConsentStatistics = (): boolean => {
 }
 
 function Root({children}) {
-  const [trackerInitialized, setTrackerInitialized] = useState<boolean>(false);
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
@@ -47,16 +47,13 @@ function Root({children}) {
     }
   })
 
-  // Initialize Tracker only if we have all required configuration variables, and we are not in SSR.
-  if (!trackerInitialized && trackerEndPoint && trackerDocsApplicationId && trackerEndPoint && windowExists()) {
+  // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig
+  TrackerConsole.setImplementation(trackerConsoleEnabled && windowExists() ? console : NoopConsoleImplementation);
 
-    // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig.
-    TrackerConsole.setImplementation(trackerConsoleEnabled ? console : NoopConsoleImplementation);
-
-    // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
-    getOrMakeTracker({
-      applicationId: trackerDocsApplicationId as string,
+    // Create React Tracker instance
+    const tracker = new ReactTracker({
       endpoint: trackerEndPoint as string,
+      applicationId: trackerDocsApplicationId as string,
       active: cookiebotStatisticsConsent,
       plugins: [
         new RootLocationContextFromURLPlugin({
@@ -67,41 +64,17 @@ function Root({children}) {
           }
         })
       ]
-    });
-
-    setTrackerInitialized(true);
-  }
-
-  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-  useEffect(
-    () => {
-      // Skip if we are in SSR
-      if (!windowExists()) {
-        return;
-      }
-      if(cookiebotStatisticsConsent) {
-        getTrackerRepository().activateAll();
-      } else {
-        getTrackerRepository().deactivateAll();
-      }
-    },
-    [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
-  )
-
-  // Ignore if we are in SSR
-  const locationHref = getLocationHref();
-  useLayoutEffect(() => {
-    if (!locationHref) {
-      return;
-    }
-    scrollToAnchor();
-  }, [locationHref]);
-
-  return (
-    <>
-      {children}
-    </>
-  );
+    })
+  
+    // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
+    useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
+  
+    return (
+      <ObjectivProvider tracker={tracker}>
+        {children}
+      </ObjectivProvider>
+    );
+  
 }
 
 export default Root;

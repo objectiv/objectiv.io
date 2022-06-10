@@ -21,7 +21,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import objectivStyles from './objectiv.styles.module.css';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import NavbarItem, {type LinkLikeNavbarItemProps, Props as NavbarItemConfig} from '@theme/NavbarItem';
-import { tagNavigation } from '@objectiv/tracker-browser';
+import { TrackedNav } from '@objectiv/tracker-react';
 
 export default function NavbarMobileSidebarSecondaryMenu(): JSX.Element | null {
   const mobileSidebar = useNavbarMobileSidebar();
@@ -89,7 +89,9 @@ export default function NavbarMobileSidebarSecondaryMenu(): JSX.Element | null {
     <>
       <div className="navbar-sidebar__item menu">
       </div>
-      <div className="navbar-sidebar__item menu" {...tagNavigation({ id: 'docs-sidebar' })}>
+      <TrackedNav 
+        id={'docs-sidebar'}
+        className="navbar-sidebar__item menu">
         <div className={clsx(objectivStyles.objectivNavCategories)}>
           <span className={clsx(objectivStyles.objectivSelectIcon)}><img src={useBaseUrl('/img/icons/icon-bookmark.svg')} /></span>
           <ul className={clsx("menu__list", objectivStyles.objectivNavCategoriesDropDown)}>
@@ -110,7 +112,7 @@ export default function NavbarMobileSidebarSecondaryMenu(): JSX.Element | null {
             ))}
           </ul>
         </div>
-      </div>
+      </TrackedNav>
     </>
   );
 }

@@ -1,39 +1,19 @@
-import React from 'react';
-import clsx from 'clsx';
-import type {Props} from '@theme/Navbar/MobileSidebar/Layout';
+import React, {ComponentProps} from 'react';
+import Layout from '@theme-original/Navbar/MobileSidebar/Layout';
+import type LayoutType from '@theme/Navbar/MobileSidebar/Layout';
+import { TrackedOverlayContext } from '@objectiv/tracker-react';
 import {useNavbarSecondaryMenu} from '@docusaurus/theme-common';
 
-// OBJECTIV
-import { tagOverlay } from '@objectiv/tracker-browser';
-// OBJECTIV
+type Props = ComponentProps<typeof LayoutType>;
 
-export default function NavbarMobileSidebarLayout({
-  header,
-  primaryMenu,
-  secondaryMenu,
-}: Props): JSX.Element {
+export default function LayoutWrapper(props: Props): JSX.Element {
   const {shown: secondaryMenuShown} = useNavbarSecondaryMenu();
   return (
-    <div className="navbar-sidebar">
-      {header}
-      <div
-        // OBJECTIV
-        {...tagOverlay({
-          id: 'hamburger-menu',
-          options: {
-            trackVisibility: {
-              mode: 'manual',
-              isVisible: secondaryMenuShown
-            },
-          }
-        })}
-        className={clsx('navbar-sidebar__items', {
-          'navbar-sidebar__items--show-secondary': secondaryMenuShown,
-        })}>
-        <div className="navbar-sidebar__item menu"></div>
-        {/* END OBJECTIV */}
-        <div className="navbar-sidebar__item menu">{secondaryMenu}</div>
-      </div>
-    </div>
+    <TrackedOverlayContext
+      Component={'div'}
+      id={'hamburger-menu'}
+      isVisible={secondaryMenuShown}>
+        <Layout {...props} />
+    </TrackedOverlayContext>
   );
 }
