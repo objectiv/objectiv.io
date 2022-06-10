@@ -29,9 +29,7 @@ import { PressableContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <PressableContextWrapper id={'do-it'}>
-  <button onClick={() => doIt()}>
-    Do it
-  </button>
+  <Button title={'Do it'} onPress={() => doIt()}/>
 </PressableContextWrapper>
 ```
 
@@ -49,19 +47,23 @@ import {
 ```jsx
 <PressableContextWrapper id={'do-it'}>
   {(trackingContext) => (
-    <button onClick={async () => {
+    <Button title={'Do it'} onClick={async () => {
       trackPressEvent(trackingContext);
 
       const response = await doIt();
 
       if (response.ok) {
-        trackSuccessEvent(trackingContext);
+        trackSuccessEvent({
+          message: response.statusText,
+          ...trackingContext
+        });
       } else {
-        trackFailureEvent(trackingContext);
+        trackFailureEvent({
+          message: error.message,
+          ...trackingContext
+        });
       }
-    }}>
-      Do it
-    </button>
+    }}/>
   )}
 </PressableContextWrapper>
 ```

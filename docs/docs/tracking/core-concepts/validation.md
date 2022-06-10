@@ -24,7 +24,8 @@ browser console:
 
 * **Errors**: Warnings are thrown for unknown tagging/tracking calls, missing properties, or wrongly typed 
   properties.
-* **Uniqueness**: If an Event `id` and its [Location Stack](locations.md) are not unique, an Error is thrown.
+* **Uniqueness**: When Developer Tools are enabled, if an Event `id` and its [Location Stack](locations.md) are not unique, an Error is thrown.
+* **Taxonomy**: When Developer Tools are enabled, trackers will perform the same validation the [Collector](/tracking/collector/introduction.md) does, client-side. This will help to identify issues early on, during development, such as missing Contexts or malformed Location Stacks.
 
 ## Collector validation
 As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the [taxonomy and its properties](/taxonomy/reference/events/overview.md). 

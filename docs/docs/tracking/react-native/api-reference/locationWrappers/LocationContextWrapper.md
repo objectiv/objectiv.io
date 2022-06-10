@@ -38,12 +38,12 @@ import {
 <LocationContextWrapper 
   locationContext={ makeContentContext({ id: 'content' }) 
 }>
-  <div>
+  <View>
     ...
-  </div>
-  <span>
+  </View>
+  <View>
     ...
-  </span>
+  </View>
 </LocationContextWrapper>
 ```
 
@@ -61,12 +61,12 @@ import {
 }>
   {(trackingContext) => (
     <>
-      <div onClick={() => trackPressEvent(trackingContext)}>
+      <TouchableWithoutFeedback onPress={() => trackPressEvent(trackingContext)}>
         Hi!
-      </div>
-      <span>
+      </TouchableWithoutFeedback>
+      <View>
         ...
-      </span>
+      </View>
     </>
   )}
 </LocationContextWrapper>

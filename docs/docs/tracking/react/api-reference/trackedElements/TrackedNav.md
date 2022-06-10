@@ -6,7 +6,8 @@ Generates a `<nav>` Element wrapped in a [NavigationContext](/taxonomy/reference
 TrackedNav: (props: {
   children: ReactNode,
   id?: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -16,6 +17,7 @@ TrackedNav: (props: {
 | required | **children** | ReactNode |               |
 | optional | id           | string    | `nav`         |
 | optional | forwardId    | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -33,6 +35,11 @@ import { TrackedNav } from '@objectiv/tracker-react';
 <div>
   <header>
     ...
+    <TrackedNav>
+      <a href={'/'}>Homepage</a>
+      <a href={'/about'}>About us</a>
+      <a href={'/product'}>The Product</a>
+    </TrackedNav>
   </header>
   <main>
     ...
@@ -41,12 +48,24 @@ import { TrackedNav } from '@objectiv/tracker-react';
     ...
   </footer>
   <aside>
-    <TrackedNav>
+    <TrackedNav id={'Footer Navigation'}>
       <a href={'/'}>Homepage</a>
       <a href={'/privacy'}>Privacy</a>
       <a href={'/contact'}>Contact</a>
     </TrackedNav>
   </aside>
+</div>
+```
+
+By default, all Tracked Elements automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedNav id={'Main Navigation'} normalizeId={false}>
+    ...
+  </TrackedNav>
 </div>
 ```
 

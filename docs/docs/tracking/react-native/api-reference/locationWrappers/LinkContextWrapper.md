@@ -29,7 +29,7 @@ import { LinkContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <LinkContextWrapper id={'privacy'}>
-  <a href={'/privacy'}>Privacy</a>
+  <Link to={'Privacy'}>Privacy</Link>
 </LinkContextWrapper>
 ```
 
@@ -45,12 +45,12 @@ import {
 ```jsx
 <LinkContextWrapper id={'privacy'}>
   {(trackingContext) => (
-    <a 
-      href={'/privacy'} 
-      onClick={() => trackPressEvent(trackingContext)}
+    <Link 
+      to={'Provacy'} 
+      onPress={() => trackPressEvent(trackingContext)}
     >
       Privacy
-    </a>
+    </Link>
   )}
 </LinkContextWrapper>
 ```

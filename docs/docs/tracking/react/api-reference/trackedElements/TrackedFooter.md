@@ -6,16 +6,18 @@ Generates a `<footer>` Element wrapped in a [ContentContext](/taxonomy/reference
 TrackedFooter: (props: {
   children: ReactNode,
   id?: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type                                 | default value |
-|:--------:|:-------------|:-------------------------------------|:--------------|
-| required | **children** | ReactNode                            |               |
-| optional | id           | string                               | `footer`      |
-| optional | forwardId    | boolean                              | `false`       |
+|          |              | type      | default value |
+|:--------:|:-------------|:----------|:--------------|
+| required | **children** | ReactNode |               |
+| optional | id           | string    | `footer`      |
+| optional | forwardId    | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -38,6 +40,22 @@ import { TrackedFooter } from '@objectiv/tracker-react';
     ...
   </main>
   <TrackedFooter>
+    ...
+  </TrackedFooter>
+  
+  <TrackedFooter id={'Secondary Footer'}>
+    ...
+  </TrackedFooter>
+</div>
+```
+
+By default, all Tracked Elements automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<div>
+  <TrackedFooter id={'Main Footer'} normalizeId={false}>
     ...
   </TrackedFooter>
 </div>

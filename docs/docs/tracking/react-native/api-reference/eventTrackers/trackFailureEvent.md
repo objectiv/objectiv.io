@@ -5,6 +5,7 @@ Tracks a [FailureEvent](/taxonomy/reference/events/FailureEvent.md).
 ```ts
 trackFailureEvent = (parameters: {
   tracker: Tracker,
+  message: string,
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
   options?: TrackEventOptions,
@@ -18,12 +19,13 @@ This is a lower-level API.
 :::
 
 ## Parameters
-|          |                | type              |
-|:--------:|:---------------|:------------------|
-| required | **tracker**    | ReactNativeTracker      |
-| optional | options        | TrackEventOptions |
-| optional | locationStack  | LocationStack     |
-| optional | globalContexts | GlobalContexts    |
+|          |                | type               |
+|:--------:|:---------------|:-------------------|
+| required | **tracker**    | ReactNativeTracker |
+| required | **message**    | string             |
+| optional | options        | TrackEventOptions  |
+| optional | locationStack  | LocationStack      |
+| optional | globalContexts | GlobalContexts     |
 
 ## Returns
 `Promise<TrackerEvent>`

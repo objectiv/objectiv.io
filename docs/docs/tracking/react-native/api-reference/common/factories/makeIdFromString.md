@@ -13,7 +13,7 @@ makeIdFromString = (sourceString: string) => string | null
 ## Usage
 
 ```ts
-import { makeIdFromString } from "@objectiv/tracker-react-native";
+import { makeIdFromString } from "@objectiv/tracker-core";
 ```
 
 ```js

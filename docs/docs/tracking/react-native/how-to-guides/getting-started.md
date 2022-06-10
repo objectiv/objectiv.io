@@ -80,7 +80,7 @@ const loggingTracker = new ReactNativeTracker({
 });
 ```
 
-This tracker instance will log all Events to `TrackerConsole.debug`.
+This tracker instance will log all Events to `console.debug`.
 :::
 
 ## Installing React Navigation Plugin
@@ -107,7 +107,7 @@ const navigationContainerRef = useNavigationContainerRef();
 
 Then we can simply pass the ref to both the Plugin and the NavigationContainer: 
 ```tsx
-makeTracker({
+const tracker = new ReactNativeTracker({
   applicationId: 'app-id',
   endpoint: 'https://collector.app.dev',
   plugins: [
@@ -234,6 +234,26 @@ import { makeLinkPressListener } from "@objectiv/plugin-react-navigation";
   )}
 </NavigationContextWrapper>
 ```
+
+## Enable logging and validation
+While developing in a browser, or when running tests, it may be useful to enable more logging for debugging purposes.
+
+To do so, simply require the Developer Tools package before creating the tracker. 
+
+```ts
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+}
+
+const tracker = new ReactNativeTracker({
+  applicationId: 'app-id',
+  endpoint: 'https://collector.app.dev',
+});
+```
+
+The tracker instance will automatically detect their presence and log more info to the console and perform early validation.
+
+For more details check out [how-to configure logging](/tracking/react-native/how-to-guides/configuring-logging.md).
 
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.

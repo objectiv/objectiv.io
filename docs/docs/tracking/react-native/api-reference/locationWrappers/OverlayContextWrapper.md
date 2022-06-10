@@ -40,8 +40,9 @@ import { OverlayContextWrapper } from '@objectiv/tracker-react-native';
 ```jsx
 import { 
   OverlayContextWrapper, 
-  trackVisibility, 
-  trackPressEvent
+  trackHiddenEvent,
+  trackPressEvent,
+  trackVisibleEvent
 } from '@objectiv/tracker-react-native';
 ```
 
@@ -49,11 +50,10 @@ import {
 <OverlayContextWrapper id={'modal'}>
   {(trackingContext) => (
     <Modal 
-      onToggle={() => trackVisibility(trackingContext)}
+      onShow={() => trackVisibleEvent(trackingContext)}
+      onDismiss={() => trackHiddenEvent(trackingContext)}
       closeButton={
-        <button onClick={() => trackPressEvent(trackingContext)}>
-          close
-        </button>
+        <Button title={'close'} onPress={() => trackPressEvent(trackingContext)} />
       }
     >
       ...
