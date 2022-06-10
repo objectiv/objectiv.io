@@ -38,6 +38,9 @@ function BlogImage({
     classNames = clsx(styles.blogImage, styles.blogImageLarge)
   }
 
+  // ensure the tracked div has an ID even if there's no imageAlt (with links)
+  imageAlt = (imageAlt == '') ? url : imageAlt; 
+
   return (
     <TrackedDiv id={'image: ' + imageAlt}>
       <img src={useBaseUrl(url)} alt={imageAlt} className={classNames} />
