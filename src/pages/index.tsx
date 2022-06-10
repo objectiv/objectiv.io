@@ -1,18 +1,19 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { makeApplicationContext } from "@objectiv/tracker-core";
+import { PressableContextWrapper, TrackedDiv, TrackedHeader, trackPressEvent } from "@objectiv/tracker-react";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useRef } from 'react';
+import AnimatedGif from '../components/animated-gif';
+import AnnouncementBar from '../components/announcement-bar';
+import BeforeAfterImage from '../components/before-after-image';
 import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
-import BeforeAfterImage from '../components/before-after-image';
-import VimeoPlayer from '../components/vimeo-player';
-import AnimatedGif from '../components/animated-gif';
 import StarUsNotification, { StarUsAnchor } from '../components/star-us';
-import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
+import VimeoPlayer from '../components/vimeo-player';
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
-import AnnouncementBar from '../components/announcement-bar';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -34,7 +35,29 @@ export default function Home() {
         ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
         ctaText={'Learn more'} 
         icon={'icon-new-banner'} />
-      
+
+        <PressableContextWrapper id={'validation-example'}>
+          {(trackingContext) => (
+            <>
+              <div className={clsx('container', styles.heroContainer)}>
+                This interaction triggers two validation errors:
+                <button
+                  className={clsx("button", styles.ctaButton)}
+                  onClick={() => {
+                    trackPressEvent({
+                      ...trackingContext,
+                      globalContexts: [
+                        makeApplicationContext({id: 'application-id'})
+                      ]
+                    })
+                  }}
+                >Duplicated ApplicationContext and missing RootLocationContext</button>
+              </div>
+            </>
+            )}
+          </PressableContextWrapper>
+
+
       <TrackedHeader 
         id={'hero'} 
         className={clsx('hero hero--primary', styles.heroBanner)}>

@@ -55,6 +55,7 @@ function Root({children}) {
     endpoint: trackerEndPoint as string,
     applicationId: trackerApplicationId as string,
     active: cookiebotStatisticsConsent,
+    trackRootLocationContextFromURL: false
   })
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
