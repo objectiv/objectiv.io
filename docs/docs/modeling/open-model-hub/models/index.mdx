@@ -9,19 +9,19 @@ title: Models
 
 The open model hub is  toolkit that contains functions and models that can be applied on data collected
 with Objectiv’s Tracker. There are three types of functions/models:
-1. Helper functions. These helper functions simplify manipulating and analyzing
-the data.
-2. Aggregation models. These models consist of a combination of Bach
+1. [Helper functions](/modeling/open-model-hub/models/helper-functions/index.mdx). These helper functions simplify manipulating and
+analyzing the data.
+2. [Aggregation models](/modeling/open-model-hub/models/aggregation/index.mdx). These models consist of a combination of Bach
 instructions that run some of the more common data analyses or product analytics metrics.
-3. Machine learning models.
+3. [Machine learning models](/modeling/open-model-hub/models/machine-learning/index.mdx).
 
 ## Helper functions
 
 Helper functions always return a series with the same shape and index as the
 [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) they are applied to. This ensures they can be added as a column to that
 DataFrame. Helper functions that return [`SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean) can be used to filter
-the data. The helper functions can be accessed with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx)
-accessor from a model hub instance.
+the data. The helper functions can be accessed with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) accessor from a
+model hub instance.
 
 <div className="table-autosummary">
 
@@ -60,13 +60,5 @@ product analytics metrics. Always return aggregated data in some form from the
 
 ## Machine learning models
 
-Currently we support  [logistic regression](/modeling/open-model-hub/models/machine-learning/LogisticRegression/index.mdx#modelhub-reference-logistic-regression) directly on Bach
-DataFrames and Series.
-
-<div className="table-autosummary">
-
-|                                                   |                                                                                                                                                                                                                        |
-| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-
-</div>
+Currently we support [`LogisticRegression`](/modeling/open-model-hub/models/machine-learning/LogisticRegression/modelhub.LogisticRegression.mdx) directly on Bach DataFrames
+and Series.
