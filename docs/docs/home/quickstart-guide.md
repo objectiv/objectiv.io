@@ -38,7 +38,7 @@ This demo includes [example notebooks](/modeling/example-notebooks/index.mdx) to
 To explore the example notebooks, open the following URL in your browser:
 
 ```bash
-http://localhost:8888/lab/tree/model-hub-demo-notebook.ipynb?token=objectiv
+http://localhost:8888/lab/tree/basic-product-analytics.ipynb?token=objectiv
 ```
 For detailed modeling instructions, check out our [modeling docs](/modeling/index.mdx).
 
@@ -63,6 +63,10 @@ http://localhost:3000/
 We hope you enjoyed playing around with Objectiv. You can use `docker-compose down` to stop and remove the running containers properly.
 
 If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/tracking/collector/getting-started.md) to get started.
+
+:::info
+Want to test Objectiv on your own app/website without setting up a Collector and data store? [Get a Launchpad](./get-a-launchpad.md)
+:::
 
 To learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
 

@@ -1,0 +1,52 @@
+---
+id: open-model-hub-api-reference-model-hub-logistic-regression-modelhub-logistic-regression
+slug: /modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/LogisticRegression/
+title: LogisticRegression
+---
+
+# modelhub.LogisticRegression
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">modelhub.</span><span className="name">LogisticRegression</span>
+
+<small className="parameter-list">(<span className="parameter" id="*">\*args</span>, <span className="parameter" id="**">\*\*kwargs</span>)</small>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/models/logistic_regression.py)</span>
+
+<div className="content">
+
+A binary class logistic regression model that takes Bach data objects as input data.
+
+It is based on sklearn’s LogisticRegression. All supported methods are run on the database using Bach
+directly, with the exeption of [`fit()`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.fit.mdx). For the `fit` method,
+data is extracted from the database before applying sklearn’s fit method on the data.
+
+All parameters to instantiate sklearn’s logistic regression are supported.
+
+For the full documentation, including a description of the parameters, of the Logistic Regression
+model see:
+[https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
+
+## Methods
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                     |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`fit`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.fit.mdx)(X, y)                                         | Fits a binary class logistic regression model.                                                                                                                                                      |
+| [`get_params`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.get_params.mdx)()                                      | Return the parameters as a dictionary.                                                                                                                                                              |
+| [`predict`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.predict.mdx)(X)                                        | Predict the labels based on the fitted estimator.                                                                                                                                                   |
+| [`predict_proba`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.predict_proba.mdx)(X)                                  | Predict the probability of the 'True' label based on the fitted estimator.                                                                                                                          |
+| [`score`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.score.mdx)(X, y)                                       | Returns the accuracy score from a series of true values compared to predicted values.                                                                                                               |
+| [`set_params`](/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/modelhub.LogisticRegression.set_params.mdx)(\*\*params)                              | Set parameters for the model.                                                                                                                                                                       |
+
+
+</div>
+
+
+</div>
+
+
+</div>

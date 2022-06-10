@@ -43,7 +43,6 @@ FilterProvider COMPRESS DEFLATE "%{CONTENT_TYPE} = 'font/opentype'"
   </IfModule>
 </IfModule>
 
-
 # redirect to https
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^staging.objectiv.io [NC]
@@ -106,8 +105,19 @@ RewriteRule ^.*?$ /docs/modeling/bach/api-reference/DataFrame/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_reference_series)
 RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/ [L,R=301]
 
-# /docs/modeling/Series/bach.SeriesAbstractDateTime     -> /docs/modeling/bach/api-reference/Series/AbstractDateTime
-# /docs/modeling/Series/bach.SeriesAbstractDateTime.dt  -> /docs/modeling/bach/api-reference/Series/AbstractDateTime/dt
+# /docs/modeling/Series/bach.SeriesAbstractDateTime.dt          -> /docs/modeling/bach/api-reference/Series/
+# /docs/modeling/Series/bach.SeriesAbstractDateTime             -> /docs/modeling/bach/api-reference/Series/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/Series/bach.SeriesAbstractDateTime)
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/ [L,R=301]
+# /docs/modeling/bach/api-reference/Series/AbstractDateTime     -> /docs/modeling/bach/api-reference/Series/
+# /docs/modeling/bach/api-reference/Series/AbstractDateTime/dt  -> /docs/modeling/bach/api-reference/Series/
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach/api-reference/Series/AbstractDateTime)
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/ [L,R=301]
+# /docs/modeling/bach/api-reference/Series/Jsonb      -> /docs/modeling/bach/api-reference/Series/Json
+# /docs/modeling/bach/api-reference/Series/Jsonb/json -> /docs/modeling/bach/api-reference/Series/Json
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach/api-reference/Series/Jsonb)
+RewriteRule ^.*?$ /docs/modeling/bach/api-reference/Series/Json/ [L,R=301]
+
 # /docs/modeling/Series/bach.SeriesAbstractNumeric      -> /docs/modeling/bach/api-reference/Series/AbstractNumeric
 # /docs/modeling/Series/bach.SeriesAbstractNumeric.cut  -> /docs/modeling/bach/api-reference/Series/AbstractNumeric/cut
 # /docs/modeling/Series/bach.SeriesBoolean  	          -> /docs/modeling/bach/api-reference/Series/Boolean
@@ -132,7 +142,6 @@ RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling)/([a-zA-Z]+)(?:/bach\.[a-zA-Z]+(?:\.([\S]+))?)?$
 RewriteRule ^.*?$ /%1/bach/api-reference/%2/%3 [L,R=301]
 
-
 # /docs/modeling/example_notebooks    -> /docs/modeling/example-notebooks/
 # /docs/modeling/feature_engineering  -> /docs/modeling/example-notebooks/feature-engineering
 # /docs/modeling/machine_learning     -> /docs/modeling/example-notebooks/machine-learning
@@ -140,6 +149,7 @@ RewriteRule ^.*?$ /%1/bach/api-reference/%2/%3 [L,R=301]
 # /docs/modeling/open_taxonomy        -> /docs/modeling/example-notebooks/open-taxonomy
 # /docs/modeling/product_analytics    -> /docs/modeling/example-notebooks/product-analytics
 # /docs/modeling/user_intent          -> /docs/modeling/example-notebooks/user-intent
+# /docs/modeling/feature_importance   -> /docs/modeling/example-notebooks/feature-importance
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/example_notebooks)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/feature_engineering)(\/?)$
@@ -154,6 +164,8 @@ RewriteCond %{REQUEST_URI} ^/(docs/modeling/product_analytics)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/product-analytics [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/user_intent)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/example-notebooks/user-intent [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/example-notebooks/feature_importance)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-importance [L,R=301]
 
 # redirect old Taxonomy docs URLs
 # /docs/taxonomy/core_concepts -> /docs/taxonomy/

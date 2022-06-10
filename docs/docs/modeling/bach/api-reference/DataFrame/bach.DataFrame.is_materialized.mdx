@@ -27,8 +27,8 @@ A DataFrame that’s freshly constructed with [`from_table()`](/modeling/bach/ap
 a DataFrame will change it to be not materialized. Calling [`materialize()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.materialize.mdx) on a
 non-materialized DataFrame will return a new DataFrame that is materialized.
 
-TODO: a known problem is that DataFrames with ‘json’ columns are never in a materialized state, and
-    cannot be materialized with materialize()
+TODO: a known problem is that DataFrames with ‘json_postgres’ columns are never in a materialized
+    state, and cannot be materialized with materialize()
 
 
 

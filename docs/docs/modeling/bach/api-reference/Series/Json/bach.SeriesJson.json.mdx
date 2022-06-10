@@ -1,0 +1,98 @@
+---
+id: bach-api-reference-series-json-bach-series-json-json
+slug: /modeling/bach/api-reference/Series/Json/json/
+title: json
+---
+
+# bach.SeriesJson.json
+
+<div className="property">
+
+### <span className="type-annotation"><em>property </em></span> <span className="name">json</span>
+
+<span className="type-annotation"><em>
+
+: bach.series.series_json.JsonAccessor
+
+</em></span> 
+
+
+<div className="content">
+
+Get access to json operations via the class that’s returned through this accessor.
+Use as `my_series.json.get_value()` or `my_series.json[:2]`
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="name">JsonAccessor</span>
+
+<small className="parameter-list">(<span className="parameter" id="series_object">series_object</span>)</small>
+
+
+<div className="content">
+
+Class with accessor methods to JSON type data.
+
+<div className="method">
+
+### <span className="name">get_array_length</span>
+
+<small className="parameter-list">()</small>
+
+
+<div className="content">
+
+Get the length of the toplevel array.
+
+This assumes the top-level item in the json is an array. Will result in an exception (later on) if
+that’s not the case!
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
+### <span className="name">get_value</span>
+
+<small className="parameter-list">(<span className="parameter" id="key">key</span>, <span className="parameter" id="as_str">as_str=False</span>)</small>
+
+
+<div className="content">
+
+Get item from toplevel object by key.
+
+
+#### Parameters
+
+* **`key`** – the key to return the values for.
+* **`as_str`** – if True, it returns a string Series, json otherwise. Particular useful if the returned
+value is in fact a string. In json the string will be represented as a quoted string, if this
+field is set to true, the returned SeriesString will not have additional quotes.
+
+
+
+#### Returns
+
+series with the selected object value.
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>

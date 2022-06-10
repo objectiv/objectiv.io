@@ -20,8 +20,12 @@
   text-decoration: none;
   color: #a09536;
 }
-@media screen and (max-width: 966px) {
-  .announcement .announcementStar {
+@media screen and (max-width: 768px) {
+  .announcement span.announcementStarStart {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .announcement span.announcementStarEnd {
     display: none;
   }
 }

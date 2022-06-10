@@ -29,6 +29,7 @@ With default `method`, it calculates the mean of the session duration over the `
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.
 
+* **`exclude_bounces`** (bool) – if True only session durations greater than 0 will be considered
 * **`method`** (str) – ‘mean’ or ‘sum’
 
 
@@ -41,7 +42,7 @@ series with results.
 
 #### Return type
 
-bach.series.series_numeric.SeriesInt64
+[bach.series.series_numeric.SeriesInt64](/modeling/bach/api-reference/Series/Int/index.mdx#bach.SeriesInt64)
 
 
 

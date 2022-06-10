@@ -10,7 +10,7 @@ title: get_objectiv_dataframe
 
 ### <span className="name">get_objectiv_dataframe</span>
 
-<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name='data'</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name='data'</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="bq_credentials_path">bq_credentials_path=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
@@ -34,6 +34,8 @@ is used to create one. If that’s not there, the default of
 the first date in the sql table. Format as ‘YYYY-MM-DD’.
 * **`end_date`** (Optional[str]) – last date for which data is loaded to the DataFrame. If None, data is loaded up to
 and including the last date in the sql table. Format as ‘YYYY-MM-DD’.
+* **`bq_credentials_path`** (Optional[str]) – path for BigQuery credentials. If db_url is for BigQuery engine, this
+parameter is required.
 
 
 
