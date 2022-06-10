@@ -63,7 +63,7 @@ RewriteCond %{REQUEST_URI} ^/(docs/modeling/models)([a-zA-Z]*)
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/%2 [L,R=301]
 
 # /docs/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression/      -> /docs/modeling/open-model-hub/models/machine-learning/
-RewriteCond %{REQUEST_URI} ^/(docs/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression)(\/?)$
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/open-model-hub/api-reference/ModelHub/LogisticRegression)
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/models/machine-learning/ [L,R=301]
 
 # /docs/modeling/modelhub_api_reference/modelhub.Aggregate.frequency            -> /docs/modeling/open-model-hub/models/aggregation/frequency
