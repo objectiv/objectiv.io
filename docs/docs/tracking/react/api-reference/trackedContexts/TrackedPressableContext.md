@@ -10,7 +10,8 @@ TrackedPressableContext: (props: {
   forwardId?: boolean,
   title?: string,
   forwardTitle?: boolean,
-  waitUntilTracked?: boolean
+  waitUntilTracked?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -21,15 +22,16 @@ We are currently working on improving these definitions to enable support for an
 :::
 
 ## Parameters
-|          |                   | type                                 | default value                       |
-|:--------:|:------------------|:-------------------------------------|:------------------------------------|
-| required | **children**      | ReactNode                            |                                     |
-| required | **Component**     | ComponentType &vert; keyof ReactHTML |                                     |
-| optional | id                | string                               | inferred from `children` or `title` |
-| optional | forwardId         | boolean                              | `false`                             |
-| optional | title             | string                               |                                     |
-| optional | forwardTitle      | boolean                              | `false`                             |
-| optional | waitUntilTracked  | boolean                              | `false`                             |
+|          |                  | type                                 | default value                       |
+|:--------:|:-----------------|:-------------------------------------|:------------------------------------|
+| required | **children**     | ReactNode                            |                                     |
+| required | **Component**    | ComponentType &vert; keyof ReactHTML |                                     |
+| optional | id               | string                               | inferred from `children` or `title` |
+| optional | forwardId        | boolean                              | `false`                             |
+| optional | title            | string                               |                                     |
+| optional | forwardTitle     | boolean                              | `false`                             |
+| optional | waitUntilTracked | boolean                              | `false`                             |
+| optional | normalizeId      | boolean                              | `true`                              |
 
 ## Returns
 `ReactElement`
@@ -48,13 +50,31 @@ import { TrackedPressableContext } from '@objectiv/tracker-react';
   Do it
 </TrackedPressableContext>
 
-// Whenever inferring 'id' is not possible, due to children not having any text, a `title` can be specified
+// A `title` can be specified whenever inferring 'id' is not possible
 <TrackedPressableContext Component={'button'} onClick={ () => doIt() } title={'Do it'}>
   <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 
 // Or just a manual `id`, either one will do the job
 <TrackedPressableContext Component={'button'} onClick={ () => doIt() } id={'do-it'}>
+  <img src="/do-it.jpg"/>
+</TrackedPressableContext>
+```
+
+By default, all Tracked Context Components automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedPressableContext Component={'button'} onClick={...} normalizeId={false}>
+  Do it
+</TrackedPressableContext>
+
+<TrackedPressableContext Component={'button'} onClick={...} title={'Do it'} normalizeId={false}>
+  <img src="/do-it.jpg"/>
+</TrackedPressableContext>
+
+<TrackedPressableContext Component={'button'} onClick={...} id={'Do it'} normalizeId={false}>
   <img src="/do-it.jpg"/>
 </TrackedPressableContext>
 ```

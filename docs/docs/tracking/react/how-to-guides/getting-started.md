@@ -17,32 +17,27 @@ npm install @objectiv/tracker-react
 ```
 
 ## Configure the Tracker
+Ideally, the tracker should be configured as early as possible. Best before the Application renders or as high up as possible in the component tree.
 
-In this example we create a new ReactTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md).
+In this example we create the tracker instance in the `index` of the Application, right before rendering the App component.
 
 ```ts
 import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
 ```
 
 ```tsx
-const App = ({children}) => {
+const tracker = new ReactTracker({
+  applicationId: 'app-id',
+  endpoint: 'https://collector.app.dev'
+})
 
-  const tracker = new ReactTracker({
-    endpoint: 'https://collector.app.dev',
-    applicationId: 'app-id'
-  })
-
-  return (
-    <ObjectivProvider tracker={tracker}>
-      {children}
-    </ObjectivProvider>
-  );
-}
+ReactDOM.render(
+  <ObjectivProvider tracker={tracker}>
+    <App />
+  </ObjectivProvider>,
+  document.getElementById('root')
+);
 ```
-
-:::info
-Ideally, the tracker should be configured as early as possible. Best before the Application renders or as high up as possible in the component tree.
-:::
 
 :::tip Just trying things out?
 [React Tracker](/tracking/react/api-reference/ReactTracker.md) is quite modular, and it's possible to set it up without having a [Collector](/tracking/collector/getting-started.md) running.
@@ -73,29 +68,28 @@ const loggingTracker = new ReactTracker({
 });
 ```
 
-This tracker instance will log all Events to `TrackerConsole.debug`.
+This tracker instance will log all Events to `console.debug`.
 :::
 
-### Before the Application renders
-Here is how the same can be achieved in the `index` of the Application, right before rendering the App.
+## Enable logging and validation
+While developing in a browser, or when running tests, it may be useful to enable more logging for debugging purposes.
+
+To do so, simply require the Developer Tools package before creating the tracker. 
 
 ```ts
-import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
-```
+if (process.env.NODE_ENV.startsWith('dev')) {
+  require('@objectiv/developer-tools');
+}
 
-```tsx
-makeTracker({
+const tracker = new ReactTracker({
   applicationId: 'app-id',
   endpoint: 'https://collector.app.dev'
-});
-
-ReactDOM.render(
-  <ObjectivProvider tracker={tracker}>
-    <App />
-  </ObjectivProvider>,
-  document.getElementById('root')
-);
+})
 ```
+
+The tracker instance will automatically detect their presence and log more info to the console and perform early validation.
+
+For more details check out [how-to configure logging](/tracking/react/how-to-guides/configuring-logging.md).
 
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded.

@@ -8,7 +8,8 @@ TrackedContentContext: (props: {
   children: ReactNode,
   Component: ComponentType | keyof ReactHTML,
   id: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
@@ -25,6 +26,7 @@ We are currently working on improving these definitions to enable support for an
 | required | **Component** | ComponentType &vert; keyof ReactHTML |               |
 | required | **id**        | string                               |               |
 | optional | forwardId     | boolean                              | `false`       |
+| optional | normalizeId   | boolean                              | `true`        |
 
 ## Returns
 `ReactElement`
@@ -44,6 +46,16 @@ import { TrackedContentContext } from '@objectiv/tracker-react';
   <TrackedContentContext Component={'p'} id={'intro'}>
     ...
   </TrackedContentContext>
+</TrackedContentContext>
+```
+
+By default, all Tracked Context Components automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedContentContext Component={'p'} id={'Body Section'} normalizeId={false}>
+...
 </TrackedContentContext>
 ```
 

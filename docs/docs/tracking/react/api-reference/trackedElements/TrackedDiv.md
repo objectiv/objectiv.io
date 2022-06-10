@@ -6,16 +6,18 @@ Generates a `<div>` Element wrapped in a [ContentContext](/taxonomy/reference/lo
 TrackedDiv: (props: {
   children: ReactNode,
   id: string,
-  forwardId?: boolean
+  forwardId?: boolean,
+  normalizeId?: boolean
 }) => ReactElement
 ```
 
 ## Parameters
-|          |               | type      | default value |
-|:--------:|:--------------|:----------|:--------------|
-| required | **children**  | ReactNode |               |
-| required | **id**        | string    |               |
-| optional | forwardId     | boolean   | `false`       |
+|          |              | type      | default value |
+|:--------:|:-------------|:----------|:--------------|
+| required | **children** | ReactNode |               |
+| required | **id**       | string    |               |
+| optional | forwardId    | boolean   | `false`       |
+| optional | normalizeId  | boolean   | `true`        |
 
 ## Returns
 `ReactElement`
@@ -33,6 +35,19 @@ import { TrackedDiv } from '@objectiv/tracker-react';
 <TrackedDiv id={'content'}>
   ...
   <TrackedDiv id={'details'}>
+    ...
+  </TrackedDiv>
+</TrackedDiv>
+```
+
+By default, all Tracked Elements automatically normalize their Context identifiers to a kebab-cased format.
+
+This can be disabled via the  `normalizeId` option:
+
+```jsx
+<TrackedDiv id={'content'}>
+  ...
+  <TrackedDiv id={'leave this as is'} normalizeId={false}>
     ...
   </TrackedDiv>
 </TrackedDiv>

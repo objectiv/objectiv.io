@@ -29,7 +29,7 @@ import { InputContextWrapper } from '@objectiv/tracker-react-native';
 
 ```jsx
 <InputContextWrapper id={'email'}>
-  <input type={'email'} />
+  <TextInput keyboardType={'email-address'} />
 </InputContextWrapper>
 ```
 
@@ -45,8 +45,7 @@ import {
 ```jsx
 <InputContextWrapper id={'search'}>
   {(trackingContext) => (
-    <input 
-      type={'text'} 
+    <TextInput
       onBlur={() => trackInputChangeEvent(trackingContext)} 
     />
   )}

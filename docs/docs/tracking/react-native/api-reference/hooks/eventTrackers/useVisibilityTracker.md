@@ -4,25 +4,25 @@ Returns a ready-to-trigger [trackVisibility](/tracking/react-native/api-referenc
 
 ```ts
 useVisibilityTracker = (parameters: {
-  isVisible: boolean,
   tracker?: Tracker,
   options?: TrackEventOptions,
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
-} = {}) => Function
+} = {}) => ({ isVisible: boolean }) => Promise<TrackerEvent>
 ```
 
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **isVisible**  | boolean           |               |
-| optional | tracker        | ReactNativeTracker      |               |
-| optional | options        | TrackEventOptions |               |
-| optional | locationStack  | LocationStack     |               |
-| optional | globalContexts | GlobalContexts    |               |
+|          |                | type               | default value |
+|:--------:|:---------------|:-------------------|:--------------|
+| optional | tracker        | ReactNativeTracker |               |
+| optional | options        | TrackEventOptions  |               |
+| optional | locationStack  | LocationStack      |               |
+| optional | globalContexts | GlobalContexts     |               |
 
 ## Returns
-`Function`
+```ts
+({ isVisible: boolean }) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts

@@ -54,4 +54,3 @@ Common modules and helper functions used across the whole Browser Tracker. All o
 - [objectivWindowInterface](/tracking/browser/api-reference/common/objectivWindowInterface.md)
 - [runIfValueIsNotUndefined](/tracking/browser/api-reference/common/runIfValueIsNotUndefined.md)
 - [trackerErrorHandler](/tracking/browser/api-reference/common/trackerErrorHandler.md)
-- [windowExists](/tracking/browser/api-reference/common/windowExists.md)

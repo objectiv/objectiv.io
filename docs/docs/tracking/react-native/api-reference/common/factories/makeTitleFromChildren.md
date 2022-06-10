@@ -18,7 +18,7 @@ import { makeTitleFromChildren } from "@objectiv/tracker-react-native";
 ```tsx
 makeTitleFromChildren(123);                       // '123'
 makeTitleFromChildren(['test', 123], 'test 123'); // 'click-me'
-makeTitleFromChildren(<div>what?</div>);          // 'what?'
+makeTitleFromChildren(<View>what?</View>);        // 'what?'
 ```
 
 <br />
