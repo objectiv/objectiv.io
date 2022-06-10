@@ -1,23 +1,25 @@
 ---
-id: open-model-hub-models-aggregate-modelhub-aggregate-unique-users
-slug: /modeling/open-model-hub/models/Aggregate/unique_users/
-title: unique_users
+id: open-model-hub-models-aggregation-modelhub-aggregate-session-duration
+slug: /modeling/open-model-hub/models/aggregation/session_duration/
+title: session_duration
 ---
 
-# modelhub.Aggregate.unique_users
+# modelhub.Aggregate.session_duration
 
 <div className="method">
 
-### <span className="name">unique_users</span>
+### <span className="name">session_duration</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="groupby">groupby=NotSet.token</span>, <span className="parameter" id="exclude_bounces">exclude_bounces=True</span>, <span className="parameter" id="method">method='mean'</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/aggregate.py)</span>
 
 <div className="content">
 
-Calculate the unique users in the Objectiv `data`.
+Calculate the duration of sessions.
+
+With default `method`, it calculates the mean of the session duration over the `groupby`.
 
 
 #### Parameters
@@ -27,6 +29,8 @@ Calculate the unique users in the Objectiv `data`.
   * if not_set it defaults to using [`ModelHub.time_agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.time_agg.mdx).
   * if None it aggregates over all data.
 
+* **`exclude_bounces`** (bool) – if True only session durations greater than 0 will be considered
+* **`method`** (str) – ‘mean’ or ‘sum’
 
 
 

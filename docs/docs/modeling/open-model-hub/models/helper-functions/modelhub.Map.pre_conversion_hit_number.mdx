@@ -1,14 +1,14 @@
 ---
-id: open-model-hub-models-map-modelhub-map-conversions-in-time
-slug: /modeling/open-model-hub/models/Map/conversions_in_time/
-title: conversions_in_time
+id: open-model-hub-models-helper-functions-modelhub-map-pre-conversion-hit-number
+slug: /modeling/open-model-hub/models/helper-functions/pre_conversion_hit_number/
+title: pre_conversion_hit_number
 ---
 
-# modelhub.Map.conversions_in_time
+# modelhub.Map.pre_conversion_hit_number
 
 <div className="method">
 
-### <span className="name">conversions_in_time</span>
+### <span className="name">pre_conversion_hit_number</span>
 
 <small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="partition">partition='session_id'</span>)</small>
 
@@ -17,8 +17,9 @@ title: conversions_in_time
 
 <div className="content">
 
-Counts the number of time a user is converted at a moment in time given a partition (ie ‘session_id’
-or ‘user_id’).
+Returns a count backwards from the first conversion, given the partition. I.e. first hit before
+converting is 1, second hit before converting 2, etc. Returns None if there are no conversions
+in the partition or after the first conversion.
 
 
 #### Parameters

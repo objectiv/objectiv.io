@@ -1,33 +1,36 @@
 ---
-id: open-model-hub-models-aggregate-modelhub-aggregate-top-product-features
-slug: /modeling/open-model-hub/models/Aggregate/top_product_features/
-title: top_product_features
+id: open-model-hub-models-aggregation-modelhub-aggregate-top-product-features-before-conversion
+slug: /modeling/open-model-hub/models/aggregation/top_product_features_before_conversion/
+title: top_product_features_before_conversion
 ---
 
-# modelhub.Aggregate.top_product_features
+# modelhub.Aggregate.top_product_features_before_conversion
 
 <div className="method">
 
-### <span className="name">top_product_features</span>
+### <span className="name">top_product_features_before_conversion</span>
 
-<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="location_stack">location_stack=None</span>, <span className="parameter" id="event_type">event_type='InteractiveEvent'</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="data">data</span>, <span className="parameter" id="name">name</span>, <span className="parameter" id="location_stack">location_stack=None</span>, <span className="parameter" id="event_type">event_type='InteractiveEvent'</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/aggregate.py)</span>
 
 <div className="content">
 
-Calculate the top used features in the product.
+Calculates what users did before converting by
+combining several models from the model hub.
 
 
 #### Parameters
 
 * **`data`** ([bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)) – [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) to apply the method on.
+* **`name`** (str) – label of the conversion event.
 * **`location_stack`** ([SeriesLocationStack](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.mdx)) – the location stack
   * can be any slice of a [`modelhub.SeriesLocationStack`](/modeling/open-model-hub/api-reference/SeriesLocationStack/modelhub.SeriesLocationStack.mdx) type column
   * if None - the whole location stack is taken.
 
-* **`event_type`** (str) – event type. Must be a valid event_type (either parent or child).
+* **`event_type`** (str) – event type. Must be a valid event_type
+(either parent or child).
 
 
 

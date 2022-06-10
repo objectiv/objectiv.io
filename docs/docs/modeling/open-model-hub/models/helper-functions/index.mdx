@@ -1,0 +1,44 @@
+---
+id: open-model-hub-models-helper-functions-index
+sidebar_position: 1
+slug: /modeling/open-model-hub/models/helper-functions/
+title: Helper functions
+---
+
+# Helper functions
+
+<div className="class">
+
+## <span className="type-annotation"><em>class</em></span> <span className="additional-name">modelhub.</span><span className="name">Map</span>
+
+<small className="parameter-list">(<span className="parameter" id="mh">mh</span>)</small>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/map.py)</span>
+
+<div className="content">
+
+Methods in this class can be used to map data in a DataFrame with Objectiv data to series values.
+
+Always returns Series with same index as the DataFrame the method is applied to, so the result can be set
+as columns to that DataFrame.
+
+
+</div>
+
+
+</div>
+
+<div className="table-autosummary">
+
+|                                                   |                                                                                                                                                                                                                        |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`is_first_session`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_first_session.mdx)(data)                            | Labels all hits in a session True if that session is the first session of that user in the data.                                                                                                                       |
+| [`is_new_user`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_new_user.mdx)(data[, time_aggregation])             | Labels all hits True if the user is first seen in the period given `time_aggregation`.                                                                                                                                   |
+| [`is_conversion_event`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.is_conversion_event.mdx)(data, name)                   | Labels a hit True if it is a conversion event, all other hits are labeled False.                                                                                                                                       |
+| [`conversions_counter`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.conversions_counter.mdx)(data, name[, partition])      | Counts the total number of conversions given a partition (ie session_id or user_id).                                                                                                                                   |
+| [`conversions_in_time`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.conversions_in_time.mdx)(data, name[, partition])      | Counts the number of time a user is converted at a moment in time given a partition (ie 'session_id' or 'user_id').                                                                                                    |
+| [`pre_conversion_hit_number`](/modeling/open-model-hub/models/helper-functions/modelhub.Map.pre_conversion_hit_number.mdx)(data, name[, ...])      | Returns a count backwards from the first conversion, given the partition.                                                                                                                                              |
+
+
+</div>
