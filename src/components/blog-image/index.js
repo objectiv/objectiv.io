@@ -39,7 +39,7 @@ function BlogImage({
   }
 
   // ensure the tracked div has an ID even if there's no imageAlt (with links)
-  imageAlt = (imageAlt == '') ? url : imageAlt; 
+  imageAlt = (imageAlt === '') ? url : imageAlt; 
 
   return (
     <TrackedDiv id={'image: ' + imageAlt}>
