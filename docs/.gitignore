@@ -7,6 +7,9 @@
 # Yarn Integrity file
 .yarn-integrity
 
+# Location Yarn configuration
+.yarnrc
+
 # Logs
 logs
 *.log
