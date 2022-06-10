@@ -38,7 +38,7 @@ This demo includes [example notebooks](/modeling/example-notebooks/index.mdx) to
 To explore the example notebooks, open the following URL in your browser:
 
 ```bash
-http://localhost:8888/lab/tree/model-hub-demo-notebook.ipynb?token=objectiv
+http://localhost:8888/lab/tree/basic-product-analytics.ipynb?token=objectiv
 ```
 For detailed modeling instructions, check out our [modeling docs](/modeling/index.mdx).
 
