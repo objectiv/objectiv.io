@@ -132,6 +132,7 @@ nav .DocSearch-Button-Keys span:first-child {
 }
 .navbar .navGitHub {
   background-image: url('/img/icons/icon-nav-github.svg');
+  color: transparent; 
 }
 .navbar .navGitHub:hover {
   background-image: url('/img/icons/icon-nav-github-hover.svg');
@@ -145,6 +146,7 @@ nav .DocSearch-Button-Keys span:first-child {
 }
 .navbar .navTwitter {
   background-image: url('/img/icons/icon-nav-twitter.svg');
+  color: transparent; 
 }
 .navbar .navTwitter:hover {
   background-image: url('/img/icons/icon-nav-twitter-hover.svg');
@@ -510,7 +512,8 @@ div.method {
   }
 }
 
-.sphinxAnchor {
+/* Fix an offset issue with the top nav when using Sphinx anchors */
+.hidden-anchor, .anchor {
   scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
 }
 
