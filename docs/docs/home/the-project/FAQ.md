@@ -98,7 +98,7 @@ Objectiv is licensed under the [Apache License, Version 2.0](https://www.apache.
 Objectiv currently requires a PostgreSQL database and works in any environment where you can run containers. We're working on support for Snowplow and BigQuery for event handling at scale. Amazon Redshift is planned next and more will follow.
 
 #### What's the fastest way to test-drive Objectiv with my current app/website?
-If you want to test Objectiv with your own project, we're here to help out. We can set up a test collector & back-end for you. All you'll have to do is instrument Objectiv's tracker to a part of your app. <JoinSlackLink linkText='Join us on Slack' /> and reach out if you're interested.
+If you want to test Objectiv with your own project, we're here to help out. We can set up a test collector & back-end for you. All you'll have to do is instrument Objectiv's tracker to a part of your app. <JoinSlackLink linkText='Join us on Slack' trackingId='ops-fastest-way-to-test-join-slack' /> and reach out if you're interested.
 
 #### Does it scale?
 Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. 
@@ -120,4 +120,4 @@ We want to make sure the taxonomy enables collection of data that meets the requ
 #### Do you plan to develop a taxonomy for other areas?
 The current version of our taxonomy is built for product analytics as we believe it's the cornerstone of the user journey. We're currently extending it to cover marketing use cases as well. 
 
-We’ve built a solid foundation that can be used to create taxonomies for other fields, e.g. Payments and CRM. If you’ve got a lot of experience in a particular field and would like to contribute, please  <JoinSlackLink linkText='join us on Slack' />.
+We’ve built a solid foundation that can be used to create taxonomies for other fields, e.g. Payments and CRM. If you’ve got a lot of experience in a particular field and would like to contribute, please  <JoinSlackLink linkText='join us on Slack' trackingId='company-plan-to-develop-taxonomy-join-slack' />.

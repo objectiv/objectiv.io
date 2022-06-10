@@ -1,23 +1,14 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-import React from 'react';
-import type {Props} from '@theme/Logo';
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import React, {ComponentProps} from 'react';
+import Logo from '@theme-original/Logo';
+import type LogoType from '@theme/Logo';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 
-// OBJECTIV
-import OriginalLogo from '@theme-original/Logo';
-import { tagLink } from "@objectiv/tracker-browser";
-// END OBJECTIV
+type Props = ComponentProps<typeof LogoType>;
 
-export default function Logo(props: Props): JSX.Element {
+export default function LogoWrapper(props: Props): JSX.Element {
   const {
     siteConfig: {title},
   } = useDocusaurusContext();
@@ -27,10 +18,5 @@ export default function Logo(props: Props): JSX.Element {
 
   const logoLink = useBaseUrl(logo.href || '/');
 
-  // OBJECTIV
-  return <OriginalLogo
-    {...tagLink({ id: 'logo', href: logoLink })}
-    {...props} 
-  />
-  // END OBJECTIV
+  return <TrackedLink Component={Logo} id={'logo'} href={logoLink} title={navbarTitle} {...props} />
 }
