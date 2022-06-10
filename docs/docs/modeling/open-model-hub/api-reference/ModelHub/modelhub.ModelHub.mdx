@@ -23,16 +23,20 @@ exploration.
 It includes models for a wide range of typical product analytics use cases.
 
 All models from the model hub can run on Bach DataFrames that contain data collected by the Objectiv
-tracker. To instantiate a DataFrame with Objectiv data use `ModelHub.from_objectiv_data()`. Models
+tracker. To instantiate a DataFrame with Objectiv data use [`get_objectiv_dataframe()`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_objectiv_dataframe.mdx). Models
 from the model hub assume that at least the columns of a DataFrame instantiated with this method are
 available in order to run properly. These columns are:
 
-The model hub has two main type of functions: [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) and [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx).
+The model hub has three main type of functions: helper functions, aggregation models and
+machine learning models.
 
-* `map` functions always return a series with the same shape and index as the DataFrame they originate
-from. This ensures they can be added as a column to that DataFrame.
-* `aggregate` fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
-`agg`.
+* Helper functions always return a series with the same shape and index as the DataFrame they originate
+from. This ensures they can be added as a column to that DataFrame. The helper functions can be accessed
+with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) accessor from a model hub instance.
+* Aggregation models return aggregated data in some form from the DataFrame. The aggregation models can be
+accessed with the [`agg`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.agg.mdx) or [`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx) accessor from a model hub instance.
+* Machine learning models can be instantiated from the modelhub directly using the model’s name,
+i.e. : [`get_logistic_regression()`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_logistic_regression.mdx).
 
 ## Methods
 
