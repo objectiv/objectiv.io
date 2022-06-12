@@ -29,7 +29,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 [configure-dev-tools]: https://objectiv.io/docs/tracking/react/how-to-guides/configuring-logging#enabling-developer-tools
 [gh-822]: https://github.com/objectiv/objectiv-analytics/pull/822
 [gh-748]: https://github.com/objectiv/objectiv-analytics/pull/748
-[gh-748]: https://github.com/objectiv/objectiv-analytics/pull/814
+[gh-814]: https://github.com/objectiv/objectiv-analytics/pull/814
 [gh-799]: https://github.com/objectiv/objectiv-analytics/pull/799
 [collisions]: https://objectiv.io/docs/tracking/core-concepts/browser/#solving-collisions
 [release-office-hours]: https://meet.google.com/sgc-jqgb-mtc
@@ -124,7 +124,7 @@ To just upgrade the tracker to the latest version, follow instructions for [your
 We also introduced a few changes that may need some migration for some users; please double-check these PRs: 
 - [React Tracker: Consistent `id` normalization in components][gh-822];
 - [React Tracker: Success & Failure event tracking hooks improvements][gh-748];
-- [React Tracker useTrackVisibility hooks improvements][gh-748];
+- [React Tracker useTrackVisibility hooks improvements][gh-814];
 - [PathContext validation: required for InteractiveEvents][gh-799].
 
 :::
