@@ -32,9 +32,7 @@ function Stargazers(cta) {
     return result.data.stargazers_count.toLocaleString();
   };
 
-  const trackFailureEvent = useFailureEventTracker({
-    message: "Could not retrieve stargazers count"
-  });
+  const trackFailureEvent = useFailureEventTracker();
 
   // Use REST API: https://docs.github.com/en/rest/repos/repos#get-a-repository
   const restEndpoint = '/repos/' + organizationName + '/' + gitHubRepo
@@ -58,7 +56,9 @@ function Stargazers(cta) {
         console.log(err.response?.data || err);
         setStargazersCount(null);
         // track the error
-        trackFailureEvent()
+        trackFailureEvent({
+          message: "Could not retrieve stargazers count"
+        })
       },
     }
   );

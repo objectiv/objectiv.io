@@ -27,16 +27,29 @@ The open model hub is a growing collection of open-source, free to use data mode
 combine and run for product analysis and exploration. It includes models for a wide range of typical product
 analytics use cases. The source is available for all models and you’re free to make any changes to them.
 
-The model hub has two main type of functions: [Map](/modeling/open-model-hub/models/Map/index.mdx#models-reference-mapping) and
-[Aggregate](/modeling/open-model-hub/models/Aggregate/index.mdx#models-reference-aggregation).
+The model hub has three types of functions/models:
+1. [Helper functions](/modeling/open-model-hub/models/helper-functions/index.mdx). These helper functions
+simplify manipulating and
+analyzing the data.
+2. [Aggregation models](/modeling/open-model-hub/models/aggregation/index.mdx). These models consist of a
+combination of Bach
+instructions that run some of the more common data analyses or product analytics metrics.
+3. [Machine learning models](/modeling/open-model-hub/models/machine-learning/index.mdx).
 
-* `map` functions always return a series with the same shape and index as the DataFrame they are applied to.
-This ensures they can be added as a column to that DataFrame. `map` functions that return SeriesBoolean can
-be used with to filter the data.
-* `aggregate` fuctions return aggregated data in some form from the DataFrame. Can also be accessed with
-`agg`.
+Helper functions always return a series with the same shape and index as the
+[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) they are applied to. This ensures they can be added as a column to that
+DataFrame. Helper functions that return [`SeriesBoolean`](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean) can be used to filter
+the data. The helper functions can be accessed with the [`map`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.map.mdx) accessor from a
+model hub instance.
 
-Most of the model hub models take `data` as their first argument: this is the DataFrame with the Objectiv data to apply the model to.
+Aggregation models perform multiple Bach instructions that run some of the more common data analyses or
+product analytics metrics. Always return aggregated data in some form from the
+[`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) the model is applied to. Aggregation models can be accessed with the
+[`aggregate`](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.aggregate.mdx) accessor from a model hub instance.
+
+Most of the model hub helper functions and aggregation models take `data` as their first argument: this is
+the DataFrame with the Objectiv data to apply the model to. For an example of a machine learning model look
+at the [logistic regression example](/modeling/example-notebooks/logistic-regression.mdx).
 
 The next examples demonstrate how to use the model hub by showcasing a selection of the models from the model hub.
 
@@ -91,7 +104,8 @@ modelhub.agg.unique_users(df[df.is_new_user]) / modelhub.agg.unique_users(df)
 
 ## Using multiple model hub filters
 
-The model hub’s map results can be combined and reused. In this example we set two `map` model results as a column to the original DataFrame and use them both to filter the data and apply an aggregation model.
+The model hub’s map results can be combined and reused. In this example we set two helper function’s results
+as a column to the original DataFrame and use them both to filter the data and apply an aggregation model.
 In this example we calculate the number of users that were new in a month and also that converted twice on a day.
 
 ```python

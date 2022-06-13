@@ -1,5 +1,4 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { TrackerConsole, NoopConsoleImplementation } from "@objectiv/tracker-core";
 import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
 import { RootLocationContextFromURLPlugin } from '@objectiv/plugin-root-location-context-from-url';
 import React, { useState } from 'react';
@@ -36,6 +35,7 @@ const cookiebotConsentStatistics = (): boolean => {
 }
 
 function Root({children}) {
+  const [tracker, setTracker] = useState<ReactTracker>();
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
@@ -47,34 +47,39 @@ function Root({children}) {
     }
   })
 
-  // Configure TrackerConsole based on `trackerConsoleEnabled` from siteConfig
-  TrackerConsole.setImplementation(trackerConsoleEnabled && windowExists() ? console : NoopConsoleImplementation);
+  // Configure DeveloperTools based on `trackerConsoleEnabled` from siteConfig
+  if (trackerConsoleEnabled && windowExists()) {
+    require('@objectiv/developer-tools');
+  }
 
-    // Create React Tracker instance
-    const tracker = new ReactTracker({
-      endpoint: trackerEndPoint as string,
-      applicationId: trackerDocsApplicationId as string,
-      active: cookiebotStatisticsConsent,
-      plugins: [
-        new RootLocationContextFromURLPlugin({
-          idFactoryFunction: () => {
-            const secondSlug = location.pathname.split('/')[2];
+  // Create React Tracker instance once
+  if (!tracker) {
+    setTracker(
+      new ReactTracker({
+        endpoint: trackerEndPoint as string,
+        applicationId: trackerDocsApplicationId as string,
+        active: cookiebotStatisticsConsent,
+        plugins: [
+          new RootLocationContextFromURLPlugin({
+            idFactoryFunction: () => {
+              const secondSlug = location.pathname.split('/')[2];
 
-            return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
-          }
-        })
-      ]
-    })
-  
-    // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-    useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
-  
-    return (
-      <ObjectivProvider tracker={tracker}>
-        {children}
-      </ObjectivProvider>
-    );
-  
+              return secondSlug ? secondSlug.trim().toLowerCase() : 'home';
+            }
+          })
+        ]
+      })
+    )
+  }
+
+  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
+  useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
+
+  return (
+    <ObjectivProvider tracker={tracker}>
+      {children}
+    </ObjectivProvider>
+  );
 }
 
 export default Root;

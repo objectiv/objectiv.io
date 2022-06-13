@@ -11,6 +11,7 @@ export default function PaginatorNavLinkWrapper(props: Props): JSX.Element {
   return (
     <TrackedLinkContext 
       Component={'div'}
+      href={props.permalink}
       id={(title as string != "" ? makeIdFromString(title as string) : "[no title]")}>
         <PaginatorNavLink {...props} />
     </TrackedLinkContext>

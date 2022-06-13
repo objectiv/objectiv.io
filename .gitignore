@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Location Yarn configuration
+.yarnrc
+
 # Generated files
 .docusaurus
 .cache-loader
