@@ -5,15 +5,9 @@ Cypress.Commands.add('interceptThirdParties', () => {
   cy.intercept('http://localhost:8081*', {status: 200}).as('collector');
 })
 
-Cypress.Commands.add('waitForThirdParties', () => {
-  cy.wait('@github');
-  cy.wait('@vimeo');
-})
-
 declare namespace Cypress {
   interface Chainable<Subject> {
     interceptThirdParties(): Chainable<Subject>
-    waitForThirdParties(): Chainable<Subject>
   }
 }
 
@@ -27,9 +21,6 @@ describe('Home Page', () => {
 
     // Navigate to the home page
     cy.visit("/");
-
-    // Wait for both GitHub and Vimeo calls
-    cy.waitForThirdParties();
 
     // Verify that the Cookie banner has been shown
     cy.contains('This website uses cookies');
@@ -51,9 +42,6 @@ describe('Home Page', () => {
 
     // Scroll all the way to the bottom
     cy.get('.footer__copyright').scrollIntoView();
-
-    // Wait for all async
-    cy.waitForThirdParties();
 
     // This time 3 Events should have been recorded, verify them also against a snapshot to ensure contexts are correct
     cy.objectivEvents().should('have.length', 3).snapshot();
