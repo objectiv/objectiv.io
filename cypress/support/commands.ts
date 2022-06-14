@@ -36,10 +36,20 @@
 //   }
 // }
 
+Cypress.Commands.add('objectivEvents', () => {
+  return cy.window().its('objectiv.EventRecorder.events');
+})
+
+Cypress.Commands.add('verifyObjectivSnapshot', () => {
+  cy.window().its('objectiv.EventRecorder.events').snapshot();
+})
+
 require('@cypress/snapshot').register()
 
 declare namespace Cypress {
   interface Chainable<Subject> {
-    snapshot(): Chainable<Subject>
+    objectivEvents(): Chainable<Subject>,
+    snapshot(): Chainable<Subject>,
+    verifyObjectivSnapshot(): Chainable<Subject>,
   }
 }
