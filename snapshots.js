@@ -1,9 +1,6 @@
 module.exports = {
   "__version": "10.1.0",
   "Home Page": {
-    "Visit": {
-      "1": []
-    },
     "Should display the Cookie Banner and not track any events": {
       "1": []
     },
