@@ -55,10 +55,7 @@ describe('Home Page', () => {
     // Wait for all async
     cy.waitForThirdParties();
 
-    // This time three Events should have been triggered
-    cy.objectivEvents().should('have.length', 3);
-
-    // Check events against snapshot as well, to ensure their contexts are correct
-    cy.verifyObjectivSnapshot();
+    // This time 3 Events should have been recorded, verify them also against a snapshot to ensure contexts are correct
+    cy.objectivEvents().should('have.length', 3).snapshot();
   })
 })

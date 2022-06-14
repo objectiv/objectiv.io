@@ -1,7 +1,7 @@
 module.exports = {
   "__version": "10.1.0",
   "Home Page": {
-    "Should display the Cookie Banner and not track any events": {
+    "Should not track any events if CookieConsent cookie is not present": {
       "1": []
     },
     "Should track events when CookieConsent cookie is present": {
