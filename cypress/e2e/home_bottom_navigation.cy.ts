@@ -26,7 +26,7 @@ describe('Home: bottom navigation', () => {
     cy.get('a').contains('Privacy Policy').preventDefault().click();
     cy.get('a').contains('Cookies').preventDefault().click();
 
-    // Verify recorded events, we add 1 to the list of selectors to account for ApplicationLoadedEvent
+    // Verify recorded events
     cy.objectivGetEvents().should('have.length', 2).snapshot();
   })
 })

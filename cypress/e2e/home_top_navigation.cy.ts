@@ -27,7 +27,7 @@ describe('Home: top navigation', () => {
     cy.get('a.navTwitter').preventDefault().click();
     cy.get('a.navEmail').preventDefault().click();
 
-    // Verify recorded events, we add 1 to the list of selectors to account for ApplicationLoadedEvent
+    // Verify recorded events
     cy.objectivGetEvents().should('have.length', 10).snapshot();
 
   })
