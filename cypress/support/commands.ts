@@ -43,10 +43,15 @@ declare namespace Cypress {
   }
 }
 
-Cypress.Commands.add('objectivEvents', () => cy.window().its('objectiv.EventRecorder.events'))
+Cypress.Commands.add('objectivGetEvents', () => cy.window().its('objectiv.EventRecorder.events'))
+Cypress.Commands.add('objectivClearEvents', () => {
+  cy.window().its('objectiv.EventRecorder').invoke('clear');
+  cy.objectivGetEvents().should('have.length', 0);
+})
 declare namespace Cypress {
   interface Chainable<Subject> {
-    objectivEvents(): Chainable<Subject>,
+    objectivClearEvents(): Chainable<Subject>,
+    objectivGetEvents(): Chainable<Subject>,
   }
 }
 
@@ -57,5 +62,14 @@ Cypress.Commands.add('setCookieConsent', () => {
 declare namespace Cypress {
   interface Chainable<Subject> {
     setCookieConsent(): Chainable<Subject>,
+  }
+}
+
+Cypress.Commands.add('preventDefault', { prevSubject: true }, (subject) => {
+  return cy.wrap(subject).invoke('attr', 'onclick', 'event.preventDefault()')
+})
+declare namespace Cypress {
+  interface Chainable<Subject> {
+    preventDefault(): Chainable<Subject>,
   }
 }

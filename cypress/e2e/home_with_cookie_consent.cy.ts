@@ -13,6 +13,6 @@ describe('Home: with Cookie Consent', () => {
     cy.visit('/');
 
     // Verify recorded events
-    cy.objectivEvents().should('have.length', 2).snapshot();
+    cy.objectivGetEvents().should('have.length', 2).snapshot();
   })
 })

@@ -16,6 +16,6 @@ describe('Home: star us notification', () => {
     cy.get('.footer__copyright').scrollIntoView();
 
     // Verify recorded events
-    cy.objectivEvents().should('have.length', 2).snapshot();
+    cy.objectivGetEvents().should('have.length', 2).snapshot();
   })
 })

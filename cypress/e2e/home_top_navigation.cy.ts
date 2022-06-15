@@ -12,21 +12,23 @@ describe('Home: top_navigation', () => {
     // Visit home page
     cy.visit('/');
 
-    // Click on the `About us` link, wait for url to change and verify recorded events
-    cy.get('a').contains('About us').click();
-    cy.url().should('include', '/about');
-    cy.objectivEvents().should('have.length', 2).snapshot({ name: 'about us' });
+    // Clear recorded events, we don't care about ApplicationLoadedEvent and others
+    cy.objectivClearEvents();
 
-    // Click on the `Blog` link, wait for url to change and verify recorded events
-    cy.get('a').contains('Blog').click();
-    cy.url().should('include', '/blog');
-    cy.objectivEvents().should('have.length', 3).snapshot({ name: 'blog' });
+    // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
+    cy.get('a.navbar__brand').preventDefault().click();
+    cy.get('a').contains('About us').preventDefault().click();
+    cy.get('a').contains('Blog').preventDefault().click();
+    cy.get('a').contains('Jobs').preventDefault().click();
+    cy.get('a').contains('FAQ').preventDefault().click();
+    cy.get('a').contains('Docs').preventDefault().click();
+    cy.get('a.navGitHub').preventDefault().click();
+    cy.get('a.navSlack').preventDefault().click();
+    cy.get('a.navTwitter').preventDefault().click();
+    cy.get('a.navEmail').preventDefault().click();
 
-    // Click on the `Jobs` link, wait for url to change and verify recorded events
-    cy.get('a').contains('Jobs').click();
-    cy.url().should('include', '/jobs');
-    cy.objectivEvents().should('have.length', 4).snapshot({ name: 'jobs' });
+    // Verify recorded events, we add 1 to the list of selectors to account for ApplicationLoadedEvent
+    cy.objectivGetEvents().should('have.length', 10).snapshot();
 
-    // FAQ and Docs cannot be tested because they are not part of the website
   })
 })
