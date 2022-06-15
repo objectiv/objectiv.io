@@ -36,15 +36,26 @@
 //   }
 // }
 
-Cypress.Commands.add('objectivEvents', () => {
-  return cy.window().its('objectiv.EventRecorder.events');
-})
-
 require('@cypress/snapshot').register()
+declare namespace Cypress {
+  interface Chainable<Subject> {
+    snapshot(options?: { name?:string, json?:boolean }): Chainable<Subject>
+  }
+}
 
+Cypress.Commands.add('objectivEvents', () => cy.window().its('objectiv.EventRecorder.events'))
 declare namespace Cypress {
   interface Chainable<Subject> {
     objectivEvents(): Chainable<Subject>,
-    snapshot(): Chainable<Subject>
+  }
+}
+
+Cypress.Commands.add('setCookieConsent', () => {
+  cy.setCookie('CookieConsent', '{stamp:%27JXI3Xxh26F+U9VRdt9HagBOrCOCJ/LsqtNDKMIAK0Yaz+l1xzCJH0Q==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cver:1%2Cutc:1655213975331%2Cregion:%27nl%27}');
+  cy.getCookie('CookieConsent').should('exist');
+})
+declare namespace Cypress {
+  interface Chainable<Subject> {
+    setCookieConsent(): Chainable<Subject>,
   }
 }

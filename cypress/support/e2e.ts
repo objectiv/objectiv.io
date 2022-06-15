@@ -18,3 +18,10 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // we don't care about vimeo failing to load when that happens
+  if (err.message.includes('https://vimeo.com/670857141')) {
+    return false
+  }
+})
