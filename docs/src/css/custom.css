@@ -316,6 +316,11 @@ html[class*='docs-doc-id-modeling/open-model-hub/api-reference/ModelHub'] h1,
 html[class*='docs-doc-id-modeling/open-model-hub/api-reference/Series'] h1 {
   font-size: 32px;
 }
+html[class*='docs-doc-id-modeling/open-model-hub/models/helper-functions'] h1,
+html[class*='docs-doc-id-modeling/open-model-hub/models/aggregation'] h1,
+html[class*='docs-doc-id-modeling/open-model-hub/models/machine-learning'] h1 {
+  font-size: 32px;
+}
 html[class*='docs-doc-id-modeling/bach/api-reference/DataFrame'] h1, 
 html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
   font-size: 32px;
@@ -324,6 +329,16 @@ html[class*='docs-doc-id-modeling/bach/api-reference/Series'] h1 {
 /* Break long API reference titles on any character */
 html[class*='docs-doc-id-modeling'] .theme-doc-sidebar-item-link {
   word-break: break-all; 
+}
+
+/* Fix an offset issue with the top nav when using Sphinx anchors */
+html[class*='docs-doc-id-modeling/'] .hidden-anchor, 
+html[class*='docs-doc-id-modeling/'] .anchor {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
+
+a.headerlink {
+  display: none;
 }
 
 /* Class - overall */
@@ -510,13 +525,4 @@ div.method {
     opacity: 1;
     box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
-}
-
-/* Fix an offset issue with the top nav when using Sphinx anchors */
-.hidden-anchor, .anchor {
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
-}
-
-a.headerlink {
-  display: none;
 }
