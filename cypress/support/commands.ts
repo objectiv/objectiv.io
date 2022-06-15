@@ -36,6 +36,7 @@
 //   }
 // }
 
+// Import snapshot plugin
 require('@cypress/snapshot').register()
 declare namespace Cypress {
   interface Chainable<Subject> {
@@ -43,6 +44,7 @@ declare namespace Cypress {
   }
 }
 
+// Two custom commands for interacting with EventRecorder: objectivGetEvents and objectivClearEvents
 Cypress.Commands.add('objectivGetEvents', () => cy.window().its('objectiv.EventRecorder.events'))
 Cypress.Commands.add('objectivClearEvents', () => {
   cy.window().its('objectiv.EventRecorder').invoke('clear');
@@ -55,6 +57,7 @@ declare namespace Cypress {
   }
 }
 
+// Custom command to set a fake cookie for Cookiebot
 Cypress.Commands.add('setCookieConsent', () => {
   cy.setCookie('CookieConsent', '{stamp:%27JXI3Xxh26F+U9VRdt9HagBOrCOCJ/LsqtNDKMIAK0Yaz+l1xzCJH0Q==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cver:1%2Cutc:1655213975331%2Cregion:%27nl%27}');
   cy.getCookie('CookieConsent').should('exist');
@@ -65,8 +68,9 @@ declare namespace Cypress {
   }
 }
 
-Cypress.Commands.add('preventDefault', { prevSubject: true }, (subject) => {
-  return cy.wrap(subject).invoke('attr', 'onclick', 'event.preventDefault()')
+// Custom command chainable to DOM clickable elements. It prevents their default behavior, e.g. navigation, redirects.
+Cypress.Commands.add('preventDefault', { prevSubject: 'element' }, (subject) => {
+  return cy.wrap(subject).invoke('attr', 'onclick', 'event.preventDefault()');
 })
 declare namespace Cypress {
   interface Chainable<Subject> {
