@@ -1,4 +1,4 @@
-describe('Home: with Cookie Consent', () => {
+describe('Home: with cookie consent', () => {
   it('Should track ApplicationLoaded and MediaLoadEvent', () => {
     // Intercept all async calls to avoid rate-limiting and other side effects
     cy.intercept('https://api.github.com/repos/objectiv/objectiv-analytics', { fixture: 'github.json' }).as('github');

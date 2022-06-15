@@ -68,7 +68,7 @@ module.exports = {
       ]
     }
   },
-  "Home: with Cookie Consent": {
+  "Home: with cookie consent": {
     "Should track ApplicationLoaded and MediaLoadEvent": {
       "1": [
         {
@@ -136,7 +136,7 @@ module.exports = {
       ]
     }
   },
-  "Home: top_navigation": {
+  "Home: top navigation": {
     "Should track PressEvents on navigation items": {
       "1": [
         {
@@ -498,6 +498,84 @@ module.exports = {
             }
           ],
           "id": "PressEvent#9"
+        }
+      ]
+    }
+  },
+  "Home: bottom navigation": {
+    "Should track PressEvents on navigation items": {
+      "1": [
+        {
+          "_type": "PressEvent",
+          "location_stack": [
+            {
+              "_type": "RootLocationContext",
+              "id": "home"
+            },
+            {
+              "_type": "NavigationContext",
+              "id": "footer"
+            },
+            {
+              "_type": "LinkContext",
+              "id": "privacy-policy",
+              "href": "/privacy/"
+            }
+          ],
+          "global_contexts": [
+            {
+              "_type": "HttpContext",
+              "id": "http_context",
+              "referrer": "",
+              "user_agent": "mocked-user-agent",
+              "remote_address": null
+            },
+            {
+              "_type": "ApplicationContext",
+              "id": "objectiv-website-dev"
+            },
+            {
+              "_type": "PathContext",
+              "id": "http://localhost:3000/"
+            }
+          ],
+          "id": "PressEvent#1"
+        },
+        {
+          "_type": "PressEvent",
+          "location_stack": [
+            {
+              "_type": "RootLocationContext",
+              "id": "home"
+            },
+            {
+              "_type": "NavigationContext",
+              "id": "footer"
+            },
+            {
+              "_type": "LinkContext",
+              "id": "cookies",
+              "href": "/privacy/cookies"
+            }
+          ],
+          "global_contexts": [
+            {
+              "_type": "HttpContext",
+              "id": "http_context",
+              "referrer": "",
+              "user_agent": "mocked-user-agent",
+              "remote_address": null
+            },
+            {
+              "_type": "ApplicationContext",
+              "id": "objectiv-website-dev"
+            },
+            {
+              "_type": "PathContext",
+              "id": "http://localhost:3000/"
+            }
+          ],
+          "id": "PressEvent#2"
         }
       ]
     }
