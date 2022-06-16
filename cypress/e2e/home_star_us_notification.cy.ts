@@ -16,6 +16,16 @@ describe('Home: star us notification', () => {
     cy.get('.footer').scrollIntoView();
 
     // Verify recorded event
-    cy.objectivGetEvents('VisibleEvent').should('have.length', 1).snapshot();
+    cy.objectivGetEvents(
+      (event) =>
+        event._type === "VisibleEvent" &&
+        Cypress._.find(
+          event.location_stack,
+          ({ _type, id }) =>
+            _type === "OverlayContext" && id === "star-us-notification-overlay"
+        )
+    )
+    .should("have.length", 1)
+    .snapshot();
   })
 })
