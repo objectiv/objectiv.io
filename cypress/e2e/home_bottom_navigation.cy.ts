@@ -15,18 +15,11 @@ describe('Home: bottom navigation', () => {
     // Scroll to footer
     cy.get('.footer').scrollIntoView();
 
-    // Wait for star us notification to show up, it has an animation of 600ms
-    cy.wait(1000);
-    cy.get('div').contains('Star us on GitHub').should('be.visible');
-
-    // Clear recorded events, we don't care about ApplicationLoadedEvent and others
-    cy.objectivClearEvents();
-
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('a').contains('Privacy Policy').preventDefault().click();
     cy.get('a').contains('Cookies').preventDefault().click();
 
     // Verify recorded events
-    cy.objectivGetEvents().should('have.length', 2).snapshot();
+    cy.objectivGetEvents('PressEvent').should('have.length', 2).snapshot();
   })
 })

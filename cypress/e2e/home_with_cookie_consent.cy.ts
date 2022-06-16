@@ -13,6 +13,6 @@ describe('Home: with cookie consent', () => {
     cy.visit('/');
 
     // Verify recorded events
-    cy.objectivGetEvents().should('have.length', 2).snapshot();
+    cy.objectivGetEvents(['ApplicationLoadedEvent', 'MediaLoadEvent']).should('have.length', 2).snapshot();
   })
 })

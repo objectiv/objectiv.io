@@ -1,35 +1,8 @@
 module.exports = {
   "__version": "10.1.0",
   "Home: star us notification": {
-    "Should track ApplicationLoaded, MediaLoadEvent and VisibleEvent": {
+    "Should track VisibleEvent when scrolling down": {
       "1": [
-        {
-          "_type": "ApplicationLoadedEvent",
-          "location_stack": [
-            {
-              "_type": "RootLocationContext",
-              "id": "home"
-            }
-          ],
-          "global_contexts": [
-            {
-              "_type": "HttpContext",
-              "id": "http_context",
-              "referrer": "",
-              "user_agent": "mocked-user-agent",
-              "remote_address": null
-            },
-            {
-              "_type": "ApplicationContext",
-              "id": "objectiv-website-dev"
-            },
-            {
-              "_type": "PathContext",
-              "id": "http://localhost:3000/"
-            }
-          ],
-          "id": "ApplicationLoadedEvent#1"
-        },
         {
           "_type": "VisibleEvent",
           "location_stack": [

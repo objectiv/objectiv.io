@@ -44,8 +44,27 @@ declare namespace Cypress {
   }
 }
 
-// Two custom commands for interacting with EventRecorder: objectivGetEvents and objectivClearEvents
-Cypress.Commands.add('objectivGetEvents', () => cy.window().its('objectiv.EventRecorder.events'))
+// Custom commands for interacting with EventRecorder
+type objectivGetEventsFilterOption = ((event) => boolean) | string[] | string;
+Cypress.Commands.add('objectivGetEvents', (filter?: objectivGetEventsFilterOption) => {
+  const allEvents = cy.window().its('objectiv.EventRecorder.events');
+
+  if(filter) {
+    if(filter instanceof Function) {
+      return allEvents.invoke('filter', filter);
+    }
+
+    if(typeof filter ==='string') {
+      return allEvents.invoke('filter', event => event._type === filter);
+    }
+
+    if(Array.isArray(filter)) {
+      return allEvents.invoke('filter', event => filter.includes(event._type));
+    }
+  }
+
+  return allEvents;
+})
 Cypress.Commands.add('objectivClearEvents', () => {
   cy.window().its('objectiv.EventRecorder').invoke('clear');
   cy.objectivGetEvents().should('have.length', 0);
@@ -53,7 +72,7 @@ Cypress.Commands.add('objectivClearEvents', () => {
 declare namespace Cypress {
   interface Chainable<Subject> {
     objectivClearEvents(): Chainable<Subject>,
-    objectivGetEvents(): Chainable<Subject>,
+    objectivGetEvents(filter?: objectivGetEventsFilterOption): Chainable<Subject>,
   }
 }
 

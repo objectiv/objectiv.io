@@ -1,5 +1,5 @@
 describe('Home: star us notification', () => {
-  it('Should track ApplicationLoaded, MediaLoadEvent and VisibleEvent', () => {
+  it('Should track VisibleEvent when scrolling down', () => {
     // Intercept all async calls to avoid rate-limiting and other side effects
     cy.intercept('https://api.github.com/repos/objectiv/objectiv-analytics', { fixture: 'github.json' }).as('github');
     cy.intercept('https://vimeo.com/api/oembed.json*', { statusCode: 404 }).as('vimeo');
@@ -15,11 +15,7 @@ describe('Home: star us notification', () => {
     // Scroll all the way to the bottom
     cy.get('.footer').scrollIntoView();
 
-    // Wait for star us notification to show up, it has an animation of 600ms
-    cy.wait(1000);
-    cy.get('div').contains('Star us on GitHub').should('be.visible');
-
-    // Verify recorded events
-    cy.objectivGetEvents().should('have.length', 2).snapshot();
+    // Verify recorded event
+    cy.objectivGetEvents('VisibleEvent').should('have.length', 1).snapshot();
   })
 })

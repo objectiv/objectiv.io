@@ -12,9 +12,6 @@ describe('Home: top navigation', () => {
     // Visit home page
     cy.visit('/');
 
-    // Clear recorded events, we don't care about ApplicationLoadedEvent and others
-    cy.objectivClearEvents();
-
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('a.navbar__brand').preventDefault().click();
     cy.get('a').contains('About us').preventDefault().click();
@@ -28,7 +25,7 @@ describe('Home: top navigation', () => {
     cy.get('a.navEmail').preventDefault().click();
 
     // Verify recorded events
-    cy.objectivGetEvents().should('have.length', 10).snapshot();
+    cy.objectivGetEvents('PressEvent').should('have.length', 10).snapshot();
 
   })
 })
