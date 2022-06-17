@@ -1,6 +1,6 @@
 # TrackedRootLocationContext
 
-Wraps its children in a [ContentContext](/taxonomy/reference/location-contexts/ContentContext.md).
+Wraps its children in a [RootLocationContext](/taxonomy/reference/location-contexts/RootLocationContext.md).
 
 ```tsx
 TrackedRootLocationContext: (props: { 
