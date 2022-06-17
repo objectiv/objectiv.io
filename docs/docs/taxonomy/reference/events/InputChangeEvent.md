@@ -8,7 +8,7 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
         AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
         AbstractEvent --> InteractiveEvent;
-        InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
+        InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />AbstractLocationContext</span>"] --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
     class InputChangeEvent diagramActive;
 `} 
   caption="Diagram: InputChangeEvent" 
