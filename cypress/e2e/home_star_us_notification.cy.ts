@@ -15,8 +15,11 @@ describe('Home: star us notification', () => {
     // Scroll all the way to the bottom
     cy.get('.footer').scrollIntoView();
 
+    // Wait for the animation to finish
+    cy.get('div').contains('Star us').should('be.visible');
+
     // Verify recorded event
-    cy.objectivGetEvents(
+    cy.objectivGetEvents().objectivFilterEvents(
       (event) =>
         event._type === "VisibleEvent" &&
         Cypress._.find(
@@ -25,7 +28,6 @@ describe('Home: star us notification', () => {
             _type === "OverlayContext" && id === "star-us-notification-overlay"
         )
     )
-    .should("have.length", 1)
     .snapshot();
   })
 })

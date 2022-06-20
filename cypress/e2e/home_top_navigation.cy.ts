@@ -25,7 +25,6 @@ describe('Home: top navigation', () => {
     cy.get('a.navEmail').preventDefault().click();
 
     // Verify recorded events
-    cy.objectivGetEvents('PressEvent').should('have.length', 10).snapshot();
-
+    cy.objectivGetEvents().objectivFilterEvents('PressEvent').snapshot();
   })
 })

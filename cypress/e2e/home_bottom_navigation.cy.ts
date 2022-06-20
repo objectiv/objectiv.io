@@ -20,6 +20,6 @@ describe('Home: bottom navigation', () => {
     cy.get('a').contains('Cookies').preventDefault().click();
 
     // Verify recorded events
-    cy.objectivGetEvents('PressEvent').should('have.length', 2).snapshot();
+    cy.objectivGetEvents().objectivFilterEvents('PressEvent').snapshot();
   })
 })

@@ -12,7 +12,11 @@ describe('Home: with cookie consent', () => {
     // Visit home page
     cy.visit('/');
 
+    // Wait for Vimeo to finish loading. Iframes are flaky, so a plain wait seems to be the simplest option here.
+    cy.wait('@vimeo');
+    cy.wait(1000);
+
     // Verify recorded events
-    cy.objectivGetEvents(['ApplicationLoadedEvent', 'MediaLoadEvent']).should('have.length', 2).snapshot();
+    cy.objectivGetEvents().objectivFilterEvents(['ApplicationLoadedEvent', 'MediaLoadEvent']).snapshot();
   })
 })
