@@ -26,7 +26,7 @@ in the browser console. Warnings are thrown for unknown tagging/tracking calls, 
 wrongly typed properties.
 
 ### Developer Tools
-If you also install the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package,
+If you also import the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package,
 you get added validation for:
 * **Uniqueness**: Whether an Event `id` and its [Location Stack](locations.md) are unique.
 * **Taxonomy**: The same validation the [Collector](/tracking/collector/introduction.md) does, client-side, 
