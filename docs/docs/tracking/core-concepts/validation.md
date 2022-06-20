@@ -64,8 +64,8 @@ open analytics taxonomy, this will result in the validation reporting the issue:
 
 :::note
 
-Note how the validation rules detected the platform we are running in, and attached links to the documentation 
-for [React](../react/introduction.md) aimed at solving this particular type of validation error.
+Note how the validation detects the platform we're running on, and attaches links to the documentation 
+for [React](../react/introduction.md) to solve this particular type of error.
 
 :::
 
