@@ -49,8 +49,8 @@ if (process.env.NODE_ENV.startsWith('dev')) {
 
 When loaded, it will self-inject globally, and logging & validation will be enabled.
 
-See two examples below. More validation rules are available, such as Location Contexts that are in the wrong 
-position in the stack, and will be expanded, e.g. redundant Contexts, or duplicate Contexts.
+See two examples below. There are more validation rules, such as for Location Contexts that are in the wrong 
+position in the stack, and the rules will be expanded, for instance to detect redundant or duplicate Contexts.
 
 
 #### Example: Missing RootLocationContext
