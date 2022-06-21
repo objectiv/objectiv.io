@@ -1716,8 +1716,8 @@
 
 "@objectiv/developer-tools@^0.0.21-1":
   version "0.0.21-1"
-  resolved "http://localhost:4873/@objectiv%2fdeveloper-tools/-/developer-tools-0.0.21-1.tgz#554cee73a4cde7ae4516954fdd54d8031934640a"
-  integrity sha512-6/8lueMvHLVz77+a9+y3Q4CKx3ND9kRzmeSUyF/YTeeIJ1pA4RahsHBOQreWbKJ0ssXyp61/P5Zvjgi5FQ0yAQ==
+  resolved "http://localhost:4873/@objectiv%2fdeveloper-tools/-/developer-tools-0.0.21-1.tgz#72f35a281c4e2b6de673d188ef648f3f69236846"
+  integrity sha512-J4iXYjPN17Y0hmIPGn5Mp/sD/b3DsmPicWEwZFyxmED8VRhG3+EtbbEBeJ+OfcVVDMQ6cNepda16U/umz8G1fg==
 
 "@objectiv/plugin-application-context@^0.0.21-1":
   version "0.0.21-1"

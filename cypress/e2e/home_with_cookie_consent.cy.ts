@@ -17,6 +17,6 @@ describe('Home: with cookie consent', () => {
     cy.wait(1000);
 
     // Verify recorded events
-    cy.objectivGetEvents().objectivFilterEvents(['ApplicationLoadedEvent', 'MediaLoadEvent']).snapshot();
+    cy.objectiv().filterEvents(['ApplicationLoadedEvent', 'MediaLoadEvent']).snapshotEvents();
   })
 })

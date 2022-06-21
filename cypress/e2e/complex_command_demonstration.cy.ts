@@ -22,6 +22,7 @@ describe('Home: star us notification', () => {
     cy.objectiv()
       .filterEvents('VisibleEvent')
       .withLocationContext('OverlayContext', 'star-us-notification-overlay')
+      .withGlobalContext('PathContext', 'http://localhost:3000/')
       .snapshotEvents();
   })
 })

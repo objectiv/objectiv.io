@@ -17,6 +17,6 @@ describe('Home: without cookie consent', () => {
     cy.contains('Powered by Cookiebot');
 
     // Verify recorded events
-    cy.objectivGetEvents().should('have.length', 0);
+    cy.objectiv().its('events').should('have.length', 0);
   })
 })
