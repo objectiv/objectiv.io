@@ -27,6 +27,27 @@ accessor. Same as [`obj`](/modeling/open-model-hub/api-reference/SeriesGlobalCon
 
 <div className="content">
 
+Specialized JsonAccessor that has functions to work on SeriesJsons whose data consists of an array
+of objects.
+
+<div className="method">
+
+### <span className="name">filter_keys_of_dicts</span>
+
+<small className="parameter-list">(<span className="parameter" id="keys">keys</span>)</small>
+
+
+<div className="content">
+
+Return a new Series, that consists of the same top level array, but with all the sub-dictionaries
+having only their original fields if that field is listed in the keys parameter.
+
+
+</div>
+
+
+</div>
+
 <div className="method">
 
 ### <span className="name">get_from_context_with_type_series</span>

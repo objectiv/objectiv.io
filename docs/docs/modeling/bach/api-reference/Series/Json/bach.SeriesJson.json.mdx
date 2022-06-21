@@ -35,6 +35,38 @@ Class with accessor methods to JSON type data.
 
 <div className="method">
 
+### <span className="name">array_contains</span>
+
+<small className="parameter-list">(<span className="parameter" id="item">item</span>)</small>
+
+
+<div className="content">
+
+Find if item is contained in the array.
+
+
+#### Parameters
+
+**`item`** – item to be verified if it is contained by the array.
+
+
+
+#### Returns
+
+boolean series indicating if the array contains the element.
+
+
+This assumes the top-level item in the json is an array. Will result in an exception (later on) if
+that’s not the case!
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
 ### <span className="name">get_array_length</span>
 
 <small className="parameter-list">()</small>
