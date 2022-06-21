@@ -24,8 +24,10 @@ Cypress.Commands.add('withLocationContext', { prevSubject: true }, (recordedEven
   return recordedEvents.withLocationContext(name, id);
 });
 
-Cypress.Commands.add('snapshotEvents', { prevSubject: true }, (recordedEvents, options) => {
-  return cy.wrap(recordedEvents.events).snapshot(options);
+Cypress.Commands.add('snapshotEvents', { prevSubject: true }, ({ events }, options) => {
+  cy.window().its('objectiv.devTools.EventRecorder.errors').then(errors => {
+    return cy.wrap({ errors, events }).snapshot(options);
+  })
 });
 
 // Event Recorder API wrappers
