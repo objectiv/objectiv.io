@@ -4,6 +4,7 @@ title: Validation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import VimeoPlayer from '@site/src/components/vimeo-player';
 
 Data tracked by Objectiv adheres to the [open analytics taxonomy](/taxonomy/introduction.md). This means it 
 can be validated early, at the first step of the pipeline. At the same time it makes instrumentation 
@@ -21,9 +22,14 @@ An example inline error in the IDE:
 ![IDE validation: property id](../../../static/img/docs/ide-typescript-validation.png)
 
 ## Run-time validation
+
 When you run your application, any **validation errors** are caught by the Objectiv debugger, and displayed 
 in the browser console. Warnings are thrown for unknown tagging/tracking calls, missing properties, or 
 wrongly typed properties.
+
+See the video below for a walkthrough.
+
+<VimeoPlayer id="product-demo-validation" videoId="722912732" paddingBottom="45%" />
 
 ### Developer Tools
 If you also import the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package,
