@@ -60,7 +60,7 @@ alternative has been implemented to generate those. Since
 [RootLocationContext](../../taxonomy/reference/location-contexts/RootLocationContext.md) is required by the 
 open analytics taxonomy, this will result in the validation reporting the issue:
 
-![IDE validation: property id](../../../static/img/docs/missing-rootlocationcontext.png)
+![Validation: Missing RootLocationContext](../../../static/img/docs/missing-rootlocationcontext.png)
 
 :::note
 
@@ -77,10 +77,19 @@ the Tracker has not been prevented from generating those automatically. Since
 once in the list of [Global Contexts](../../taxonomy/reference/global-contexts/overview.md), the validation 
 reports the issue:
 
-![IDE validation: property id](../../../static/img/docs/duplicated-applicationcontext.png)
+![Validation: Duplicated ApplicationContext](../../../static/img/docs/duplicated-applicationcontext.png)
 
 In this example we currently don't have any specific how-to links, but as we add more and more how-to's to 
 our documentation, we may introduce them later on.
+
+#### Example: Uniqueness (Collisions)
+To make modeling easier, every tracked Event should be uniquely identifiable through a combination of its 
+[location stack](../core-concepts/locations.md) and its `id`. 
+
+If this is not the case, validation will warn about colliding elements. For example:
+
+![Validation: Collisions](../../../static/img/docs/tracking-collision-browser-console.png)
+
 
 ## Collector validation
 As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming 
