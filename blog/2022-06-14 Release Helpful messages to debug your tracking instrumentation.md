@@ -103,7 +103,6 @@ The backend [Collector][collector] also performs much of this validation as a fa
 
 :::
 
-
 # How to get it
 
 The new [`developer-tools`][developer-tools] package is available as a developer dependency for all SDKs. How 
