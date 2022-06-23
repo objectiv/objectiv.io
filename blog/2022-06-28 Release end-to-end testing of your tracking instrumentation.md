@@ -75,7 +75,7 @@ So this way, you’re immediately aware of any tracking regressions, and
 **can solve them before they even end up in your codebase**.
 
 # How does it work?
-You can use any CI framework, but in this example app we use [Cypress][cypress]. Here’s the config:
+You can use any CI framework, but in this example app we use [Cypress][cypress]. Here’s our config:
 
 ```typescript
 import { defineConfig } from "cypress";
