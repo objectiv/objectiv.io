@@ -3,8 +3,11 @@ sidebar_position: 2
 title: Event Recorder
 ---
 
-EventRecorder is part of the Developer Tools, accessible via `globalThis.objectiv.devTools.EventRecorder`.
+EventRecorder is part of the Developer Tools, accessible via `globalThis.objectiv.devTools.EventRecorder`. 
 
+It automatically records events and errors from all Tracker instances in the Application.
+
+### How to get it
 There are several ways to import the Developer Tools package in your Application.
 
 For some Applications it may be as easy as to import the package globally, while for others there will probably be some logic to load them when needed, e.g. in a specific environment.  
