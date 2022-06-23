@@ -16,7 +16,7 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 import VimeoPlayer from '@site/src/components/vimeo-player';
 
 [top_product_features_before_conversion]: https://objectiv.io/docs/modeling/open-model-hub/models/aggregation/top_product_features_before_conversion/
-[retention-matrix-model]: TODO
+[retention-matrix-model]: https://objectiv.io/docs/modeling/open-model-hub/models/aggregation/retention_matrix/
 [visible-event]: https://objectiv.io/docs/taxonomy/reference/events/VisibleEvent
 [open-model-hub]: https://objectiv.io/docs/modeling/open-model-hub/
 [office-hours]: https://calendly.com/objectiv_io/objectiv-office-hours
