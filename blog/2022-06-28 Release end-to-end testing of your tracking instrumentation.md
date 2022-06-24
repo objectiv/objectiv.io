@@ -21,7 +21,7 @@ import VimeoPlayer from '@site/src/components/vimeo-player';
 [media-loaded-event]: https://objectiv.io/docs/taxonomy/reference/events/MediaLoadEvent
 [validation]: https://objectiv.io/docs/tracking/core-concepts/validation/
 [tracking]: https://objectiv.io/docs/tracking/
-[e2e-testing-docs]: TODO
+[e2e-testing-docs]: https://objectiv.io/docs/tracking/testing/
 [npm]: https://www.npmjs.com/org/objectiv
 [release-office-hours]: https://calendly.com/objectiv_io/objectiv-office-hours
 
