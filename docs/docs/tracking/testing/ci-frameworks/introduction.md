@@ -20,4 +20,4 @@ definitely not a strict requirement.
 Have look at [how to set up end-to-end testing with Cypress](./cypress.md), and/or check out the video below, 
 where we show how to enable end-to-end testing with the Objectiv SDKs, with examples:
 
-<VimeoPlayer id="product-demo-validation" videoId="722917146" paddingBottom="45%" />
+<VimeoPlayer id="product-demo-e2e-testing" videoId="722917146" paddingBottom="45%" />

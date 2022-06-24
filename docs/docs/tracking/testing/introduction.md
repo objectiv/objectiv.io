@@ -34,4 +34,4 @@ e.g. snapshot-testing and automated actions.
 
 See this video where we show how to enable end-to-end testing with the Objectiv SDKs, with examples:
 
-<VimeoPlayer id="product-demo-validation" videoId="722917146" paddingBottom="45%" />
+<VimeoPlayer id="product-demo-e2e-testing" videoId="722917146" paddingBottom="45%" />

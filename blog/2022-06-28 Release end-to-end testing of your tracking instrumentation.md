@@ -38,7 +38,7 @@ catch any instrumentation changes early, before data is even collected.
 
 <!--truncate-->
 
-<VimeoPlayer id="product-demo-validation" videoId="722917146" paddingBottom="45%" />
+<VimeoPlayer id="product-demo-e2e-testing" videoId="722917146" paddingBottom="45%" />
 
 # A demo
 To demonstrate the new end-to-end testing features, we’ll use a  very basic example app with just a video and 
