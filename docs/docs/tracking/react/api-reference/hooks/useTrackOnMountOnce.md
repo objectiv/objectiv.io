@@ -1,34 +1,41 @@
-# useOnMount
+# useTrackOnMountOnce
 
-Runs on mount, unaffected by re-renders.
+Tracks the given TrackerEvent on mount, unaffected by mounting and unmounting and re-renders.
 
 ```ts
-useOnMount = (effect: EffectCallback) => void
+useTrackOnMountOnce = (parameters: {
+  event: TrackerEvent
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+})
 ```
 
 ## Parameters
-|          |            | type           | default value |
-|:--------:|:-----------|:---------------|:--------------|
-| required | **effect** | EffectCallback |               |
+|          |           | type              | default value |
+|:--------:|:----------|:------------------|:--------------|
+| required | **event** | TrackerEvent      |               |
+| optional | tracker   | ReactTracker      |               |
+| optional | options   | TrackEventOptions |               |
 
 ## Usage
 ```ts
-import { useOnMount } from "@objectiv/tracker-react";
+import { makeVisibleEvent } from "@objectiv/tracker-core";
+import { useTrackOnMountOnce } from "@objectiv/tracker-react";
 ```
 
 ```ts
-useOnMount(() => {
-  // this effect will trigger whenever the using component gets mounted and not when it re-renders
+useTrackOnMountOnce({ 
+  event: makeVisibleEvent()
 })
 ```
 
 <br />
 
 :::info See also
+- [useOnMount](/tracking/react/api-reference/hooks/useOnMount.md)
 - [useOnMountOnce](/tracking/react/api-reference/hooks/useOnMountOnce.md)
 - [useOnUnmount](/tracking/react/api-reference/hooks/useOnUnmount.md)
 - [useOnUnmountOnce](/tracking/react/api-reference/hooks/useOnUnmountOnce.md)
-- [useTrackOnMount](/tracking/react/api-reference/hooks/useTrackOnMount.md)
 - [useTrackOnMountOnce](/tracking/react/api-reference/hooks/useTrackOnMountOnce.md)
 - [useTrackOnUnmount](/tracking/react/api-reference/hooks/useTrackOnUnmount.md)
 - [useTrackOnUnmountOnce](/tracking/react/api-reference/hooks/useTrackOnUnmountOnce.md)

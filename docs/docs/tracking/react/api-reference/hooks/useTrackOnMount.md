@@ -1,6 +1,6 @@
 # useTrackOnMount
 
-Tracks the given TrackerEvent on mount.
+Tracks the given TrackerEvent on mount, unaffected by re-renders.
 
 ```ts
 useTrackOnMount = (parameters: {
@@ -19,13 +19,13 @@ useTrackOnMount = (parameters: {
 
 ## Usage
 ```ts
-import { makeMediaLoadEvent } from "@objectiv/tracker-core";
+import { makeVisibleEvent } from "@objectiv/tracker-core";
 import { useTrackOnMount } from "@objectiv/tracker-react";
 ```
 
 ```ts
 useTrackOnMount({ 
-  event: makeMediaLoadEvent()
+  event: makeVisibleEvent()
 })
 ```
 
@@ -33,8 +33,12 @@ useTrackOnMount({
 
 :::info See also
 - [useOnMount](/tracking/react/api-reference/hooks/useOnMount.md)
+- [useOnMountOnce](/tracking/react/api-reference/hooks/useOnMountOnce.md)
 - [useOnUnmount](/tracking/react/api-reference/hooks/useOnUnmount.md)
+- [useOnUnmountOnce](/tracking/react/api-reference/hooks/useOnUnmountOnce.md)
+- [useTrackOnMountOnce](/tracking/react/api-reference/hooks/useTrackOnMountOnce.md)
 - [useTrackOnUnmount](/tracking/react/api-reference/hooks/useTrackOnUnmount.md)
+- [useTrackOnUnmountOnce](/tracking/react/api-reference/hooks/useTrackOnUnmountOnce.md)
 - [useOnChange](/tracking/react/api-reference/hooks/useOnChange.md)
 - [useOnToggle](/tracking/react/api-reference/hooks/useOnToggle.md)
 - [useTrackOnChange](/tracking/react/api-reference/hooks/useTrackOnChange.md)
