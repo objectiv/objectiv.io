@@ -8,26 +8,36 @@ title: Cypress
 Let's have look at how to set up end-to-end testing with [Cypress](https://www.cypress.io/).
 
 :::info
-We picked Cypress for this example due to its popularity, but the same methodology can easily be applied to other e2e frameworks, such as [Nightwatch](https://nightwatch.io/), [Playwright](https://playwright.dev/) or [WebdriverIO](https://webdriver.io/). Or even to unit / component testing with tools like [Jest](https://jestjs.io/).
+We picked Cypress for this example due to its popularity, but the same methodology can easily be applied to 
+other e2e frameworks, such as [Nightwatch](https://nightwatch.io/), [Playwright](https://playwright.dev/) or 
+[WebdriverIO](https://webdriver.io/). Or even to unit / component testing with tools like 
+[Jest](https://jestjs.io/).
 
-In general, choosing a tool that supports snapshot-testing makes things a bit easier to configure, but it's definitely not a strict requirement.
+In general, choosing a tool that supports snapshot-testing makes things a bit easier to configure, but it's 
+definitely not a strict requirement.
 :::
 
 >**Disclaimer**   
 > We are not going to dive too deep into the installation and configuration process of Cypress.  
-> Check out Cypress' [Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress) for a much more thorough guide on that.
+> Check out Cypress' [Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress) for 
+a much more thorough guide on that.
 
 ## Install dependencies
-To begin we need to make sure we have Cypress in our project. And since we want to do snapshot-testing, let's pick a library for that as well:
+To begin we need to make sure we have Cypress in our project. And since we want to do snapshot-testing, let's 
+pick a library for that as well:
 
 ```shell
 yarn add cypress @cypress/snapshot --dev
 ```
 
-> **NOTE** [@cypress/snapshot](https://github.com/cypress-io/snapshot) will automatically create a `snapshots.js` file at the root of your project. If that doesn't suit your requirements, [check their docs](https://github.com/cypress-io/snapshot#userelativesnapshots) on how to set things up with relative snapshots, or feel free to use a different plugin. 
+> **NOTE** [@cypress/snapshot](https://github.com/cypress-io/snapshot) will automatically create a 
+`snapshots.js` file at the root of your project. If that doesn't suit your requirements, 
+[check their docs](https://github.com/cypress-io/snapshot#userelativesnapshots) on how to set things up with 
+relative snapshots, or feel free to use a different plugin. 
  
 ## Optional: package.json scripts
-This step is optional, but makes opening and running Cypress a bit easier. Just two scripts to add to `package.json`.
+This step is optional, but makes opening and running Cypress a bit easier. Just two scripts to add to 
+`package.json`.
 
 ```text title=package.json
 "scripts": {
@@ -39,7 +49,8 @@ This step is optional, but makes opening and running Cypress a bit easier. Just 
 ```
 
 ## Configure Cypress
-The first time running Cypress, it will open LaunchPad to further guide the user through the configuration process.
+The first time running Cypress, it will open LaunchPad to further guide the user through the configuration 
+process.
 
 ```shell
 yarn run cypress open
@@ -51,7 +62,8 @@ yarn cypress:open
 
 Simply follow Cypress' docs on how to [choose E2E Testing in Cypress LaunchPad](https://docs.cypress.io/guides/getting-started/opening-the-app#The-Launchpad).  
 
-When finished Cypress will have automatically generated the `cypress.config.ts` configuration file and a `cypress` folder with some support scripts and examples. 
+When finished Cypress will have automatically generated the `cypress.config.ts` configuration file and a 
+`cypress` folder with some support scripts and examples. 
 
 Let's tweak a few things in `cypress.config.ts`. Here is our configuration:
 ```ts title=cypress.config.ts
@@ -67,9 +79,12 @@ export default defineConfig({
 ```
 
 A few notes:
-- We stub `userAgent` with a fixed value because they contain Cypress and Browser versions. We don't want those ending up in our snapshots ([HttpContext](/taxonomy/reference/global-contexts/HttpContext.md)).
-- Videos are not so useful in the context of event tracking, on top of that disabling them speeds up things a bit.
-- `baseUrl` is the development url of our test Application. This will make `cy.visit` commands shorter and easier to maintain.
+- We stub `userAgent` with a fixed value because they contain Cypress and Browser versions. We don't want 
+  those ending up in our snapshots ([HttpContext](/taxonomy/reference/global-contexts/HttpContext.md)).
+- Videos are not so useful in the context of event tracking, on top of that disabling them speeds up things a 
+  bit.
+- `baseUrl` is the development url of our test Application. This will make `cy.visit` commands shorter and 
+  easier to maintain.
 
 ## Enable Snapshot Plugin
 The snapshot plugin we installed above, needs to be required in `cypress/support/commands.ts`. 
@@ -84,13 +99,16 @@ declare namespace Cypress {
 ```
 
 ## Custom cypress commands
-To make it easier to interact with [EventRecorder](/tracking/testing/event-recorder.md) we created a set of custom commands. 
+To make it easier to interact with [EventRecorder](/tracking/testing/event-recorder.md) we created a set of 
+custom commands. 
 
 :::info
-We may release these as a Cypress plugin eventually. Meanwhile, feel free to use, tweak and customize as needed.
+We may release these as a Cypress plugin eventually. Meanwhile, feel free to use, tweak and customize as 
+needed.
 :::
 
-We added all of our commands in a separate file `cypress/support/objectiv_commands.ts`. Here is the full content: 
+We added all of our commands in a separate file `cypress/support/objectiv_commands.ts`. Here is the full 
+content: 
 
 ```ts title=cypress/support/objectiv_commands.ts
 /**
@@ -165,7 +183,8 @@ import './objectiv_commands'
 ```
 
 :::info  
-As you may have already noticed, most commands are very simple and, for the most part, simply wrap around devTools like [EventRecorder](/tracking/testing/event-recorder.md) and TrackerRepository.  
+As you may have already noticed, most commands are very simple and, for the most part, simply wrap around 
+devTools like [EventRecorder](/tracking/testing/event-recorder.md) and TrackerRepository.  
 
 A few have different names to avoid clashes with Cypress native ones.
 :::
@@ -174,9 +193,11 @@ A few have different names to avoid clashes with Cypress native ones.
 We are now ready for writing some tests.
 
 ### Verify `ApplicationLoadedEvent` 
-This event is triggered automatically by all SDKs. It's a good starting point to check whether the Tracker initializes correctly.
+This event is triggered automatically by all SDKs. It's a good starting point to check whether the Tracker 
+initializes correctly.
 
-Let's create a new test suite in the `cypress/e2e` directory and name it something like `ApplicationLoadedEvent.cy.ts`.   
+Let's create a new test suite in the `cypress/e2e` directory and name it something like 
+`ApplicationLoadedEvent.cy.ts`.   
 
 ```ts title=cypress/e2e/ApplicationLoadedEvent.cy.ts
 describe('ApplicationLoadedEvent', () => {
@@ -237,15 +258,19 @@ The following snapshot will be produced:
 
 :::tip
 Always review carefully snapshots when they get created for the first time:  
-- Verify whether the Location Stack is as expected, especially for InteractiveEvents
-- Check Global Contexts, like PathContext, to make sure automatic tracking is working as intended 
-- Make sure the error snapshot is an empty array. This will safeguard against validation / collision regressions.
+- Verify whether the Location Stack is as expected, especially for InteractiveEvents.
+- Check Global Contexts, like PathContext, to make sure automatic tracking is working as intended .
+- Make sure the error snapshot is an empty array. This will safeguard against validation / collision 
+  regressions.
 :::
 
 ### Verifying Visibility Events
-Here is another example where we want to ensure a toggleable content triggers [VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) and [HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) whenever it's displayed or hidden.
+Here is another example where we want to ensure a toggleable content triggers 
+[VisibleEvent](/taxonomy/reference/events/VisibleEvent.md) and 
+[HiddenEvent](/taxonomy/reference/events/HiddenEvent.md) whenever it's displayed or hidden.
 
-As before, let's create a new test suite in the `cypress/e2e` directory and name it something like `VisibilityEvents.cy.ts`.   
+As before, let's create a new test suite in the `cypress/e2e` directory and name it something like 
+`VisibilityEvents.cy.ts`.   
 
 ```ts title=cypress/e2e/VisibilityEvents.cy.ts
 describe('VisibilityEvents', () => {
@@ -365,16 +390,20 @@ In theory one could simply snapshot all the events of a whole page by using:
   cy.objectiv().snapshotEvents();
 ```
 
-In reality, most Applications will have asynchronous code resolving at unpredictable moments and thus big snapshots 
-like the one above wouldn't be very reliable. They may or may not include the same events every time. 
+In reality, most applications will have asynchronous code resolving at unpredictable moments and thus big 
+snapshots like the one above wouldn't be very reliable. They may or may not include the same events every 
+time. 
 
-Filtering out sessions and snapshotting as little as possible is preferable. It forces the developer to review and evaluate one concern at the time, which is often easier, and required anyway, when dealing with interactions. 
+Filtering out sessions and snapshotting as little as possible is preferable. It forces the developer to 
+review and evaluate one concern at the time, which is often easier, and required anyway, when dealing with 
+interactions. 
 :::
 
 ## Automate with a GitHub Action
-Check out [Cypress GitHub Actions Documentation](https://docs.cypress.io/guides/continuous-integration/github-actions) for a detailed guide on how to set these up in a variety of cases.  
+Check out [Cypress GitHub Actions Documentation](https://docs.cypress.io/guides/continuous-integration/github-actions) 
+for a detailed guide on how to set these up in a variety of cases.  
 
-Here is an example of a workflow we ended up with for one of our Applications:
+Here is an example of a workflow we ended up with for one of our applications:
 ```yaml
 name: E2E Tests
 

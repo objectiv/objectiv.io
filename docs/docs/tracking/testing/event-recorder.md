@@ -59,21 +59,26 @@ Whether EventRecorder is enabled at all.
 Whether EventRecorder is currently recording.
  
 ### `string[]` errors
-Sorted list of recorded errors. This can be useful to spot regressions, such as Collisions or Validation errors.  
-For example, in our Cypress commands, this is part of the snapshot we take. Any new entry in it will fail the tests. 
+Sorted list of recorded errors. This can be useful to spot regressions, such as 
+[Collisions or Validation errors](../core-concepts/validation.md). For example, in our 
+[Cypress](./ci-frameworks/cypress.md) commands, this is part of the snapshot we take. Any new entry in it 
+will fail the tests. 
 
 ### `RecordedEvents` events
 Gets a RecordedEvents instance initialized with a sorted list of recorded events.  
 
-All RecordedEvents methods are chainable, meaning that they return a new instance of RecordedEvents. These include:
+All RecordedEvents methods are chainable, meaning that they return a new instance of RecordedEvents. These 
+include:
  - Filtering events by their name or names.
  - Filtering events by their Location Contexts. Name, id or both.
  - Filtering events by their global Contexts. Name, id or both.
 
-The main purpose of filtering events, apart from easier debugging, is to reduce noise and overall size of snapshots.
+The main purpose of filtering events, apart from easier debugging, is to reduce noise and overall size of 
+snapshots.
 
 ### `clear()` 
-Deletes all recorded events and errors. This can be useful when snapshot-testing multiple flows in the same test.
+Deletes all recorded events and errors. This can be useful when snapshot-testing multiple flows in the same 
+test.
  
 ### `start()`
 Starts recording, if EventRecorder was previously stopped or configured to not automatically record.
@@ -82,39 +87,41 @@ Starts recording, if EventRecorder was previously stopped or configured to not a
 Stops recording, if EventRecorder is running.
 
 ## Filtering RecordedEvents
-RecordedEvents is a small wrapper around a sorted list of recorded events.  
-It has a few methods to filter out noise, as in unwanted asynchronous Events, or Events that belong to other scenarios.
+RecordedEvents is a small wrapper around a sorted list of recorded events. It has a few methods to filter out 
+noise, as in unwanted asynchronous Events, or Events that belong to other scenarios.
 
-Here are some examples of how one would use it in the Browser's console
+Here are some examples of how one would use it in the Browser's console.
 
 #### Get specific Events
 
-Get all PressEvents
+Get all [PressEvents](../../taxonomy/reference/events/PressEvent.md):
 ```js
 objectiv.devTools.EventRecorder.events
   .filter('PressEvent')
 ```
 
-Get all PressEvents or InputChangeEvents
+Get all [PressEvents](../../taxonomy/reference/events/PressEvent.md) or 
+[InputChangeEvents](../../taxonomy/reference/events/InputChangeEvent.md):
 ```js
 objectiv.devTools.EventRecorder.events
   .filter(['PressEvent', 'InputChangeEvent'])
 ```
 
 #### Filter on a Context
-Get all events that originated from ContentContext locations
+Get all events that originated from 
+[ContentContext](../../taxonomy/reference/location-contexts/ContentContext.md) locations:
 ```js
 objectiv.devTools.EventRecorder.events
   .withLocationContext('ContentContext')
 ```
 
-Or from a specific ContentContext
+Or from a specific [ContentContext](../../taxonomy/reference/location-contexts/ContentContext.md):
 ```js
 objectiv.devTools.EventRecorder.events
   .withLocationContext('ContentContext', 'hero-element')
 ```
 
-Get events that have a specific Global Context
+Get events that have a specific [ContentContext](../../taxonomy/reference/global-contexts/overview.md):
 ```js
 objectiv.devTools.EventRecorder.events
   .withGlobalContext('ApplicationContext', 'public-application')
@@ -124,7 +131,9 @@ objectiv.devTools.EventRecorder.events
 ```
 
 #### Combine filters
-Get all PressEvents or InputChangeEvents originating from the hero-element in the main app
+Get all [PressEvents](../../taxonomy/reference/events/PressEvent.md) or 
+[InputChangeEvents](../../taxonomy/reference/events/InputChangeEvent.md) originating from the hero-element 
+in the main app:
 ```js
 objectiv.devTools.EventRecorder.events
   .filter(['PressEvent', 'InputChangeEvent'])
@@ -133,7 +142,7 @@ objectiv.devTools.EventRecorder.events
 ```
 
 #### Complex queries via predicate
-The same example as above, written via a predicate instead
+The same example as above, written via a predicate instead:
 ```js
 objectiv.devTools.EventRecorder.events
   .filter(

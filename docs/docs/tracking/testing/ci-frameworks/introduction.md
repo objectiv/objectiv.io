@@ -3,6 +3,8 @@ sidebar_position: 1
 title: CI Frameworks
 ---
 
+import VimeoPlayer from '@site/src/components/vimeo-player';
+
 EventRecorder can be used during development in the Browser's console, as a debugging tool, but it's even 
 more useful when paired with a testing framework.
 
@@ -15,4 +17,7 @@ In general, choosing a tool that supports snapshot-testing makes things a bit ea
 definitely not a strict requirement.
 
 
-Let's have look at how to set things up with [Cypress](https://www.cypress.io/).
+Have look at [how to set up end-to-end testing with Cypress](./cypress.md), and/or check out the video below, 
+where we show how to enable end-to-end testing with the Objectiv SDKs, with examples:
+
+<VimeoPlayer id="product-demo-validation" videoId="722917146" paddingBottom="45%" />
