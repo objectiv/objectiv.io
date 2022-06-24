@@ -1,18 +1,23 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Event Recorder
 ---
 
-EventRecorder is part of the Developer Tools, accessible via `globalThis.objectiv.devTools.EventRecorder`. 
+EventRecorder is part of the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) 
+package, accessible via `globalThis.objectiv.devTools.EventRecorder`. 
 
-It automatically records events and errors from all Tracker instances in the Application.
+It automatically records events and errors from all Tracker instances in the Application. It's commonly used 
+in combination with end-to-end testing frameworks, e.g. to create snaphots of expected tracking Events and 
+Errors, or as a debugging tool during development.
 
 ### How to get it
-There are several ways to import the Developer Tools package in your Application.
+There are several ways to import the 
+[`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package in your application.
 
-For some Applications it may be as easy as to import the package globally, while for others there will probably be some logic to load them when needed, e.g. in a specific environment.  
+For some applications it may be as easy as importing the package globally, while for others there will 
+probably be some logic to load them when needed, e.g. in a specific environment.  
 
-For example, one may require them conditionally by checking the Node environment:
+For example, you may require them conditionally by checking the Node environment:
 ```ts
 if (process.env.NODE_ENV.startsWith('dev')) {
   require('@objectiv/developer-tools');
@@ -61,7 +66,7 @@ For example, in our Cypress commands, this is part of the snapshot we take. Any 
 Gets a RecordedEvents instance initialized with a sorted list of recorded events.  
 
 All RecordedEvents methods are chainable, meaning that they return a new instance of RecordedEvents. These include:
- - Filtering events by their name or names 
+ - Filtering events by their name or names.
  - Filtering events by their Location Contexts. Name, id or both.
  - Filtering events by their global Contexts. Name, id or both.
 
@@ -145,7 +150,8 @@ objectiv.devTools.EventRecorder.events
   )
 ```
 
-## Next: E2E testing with Cypress
+## Next: E2E testing with CI Frameworks
 EventRecorder becomes even more useful when paired with a testing framework.  
 
-Check out how we set up [E2E Testing with Cypress in the Next Section](/tracking/testing/cypress.md).
+Check out how to set up [E2E Testing with CI Frameworks](/tracking/testing/ci-frameworks/introduction.md) in 
+the next section.

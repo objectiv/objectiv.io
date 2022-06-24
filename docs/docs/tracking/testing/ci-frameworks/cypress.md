@@ -1,11 +1,11 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Cypress
 ---
 
-EventRecorder can be used during development in the Browser's console, as a debugging tool, but it's even more useful when paired with a testing framework.
+# End-to-end testing with Cypress
 
-Let's have look at how to set things up with [Cypress](https://www.cypress.io/).
+Let's have look at how to set up end-to-end testing with [Cypress](https://www.cypress.io/).
 
 :::info
 We picked Cypress for this example due to its popularity, but the same methodology can easily be applied to other e2e frameworks, such as [Nightwatch](https://nightwatch.io/), [Playwright](https://playwright.dev/) or [WebdriverIO](https://webdriver.io/). Or even to unit / component testing with tools like [Jest](https://jestjs.io/).
