@@ -1,5 +1,4 @@
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { default as Vimeo } from "@u-wave/react-vimeo";
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";

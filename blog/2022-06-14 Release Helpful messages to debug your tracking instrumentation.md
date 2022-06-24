@@ -13,6 +13,7 @@ authors: ivarpruijn
 
 import BlogImage from '@site/src/components/blog-image'
 import JoinSlackLink from '@site/src/components/join-slack-link';
+import VimeoPlayer from '@site/src/components/vimeo-player';
 
 [taxonomy]: https://objectiv.io/docs/taxonomy/
 [collector]: https://objectiv.io/docs/tracking/collector
@@ -47,7 +48,8 @@ SDK's Validation messages, to help you debug your tracking instrumentation.
 
 <!--truncate-->
 
-<BlogImage url="/img/open-graph/og-validation-helpful-messages.png" size="normal" />
+<VimeoPlayer id="product-demo-validation" videoId="722912732" paddingBottom="45%" />
+
 
 # How does it work?
 We already support basic tracking validation in your IDE, the backend [Collector][collector], and the 
