@@ -48,7 +48,7 @@ desired timeframe (daily, weekly, monthly, or yearly) to use for the mutually ex
 will be distributed into:
 
 ```python
-retention_matrix = modelhub.map.retention_matrix(df, time_period='monthly', percentage=True, display=True)
+retention_matrix = modelhub.aggregate.retention_matrix(df, time_period='monthly', percentage=True, display=True)
 retention_matrix.head()
 ```
 
