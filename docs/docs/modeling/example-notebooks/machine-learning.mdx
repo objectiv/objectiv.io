@@ -46,7 +46,7 @@ pdf = features_unstacked.to_pandas()
 # do the clustering using the pandas DataFrame and set the labels as a column to that DataFrame
 est = cluster.KMeans(n_clusters=3)
 est.fit(pdf)
-df['cluster'] = est.labels_
+pdf['cluster'] = est.labels_
 ```
 
 Now you can use the created clusters on your entire data set again if you add it back to your DataFrame.
@@ -54,7 +54,7 @@ This is simple, as Bach and pandas are cooperating nicely. Your original Objecti
 column.
 
 ```python
-kfeatures_unstacked['cluster'] = pdf['cluster']
+features_unstacked['cluster'] = pdf['cluster']
 df_with_cluster_results = df.merge(features_unstacked[['cluster']], on='user_id')
 ```
 
@@ -62,7 +62,7 @@ You can use this column, just as any other. For example you can now use your cre
 from the model hub by:
 
 ```python
-df_with_cluster.mh.agg.session_duration(groupby='cluster').head()
+modelhub.agg.session_duration(df_with_cluster_results, groupby='cluster').head()
 # Expected output:
 # cluster
 # 0   0 days 00:09:18.204353
