@@ -23,7 +23,7 @@ import VimeoPlayer from '@site/src/components/vimeo-player';
 [tracking]: https://objectiv.io/docs/tracking/
 [e2e-testing-docs]: https://objectiv.io/docs/tracking/testing/
 [npm]: https://www.npmjs.com/org/objectiv
-[release-office-hours]: https://calendly.com/objectiv_io/objectiv-office-hours
+[office-hours]: https://calendly.com/objectiv_io/objectiv-office-hours
 
 <intro>
 
@@ -244,9 +244,9 @@ team, as you can catch changes before data is even collected.
 :::info
 ## Office Hours
 If you have any questions about this release or anything else, or if you just want to say 'Hi!' to team 
-Objectiv, we have [Office Hours every Thursday at 4pm CET, 10am EST][release-office-hours] that you 
+Objectiv, we have [Office Hours every Thursday at 4pm CET, 10am EST][office-hours] that you 
 can freely dial in to. If you're in a timezone that doesn’t fit well, just ping us 
 on <JoinSlackLink linkText="Slack" /> and we'll send over an invite for a better moment.
 
-[Join the Office Hours][release-office-hours]
+[Join the Office Hours][office-hours]
 :::
