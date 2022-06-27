@@ -7,17 +7,24 @@ title: Introduction
 # The open analytics taxonomy 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import VimeoPlayer from '@site/src/components/vimeo-player';
 import JoinSlackLink from '@site/src/components/join-slack-link';
 
-The open analytics taxonomy is a generic classification of common event types and the contexts in which they can happen. It is a proposal for a common way to collect & structure analytics data in an effort to enable models to be universally shared and reused between projects, teams and companies.
+The open analytics taxonomy is a generic classification of common event types and the contexts in which they 
+can happen. It's designed to provide a universal structure for analytics data, so models built on one data set 
+can be deployed and run on another. 
+
+Data and analytics uses cases from 50+ companies were used to define the taxonomy, and we would like the 
+whole data space to collaborate on it. Areas like payments, catalogs, and CRM are on the roadmap, and 
+it's extendable to cover custom use cases as well.
 
 <img src={useBaseUrl('/img/open-taxonomy.svg')} alt="Objectiv Pipeline" />
 
-Each Event and Context type has its own [properties, requirements and relations](./reference/overview.md). These definitions are used to [validate the collected data and to debug the tracking instrumentation](/tracking/core-concepts/validation.md). This ensures the resulting data set is ready for modeling without cleaning or transformations. 
+Each Event and Context type has its own [properties, and requirements](./reference/overview.md). They're 
+used to [validate & debug the collected data](/tracking/core-concepts/validation.md), so the resulting data 
+set is ready for modeling without cleaning or transformations. See the video below for how this works.
 
-The open analytics taxonomy is based on the compounded knowledge of over 50 data teams and has been designed and tested to cover a wide range of product analytics use cases. We're currently working on expanding it to cover online marketing use cases as well, and plan to expand further into other areas (payments, catalogs, CRM, etc.)
-
-It can be extended to cover more specific use cases as well.
+<VimeoPlayer id="product-demo-taxonomy" videoId="723782686" paddingBottom="58.25%" />
 
 ### Taxonomy Reference
 All Contexts and Events are open and documented. [Check out the Reference](./reference/overview.md).
