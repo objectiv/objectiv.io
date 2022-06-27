@@ -1,9 +1,9 @@
-# useOnMount
+# useOnMountOnce
 
-Runs on mount, unaffected by re-renders.
+Runs on mount, unaffected by mounting and unmounting and re-renders.
 
 ```ts
-useOnMount = (effect: EffectCallback) => void
+useOnMountOnce = (effect: EffectCallback) => void
 ```
 
 ## Parameters
@@ -13,19 +13,19 @@ useOnMount = (effect: EffectCallback) => void
 
 ## Usage
 ```ts
-import { useOnMount } from "@objectiv/tracker-react";
+import { useOnMountOnce } from "@objectiv/tracker-react";
 ```
 
 ```ts
-useOnMount(() => {
-  // this effect will trigger whenever the using component gets mounted and not when it re-renders
+useOnMountOnce(() => {
+  // this effect will trigger whenever the using component gets mounted for very the first time
 })
 ```
 
 <br />
 
 :::info See also
-- [useOnMountOnce](/tracking/react/api-reference/hooks/useOnMountOnce.md)
+- [useOnMount](/tracking/react/api-reference/hooks/useOnMount.md)
 - [useOnUnmount](/tracking/react/api-reference/hooks/useOnUnmount.md)
 - [useOnUnmountOnce](/tracking/react/api-reference/hooks/useOnUnmountOnce.md)
 - [useTrackOnMount](/tracking/react/api-reference/hooks/useTrackOnMount.md)
