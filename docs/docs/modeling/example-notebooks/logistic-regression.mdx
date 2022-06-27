@@ -1,6 +1,6 @@
 ---
 id: example-notebooks-logistic-regression
-sidebar_position: 5
+sidebar_position: 6
 slug: /modeling/example-notebooks/logistic-regression/
 title: Logistic Regression
 ---
@@ -103,7 +103,7 @@ features_set_sample['predicted_values'] = lr.predict_proba(X)
 features_set_sample['predicted_labels'] = lr.predict(X)
 
 # show the sampled data set, including predictions
-features_set_sample.head()
+features_set_sample.head(20)
 ```
 
 ## Unsample and view the SQL

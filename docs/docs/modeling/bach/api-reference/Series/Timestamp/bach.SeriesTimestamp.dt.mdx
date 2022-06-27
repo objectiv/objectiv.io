@@ -32,6 +32,46 @@ Get access to date operations.
 
 <div className="method">
 
+### <span className="name">date_trunc</span>
+
+<small className="parameter-list">(<span className="parameter" id="date_part">date_part</span>)</small>
+
+
+<div className="content">
+
+Truncates date value based on a specified date part.
+The value is always rounded to the beginning of date_part.
+
+This operation can be applied only on SeriesDate or SeriesTimestamp.
+
+
+#### Parameters
+
+**`date_part`** – Allowed values are ‘second’, ‘minute’,
+‘hour’, ‘day’, ‘week’, ‘month’, ‘quarter’, and ‘year’.
+
+
+```python
+# return the date corresponding to the Monday of that week
+df['week'] = df.some_date_or_timestamp_series.dt.date_trunc('week')
+# return the first day of the quarter
+df['quarter'] = df.some_date_or_timestamp_series.dt.date_trunc('quarter')
+```
+
+
+#### Returns
+
+the truncated timestamp value with a granularity of date_part.
+
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
 ### <span className="name">sql_format</span>
 
 <small className="parameter-list">(<span className="parameter" id="format_str">format_str</span>)</small>

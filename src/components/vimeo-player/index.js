@@ -14,6 +14,7 @@ import {
 function VimeoPlayer({ 
   videoId, 
   id, // required if the Video needs to be tracked
+  paddingBottom = "58.25%", // the ratio  for the video, e.g. 58.25% for 16:9 videos
   caption = '',
 }) {
   return  (
@@ -35,6 +36,7 @@ function VimeoPlayer({
                   onPause={() => trackMediaPauseEvent(trackingContext)}
                   onEnd={() => trackMediaStopEvent(trackingContext)}
                   className={clsx(styles.videoWrapper)}
+                  style={{paddingBottom: paddingBottom}}
                   data-cookieconsent="ignore"
                 />
                 {caption &&

@@ -22,9 +22,13 @@ The hooks the SDK uses internally for event instrumentation are also available p
 #### Lifecycle
 
 - [useOnMount](/tracking/react-native/api-reference/hooks/useOnMount.md)
+- [useOnMountOnce](/tracking/react-native/api-reference/hooks/useOnMountOnce.md)
 - [useOnUnmount](/tracking/react-native/api-reference/hooks/useOnUnmount.md)
+- [useOnUnmountOnce](/tracking/react-native/api-reference/hooks/useOnUnmountOnce.md)
 - [useTrackOnMount](/tracking/react-native/api-reference/hooks/useTrackOnMount.md)
+- [useTrackOnMountOnce](/tracking/react-native/api-reference/hooks/useTrackOnMountOnce.md)
 - [useTrackOnUnmount](/tracking/react-native/api-reference/hooks/useTrackOnUnmount.md)
+- [useTrackOnUnmountOnce](/tracking/react-native/api-reference/hooks/useTrackOnUnmountOnce.md)
 
 #### State
 
