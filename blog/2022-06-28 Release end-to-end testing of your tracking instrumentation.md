@@ -1,6 +1,6 @@
 ---
 title: "Release: No surprises downstream with end-to-end testing of your tracking instrumentation"
-description: "Product changes can break your tracking over time, causing issues downstream. In this release we've made it easy to build end-to-end testing for your tracking, in order to catch any tracking changes before data is even collected."
+description: "Product changes can break your tracking over time, causing issues downstream for your data team. In this release we've made it easy to build end-to-end testing for your tracking, in order to catch any tracking changes before data is even collected."
 slug: release-no-surprises-downstream-with-end-to-end-testing-of-your-tracking-instrumentation/
 tags: [releases]
 image: /img/open-graph/og-end-to-end-testing-tracking.png
@@ -38,13 +38,17 @@ catch any instrumentation changes early, before data is even collected.
 
 <!--truncate-->
 
+See the video below for a walkthrough:
+
 <VimeoPlayer id="product-demo-e2e-testing" videoId="722917146" paddingBottom="45%" />
 
 # A demo
 To demonstrate the new end-to-end testing features, we’ll use a  very basic example app with just a video and 
-a button:
+a button - see screenshot:
 
-<BlogImage url="/img/blog/releases/20220628/e2e-testing-example-app.png" size="medium" />
+<BlogImage url="/img/blog/releases/20220628/e2e-testing-example-app.png" 
+  size="medium" 
+  caption="Screenshot: example app with a button and a video" />
 
 We’ll use the [Cypress][cypress] testing framework, but you can also just use your own.
 
@@ -238,11 +242,11 @@ Tracking SDKs, you don’t have to worry about any unexpected data issues ending
 team, as you can catch changes before data is even collected.
 
 :::info
-## Release Office Hours
+## Office Hours
 If you have any questions about this release or anything else, or if you just want to say 'Hi!' to team 
-Objectiv, we have [Release Office Hours every Thursday at 4pm CET, 10am EST][release-office-hours] that you 
+Objectiv, we have [Office Hours every Thursday at 4pm CET, 10am EST][release-office-hours] that you 
 can freely dial in to. If you're in a timezone that doesn’t fit well, just ping us 
 on <JoinSlackLink linkText="Slack" /> and we'll send over an invite for a better moment.
 
-[Join the Release Office Hours][release-office-hours]
+[Join the Office Hours][release-office-hours]
 :::
