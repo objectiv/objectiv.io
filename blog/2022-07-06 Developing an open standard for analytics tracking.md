@@ -4,7 +4,7 @@ description: "In early 2021, our team of long-time data geeks started on the dev
 slug: developing-an-open-standard-for-analytics-tracking/
 tags: []
 image: /img/open-graph/og-TODO.png
-authors: vincenthoogsteder
+authors: ivarpruijn
 ---
 
 <head>
