@@ -8,7 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Objectiv comes with a set of tools that help you set up error-free user behavior tracking instrumentation:
 * A Tracker for several web & mobile platforms and frameworks;
-* A live debugger that provides instrumentation feedback in your IDE or console; and
+* [Validation with inline documentation & linting in your IDE/console, and end-to-end testing 
+  tools](./core-concepts/validation.md); and
 * A Collector to receive, validate & store events.
 
 <img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" className="img-l" />

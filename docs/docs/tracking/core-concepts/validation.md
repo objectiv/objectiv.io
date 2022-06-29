@@ -8,9 +8,18 @@ import VimeoPlayer from '@site/src/components/vimeo-player';
 
 Data tracked by Objectiv adheres to the [open analytics taxonomy](/taxonomy/introduction.md). This means it 
 can be validated early, at the first step of the pipeline. At the same time it makes instrumentation 
-unambiguous and future-proof, as it largely prescribes how elements should be tracked. Next to this, the 
-tracking SDKs provide helpful tooling to set up tracking instrumentation and catch any issues before data 
-is collected.
+unambiguous and future-proof, as it largely prescribes how elements should be tracked. 
+
+Next to this, the tracking SDKs provide helpful tooling to set up tracking instrumentation and catch any 
+issues before data is collected, as well as enabling end-to-end testing to make sure your tracking 
+instrumentation stays valid.
+
+See the video below for a walkthrough of all validation and end-to-end testing features:
+
+<VimeoPlayer 
+  id="product-demo-validation-and-e2e-testing" 
+  videoId="724854129" 
+  paddingBottom="58.25%" />
 
 ## Build-time validation (in the IDE)
 All Objectiv's functions come with TypeScript definitions.
@@ -27,9 +36,12 @@ When you run your application, any **validation errors** are caught by the Objec
 in the browser console. Warnings are thrown for unknown tagging/tracking calls, missing properties, or 
 wrongly typed properties.
 
-See the video below for a walkthrough.
+See the video below for a walkthrough of the run-time validation features:
 
-<VimeoPlayer id="product-demo-validation" videoId="722912732" paddingBottom="45%" />
+<VimeoPlayer 
+  id="product-demo-validation" 
+  videoId="722912732" 
+  paddingBottom="45%" />
 
 ### Developer Tools
 If you also import the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package,
@@ -104,3 +116,9 @@ as requiring a [RootLocationContext](../../taxonomy/reference/location-contexts/
 [PathContext](../../taxonomy/reference/global-contexts/PathContext.md) for InteractiveEvents.
 
 For more background, see the [Collector docs](/tracking/collector/introduction.md).
+
+## End-to-end testing
+The Objectiv SDKs also come with functionality to enable end-to-end testing of your tracking instrumentation 
+to ensure it remains valid as you develop your application. 
+
+[See the Testing section for more information](../testing/introduction.md).
