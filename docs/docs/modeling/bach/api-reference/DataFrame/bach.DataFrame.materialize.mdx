@@ -10,10 +10,10 @@ title: materialize
 
 ### <span className="name">materialize</span>
 
-<small className="parameter-list">(<span className="parameter" id="node_name">node_name='manual_materialize'</span>, <span className="parameter" id="inplace">inplace=False</span>, <span className="parameter" id="limit">limit=None</span>, <span className="parameter" id="distinct">distinct=False</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="node_name">node_name='manual_materialize'</span>, <span className="parameter" id="inplace">inplace=False</span>, <span className="parameter" id="limit">limit=None</span>, <span className="parameter" id="distinct">distinct=False</span>, <span className="parameter" id="materialization">materialization=Materialization.CTE</span>)</small>
 
 
-&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/mainon3.8/site-packages/bach/dataframe.py)</span>
 
 <div className="content">
 
@@ -23,7 +23,12 @@ This effectively adds a node to the underlying SqlModel graph. Generally adding 
 the size of the generated SQL query. But this can be useful if the current DataFrame contains
 expressions that you want to evaluate before further expressions are build on top of them. This might
 make sense for very large expressions, or for non-deterministic expressions (e.g. see
-`SeriesUuid.sql_gen_random_uuid()`).
+`SeriesUuid.sql_gen_random_uuid()`). Additionally, materializing as a temporary table can
+improve performance in some instances.
+
+Note this function does NOT query the database or materializes any data in the database. It merely
+changes the underlying SqlModel graph, which gets executed by data transfer functions (e.g.
+[`to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx))
 
 TODO: a known problem is that DataFrames with ‘json_postgres’ columns cannot be fully materialized.
 
@@ -34,6 +39,8 @@ TODO: a known problem is that DataFrames with ‘json_postgres’ columns cannot
 * **`inplace`** – Perform operation on self if `inplace=True`, or create a copy.
 * **`limit`** (Optional[Any]) – The limit (slice, int) to apply.
 * **`distinct`** (bool) – Apply distinct statement if `distinct=True`
+* **`materialization`** (Union[sql_models.model.Materialization, str]) – Set the materialization of the SqlModel in the graph. Only
+Materialization.CTE / ‘cte’ and Materialization.TEMP_TABLE / ‘temp_table’ are supported.
 
 
 

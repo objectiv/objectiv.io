@@ -32,6 +32,44 @@ Get access to string operations.
 
 <div className="method">
 
+### <span className="name">replace</span>
+
+<small className="parameter-list">(<span className="parameter" id="pat">pat</span>, <span className="parameter" id="repl">repl</span>, <span className="parameter" id="n">n=- 1</span>, <span className="parameter" id="case">case=None</span>, <span className="parameter" id="flags">flags=0</span>, <span className="parameter" id="regex">regex=False</span>)</small>
+
+
+<div className="content">
+
+replace each occurrence of a pattern in SeriesString.
+
+
+#### Parameters
+
+* **`pat`** – string or compiled pattern to use for replacement.
+* **`repl`** – string to use as a replacement for each occurrence
+* **`n`** – number of occurrences to be replaced. Only n=-1 is supported (all occurrences)
+* **`case`** – determines if the replace is case insensitive. Considered only when regex=True.
+* **`flags`** – regex module flags. Considered only when regex=True.
+* **`regex`** – Determines if provided pattern is a regular expression or not.
+
+
+:::note
+
+Replacements based on regular expressions are not supported yet. Therefore:
+    * `pat` parameter must be string type
+    * `case`, `flags`, `regex` will not be considered on replacement
+
+
+
+:::
+
+
+</div>
+
+
+</div>
+
+<div className="method">
+
 ### <span className="name">slice</span>
 
 <small className="parameter-list">(<span className="parameter" id="start">start=None</span>, <span className="parameter" id="stop">stop=None</span>)</small>
