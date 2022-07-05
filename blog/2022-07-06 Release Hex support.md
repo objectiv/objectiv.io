@@ -41,17 +41,19 @@ Here is a retention analysis example from our basic product analytics notebook, 
 
 <BlogImage url="/img/blog/releases/20220706/hex-retention.png" 
   size="large" 
-  caption="Retention analysis powered by Objectiv, running in Hex" />
-
-You can [open it in Hex](https://app.hex.tech/803f838c-ed9e-47b4-b761-601992cc9ce4/app/7bccc729-e47c-4832-9c0c-cf94a0135668/latest) to see it in action without any setup.
+  caption="Retention analysis, powered by Objectiv. {1}"
+  captionLinks={[
+    {text: 'Click to open in Hex.', to: 'https://app.hex.tech/803f838c-ed9e-47b4-b761-601992cc9ce4/app/7bccc729-e47c-4832-9c0c-cf94a0135668/latest'}
+  ]}/>
 
 But you can also use it for more advanced use cases, i.e. logistic regression modeling to predict user behavior:
 
 <BlogImage url="/img/blog/releases/20220706/hex-lr.png" 
-  size="large" 
-  caption="Logistic regression powered by Objectiv, running in Hex" />
-
-Check it out in Hex [here](https://app.hex.tech/803f838c-ed9e-47b4-b761-601992cc9ce4/app/aded07b0-e422-4586-a4e7-85a3723fafae/latest).
+  size="large"  
+  caption="Predicting user behavior with logistic regression. {1}"
+  captionLinks={[
+    {text: 'Click to open in Hex.', to: 'https://app.hex.tech/803f838c-ed9e-47b4-b761-601992cc9ce4/app/aded07b0-e422-4586-a4e7-85a3723fafae/latest'}
+     ]}/>
 
 ## There is a lot more
 These are just a handful of examples, but you can use Hex to run [any model from the open model hub](https://objectiv.io/docs/modeling/open-model-hub/models/) directly on your full DWH. 
