@@ -104,8 +104,8 @@ Let’s take a closer look at one of the event classes, the [PressEvent][press-e
 `} 
   baseColor="blue" 
   links={[
-    { name: 'InteractiveEvent', to: '/docs/taxonomy/reference/events/InteractiveEvent' },
-    { name: 'PressEvent', to: '/docs/taxonomy/reference/location-contexts/PressableContext' }
+    { name: 'InteractiveEvent', to: 'https://objectiv.io/docs/taxonomy/reference/events/InteractiveEvent' },
+    { name: 'PressEvent', to: 'https://objectiv.io/docs/taxonomy/reference/location-contexts/PressableContext' }
   ]}
 />
 
@@ -128,8 +128,8 @@ when audio or video starts playing:
 `} 
   baseColor="blue" 
   links={[
-    { name: 'NonInteractiveEvent', to: '/docs/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'MediaEvent', to: '/docs/taxonomy/reference/events/MediaEvent' }
+    { name: 'NonInteractiveEvent', to: 'https://objectiv.io/docs/taxonomy/reference/events/NonInteractiveEvent' },
+    { name: 'MediaEvent', to: 'https://objectiv.io/docs/taxonomy/reference/events/MediaEvent' }
   ]}
 />
 
@@ -160,7 +160,7 @@ Like events, contexts are divided into two subclasses: [global contexts][global-
   caption="The MarketingContext, used to capture marketing campaign details" 
   baseColor="blue" 
   links={[
-        { name: 'AbstractGlobalContext', to: '/docs/taxonomy/global-contexts' }
+        { name: 'AbstractGlobalContext', to: 'https://objectiv.io/docs/taxonomy/global-contexts' }
  ]}
 />
 
@@ -175,7 +175,7 @@ Secondly, [location contexts][location-contexts] contain information about where
 `} 
   baseColor="blue" 
   links={[
-    { name: 'AbstractLocationContext', to: '/docs/taxonomy/location-contexts/' }
+    { name: 'AbstractLocationContext', to: 'https://objectiv.io/docs/taxonomy/location-contexts/' }
   ]}
 />
 
