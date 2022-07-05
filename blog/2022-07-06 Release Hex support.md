@@ -57,7 +57,7 @@ Check it out in Hex [here](https://app.hex.tech/803f838c-ed9e-47b4-b761-601992cc
 These are just a handful of examples, but you can use Hex to run [any model from the open model hub](https://objectiv.io/docs/modeling/open-model-hub/models/) directly on your full DWH. 
 
 ## How to get started
-If you are already using Hex, follow the instructions on how to get going HERE (link naar docs toevoegen). If you don’t have access to Hex yet, you can sign up for a free account [here](https://hex.tech/).
+If you are already using Hex, [follow the instructions to get started](https://objectiv.io/docs/modeling/get-started-in-your-notebook/). If you don’t have access to Hex yet, you can first sign up for a free account [here](https://hex.tech/).
 
 :::info
 ## Office Hours
