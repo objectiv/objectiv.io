@@ -345,6 +345,65 @@ p, .markdown p {
   color: var(--ifm-font-color-base);
 }
 
+/** DIAGRAM (MERMAID) MARKUP **/
+
+.mermaid {
+  text-align: center;
+}
+/* Fixes large margins top and bottom */
+.mermaid svg {
+  height: auto;
+}
+
+.diagram-caption {
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+ /* HACK: use '!important' as a workaround for styling not being applied to nodes: 
+  https://github.com/mermaid-js/mermaid/issues/1649 */
+.diagram-basic rect {
+  fill: #fff !important;
+  stroke: black !important;
+}
+.hover .diagram-basic rect, .diagram-basic .hover rect {
+  fill: rgb(212, 212, 212) !important;
+}  
+.diagram-blue rect {
+  fill: #EAF9FE !important;
+  stroke: #64C8FA !important;
+}
+.hover .diagram-blue rect, .diagram-blue .hover rect {
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
+}
+.diagramActive rect {
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
+}
+.diagram-pink rect {
+  fill: #fba99dff !important;
+  stroke: rgb(200, 50, 25) !important;
+}
+.hover .diagram-pink rect, .diagram-pink .hover rect {
+  fill: rgb(255, 150, 125) !important;
+}
+.diagram-yellow rect {
+  fill: #fef284ff !important;
+  stroke: rgb(150, 133, 0) !important;
+}
+.hover .diagram-yellow rect, .diagram-yellow .hover rect {
+  fill: rgb(255, 243, 81) !important;
+}
+.mermaid .edgeLabel {
+  background-color: rgb(200, 200, 200) !important;
+}
+.mermaid .edgeLabel rect {
+  fill: rgb(200, 200, 200) !important;
+  stroke: none !important;
+}
+
 /** LIGHTBOX MARKUP **/
 /* animation */
 
