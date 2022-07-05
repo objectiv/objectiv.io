@@ -15,22 +15,26 @@ Here’s how you can use Objectiv in these different notebooks:
 
 ## Jupyter
 
-1. Install the open model hub locally:
+1: Install the open model hub locally
+
 ```console
 pip install objectiv-modelhub
 ```
 
-1. Import the required packages, at the start of your notebook:
+2: Import the required packages, at the start of your notebook
+
 ```python
 from modelhub import ModelHub
 ```
 
-1. Instantiate the model hub and set the default time aggregation:
+3: Instantiate the model hub and set the default time aggregation
+
 ```python
 modelhub = ModelHub(time_aggregation='%Y-%m-%d')
 ```
 
-1. Setup the db connection (optionally first create a local SSH tunnel)
+4: Setup the db connection (optionally first create a local SSH tunnel)
+
 ```python
 df = modelhub.get_objectiv_dataframe(db_url='postgresql://USER:PASSWORD@HOST:PORT/DATABASE',
         start_date='2022-06-01',
@@ -40,22 +44,26 @@ df = modelhub.get_objectiv_dataframe(db_url='postgresql://USER:PASSWORD@HOST:POR
 
 ## Google Colab / Hex / Deepnote
 
-1. Install the open model hub at the start of your notebook:
+1: Install the open model hub at the start of your notebook
+
 ```console
 pip install objectiv-modelhub
 ```
 
-1. Import the required packages, next in your notebook:
+2: Import the required packages, next in your notebook
+
 ```python
 from modelhub import ModelHub
 ```
 
-1. Instantiate the model hub and set the default time aggregation:
+3: Instantiate the model hub and set the default time aggregation
+
 ```python
 modelhub = ModelHub(time_aggregation='%Y-%m-%d')
 ```
 
-1. Optionally: create an SSH tunnel to the Postgres database server:
+4: Optionally: create an SSH tunnel to the Postgres database server
+
 ```python
 pip install sshtunnel
 ```
@@ -95,7 +103,8 @@ except Exception as e:
     raise(e)
 ```
 
-1. Setup the db connection
+5: Setup the db connection
+
 ```python
 df = modelhub.get_objectiv_dataframe(
     db_url=f'postgresql://USER:PASSWORD@localhost:{tunnel_port}/DATABASE',
