@@ -203,7 +203,7 @@ See the video below for a walkthrough:
 
 <VimeoPlayer 
   id="product-demo-validation" 
-  videoId="722917146" 
+  videoId="724854129" 
   paddingBottom="45%" />
 
 
