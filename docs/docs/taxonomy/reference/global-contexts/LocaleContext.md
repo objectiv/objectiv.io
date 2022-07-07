@@ -24,5 +24,5 @@ import Mermaid from '@theme/Mermaid';
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
 
 :::info setting of properties
-The tracker will automatically set all the properties.
+The tracker will automatically set all properties when using the official Plugin. On manual creation, `id` must be provided. 
 :::

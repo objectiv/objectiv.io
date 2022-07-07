@@ -18,12 +18,12 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-|                 | type      | description
-| :--             | :--       | :--           
-| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
-| **_type** | string      | String literal used during serialization. Should always match the Context interface name.     
-| **value**  | string   | The value of the input element.
+|            | type        | description
+| :--        | :--         | :--           
+| **id**     | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type**  | string      | String literal used during serialization. Should always match the Context interface name.     
+| **value**  | string      | The value of the input element.
 
 :::info setting of properties
-The tracker will automatically set all the properties.
+The tracker will automatically set all properties when using Tracked Components or Taggers. On manual creation `id` and `value` must be provided.
 :::

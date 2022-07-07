@@ -22,3 +22,7 @@ A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing in
 | :--       | :--         | :--           
 | **id**    | string      | Unique string describing the app in which the events happen.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.
+
+:::info setting of properties
+The tracker will automatically set all properties and factor this context. On manual creation, `id` must be provided.
+:::

@@ -79,7 +79,7 @@ This can be disabled via the  `normalizeId` option:
 </TrackedPressableContext>
 ```
 
-:::caution Props forwarding
+:::info Props forwarding
 All `TrackedContext` components support props forwarding,
 
 Whenever a `TrackedContext` requires one or more props that may overlap with the given `Component`, props forwarding allows the

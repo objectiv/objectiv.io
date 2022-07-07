@@ -9,7 +9,8 @@ TrackedInput: (props: {
   forwardId?: boolean,
   title?: string,
   forwardTitle?: boolean,
-  normalizeId?: boolean
+  normalizeId?: boolean,
+  trackValue?: boolean,
 }) => ReactElement
 ```
 
@@ -22,12 +23,16 @@ TrackedInput: (props: {
 | optional | title        | string    |               |
 | optional | forwardTitle | boolean   | `false`       |
 | optional | normalizeId  | boolean   | `true`        |
+| optional | trackValue   | boolean   | `false`       |
 
 ## Returns
 `ReactElement`
 
 ## Automatic Events
 - [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) when `onBlur` triggers and the  value changed.
+
+## Global Contexts
+- [InputValueContext](/taxonomy/reference/global-contexts/InputValueContext.md) with the changed value, if `trackValue` is set to `true`.
 
 ## Usage example
 
@@ -38,7 +43,8 @@ import { TrackedInput } from '@objectiv/tracker-react';
 ```jsx
 <div>
   <header>
-    ...
+    <label for={'search'}>Search:</label>
+    <TrackedInput id={'search'} placeholder={'🔍'} name={'search'} trackValue={true} />
   </header>
   <main>
     <label for={'email'}>Email:</label>

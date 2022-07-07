@@ -21,12 +21,12 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-|                 | type      | description
-| :--             | :--       | :--           
-| **id**    | string      | Specifies the scope of identification e.g. backend, md5(email), supplier_cookie.
-| **_type** | string      | String literal used during serialization. Should always match the Context interface name.     
-| **value**  | string   | The unique identifier for this user/group/entity within the scope defined by `id`.
+|             | type     | description
+| :--         | :--      | :--           
+| **id**      | string   | Specifies the scope of identification e.g. backend, md5(email), supplier_cookie.
+| **_type**   | string   | String literal used during serialization. Should always match the Context interface name.     
+| **value**   | string   | The unique identifier for this user/group/entity within the scope defined by `id`.
 
 :::info setting of properties
-The tracker will automatically set all the properties.
+The tracker will automatically set all properties when using the official Plugin. On manual creation, `id` and `value` must be provided.
 :::

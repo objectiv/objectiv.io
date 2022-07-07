@@ -109,7 +109,7 @@ const TrackedLink = React.forwardRef<HTMLAnchorElement, TrackedLinkProps>(
 )
 ```
 
-:::caution Props forwarding
+:::info Props forwarding
 Interesting to note in the example above is the `forwardHref` prop. 
 Without it, the resulting wrapped component would not receive the `href` prop, most likely resulting in a TypeScript error or crash.
 

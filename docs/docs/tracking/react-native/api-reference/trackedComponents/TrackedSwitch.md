@@ -5,18 +5,23 @@ Wraps [Switch](https://reactnative.dev/docs/switch) in a [InputContext](/taxonom
 ```tsx
 TrackedSwitch: (props: SwitchProps & {
   id: string,
+  trackValue?: boolean,
 }) => Switch
 ```
 
 ## Additional Props
-|               |         | type      | 
-|:-------------:|:--------|:----------|
-| **required**  | **id**  | string    |
+|              |            | type    | default value | 
+|:------------:|:-----------|:--------|:--------------|
+| **required** | **id**     | string  |               |
+|   optional   | trackValue | boolean | `false`       |
 
 ## Automatic Events
 - [InputChangeEvent](/taxonomy/reference/events/VisibleEvent.md) when `onValueChange` triggers.
 
-## Usage example
+## Global Contexts
+- [InputValueContext](/taxonomy/reference/global-contexts/InputValueContext.md) with the changed value, if `trackValue` is set to `true`.
+
+## Usage examples
 
 ```jsx
 import { TrackedSwitch } from '@objectiv/tracker-react-native';
@@ -29,6 +34,18 @@ import { TrackedSwitch } from '@objectiv/tracker-react-native';
   value={isEnabled}
 />
 ```
+
+To track also the changed value and attach it to Event's GlobalContexts as [InputValueContext](/taxonomy/reference/global-contexts/InputValueContext.md):
+
+```tsx
+<TrackedSwitch
+  id="on-off"
+  onValueChange={toggleSwitch}
+  value={isEnabled}
+  trackValue={true}
+/>
+```
+
 
 <br />
 

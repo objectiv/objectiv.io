@@ -25,5 +25,5 @@ import Mermaid from '@theme/Mermaid';
 | **hit_number**  | integer   | Hit counter relative to the current session, this event originated in.
 
 :::info setting of properties
-The tracker will automatically set all the properties and assign a hit_number.
+The tracker will automatically set all the properties and assign a `hit_number`.
 :::
