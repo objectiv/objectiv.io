@@ -23,7 +23,7 @@ import Mermaid from '@theme/Mermaid';
 ### Properties
 |                 | type      | description
 | :--             | :--       | :--           
-| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **id**    | string      | Specifies the scope of identification e.g. backend, md5(email), supplier_cookie.
 | **_type** | string      | String literal used during serialization. Should always match the Context interface name.     
 | **value**  | string   | The unique identifier for this user/group/entity within the scope defined by `id`.
 
