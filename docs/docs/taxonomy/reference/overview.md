@@ -13,6 +13,7 @@ High level overview of all the Events & Contexts available in the open analytics
 * [ApplicationContext](./global-contexts/ApplicationContext.md)
 * [CookieIdContext](./global-contexts/CookieIdContext.md)
 * [HttpContext](./global-contexts/HttpContext.md)
+* [IdentityContext](./global-contexts/IdentityContext.md)
 * [InputValueContext](./global-contexts/InputValueContext.md)
 * [LocaleContext](./global-contexts/LocaleContext.md)
 * [MarketingContext](./global-contexts/MarketingContext.md)
