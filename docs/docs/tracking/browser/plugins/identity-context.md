@@ -37,3 +37,6 @@ type IdentityContextAttributes = {
   value: string;
 }
 ```
+
+- The `id` property specifies the scope of identification.  
+- The `value` is the actual identifier within the scope defined by `id`.
