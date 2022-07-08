@@ -34,22 +34,6 @@ The Plugin constructor accepts a single `idFactoryFunction` parameter:
 A LocaleContext will not be generated in those cases.
 :::
 
-#### Locale from URL
-Example URL: `http://www.website.dev/en/slug2`.   
-Expected LocaleContext id: `en`.  
-
-```ts
-const tracker = new ReactTracker({
-  applicationId: 'app-id',
-  endpoint: 'https://collector.app.dev',
-  plugins: [
-    new LocaleContextPlugin({
-      idFactoryFunction: () => location.pathname.split('/')[1] ?? null 
-    })
-  ]
-});  
-```
-
 #### Locale from state
 In this example we are going to retrieve the current language from a library, such as [react-i18next](https://react.i18next.com).
 

@@ -49,29 +49,3 @@ const tracker = new ReactTracker({
   ]
 });  
 ```
-
-#### Locale from state
-In this example we are going to retrieve the current language from a library, such as [react-i18next](https://react.i18next.com).
-
-```tsx
-const App = (props) => {
-  const { i18n } = useTranslation();
-  const selectedLanguageCode = i18n.language;
-  
-  const tracker = new ReactTracker({
-    applicationId: 'app-id',
-    endpoint: 'https://collector.app.dev',
-    plugins: [
-      new LocaleContextPlugin({
-        idFactoryFunction: () => selectedLanguageCode 
-      })
-    ]
-  });  
-  
-  return (
-    <ObjectivProvider tracker={tracker}>
-      {props.children}
-    </ObjectivProvider>
-  );
-}
-```
