@@ -1,6 +1,6 @@
 # useTracker
 
-Consumes [TrackerProviderContext](/tracking/react-native/api-reference/common/providers/TrackerProviderContext.md) and retrieves its `tracker` property.
+Consumes [TrackerProviderContext](/tracking/react-native/api-reference/providers/TrackerProviderContext.md) and retrieves its `tracker` property.
 
 ```ts
 useTracker = () => ReactNativeTracker

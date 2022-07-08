@@ -7,7 +7,7 @@ sidebar_position: 2
 ReactNativeTracker extends Core Tracker with a simplified constructor and some preconfigured Plugins.
 
 ## Usage
-In this example we create a new ReactNativeTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md).
+In this example we create a new ReactNativeTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react-native/api-reference/providers/ObjectivProvider.md).
 
 ```ts
 import { ObjectivProvider, ReactNativeTracker } from '@objectiv/tracker-react-native';
@@ -32,19 +32,19 @@ const App = ({children}) => {
 ## Configuration
 ReactNativeTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
-|          |                                 | type             | default value                                                                                                                                                |
-|:--------:|:--------------------------------|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| required | **applicationId**               | string           |                                                                                                                                                              |
-| optional | **_endpoint_**                  | string           |                                                                                                                                                              |
-| optional | **_transport_**                 | TrackerTransport | The result of [makeReactNativeTrackerDefaultTransport](/tracking/react-native/api-reference/common/factories/makeReactNativeTrackerDefaultTransport.md)      |
-| optional | queue                           | TrackerQueue     | The result of [makeReactNativeTrackerDefaultQueue](/tracking/react-native/api-reference/common/factories/makeReactNativeTrackerDefaultQueue.md)              |
-| optional | plugins                         | TrackerPlugin    | The result of [makeReactNativeTrackerDefaultPluginsList](/tracking/react-native/api-reference/common/factories/makeReactNativeTrackerDefaultPluginsList.md)  |
-| optional | trackerId                       | string           | Same value as `applicationId`                                                                                                                                |
-| optional | active                          | boolean          | `true`                                                                                                                                                       |
-| optional | trackApplicationContext         | boolean          | `true`                                                                                                                                                       |
-| optional | trackHttpContext                | boolean          | `true`                                                                                                                                                       |
-| optional | trackPathContextFromURL         | boolean          | `true`                                                                                                                                                       |
-| optional | trackRootLocationContextFromURL | boolean          | `true`                                                                                                                                                       |
+|          |                                 | type             | default value                                           |
+|:--------:|:--------------------------------|:-----------------|:--------------------------------------------------------|
+| required | **applicationId**               | string           |                                                         |
+| optional | **_endpoint_**                  | string           |                                                         |
+| optional | **_transport_**                 | TrackerTransport | The result of makeReactNativeTrackerDefaultTransport    |
+| optional | queue                           | TrackerQueue     | The result of makeReactNativeTrackerDefaultQueue        |
+| optional | plugins                         | TrackerPlugin    | The result of makeReactNativeTrackerDefaultPluginsList  |
+| optional | trackerId                       | string           | Same value as `applicationId`                           |
+| optional | active                          | boolean          | `true`                                                  |
+| optional | trackApplicationContext         | boolean          | `true`                                                  |
+| optional | trackHttpContext                | boolean          | `true`                                                  |
+| optional | trackPathContextFromURL         | boolean          | `true`                                                  |
+| optional | trackRootLocationContextFromURL | boolean          | `true`                                                  |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.

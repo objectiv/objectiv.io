@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Now that the [Tracker is up and running](/tracking/react-native/how-to-guides/getting-started.md) we can start thinking about enriching the UX with [Location Wrappers](/tracking/react-native/api-reference/locationWrappers/overview.md) and [Tracked Components](/tracking/react-native/api-reference/trackedComponents/overview.md).
 
-The former are generic wrapper Components while the latter can swap the original Components with an automatically wrapped and tracked version of them. Both are built on top of our [Providers](/tracking/react-native/api-reference/common/providers/overview.md).
+The former are generic wrapper Components while the latter can swap the original Components with an automatically wrapped and tracked version of them. Both are built on top of our [Providers](/tracking/react-native/api-reference/providers/overview.md).
 
 :::info Locations?
 Take a look at the [Core Concepts Introduction](/tracking/core-concepts) for more information on what Locations are and why are they so important.

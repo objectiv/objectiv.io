@@ -5,14 +5,17 @@ title: Overview
 
 # React Tracker API Reference
 
-import LocationWrappersOverview from './locationWrappers/overview.md'
-import TrackedContextsOverview from './trackedContexts/overview.md'
+import ProvidersOverview from './providers/overview.md'
 import TrackedElementsOverview from './trackedElements/overview.md'
+import TrackedContextsOverview from './trackedContexts/overview.md'
+import LocationWrappersOverview from './locationWrappers/overview.md'
 import HooksOverview from './hooks/overview.md'
 import EventTrackersOverview from './eventTrackers/overview.md'
-import CommonOverview from './common/overview.md'
 
 High level overview of all the APIs available in the [React Tracker](/tracking/react/api-reference/ReactTracker.md).
+
+## Providers
+<ProvidersOverview />
 
 ## Tracked Elements
 <TrackedElementsOverview />
@@ -26,8 +29,5 @@ High level overview of all the APIs available in the [React Tracker](/tracking/r
 ## Hooks
 <HooksOverview />
 
-## Common
-<CommonOverview />
-
-## Low-level Event Trackers
+## Event Trackers
 <EventTrackersOverview />

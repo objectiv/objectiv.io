@@ -7,7 +7,7 @@ sidebar_position: 2
 ReactTracker extends Core Tracker with a simplified constructor and some preconfigured Plugins.
 
 ## Usage
-In this example we create a new ReactTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react/api-reference/common/providers/ObjectivProvider.md).
+In this example we create a new ReactTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react/api-reference/providers/ObjectivProvider.md).
 
 ```ts
 import { ObjectivProvider, ReactTracker } from '@objectiv/tracker-react';
@@ -32,19 +32,19 @@ const App = ({children}) => {
 ## Configuration
 ReactTracker configuration requires at least an `applicationId` and either an `endpoint` or a custom `transport`.
 
-|          |                                 | type             | default value                                                                                                                            |
-|:--------:|:--------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| required | **applicationId**               | string           |                                                                                                                                          |
-| optional | **_endpoint_**                  | string           |                                                                                                                                          |
-| optional | **_transport_**                 | TrackerTransport | The result of [makeReactTrackerDefaultTransport](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultTransport.md)     |
-| optional | queue                           | TrackerQueue     | The result of [makeReactTrackerDefaultQueue](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultQueue.md)             |
-| optional | plugins                         | TrackerPlugin    | The result of [makeReactTrackerDefaultPluginsList](/tracking/react/api-reference/common/factories/makeReactTrackerDefaultPluginsList.md) |
-| optional | trackerId                       | string           | Same value as `applicationId`                                                                                                            |
-| optional | active                          | boolean          | `true`                                                                                                                                   |
-| optional | trackApplicationContext         | boolean          | `true`                                                                                                                                   |
-| optional | trackHttpContext                | boolean          | `true`                                                                                                                                   |
-| optional | trackPathContextFromURL         | boolean          | `true`                                                                                                                                   |
-| optional | trackRootLocationContextFromURL | boolean          | `true`                                                                                                                                   |
+|          |                                 | type             | default value                                     |
+|:--------:|:--------------------------------|:-----------------|:--------------------------------------------------|
+| required | **applicationId**               | string           |                                                   |
+| optional | **_endpoint_**                  | string           |                                                   |
+| optional | **_transport_**                 | TrackerTransport | The result of makeReactTrackerDefaultTransport    |
+| optional | queue                           | TrackerQueue     | The result of makeReactTrackerDefaultQueue        |
+| optional | plugins                         | TrackerPlugin    | The result of makeReactTrackerDefaultPluginsList  |
+| optional | trackerId                       | string           | Same value as `applicationId`                     |
+| optional | active                          | boolean          | `true`                                            |
+| optional | trackApplicationContext         | boolean          | `true`                                            |
+| optional | trackHttpContext                | boolean          | `true`                                            |
+| optional | trackPathContextFromURL         | boolean          | `true`                                            |
+| optional | trackRootLocationContextFromURL | boolean          | `true`                                            |
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.

@@ -1,6 +1,6 @@
 # useLocationStack
 
-Consumes [LocationProviderContext](/tracking/react-native/api-reference/common/providers/LocationProviderContext.md) and retrieves its `locationStack` property.
+Consumes [LocationProviderContext](/tracking/react-native/api-reference/providers/LocationProviderContext.md) and retrieves its `locationStack` property.
 
 ```ts
 useLocationStack = () => LocationStack

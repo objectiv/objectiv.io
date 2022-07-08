@@ -142,7 +142,7 @@ This works because now `VideoPlayer`, being a separate component, will be able t
 ### Render Props approach
 There's a less verbose solution using [Render Props](https://reactjs.org/docs/render-props.html).  
 
-All LocationWrappers can render either regular ReactNode children or a function that receives an up-to-date [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md) as parameter.
+All LocationWrappers can render either regular ReactNode children or a function that receives an up-to-date [TrackingContext](/tracking/react/api-reference/providers/TrackingContext.md) as parameter.
 
 TrackingContext will contain the closest instance of ReactTracker and the LocationStack.
 

@@ -150,7 +150,7 @@ This works because now `PressableImage`, being a separate component, will be abl
 ### Render Props approach
 There's a less verbose solution using [Render Props](https://reactjs.org/docs/render-props.html).  
 
-All LocationWrappers can render either regular ReactNode children or a function that receives an up-to-date [TrackingContext](/tracking/react-native/api-reference/common/providers/TrackingContext.md) as parameter.
+All LocationWrappers can render either regular ReactNode children or a function that receives an up-to-date [TrackingContext](/tracking/react-native/api-reference/providers/TrackingContext.md) as parameter.
 
 TrackingContext will contain the closest instance of ReactNativeTracker and the LocationStack.
 

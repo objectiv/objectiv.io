@@ -8,7 +8,7 @@ Now that the [Tracker is up and running](/tracking/react/how-to-guides/getting-s
 thinking about Tracking some Elements or Components as 
 [LocationContexts](/taxonomy/reference/location-contexts/overview.md) using [Tracked Elements](/tracking/react/api-reference/trackedElements/overview.md) or [Tracked Contexts](/tracking/react/api-reference/trackedElements/overview.md).
 
-The former follow HTML semantic, while the latter are generic wrappers that can render any Component or Element. Both are built on top of our [Providers](/tracking/react/api-reference/common/providers/overview.md) and [Location Wrappers](/tracking/react/api-reference/locationWrappers/overview.md).
+The former follow HTML semantic, while the latter are generic wrappers that can render any Component or Element. Both are built on top of our [Providers](/tracking/react/api-reference/providers/overview.md) and [Location Wrappers](/tracking/react/api-reference/locationWrappers/overview.md).
 
 :::info Locations?
 Take a look at the [Core Concepts Introduction](/tracking/core-concepts) for more information on what Locations are and why are they so important.
