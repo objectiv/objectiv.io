@@ -18,12 +18,12 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-|           | type        | description
-| :--       | :--         | :--           
-| **id**    | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
-| **_type** | string      | String literal used during serialization. Should always match the Context interface name.      
+|                | type        | description
+| :--            | :--         | :--           
+| **id**         | string      | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.
+| **_type**      | string      | String literal used during serialization. Should always match the Context interface name.      
 | **cookie_id**  | string      | Unique identifier from the session cookie.
 
 :::info setting of properties
-The tracker will automatically set all the properties and assign a cookie_id.
+The collector will automatically set all the properties and assign a `cookie_id`.
 :::

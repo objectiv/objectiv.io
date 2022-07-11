@@ -4,7 +4,7 @@ title: Event Trackers
 ---
 
 :::caution
-Using low-level event trackers directly requires extra attention to the LocationStack and its composition.  
+Using Event Trackers requires extra attention to the LocationStack and its composition.   
 It's easy to instrument a callback and forget to wrap the triggering Component in a LocationContext.  
 
 Take a loot at this [how to build your own Custom Tracked Components](/tracking/react/how-to-guides/custom-components.md) guide for more info.

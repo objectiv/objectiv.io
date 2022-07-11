@@ -1,7 +1,7 @@
 # PressableContextWrapper
 
 Wraps its children in a [PressableContext](/taxonomy/reference/location-contexts/PressableContext.md).  
-Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/common/providers/TrackingContext.md).
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react/api-reference/providers/TrackingContext.md).
 
 ```tsx
 PressableContextWrapper: (props: {

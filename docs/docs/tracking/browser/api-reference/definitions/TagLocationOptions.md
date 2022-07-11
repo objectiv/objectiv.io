@@ -5,7 +5,7 @@ The `options` object parameter allows to override the default automatic tracking
 | Option          | Possible value
 | :--             | :--
 | trackClicks     | `boolean` \| `{ waitUntilTracked: true}` \| `{ waitUntilTracked: WaitUntilTrackedOptions}`
-| trackBlurs      | `boolean`
+| trackBlurs      | `boolean` \| `{ trackValue: boolean}`
 | trackVisibility | `boolean` \| `{ mode: 'auto' }` \| `{ mode: 'manual': isVisible: boolean }`
 | parent          | `TagLocationReturnValue`
 | validate        | `{ locationUniqueness: bolean }`
@@ -56,7 +56,33 @@ In the following example we are instructing our [Mutation Observer](/tracking/br
 ```
 
 ## options.trackBlurs
-Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements).
+Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/browser/tagging.md#tagged-elements).  
+
+```js
+options: { 
+  trackBlurs: true
+};
+
+// or, to prevent tracking
+
+options: { 
+  trackBlurs: false
+};
+```
+
+
+### Track also input values
+To capture values the `trackValue` option can be specified. This will result in an [InputValueContext](/taxonomy/reference/global-contexts/InputValueContext.md) to be attached to the event.   
+
+```js
+options: {
+  trackBlurs: {
+    trackValue: true
+  }
+}
+```
+
+
 
 ## options.trackVisibility
 Used to customize whether to track [trackHiddenEventEvent](/tracking/browser/api-reference/eventTrackers/trackHiddenEvent.md) and [trackVisibleEvent](/tracking/browser/api-reference/eventTrackers/trackVisibleEvent.md) events, either automatically or manually.

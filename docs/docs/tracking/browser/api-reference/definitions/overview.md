@@ -24,6 +24,8 @@ Common TypeScript definitions.
 - [TagLinkParameters](/tracking/browser/api-reference/definitions/TagLinkParameters.md)
 - [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)
 - [TagLocationReturnValue](/tracking/browser/api-reference/definitions/TagLocationReturnValue.md)
+- [TrackBlursAttribute](/tracking/browser/api-reference/definitions/TrackBlursAttribute.md)
+- [TrackBlursOptions](/tracking/browser/api-reference/definitions/TrackBlursOptions.md)
 - [TrackClicksAttribute](/tracking/browser/api-reference/definitions/TrackClicksAttribute.md)
 - [TrackClicksOptions](/tracking/browser/api-reference/definitions/TrackClicksOptions.md)
 - [TrackedElement](/tracking/browser/api-reference/definitions/TrackedElement.md)

@@ -18,7 +18,7 @@ npm install @objectiv/tracker-react-native
 
 ## Configure the Tracker
 
-In this example we create a new ReactNativeTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md).
+In this example we create a new ReactNativeTracker instance and wrap our entire App in [ObjectivProvider](/tracking/react-native/api-reference/providers/ObjectivProvider.md).
 
 ```ts
 import { ObjectivProvider, ReactNativeTracker } from '@objectiv/tracker-react-native';

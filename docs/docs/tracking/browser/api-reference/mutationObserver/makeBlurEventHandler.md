@@ -7,15 +7,19 @@ The returned handler will trigger [trackInputChangeEvent](/tracking/browser/api-
 ```typescript
 const makeBlurEventHandler = (
   element: TaggedElement, 
-  tracker?: BrowserTracker
+  tracker?: BrowserTracker,
+  trackBlursOptions?: TrackBlursOptions, 
+  locationId?: string
 ) => EventHandler
 ```
 
 ## Parameters
-|          |             | type                                                                  | default value
-| :-:      | :--         | :--                                                                   | :--           
-| required | **element** | [TaggedElement](/tracking/browser/api-reference/definitions/TaggedElement.md) |
-| optional | tracker     | [BrowserTracker](/tracking/browser/api-reference/general/BrowserTracker.md)   |
+|          |                   | type                                                                                                                  | default value
+| :-:      | :--               | :--                                                                                                                   | :--           
+| required | **element**       | [TaggedElement](/tracking/browser/api-reference/definitions/TaggedElement.md)                                         |
+| optional | tracker           | [BrowserTracker](/tracking/browser/api-reference/general/BrowserTracker.md)                                           |
+| optional | trackBlursOptions | [TrackBlursOptions](/tracking/browser/api-reference/definitions/TrackBlursOptions.md)                                 |
+| optional | locationId        | string, used as [InputValueContext](/taxonomy/reference/global-contexts/InputValueContext.md) id when tracking values |
 
 
 ## Returns 

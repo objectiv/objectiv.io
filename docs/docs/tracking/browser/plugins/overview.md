@@ -23,3 +23,6 @@ These are simply modules containing pre-made tracked Components, hooks, factorie
 - Plugin: [OpenTaxonomyValidationPlugin](/tracking/browser/plugins/open-taxonomy-validation.md)
 - Plugin: [PathContextFromURLPlugin](/tracking/browser/plugins/path-context-from-url.md)
 - Plugin: [RootLocationContextFromURLPlugin](/tracking/browser/plugins/root-location-context-from-url.md)
+
+## Optional
+- Plugin: [IdentityContextPlugin](/tracking/browser/plugins/identity-context.md)

@@ -1,7 +1,7 @@
 # OverlayContextWrapper
 
 Wraps its children in a [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md).  
-Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react-native/api-reference/common/providers/TrackingContext.md).
+Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-props.html#using-props-other-than-render) function receiving [TrackingContext](/tracking/react-native/api-reference/providers/TrackingContext.md).
 
 ```tsx
 OverlayContextWrapper: (props: {

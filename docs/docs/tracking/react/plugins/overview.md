@@ -26,3 +26,4 @@ These are simply modules containing pre-made tracked Components, hooks, factorie
 
 ## Optional
 - Component library: [ReactRouterTrackedComponents](/tracking/react/plugins/react-router-tracked-components.md)
+- Plugin: [IdentityContextPlugin](/tracking/react/plugins/identity-context.md)

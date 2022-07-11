@@ -1,5 +1,5 @@
 # useTrackingContext
-Consumes [TrackingContext](/tracking/react-native/api-reference/common/providers/TrackingContext.md) and retrieves its whole state.
+Consumes [TrackingContext](/tracking/react-native/api-reference/providers/TrackingContext.md) and retrieves its whole state.
 
 ```ts
 useTrackingContext = () => TrackingContext

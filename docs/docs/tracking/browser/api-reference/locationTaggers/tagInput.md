@@ -11,9 +11,9 @@ tagInput = (parameters: {
 ```
 
 ## Parameters
-|          |         | type                                                                                              | default value
-| :-:      | :--     | :--                                                                                               | :--           
-| required | **id**  | string                                                                                            |
+|          |         | type                                                                                                      | default value
+| :-:      | :--     | :--                                                                                                       | :--           
+| required | **id**  | string                                                                                                    |
 | optional | options | [TagLocationOptions](/tracking/browser/api-reference/definitions/TagLocationOptions.md)                   | `{ trackBlurs: true }`
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/browser/api-reference/definitions/TrackerErrorHandlerCallback.md) | `TrackerConsole.error`
 
@@ -31,13 +31,20 @@ Unless customized via the `options` parameter, automatically triggers:
 import { tagInput } from '@objectiv/tracker-browser';
 ```
 
-```jsx
+```jsx title="Automatically track InputChangeEvent onBlur"
 <input {...tagInput({ id: 'search' })} />
 ```
 
-```jsx
-<Search {...tagInput({ id: 'search' })} />
+```jsx title="Automatically track InputChangeEvent and InputValueContext onBlur"
+<Search {...tagInput({ id: 'search', options: { trackBlurs: { trackValue: true } } })} />
 ```
+
+```jsx title="Enrich location, but do not track InputChangeEvent"
+<select {...tagInput({ id: 'search', options: { trackBlurs: false } })}>
+  ...
+</select>
+```
+
 
 <br />
 

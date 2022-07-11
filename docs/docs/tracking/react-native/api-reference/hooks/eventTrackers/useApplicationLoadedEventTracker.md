@@ -12,7 +12,7 @@ useApplicationLoadedEventTracker = (parameters: {
 ```
 
 :::caution
-[ObjectivProvider](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md) tracks [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md) automatically on mount.  
+[ObjectivProvider](/tracking/react-native/api-reference/providers/ObjectivProvider.md) tracks [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md) automatically on mount.  
 Make sure to set the `trackApplicationLoaded` prop of ObjectivProvider to `false` when manually tracking it.  
 :::
 

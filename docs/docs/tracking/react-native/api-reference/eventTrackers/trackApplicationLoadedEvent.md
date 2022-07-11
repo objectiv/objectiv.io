@@ -18,7 +18,7 @@ This is a lower-level API.
 :::
 
 :::info
-Under normal circumstances [ObjectivTracker](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md) tracks this event automatically, unless disabled via its options.
+Under normal circumstances [ObjectivTracker](/tracking/react-native/api-reference/providers/ObjectivProvider.md) tracks this event automatically, unless disabled via its options.
 :::
 
 ## Parameters
@@ -64,7 +64,7 @@ const App = ({ children }) => {
 ```
 
 :::tip
-The code above is actually very similar to what [ObjectivProvider](/tracking/react-native/api-reference/common/providers/ObjectivProvider.md) does internally. Check the [source on GitHub](https://github.com/objectiv/objectiv-analytics/blob/main/tracker/trackers/react-native/src/common/providers/ObjectivProvider.tsx).
+The code above is actually very similar to what [ObjectivProvider](/tracking/react-native/api-reference/providers/ObjectivProvider.md) does internally. Check the [source on GitHub](https://github.com/objectiv/objectiv-analytics/blob/main/tracker/trackers/react-native/src/providers/ObjectivProvider.tsx).
 :::
 
 <br />

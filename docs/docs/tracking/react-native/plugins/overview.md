@@ -23,3 +23,4 @@ These are simply modules containing pre-made tracked Components, hooks, factorie
 
 ## Optional
 - Component library: [ReactNavigation](/tracking/react-native/plugins/react-navigation.md)
+- Plugin: [IdentityContextPlugin](/tracking/react-native/plugins/identity-context.md)
