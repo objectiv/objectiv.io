@@ -388,6 +388,7 @@ p, .markdown p {
 }
 .hover .diagram-pink rect, .diagram-pink .hover rect {
   fill: rgb(255, 150, 125) !important;
+  stroke: rgb(200, 50, 25) !important;
 }
 .diagram-yellow rect {
   fill: #fef284ff !important;
