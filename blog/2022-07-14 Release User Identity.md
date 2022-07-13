@@ -33,7 +33,7 @@ import Mermaid from '@site/src/components/Mermaid';
 
 This release makes three additions to the open analytics taxonomy and open model hub:
 * Identity resolution of users across sessions/devices in a new [IdentityContext][identity-context], e.g. 
-using your own internal User IDs, or simply using cookies;
+using your own internal User IDs, or simply using consent-based cookies;
 * Store the user’s locale/language in a [LocaleContext][locale-context] to analyze multilingual applications; 
 and 
 * Capture the value of input fields like a search field in an [InputValueContext][input-value-context] to 
@@ -46,37 +46,19 @@ analyze searches, funnels, etc.
 <Mermaid chart={`
 	graph LR
         AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-        AbstractGlobalContext --> ApplicationContext;
-        AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
-        AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address?: string</span>"];
         AbstractGlobalContext --> IdentityContext["IdentityContext<br><span class='properties'>value: string</span>"]; 
         AbstractGlobalContext --> InputValueContext["InputValueContext<br><span class='properties'>value: string</span>"];
         AbstractGlobalContext --> LocaleContext;
-        AbstractGlobalContext --> MarketingContext["MarketingContext<br><span class='properties'>source: string<br>medium: string<br>campaign: string<br>term?: string<br>content?: string<br>source_platform?: string<br>creative_format?: string<br>marketing_tactic?: string<br></span>"];
-        AbstractGlobalContext --> PathContext;
-        AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
-    class ApplicationContext diagramActive;
-    class CookieIdContext diagramActive;
-    class HttpContext diagramActive;
-    class IdentityContext diagram-pink;
-    class InputValueContext diagram-pink;
-    class LocaleContext diagram-pink;
-    class MarketingContext diagramActive;
-    class PathContext diagramActive;
-    class SessionContext diagramActive;
+    class IdentityContext diagramActive;
+    class InputValueContext diagramActive;
+    class LocaleContext diagramActive;
 `} 
   caption="Global Contexts in the open analytics taxonomy; newly added highlighted" 
   baseColor="blue" 
   links={[
-    { name: 'ApplicationContext', to: '/taxonomy/reference/global-contexts/ApplicationContext' },
-    { name: 'CookieIdContext', to: '/taxonomy/reference/global-contexts/CookieIdContext' },
-    { name: 'HttpContext', to: '/taxonomy/reference/global-contexts/HttpContext' },
-    { name: 'IdentityContext', to: '/taxonomy/reference/global-contexts/IdentityContext' },
-    { name: 'InputValueContext', to: '/taxonomy/reference/global-contexts/InputValueContext' },
-    { name: 'LocaleContext', to: '/taxonomy/reference/global-contexts/LocaleContext' },
-    { name: 'MarketingContext', to: '/taxonomy/reference/global-contexts/MarketingContext' },
-    { name: 'PathContext', to: '/taxonomy/reference/global-contexts/PathContext' },
-    { name: 'SessionContext', to: '/taxonomy/reference/global-contexts/SessionContext' }
+    { name: 'IdentityContext', to: 'https://objectiv.io/docs/taxonomy/reference/global-contexts/IdentityContext' },
+    { name: 'InputValueContext', to: 'https://objectiv.io/docs/taxonomy/reference/global-contexts/InputValueContext' },
+    { name: 'LocaleContext', to: 'https://objectiv.io/docs/taxonomy/reference/global-contexts/LocaleContext' }
   ]}
 />
 
@@ -105,7 +87,7 @@ get_objectiv_dataframe(identity_resolution=’email’,
 What this example above does is assign the last identity available  to all events captured in the session, 
 with any parallel sessions (e.g. same user logged in on multiple devices) remaining intact. As the 
 `anonymize_unidentified_users` parameter is set to `False`, sessions for users that do not have a new 
-identity are not fully anonymized, and for instance keep their original session ID from the cookie.
+identity are not fully anonymized, and for instance keep their original cookie ID.
 
 ## How to use it in the Tracker SDK?
 The Tracker should be instructed to track the user identity explicitly in the new 
