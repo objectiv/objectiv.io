@@ -164,11 +164,11 @@ The tracker SDKs also enable automatically tracking these [InputValueContexts][i
 
 For example, on input change for input fields on React:
 ```tsx
-    <TrackedInput id={'search'} placeholder={'🔍'} name={'search'} trackValue={true} />3
+<TrackedInput id={'search'} placeholder={'🔍'} trackValue={true} />
 ```
 
-TODO: IMAGE
-Figure: a search in the Objectiv documentation
+<BlogImage url="/img/blog/releases/20220714/search.png" 
+  caption="Figure: a search in the Objectiv documentation" />
 
 Another example: the value of a switch on React Native.
 
