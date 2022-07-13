@@ -85,7 +85,7 @@ df['conversion_events'] = modelhub.map.is_conversion_event(df, 'quickstart_press
 As the map functions above retured a SeriesBoolean, they can be used in the model hub combined with a filter and aggregation models. We use the same aggregation model we showed earlier (`unique_users`), but now with the filter `df.conversion_events` applied. This gives the unique converted users per day.
 
 ```python
-modelhub.aggregate.unique_users(df[df.conversion_events]).head(10)
+modelhub.aggregate.unique_users(df[df.conversion_events]).sort_index(ascending=False).head(10)
 ```
 
 Similarly, we can use other aggregation models from the model hub. In the example below, the average session duration is calculated for new users.
@@ -111,7 +111,7 @@ In this example we calculate the number of users that were new in a month and al
 ```python
 df['is_new_user_month'] = modelhub.map.is_new_user(df, time_aggregation = '%Y-%m')
 df['is_twice_converted'] = modelhub.map.conversions_in_time(df, name='quickstart_presses')==2
-modelhub.aggregate.unique_users(df[df.is_new_user_month & df.is_twice_converted]).head()
+modelhub.aggregate.unique_users(df[df.is_new_user_month & df.is_twice_converted]).sort_index(ascending=False).head()
 ```
 
 ## What’s next?
