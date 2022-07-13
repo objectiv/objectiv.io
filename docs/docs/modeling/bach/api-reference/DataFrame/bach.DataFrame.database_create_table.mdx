@@ -1,0 +1,81 @@
+---
+id: bach-api-reference-data-frame-bach-data-frame-database-create-table
+slug: /modeling/bach/api-reference/DataFrame/database_create_table/
+title: database_create_table
+---
+
+# bach.DataFrame.database_create_table
+
+<div className="method">
+
+### <span className="name">database_create_table</span>
+
+<small className="parameter-list">(<span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="if_exists">if_exists='fail'</span>)</small>
+
+
+&#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
+
+<div className="content">
+
+Write the current state of the DataFrame to a database table.
+
+The DataFrame that’s returned will query from the written table for any further operations.
+
+
+#### Parameters
+
+* **`table_name`** (str) – Name of the table to write to. Can include project_id and dataset
+on BigQuery, e.g. ‘project_id.dataset.table_name’
+* **`if_exists`** (str) – {‘fail’, ‘replace’}. How to behave if the table already exists:
+\* fail: Raise an Exception.
+\* replace: Drop the table before inserting new values. All data in that table will be lost! Make
+sure that `table_name` does not contain any valuable information. Additionally, make sure
+that it is not a source table of this DataFrame.
+
+
+
+#### Raises
+
+**`Exception`** – If if_exists=’fail’’ and the table already exists. The exact exception depends on
+the underlying database.
+
+
+
+#### Returns
+
+New DataFrame; the base_node consists of a query on the newly created table.
+
+
+
+#### Return type
+
+[bach.dataframe.DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
+
+
+:::warning
+
+With `if_exists=’replace’`, if a table already exist with the given name, then that table will
+be dropped and all data lost!
+
+
+:::
+
+:::note
+
+This function queries the database.
+
+
+:::
+
+:::note
+
+This function writes to the database.
+
+
+:::
+
+
+</div>
+
+
+</div>
