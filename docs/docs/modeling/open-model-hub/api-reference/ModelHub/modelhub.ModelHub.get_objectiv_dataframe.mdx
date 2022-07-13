@@ -10,7 +10,7 @@ title: get_objectiv_dataframe
 
 ### <span className="name">get_objectiv_dataframe</span>
 
-<small className="parameter-list">(<span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name=None</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="bq_credentials_path">bq_credentials_path=None</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="*">\*</span>, <span className="parameter" id="db_url">db_url=None</span>, <span className="parameter" id="table_name">table_name=None</span>, <span className="parameter" id="start_date">start_date=None</span>, <span className="parameter" id="end_date">end_date=None</span>, <span className="parameter" id="bq_credentials_path">bq_credentials_path=None</span>, <span className="parameter" id="with_sessionized_data">with_sessionized_data=True</span>, <span className="parameter" id="session_gap_seconds">session_gap_seconds=1800</span>, <span className="parameter" id="identity_resolution">identity_resolution=None</span>, <span className="parameter" id="anonymize_unidentified_users">anonymize_unidentified_users=True</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/modelhub/modelhub/modelhub.py)</span>
@@ -37,6 +37,15 @@ the first date in the sql table. Format as ‘YYYY-MM-DD’.
 and including the last date in the sql table. Format as ‘YYYY-MM-DD’.
 * **`bq_credentials_path`** (Optional[str]) – path for BigQuery credentials. If db_url is for BigQuery engine, this
 parameter is required.
+* **`with_sessionized_data`** (bool) – Indicates if DataFrame must include `session_id`
+and `session_hit_number` calculated series.
+* **`session_gap_seconds`** (int) – Amount of seconds to be use for identifying if events were triggered
+or not during the same session.
+* **`identity_resolution`** (Optional[str]) – Identity id to be used for identifying users based on IdentityContext.
+If no value is provided, then the user_id series will contain the value from
+the cookie_id column (a UUID).
+* **`anonymize_unidentified_users`** (bool) – Indicates if unidentified users are required to be anonymized
+by setting user_id value to NULL. Otherwise, original UUID value from the cookie will remain.
 
 
 
@@ -44,6 +53,15 @@ parameter is required.
 
 [`bach.DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with Objectiv data.
 
+
+:::note
+
+If `with_sessionized_data` is True, Objectiv data will include `session_id` (int64)
+    and `session_hit_number` (int64) series.
+
+
+
+:::
 
 
 </div>
