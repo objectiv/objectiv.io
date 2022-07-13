@@ -3,7 +3,7 @@ title: "Release: User Identity resolution, and capturing locale & input field va
 description: "Adds three new Contexts and functions to the open analytics taxonomy and open model hub to enable you to easily perform identity resolution of users across sessions/devices, store the user’s locale/language for multilingual applications, and capture the value of input fields like a search field for analysis."
 slug: release-user-identity-resolution-and-capturing-locale-and-input-values/
 tags: [releases]
-image: /img/open-graph/TODO.png
+image: /img/open-graph/objectiv-og-large.png
 authors: ivarpruijn
 ---
 
