@@ -25,7 +25,7 @@ will represented in both copy and original.
 Changes to data, index, sorting, grouping etc. on the copy will not affect the original.
 The savepoints on the other hand will be shared by the original and the copy.
 
-If you want to create a snapshot of the data, have a look at [`get_sample()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_sample.mdx)
+If you want to create a snapshot of the data, have a look at [`database_create_table()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.database_create_table.mdx)
 
 Calling `copy(df)` will invoke this copy function, i.e. `copy(df)` is implemented as df.copy()
 

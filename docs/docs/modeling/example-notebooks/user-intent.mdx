@@ -41,7 +41,9 @@ df['root_location'] = df.location_stack.ls.get_from_context_with_type_series(typ
 The root_location context in the location_stack uniquely represents the top-level UI location of the user. As a first step of grasping user intent, this is a good starting point to see in what main areas of your product users are spending time.
 
 ```python
-modelhub.aggregate.unique_users(df, groupby=['application', 'root_location']).head(10)
+# model hub: unique users per application and root location
+users_root = modelhub.aggregate.unique_users(df, groupby=['application', 'root_location'])
+users_root.sort_index().head(10)
 ```
 
 ## Exploring session duration
@@ -49,7 +51,9 @@ modelhub.aggregate.unique_users(df, groupby=['application', 'root_location']).he
 The average `session_duration` model from the [open model hub](/docs/modeling/open-model-hub/) is another good pointer to explore first for user intent.
 
 ```python
-modelhub.aggregate.session_duration(df, groupby=['application', 'root_location']).sort_index().head()
+# model hub: duration, per application and root location
+duration_root = modelhub.aggregate.session_duration(df, groupby=['application', 'root_location']).sort_index()
+duration_root.head(10)
 ```
 
 Now, we can look at the distribution of time spent. We used the Bach quantile operation for this. We’ll use this distribution to define the different stages of user intent.
