@@ -14,8 +14,8 @@ To enable this, the Tracker should be instructed to track the user identity expl
 
 All that's required is to track at least 1 event within the session that carries the 
 [IdentityContext](../../../taxonomy/reference/global-contexts/IdentityContext.md), e.g. on tracker 
-initialization or login; see the examples below. On all platforms there’s an `IdentityContextPlugin` to help 
-with this.
+initialization or login; see the examples below. On all platforms there’s an `IdentityContextPlugin` to 
+facilitate adding the IdentityContext.
 
 Example on tracker initialization:
 
