@@ -21,8 +21,9 @@ uses MDX as the parsing engine, it can also render React components inside a Mar
 The documentation pages are a standalone Docusaurus application, under `/docs/`. To run the docs:
 
 ```console
+yarn install 
 cd docs
-yarn install
+yarn install 
 yarn start
 ```
 
