@@ -10,7 +10,7 @@ title: get_sample
 
 ### <span className="name">get_sample</span>
 
-<small className="parameter-list">(<span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="filter">filter=None</span>, <span className="parameter" id="sample_percentage">sample_percentage=None</span>, <span className="parameter" id="overwrite">overwrite=False</span>, <span className="parameter" id="seed">seed=None</span>)</small>
+<small className="parameter-list">(<span className="parameter" id="table_name">table_name</span>, <span className="parameter" id="filter">filter=None</span>, <span className="parameter" id="sample_percentage">sample_percentage=None</span>, <span className="parameter" id="*">\*</span>, <span className="parameter" id="overwrite">overwrite=False</span>, <span className="parameter" id="seed">seed=None</span>)</small>
 
 
 &#8203;<span className="view-source">[[source]](https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py)</span>
@@ -25,17 +25,30 @@ store the sample data used for the sampled DataFrame.
 Use [`get_unsampled()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.get_unsampled.mdx) to switch back to the unsampled data later on. This returns a new
 DataFrame with all operations that have been done on the sample, applied to that DataFrame.
 
+Will materialize the DataFrame if it is not in a materialized state.
+
+If `seed` is set (Postgres only), this will create a temporary table from which the sample will be
+queried using the `tablesample bernoulli` sql construction.
+
 
 #### Parameters
 
-* **`table_name`** (str) – the name of the underlying sql table that stores the sampled data.
+* **`table_name`** (str) – the name of the underlying sql table that is created to store the sampled data.
+Can include project_id and dataset on BigQuery, e.g. ‘project_id.dataset.table_name’
 * **`filter`** ([SeriesBoolean](/modeling/bach/api-reference/Series/Boolean/index.mdx#bach.SeriesBoolean)) – a filter to apply to the dataframe before creating the sample. If a filter is applied,
 sample_percentage is ignored and thus the bernoulli sample creation is skipped.
 * **`sample_percentage`** (int) – the approximate size of the sample as a proportion of all rows.
 Between 0-100.
 * **`overwrite`** (bool) – if True, the sample data is written to table_name, even if that table already
 exists.
-* **`seed`** (int) – optional seed number used to generate the sample.
+* **`seed`** (int) – optional seed number used to generate the sample. Only supported for Postgres
+
+
+
+#### Raises
+
+**`Exception`** – If overwrite=False and the table already exists. The exact exception depends on
+the underlying database.
 
 
 
@@ -49,6 +62,28 @@ a sampled DataFrame of the current DataFrame.
 
 [DataFrame](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx)
 
+
+:::warning
+
+With `overwrite=True`, if a table already exist with the given name, then that table will
+be dropped and all data lost!
+
+
+:::
+
+:::note
+
+This function queries the database.
+
+
+:::
+
+:::note
+
+This function writes to the database.
+
+
+:::
 
 :::note
 
