@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
 title: Introduction
-slug: /tracking/collector
+slug: /tracking/backend/objectiv
 ---
 
-# Collector
+# Objectiv Collector
 
 Objectiv's Collector provides an API and storage connectors for receiving, validating, and storing 
 [Events](/taxonomy/reference/events/overview.md).
@@ -26,9 +26,9 @@ Currently, the Collector can store Events in:
 We aim to support more storage solutions in the near future.
 
 ## Validation
-Objectiv's [Collector](/tracking/collector/getting-started.md) validates any incoming Event against the 
-[taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond with an 
-error, and store the Event in the `NOK` folder on disk.
+Objectiv's Collector validates any incoming Event against the 
+[taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond 
+with an error, and store the Event in the `NOK` folder on disk.
 
 This means no Event sent to the Collector is ever discarded. This enables you to for instance 'repair' any 
 failing Events and store them after the fact.

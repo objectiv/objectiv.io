@@ -1,64 +1,19 @@
 ---
 id: example-notebooks-index
-sidebar_position: 4
+sidebar_position: 5
 slug: /modeling/example-notebooks/
 title: Example notebooks
 ---
 
 # Example notebooks
 
-Here are several examples of how you can analyze and model data using the
+This section contains several example notebooks on how you can analyze and model data using the
 [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub). All examples are also available as Jupyter notebooks from our [GitHub
-repository](https://github.com/objectiv/objectiv-analytics/tree/main/notebooks) and can run if all
-[requirements](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/requirements.txt) are
-installed.
+repository](https://github.com/objectiv/objectiv-analytics/tree/main/notebooks).
 
-To get started you will first have to instantiate the [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) and create a
-Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with Objectiv data. The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) uses
-this [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) for its models. For a general introduction to
-Bach [`DataFrames`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx), see the [Bach](/modeling/bach/index.mdx) docs or some basic examples to get
-started [here](/modeling/bach/examples.mdx).
-
-<div id="getting-started-with-objectiv" className="hidden-anchor"></div>
-
-## Getting started with Objectiv
-
-Here we show how to install and instantiate the model hub.
-The [open model hub](/modeling/open-model-hub/index.mdx#open-model-hub) is installed with:
-
-```console
-pip install objectiv-modelhub
-```
-
-Now we can import and instantiate the model hub and create a Bach [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) with
-Objectiv data. This [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) is used to analyze data collected with Objectiv’s
-Tracker. The [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) points to the data in the SQL database and all operations
-are done on this object. A start date and an end date can optionally be passed to limit the underlying data
-that is queried. The `time_aggregation` parameter determines the default formatting of the timestamp of
-events. This is useful for grouping to different time aggregations, i.e. monthly or daily.
-
-In the example we assume that the data collected with Objectiv’s tracker is stored in a table called
-‘example’ in a database that can be accessed with `db_url`.
-
-```python
-from modelhub import ModelHub
-# instantiate the model hub
-modelhub = ModelHub(time_aggregation='%Y-%m-%d')
-# get the Bach DataFrame with Objectiv data
-df = modelhub.get_objectiv_dataframe(db_url='postgresql://objectiv:@localhost:5432/objectiv',
-                                     start_date='2022-03-01',
-                                     table_name='example')
-```
-
-Your [`DataFrame`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.mdx) is instantiated! We start with showing the first couple of rows
-from the data set.
-
-```python
-df.head()
-```
-
-Take a look at one of the example notebooks below to see how you can analyze your data. Basic Bach
-introduction examples are [here](/modeling/bach/examples.mdx).
+For every example notebook below, refer to
+[getting started in your notebook](/modeling/get-started-in-your-notebook.mdx) on how to connect to a data store
+and instantiate an Objectiv DataFrame:
 
 * [Bach and sklearn](/modeling/example-notebooks/machine-learning.mdx)
 * [Basic product analytics](/modeling/example-notebooks/product-analytics.mdx)
