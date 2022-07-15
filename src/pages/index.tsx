@@ -455,6 +455,10 @@ export default function Home() {
               src={useBaseUrl("img/solution-takes-less-than-5-minutes.svg")} 
               className={clsx(styles.takesLessThan5Minutes)}
               alt="Takes less than 5 minutes" />
+            <img 
+              src={useBaseUrl("img/solution-takes-less-than-5-minutes-pointing-upwards.svg")} 
+              className={clsx(styles.takesLessThan5MinutesPointingUpwards)}
+              alt="Takes less than 5 minutes" />
 
           </TrackedDiv>
         </div>
