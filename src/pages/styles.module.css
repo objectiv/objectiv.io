@@ -210,6 +210,49 @@
   margin-left: 10px;
 }
 
+/* Section: any in main */
+.twoColumnItems {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.twoColumnItem {
+  flex: 50%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  vertical-align: top;
+  padding: 0 15px 0 0;
+}
+
+.twoColumnItem .twoColumnIcon {
+  min-width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.twoColumnItem img {
+  max-height: 90px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .twoColumnItem {
+    flex: 100%;
+    padding: 0 40px 20px 0;
+  }
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .twoColumnItem {
+    display: block;
+    text-align: center;
+    padding: 0 15px 50px 0;
+  }
+}
+
+
+
 /* Section: limitless */
 .thePlatform {
   text-align: center;
@@ -391,53 +434,53 @@
   }
 }
 
-.twoColumnItems {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  text-align: left;
-}
+/* Section: Solution */
 
-.twoColumnItem {
-  flex: 50%;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-  vertical-align: top;
-  padding: 0 15px 0 0;
-}
-
-.twoColumnItem .twoColumnIcon {
-  min-width: 150px;
+.solution .pythonCodeBlock {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
   text-align: center;
+  margin-top: -20px;
+}
+.solution .pythonCodeBlock div {
+  display: inline-block;
+}
+
+.solution .pythonCodeBlock .jupyterIn {
+  color: #006496;
+  margin-right: 18px;
+}
+
+.solution .pythonCodeBlock .pythonCode {
+  background: #F7F7F7;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  padding: 8px 70px 8px 12px;
+}
+
+.solutionArea {
+  margin-bottom: 50px;
+}
+
+.solutionArea .twoColumnItems .twoColumnIcon {
+  min-width: 176px;
+  margin-right: 66px;
   padding-bottom: 30px;
 }
 
-.twoColumnItem img {
-  max-height: 90px;
+.solutionArea .twoColumnItems .twoColumnIcon img {
+  max-height: 100%;
 }
 
-@media screen and (max-width: 966px) { /* mobile/tablet all */
-  .twoColumnItem {
-    flex: 100%;
-    padding: 0 40px 20px 0;
-  }
-}
-@media screen and (max-width: 480px) { /* mobile small */
-  .twoColumnItem {
-    display: block;
-    text-align: center;
-    padding: 0 15px 50px 0;
-  }
-}
+/* Section: Taxonomy */
 
 
-/* Section: taxonomy */
+/* Section: Supported Tech */
 
-
-/* Section: supportedTech */
-
-/* Section: tryIt */
+/* Section: Try It */
 .tryIt {
   text-align: center;
 }
@@ -445,7 +488,7 @@
   margin: 15px 0 20px 0;
 }
 .tryIt .takesLessThan5Minutes {
-  display: block;
-  margin: 8px auto;
-  padding-left: 50px;
+  display: inline-block;
+  margin: -24px auto;
+  padding-left: 26px;
 }

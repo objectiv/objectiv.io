@@ -237,11 +237,90 @@ export default function Home() {
           </TrackedDiv>
         </div>
 
+        <div className={clsx(styles.pageSection, styles.solution)}>
+          <TrackedDiv 
+              id={'solution'} 
+              className={clsx("container", styles.contentContainer, styles.solution)}>
+
+            <IconHeader 
+              title="Objectiv enables advanced product<br /> analytics without the massive resource hit" />
+
+            <div className={clsx(styles.pythonCodeBlock)}>
+              <div className={clsx(styles.jupyterIn)}>
+                In [1]:
+              </div>
+              <div className={clsx(styles.pythonCode)}>
+                pip install objectiv-modelhub
+              </div>
+            </div>'
+            
+            <div className={clsx(styles.solutionArea)}>
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-solution-right-data.svg")}
+                      alt="Right data" />
+                  </div>
+                  <div>
+                    <h3>Always the right data for your projects.</h3>
+                    <p>
+                      No more back-and-forth on tracking plans. Objectiv prescribes how to instrument your 
+                      tracking to ensure your dataset covers every analysis you may need down the road.
+                    </p>
+                    <TrackedLink
+                      to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                      waitUntilTracked={true}
+                      target="_self"
+                      className={clsx("button", styles.ctaButton)}>
+                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                        alt={'Docs - Taxonomy'}/></span>
+                      Docs - Taxonomy
+                    </TrackedLink>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={clsx(styles.solutionArea)}>
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-solution-tracking.svg")}
+                      alt="Right data" />
+                  </div>
+                  <div>
+                    <h3>Collect user behavior data designed for modeling.</h3>
+                    <p>
+                      Datasets collected with Objectiv are validated on multiple levels and carry an event 
+                      structure that enables direct modeling without prepwork.
+                    </p>
+                    <TrackedLink
+                      to={useBaseUrl("/docs/tracking/", {absolute: true})}
+                      waitUntilTracked={true}
+                      target="_self"
+                      className={clsx("button", styles.ctaButton)}>
+                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                        alt={'Docs - Tracking'}/></span>
+                      Docs - Tracking
+                    </TrackedLink>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </TrackedDiv>
+        </div>
 
         <div className={clsx(styles.pageSection, styles.pageSectionYellow)}>
           <TrackedDiv 
             id={'try-it'} 
             className={clsx("container", styles.contentContainer, styles.tryIt)}>
+            <img 
+              src={useBaseUrl("img/try-objectiv-product.png")} 
+              className={clsx(styles.tryObjectivProduct)}
+              alt="Try the product" />
 
             <h2>Try Objectiv on your local machine</h2>
             <p>Follow the Quickstart Guide to run a fully functional Objectiv setup locally.</p>
@@ -255,7 +334,7 @@ export default function Home() {
               Spin up the Demo
             </TrackedLink>
             <img 
-              src={useBaseUrl("img/solution-takes-less-than-5-minutes-white.svg")} 
+              src={useBaseUrl("img/solution-takes-less-than-5-minutes.svg")} 
               className={clsx(styles.takesLessThan5Minutes)}
               alt="Takes less than 5 minutes" />
 
