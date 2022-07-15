@@ -377,6 +377,11 @@ export default function Home() {
             <p>Objectiv is built around an open analytics taxonomy: a generic classification of common event types and the contexts in which they can happen. It's designed to provide a universal structure for analytics data, so models built on one data set can be deployed and run on another.</p>
             <img
               src={useBaseUrl("img/its-in-the-taxonomy.png")}
+              className={clsx(styles.taxonomyOverview)}
+              alt="Taxonomy overview" />
+            <img
+              src={useBaseUrl("img/its-in-the-taxonomy-zoomed-in.png")}
+              className={clsx(styles.taxonomyOverviewZoomedIn)}
               alt="Taxonomy overview" />
             <p>It is designed and tested with UIs and analytics use cases of over 50 companies. Areas like payments, catalogs and CRM are also on the roadmap, and it’s extensible to cover custom use cases.</p>
             <TrackedLink

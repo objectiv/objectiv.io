@@ -505,6 +505,7 @@
 
 /* Section: Taxonomy */
 .taxonomy {
+  margin-top: -20px;
   text-align: center;
 }
 
@@ -515,6 +516,32 @@
   margin: 40px 78px;
 }
 
+.taxonomy img.taxonomyOverviewZoomedIn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+.taxonomy p:nth-of-type(1), .taxonomy p:nth-of-type(2) {
+    margin-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .taxonomy {
+    margin-top: -50px;
+    padding: 0;
+  }
+
+  .taxonomy img.taxonomyOverview {
+    display: none;
+  }
+  .taxonomy img.taxonomyOverviewZoomedIn {
+    display: inline-block;
+    width: 100%;
+  }
+}
 
 /* Section: Supported Tech */
 
