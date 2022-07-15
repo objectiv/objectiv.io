@@ -438,7 +438,7 @@
   font-family: 'Roboto Mono';
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
   text-align: center;
   margin: -20px auto 80px auto;
@@ -544,6 +544,49 @@
 }
 
 /* Section: Supported Tech */
+
+.supportedTech {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.supportedTech .supportedItems {
+  margin-top: -40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.supportedTech .supportedItems .supportedItem {
+  min-width: 465px;
+  margin: 8px 8px;
+  vertical-align: top;
+  background-color: #FAFAFA;
+  padding: 32px;
+}
+
+.supportedTech .supportedItems .supportedItem h3 {
+  color: #666666;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
+
+.supportedTech img.annotationOutputs {
+  position: absolute;
+  margin-top: 95px;
+  right: 75px;
+}
+
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+  .supportedTech img.annotationOutputs {
+    display: block;
+    margin: 0 auto 0 -20px;
+    right: auto;
+  }
+}  
 
 /* Section: Try It */
 .tryIt {

@@ -2,10 +2,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React, { useRef } from 'react';
+import React from 'react';
 import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
-import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
 import styles from './styles.module.css';
@@ -15,15 +14,10 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
   
-  // reference for the 'star us' notification on top
-  const starUsNotificationAnchorRef = useRef(null);
-
   return (
     <Layout
       title=' '
       description={tagline}>
-
-      <StarUsNotification innerRef={starUsNotificationAnchorRef} />
 
       <AnnouncementBar 
         title={'The Launchpad:'} 
@@ -69,7 +63,7 @@ export default function Home() {
             className={clsx("container", styles.contentContainer, styles.limitless)}>
 
             <IconHeader 
-              title="Limitless ..." 
+              title="Limitless modeling capabilities" 
               subTitle="It contains everything you need to unlock a level of product analytics<br />
               that would normally require years of set up and finetuning." />
 
@@ -180,8 +174,6 @@ export default function Home() {
               title="Taking product analytics out of SaaS tools and into 
               self-controlled data infa unlocks a great deal of power,
               but that comes at a price" />
-
-            <StarUsAnchor ref={starUsNotificationAnchorRef} />
 
             <div className={clsx(styles.twoColumnItems)}>
               <div className={clsx(styles.twoColumnItem)}>
@@ -373,7 +365,7 @@ export default function Home() {
             id={'taxonomy'} 
             className={clsx("container", styles.contentContainer, styles.taxonomy)}>
 
-            <IconHeader title="It’s in the taxonomy" />
+            <IconHeader title="It's in the taxonomy" />
             <p>Objectiv is built around an open analytics taxonomy: a generic classification of common event types and the contexts in which they can happen. It's designed to provide a universal structure for analytics data, so models built on one data set can be deployed and run on another.</p>
             <img
               src={useBaseUrl("img/its-in-the-taxonomy.png")}
@@ -393,6 +385,48 @@ export default function Home() {
                 alt={'Docs - Taxonomy'}/></span>
               Docs - Taxonomy
             </TrackedLink>                    
+          </TrackedDiv>
+        </div>
+
+        <div className={clsx(styles.pageSection)}>
+          <TrackedDiv 
+            id={'taxonomy'} 
+            className={clsx("container", styles.contentContainer, styles.supportedTech)}>
+
+            <IconHeader 
+              title="Supported platforms and technologies"
+              subTitle="Objectiv plays nice with most popular tools in the modern data stack" />
+
+            <div className={clsx(styles.supportedItems)}>
+              <div className={clsx(styles.supportedItem)}>
+                <h3>FRONTEND</h3>
+                <img
+                  src={useBaseUrl("img/supported-tech-frontend.svg")}
+                  alt="Frontend tech" />
+              </div>
+              <div className={clsx(styles.supportedItem)}>
+                <h3>DATA STORES / BACKEND</h3>
+                <img
+                  src={useBaseUrl("img/supported-tech-data-stores-backend.svg")}
+                  alt="Data stores / backend tech" />                
+              </div>
+              <div className={clsx(styles.supportedItem)}>
+                <h3>DATA MODELING</h3>
+                <img
+                  src={useBaseUrl("img/supported-tech-modeling.svg")}
+                  alt="Modeling tech" />
+              </div>
+              <div className={clsx(styles.supportedItem)}>
+                <h3>OUTPUTS TO</h3>
+                <img
+                  src={useBaseUrl("img/supported-tech-outputs.svg")}
+                  alt="Outputs" />
+                <img
+                  src={useBaseUrl("img/anything-that-takes-sql-or-pandas-as-input.svg")}
+                  className={clsx(styles.annotationOutputs)}
+                  alt="Anything that takes SQL or pandas as input" />
+              </div>
+            </div>
           </TrackedDiv>
         </div>
 
