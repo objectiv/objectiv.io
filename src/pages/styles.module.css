@@ -251,8 +251,6 @@
   }
 }
 
-
-
 /* Section: limitless */
 .thePlatform {
   text-align: center;
@@ -443,7 +441,7 @@
   font-size: 24px;
   line-height: 150%;
   text-align: center;
-  margin-top: -20px;
+  margin: -20px auto 80px auto;
 }
 .solution .pythonCodeBlock div {
   display: inline-block;
@@ -458,11 +456,26 @@
   background: #F7F7F7;
   border: 1px solid #999999;
   border-radius: 4px;
-  padding: 8px 70px 8px 12px;
+  padding: 8px 24px 8px 12px;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+.solution .pythonCodeBlock .pythonCode::after {
+  content: "_";
+  width: 5px;
+  height: 20px;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
 }
 
 .solutionArea {
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
+  max-width: 730px;
 }
 
 .solutionArea .twoColumnItems .twoColumnIcon {
@@ -473,6 +486,21 @@
 
 .solutionArea .twoColumnItems .twoColumnIcon img {
   max-height: 100%;
+}
+
+.solutionArea h3 {
+  margin-bottom: 18px;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .solutionArea .twoColumnItems .twoColumnItem {
+    display: block;
+    text-align: center;
+    padding: 0 15px 50px 0;
+  }
+  .solutionArea .twoColumnItems .twoColumnItem .twoColumnIcon {
+    margin-right: 0;
+  }
 }
 
 /* Section: Taxonomy */

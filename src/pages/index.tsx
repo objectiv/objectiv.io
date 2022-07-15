@@ -5,9 +5,6 @@ import clsx from 'clsx';
 import React, { useRef } from 'react';
 import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
-import BeforeAfterImage from '../components/before-after-image';
-import VimeoPlayer from '../components/vimeo-player';
-import AnimatedGif from '../components/animated-gif';
 import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
@@ -310,7 +307,66 @@ export default function Home() {
               </div>
             </div>
 
+            <div className={clsx(styles.solutionArea)}>
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-solution-reuse-models.svg")}
+                      alt="Reuse models" />
+                  </div>
+                  <div>
+                    <h3>Take pre-built models or build &amp; reuse your own.</h3>
+                    <p>
+                      Models built on one dataset can be deployed and run on another. Take and run what 
+                      someone else made, or quickly build your own with pre-built models and functions.
+                    </p>
+                    <TrackedLink
+                      to={useBaseUrl("/docs/modeling/open-model-hub/", {absolute: true})}
+                      waitUntilTracked={true}
+                      target="_self"
+                      className={clsx("button", styles.ctaButton)}>
+                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                        alt={'Docs - Open Model Hub'}/></span>
+                      Docs - Open Model Hub
+                    </TrackedLink>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+            <div className={clsx(styles.solutionArea)}>
+              <div className={clsx(styles.twoColumnItems)}>
+                <div className={clsx(styles.twoColumnItem)}>
+                  <div className={clsx(styles.twoColumnIcon)}>
+                    <img
+                      src={useBaseUrl("img/icons/icon-feed-tools.svg")}
+                      alt="Feed tools" />
+                  </div>
+                  <div>
+                    <h3>Feed tools from one source with minimal overhead.</h3>
+                    <p>
+                      Objectiv's pandas-like modeling library runs SQL straight on your data store. You can 
+                      use models in production directly to simplify data debugging &amp; delivery to BI 
+                      tools, dbt, etc.
+                    </p>
+                    <TrackedLink
+                      to={useBaseUrl("/docs/modeling/", {absolute: true})}
+                      waitUntilTracked={true}
+                      target="_self"
+                      className={clsx("button", styles.ctaButton)}>
+                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                        alt={'Docs - Modeling'}/></span>
+                      Docs - Modeling
+                    </TrackedLink>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
           </TrackedDiv>
+
         </div>
 
         <div className={clsx(styles.pageSection, styles.pageSectionYellow)}>
