@@ -139,6 +139,10 @@ body {
   }
 }
 
+.main-wrapper {
+  overflow-x: hidden;
+}
+
 /* Footer */
 .footer {
   padding: 10px;
