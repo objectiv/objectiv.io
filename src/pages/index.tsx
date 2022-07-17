@@ -241,7 +241,7 @@ export default function Home() {
               <div className={clsx(styles.pythonCode)}>
                 pip install objectiv-modelhub
               </div>
-            </div>'
+            </div>
             
             <div className={clsx(styles.solutionArea)}>
               <div className={clsx(styles.twoColumnItems)}>
