@@ -50,7 +50,7 @@ export default function Home() {
                 alt={'Objectiv Quickstart Guide'}/></span>
               Spin up the Demo
             </TrackedLink>
-            <GitHubStargazers cta='Browse on GitHub' />
+            <GitHubStargazers cta={'Browse on GitHub'} />
           </div>
         </div>
       </TrackedHeader>
@@ -139,7 +139,7 @@ export default function Home() {
                   className={clsx(styles.componentLinesRight)}
                   alt="Lines right" />
                 <div className={clsx(styles.component)}>
-                  <div className={clsx(styles.componentIcon)}>
+                  <div className={clsx(styles.componentIcon, styles.componentIconBach)}>
                     <img
                       src={useBaseUrl("img/icons/icon-component-bach.svg")}
                       className={clsx(styles.componentIcon)}

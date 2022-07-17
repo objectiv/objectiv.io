@@ -258,13 +258,13 @@
 /* Section: limitless */
 .thePlatform {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
   margin-top: 60px;
 }
 
 .thePlatform h3, .thePlatform h4 {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 }
 .thePlatform h3 {
@@ -275,7 +275,7 @@
   display: inline-block;
   vertical-align: top;
   max-width: 320px;
-  padding: 0 40px 60px 40px;
+  padding: 0 20px 60px 20px;
   background-color: #FFF7B3;
 }
 
@@ -306,13 +306,17 @@
   margin: 35px auto 0 auto;
 }
 
+.thePlatform .components .component .componentIconBach {
+  margin-bottom: 5px; /* HACK: unsure yet why this icon is not aligning */
+}
+
 .thePlatform .componentLinesLeft {
   display: block;
-  margin: 16px -40px 16px auto;
+  margin: 16px -20px 16px auto;
 }
 .thePlatform .componentLinesRight {
   display: block;
-  margin: 16px auto 16px -40px;
+  margin: 24px auto 16px -20px;
 }
 
 .thePlatform .componentLinesVertical {
@@ -334,7 +338,7 @@
   position: relative;
   width: 446px;
   max-width: 446px;
-  margin: 67px 0 0 -102px;
+  margin: 100px 0 0 -102px;
 }
 
 .thePlatform .objectivLogoInCircleBottom {
@@ -363,7 +367,7 @@
   }
 
   .thePlatform .components:nth-of-type(3) {
-    margin-top: -40px;
+    margin-top: 40px;
     padding: 0 40px;
   }
 
@@ -386,7 +390,7 @@
     max-width: 446px;
     margin: -140px 0 -100px -102px;
   }
-
+  
   .thePlatform .componentLinesLeft, .thePlatform .componentLinesRight {
     display: none;
   }
@@ -398,6 +402,9 @@
     display: inline-block;
   }
 
+  .thePlatform .dataCloud h4, .thePlatform .dataCloud p {
+    display: none; /* will be displayed at the bottom instead*/
+  }
   .thePlatform .dataCloudDescription {
     display: block;
   }
