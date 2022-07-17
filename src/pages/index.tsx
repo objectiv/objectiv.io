@@ -64,7 +64,7 @@ export default function Home() {
 
             <IconHeader 
               title="Limitless modeling capabilities" 
-              subTitle="It contains everything you need to unlock a level of product analytics<br />
+              subTitle="Objectiv contains everything you need to unlock a level of product analytics<br />
               that would normally require years of set up and finetuning." />
 
             <div className={clsx(styles.thePlatform)}>
@@ -77,7 +77,7 @@ export default function Home() {
                 <div className={clsx(styles.component)}>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Open Analytics Taxonomy</h4>
-                    <p>Give your datasets a generic &amp; strict event structure designed for modeling</p>
+                    <p>Give your datasets a generic &amp; strict event structure designed for modeling.</p>
                   </div>
                   <div className={clsx(styles.componentIcon)}>
                     <img
@@ -97,7 +97,7 @@ export default function Home() {
                   </div>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Tracking SDKs</h4>
-                    <p>Collect error-free user behavior data with validated instrumention</p>
+                    <p>Collect error-free user behavior data with validated instrumention.</p>
                   </div>
                 </div>
                 <img
@@ -110,7 +110,7 @@ export default function Home() {
                   src={useBaseUrl("img/platform-data-cloud.png")}
                   alt="Data cloud" />
                 <h4>Data cloud agnostic &amp; interoperable</h4>
-                <p>No lock-in and plays nice with <br /> infra you already use</p>
+                <p>No lock-in and plays nice with <br /> infra you already use.</p>
               </div>
               <div className={clsx(styles.components)}>
                 <img
@@ -121,11 +121,11 @@ export default function Home() {
                   src={useBaseUrl("img/lines-vertical.svg")}
                   className={clsx(styles.componentLinesVertical)}
                   alt="Lines vertical" />
-                <h3>DATA MODELING</h3>
+                <h3>NOTEBOOKS</h3>
                 <div className={clsx(styles.component)}>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Open Model Hub</h4>
-                    <p>Take pre-built models &amp; functions for fast &amp; efficient modeling</p>
+                    <p>Take pre-built models &amp; functions for fast &amp; efficient modeling.</p>
                   </div>
                   <div className={clsx(styles.componentIcon)}>
                     <img
@@ -147,7 +147,7 @@ export default function Home() {
                   </div>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Bach (modeling library)</h4>
-                    <p>Create models on your full data set and reuse them on any project</p>
+                    <p>Create models on your full dataset and reuse them on any project</p>
                   </div>
                 </div>
                 <img
@@ -172,7 +172,7 @@ export default function Home() {
 
             <IconHeader 
               title="Taking product analytics out of SaaS tools and into 
-              self-controlled data infa unlocks a great deal of power,
+              self-controlled data infra unlocks a great deal of power,
               but that comes at a price" />
 
             <div className={clsx(styles.twoColumnItems)}>
@@ -366,7 +366,9 @@ export default function Home() {
             className={clsx("container", styles.contentContainer, styles.taxonomy)}>
 
             <IconHeader title="It's in the taxonomy" />
-            <p>Objectiv is built around an open analytics taxonomy: a generic classification of common event types and the contexts in which they can happen. It's designed to provide a universal structure for analytics data, so models built on one data set can be deployed and run on another.</p>
+            <p>Objectiv is built around an open analytics taxonomy: a generic classification of common event 
+              types and the contexts in which they can happen. It's designed to provide a universal structure 
+              for analytics data, so models built on one dataset can be deployed and run on another.</p>
             <img
               src={useBaseUrl("img/its-in-the-taxonomy.png")}
               className={clsx(styles.taxonomyOverview)}
@@ -375,7 +377,9 @@ export default function Home() {
               src={useBaseUrl("img/its-in-the-taxonomy-zoomed-in.png")}
               className={clsx(styles.taxonomyOverviewZoomedIn)}
               alt="Taxonomy overview" />
-            <p>It is designed and tested with UIs and analytics use cases of over 50 companies. Areas like payments, catalogs and CRM are also on the roadmap, and it’s extensible to cover custom use cases.</p>
+            <p>It is designed and tested with UIs and analytics use cases of over 50 companies. Areas like 
+              payments, catalogs and CRM are also on the roadmap, and it’s extensible to cover custom use 
+              cases.</p>
             <TrackedLink
               to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
               waitUntilTracked={true}
@@ -390,12 +394,12 @@ export default function Home() {
 
         <div className={clsx(styles.pageSection)}>
           <TrackedDiv 
-            id={'taxonomy'} 
+            id={'supported-tech'} 
             className={clsx("container", styles.contentContainer, styles.supportedTech)}>
 
             <IconHeader 
               title="Supported platforms and technologies"
-              subTitle="Objectiv plays nice with most popular tools in the modern data stack" />
+              subTitle="Objectiv plays nice with most popular tools in the modern data stack." />
 
             <div className={clsx(styles.supportedItems)}>
               <div className={clsx(styles.supportedItem)}>
@@ -421,10 +425,14 @@ export default function Home() {
                 <img
                   src={useBaseUrl("img/supported-tech-outputs.svg")}
                   alt="Outputs" />
-                <img
-                  src={useBaseUrl("img/anything-that-takes-sql-or-pandas-as-input.svg")}
-                  className={clsx(styles.annotationOutputs)}
-                  alt="Anything that takes SQL or pandas as input" />
+              </div>
+              <div className={clsx(styles.supportedItem, styles.supportedItemEmpty)}></div>
+              <div className={clsx(styles.supportedItem, styles.annotationEmpty)}>
+                <div className={clsx(styles.annotationOutputs)}>
+                  <img
+                    src={useBaseUrl("img/anything-that-takes-sql-or-pandas-as-input.svg")}
+                    alt="Anything that takes SQL or pandas as input" />
+                </div>
               </div>
             </div>
           </TrackedDiv>

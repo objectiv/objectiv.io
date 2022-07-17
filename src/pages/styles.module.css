@@ -8,9 +8,13 @@
 @media screen and (max-width: 480px) { /* mobile small */
 }
 
-/**************
+/*****************
   HOMEPAGE OVERALL 
-***************/
+******************/
+
+.main-wrapper {
+  overflow-x: hidden;
+}
 .pageSection h2 { /* more specific class to override the h2 styling from custom.css */
   font-weight: bold;
   font-size: 28px;
@@ -247,7 +251,7 @@
   .twoColumnItem {
     display: block;
     text-align: center;
-    padding: 0 15px 50px 0;
+    padding: 0 0 50px 0;
   }
 }
 
@@ -449,7 +453,7 @@
 
 .solution .pythonCodeBlock .jupyterIn {
   color: #006496;
-  margin-right: 18px;
+  margin: 0 18px 8px 0;
 }
 
 .solution .pythonCodeBlock .pythonCode {
@@ -496,10 +500,16 @@
   .solutionArea .twoColumnItems .twoColumnItem {
     display: block;
     text-align: center;
-    padding: 0 15px 50px 0;
+    padding: 0 15px 50px 15px;
   }
   .solutionArea .twoColumnItems .twoColumnItem .twoColumnIcon {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionArea .twoColumnItems .twoColumnItem {
+    padding: 0 10px 50px 10px;
   }
 }
 
@@ -540,6 +550,7 @@
   .taxonomy img.taxonomyOverviewZoomedIn {
     display: inline-block;
     width: 100%;
+    margin-bottom: 40px;
   }
 }
 
@@ -547,7 +558,7 @@
 
 .supportedTech {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .supportedTech .supportedItems {
@@ -561,10 +572,10 @@
 
 .supportedTech .supportedItems .supportedItem {
   min-width: 465px;
-  margin: 8px 8px;
+  margin: 8px auto;
   vertical-align: top;
   background-color: #FAFAFA;
-  padding: 32px;
+  padding: 32px 8px;
 }
 
 .supportedTech .supportedItems .supportedItem h3 {
@@ -574,19 +585,37 @@
   margin: 0 0 24px 0;
 }
 
-.supportedTech img.annotationOutputs {
-  position: absolute;
-  margin-top: 95px;
-  right: 75px;
+.supportedTech .supportedItems .supportedItemEmpty {
+  background-color: transparent;
+  height: 40px;
+  padding: 0;
+}
+
+.supportedTech .supportedItems .annotationEmpty {
+  background-color: transparent;
+  height: 40px;
+  padding: 0;
+}
+
+.supportedTech .annotationOutputs {
+  margin-top: -42px;
 }
 
 @media screen and (max-width: 966px) { /* mobile/tablet all */
-  .supportedTech img.annotationOutputs {
-    display: block;
-    margin: 0 auto 0 -20px;
-    right: auto;
+  .supportedTech .supportedItems .supportedItemEmpty {
+    display: none;
   }
-}  
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .supportedTech .supportedItems {
+    margin-top: 0;
+  }
+  .supportedTech .supportedItems .supportedItem {
+    min-width: 100%;
+  }
+}
+
 
 /* Section: Try It */
 .tryIt {
