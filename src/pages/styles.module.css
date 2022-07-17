@@ -326,7 +326,7 @@
 .thePlatform .dataCloud {
   display: inline-block;
   vertical-align: top;
-  padding: 0 30px;
+  padding: 0 40px;
   width: 322px;
   z-index: 2;
 }
@@ -338,7 +338,7 @@
   position: relative;
   width: 446px;
   max-width: 446px;
-  margin: 100px 0 0 -92px;
+  margin: 100px 0 0 -102px;
 }
 
 .thePlatform .objectivLogoInCircleBottom {
