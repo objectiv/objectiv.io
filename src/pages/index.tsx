@@ -121,7 +121,7 @@ export default function Home() {
                   src={useBaseUrl("img/lines-vertical.svg")}
                   className={clsx(styles.componentLinesVertical)}
                   alt="Lines vertical" />
-                <h3>NOTEBOOKS</h3>
+                <h3>DATA MODELING</h3>
                 <div className={clsx(styles.component)}>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Open Model Hub</h4>
@@ -415,7 +415,7 @@ export default function Home() {
                   alt="Data stores / backend tech" />                
               </div>
               <div className={clsx(styles.supportedItem)}>
-                <h3>DATA MODELING</h3>
+                <h3>NOTEBOOKS</h3>
                 <img
                   src={useBaseUrl("img/supported-tech-modeling.svg")}
                   alt="Modeling tech" />
