@@ -163,9 +163,8 @@ export default function Home() {
               className={clsx("container", styles.contentContainer, styles.dataFromSaaSTools)}>
 
             <IconHeader 
-              title="Taking product analytics out of SaaS tools into your DWH
-              unlocks a great deal of power,
-              but comes at a price" />
+              title="Taking product analytics out of SaaS tools into your DWH <br />
+              unlocks a great deal of power, but comes at a price" />
 
             <div className={clsx(styles.twoColumnItems)}>
               <div className={clsx(styles.twoColumnItem)}>
