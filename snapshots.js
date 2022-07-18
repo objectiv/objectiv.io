@@ -485,5 +485,401 @@ module.exports = {
         ]
       }
     }
+  },
+  "Home: hero": {
+    "Should track PressEvents on hero buttons": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "hero"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "spin-up-the-demo",
+                "href": "http://localhost:3000/docs/home/quickstart-guide/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "hero"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "browse-on-github",
+                "href": "https://github.com/objectiv/objectiv-analytics"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#2"
+          }
+        ]
+      }
+    }
+  },
+  "Home: solutions": {
+    "Should track PressEvents on Solution buttons leading to docs": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "solution"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs-taxonomy",
+                "href": "http://localhost:3000/docs/taxonomy/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "solution"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs-tracking",
+                "href": "http://localhost:3000/docs/tracking/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#2"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "solution"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs-open-model-hub",
+                "href": "http://localhost:3000/docs/modeling/open-model-hub/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#3"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "solution"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs-modeling",
+                "href": "http://localhost:3000/docs/modeling/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#4"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "taxonomy"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs-taxonomy",
+                "href": "http://localhost:3000/docs/taxonomy/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#5"
+          }
+        ]
+      }
+    }
+  },
+  "Home: Try It": {
+    "Should track PressEvents on Try It links and buttons": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "try-it"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "spin-up-the-demo",
+                "href": "http://localhost:3000/docs/home/quickstart-guide/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "announcement-bar"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "learn-more",
+                "href": "https://objectiv.io/docs/home/get-a-launchpad"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#2"
+          }
+        ]
+      }
+    }
+  },
+  "Home: Footer": {
+    "Should track PressEvents on Footer items": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "home"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "slack"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "join-us-on-slack",
+                "href": "/join-slack"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/"
+              }
+            ],
+            "id": "PressEvent#1"
+          }
+        ]
+      }
+    }
   }
 }
