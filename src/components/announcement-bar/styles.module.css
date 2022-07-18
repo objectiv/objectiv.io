@@ -7,6 +7,11 @@
   padding: 16px;
 }
 
+.dark .announcement {
+  background-color: black !important;
+  color: #fff;
+}
+
 .announcement img {
   vertical-align: middle;
   margin: 0 18px;
@@ -20,6 +25,14 @@
   text-decoration: none;
   color: #a09536;
 }
+
+.dark .announcement a {
+  color: #fff;
+}
+.dark .announcement a:hover {
+  color: #c0c0c0;
+}
+
 @media screen and (max-width: 768px) {
   .announcement span.announcementStarStart {
     display: block;

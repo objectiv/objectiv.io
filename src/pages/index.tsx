@@ -432,6 +432,15 @@ export default function Home() {
 
 
         <div className={clsx(styles.pageSection, styles.pageSectionYellow)}>
+          <div className={clsx(styles.tryAnnouncement)}>
+            <AnnouncementBar 
+              title={'The Launchpad:'} 
+              content={'a managed back-end and data store to simplify testing Objectiv.'} 
+              ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
+              ctaText={'Learn more'} 
+              icon={'icon-new-banner'}
+              theme="dark" />
+          </div>
           <TrackedDiv 
             id={'try-it'} 
             className={clsx("container", styles.contentContainer, styles.tryIt)}>
@@ -439,7 +448,6 @@ export default function Home() {
               src={useBaseUrl("img/try-objectiv-product.png")} 
               className={clsx(styles.tryObjectivProduct)}
               alt="Try the product" />
-
             <h2>Try Objectiv on your local machine</h2>
             <p>Follow the Quickstart Guide to run a fully functional Objectiv setup locally.</p>
             <TrackedLink
@@ -459,14 +467,6 @@ export default function Home() {
               src={useBaseUrl("img/solution-takes-less-than-5-minutes-pointing-upwards.svg")} 
               className={clsx(styles.takesLessThan5MinutesPointingUpwards)}
               alt="Takes less than 5 minutes" />
-
-            {/* <AnnouncementBar 
-              title={'The Launchpad:'} 
-              content={'a managed back-end and data store to simplify testing Objectiv.'} 
-              ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
-              ctaText={'Learn more'} 
-              icon={'icon-new-banner'} /> */}
-
           </TrackedDiv>
         </div>
 

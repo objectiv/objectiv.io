@@ -4,9 +4,10 @@ import React from 'react';
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 
-function AnnouncementBar({title, content, ctaLink, ctaText, icon='icon-star'}) {
+function AnnouncementBar({title, content, ctaLink, ctaText, icon='icon-star', theme='yellow'}) {
   return (
-    <TrackedDiv id={'announcement-bar'}>
+    <TrackedDiv id={'announcement-bar'}
+      className={clsx(theme=='dark' ? styles.dark : null)}>
       <div className={clsx(styles.announcement)}>
         <span className={clsx(styles.announcementStar, styles.announcementStarStart)}><img src={"/img/icons/" + icon + ".svg"} alt='star' /></span>
           <strong>{title}</strong>&nbsp;

@@ -326,7 +326,7 @@
 .thePlatform .dataCloud {
   display: inline-block;
   vertical-align: top;
-  padding: 0 40px;
+  padding: 0 30px;
   width: 322px;
   z-index: 2;
 }
@@ -338,7 +338,7 @@
   position: relative;
   width: 446px;
   max-width: 446px;
-  margin: 100px 0 0 -102px;
+  margin: 100px 0 0 -92px;
 }
 
 .thePlatform .objectivLogoInCircleBottom {
@@ -388,7 +388,7 @@
   .thePlatform .dataCloud img {
     width: 446px;
     max-width: 446px;
-    margin: -140px 0 -100px -102px;
+    margin: -140px 0 -100px -92px;
   }
   
   .thePlatform .componentLinesLeft, .thePlatform .componentLinesRight {
@@ -418,7 +418,7 @@
     padding-bottom: 120px;
   }
   .thePlatform .dataCloud img {
-    margin: -180px 0 -100px -102px;
+    margin: -180px 0 -100px -92px;
   }
   .thePlatform .components:nth-of-type(3) {
     padding: 0 40px 40px 40px;
@@ -535,7 +535,11 @@
 @media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .solutionAreas {
     background: none;
+    padding-top: 80px;
   }
+  .solutionAreas>div:nth-of-type(1) {
+    margin-bottom: 70px;
+  }  
   .solutionArea .twoColumnItems .twoColumnItem {
     display: block;
     text-align: center;
@@ -547,6 +551,9 @@
 }
 
 @media screen and (max-width: 480px) { /* mobile small */
+  .solutionArea, .solutionAreas>div:nth-of-type(1) {
+    margin-bottom: 40px;
+  }
   .solutionArea .twoColumnItems .twoColumnItem {
     padding: 0 10px 50px 10px;
   }
@@ -679,4 +686,8 @@
     display: block;
     margin: 0 auto;
   }
-}  
+}
+
+.tryAnnouncement {
+  margin: -100px 0 60px 0;
+}
