@@ -32,8 +32,9 @@ df = from_table(engine, 'example', index=['city_id'])
 The above fragment queries the database to get the table structure of the ‘example’ table. But it does not
 query any of the data in ‘example’, and this thus works equally well for a tiny table as for a huge table.
 
-It is also possible to create a DataFrame from an arbitrary sql query (using `from_model`) or from an
-existing pandas DataFrame (using `from_pandas`).
+It is also possible to create a DataFrame from an arbitrary sql query (using
+[`from_model`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_model.mdx)) or from an existing pandas DataFrame (using
+[`from_pandas`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.from_pandas.mdx)).
 
 ## Basic operations
 
@@ -57,11 +58,12 @@ df.to_pandas()
 ```
 
 The above operations add/remove/rename some columns of the DataFrame. However no actual query is executed
-on the Database, until `df.to_pandas()` is called. The DataFrame operations merely change the symbolic
-representation of the data in the DataFrame and its Series.
+on the Database, until [`df.to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) is called. The DataFrame operations
+merely change the symbolic representation of the data in the DataFrame and its Series.
 
-The call to `df.to_pandas()` here is merely for demonstration purposes, in situations with bigger data sets it
-should be avoided until the data is needed as it will query the database and transfer all data.
+The call to [`df.to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) here is merely for demonstration purposes, in
+situations with bigger data sets it should be avoided until the data is needed as it will query the database
+and transfer all data.
 
 ## Aggregate operations
 
@@ -82,9 +84,10 @@ df['inhabitants_max_2'] = df['inhabitants'].max(century_window)
 df.to_pandas()
 ```
 
-The above example demonstrates how we can calculate aggregate functions (in this case `max()`) on a group of
-row within a window that contains rows. Additionally it shows how to merge two DataFrames. Again only
-the optional debug statement `df.to_pandas()` runs a query, the other operations merely update the internal
+The above example demonstrates how we can calculate aggregate functions (in this case
+[`max()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.max.mdx)) on a group of row within a window that contains rows. Additionally it shows
+how to merge two DataFrames. Again only the optional debug statement
+[`df.to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) runs a query, the other operations merely update the internal
 state of the DataFrame and its Series.
 
 ## Filtering, sorting, and output
@@ -112,16 +115,18 @@ print(df.to_pandas())
 print(df.view_sql())
 ```
 
-The above example demonstrates filtering out rows and sorting a DataFrame. Without the `sort_values()` the
-order of the returned rows is non-deterministic. `view_sql()` can be used to show the compiled SQL query that
+The above example demonstrates filtering out rows and sorting a DataFrame. Without the
+[`sort_values()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_values.mdx) the order of the returned rows is non-deterministic.
+[`view_sql()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.view_sql.mdx) can be used to show the compiled SQL query that
 encompasses all operations done so far.
 
 ## Filtering by Index Labels
 
 :::caution important
 
-In the following examples we call multiple times `to_pandas` method, we do it only for visualization purposes.
-Please use only `df.to_pandas` when necessary, as this will execute the frame’s current query.
+In the following examples we call the [`to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx) method multiple times,
+but we do it only for visualization purposes. Please use [`to_pandas()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.to_pandas.mdx)
+only when necessary, as this will execute the frame’s current query.
 
 
 :::
@@ -156,7 +161,8 @@ Sleat                 4  De Friese Meren         1426
 Starum                5  Súdwest-Fryslân         1061
 ```
 
-If you want to select a specific row from the frame, you can simply pass the label to the `loc` property:
+If you want to select a specific row from the frame, you can simply pass the label to the
+[`loc()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx) property:
 
 ```ipython
 In [7]: df.loc['Drylts'].to_pandas()
@@ -225,7 +231,8 @@ Snits   Súdwest-Fryslân         1456
 Starum  Súdwest-Fryslân         1061
 ```
 
-In case you need to select a value based on a condition, a series boolean can also be passed to `loc` property.
+In case you need to select a value based on a condition, a series boolean can also be passed to the
+[`loc()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx) property.
 
 ```ipython
 In [11]: df.loc[df['inhabitants'] > 1300].to_pandas()
@@ -246,9 +253,9 @@ Out[12]: Series([], Name: __stacked, dtype: object)
 
 ## Setting Values to DataFrame Subset
 
-In previous section we played around a bit with `loc` property, by just filtering the frame using labels.
-As in pandas, you are also able to set values to a specific group of rows and update the main frame. This works
-for all types of selections.
+In previous section we played around a bit with the [`loc()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.loc.mdx) property, by just
+filtering the frame using labels. As in pandas, you are also able to set values to a specific group of rows
+and update the main frame. This works for all types of selections.
 
 ```ipython
 In [13]: df.loc['Drylts'] = 'x'
@@ -296,7 +303,7 @@ this case.
 :::caution important
 
 `df.sort_index().loc['Sleat':, 'municipality'] = 'Fryslân'` will have no effect on `df`, since
-`df.sort_index()` returns a new dataframe.
+[`sort_index()`](/modeling/bach/api-reference/DataFrame/bach.DataFrame.sort_index.mdx) returns a new dataframe.
 
 
 :::
