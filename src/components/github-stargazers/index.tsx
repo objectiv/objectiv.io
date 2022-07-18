@@ -75,7 +75,7 @@ function Stargazers(cta) {
   return (
     <div className={clsx(styles.starsButtonsContainer)}>
       <TrackedLink
-        id={'star-us'}
+        id={'browse-on-github'}
         to="https://github.com/objectiv/objectiv-analytics"
         waitUntilTracked={true}
         target="_self"
