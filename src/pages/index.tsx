@@ -19,13 +19,6 @@ export default function Home() {
       title=' '
       description={tagline}>
 
-      <AnnouncementBar 
-        title={'The Launchpad:'} 
-        content={'a managed back-end and data store to simplify testing Objectiv.'} 
-        ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
-        ctaText={'Learn more'} 
-        icon={'icon-new-banner'} />
-      
       <TrackedHeader 
         id={'hero'} 
         className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -33,9 +26,9 @@ export default function Home() {
           <img
             className={clsx(styles.heroImage)}
             src={useBaseUrl("img/objectiv-rainbow-pipeline.svg")}
-            alt="Open-source infrastructure for product analytics" />
+            alt="Ready-to-use infrastructure for advanced product analytics" />
           <h1 className={clsx(styles.heroTitle)}>
-            Ready-to-use infrastructure for advanced product analytics
+            Objectiv is ready-to-use infrastructure for advanced product analytics
           </h1>
           <h2 className={clsx(styles.heroSubTitle)}>
             Self hosted, open-source &amp; built for those who like their data raw and models in code.
@@ -64,8 +57,7 @@ export default function Home() {
 
             <IconHeader 
               title="Limitless modeling capabilities" 
-              subTitle="Objectiv contains everything you need to unlock a level of product analytics<br />
-              that would normally require years of set up and finetuning." />
+              subTitle="Everything you need to unlock a whole new level of product analytics." />
 
             <div className={clsx(styles.thePlatform)}>
               <div className={clsx(styles.components)}>
@@ -147,7 +139,7 @@ export default function Home() {
                   </div>
                   <div className={clsx(styles.componentDescription)}>
                     <h4>Bach (modeling library)</h4>
-                    <p>Create models on your full dataset and reuse them on any project</p>
+                    <p>Create models on your full dataset and reuse them on any project.</p>
                   </div>
                 </div>
                 <img
@@ -171,9 +163,9 @@ export default function Home() {
               className={clsx("container", styles.contentContainer, styles.dataFromSaaSTools)}>
 
             <IconHeader 
-              title="Taking product analytics out of SaaS tools and into 
-              self-controlled data infra unlocks a great deal of power,
-              but that comes at a price" />
+              title="Taking product analytics out of SaaS tools into your DWH
+              unlocks a great deal of power,
+              but comes at a price" />
 
             <div className={clsx(styles.twoColumnItems)}>
               <div className={clsx(styles.twoColumnItem)}>
@@ -232,7 +224,7 @@ export default function Home() {
               className={clsx("container", styles.contentContainer, styles.solution)}>
 
             <IconHeader 
-              title="Objectiv enables advanced product<br /> analytics without the massive resource hit" />
+              title="Objectiv enables advanced product <br />analytics at a keystroke" />
 
             <div className={clsx(styles.pythonCodeBlock)}>
               <div className={clsx(styles.jupyterIn)}>
@@ -242,121 +234,123 @@ export default function Home() {
                 pip install objectiv-modelhub
               </div>
             </div>
+
+            <div className={clsx(styles.solutionAreas)}>
+              <div className={clsx(styles.solutionArea)}>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-solution-right-data.svg")}
+                        alt="Right data" />
+                    </div>
+                    <div>
+                      <h3>Always the right data for your projects.</h3>
+                      <p>
+                        No more back-and-forth on tracking plans. Objectiv prescribes how to instrument your 
+                        tracking to ensure your dataset covers every analysis you may need down the road.
+                      </p>
+                      <TrackedLink
+                        to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self"
+                        className={clsx("button", styles.ctaButton)}>
+                        <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                          alt={'Docs - Taxonomy'}/></span>
+                        Docs - Taxonomy
+                      </TrackedLink>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={clsx(styles.solutionArea)}>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-solution-tracking.svg")}
+                        alt="Right data" />
+                    </div>
+                    <div>
+                      <h3>Collect user behavior data designed for modeling.</h3>
+                      <p>
+                        Datasets collected with Objectiv are validated on multiple levels and carry an event 
+                        structure that enables direct modeling without prepwork.
+                      </p>
+                      <TrackedLink
+                        to={useBaseUrl("/docs/tracking/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self"
+                        className={clsx("button", styles.ctaButton)}>
+                        <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                          alt={'Docs - Tracking'}/></span>
+                        Docs - Tracking
+                      </TrackedLink>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className={clsx(styles.solutionArea)}>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-solution-reuse-models.svg")}
+                        alt="Reuse models" />
+                    </div>
+                    <div>
+                      <h3>Take pre-built models or build &amp; reuse your own.</h3>
+                      <p>
+                        Models built on one dataset can be deployed and run on another. Take and run what 
+                        someone else made, or quickly build your own with pre-built models and functions.
+                      </p>
+                      <TrackedLink
+                        to={useBaseUrl("/docs/modeling/open-model-hub/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self"
+                        className={clsx("button", styles.ctaButton)}>
+                        <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                          alt={'Docs - Open Model Hub'}/></span>
+                        Docs - Open Model Hub
+                      </TrackedLink>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
             
-            <div className={clsx(styles.solutionArea)}>
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-solution-right-data.svg")}
-                      alt="Right data" />
-                  </div>
-                  <div>
-                    <h3>Always the right data for your projects.</h3>
-                    <p>
-                      No more back-and-forth on tracking plans. Objectiv prescribes how to instrument your 
-                      tracking to ensure your dataset covers every analysis you may need down the road.
-                    </p>
-                    <TrackedLink
-                      to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
-                      waitUntilTracked={true}
-                      target="_self"
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
-                        alt={'Docs - Taxonomy'}/></span>
-                      Docs - Taxonomy
-                    </TrackedLink>                    
+
+              <div className={clsx(styles.solutionArea)}>
+                <div className={clsx(styles.twoColumnItems)}>
+                  <div className={clsx(styles.twoColumnItem)}>
+                    <div className={clsx(styles.twoColumnIcon)}>
+                      <img
+                        src={useBaseUrl("img/icons/icon-feed-tools.svg")}
+                        alt="Feed tools" />
+                    </div>
+                    <div>
+                      <h3>Feed tools from one source with minimal overhead.</h3>
+                      <p>
+                        Objectiv's pandas-like modeling library runs SQL straight on your data store. You can 
+                        use models in production directly to simplify data debugging &amp; delivery to BI 
+                        tools, dbt, etc.
+                      </p>
+                      <TrackedLink
+                        to={useBaseUrl("/docs/modeling/", {absolute: true})}
+                        waitUntilTracked={true}
+                        target="_self"
+                        className={clsx("button", styles.ctaButton)}>
+                        <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
+                          alt={'Docs - Modeling'}/></span>
+                        Docs - Modeling
+                      </TrackedLink>                    
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className={clsx(styles.solutionArea)}>
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-solution-tracking.svg")}
-                      alt="Right data" />
-                  </div>
-                  <div>
-                    <h3>Collect user behavior data designed for modeling.</h3>
-                    <p>
-                      Datasets collected with Objectiv are validated on multiple levels and carry an event 
-                      structure that enables direct modeling without prepwork.
-                    </p>
-                    <TrackedLink
-                      to={useBaseUrl("/docs/tracking/", {absolute: true})}
-                      waitUntilTracked={true}
-                      target="_self"
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
-                        alt={'Docs - Tracking'}/></span>
-                      Docs - Tracking
-                    </TrackedLink>                    
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div className={clsx(styles.solutionArea)}>
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-solution-reuse-models.svg")}
-                      alt="Reuse models" />
-                  </div>
-                  <div>
-                    <h3>Take pre-built models or build &amp; reuse your own.</h3>
-                    <p>
-                      Models built on one dataset can be deployed and run on another. Take and run what 
-                      someone else made, or quickly build your own with pre-built models and functions.
-                    </p>
-                    <TrackedLink
-                      to={useBaseUrl("/docs/modeling/open-model-hub/", {absolute: true})}
-                      waitUntilTracked={true}
-                      target="_self"
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
-                        alt={'Docs - Open Model Hub'}/></span>
-                      Docs - Open Model Hub
-                    </TrackedLink>                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-
-            <div className={clsx(styles.solutionArea)}>
-              <div className={clsx(styles.twoColumnItems)}>
-                <div className={clsx(styles.twoColumnItem)}>
-                  <div className={clsx(styles.twoColumnIcon)}>
-                    <img
-                      src={useBaseUrl("img/icons/icon-feed-tools.svg")}
-                      alt="Feed tools" />
-                  </div>
-                  <div>
-                    <h3>Feed tools from one source with minimal overhead.</h3>
-                    <p>
-                      Objectiv's pandas-like modeling library runs SQL straight on your data store. You can 
-                      use models in production directly to simplify data debugging &amp; delivery to BI 
-                      tools, dbt, etc.
-                    </p>
-                    <TrackedLink
-                      to={useBaseUrl("/docs/modeling/", {absolute: true})}
-                      waitUntilTracked={true}
-                      target="_self"
-                      className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")}  
-                        alt={'Docs - Modeling'}/></span>
-                      Docs - Modeling
-                    </TrackedLink>                    
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </TrackedDiv>
         </div>
 
@@ -366,9 +360,8 @@ export default function Home() {
             className={clsx("container", styles.contentContainer, styles.taxonomy)}>
 
             <IconHeader title="It's in the taxonomy" />
-            <p>Objectiv is built around an open analytics taxonomy: a generic classification of common event 
-              types and the contexts in which they can happen. It's designed to provide a universal structure 
-              for analytics data, so models built on one dataset can be deployed and run on another.</p>
+            <p>Objectiv is built around an open analytics taxonomy: a universal structure for analytics data, 
+              so models built on one dataset can be deployed and run on another.</p>
             <img
               src={useBaseUrl("img/its-in-the-taxonomy.png")}
               className={clsx(styles.taxonomyOverview)}
@@ -377,9 +370,8 @@ export default function Home() {
               src={useBaseUrl("img/its-in-the-taxonomy-zoomed-in.png")}
               className={clsx(styles.taxonomyOverviewZoomedIn)}
               alt="Taxonomy overview" />
-            <p>It is designed and tested with UIs and analytics use cases of over 50 companies. Areas like 
-              payments, catalogs and CRM are also on the roadmap, and it’s extensible to cover custom use 
-              cases.</p>
+            <p>It's designed and tested with UIs and analytics use cases of over 50 companies. Areas like 
+              payments &amp; CRM are on the roadmap, and it's extensible to cover custom use cases.</p>
             <TrackedLink
               to={useBaseUrl("/docs/taxonomy/", {absolute: true})}
               waitUntilTracked={true}
@@ -467,6 +459,13 @@ export default function Home() {
               src={useBaseUrl("img/solution-takes-less-than-5-minutes-pointing-upwards.svg")} 
               className={clsx(styles.takesLessThan5MinutesPointingUpwards)}
               alt="Takes less than 5 minutes" />
+
+            {/* <AnnouncementBar 
+              title={'The Launchpad:'} 
+              content={'a managed back-end and data store to simplify testing Objectiv.'} 
+              ctaLink={'https://objectiv.io/docs/home/get-a-launchpad'}
+              ctaText={'Learn more'} 
+              icon={'icon-new-banner'} /> */}
 
           </TrackedDiv>
         </div>
