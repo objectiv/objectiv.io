@@ -105,29 +105,29 @@ body {
     display: none;
   }
   .navbar .navGitHub {
-    background: url('/img/icons/icon-nav-github.svg') no-repeat;
-  }
-  .navbar .navGitHub:hover {
     background: url('/img/icons/icon-nav-github-hover.svg') no-repeat;
   }
-  .navbar .navSlack {
-    background: url('/img/icons/icon-nav-slack.svg') no-repeat;
-    color: transparent; 
+  .navbar .navGitHub:hover {
+    background: url('/img/icons/icon-nav-github.svg') no-repeat;
   }
-  .navbar .navSlack:hover {
+  .navbar .navSlack {
+    color: transparent; 
     background: url('/img/icons/icon-nav-slack-hover.svg') no-repeat;
   }
-  .navbar .navTwitter {
-    background: url('/img/icons/icon-nav-twitter.svg') no-repeat;
+  .navbar .navSlack:hover {
+    background: url('/img/icons/icon-nav-slack.svg') no-repeat;
   }
-  .navbar .navTwitter:hover {
+  .navbar .navTwitter {
     background: url('/img/icons/icon-nav-twitter-hover.svg') no-repeat;
   }
+  .navbar .navTwitter:hover {
+    background: url('/img/icons/icon-nav-twitter.svg') no-repeat;
+  }
   .navbar .navEmail {
-    background: url('/img/icons/icon-nav-email.svg') no-repeat;
+    background: url('/img/icons/icon-nav-email-hover.svg') no-repeat;
   }
   .navbar .navEmail:hover {
-    background: url('/img/icons/icon-nav-email-hover.svg') no-repeat;
+    background: url('/img/icons/icon-nav-email.svg') no-repeat;
   }
 }
 
