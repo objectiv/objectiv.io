@@ -30,9 +30,9 @@ browser console:
   [See Locations - Solving Collisions](/tracking/core-concepts/locations.md#solving-collisions) for an example.
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming Event against the [taxonomy and its properties](/taxonomy/reference/events/overview.md). 
+As a final catch-all, Objectiv's [Collector](/tracking/backend/introduction.md) validates any incoming Event against the [taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
-For more background, see the [Collector docs](/tracking/collector/introduction.md).
+For more background, see the [Collector docs](/tracking/backend/introduction.md).
 
 ## Logging
 Check out this how-to guide on [how to configure logging](/tracking/browser/how-to-guides/configuring-logging.md).

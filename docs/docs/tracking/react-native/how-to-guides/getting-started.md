@@ -52,7 +52,7 @@ Ideally, the tracker should be configured as early as possible. Best before the 
 :::
 
 :::tip Just trying things out?
-[React Native Tracker](/tracking/react-native/api-reference/ReactNativeTracker.md) is quite modular, and it's possible to set it up without having a [Collector](/tracking/collector/getting-started.md) running.
+[React Native Tracker](/tracking/react-native/api-reference/ReactNativeTracker.md) is quite modular, and it's possible to set it up without having a [Collector](/tracking/backend/introduction.md) running.
 
 In the following example we create a new Tracker instance that simply logs all Events to console.
 

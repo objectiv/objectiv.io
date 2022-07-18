@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Introduction
-slug: /tracking/collector
+slug: /tracking/backend/
 ---
 
 # Collector

@@ -69,7 +69,7 @@ makeTracker({
 ```
 
 :::tip Transport ?
-[Events](/taxonomy/reference/events/overview.md) are sent to the [Collector](/tracking/collector/introduction.md) via a composable layer of queueing, batching and sending classes called Transport. 
+[Events](/taxonomy/reference/events/overview.md) are sent to the [Backend](/tracking/backend/introduction.md) via a composable layer of queueing, batching and sending classes called Transport. 
 :::
 
 <br />
@@ -78,6 +78,6 @@ makeTracker({
 - [Location Taggers](/tracking/browser/api-reference/locationTaggers/overview.md) 
 - [Event Trackers](/tracking/browser/api-reference/eventTrackers/overview.md)
 - [BrowserTracker](/tracking/browser/api-reference/general/BrowserTracker.md)
-- [Collector](/tracking/collector/introduction.md)
+- [Collector](/tracking/backend/introduction.md)
 - [startAutoTracking](/tracking/browser/api-reference/general/startAutoTracking.md)
 :::

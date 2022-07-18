@@ -66,12 +66,12 @@ These plugins are supported out of the box, and automatically enabled when the e
   
 ### `http-context`
   * adds a Global [HttpContext](/taxonomy/reference/global-contexts/HttpContext.md) to each Event
-  * its `remote_address` attribute is enriched server-side by the [Collector](/tracking/collector/introduction.md)
+  * its `remote_address` attribute is enriched server-side by the [Collector](/tracking/backend/introduction.md)
   * included in React, Browser and Angular SDKs
   
 ### `path-context-from-url`
   * adds a Global [PathContext](/taxonomy/reference/global-contexts/PathContext.md) to each Event
-  * further parsed server-side by the [Collector](/tracking/collector/introduction.md) to enrich events with [MarketingContext](/taxonomy/reference/global-contexts/MarketingContext.md)
+  * further parsed server-side by the [Collector](/tracking/backend/introduction.md) to enrich events with [MarketingContext](/taxonomy/reference/global-contexts/MarketingContext.md)
   * included in React, Browser and Angular SDKs
 
 ### `react-navigation`
