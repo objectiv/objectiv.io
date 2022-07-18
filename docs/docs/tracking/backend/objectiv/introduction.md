@@ -6,18 +6,21 @@ slug: /tracking/backend/objectiv-collector
 
 # Objectiv Collector
 
-Objectiv's Collector provides an API and storage connectors for receiving, validating, and storing 
-[Events](/taxonomy/reference/events/overview.md).
+Objectiv's Collector is a backend to validate and capture the data collected by the 
+[Tracker SDKs](../introduction.md) for modeling. It provides an API and storage connectors for receiving, 
+validating, and storing [Events](/taxonomy/reference/events/overview.md).
+
+[See how to get started](./getting-started.md).
 
 ## First-party data
-The Collector is self-hosted on your own domain, no data is ever sent to any third-party, meaning:
+The Collector is self-hosted on your own domain, so no data is ever sent to any third-party, meaning:
 
 * You have full control over your data.
 * Tracking is compliant with privacy legislation such as GDPR, CCPA and PECR.
 * Adblockers can be avoided: first-party data tracking is ususally not covered by adblockers.
 
-## Storage
-Currently, the Collector can store Events in:
+## Supported data stores
+Currently, the Collector can store [Events](/taxonomy/reference/events/overview.md) in:
 - A PostgreSQL database.
 - The file system.
 

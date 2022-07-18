@@ -19,18 +19,18 @@ use (limited slots).
 
 ## Supported backends & data stores
 The following backends and data stores are currently supported:
-1. [Objectiv's Collector](./objectiv/introduction.md): a built-in backend with an API and storage connectors 
-  for receiving, validating, and storing [Events](/taxonomy/reference/events/overview.md) in:
-    1. a **PostgreSQL database**; or 
-    2. **the file system**.
-2. [Snowplow](./snowplow/introduction.md): use a Snowplow pipeline as a sink for Objectiv events, hooking 
-  directly into Snowplows enrichment step. Currently, there is support for:
+1. [Objectiv's Collector](./objectiv/introduction.md): a built-in backend, with an API and storage connectors 
+  for receiving, validating, and storing events in:
+    1. A **PostgreSQL database**; or 
+    2. **The file system**.
+2. [Snowplow](./snowplow/introduction.md): a Snowplow pipeline as a sink for Objectiv events, hooking 
+  directly into the `Enrichment` step, supporting:
     1. **[BigQuery](./snowplow/google-bigquery.md)** via Google PubSub; and
-    2. **AWS SQS/Kinesis** using Thrift messages.
+    2. **[AWS SQS/Kinesis](./snowplow/aws.md)** using Thrift messages.
 
 ## First-party data
 
-As the backend is self-hosted on your own domain, no data is ever sent to any third-party, meaning:
+The backend is self-hosted on your own domain, so no data is ever sent to any third-party, meaning:
 
 * You have full control over your data.
 * Tracking is compliant with privacy legislation such as GDPR, CCPA and PECR.
