@@ -35,7 +35,8 @@ The Collector is self-hosted on your own domain, so no data is ever sent to any 
 ## Validation
 The Collector validates any incoming Event against the 
 [open analytics taxonomy](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond 
-with an error, and store the Event in the `NOK` folder on disk.
+with an error, and store the Event in the configured `NOK` (not-OK) location.
+
 
 This means no Event sent to the Collector is ever discarded, enabling you to for instance 'repair' any 
 failing Events and store them after the fact.
