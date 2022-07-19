@@ -69,7 +69,7 @@ makeTracker({
 ```
 
 :::tip Transport ?
-[Events](/taxonomy/reference/events/overview.md) are sent to the [Backend](/tracking/collector/introduction.md) via a composable layer of queueing, batching and sending classes called Transport. 
+[Events](/taxonomy/reference/events/overview.md) are sent to the [Collector](/tracking/collector/introduction.md) via a composable layer of queueing, batching and sending classes called Transport. 
 :::
 
 <br />
