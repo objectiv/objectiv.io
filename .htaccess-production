@@ -88,9 +88,12 @@ RewriteCond %{REQUEST_URI} ^/(docs/modeling/modelhub_api_reference)(?:/modelhub\
 RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/%2/%3 [L,R=301]
 
 # /docs/modeling/bach_whatisbach                      -> /docs/modeling/bach/
+# /docs/modeling/bach/what_is_bach                    -> /docs/modeling/bach/
 # /docs/modeling/bach_core_concepts                   -> /docs/modeling/bach/core-concepts
 # /docs/modeling/bach_examples                        -> /docs/modeling/bach/examples
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_whatisbach)(\/?)$
+RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach/what-is-bach)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_core_concepts)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/bach/core-concepts/ [L,R=301]
