@@ -1,15 +1,15 @@
 ---
-sidebar_position: 2
-title: Introduction
-slug: /tracking/backend/snowplow
+sidebar_position: 5
+title: Snowplow pipeline
+slug: /tracking/collector/snowplow-pipeline
 ---
 
-# Snowplow
+# Snowplow pipeline
 
 The Objectiv Collector supports using the Snowplow pipeline as a sink for Objectiv events, hooking directly 
 into Snowplows enrichment step. Currently, there is data store support for:
-1. **[Google BigQuery](./google-bigquery.md)** via Google PubSub; and
-2. **[AWS SQS/Kinesis](./aws.md)**, using Thrift messages.
+1. **[Google BigQuery](./google-bigquery.md)**, via Google PubSub; and
+2. **[Amazon S3](./s3.md)**, via AWS SQS/Kinesis.
 
 
 ## How to set up Objectiv with Snowplow
@@ -40,14 +40,11 @@ java -jar igluctl static push --public <path to schemas> <url to repo> <uuid>
 java -jar igluctl static push --public ./schemas https://iglu.example.com myuuid-abcd-abcd-abcd-abcdef12345
 ``` 
 
-### 2. Configure output to push events to Google Cloud Platform / BigQuery or AWS
-The Collector can be configured to push events into a Snowplow message queue, using environment 
-variables. 
+### 2. Configure output to push events to the data store
+The Collector can be configured to push events into a Snowplow message queue, using environment variables. 
 
-* To send output to GCP/BigQuery, please refer to **[BigQuery](./google-bigquery.md)** for the 
-  platform-specific instructions.
-* To send output to AWS SQS/Kinesis, please refer to **[AWS](./aws.md)** for the platform-specific 
-  instructions.
+* To send output to GCP/BigQuery, please refer to **[BigQuery instructions](./google-bigquery.md)**.
+* To send output to AWS SQS/Kinesis, please refer to **[Amazon S3 instructions](./s3.md)**.
 
 ## Background
 

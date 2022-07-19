@@ -1,6 +1,6 @@
 {
-  "label": "Snowplow",
-  "position": 2,
+  "label": "Collector",
+  "position": 7,
   "link": {
     "type": "doc", 
     "id": "introduction"

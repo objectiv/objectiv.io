@@ -1,18 +1,19 @@
 ---
-sidebar_position: 2
-title: Google Cloud Platform & BigQuery
-slug: /tracking/backend/snowplow/gcp-and-bigquery
+sidebar_position: 3
+title: Google BigQuery
+slug: /tracking/collector/google-bigquery
 ---
 
-# Google Cloud Platform & BigQuery
+# Google BigQuery
 
-The Objectiv Collector can be configured to work with Snowplow on Google Cloud Platform and BigQuery. The 
-Snowplow GCP setup uses GCP PubSub topics (message queue) to connect various stages in the pipeline. 
+The [Objectiv Collector](./introduction.md) can be configured to work with [Snowplow](./snowplow.md) on 
+Google Cloud Platform and BigQuery. The Snowplow GCP setup uses GCP PubSub topics (message queue) to connect 
+various stages in the pipeline. 
 
-## How to set up Objectiv on GCP through Snowplow
+## How to set up Objectiv on GCP using Snowplow
 
 :::note
-We assume below that you've already read [how to set up Objectiv with Snowplow](../introduction.md).
+We assume below that you've already read [how to set up Objectiv with Snowplow](./snowplow.md).
 :::
 
 The setup works as follows:
@@ -21,7 +22,7 @@ The setup works as follows:
 2. Good events are published on the `raw` topic on PubSub (which is read by the Enrich process); and
 3. Bad events (invalid) are published on the `bad` topic on PubSub.
 
-### Starting the collector
+### Starting the Collector
 The configuration for the collector is controlled through environment variables that configure which outputs
 are used. Settings specific to the PubSub sink are:
 
@@ -91,6 +92,10 @@ raw topic, to be picked up by Snowplow's enrichment.
 To check if messages have been successfully received by the PubSub topic, please refer to the monitoring of 
 that specific topic in the GCP console. The `Publish message request count` monitoring topic should show more 
 than 0 requests/sec.
+
+## Connect to BigQuery in your notebook
+See [how to get started in your notebook](../../modeling/get-started-in-your-notebook.mdx) to connect to the 
+BigQuery database and start modeling.
 
 ## BigQuery table optimization
 In a standard Snowplow BigQuery setup, all data is stored in a table called `events`. As this table holds a 

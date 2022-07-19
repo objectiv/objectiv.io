@@ -47,7 +47,7 @@ See the video below for a walkthrough of the run-time validation features:
 If you also import the [`developer-tools`](https://www.npmjs.com/package/@objectiv/developer-tools) package,
 you get added validation for:
 * **Uniqueness**: Whether an Event `id` and its [Location Stack](locations.md) are unique.
-* **Taxonomy**: The same validation the [Collector](/tracking/backend/introduction.md) does, client-side, 
+* **Taxonomy**: The same validation the [Collector](/tracking/collector/introduction.md) does, client-side, 
   such as missing Contexts or malformed Location Stacks.
 * **Links to contextually relevant documentation pages**: For example, if a required Context is missing for an 
   Event, the message will provide a link to that Context’s documentation, as well as any links to related 
@@ -110,12 +110,12 @@ If this is not the case, validation will warn about colliding elements. For exam
 
 
 ## Collector validation
-As a final catch-all, Objectiv's [Collector](/tracking/backend/introduction.md) validates any incoming 
+As a final catch-all, Objectiv's [Collector](/tracking/collector/introduction.md) validates any incoming 
 Event against the [open analytics taxonomy and its properties](/taxonomy/reference/events/overview.md), such 
 as requiring a [RootLocationContext](../../taxonomy/reference/location-contexts/RootLocationContext.md) and 
 [PathContext](../../taxonomy/reference/global-contexts/PathContext.md) for InteractiveEvents.
 
-For more background, see the [Collector docs](/tracking/backend/introduction.md).
+For more background, see the [Collector docs](/tracking/collector/introduction.md).
 
 ## End-to-end testing
 The Objectiv SDKs also come with functionality to enable end-to-end testing of your tracking instrumentation 
