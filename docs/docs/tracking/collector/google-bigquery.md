@@ -6,8 +6,9 @@ slug: /tracking/collector/google-bigquery
 
 # Google BigQuery
 
-The [Objectiv Collector](./introduction.md) can be configured to work with BigQuery through [Snowplow](./snowplow-pipeline.md) on Google Cloud Platform. The Snowplow GCP setup uses GCP PubSub topics (message queue) to 
-connect various stages in the pipeline. 
+The [Objectiv Collector](./introduction.md) can be configured to work with BigQuery through 
+[Snowplow](./snowplow-pipeline.md) on Google Cloud Platform. The Snowplow GCP setup uses GCP PubSub topics 
+(message queue) to connect various stages in the pipeline. 
 
 ## How to set up Objectiv on GCP using Snowplow
 

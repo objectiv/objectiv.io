@@ -91,7 +91,7 @@ RewriteRule ^.*?$ /docs/modeling/open-model-hub/api-reference/%2/%3 [L,R=301]
 # /docs/modeling/bach_core_concepts                   -> /docs/modeling/bach/core-concepts
 # /docs/modeling/bach_examples                        -> /docs/modeling/bach/examples
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_whatisbach)(\/?)$
-RewriteRule ^.*?$ /docs/modeling/bach/what-is-bach/ [L,R=301]
+RewriteRule ^.*?$ /docs/modeling/bach/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_core_concepts)(\/?)$
 RewriteRule ^.*?$ /docs/modeling/bach/core-concepts/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/(docs/modeling/bach_examples)(\/?)$
@@ -175,6 +175,13 @@ RewriteRule ^.*?$ /docs/modeling/example-notebooks/feature-importance [L,R=301]
 # /docs/taxonomy/core_concepts -> /docs/taxonomy/
 RewriteCond %{REQUEST_URI} ^/(docs/taxonomy/core-concepts)(\/?)$
 RewriteRule ^.*?$ /docs/taxonomy/ [L,R=301]
+
+# /docs/tracking/collector/getting-started --> /docs/tracking/collector/
+# /docs/tracking/collector/troubleshooting --> /docs/tracking/collector/
+RewriteCond %{REQUEST_URI} ^/(docs/tracking/collector/getting-started)(\/?)$
+RewriteRule ^.*?$ /docs/tracking/collector/ [L,R=301]
+RewriteCond %{REQUEST_URI} ^/(docs/tracking/collector/troubleshooting)(\/?)$
+RewriteRule ^.*?$ /docs/tracking/collector/ [L,R=301]
 
 # set hsts header, to prevent client from returning to http
 Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
