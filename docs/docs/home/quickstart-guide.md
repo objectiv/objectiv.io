@@ -62,7 +62,7 @@ http://localhost:3000/
 
 We hope you enjoyed playing around with Objectiv. You can use `docker-compose down` to stop and remove the running containers properly.
 
-If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/tracking/backend/objectiv/getting-started.md) to get started.
+If you want to start using Objectiv for your own project, you'll want to set up a Collector and a data store first. [Follow this guide](/tracking/collector/introduction.md) to get started.
 
 :::info
 Want to test Objectiv on your own app/website without setting up a Collector and data store? [Get a Launchpad](./get-a-launchpad.md)
