@@ -1163,5 +1163,294 @@ module.exports = {
         ]
       }
     }
+  },
+  "Jobs: Content links": {
+    "Should track PressEvents on links in content on Jobs page": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "the-project"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "site",
+                "href": "/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "the-project"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "docs",
+                "href": "http://localhost:3000/docs/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#2"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "the-project"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "repo",
+                "href": "https://github.com/objectiv/objectiv-analytics"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#3"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "open-model-hub",
+                "href": "http://localhost:3000/docs/modeling/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#4"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "open-analytics-taxonomy",
+                "href": "http://localhost:3000/docs/taxonomy/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#5"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "what-we-offer"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "fly-ventures",
+                "href": "https://www.fly.vc/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#6"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "what-we-offer"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "localglobe",
+                "href": "https://localglobe.vc/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#7"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "jobs"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "what-we-offer"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "wed-love-to-hear-from-you",
+                "href": "mailto:jobs@objectiv.io"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/jobs"
+              }
+            ],
+            "id": "PressEvent#8"
+          }
+        ]
+      }
+    }
   }
 }
