@@ -1,5 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
+import { uuidv4 } from "@objectiv/tracker-core";
+import { ObjectivProvider, ReactTracker, useOnToggle } from "@objectiv/tracker-react";
 import React, { useState } from 'react';
 
 export const windowExists = () => typeof window !== 'undefined';
@@ -55,10 +56,11 @@ function Root({children}) {
     endpoint: trackerEndPoint as string,
     applicationId: trackerApplicationId as string,
     active: cookiebotStatisticsConsent,
+    generateGUID: uuidv4
   })
 
-  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-  useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
+  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instance
+  useOnToggle(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
 
   return (
     <ObjectivProvider tracker={tracker}>

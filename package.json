@@ -20,7 +20,7 @@
     "@docusaurus/core": "^2.0.0-beta.18",
     "@docusaurus/preset-classic": "^2.0.0-beta.18",
     "@mdx-js/react": "^1.6.22",
-    "@objectiv/tracker-react": "^0.0.21",
+    "@objectiv/tracker-react": "^0.0.23-2",
     "@u-wave/react-vimeo": "^0.9.5",
     "axios": "^0.27.2",
     "clsx": "^1.1.1",
