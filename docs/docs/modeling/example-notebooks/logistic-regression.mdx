@@ -56,6 +56,7 @@ We take a 10% sample of the full data that we will use to train the model on. Th
 After the model is fitted, it can be used to predict the labels for the _entire_ data set.
 
 ```python
+# seed parameter is supported only for Postgres
 features_set_sample = features_unstacked.get_sample('test_lr_sample', sample_percentage=10, overwrite=True, seed=42)
 ```
 
