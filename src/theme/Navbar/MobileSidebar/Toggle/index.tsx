@@ -6,8 +6,8 @@
  */
 
 import React from 'react';
-import IconMenu from '@theme/IconMenu';
-import {useNavbarMobileSidebar} from '@docusaurus/theme-common';
+import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
+import IconMenu from '@theme/Icon/Menu';
 
 // OBJECTIV
 import { TrackedButton } from '@objectiv/tracker-react';

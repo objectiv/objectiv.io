@@ -1,7 +1,7 @@
 import React, {ComponentProps} from 'react';
 import type LayoutType from '@theme/Navbar/MobileSidebar/Layout';
 import Layout from '@theme-original/Navbar/MobileSidebar/Layout';
-import {useNavbarSecondaryMenu} from '@docusaurus/theme-common';
+import {useNavbarSecondaryMenu} from '@docusaurus/theme-common/internal';
 
 type Props = ComponentProps<typeof LayoutType>
 

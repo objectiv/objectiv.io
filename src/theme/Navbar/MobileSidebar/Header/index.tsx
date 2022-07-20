@@ -6,10 +6,10 @@
  */
 
 import React from 'react';
+import {useNavbarMobileSidebar} from '@docusaurus/theme-common/internal';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
-import IconClose from '@theme/IconClose';
+import IconClose from '@theme/Icon/Close';
 import NavbarLogo from '@theme/Navbar/Logo';
-import {useNavbarMobileSidebar} from '@docusaurus/theme-common';
 
 // OBJECTIV
 import { TrackedButton } from '@objectiv/tracker-react';
