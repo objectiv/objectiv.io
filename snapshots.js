@@ -881,5 +881,287 @@ module.exports = {
         ]
       }
     }
+  },
+  "About: Content links": {
+    "Should track PressEvents on links in content on About page": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "why-us"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "fly-ventures",
+                "href": "https://www.fly.vc/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "why-us"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "localglobe",
+                "href": "https://localglobe.vc/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#2"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "core-team"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "were-hiring-a-data-scientist-join-us",
+                "href": "/jobs"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#3"
+          }
+        ]
+      }
+    }
+  },
+  "About: Team section": {
+    "Should track PressEvents on links in Team section on About page": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "core-team"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributors"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "ivarpruijn"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributor-card"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "avatar"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "check-out-ivarpruijn-on-github",
+                "href": "https://github.com/ivarpruijn"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "core-team"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributors"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "ivarpruijn"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributor-card"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "avatar-subtitle"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "check-out-ivarpruijn-on-github",
+                "href": "https://github.com/ivarpruijn"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#2"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "about"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "core-team"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributors"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "ivarpruijn"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "contributor-card"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "card-footer"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "check-out-ivarpruijn-on-github",
+                "href": "https://github.com/ivarpruijn"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/about"
+              }
+            ],
+            "id": "PressEvent#3"
+          }
+        ]
+      }
+    }
   }
 }
