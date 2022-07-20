@@ -7,7 +7,7 @@ slug: /tracking/collector/snowplow-pipeline
 # Snowplow pipeline
 
 The Objectiv Collector supports using the Snowplow pipeline as a sink for Objectiv events, hooking directly 
-into Snowplows enrichment step. Currently, there is data store support for:
+into Snowplow's enrichment step. Currently, there is data store support for:
 1. **[Google BigQuery](./google-bigquery.md)**, via Google PubSub; and
 2. **[Amazon S3](./s3.md)**, via AWS SQS/Kinesis.
 
