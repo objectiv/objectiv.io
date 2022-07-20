@@ -1467,7 +1467,7 @@ module.exports = {
               },
               {
                 "_type": "ContentContext",
-                "id": "post-release-google-bigquery-support-our-mission-to-enable-data-"
+                "id": "post-release-google-bigquery-support-our-mission-to-enable-data-model"
               },
               {
                 "_type": "ContentContext",
