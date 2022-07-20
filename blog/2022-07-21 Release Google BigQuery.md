@@ -21,8 +21,8 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 [logistic-regression]: https://objectiv.io/docs/modeling/open-model-hub/models/machine-learning/LogisticRegression/LogisticRegression/
 [root-location]: https://objectiv.io/docs/taxonomy/reference/location-contexts/RootLocationContext/
 [logistic-regression-notebook]: https://objectiv.io/docs/modeling/example-notebooks/logistic-regression/
-[collector]: https://objectiv.io/docs/tracking/collector
-[snowplow-pipeline]: https://objectiv.io/docs/tracking/collector/snowplow-pipeline
+[collector]: https://objectiv.io/docs/tracking/collector/
+[snowplow-pipeline]: https://objectiv.io/docs/tracking/collector/snowplow-pipeline/
 [google-bigquery-docs]: https://objectiv.io/docs/tracking/collector/google-bigquery
 [get-started-in-your-notebook]: https://objectiv.io/docs/modeling/get-started-in-your-notebook/
 [bach-api-dataframe]: https://objectiv.io/docs/modeling/bach/api-reference/DataFrame/DataFrame/
