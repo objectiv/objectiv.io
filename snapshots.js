@@ -1452,54 +1452,5 @@ module.exports = {
         ]
       }
     }
-  },
-  "Blog: Overview links": {
-    "Should track PressEvents on links in content on Blog page": {
-      "1": {
-        "errors": [],
-        "events": [
-          {
-            "_type": "PressEvent",
-            "location_stack": [
-              {
-                "_type": "RootLocationContext",
-                "id": "blog"
-              },
-              {
-                "_type": "ContentContext",
-                "id": "post-release-google-bigquery-support-our-mission-to-enable-data-"
-              },
-              {
-                "_type": "ContentContext",
-                "id": "blog-post-footer"
-              },
-              {
-                "_type": "LinkContext",
-                "id": "read-more",
-                "href": "/blog/release-google-bigquery-support-our-mission-to-enable-data-models-to-run-across-data-stores/"
-              }
-            ],
-            "global_contexts": [
-              {
-                "_type": "HttpContext",
-                "id": "http_context",
-                "referrer": "",
-                "user_agent": "mocked-user-agent",
-                "remote_address": null
-              },
-              {
-                "_type": "ApplicationContext",
-                "id": "objectiv-website-dev"
-              },
-              {
-                "_type": "PathContext",
-                "id": "http://localhost:3000/blog"
-              }
-            ],
-            "id": "PressEvent#1"
-          }
-        ]
-      }
-    }
   }
 }
