@@ -16,7 +16,6 @@ import JoinSlackLink from '@site/src/components/join-slack-link';
 
 [open-model-hub]: https://objectiv.io/docs/modeling/open-model-hub/
 [bach]: https://objectiv.io/docs/modeling/bach/
-[retention-matrix-blog]: https://objectiv.io/blog/release-new-retention-model-in-the-open-model-hub/
 [retention-matrix-docs]: https://objectiv.io/docs/modeling/open-model-hub/models/aggregation/retention_matrix/
 [bach-data-stores]: https://objectiv.io/docs/modeling/bach/data-stores/
 [logistic-regression]: https://objectiv.io/docs/modeling/open-model-hub/models/machine-learning/LogisticRegression/LogisticRegression/
@@ -47,10 +46,10 @@ more data stores coming.
 <!--truncate-->
 
 ## An example: A retention matrix directly on BigQuery
-We’ll use the [retention matrix model][retention-matrix-blog] from the [open model hub][open-model-hub] as an 
-example. To run this model directly on the full dataset in BigQuery, simply call modelhub’s 
-[retention_matrix][retention-matrix-docs] operation, and choose the desired timeframe (daily, weekly, 
-monthly, or yearly):
+We’ll use the [retention matrix model](./2022-06-24%20Release%20Retention%20Matrix%20model.md) from the 
+[open model hub][open-model-hub] as an example. To run this model directly on the full dataset in BigQuery, 
+simply call modelhub’s [retention_matrix][retention-matrix-docs] operation, and choose the desired timeframe 
+(daily, weekly, monthly, or yearly):
 
 ```python
 retention_matrix = modelhub.aggregate.retention_matrix(
