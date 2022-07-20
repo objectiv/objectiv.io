@@ -101,8 +101,8 @@ export default function Home() {
                 <img
                   src={useBaseUrl("img/platform-data-cloud.png")}
                   alt="Data cloud" />
-                <h4>Data cloud agnostic &amp; interoperable</h4>
-                <p>No lock-in and plays nice with <br /> infra you already use.</p>
+                <h4>Data cloud agnostic</h4>
+                <p>Run data models across data stores. Works with existing infra, no lock-in.</p>
               </div>
               <div className={clsx(styles.components)}>
                 <img
@@ -149,8 +149,8 @@ export default function Home() {
               </div>
               
               <p className={clsx(styles.dataCloudDescription)}>
-                <strong>Data cloud agnostic &amp; interoperable.</strong><br />
-                No lock-in and plays nice with infra you already use.
+                <strong>Data cloud agnostic</strong><br />
+                Run data models across data stores. Works with existing infra, no lock-in.
               </p>
             </div>
 

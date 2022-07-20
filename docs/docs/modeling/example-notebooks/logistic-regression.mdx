@@ -10,11 +10,11 @@ title: Logistic Regression
 The open model hub supports logistic regression on Bach data objects. A logistic regression model can be fitted, values can be predicted and results can be tested directly on the full data set in the database. Note that for fitting the model data is extracted from the database under the hood.
 
 This example is also available in a [notebook](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/model-hub-logistic-regression.ipynb)
-to run on your own data or use our
-[quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it out with demo data in 5 minutes.
+to run on your own data or use our [quickstart](https://objectiv.io/docs/home/quickstart-guide/) to try it
+out with demo data in 5 minutes.
 
-At first we have to install the open model hub and instantiate the Objectiv DataFrame object. See
-[Getting started with Objectiv](/modeling/example-notebooks/index.mdx#getting-started-with-objectiv) for more info on this.
+First we have to install the open model hub and instantiate the Objectiv DataFrame object; see
+[getting started in your notebook](/modeling/get-started-in-your-notebook.mdx).
 
 ## Creating a feature set to predict user behavior
 
@@ -56,6 +56,7 @@ We take a 10% sample of the full data that we will use to train the model on. Th
 After the model is fitted, it can be used to predict the labels for the _entire_ data set.
 
 ```python
+# seed parameter is supported only for Postgres
 features_set_sample = features_unstacked.get_sample('test_lr_sample', sample_percentage=10, overwrite=True, seed=42)
 ```
 

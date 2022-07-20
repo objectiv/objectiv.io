@@ -18,13 +18,13 @@ import Mermaid from '@theme/Mermaid';
 />
 
 ### Properties
-|                | type   | description                                                                                        |
-|:---------------|:-------|:---------------------------------------------------------------------------------------------------|
-| **id**         | string | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.      |
-| **_type**      | string | String literal used during serialization. Should always match the Context interface name.          |
-| **referrer**   | string | The URL that the browser sets in the referrer header, in the request that loaded the current page. |
-| **user_agent** | string | User-agent of the agent that sent the event.                                                       |
-| remote_address | string | (public) IP address of the agent that sent the event.                                              |
+|                     | type   | description                                                                                        |
+|:--------------------|:-------|:---------------------------------------------------------------------------------------------------|
+| **id**              | string | Unique string to be combined with the Context Type (`_type`) for Context instance uniqueness.      |
+| **_type**           | string | String literal used during serialization. Should always match the Context interface name.          |
+| **referrer**        | string | The URL that the browser sets in the referrer header, in the request that loaded the current page. |
+| **user_agent**      | string | User-agent of the agent that sent the event.                                                       |
+| **remote_address**  | string | (public) IP address of the agent that sent the event.                                              |
 
 :::info setting of properties
 The tracker will automatically set the `_type`, `referrer` and `user_agent` properties, while the collector will automatically set the `remote_address`.

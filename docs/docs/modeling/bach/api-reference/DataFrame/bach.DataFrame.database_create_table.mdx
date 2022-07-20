@@ -28,9 +28,7 @@ The DataFrame that’s returned will query from the written table for any furthe
 on BigQuery, e.g. ‘project_id.dataset.table_name’
 * **`if_exists`** (str) – {‘fail’, ‘replace’}. How to behave if the table already exists:
   * fail: Raise an Exception.
-  * replace: Drop the table before inserting new values. All data in that table will be lost! Make 
-sure that `table_name` does not contain any valuable information. Additionally, make sure 
-that it is not a source table of this DataFrame.
+  * replace: Drop the table before inserting new values. All data in that table will be lost! Make             sure that `table_name` does not contain any valuable information. Additionally, make sure             that it is not a source table of this DataFrame.
 
 
 

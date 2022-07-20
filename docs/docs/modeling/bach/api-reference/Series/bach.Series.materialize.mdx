@@ -33,8 +33,8 @@ changes the underlying SqlModel graph, which gets executed by data transfer func
 
 #### Parameters
 
-* **`node_name`** – The name of the node that’s going to be created
-* **`limit`** (Optional[Any]) – The limit (slice, int) to apply.
+* **`node_name`** (str) – The name of the node that’s going to be created
+* **`limit`** (Optional[Union[int, slice]]) – The limit (slice, int) to apply.
 * **`distinct`** (bool) – Apply distinct statement if `distinct=True`
 * **`materialization`** (Union[sql_models.model.Materialization, str]) – Set the materialization of the SqlModel in the graph. Only
 Materialization.CTE / ‘cte’ and Materialization.TEMP_TABLE / ‘temp_table’ are supported.
