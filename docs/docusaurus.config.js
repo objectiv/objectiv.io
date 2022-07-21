@@ -4,7 +4,7 @@
 const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-const getEnvConfig = require('../env_config.js');
+const getEnvConfig = require('./env_config.js');
 const envConfig = getEnvConfig(objectivEnvironment);
 
 const slackJoinLink = envConfig.websiteUrl + '/join-slack';
