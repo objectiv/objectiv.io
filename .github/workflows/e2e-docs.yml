@@ -23,8 +23,10 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v4
         with:
-          browser: chrome
           install: false
+          env: OBJECTIV_ENVIRONMENT=development
           start: yarn start
           wait-on: 'http://localhost:3000/docs'
+          wait-on-timeout: 120
           project: ./docs/
+          working-directory: docs
