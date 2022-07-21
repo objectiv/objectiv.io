@@ -8,7 +8,7 @@ describe('Docs Taxonomy: TOC', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs/taxonomy');
+    cy.visit('/taxonomy');
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('a.table-of-contents__link').contains('Taxonomy Reference').preventDefault().click();

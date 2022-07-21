@@ -8,7 +8,7 @@ describe('Docs home: bottom navigation', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs');
+    cy.visit('/');
 
     // Scroll to footer
     cy.get('.footer').scrollIntoView();

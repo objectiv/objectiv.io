@@ -8,7 +8,7 @@ describe('Docs Modeling: Overview paginator', () => {
     cy.setCookieConsent();
 
     // Visit blog page
-    cy.visit('/docs/modeling');
+    cy.visit('/modeling');
 
     cy.get('nav.pagination-nav a.pagination-nav__link--next').click().then($click => {
       cy.get('nav.pagination-nav a.pagination-nav__link--prev').preventDefault().click({ multiple: true });

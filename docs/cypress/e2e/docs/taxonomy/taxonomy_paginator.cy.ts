@@ -8,7 +8,7 @@ describe('Docs Taxonomy: Overview paginator', () => {
     cy.setCookieConsent();
 
     // Visit blog page
-    cy.visit('/docs/taxonomy');
+    cy.visit('/taxonomy');
 
     cy.get('nav.pagination-nav a.pagination-nav__link--next').click().then($click => {
       cy.get('nav.pagination-nav a.pagination-nav__link--prev').preventDefault().click({ multiple: true });

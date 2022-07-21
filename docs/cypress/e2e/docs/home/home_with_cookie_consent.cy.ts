@@ -8,7 +8,7 @@ describe('Docs home: with cookie consent', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs');
+    cy.visit('/');
 
     // Verify recorded events
     cy.objectiv().filterEvents(['ApplicationLoadedEvent']).snapshotEvents();

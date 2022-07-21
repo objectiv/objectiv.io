@@ -8,7 +8,7 @@ describe('Docs Modeling: Breadcrumbs', () => {
     cy.setCookieConsent();
 
     // Visit blog page
-    cy.visit('/docs/modeling');
+    cy.visit('/modeling');
 
     cy.get('nav.menu li.theme-doc-sidebar-item-category:first a.menu__link:first').click().then($click => {
       cy.wait(500);

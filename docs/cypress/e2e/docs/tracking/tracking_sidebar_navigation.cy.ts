@@ -8,7 +8,7 @@ describe('Docs Tracking: sidebar navigation', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs/tracking');
+    cy.visit('/tracking');
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('nav.menu a.menu__link:first').preventDefault().click();

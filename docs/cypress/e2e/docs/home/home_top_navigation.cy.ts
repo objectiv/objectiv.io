@@ -8,7 +8,7 @@ describe('Docs home: top navigation', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs');
+    cy.visit('/');
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('nav.navbar--fixed-top a.navbar__brand').preventDefault().click();

@@ -8,7 +8,7 @@ describe('Docs home: Breadcrumbs', () => {
     cy.setCookieConsent();
 
     // Visit blog page
-    cy.visit('/docs');
+    cy.visit('/');
 
     cy.get('nav.menu li.theme-doc-sidebar-item-category:first ul.menu__list a.menu__link:first').click().then($click => {
       cy.wait(500);

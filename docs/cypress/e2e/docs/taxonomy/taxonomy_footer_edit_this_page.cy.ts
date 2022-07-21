@@ -8,7 +8,7 @@ describe('Docs Taxonomy: Footer Edit This Page', () => {
     cy.setCookieConsent();
 
     // Visit home page
-    cy.visit('/docs/taxonomy');
+    cy.visit('/taxonomy');
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('ul.editLinks_src-theme-EditThisPage-styles-module li a').preventDefault().click({ multiple: true });
