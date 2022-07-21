@@ -26,3 +26,4 @@ jobs:
           install: false
           start: yarn start
           wait-on: 'http://localhost:3000/docs'
+          project: ./docs/
