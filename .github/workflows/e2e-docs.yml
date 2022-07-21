@@ -13,9 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install website dotenv
-        run: yarn add dotenv
-
       - name: Install dependencies
         working-directory: docs
         run: yarn install
@@ -29,4 +26,3 @@ jobs:
           start: yarn start
           wait-on: 'http://localhost:3000/docs'
           wait-on-timeout: 120
-#          project: ./docs/
