@@ -1452,5 +1452,86 @@ module.exports = {
         ]
       }
     }
+  },
+  "Blog: Overview paginator": {
+    "Should track PressEvents on the paginator in the Blog overview page": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "blog"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "blog-list-paginator"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "older-entries",
+                "href": "/blog/page/2"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/blog"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "blog"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "blog-list-paginator"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "newer-entries",
+                "href": "/blog"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/blog/page/2"
+              }
+            ],
+            "id": "PressEvent#2"
+          }
+        ]
+      }
+    }
   }
 }

@@ -12,10 +12,9 @@ describe('Blog: Overview links', () => {
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('article:first footer a').last().preventDefault().click();
-    cy.get('nav.pagination-nav .pagination-nav__item--next').preventDefault().click();
 
     // verify tracking content manually, as the `id` of the blog post changes for new blog posts
-    cy.objectiv().filterEvents('PressEvent').its('events').should('have.length', 2).then(recordedEvents => {
+    cy.objectiv().filterEvents('PressEvent').its('events').should('have.length', 1).then(recordedEvents => {
       const readMorePressEvent = recordedEvents[0];
       const [root, post, footer, link] = readMorePressEvent.location_stack;
   
@@ -32,20 +31,6 @@ describe('Blog: Overview links', () => {
       // Test LinkContext
       cy.wrap(link).its('_type').should('eq', 'LinkContext');
       cy.wrap(link).its('id').should('eq', 'read-more');
-
-
-      const paginationPressEventOlder = recordedEvents[1];
-      const [root, footer, link] = paginationPressEventOlder.location_stack;
-  
-      // Test RootLocationContext
-      cy.wrap(root).should('deep.equal', {_type: 'RootLocationContext', id: 'blog'});
-  
-      // Test NavigationContext
-      cy.wrap(footer).should('deep.equal', {_type: 'NavigationContext', id: 'blog-list-paginator'});
-  
-      // Test LinkContext
-      cy.wrap(link).its('_type').should('eq', 'LinkContext');
-      cy.wrap(link).its('id').should('eq', 'older-entries');
     });
   })
 })
