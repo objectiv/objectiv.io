@@ -80,7 +80,7 @@ module.exports = {
       }
     }
   },
-  "__version": "10.1.0",
+  "__version": "10.3.1",
   "Home: top navigation": {
     "Should track PressEvents on navigation items": {
       "1": {
@@ -1471,42 +1471,6 @@ module.exports = {
               },
               {
                 "_type": "LinkContext",
-                "id": "older-entries",
-                "href": "/blog/page/2"
-              }
-            ],
-            "global_contexts": [
-              {
-                "_type": "HttpContext",
-                "id": "http_context",
-                "referrer": "",
-                "user_agent": "mocked-user-agent",
-                "remote_address": null
-              },
-              {
-                "_type": "ApplicationContext",
-                "id": "objectiv-website-dev"
-              },
-              {
-                "_type": "PathContext",
-                "id": "http://localhost:3000/blog"
-              }
-            ],
-            "id": "PressEvent#1"
-          },
-          {
-            "_type": "PressEvent",
-            "location_stack": [
-              {
-                "_type": "RootLocationContext",
-                "id": "blog"
-              },
-              {
-                "_type": "NavigationContext",
-                "id": "blog-list-paginator"
-              },
-              {
-                "_type": "LinkContext",
                 "id": "newer-entries",
                 "href": "/blog"
               }
@@ -1528,7 +1492,7 @@ module.exports = {
                 "id": "http://localhost:3000/blog/page/2"
               }
             ],
-            "id": "PressEvent#2"
+            "id": "PressEvent#1"
           }
         ]
       }
