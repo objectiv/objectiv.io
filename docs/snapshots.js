@@ -1070,5 +1070,293 @@ module.exports = {
         ]
       }
     }
+  },
+  "Docs Modeling: Footer Edit This Page": {
+    "Should track PressEvents on Edit This Page items": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "edit-this-page"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "edit-docs-page",
+                "href": "/docs/home/the-project/update-the-docs"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "edit-this-page"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "get-help",
+                "href": "http://localhost:3000/join-slack"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling"
+              }
+            ],
+            "id": "PressEvent#2"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "ContentContext",
+                "id": "edit-this-page"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "submit-idea-or-bug-report",
+                "href": "https://github.com/objectiv/objectiv-analytics"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling"
+              }
+            ],
+            "id": "PressEvent#3"
+          }
+        ]
+      }
+    }
+  },
+  "Docs Modeling: Overview paginator": {
+    "Should track PressEvents on the paginator in the page": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "doc-paginator-navigation"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "get-started-in-your-notebook",
+                "href": "/docs/modeling/get-started-in-your-notebook/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling/get-started-in-your-notebook/"
+              }
+            ],
+            "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "doc-paginator-navigation"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "introduction",
+                "href": "/docs/modeling/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling/get-started-in-your-notebook/"
+              }
+            ],
+            "id": "PressEvent#2"
+          }
+        ]
+      }
+    }
+  },
+  "Docs Modeling: sidebar navigation": {
+    "Should track PressEvents on sidebar navigation items": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "docs-sidebar"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "introduction",
+                "href": "/docs/modeling/"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling"
+              }
+            ],
+            "id": "PressEvent#1"
+          }
+        ]
+      }
+    }
+  },
+  "Docs Modeling: TOC": {
+    "Should track PressEvents on TOC items": {
+      "1": {
+        "errors": [],
+        "events": [
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "modeling"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "toc"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "the-open-analytics-taxonomy",
+                "href": "#the-open-analytics-taxonomy"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-docs-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/docs/modeling"
+              }
+            ],
+            "id": "PressEvent#1"
+          }
+        ]
+      }
+    }
   }
 }
