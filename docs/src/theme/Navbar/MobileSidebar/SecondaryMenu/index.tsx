@@ -10,11 +10,13 @@
 import React from 'react';
 import clsx from 'clsx';
 import {
-  useNavbarMobileSidebar, 
-  useNavbarSecondaryMenu, 
   useThemeConfig,
   ThemeClassNames
 } from '@docusaurus/theme-common';
+import {
+  useNavbarMobileSidebar, 
+  useNavbarSecondaryMenu, 
+} from '@docusaurus/theme-common/internal';
 import { useLocation } from "@docusaurus/router";
 import { useHistory } from "react-router-dom";
 import useBaseUrl from '@docusaurus/useBaseUrl';

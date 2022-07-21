@@ -8,12 +8,14 @@
 import React, {useState, useRef, useEffect} from 'react';
 import clsx from 'clsx';
 import {
-  isSamePath,
   useCollapsible,
   Collapsible,
   isRegexpStringMatch,
-  useLocalPathname,
 } from '@docusaurus/theme-common';
+import {
+  isSamePath,
+  useLocalPathname,
+} from '@docusaurus/theme-common/internal';
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem, {type LinkLikeNavbarItemProps} from '@theme/NavbarItem';
 import type {
