@@ -1453,8 +1453,8 @@ module.exports = {
       }
     }
   },
-  "Blog: Overview links": {
-    "Should track PressEvents on links in content on Blog page": {
+  "Blog: Overview paginator": {
+    "Should track PressEvents on the paginator in the Blog overview page": {
       "1": {
         "errors": [],
         "events": [
@@ -1466,17 +1466,13 @@ module.exports = {
                 "id": "blog"
               },
               {
-                "_type": "ContentContext",
-                "id": "post-release-google-bigquery-support-our-mission-to-enable-data-model"
-              },
-              {
-                "_type": "ContentContext",
-                "id": "blog-post-footer"
+                "_type": "NavigationContext",
+                "id": "blog-list-paginator"
               },
               {
                 "_type": "LinkContext",
-                "id": "read-more",
-                "href": "/blog/release-google-bigquery-support-our-mission-to-enable-data-models-to-run-across-data-stores/"
+                "id": "older-entries",
+                "href": "/blog/page/2"
               }
             ],
             "global_contexts": [
@@ -1497,6 +1493,42 @@ module.exports = {
               }
             ],
             "id": "PressEvent#1"
+          },
+          {
+            "_type": "PressEvent",
+            "location_stack": [
+              {
+                "_type": "RootLocationContext",
+                "id": "blog"
+              },
+              {
+                "_type": "NavigationContext",
+                "id": "blog-list-paginator"
+              },
+              {
+                "_type": "LinkContext",
+                "id": "newer-entries",
+                "href": "/blog"
+              }
+            ],
+            "global_contexts": [
+              {
+                "_type": "HttpContext",
+                "id": "http_context",
+                "referrer": "",
+                "user_agent": "mocked-user-agent",
+                "remote_address": null
+              },
+              {
+                "_type": "ApplicationContext",
+                "id": "objectiv-website-dev"
+              },
+              {
+                "_type": "PathContext",
+                "id": "http://localhost:3000/blog/page/2"
+              }
+            ],
+            "id": "PressEvent#2"
           }
         ]
       }
