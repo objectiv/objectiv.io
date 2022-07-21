@@ -4,7 +4,7 @@ on: [push]
 
 defaults:
   run:
-    working-directory: docs
+    working-directory: ./docs
 
 jobs:
   cypress-run:
@@ -15,12 +15,14 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        working-directory: ./docs
 
       - name: Set the right environment
         run: export OBJECTIV_ENVIRONMENT='development'
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v4
+        working-directory: ./docs
         with:
           browser: chrome
           install: false
