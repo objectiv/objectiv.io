@@ -13,6 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install website dotenv
+        run: yarn add dotenv
+
       - name: Install dependencies
         working-directory: docs
         run: yarn install
