@@ -11,6 +11,7 @@ describe('Docs home: Overview paginator', () => {
     cy.visit('/');
 
     cy.get('nav.pagination-nav a.pagination-nav__link--next').click().then($click => {
+      cy.wait(500);
       cy.get('nav.pagination-nav a.pagination-nav__link--prev').preventDefault().click({ multiple: true });
       cy.objectiv().filterEvents('PressEvent').snapshotEvents();
     });
