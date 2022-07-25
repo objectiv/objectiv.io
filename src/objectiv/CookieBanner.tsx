@@ -22,7 +22,7 @@ export const getCookieConsent = (): undefined | boolean =>  {
 }
 
 // Create a context provider so pages can interact with the cookie banner instance here
-export const CookieBannerContext = createContext({
+export const CookieConsentContext = createContext({
   cookieConsent: false,
   resetCookieConsent: () => {}
 });
@@ -35,7 +35,7 @@ export type CookieBannerProps = {
 
 /**
  * CookieBanner is a wrapper component rendering the Cookie banner, based on the cookie value, and also providing its
- * state to all underlying component via the CookieBannerContext Provider.
+ * state to all underlying component via the CookieConsentContext Provider.
  */
 export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) => {
   const [cookieConsent, setCookieConsent] = useState<boolean | undefined>(getCookieConsent());
@@ -70,9 +70,9 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
       >
         This website uses cookies to enhance the user experience.
       </CookieConsent>
-      <CookieBannerContext.Provider value={{ cookieConsent, resetCookieConsent }}>
+      <CookieConsentContext.Provider value={{ cookieConsent, resetCookieConsent }}>
         { children }
-      </CookieBannerContext.Provider>
+      </CookieConsentContext.Provider>
     </>
   );
 }

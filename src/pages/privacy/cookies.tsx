@@ -2,13 +2,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useContext } from 'react';
-import { CookieBannerContext } from "../../objectiv/CookieBanner";
+import { CookieConsentContext } from "../../objectiv/CookieBanner";
 import { TrackedLink } from "../../objectiv/TrackedLink";
 import styles from './styles.module.css';
 
 export default function Cookies() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
-  const { resetCookieConsent } = useContext(CookieBannerContext)
+  const { resetCookieConsent } = useContext(CookieConsentContext)
 
   return (
     <div>

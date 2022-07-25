@@ -1,6 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ObjectivProvider, ReactTracker } from "@objectiv/tracker-react";
 import React, { useState } from 'react';
+import { AdsTracking } from "../objectiv/AdsTracking";
 import { CookieBanner, getCookieConsent } from "../objectiv/CookieBanner";
 import { windowExists } from "../objectiv/windowExists";
 
@@ -25,6 +26,7 @@ function Root({children}) {
 
   return (
     <CookieBanner onConsentChange={(cookieConsent) => tracker.setActive(cookieConsent)}>
+      <AdsTracking />
       <ObjectivProvider tracker={tracker}>
         {children}
       </ObjectivProvider>
