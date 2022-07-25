@@ -4,7 +4,7 @@
 
 import React, { useContext, useLayoutEffect } from 'react';
 import { CookieConsentContext } from "./CookieBanner";
-import { GA_Gtag, gtag_report_conversion } from "./ga_gtag";
+import { GA_Gtag } from "./ga_gtag";
 import { RedditPixel } from "./reddit_pixel";
 import { TwitterUWT }  from './twitter_uwt';
 
