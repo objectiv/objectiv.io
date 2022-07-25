@@ -22,9 +22,3 @@ export const GA_Gtag = function (trackingId) {
 
   dataLayer.push('config', trackingId);
 };
-
-
-export function gtag_report_conversion() {
-  dataLayer.push('event', 'conversion', { 'send_to': 'AW-726367030/5H_jCOrh-acDELb2rdoC' });
-  return false;
-}
