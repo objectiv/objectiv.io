@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 import styles from './styles.module.css';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 import { useSuccessEventTracker } from "@objectiv/tracker-react";
 
 export default function JoinSlack() {

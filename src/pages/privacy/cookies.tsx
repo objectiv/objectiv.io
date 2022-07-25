@@ -1,16 +1,15 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React, { useContext, useState } from 'react';
-import { getCookieConsentValue, resetCookieConsentValue } from "react-cookie-consent";
-import { usePopper } from "react-popper";
-import { CookieBannerContext } from "../../theme/Root";
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import React, { useContext } from 'react';
+import { CookieBannerContext } from "../../objectiv/CookieBanner";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 import styles from './styles.module.css';
 
 export default function Cookies() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
-  const { showCookieConsentBanner } = useContext(CookieBannerContext);
+  const { resetCookieConsent } = useContext(CookieBannerContext)
+
   return (
     <div>
       <Layout
@@ -44,13 +43,12 @@ export default function Cookies() {
               href={'#'}
               onClick={event => {
                 event.preventDefault();
-                resetCookieConsentValue();
-                showCookieConsentBanner();
+                resetCookieConsent();
                 return false;
               }}
             >
               {/* TODO: make a nicer modal dialog for these cases, aside from the banner itself */}
-              {getCookieConsentValue() === 'true' ? 'Decline your cookie consent' : 'Show cookie consent banner'}
+              Reset cookie consent
             </a>
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>

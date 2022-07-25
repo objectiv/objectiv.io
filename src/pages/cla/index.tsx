@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import clsx from 'clsx';
-import { TrackedLink } from "@site/src/trackedComponents/TrackedLink";
+import { TrackedLink } from "@site/src/objectiv/TrackedLink";
 import { TrackedMain } from '@objectiv/tracker-react';
 
 export default function CLA() {

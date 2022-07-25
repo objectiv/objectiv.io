@@ -6,7 +6,7 @@ import React from 'react';
 import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
-import { TrackedLink } from '../trackedComponents/TrackedLink';
+import { TrackedLink } from '../objectiv/TrackedLink';
 import styles from './styles.module.css';
 import AnnouncementBar from '../components/announcement-bar';
 

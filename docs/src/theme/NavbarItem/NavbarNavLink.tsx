@@ -1,7 +1,7 @@
 import React, {ComponentProps} from 'react';
 import NavbarNavLink from '@theme-original/NavbarItem/NavbarNavLink';
 import type NavbarNavLinkType from '@theme/NavbarItem/NavbarNavLink';
-import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../objectiv/TrackedLink';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
