@@ -1,12 +1,38 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { getCookieConsentValue, resetCookieConsentValue } from "react-cookie-consent";
+import { usePopper } from "react-popper";
+import { CookieBannerContext } from "../../theme/Root";
 import { TrackedLink } from "../../trackedComponents/TrackedLink";
 import styles from './styles.module.css';
 
+const Example = () => {
+  const [referenceElement, setReferenceElement] = useState(null);
+  const [popperElement, setPopperElement] = useState(null);
+  const [arrowElement, setArrowElement] = useState(null);
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
+  });
+
+  return (
+    <>
+      <button type="button" ref={setReferenceElement}>
+        Reference element
+      </button>
+
+      <div ref={setPopperElement} style={styles.popper} {...attributes.popper}>
+        Popper element
+        <div ref={setArrowElement} style={styles.arrow} />
+      </div>
+    </>
+  );
+};
+
 export default function Cookies() {
   const { siteConfig: { tagline } } = useDocusaurusContext();
+  const { showCookieConsentBanner } = useContext(CookieBannerContext);
   return (
     <div>
       <Layout
@@ -40,13 +66,14 @@ export default function Cookies() {
               href={'#'}
               onClick={event => {
                 event.preventDefault();
-                // @ts-ignore
-                Cookiebot.renew();
+                resetCookieConsentValue();
+                showCookieConsentBanner();
                 return false;
               }}
             >
-              Renew or change your cookie consent here
-            </a>.
+              {/* TODO: make a nicer modal dialog for these cases, aside from the banner itself */}
+              {getCookieConsentValue() === 'true' ? 'Decline your cookie consent' : 'Show cookie consent banner'}
+            </a>
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
             <p>Service providers may participate in self-regulatory programs that provide ways to opt out of 

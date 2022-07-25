@@ -1,68 +1,72 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ObjectivProvider, ReactTracker, useOnChange } from "@objectiv/tracker-react";
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
+import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 
 export const windowExists = () => typeof window !== 'undefined';
 
-declare namespace cookiebot {
-  class Cookiebot {
-    consent: {
-      statistics: boolean
-    };
-  }
-}
-
-declare const Cookiebot: cookiebot.Cookiebot;
-
-const registerCookiebotEventListeners = (callback: EventListenerOrEventListenerObject) => {
-  // Skip if we are in SSR
-  if (!windowExists()) {
-    return;
-  }
-
-  window.addEventListener('CookiebotOnAccept', callback, false);
-  window.addEventListener('CookiebotOnDecline', callback, false);
-}
-
-const cookiebotConsentStatistics = (): boolean => {
+const getCookieConsent = (): boolean => {
   // Skip if we are in SSR
   if (!windowExists()) {
     return false;
   }
 
-  return Cookiebot?.consent?.statistics ?? false;
+  return Boolean(getCookieConsentValue());
 }
 
+// Create a context provider so pages can interact with the cookie banner instance here
+export const CookieBannerContext = createContext({
+  showCookieConsentBanner: () => {}
+});
+
+
 function Root({children}) {
-  const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
+  const [showCookieConsentBanner, setShowCookieConsentBanner] = useState<undefined | 'show'>();
+  const [tracker, setTracker] = useState<ReactTracker>();
+  const [cookieConsent, setCookieConsent] = useState<boolean>(getCookieConsent());
   const { siteConfig } = useDocusaurusContext();
   const { trackerApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
-
-  // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
-  registerCookiebotEventListeners(function () {
-    if (cookiebotStatisticsConsent !== cookiebotConsentStatistics()) {
-      setCookiebotStatisticsConsent(cookiebotConsentStatistics());
-    }
-  })
 
   // Configure DeveloperTools based on `trackerConsoleEnabled` from siteConfig
   if (trackerConsoleEnabled && windowExists()) {
     require('@objectiv/developer-tools');
   }
 
-  // Create React Tracker instance
-  const tracker = new ReactTracker({
-    endpoint: trackerEndPoint as string,
-    applicationId: trackerApplicationId as string,
-    active: cookiebotStatisticsConsent,
-  })
+  // Create React Tracker instance once
+  if (!tracker) {
+    setTracker(new ReactTracker({
+      endpoint: trackerEndPoint as string,
+      applicationId: trackerApplicationId as string,
+      active: cookieConsent,
+    }))
+  }
 
-  // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
-  useOnChange(cookiebotStatisticsConsent, () => tracker.setActive(cookiebotStatisticsConsent))
+  useOnChange(cookieConsent, () => tracker.setActive(cookieConsent))
 
   return (
     <ObjectivProvider tracker={tracker}>
-      {children}
+      {/* @ts-ignore */}
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        declineButtonText="Decline"
+        enableDeclineButton
+        setDeclineCookie={true}
+        onAccept={() => {
+          setCookieConsent(true);
+          setShowCookieConsentBanner(undefined);
+        }}
+        onDecline={() => {
+          setCookieConsent(false);
+          setShowCookieConsentBanner(undefined);
+        }}
+        visible={showCookieConsentBanner}
+      >
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
+      <CookieBannerContext.Provider value={{ showCookieConsentBanner: () => setShowCookieConsentBanner('show') }}>
+        {children}
+      </CookieBannerContext.Provider>
     </ObjectivProvider>
   );
 }
