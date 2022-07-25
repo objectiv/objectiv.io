@@ -24,6 +24,10 @@ export default function Home() {
       if (typeof window.twttr != "undefined") {
         window.twttr.conversion.trackPid('o9j6c', { tw_sale_amount: 0, tw_order_quantity: 0 });
       }
+      // track conversion for Reddit ads
+      if (typeof window.rdt != "undefined") {
+        window.rdt('track', 'Custom', {customEventName:'GitHub clickthrough'});
+      }
     }
     const foundItem = document.getElementsByClassName('navGitHub')[0];
 

@@ -72,13 +72,17 @@ const config = {
   ],
   scripts: [
     {
+      src: '/scripts/reddit_pixel.js',
+      id: 'Reddit ads pixel'
+    },
+    {
       src: '/scripts/twitter_uwt.js',
       id: 'Twitter Universal Website Tag'
     },
     { 
       src: '//static.ads-twitter.com/oct.js',
       id: "Twitter Single Event Tag"
-    }
+    },
   ],
   customFields: {
     trackerApplicationId: envConfig.trackerApplicationId,
