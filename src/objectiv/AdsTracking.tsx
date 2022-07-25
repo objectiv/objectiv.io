@@ -4,13 +4,15 @@
 
 import React, { useContext, useLayoutEffect } from 'react';
 import { CookieConsentContext } from "./CookieBanner";
-import RedditPixel from "./reddit_pixel";
-import TwitterUWT from './twitter_uwt';
+import { GA_Gtag, gtag_report_conversion } from "./ga_gtag";
+import { RedditPixel } from "./reddit_pixel";
+import { TwitterUWT }  from './twitter_uwt';
 
 declare global {
   interface Window {
     twttr: any;
     rdt: any;
+    dataLayer: any;
   }
 }
 
@@ -31,6 +33,9 @@ export const AdsTracking = () => {
   // Reddit initialization
   RedditPixel('t2_ke5ztj8g');
 
+  // GA Gtag initialization
+  GA_Gtag('AW-726367030');
+
   // Mousedown handlers
   useLayoutEffect(() => {
     document.querySelectorAll('a[href*="https://github.com/objectiv"]').forEach(gitHubAnchor => {
@@ -45,6 +50,12 @@ export const AdsTracking = () => {
         if (typeof window.rdt != "undefined") {
           window.rdt('track', 'Custom', { customEventName:'GitHub clickthrough' });
         }
+
+        // GA Gtag
+        if (typeof window.dataLayer != "undefined") {
+          window.dataLayer.push('event', 'conversion', { 'send_to': 'AW-726367030/5H_jCOrh-acDELb2rdoC' });
+        }
+
       }, true);
     })
   })

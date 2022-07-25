@@ -2,7 +2,11 @@
  * Copyright 2022 Objectiv B.V.
  */
 
-const RedditPixel = function (convId) {
+export const RedditPixel = function (convId) {
+  if (typeof window.rdt != "undefined") {
+    return;
+  }
+
   !(function (w, d) {
     if (!w.rdt) {
       var p = (w.rdt = function () {
@@ -21,5 +25,3 @@ const RedditPixel = function (convId) {
   rdt("init", convId, { optOut: false, useDecimalCurrencyValues: true });
   rdt("track", "PageVisit");
 }
-
-export default RedditPixel;

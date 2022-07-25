@@ -8,7 +8,11 @@
  * @author Evan Michael Kyle https://kyle.ventures
  */
 
-const TwitterUWT = function (convId) {
+export const TwitterUWT = function (convId) {
+  if (typeof window.twttr != "undefined") {
+    return;
+  }
+
   !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
   },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
   a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
@@ -16,5 +20,3 @@ const TwitterUWT = function (convId) {
   twq('init', convId);
   twq('track', 'PageView');
 }
-
-export default TwitterUWT;
