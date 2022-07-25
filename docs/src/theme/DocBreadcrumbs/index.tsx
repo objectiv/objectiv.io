@@ -10,7 +10,7 @@ import {
   ThemeClassNames,
   useSidebarBreadcrumbs,
   useHomePageRoute,
-} from '@docusaurus/theme-common';
+} from '@docusaurus/theme-common/internal';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';

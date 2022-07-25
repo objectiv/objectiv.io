@@ -1,24 +1,13 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
-import Link, {type Props as LinkProps} from '@docusaurus/Link';
-import type {Props} from '@theme/BlogPostAuthor';
+import clsx from 'clsx';
+import {type Props as LinkProps} from '@docusaurus/Link';
 
-import styles from './styles.module.css';
-
-// OBJECTIV
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import type {Props} from '@theme/BlogPostItem/Header/Author';
 import { TrackedDiv } from '@objectiv/tracker-react';
-// END OBJECTIV
+import { TrackedLink } from '../../../../trackedComponents/TrackedLink';
 
 function MaybeLink(props: LinkProps): JSX.Element {
   if (props.href) {
-    // return <Link {...props} />;
     return (
       <TrackedLink 
         id={props.title?? props.href}
@@ -30,19 +19,18 @@ function MaybeLink(props: LinkProps): JSX.Element {
   return <>{props.children}</>;
 }
 
-export default function BlogPostAuthor({author}: Props): JSX.Element {
+export default function BlogPostItemHeaderAuthor({
+  author,
+  className,
+}: Props): JSX.Element {
   const {name, title, url, imageURL, email} = author;
   const link = url || (email && `mailto:${email}`) || undefined;
   return (
-    // OBJECTIV
-    <TrackedDiv id={'avatar'} className="avatar margin-bottom--sm">
-    {/* END OBJECTIV */}
+    <TrackedDiv id={'avatar'} className={clsx('avatar margin-bottom--sm', className)}>
       {imageURL && (
-        <span className="avatar__photo-link avatar__photo">
-          <MaybeLink href={link} title={name}>
-            <img className={styles.image} src={imageURL} alt={name} />
-          </MaybeLink>
-        </span>
+        <MaybeLink href={link} title={name} className="avatar__photo-link">
+          <img className="avatar__photo" src={imageURL} alt={name} />
+        </MaybeLink>
       )}
 
       {name && (
@@ -55,9 +43,6 @@ export default function BlogPostAuthor({author}: Props): JSX.Element {
             <MaybeLink href={link} title={name} itemProp="url">
               <span itemProp="name">{name}</span>
             </MaybeLink>
-            {/* <TrackedLink href={url} itemProp="url" id={title} waitUntilTracked={true}>
-              <span itemProp="name">{name}</span>
-            </TrackedLink> */}
           </TrackedDiv>
           {title && (
             <small className="avatar__subtitle" itemProp="description">

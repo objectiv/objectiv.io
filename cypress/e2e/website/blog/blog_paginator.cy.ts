@@ -10,11 +10,11 @@ describe('Blog: Overview paginator', () => {
     // Visit blog page
     cy.visit('/blog');
 
-    cy.get('nav.pagination-nav .pagination-nav__item--next a').preventDefault().click().then($click => {
+    cy.get('nav.pagination-nav a').contains('Older Entries').preventDefault().click().then($click => {
       // Visit second page
       cy.wait(1000);
       cy.visit('/blog/page/2');
-      cy.get('nav.pagination-nav .pagination-nav__item a').preventDefault().click({ multiple: true });
+      cy.get('nav.pagination-nav a').contains("Newer Entries").preventDefault().click({ multiple: true });
       cy.objectiv().filterEvents('PressEvent').snapshotEvents();
     });
   })

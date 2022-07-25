@@ -20,8 +20,8 @@ const config = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'error',
-  onBrokenMarkdownLinks: 'error',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   // undefined it the default behaviour of docusaurus, and leaves it alone
   // see: https://docusaurus.io/docs/api/docusaurus-config#trailing-slash for more info

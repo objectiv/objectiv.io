@@ -2,7 +2,7 @@ import React, {ComponentProps} from 'react';
 import Layout from '@theme-original/Navbar/MobileSidebar/Layout';
 import type LayoutType from '@theme/Navbar/MobileSidebar/Layout';
 import { TrackedOverlayContext } from '@objectiv/tracker-react';
-import {useNavbarSecondaryMenu} from '@docusaurus/theme-common';
+import {useNavbarSecondaryMenu} from '@docusaurus/theme-common/internal';
 
 type Props = ComponentProps<typeof LayoutType>;
 
