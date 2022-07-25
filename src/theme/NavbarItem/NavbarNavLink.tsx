@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
@@ -54,6 +53,7 @@ export default function NavbarNavLink({
         ),
       };
 
+  delete props.isDropdownLink; // TrackedLinks don't recognize this, generates a warning
   if (href) {
     return (
       <TrackedLink

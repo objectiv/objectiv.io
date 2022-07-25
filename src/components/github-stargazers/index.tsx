@@ -72,6 +72,13 @@ function Stargazers(cta) {
     getStargazers()
   }, []);
 
+  const handleClickGitHub = () => {
+    // track conversion for Twitter ads
+    if (typeof window.twttr != "undefined") {
+      window.twttr.conversion.trackPid('o9j6c', { tw_sale_amount: 0, tw_order_quantity: 0 });
+    }
+  };
+
   return (
     <div className={clsx(styles.starsButtonsContainer)}>
       <TrackedLink
@@ -79,6 +86,7 @@ function Stargazers(cta) {
         to="https://github.com/objectiv/objectiv-analytics"
         waitUntilTracked={true}
         target="_self"
+        onClick={handleClickGitHub} 
         className={clsx("button", styles.starsButton)}>
           <div className={clsx(styles.starsButtonContent)}>
             <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")}  

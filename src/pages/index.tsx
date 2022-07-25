@@ -2,7 +2,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from "react";
 import GitHubStargazers from '../components/github-stargazers';
 import IconHeader from '../components/icon-header';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
@@ -14,6 +14,23 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
   
+  useEffect(() => {
+    /**
+     * Track clicks on GitHub link
+     */
+    function handleClickGitHub() {
+      console.log("Tracking conversion to ad networks");
+      // track conversion for Twitter ads
+      if (typeof window.twttr != "undefined") {
+        window.twttr.conversion.trackPid('o9j6c', { tw_sale_amount: 0, tw_order_quantity: 0 });
+      }
+    }
+    const foundItem = document.getElementsByClassName('navGitHub')[0];
+
+    // Bind the event listener
+    foundItem.addEventListener("mousedown", handleClickGitHub);
+  }, []);
+
   return (
     <Layout
       title=' '
