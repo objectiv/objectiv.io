@@ -22,10 +22,10 @@ export default function Cookies() {
             Objectiv uses cookies, web beacons and other similar technologies to:
             <ul>
               <li>Help you access and use the website;</li>
-              <li>Understand how visitors use and engage with our website;</li>
               <li>Set your preferences;</li>
-              <li>Deliver relevant interest-based advertising;</li>
-              <li>Analyze and improve our website.</li>
+              <li>Understand how visitors use and engage with our website;</li>
+              <li>Analyze and improve our website;</li>
+              <li>Deliver relevant interest-based advertising.</li>
             </ul>
 
             <h1>Who sets Cookies?</h1>
