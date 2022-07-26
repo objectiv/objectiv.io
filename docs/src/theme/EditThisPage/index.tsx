@@ -14,7 +14,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from "@docusaurus/router";
 import { matchPath } from "@docusaurus/router";
-import { TrackedLink } from '../../objectiv/TrackedLink';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 import { TrackedDiv } from "@objectiv/tracker-react";
 import styles from './styles.module.css';
 import clsx from 'clsx';

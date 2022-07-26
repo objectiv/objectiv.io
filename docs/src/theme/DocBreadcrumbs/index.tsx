@@ -16,7 +16,7 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // OBJECTIV
-import { TrackedLink } from '../../objectiv/TrackedLink';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 import { TrackedNav } from '@objectiv/tracker-react';
 import { useLocation } from "@docusaurus/router";
 // END OBJECTIV

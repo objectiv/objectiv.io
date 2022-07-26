@@ -2,7 +2,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { makeIdFromString } from '@objectiv/tracker-core';
 import type LinkItemType from '@theme/Footer/LinkItem';
 import React, { ComponentProps } from 'react';
-import { TrackedLink } from "../../../objectiv/TrackedLink";
+import { TrackedLink } from "../../../trackedComponents/TrackedLink";
 
 type Props = ComponentProps<typeof LinkItemType>;
 

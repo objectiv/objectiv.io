@@ -4,7 +4,7 @@ import type LogoType from '@theme/Logo';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { TrackedLink } from '../../objectiv/TrackedLink';
+import { TrackedLink } from '../../trackedComponents/TrackedLink';
 
 type Props = ComponentProps<typeof LogoType>;
 
