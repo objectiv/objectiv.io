@@ -11,7 +11,7 @@ describe('Home: without cookie consent', () => {
     cy.visit("/");
 
     // Verify that the Cookie banner has been shown
-    cy.contains('This website uses cookies to set your preferences and understand how visitors use it');
+    cy.contains('We use cookies to set your preferences and understand how visitors use the website.');
 
     // Verify recorded events
     cy.objectiv().its('events').should('have.length', 0);
