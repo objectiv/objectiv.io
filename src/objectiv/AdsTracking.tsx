@@ -7,6 +7,7 @@ import { CookieConsentContext } from "./CookieBanner";
 import { GA_Gtag } from "./ga_gtag";
 import { RedditPixel } from "./reddit_pixel";
 import { TwitterUWT }  from './twitter_uwt';
+import { windowExists } from "./windowExists";
 
 declare global {
   interface Window {
@@ -25,7 +26,7 @@ export const AdsTracking = () => {
 
   // Mousedown handlers
   useLayoutEffect(() => {
-    if(!cookieConsent) {
+    if(!cookieConsent || !windowExists) {
       return;
     }
 
@@ -52,9 +53,11 @@ export const AdsTracking = () => {
   })
 
   if(!cookieConsent) {
-    delete window.twttr;
-    delete window.rdt;
-    delete window.dataLayer;
+    if(windowExists) {
+      delete window.twttr;
+      delete window.rdt;
+      delete window.dataLayer;
+    }
     return null;
   }
 
