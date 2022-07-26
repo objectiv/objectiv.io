@@ -44,7 +44,7 @@ export const AdsTracking = () => {
 
         // GA Gtag
         if (typeof window.dataLayer != "undefined") {
-          window.dataLayer.push('event', 'conversion', { 'send_to': 'AW-726367030/5H_jCOrh-acDELb2rdoC' });
+          window.dataLayer.push('event', 'conversion', { 'send_to': 'AW-726367030/1Go1CO-F4s8DELb2rdoC' });
         }
 
       }, true);
