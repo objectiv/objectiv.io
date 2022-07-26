@@ -12,7 +12,7 @@ describe('Home: hero', () => {
 
     // We don't want any anchor to actually navigate. See support/commands.ts for how `preventDefault` has been made
     cy.get('a.button').contains('Spin up the Demo').preventDefault().click();
-    cy.get('a.button').contains('Browse on GitHub').preventDefault().click();
+    cy.get('a.button').contains('Star us on GitHub').preventDefault().click();
 
     // Verify recorded events
     cy.objectiv().filterEvents('PressEvent').snapshotEvents();
