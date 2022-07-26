@@ -3,12 +3,13 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React, { useContext } from 'react';
 import { CookieConsentContext } from "../../objectiv/CookieBanner";
+import { CookieConsentModal } from "../../objectiv/CookieConsentModal";
 import { TrackedLink } from "../../objectiv/TrackedLink";
 import styles from './styles.module.css';
 
 export default function Cookies() {
+  const [cookieConsentModalIsOpen, setCookieConsentModalIsOpen] = React.useState(false);
   const { siteConfig: { tagline } } = useDocusaurusContext();
-  const { resetCookieConsent } = useContext(CookieConsentContext)
 
   return (
     <div>
@@ -43,13 +44,17 @@ export default function Cookies() {
               href={'#'}
               onClick={event => {
                 event.preventDefault();
-                resetCookieConsent();
+                setCookieConsentModalIsOpen(true);
                 return false;
               }}
             >
               {/* TODO: make a nicer modal dialog for these cases, aside from the banner itself */}
-              Reset cookie consent
+              Change your cookies preferences
             </a>
+            <CookieConsentModal
+              isOpen={cookieConsentModalIsOpen}
+              closeModal={() => setCookieConsentModalIsOpen(false)}
+            />
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
             <p>Service providers may participate in self-regulatory programs that provide ways to opt out of 

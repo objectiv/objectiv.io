@@ -23,21 +23,12 @@ declare global {
 export const AdsTracking = () => {
   const { cookieConsent } = useContext(CookieConsentContext);
 
-  if(!cookieConsent) {
-    return null;
-  }
-
-  // Twitter initialization
-  TwitterUWT('o9j5x');
-
-  // Reddit initialization
-  RedditPixel('t2_ke5ztj8g');
-
-  // GA Gtag initialization
-  GA_Gtag('AW-726367030');
-
   // Mousedown handlers
   useLayoutEffect(() => {
+    if(!cookieConsent) {
+      return;
+    }
+
     document.querySelectorAll('a[href*="https://github.com/objectiv"]').forEach(gitHubAnchor => {
       gitHubAnchor.addEventListener('mousedown', () => {
 
@@ -59,6 +50,19 @@ export const AdsTracking = () => {
       }, true);
     })
   })
+
+  if(!cookieConsent) {
+    return null;
+  }
+
+  // Twitter initialization
+  TwitterUWT('o9j5x');
+
+  // Reddit initialization
+  RedditPixel('t2_ke5ztj8g');
+
+  // GA Gtag initialization
+  GA_Gtag('AW-726367030');
 
   return null;
 }
