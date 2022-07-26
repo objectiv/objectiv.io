@@ -28,9 +28,9 @@ Objectiv now supports Deepnote: collaborate on notebooks that are powered by Obj
 At Objectiv, we’ve been fans of [Deepnote](https://deepnote.com/) for a while and have been using it internally to collaborate on notebooks. We’re happy to announce Objectiv now has built-in support for Deepnote.
 
 **What this means:**
-* All [example notebooks](https://objectiv.io/docs/modeling/example-notebooks/) (that can be used as a boilerplate for your own analyses) can be run in Deepnote directly without additional setup
-* Full support for [all pre-built models & functions](https://objectiv.io/docs/modeling/open-model-hub/) in the open model hub
-* Instructions in our documentation on how to use Deepnote with Objectiv
+* All [example notebooks](https://objectiv.io/docs/modeling/example-notebooks/) (that can be used as a boilerplate for your own analyses) can be run in Deepnote directly without additional setup.
+* Full support for [all pre-built models & functions](https://objectiv.io/docs/modeling/open-model-hub/) in the open model hub.
+* Instructions in our documentation on [how to use Deepnote with Objectiv](https://objectiv.io/docs/modeling/open-model-hub/models/).
 
 
 # Example notebooks
