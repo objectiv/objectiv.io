@@ -28,6 +28,7 @@ export default function NavbarNavLink({
   html,
   activeClassName = '',
   prependBaseUrlToHref,
+  isDropdownLink,
   ...props
 }: Props): JSX.Element {
   // TODO all this seems hacky
@@ -36,7 +37,6 @@ export default function NavbarNavLink({
   const activeBaseUrl = useBaseUrl(activeBasePath);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
   const isExternalLink = label && href && !isInternalUrl(href);
-  const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
   // Link content is set through html XOR label
   const linkContentProps = html

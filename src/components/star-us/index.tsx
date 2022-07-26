@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useScrollPosition } from '@docusaurus/theme-common';
+import { useScrollPosition } from '@docusaurus/theme-common/internal';
 import { TrackedPressableContext, TrackedOverlayContext, trackPressEvent } from "@objectiv/tracker-react";
 
 interface RefObject<T> {

@@ -2,8 +2,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useRef } from 'react';
 import GitHubStargazers from '../components/github-stargazers';
+import StarUsNotification, { StarUsAnchor } from '../components/star-us';
 import IconHeader from '../components/icon-header';
 import { TrackedDiv, TrackedHeader } from "@objectiv/tracker-react";
 import { TrackedLink } from '../trackedComponents/TrackedLink';
@@ -14,10 +15,15 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {tagline} = context.siteConfig;
   
+  // reference for the 'star us' notification on top
+  const starUsNotificationAnchorRef = useRef(null);
+  
   return (
     <Layout
       title=' '
       description={tagline}>
+
+      <StarUsNotification innerRef={starUsNotificationAnchorRef} />
 
       <TrackedHeader 
         id={'hero'} 
@@ -43,7 +49,7 @@ export default function Home() {
                 alt={'Objectiv Quickstart Guide'}/></span>
               Spin up the Demo
             </TrackedLink>
-            <GitHubStargazers cta={'Browse on GitHub'} />
+            <GitHubStargazers cta={'Star us on GitHub'} />
           </div>
         </div>
       </TrackedHeader>
@@ -216,6 +222,8 @@ export default function Home() {
             </div>
           </TrackedDiv>
         </div>
+
+        <StarUsAnchor ref={starUsNotificationAnchorRef} />
 
         <div className={clsx(styles.pageSection, styles.solution)}>
           <TrackedDiv 
