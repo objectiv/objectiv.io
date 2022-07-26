@@ -48,7 +48,6 @@ export default function Cookies() {
                 return false;
               }}
             >
-              {/* TODO: make a nicer modal dialog for these cases, aside from the banner itself */}
               Change your cookies preferences
             </a>
             <CookieConsentModal
