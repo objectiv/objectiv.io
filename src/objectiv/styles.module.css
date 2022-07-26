@@ -1,0 +1,22 @@
+.cookieConsentPreferenceButton {
+  background-color: #c9c9c9;
+  border: 1px solid #c9c9c9;
+  color: #000;
+  border-radius: 4px;
+}
+
+.cookieConsentCloseButton {
+  float: right;
+  margin-top: -10px;
+  margin-right: -10px;
+  padding: 2px 6px 3px;
+  border-radius: 10px;
+}
+
+.cookieConsentResetButton {
+  padding: 6px 15px;
+  background: #008FDB;
+  border: 1px solid #008FDB;
+  border-radius: 4px;
+  color: #fff;
+}

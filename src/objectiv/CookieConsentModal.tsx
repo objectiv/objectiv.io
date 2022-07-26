@@ -5,6 +5,8 @@
 import React, { useContext } from 'react';
 import Modal from 'react-modal';
 import { CookieConsentContext } from "./CookieBanner";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 const customStyles = {
   content: {
@@ -15,6 +17,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
   },
+
 };
 
 Modal.setAppElement('#__docusaurus');
@@ -23,6 +26,12 @@ export const CookieConsentModal = ({ isOpen = false, closeModal }:{ isOpen: bool
   const { cookieConsent, resetCookieConsent } = useContext(CookieConsentContext)
   const title = 'Cookies Preferences';
 
+  const handleResetCookieConsent = () => {
+    console.log("Resetting cookie consent");
+    resetCookieConsent();
+    closeModal();
+  }
+
   return (
     <Modal
       isOpen={isOpen}
@@ -30,21 +39,30 @@ export const CookieConsentModal = ({ isOpen = false, closeModal }:{ isOpen: bool
       style={customStyles}
       contentLabel={title}
     >
+      <button 
+        className={clsx(styles.cookieConsentPreferenceButton, styles.cookieConsentCloseButton)} 
+        onClick={closeModal}>
+          x
+      </button>
       <h2>{title}</h2>
-      <button onClick={closeModal}>close</button>
-      <br />
-      <br />
 
       {typeof cookieConsent === 'boolean' ? (
         <>
-        <p>Current cookies consent: <strong>
-            {cookieConsent === true && 'accepted'}
-            {cookieConsent === false && 'declined'}
-        </strong></p>
-        <button onClick={resetCookieConsent}>reset cookie consent</button>
+          <p>You have currently&nbsp;
+            <strong>
+              {cookieConsent === true && 'accepted'}
+              {cookieConsent === false && 'declined'}
+            </strong>
+            &nbsp;cookies.
+          </p>
+          <button 
+            className={clsx(styles.cookieConsentPreferenceButton, styles.cookieConsentResetButton)} 
+            onClick={handleResetCookieConsent}>
+              Reset my cookie preferences
+          </button>
         </>
       ) : (
-        <span>You have not accepted nor declined our cookies yet</span>
+        <span>Please choose to accept or decline cookies in the banner at the bottom of this page.</span>
       )}
     </Modal>
   );
