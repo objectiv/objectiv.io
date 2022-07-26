@@ -34,7 +34,7 @@ At Objectiv, we’ve been fans of [Deepnote](https://deepnote.com/) for a while 
 
 
 # Example notebooks
-All our [example notebooks](https://objectiv.io/docs/modeling/example-notebooks/) will work directly with Deepnote. Just get them from our [repo](https://github.com/objectiv/objectiv-analytics) and [import them into Deepnote](https://docs.deepnote.com/importing-and-exporing/importing-data-to-deepnote#:~:text=Uploading%20an%20existing%20notebook%20to,these%20files%20into%20the%20filesystem.).
+All our [example notebooks](https://objectiv.io/docs/modeling/example-notebooks/) will work directly with Deepnote. Just get them from our [repo](https://github.com/objectiv/objectiv-analytics/tree/main/notebooks) and [import them into Deepnote](https://docs.deepnote.com/importing-and-exporing/importing-data-to-deepnote).
 
 Here is a retention analysis example from our basic product analytics notebook, running as an app in Deepnote:
 
