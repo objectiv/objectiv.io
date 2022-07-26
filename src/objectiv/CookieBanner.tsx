@@ -60,6 +60,11 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
         declineButtonText="Decline"
         enableDeclineButton
         setDeclineCookie={true}
+        buttonClasses="cookieConsentButton cookieConsentButtonAccept"
+        declineButtonClasses="cookieConsentButton cookieConsentButtonDecline"
+        style={{ padding: "10px", background: "#fff", color: "#000", boxShadow: "0 30px 70px rgb(0 0 0 / 30%)" }}
+        buttonStyle={{ background: "#008FDB", border: "1px solid #008FDB", borderRadius: "4px", color: "#fff", fontSize: "14px", padding: "15px 40px" }}
+        declineButtonStyle={{ background: "#fff", border: "1px solid #008FDB", borderRadius: "4px", color: "#000", fontSize: "14px", padding: "15px 40px" }}
         onAccept={() => {
           setCookieConsent(true);
         }}
@@ -68,7 +73,7 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
         }}
         visible={cookieConsent === undefined ? 'show' : 'hidden'}
       >
-        This website uses cookies to enhance the user experience.
+        This website uses cookies to set your preferences and understand how visitors use it.
       </CookieConsent>
       <CookieConsentContext.Provider value={{ cookieConsent, resetCookieConsent }}>
         { children }
