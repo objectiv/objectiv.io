@@ -52,6 +52,9 @@ export const AdsTracking = () => {
   })
 
   if(!cookieConsent) {
+    delete window.twttr;
+    delete window.rdt;
+    delete window.dataLayer;
     return null;
   }
 
