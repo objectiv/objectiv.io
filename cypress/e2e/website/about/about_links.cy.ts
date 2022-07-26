@@ -1,7 +1,6 @@
 describe('About: Content links', () => {
   it('Should track PressEvents on links in content on About page', () => {
     // Intercept all async calls to avoid rate-limiting and other side effects
-    cy.intercept('https://consentcdn.cookiebot.com/*', { fixture: 'cookiebot.json' }).as('cookiebot');
     cy.intercept('http://localhost:8081*', { status: 200 }).as('collector');
 
     // Set CookieConsent

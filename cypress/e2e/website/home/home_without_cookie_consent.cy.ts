@@ -2,7 +2,6 @@ describe('Home: without cookie consent', () => {
   it('Should not track any events', () => {
     // Intercept all async calls to avoid rate-limiting and other side effects
     cy.intercept('https://api.github.com/repos/objectiv/objectiv-analytics', { fixture: 'github.json' }).as('github');
-    cy.intercept('https://consentcdn.cookiebot.com/*', { fixture: 'cookiebot.json' }).as('cookiebot');
     cy.intercept('http://localhost:8081*', { status: 200 }).as('collector');
 
     // Verify that CookieConsent cookie does not exist
@@ -12,8 +11,7 @@ describe('Home: without cookie consent', () => {
     cy.visit("/");
 
     // Verify that the Cookie banner has been shown
-    cy.contains('This website uses cookies');
-    cy.contains('Powered by Cookiebot');
+    cy.contains('This website uses cookies to set your preferences and understand how visitors use it');
 
     // Verify recorded events
     cy.objectiv().its('events').should('have.length', 0);

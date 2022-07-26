@@ -44,9 +44,9 @@ declare namespace Cypress {
   }
 }
 
-// Custom command to set a fake cookie for Cookiebot
+// Custom command to set a fake cookie consent
 Cypress.Commands.add('setCookieConsent', () => {
-  cy.setCookie('CookieConsent', '{stamp:%27JXI3Xxh26F+U9VRdt9HagBOrCOCJ/LsqtNDKMIAK0Yaz+l1xzCJH0Q==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cver:1%2Cutc:1655213975331%2Cregion:%27nl%27}');
+  cy.setCookie('CookieConsent', 'true');
   cy.getCookie('CookieConsent').should('exist');
 })
 declare namespace Cypress {
