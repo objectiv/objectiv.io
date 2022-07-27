@@ -18,6 +18,11 @@ export const getCookieConsent = (): undefined | boolean =>  {
     return undefined;
   }
 
+  // Ignore cookies that don't contain either 'true' or 'false' (these are from Cookiebot)
+  if(cookieConsent !== 'true' && cookieConsent !== 'false') {
+    return undefined;
+  }
+
   return cookieConsent === 'true';
 }
 
