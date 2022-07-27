@@ -43,7 +43,7 @@ Here is a retention analysis example from our basic product analytics notebook, 
   size="large" 
   caption="Retention analysis, powered by Objectiv. {1}"
   captionLinks={[
-    {text: 'Click to open in Deepnote.', to: 'xxx'}
+    {text: 'Click to open in Deepnote.', to: 'https://deepnote.com/@objectiv/objectiv-basic-product-analytics-f8d1b809-2c5f-4a7f-bbba-5676a72e702e'}
   ]}/>
 
 But you can also use it for more advanced use cases, i.e. logistic regression modeling to predict user behavior:
@@ -52,7 +52,7 @@ But you can also use it for more advanced use cases, i.e. logistic regression mo
   size="large"  
   caption="Predicting user behavior with logistic regression. {1}"
   captionLinks={[
-    {text: 'Click to open in Deepnote.', to: 'xxx'}
+    {text: 'Click to open in Deepnote.', to: 'https://deepnote.com/@objectiv/objectiv-predict-user-behaviour-01126358-de18-4ee1-ba3a-756935255ea1'}
      ]}/>
 
 ## There is a lot more
