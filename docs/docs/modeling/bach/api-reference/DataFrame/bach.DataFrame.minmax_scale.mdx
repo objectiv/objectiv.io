@@ -39,10 +39,20 @@ DataFrame
 
 Each transformation per feature is performed as follows:
 
-```pycon3
->>> range_min,  = (0, 1)
+```python
+>>> range_min, range_max = (0, 1)
 >>> feature_std = (feature - min_feature) / (max_feature - min_feature)
->>> scaled_feature = feature_std \* (range_max - range_min) + range_min
+>>> scaled_feature = feature_std * (range_max - range_min) + range_min
+>>> scaled_feature.to_pandas()
+```
+
+```notebook-output
+index
+a    0.000000
+b    0.333333
+c    0.666667
+d    1.000000
+Name: feature, dtype: float64
 ```
 
 Where:
