@@ -276,6 +276,10 @@ div.docs-wrapper footer div.col:nth-child(2) {
   color: #06A5FA;
 }
 
+.language-notebook-output {
+  --prism-background-color: white;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
