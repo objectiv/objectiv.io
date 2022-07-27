@@ -15,6 +15,7 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Self hosted, open-source and built for those who like their data raw and models in code.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
+  baseUrlIssueBanner: false, // if enabled, the cookie banner is moved into this banner, which always hides it
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
