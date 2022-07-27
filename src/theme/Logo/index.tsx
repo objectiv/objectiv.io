@@ -14,7 +14,7 @@ import {useThemeConfig} from '@docusaurus/theme-common';
 
 // OBJECTIV
 import OriginalLogo from '@theme-original/Logo';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 // END OBJECTIV
 
 export default function Logo(props: Props): JSX.Element {

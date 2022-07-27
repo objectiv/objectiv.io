@@ -9,7 +9,7 @@ import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import {useBlogPost} from '@docusaurus/theme-common/internal';
 
 import { TrackedDiv, useVisibleEventTracker } from '@objectiv/tracker-react';
-import { TrackedLink } from '../../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../../objectiv/TrackedLink';
 import { makeIdFromString } from '@objectiv/tracker-core';
 
 type Props = WrapperProps<typeof ContentType>;

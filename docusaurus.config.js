@@ -15,6 +15,7 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Self hosted, open-source and built for those who like their data raw and models in code.', //meta description, and og:description
   baseUrl: envConfig.baseUrl,
+  baseUrlIssueBanner: false, // if enabled, the cookie banner is moved into this banner, which always hides it
   url: envConfig.websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
@@ -69,14 +70,6 @@ const config = {
             environment: objectivEnvironment
         }
     ]
-  ],
-  scripts: [
-    {
-      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
-      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-      'data-blockingmode': 'auto',
-      id: 'Cookiebot'
-    },
   ],
   customFields: {
     trackerApplicationId: envConfig.trackerApplicationId,

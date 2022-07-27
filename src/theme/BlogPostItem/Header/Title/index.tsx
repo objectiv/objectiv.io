@@ -4,7 +4,7 @@ import {useBlogPost} from '@docusaurus/theme-common/internal';
 import type {Props} from '@theme/BlogPostItem/Header/Title';
 
 import styles from './styles.module.css';
-import { TrackedLink } from '../../../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../../../objectiv/TrackedLink';
 
 export default function BlogPostItemHeaderTitle({
   className,

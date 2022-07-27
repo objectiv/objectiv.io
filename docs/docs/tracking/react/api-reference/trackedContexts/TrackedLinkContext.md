@@ -87,7 +87,7 @@ This can be disabled via the  `normalizeId` option:
 
 ### Components
 
-Here is an example of an actual [TrackedLink component](https://github.com/objectiv/objectiv.io/blob/main/src/trackedComponents/TrackedLink.tsx) we use on our Docusaurus based website.
+Here is an example of an actual [TrackedLink component](https://github.com/objectiv/objectiv.io/blob/main/src/objectiv/TrackedLink.tsx) we use on our Docusaurus based website.
 
 ```jsx
 import { TrackedLinkContext } from '@objectiv/tracker-react';

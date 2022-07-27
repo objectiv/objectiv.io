@@ -1,6 +1,6 @@
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../objectiv/TrackedLink';
 
 export default function JoinSlackLink({linkText='join us on Slack', trackingId='join-slack'}) {
   const {siteConfig} = useDocusaurusContext();

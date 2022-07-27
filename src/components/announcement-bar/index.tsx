@@ -1,7 +1,7 @@
 import { TrackedDiv } from "@objectiv/tracker-react";
 import clsx from 'clsx';
 import React from 'react';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 import styles from './styles.module.css';
 
 function AnnouncementBar({title, content, ctaLink, ctaText, icon='icon-star', theme='yellow'}) {

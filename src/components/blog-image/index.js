@@ -1,6 +1,6 @@
 import React from "react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 import { TrackedDiv } from "@objectiv/tracker-react";
 import {interpolate} from '@docusaurus/Interpolate';
 

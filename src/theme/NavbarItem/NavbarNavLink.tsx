@@ -14,7 +14,7 @@ import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/NavbarItem/NavbarNavLink';
 
 // OBJECTIV
-import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../objectiv/TrackedLink';
 // END OBJECTIV
 
 const dropdownLinkActiveClass = 'dropdown__link--active';

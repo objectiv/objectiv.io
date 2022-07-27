@@ -18,6 +18,7 @@ const config = {
   tagline: 'Objectiv is ready-to-use infrastructure for advanced product analytics. Self hosted, open-source and built for those who like their data raw and models in code.', //meta description, and og:description
   url: envConfig.websiteUrl,
   baseUrl: envConfig.baseUrl,
+  baseUrlIssueBanner: false, // if enabled, the cookie banner is moved into this banner, which always hides it
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -58,13 +59,7 @@ const config = {
     path.resolve(__dirname, 'src/plugins/favicons/')
   ],
   scripts: [
-    'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
-    {
-      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
-      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-      'data-blockingmode': 'manual',
-      id: 'Cookiebot'
-    },
+    'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js'
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',

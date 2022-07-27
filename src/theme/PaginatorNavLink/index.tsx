@@ -9,7 +9,7 @@ import React from 'react';
 import type {Props} from '@theme/PaginatorNavLink';
 
 // OBJECTIV
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 // END OBJECTIV
 
 export default function PaginatorNavLink(props: Props): JSX.Element {

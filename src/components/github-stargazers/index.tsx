@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import apiClient from "./http-common";
 
-import { TrackedLink } from '../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../objectiv/TrackedLink';
 import { useFailureEventTracker } from '@objectiv/tracker-react';
 
 const queryClient = new QueryClient({

@@ -1,12 +1,16 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React from 'react';
-import { TrackedLink } from "../../trackedComponents/TrackedLink";
+import React, { useContext } from 'react';
+import { CookieConsentContext } from "../../objectiv/CookieBanner";
+import { CookieConsentModal } from "../../objectiv/CookieConsentModal";
+import { TrackedLink } from "../../objectiv/TrackedLink";
 import styles from './styles.module.css';
 
 export default function Cookies() {
+  const [cookieConsentModalIsOpen, setCookieConsentModalIsOpen] = React.useState(false);
   const { siteConfig: { tagline } } = useDocusaurusContext();
+
   return (
     <div>
       <Layout
@@ -18,10 +22,10 @@ export default function Cookies() {
             Objectiv uses cookies, web beacons and other similar technologies to:
             <ul>
               <li>Help you access and use the website;</li>
-              <li>Understand how visitors use and engage with our website;</li>
               <li>Set your preferences;</li>
-              <li>Deliver relevant interest-based advertising;</li>
-              <li>Analyze and improve our website.</li>
+              <li>Understand how visitors use and engage with our website;</li>
+              <li>Analyze and improve our website;</li>
+              <li>Deliver relevant interest-based advertising.</li>
             </ul>
 
             <h1>Who sets Cookies?</h1>
@@ -40,13 +44,16 @@ export default function Cookies() {
               href={'#'}
               onClick={event => {
                 event.preventDefault();
-                // @ts-ignore
-                Cookiebot.renew();
+                setCookieConsentModalIsOpen(true);
                 return false;
               }}
             >
-              Renew or change your cookie consent here
-            </a>.
+              Change your cookies preferences
+            </a>
+            <CookieConsentModal
+              isOpen={cookieConsentModalIsOpen}
+              closeModal={() => setCookieConsentModalIsOpen(false)}
+            />
 
             <h1>How do I opt out of interest-based advertising through self-regulatory programs?</h1>
             <p>Service providers may participate in self-regulatory programs that provide ways to opt out of 

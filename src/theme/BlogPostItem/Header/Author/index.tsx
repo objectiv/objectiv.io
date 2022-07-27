@@ -4,7 +4,7 @@ import {type Props as LinkProps} from '@docusaurus/Link';
 
 import type {Props} from '@theme/BlogPostItem/Header/Author';
 import { TrackedDiv } from '@objectiv/tracker-react';
-import { TrackedLink } from '../../../../trackedComponents/TrackedLink';
+import { TrackedLink } from '../../../../objectiv/TrackedLink';
 
 function MaybeLink(props: LinkProps): JSX.Element {
   if (props.href) {
