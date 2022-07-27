@@ -18,7 +18,7 @@ export const getCookieConsent = (): undefined | boolean =>  {
     return undefined;
   }
 
-  return Boolean(cookieConsent);
+  return cookieConsent === 'true';
 }
 
 // Create a context provider so pages can interact with the cookie banner instance here
