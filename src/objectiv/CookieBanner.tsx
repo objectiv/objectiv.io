@@ -60,11 +60,13 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
         declineButtonText="Decline"
         enableDeclineButton
         setDeclineCookie={true}
+        disableStyles={true}
+        disableButtonStyles={true}
         buttonClasses="cookieConsentButton cookieConsentButtonAccept"
         declineButtonClasses="cookieConsentButton cookieConsentButtonDecline"
-        style={{ padding: "10px", background: "#000", color: "#fff", boxShadow: "0 30px 70px rgb(0 0 0 / 30%)" }}
-        buttonStyle={{ background: "#008FDB", border: "1px solid #008FDB", borderRadius: "4px", color: "#fff", fontSize: "14px", padding: "15px 40px" }}
-        declineButtonStyle={{ background: "#000", border: "1px solid #fff", borderRadius: "4px", color: "#fff", fontSize: "14px", padding: "15px 40px" }}
+        containerClasses="cookieConsentContainer"
+        contentClasses="cookieConsentContent"
+        overlayClasses="cookieConsentOverlay"
         onAccept={() => {
           setCookieConsent(true);
         }}
