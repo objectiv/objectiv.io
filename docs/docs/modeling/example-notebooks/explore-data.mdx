@@ -20,10 +20,30 @@ The data used in this example is based on the data set that comes with our quick
 
 ## A first look at the data
 
+
+<div class="jupyter-notebook-in-output">
+
+
+<div class="jupyter-notebook-in">In:</div>
+
+<div class="jupyter-notebook-input">
+
 ```python
->>> # have a look at the data
->>> df.sort_values(['session_id', 'session_hit_number'], ascending=False).head()
+ # have a look at the data
+ df.sort_values(['session_id', 'session_hit_number'], ascending=False).head()
 ```
+
+</div>
+
+</div>
+
+
+<div class="jupyter-notebook-in-output">
+
+
+<div class="jupyter-notebook-out">Out:</div>
+
+<div class="jupyter-notebook-output">
 
 ```notebook-output
                                             day                  moment                              user_id                                   global_contexts                                    location_stack            event_type                                  stack_event_types session_id session_hit_number
@@ -36,12 +56,36 @@ a0ad4364-57e0-4da9-a266-057744550cc2 2022-06-30 2022-06-30 20:43:49.820 bb127c9e
 
 ```
 
+</div>
+
+</div>
+
 ## Understanding the columns
 
+
+<div class="jupyter-notebook-in-output">
+
+
+<div class="jupyter-notebook-in">In:</div>
+
+<div class="jupyter-notebook-input">
+
 ```python
->>> # show the data type of each column
->>> df.dtypes
+ # show the data type of each column
+ df.dtypes
 ```
+
+</div>
+
+</div>
+
+
+<div class="jupyter-notebook-in-output">
+
+
+<div class="jupyter-notebook-out">Out:</div>
+
+<div class="jupyter-notebook-output">
 
 ```notebook-output
 {'day': 'date',
@@ -54,6 +98,10 @@ a0ad4364-57e0-4da9-a266-057744550cc2 2022-06-30 2022-06-30 20:43:49.820 bb127c9e
 'session_id': 'int64',
 'session_hit_number': 'int64'}
 ```
+
+</div>
+
+</div>
 
 What is in these columns:
 

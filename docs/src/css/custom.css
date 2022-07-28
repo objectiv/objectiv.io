@@ -259,6 +259,43 @@ nav .DocSearch-Button-Keys span:first-child {
   color: rgb(100, 100, 100);
 }
 
+
+/** DOCS - Jupyter/example notebooks **/
+
+.jupyter-notebook-in-output {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.jupyter-notebook-in, .jupyter-notebook-out, .jupyter-notebook-input, .jupyter-notebook-output {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.jupyter-notebook-in, .jupyter-notebook-out {
+  max-width: 50px;
+  width: 50px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.jupyter-notebook-output {
+  max-width: calc(100% - 50px);
+}
+
+.jupyter-notebook-in {
+  color: #303F9F;
+}
+.jupyter-notebook-out {
+  color: #D84315;
+}
+
+.language-notebook-output {
+  --prism-background-color: white;
+}
+
 /** DOCS - Overall **/
 
 /* EditThisPage footer: full width & grey */
@@ -274,10 +311,6 @@ div.docs-wrapper footer div.col:nth-child(2) {
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
   color: #06A5FA;
-}
-
-.language-notebook-output {
-  --prism-background-color: white;
 }
 
 .docusaurus-highlight-code-line {
