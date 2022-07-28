@@ -267,6 +267,7 @@ nav .DocSearch-Button-Keys span:first-child {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  font-size: 14px;
 }
 
 .jupyter-notebook-in, .jupyter-notebook-out, .jupyter-notebook-input, .jupyter-notebook-output {
@@ -297,6 +298,8 @@ nav .DocSearch-Button-Keys span:first-child {
 
 .language-notebook-output {
   --prism-background-color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
 }
 
 /** DOCS - Overall **/
