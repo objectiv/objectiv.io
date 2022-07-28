@@ -281,6 +281,12 @@ nav .DocSearch-Button-Keys span:first-child {
   margin: 0 15px;
 }
 
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .cookieConsentContent {
+    margin-bottom: 20px;
+  }
+}
+
 .cookieConsentOverlay {
   position: fixed;
   left: 0;
