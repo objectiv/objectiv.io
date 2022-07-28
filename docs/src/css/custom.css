@@ -279,9 +279,12 @@ nav .DocSearch-Button-Keys span:first-child {
 .jupyter-notebook-in, .jupyter-notebook-out {
   max-width: 50px;
   width: 50px;
-  font-family: 'Courier New', Courier, monospace;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  font-size: 16px;
 }
-.jupyter-notebook-output {
+.jupyter-notebook-input, .jupyter-notebook-output {
   max-width: calc(100% - 50px);
 }
 
