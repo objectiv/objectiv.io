@@ -296,9 +296,8 @@ nav .DocSearch-Button-Keys span:first-child {
   color: #D84315;
 }
 
-.language-notebook-output {
+.jupyter-notebook-output pre {
   --prism-background-color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
 
