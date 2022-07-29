@@ -40,53 +40,19 @@ DataFrame
 
 Each transformation per feature is performed as follows:
 
-```python
->>> feature.to_pandas()
-```
-
-```notebook-output
-index
-a           1
-b           2
-c           3
-d           4
-Name: feature, dtype: int64
-```
-
-```python
+```pycon3
 >>> scaled_feature = feature.copy()
 >>> if with_mean:
-```
-
-```notebook-output
 ...     scaled_feature -= mean_feature
-```
 
-```python
 >>> if with_std:
-```
-
-```notebook-output
 ...     scaled_feature /= std_feature
-```
-
-```python
->>> scaled_feature.to_pandas()
-```
-
-```notebook-output
-index
-a   -1.341641
-b   -0.447214
-c    0.447214
-d    1.341641
-Name: feature, dtype: float64
 ```
 
 Where:
     * `feature` is the series to be scaled
     * `mean_feature` is the mean of `feature`
-    * `std_feature` is the (population-based) standard deviation of `feature`
+    * `std_feature` is the (population-based) stardard deviation of `feature`
 
 
 
