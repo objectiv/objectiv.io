@@ -17,12 +17,12 @@ how to [get started in your notebook](/modeling/get-started-in-your-notebook.mdx
 ## A first look at the data
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # have a look at the event data, sorted by the user's session ID & hit
@@ -34,22 +34,21 @@ how to [get started in your notebook](/modeling/get-started-in-your-notebook.mdx
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-out">Out:</div>
+<div className="jupyter-notebook-out">Out:</div>
 
-<div class="jupyter-notebook-output">
+<div className="jupyter-notebook-output">
 
-```notebook-output
-                                                                                         day                  moment                              user_id                                   global_contexts                                    location_stack            event_type                                  stack_event_types session_id session_hit_number
+```
+                                             day                  moment                               user_id                                    global_contexts                                     location_stack              event_type                                  stack_event_types  session_id  session_hit_number
 event_id
-96b5e709-bb8a-46de-ac82-245be25dac29  2022-06-30 2022-06-30 21:40:32.401 2d718142-9be7-4975-a669-ba022fd8fd48 [{'id': 'http_context', '_type': 'HttpContext'... [{'id': 'home', '_type': 'RootLocationContext'... VisibleEvent           [AbstractEvent, NonInteractiveEvent, VisibleEv...        872                  3
-252d7d87-5600-4d90-b24f-2a6fb8986c5e  2022-06-30 2022-06-30 21:40:30.117 2d718142-9be7-4975-a669-ba022fd8fd48 [{'id': 'http_context', '_type': 'HttpContext'... [{'id': 'home', '_type': 'RootLocationContext'... PressEvent             [AbstractEvent, InteractiveEvent, PressEvent]            872                  2
-157a3000-bbfc-42e0-b857-901bd578ea7c  2022-06-30 2022-06-30 21:40:16.908 2d718142-9be7-4975-a669-ba022fd8fd48 [{'id': 'http_context', '_type': 'HttpContext'... [{'id': 'home', '_type': 'RootLocationContext'... PressEvent             [AbstractEvent, InteractiveEvent, PressEvent]            872                  1
-8543f519-d3a4-4af6-89f5-cb04393944b8  2022-06-30 2022-06-30 20:43:50.962 bb127c9e-3067-4375-9c73-cb86be332660 [{'id': 'http_context', '_type': 'HttpContext'... [{'id': 'home', '_type': 'RootLocationContext'... MediaLoadEvent         [AbstractEvent, MediaEvent, MediaLoadEvent, No...        871                  2
-a0ad4364-57e0-4da9-a266-057744550cc2  2022-06-30 2022-06-30 20:43:49.820 bb127c9e-3067-4375-9c73-cb86be332660 [{'id': 'http_context', '_type': 'HttpContext'... [{'id': 'home', '_type': 'RootLocationContext'... ApplicationLoadedEvent [AbstractEvent, ApplicationLoadedEvent, NonInt...        871                  1
-
+96b5e709-bb8a-46de-ac82-245be25dac29  2022-06-30 2022-06-30 21:40:32.401  2d718142-9be7-4975-a669-ba022fd8fd48  [{'id': 'http_context', '_type': 'HttpContext'...  [{'id': 'home', '_type': 'RootLocationContext'...            VisibleEvent  [AbstractEvent, NonInteractiveEvent, VisibleEv...         872                   3
+252d7d87-5600-4d90-b24f-2a6fb8986c5e  2022-06-30 2022-06-30 21:40:30.117  2d718142-9be7-4975-a669-ba022fd8fd48  [{'id': 'http_context', '_type': 'HttpContext'...  [{'id': 'home', '_type': 'RootLocationContext'...              PressEvent      [AbstractEvent, InteractiveEvent, PressEvent]         872                   2
+157a3000-bbfc-42e0-b857-901bd578ea7c  2022-06-30 2022-06-30 21:40:16.908  2d718142-9be7-4975-a669-ba022fd8fd48  [{'id': 'http_context', '_type': 'HttpContext'...  [{'id': 'home', '_type': 'RootLocationContext'...              PressEvent      [AbstractEvent, InteractiveEvent, PressEvent]         872                   1
+8543f519-d3a4-4af6-89f5-cb04393944b8  2022-06-30 2022-06-30 20:43:50.962  bb127c9e-3067-4375-9c73-cb86be332660  [{'id': 'http_context', '_type': 'HttpContext'...  [{'id': 'home', '_type': 'RootLocationContext'...          MediaLoadEvent  [AbstractEvent, MediaEvent, MediaLoadEvent, No...         871                   2
+a0ad4364-57e0-4da9-a266-057744550cc2  2022-06-30 2022-06-30 20:43:49.820  bb127c9e-3067-4375-9c73-cb86be332660  [{'id': 'http_context', '_type': 'HttpContext'...  [{'id': 'home', '_type': 'RootLocationContext'...  ApplicationLoadedEvent  [AbstractEvent, ApplicationLoadedEvent, NonInt...         871                   1
 ```
 
 </div>
@@ -59,12 +58,12 @@ a0ad4364-57e0-4da9-a266-057744550cc2  2022-06-30 2022-06-30 20:43:49.820 bb127c9
 ## Understanding the columns
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # see the data type for each column
@@ -76,14 +75,14 @@ a0ad4364-57e0-4da9-a266-057744550cc2  2022-06-30 2022-06-30 20:43:49.820 bb127c9
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-out">Out:</div>
+<div className="jupyter-notebook-out">Out:</div>
 
-<div class="jupyter-notebook-output">
+<div className="jupyter-notebook-output">
 
-```notebook-output
+```
 {'day': 'date',
 'moment': 'timestamp',
 'user_id': 'uuid',
@@ -133,12 +132,12 @@ First, we want to extract data from the `global_contexts` and `location_stack` c
 relevant context about the event. [See the open taxonomy notebook](/modeling/example-notebooks/open-taxonomy.mdx) for more details.
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # add specific contexts to the data as columns
@@ -152,12 +151,12 @@ relevant context about the event. [See the open taxonomy notebook](/modeling/exa
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # now easily slice the data using the added context columns
@@ -170,14 +169,14 @@ relevant context about the event. [See the open taxonomy notebook](/modeling/exa
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-out">Out:</div>
+<div className="jupyter-notebook-out">Out:</div>
 
-<div class="jupyter-notebook-output">
+<div className="jupyter-notebook-output">
 
-```notebook-output
+```
                                                                                                                                                                                                                                 unique_users
 application         root_location   path                                            event_type
 objectiv-website    home            https://objectiv.io/                            MediaLoadEvent                  202
@@ -214,12 +213,12 @@ slice the data on any part of the UI that you’re interested in. See
 product features very readable and easy to understand for your internal data reports.
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # add the readable product feature name to the dataframe as a column
@@ -231,12 +230,12 @@ product features very readable and easy to understand for your internal data rep
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-in">In:</div>
+<div className="jupyter-notebook-in">In:</div>
 
-<div class="jupyter-notebook-input">
+<div className="jupyter-notebook-input">
 
 ```python
  # now easily look at the data by product feature
@@ -250,14 +249,14 @@ product features very readable and easy to understand for your internal data rep
 </div>
 
 
-<div class="jupyter-notebook-in-output">
+<div className="jupyter-notebook-in-output">
 
 
-<div class="jupyter-notebook-out">Out:</div>
+<div className="jupyter-notebook-out">Out:</div>
 
-<div class="jupyter-notebook-output">
+<div className="jupyter-notebook-output">
 
-```notebook-output
+```
                                                                                                                                                                                                                                                                                                  unique_users
 feature_nice_name                                                                                                        event_type
 Root Location: home                                                                                                      ApplicationLoadedEvent           250
