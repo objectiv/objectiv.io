@@ -60,33 +60,35 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
   return (
     <>
       {/* @ts-ignore CookieConsent TS defs are compatible with the latest React. Everything works as expected though. */}
-      <CookieConsent
-        location="bottom"
-        buttonText="Accept"
-        declineButtonText="Decline"
-        enableDeclineButton={true}
-        acceptOnScroll={true}
-        acceptOnScrollPercentage={2}
-        setDeclineCookie={true}
-        disableStyles={true}
-        disableButtonStyles={true}
-        buttonClasses="cookieConsentButton cookieConsentButtonAccept"
-        declineButtonClasses="cookieConsentButton cookieConsentButtonDecline"
-        containerClasses="cookieConsentContainer"
-        contentClasses="cookieConsentContent"
-        overlayClasses="cookieConsentOverlay"
-        onAccept={() => {
-          setCookieConsent(true);
-        }}
-        onDecline={() => {
-          setCookieConsent(false);
-        }}
-        visible={cookieConsent === undefined ? 'show' : 'hidden'}
-      >
-        We use cookies to set your preferences and understand how visitors use the website, as specified in 
-        the <Link to="/privacy/cookies/">cookie policy</Link>. You can consent to this by accepting this 
-        notice or by scrolling this page.
-      </CookieConsent>
+      {cookieConsent === undefined && (
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          declineButtonText="Decline"
+          enableDeclineButton={true}
+          acceptOnScroll={true}
+          acceptOnScrollPercentage={2}
+          setDeclineCookie={true}
+          disableStyles={true}
+          disableButtonStyles={true}
+          buttonClasses="cookieConsentButton cookieConsentButtonAccept"
+          declineButtonClasses="cookieConsentButton cookieConsentButtonDecline"
+          containerClasses="cookieConsentContainer"
+          contentClasses="cookieConsentContent"
+          overlayClasses="cookieConsentOverlay"
+          onAccept={() => {
+            setCookieConsent(true);
+          }}
+          onDecline={() => {
+            setCookieConsent(false);
+          }}
+          visible={'show'}
+        >
+          We use cookies to set your preferences and understand how visitors use the website, as specified in
+          the <Link to="/privacy/cookies/">cookie policy</Link>. You can consent to this by accepting this
+          notice or by scrolling this page.
+        </CookieConsent>
+      )}
       <CookieConsentContext.Provider value={{ cookieConsent, resetCookieConsent }}>
         { children }
       </CookieConsentContext.Provider>
