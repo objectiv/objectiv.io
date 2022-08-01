@@ -259,6 +259,47 @@ nav .DocSearch-Button-Keys span:first-child {
   color: rgb(100, 100, 100);
 }
 
+/** DOCS - Jupyter/example notebooks **/
+
+.jupyter-notebook-in-output {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 14px;
+}
+
+.jupyter-notebook-in, .jupyter-notebook-out, .jupyter-notebook-input, .jupyter-notebook-output {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.jupyter-notebook-in, .jupyter-notebook-out {
+  max-width: 55px;
+  min-width: 55px;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  font-size: 16px;
+}
+.jupyter-notebook-input, .jupyter-notebook-output {
+  max-width: calc(100% - 55px);
+}
+
+.jupyter-notebook-in {
+  color: #303F9F;
+}
+.jupyter-notebook-out {
+  color: #D84315;
+}
+
+.jupyter-notebook-output pre {
+  --prism-background-color: white;
+  font-size: 12px;
+}
+
 /* Cookie consent banner */
 
 .cookieConsentContainer {
@@ -323,6 +364,21 @@ nav .DocSearch-Button-Keys span:first-child {
   padding: 15px 40px;
 }
 
+/** DOCS - Code blocks **/
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  /*noinspection CssUnresolvedCustomProperty*/
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  /*noinspection CssUnresolvedCustomProperty*/
+  padding: 0 var(--ifm-pre-padding);
+}
+
+div[class*='codeBlockContainer'] pre {
+  max-height: 500px; /* set max height for code blocks to prevent resource-limited devices from crashing */
+}
+
 /** DOCS - Overall **/
 
 /* EditThisPage footer: full width & grey */
@@ -338,15 +394,6 @@ div.docs-wrapper footer div.col:nth-child(2) {
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
   color: #06A5FA;
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  /*noinspection CssUnresolvedCustomProperty*/
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  /*noinspection CssUnresolvedCustomProperty*/
-  padding: 0 var(--ifm-pre-padding);
 }
 
 .docs-wrapper .main-wrapper img {

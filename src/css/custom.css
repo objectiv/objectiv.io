@@ -278,6 +278,12 @@ p, .markdown p {
   color: #ffffffd4;
 }
 
+/** Code blocks **/
+
+div[class*='codeBlockContainer'] pre {
+  max-height: 500px; /* set max height for code blocks to prevent resource-limited devices from crashing */
+}
+
 /* Tweets */
 .twitter-tweet {
   margin: 40px auto !important;
