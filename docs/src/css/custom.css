@@ -364,6 +364,21 @@ nav .DocSearch-Button-Keys span:first-child {
   padding: 15px 40px;
 }
 
+/** DOCS - Code blocks **/
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  /*noinspection CssUnresolvedCustomProperty*/
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  /*noinspection CssUnresolvedCustomProperty*/
+  padding: 0 var(--ifm-pre-padding);
+}
+
+div[class*='codeBlockContainer'] pre {
+  max-height: 500px; /* set max height for code blocks to prevent resource-limited devices from crashing */
+}
+
 /** DOCS - Overall **/
 
 /* EditThisPage footer: full width & grey */
@@ -379,15 +394,6 @@ div.docs-wrapper footer div.col:nth-child(2) {
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
   color: #06A5FA;
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  /*noinspection CssUnresolvedCustomProperty*/
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  /*noinspection CssUnresolvedCustomProperty*/
-  padding: 0 var(--ifm-pre-padding);
 }
 
 .docs-wrapper .main-wrapper img {
