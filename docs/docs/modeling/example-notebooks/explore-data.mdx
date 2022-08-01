@@ -9,11 +9,40 @@ title: Explore your data
 
 This example notebook shows how you can easily explore your data collected with Objectiv. It’s also available
 as a [full Jupyter notebook](https://github.com/objectiv/objectiv-analytics/blob/main/notebooks/explore-your-data.ipynb)
-to run on your own data, or you can instead [run the Demo](/docs/home/quickstart-guide/) to quickly try it
-out. The dataset used here is the same as in the Demo.
+to run on your own data (see how to [get started in your notebook](/modeling/get-started-in-your-notebook.mdx)),
+or you can instead [run the Demo](/docs/home/quickstart-guide/) to quickly try it out. The dataset used
+here is the same as in the Demo.
 
-We assume below that you’ve installed the open model hub and instantiated an Objectiv DataFrame object; see
-how to [get started in your notebook](/modeling/get-started-in-your-notebook.mdx).
+## Get started
+
+We first have to instantiate the model hub and an Objectiv DataFrame object.
+
+
+<div className="jupyter-notebook-in-output">
+
+
+<div className="jupyter-notebook-in">In:</div>
+
+<div className="jupyter-notebook-input">
+
+```python
+ # instantiate the model hub, and set the default time aggregation to daily
+ from modelhub import ModelHub
+ modelhub = ModelHub(time_aggregation='%Y-%m-%d')
+ # get an Objectiv DataFrame within a defined timeframe
+ df = modelhub.get_objectiv_dataframe(db_url=DB_URL, start_date='2022-06-01', end_date='2022-06-30')
+```
+
+</div>
+
+</div>
+
+:::info Reference
+
+* [modelhub.ModelHub.get_objectiv_dataframe](/modeling/open-model-hub/api-reference/ModelHub/modelhub.ModelHub.get_objectiv_dataframe.mdx)
+
+
+:::
 
 ## A first look at the data
 

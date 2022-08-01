@@ -277,15 +277,15 @@ nav .DocSearch-Button-Keys span:first-child {
 }
 
 .jupyter-notebook-in, .jupyter-notebook-out {
-  max-width: 50px;
-  width: 50px;
+  max-width: 55px;
+  min-width: 55px;
   padding: 0.4em;
   margin: 0px;
   font-family: monospace;
   font-size: 16px;
 }
 .jupyter-notebook-input, .jupyter-notebook-output {
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 55px);
 }
 
 .jupyter-notebook-in {
