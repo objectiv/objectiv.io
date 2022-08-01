@@ -37,7 +37,7 @@ function Root({children}) {
   // set tracker active or inactive based on cookie consent
   function setTrackerCookieConsent(cookieConsent) {
     tracker.setActive(cookieConsent);
-    if (cookieConsent !== undefined && cookieConsent == true) {
+    if (cookieConsent === true) {
       // track SuccessEvent for accepting the cookie
       trackSuccessEvent({tracker: tracker, message: 'Cookie Accepted'});
     }
