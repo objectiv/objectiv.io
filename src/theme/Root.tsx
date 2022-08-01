@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { ObjectivProvider, ReactTracker } from "@objectiv/tracker-react";
+import { ObjectivProvider, ReactTracker, trackSuccessEvent } from "@objectiv/tracker-react";
 import React, { useState } from 'react';
 import { AdsTracking } from "../objectiv/AdsTracking";
 import { CookieBanner, getCookieConsent } from "../objectiv/CookieBanner";
@@ -23,9 +23,18 @@ function Root({children}) {
       active: getCookieConsent() === true,
     }))
   }
+  
+  // set tracker active or inactive based on cookie consent
+  function setTrackerCookieConsent(cookieConsent) {
+    tracker.setActive(cookieConsent);
+    if (cookieConsent === true) {
+      // track SuccessEvent for accepting the cookie
+      trackSuccessEvent({tracker: tracker, message: 'Cookie Accepted'});
+    }
+  }
 
   return (
-    <CookieBanner onConsentChange={(cookieConsent) => tracker.setActive(cookieConsent)}>
+    <CookieBanner onConsentChange={(cookieConsent) => setTrackerCookieConsent(cookieConsent)}>
       <AdsTracking />
       <ObjectivProvider tracker={tracker}>
         {children}
