@@ -59,7 +59,6 @@ export const CookieBanner = ({ children, onConsentChange }: CookieBannerProps) =
 
   return (
     <>
-      {/* @ts-ignore CookieConsent TS defs are compatible with the latest React. Everything works as expected though. */}
       {cookieConsent === undefined && (
         <CookieConsent
           location="bottom"
