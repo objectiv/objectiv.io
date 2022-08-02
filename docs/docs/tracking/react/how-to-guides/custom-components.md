@@ -37,7 +37,7 @@ const TrackedVideo = ({ videoUrl, id = "video" }: TrackedVideoProps) => (
 ```
 
 ## Handling Media Events
-Next we are going to hook up the `<video>` event handlers to Event Trackers. React Tracker SDK offers both [Hook based Event Trackers](/tracking/react/api-reference/hooks/eventTrackers/overview.md) and [Low-level Event Trackers](/tracking/react/api-reference/eventTrackers/overview.md).
+Next we are going to hook up the `<video>` event handlers to Event Trackers. React Tracker SDK offers both [Hook based Event Trackers](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-hooks) and [Low-level Event Trackers](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-functions).
 
 
 ### Hooks vs Low-level

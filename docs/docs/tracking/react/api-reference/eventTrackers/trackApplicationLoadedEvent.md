@@ -1,3 +1,7 @@
+---
+sidebar_position: 100
+---
+
 # trackApplicationLoadedEvent
 
 Tracks an [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md).
@@ -14,7 +18,7 @@ trackApplicationLoadedEvent = (parameters: {
 :::caution
 This is a lower-level API.   
 
-[Event Tracking Hooks](/tracking/react/api-reference/hooks/eventTrackers/overview.md) are preferable as they automate retrieving both the Tracker instance and LocationStack. In fact, the do use these lower-level APIs internally.
+[Event Tracking Hooks](/tracking/react/api-reference/eventTrackers/overview.md) are preferable as they automate retrieving both the Tracker instance and LocationStack. In fact, the do use these lower-level APIs internally.
 :::
 
 :::info

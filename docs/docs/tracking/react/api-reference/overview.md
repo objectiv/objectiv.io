@@ -9,8 +9,8 @@ import ProvidersOverview from './providers/overview.md'
 import TrackedElementsOverview from './trackedElements/overview.md'
 import TrackedContextsOverview from './trackedContexts/overview.md'
 import LocationWrappersOverview from './locationWrappers/overview.md'
-import HooksOverview from './hooks/overview.md'
 import EventTrackersOverview from './eventTrackers/overview.md'
+import HooksOverview from './hooks/overview.md'
 
 High level overview of all the APIs available in the [React Tracker](/tracking/react/api-reference/ReactTracker.md).
 
@@ -26,8 +26,8 @@ High level overview of all the APIs available in the [React Tracker](/tracking/r
 ## Location Wrappers
 <LocationWrappersOverview />
 
-## Hooks
-<HooksOverview />
-
 ## Event Trackers
 <EventTrackersOverview />
+
+## Hooks
+<HooksOverview />

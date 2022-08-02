@@ -4,7 +4,7 @@ Monitors the given `state` and runs the given `effect` when it changes.
 
 ```ts
 useTrackOnToggle = (parameters: {
-  state: boolean,
+  state: | () => boolean,
   trueEvent: TrackerEvent,
   falseEvent: TrackerEvent,
   tracker?: Tracker,
@@ -13,22 +13,33 @@ useTrackOnToggle = (parameters: {
 ```
 
 ## Parameters
-|          |                | type              | default value |
-|:--------:|:---------------|:------------------|:--------------|
-| required | **state**      | boolean           |               |
-| required | **trueEvent**  | TrackerEvent      |               |
-| required | **falseEvent** | TrackerEvent      |               |
-| optional | tracker        | ReactTracker      |               |
-| optional | options        | TrackEventOptions |               |
+|          |                | type                                   | default value |
+|:--------:|:---------------|:---------------------------------------|:--------------|
+| required | **state**      | boolean &vert; () => boolean           |               |
+| required | **trueEvent**  | TrackerEvent                           |               |
+| required | **falseEvent** | TrackerEvent                           |               |
+| optional | tracker        | ReactTracker                           |               |
+| optional | options        | TrackEventOptions                      |               |
 
 ## Usage
 
-```ts
+```ts title="with a boolean state"
 import { makeHiddenEvent, makeVisibleEvent } from "@objectiv/tracker-core";
 import { useTrackOnToggle } from "@objectiv/tracker-react";
 
 useTrackOnToggle({
   state: isVisible,
+  trueEvent: makeVisibleEvent,
+  falseEvent: makeHiddenEvent
+})
+```
+
+```ts title="with a predicate state"
+import { makeHiddenEvent, makeVisibleEvent } from "@objectiv/tracker-core";
+import { useTrackOnToggle } from "@objectiv/tracker-react";
+
+useTrackOnToggle({
+  state: () => isVisible,
   trueEvent: makeVisibleEvent,
   falseEvent: makeHiddenEvent
 })
@@ -41,7 +52,5 @@ useTrackOnToggle({
 - [useOnUnmount](/tracking/react/api-reference/hooks/useOnUnmount.md)
 - [useTrackOnMount](/tracking/react/api-reference/hooks/useTrackOnMount.md)
 - [useTrackOnUnmount](/tracking/react/api-reference/hooks/useTrackOnUnmount.md)
-- [useOnChange](/tracking/react/api-reference/hooks/useOnChange.md)
 - [useOnToggle](/tracking/react/api-reference/hooks/useOnToggle.md)
-- [useTrackOnChange](/tracking/react/api-reference/hooks/useTrackOnChange.md)
 :::

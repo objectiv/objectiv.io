@@ -32,7 +32,5 @@ The hooks the SDK uses internally for event instrumentation are also available p
 
 #### State
 
-- [useOnChange](/tracking/react-native/api-reference/hooks/useOnChange.md)
 - [useOnToggle](/tracking/react-native/api-reference/hooks/useOnToggle.md)
-- [useTrackOnChange](/tracking/react-native/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react-native/api-reference/hooks/useTrackOnToggle.md)

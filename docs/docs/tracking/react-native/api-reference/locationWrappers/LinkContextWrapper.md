@@ -5,16 +5,18 @@ Children can be a ReactNode or a [Render Props](https://reactjs.org/docs/render-
 
 ```tsx
 LinkContextWrapper: (props: {
-  children: ReactNode | ((parameters: TrackingContext) => void), 
-  id: string
+  children: ReactNode | ((parameters: TrackingContext) => ReactNode), 
+  id: string,
+  href: string,
 }) => ReactElement
 ```
 
 ## Parameters
-|          |              | type                                                     |
-|:--------:|:-------------|:---------------------------------------------------------|
-| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => void) |
-| required | **id**       | string                                                   |
+|          |              | type                                                          |
+|:--------:|:-------------|:--------------------------------------------------------------|
+| required | **children** | ReactNode &vert; ((parameters: TrackingContext) => ReactNode) |
+| required | **id**       | string                                                        |
+| required | **href**     | string                                                        |
 
 ## Returns
 `ReactElement`
@@ -28,8 +30,10 @@ import { LinkContextWrapper } from '@objectiv/tracker-react-native';
 ```
 
 ```jsx
-<LinkContextWrapper id={'privacy'}>
-  <Link to={'Privacy'}>Privacy</Link>
+const to = 'Privacy';
+
+<LinkContextWrapper id={'privacy'} href={to}>
+  <Link to={to}>Privacy</Link>
 </LinkContextWrapper>
 ```
 
@@ -43,10 +47,12 @@ import {
 ```
 
 ```jsx
-<LinkContextWrapper id={'privacy'}>
+const to = 'Privacy';
+
+<LinkContextWrapper id={'privacy'} href={to}>
   {(trackingContext) => (
     <Link 
-      to={'Provacy'} 
+      to={to} 
       onPress={() => trackPressEvent(trackingContext)}
     >
       Privacy

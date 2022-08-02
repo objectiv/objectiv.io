@@ -9,7 +9,7 @@ type TrackerProviderContext = {
 ```
 
 :::tip
-ReactTracker instances can be accessed easily via the [useTracker](/tracking/react/api-reference/hooks/consumers/useTracker.md) consumer hook.
+ReactTracker instances can be accessed easily via the [useTracker](/tracking/react/api-reference/hooks/useTracker.md) consumer hook.
 :::
 
 <br />

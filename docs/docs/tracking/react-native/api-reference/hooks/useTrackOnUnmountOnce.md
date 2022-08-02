@@ -39,8 +39,6 @@ useTrackOnUnmountOnce({
 - [useTrackOnMount](/tracking/react-native/api-reference/hooks/useTrackOnMount.md)
 - [useTrackOnMountOnce](/tracking/react-native/api-reference/hooks/useTrackOnMountOnce.md)
 - [useTrackOnUnmountOnce](/tracking/react-native/api-reference/hooks/useTrackOnUnmountOnce.md)
-- [useOnChange](/tracking/react-native/api-reference/hooks/useOnChange.md)
 - [useOnToggle](/tracking/react-native/api-reference/hooks/useOnToggle.md)
-- [useTrackOnChange](/tracking/react-native/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react-native/api-reference/hooks/useTrackOnToggle.md)
 :::
