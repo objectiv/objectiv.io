@@ -25,5 +25,6 @@ A collection of hooks the SDK uses internally for event instrumentation.
 
 #### State
 
+- [useOnContextChange](/tracking/react/api-reference/hooks/useOnContextChange.md)
 - [useOnToggle](/tracking/react/api-reference/hooks/useOnToggle.md)
 - [useTrackOnToggle](/tracking/react/api-reference/hooks/useTrackOnToggle.md)
