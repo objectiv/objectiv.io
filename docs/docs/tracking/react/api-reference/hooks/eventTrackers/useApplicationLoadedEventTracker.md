@@ -46,11 +46,9 @@ A callback with the same parameters of the hook itself.
 ```
 
 ## Usage
-```ts
-import { useApplicationLoadedEventTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: trigger ApplicationLoadedEvent only after the config fetch has executed"
+import { useApplicationLoadedEventTracker } from "@objectiv/tracker-react";
+
 const trackApplicationLoadedEvent = useApplicationLoadedEventTracker();
 
 fetch('./config.json')

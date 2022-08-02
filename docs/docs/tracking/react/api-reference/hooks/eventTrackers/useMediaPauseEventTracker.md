@@ -41,12 +41,8 @@ A callback with the same parameters of the hook itself.
 ```
 
 ## Usage
-```ts
-import { useMediaPauseEventTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: declaratively wrapping a third party media player with callbacks"
-import { MediaPlayerContextWrapper } from "@objectiv/tracker-react";
+import { MediaPlayerContextWrapper, useMediaPauseEventTracker } from "@objectiv/tracker-react";
 
 const trackMediaPause = useMediaPauseEventTracker();
 
@@ -62,6 +58,7 @@ const trackMediaPause = useMediaPauseEventTracker();
 
 ```tsx title="Scenario: virtual location wrapper"
 import { makeMediaPlayerContext } from "@objectiv/tracker-core";
+import { useMediaPauseEventTracker } from "@objectiv/tracker-react";
 
 const trackMediaPause = useMediaPauseEventTracker();
 

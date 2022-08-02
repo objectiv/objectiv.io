@@ -41,12 +41,8 @@ A callback with the same parameters of the hook itself.
 ```
 
 ## Usage
-```ts
-import { useHiddenEventTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: declaratively wrapping a third party component with onHide callback"
-import { ExpandableContextWrapper } from "@objectiv/tracker-react";
+import { ExpandableContextWrapper, useHiddenEventTracker } from "@objectiv/tracker-react";
 
 const trackHiddenEvent = useHiddenEventTracker();
 
@@ -63,6 +59,7 @@ const trackHiddenEvent = useHiddenEventTracker();
 
 ```tsx title="Scenario: virtual location at construction, options override and virtual location at callback"
 import { makeContentContext, makeExpandableContext } from "@objectiv/tracker-core";
+import { useHiddenEventTracker } from "@objectiv/tracker-react";
 
 // Generate a HiddenEvent tracker preconfigured with a ContentContext wrapper 
 const trackHiddenEvent = useHiddenEventTracker({

@@ -41,12 +41,8 @@ A callback with the same parameters of the hook itself.
 ```
 
 ## Usage
-```ts
-import { useInputChangeEventTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: declaratively wrapping a third party date selector with onChange callback"
-import { InputContextWrapper } from "@objectiv/tracker-react";
+import { InputContextWrapper, useInputChangeEventTracker } from "@objectiv/tracker-react";
 
 const trackInputChange = useInputChangeEventTracker();
 
@@ -61,6 +57,7 @@ const trackInputChange = useInputChangeEventTracker();
 
 ```tsx title="Scenario: virtual location wrapper and track timestamp when the DateSelector changes"
 import { makeInputContext, makeInputValueContext } from "@objectiv/tracker-core";
+import { useInputChangeEventTracker } from "@objectiv/tracker-react";
 
 const dateSelectorId = 'date-selector'; 
 

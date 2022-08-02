@@ -52,17 +52,9 @@ A callback with the same parameters of the hook itself and an extra `isVisible` 
 } = {}) => Promise<TrackerEvent>
 ```
 
-```ts
-({ isVisible: boolean }) => Promise<TrackerEvent>
-```
-
 ## Usage
-```ts
-import { useVisibilityTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: declaratively wrapping a third party drawer with onChange callback carrying the latest state"
-import { OverlayContextWrapper } from "@objectiv/tracker-react";
+import { OverlayContextWrapper, useVisibilityTracker } from "@objectiv/tracker-react";
 
 const trackVisibility = useVisibilityTracker();
 
@@ -77,6 +69,7 @@ const trackVisibility = useVisibilityTracker();
 
 ```tsx title="Scenario: virtual location wrapper"
 import { makeOverlayContext } from "@objectiv/tracker-core";
+import { useVisibilityTracker } from "@objectiv/tracker-react";
 
 const trackVisibility = useVisibilityTracker();
 

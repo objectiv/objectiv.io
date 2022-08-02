@@ -41,12 +41,8 @@ A callback with the same parameters of the hook itself.
 ```
 
 ## Usage
-```ts
-import { useVisibleEventTracker } from "@objectiv/tracker-react";
-```
-
 ```tsx title="Scenario: declaratively wrapping a third party component with onShow callback"
-import { ExpandableContextWrapper } from "@objectiv/tracker-react";
+import { ExpandableContextWrapper, useVisibleEventTracker } from "@objectiv/tracker-react";
 
 const trackVisibleEvent = useVisibleEventTracker();
 
@@ -63,6 +59,7 @@ const trackVisibleEvent = useVisibleEventTracker();
 
 ```tsx title="Scenario: virtual location at construction, options override and virtual location at callback"
 import { makeContentContext, makeExpandableContext } from "@objectiv/tracker-core";
+import { useVisibleEventTracker } from "@objectiv/tracker-react";
 
 // Generate a VisibleEvent tracker preconfigured with a ContentContext wrapper 
 const trackVisibleEvent = useVisibleEventTracker({
