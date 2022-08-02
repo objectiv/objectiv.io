@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackMediaLoadEvent](/tracking/react/api-reference/eventTrackers/trackMediaLoadEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useMediaLoadEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+useMediaLoadEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,7 +29,16 @@ useMediaLoadEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
@@ -28,11 +46,35 @@ import { useMediaLoadEventTracker } from "@objectiv/tracker-react";
 ```
 
 ```tsx title="Scenario: third party media player with callbacks"
+import { MediaPlayerContextWrapper } from "@objectiv/tracker-react";
+
 const trackMediaLoad = useMediaLoadEventTracker();
 
-<VideoPlayer
-  onReady={() => {
-    trackMediaLoad();
+<MediaPlayerContextWrapper id={video.id}>
+  <VideoPlayer
+    video={video}
+    onReady={() => {
+      trackMediaLoad();
+    }}
+  />
+</MediaPlayerContextWrapper>
+```
+
+```tsx title="Scenario: virtual location wrapper"
+import { makeMediaPlayerContext } from "@objectiv/tracker-core";
+
+const trackMediaLoad = useMediaLoadEventTracker();
+
+<RandomVideoPlayer
+  onReady={(randomVideo) => {
+    trackMediaLoad({
+      // Wrap this event in a virtual location representing the video
+      locationStack: [
+        makeMediaPlayerContext({
+          id: randomVideo.id
+        })
+      ]
+    });
   }}
 />
 ```

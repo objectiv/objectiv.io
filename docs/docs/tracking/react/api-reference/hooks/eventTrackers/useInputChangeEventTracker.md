@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackInputChangeEvent](/tracking/react/api-reference/eventTrackers/trackInputChangeEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useInputChangeEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+useInputChangeEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,7 +29,16 @@ useInputChangeEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
@@ -28,11 +46,42 @@ import { useInputChangeEventTracker } from "@objectiv/tracker-react";
 ```
 
 ```tsx title="Scenario: third party date selector with onChange callback"
+import { InputContextWrapper } from "@objectiv/tracker-react";
+
 const trackInputChange = useInputChangeEventTracker();
 
+<InputContextWrapper id={'date-selector'}>
+  <DateSelector
+    onChange={() => {
+      trackInputChange();
+    }}
+  />
+</InputContextWrapper>
+```
+
+```tsx title="Scenario: virtual location wrapper and track timestamp when the DateSelector changes"
+import { makeInputContext, makeInputValueContext } from "@objectiv/tracker-core";
+
+const dateSelectorId = 'date-selector'; 
+
+// Generate a InputChangeEvent tracker preconfigured with a wrapper InputContext
+const trackInputChange = useInputChangeEventTracker({
+  locationStack: [
+    makeInputContext(dateSelectorId)
+  ]
+});
+
 <DateSelector
-  onChange={() => {
-    trackInputChange();
+  onChange={(selectedDate: Date) => {
+    trackInputChange({
+      // Track timestamp as InputValueContext
+      globalContexts: [
+        makeInputValueContext({
+          id: dateSelectorId,
+          value: selectedDate.getTime().toString()
+        })
+      ]
+    });
   }}
 />
 ```

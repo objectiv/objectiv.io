@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackHiddenEvent](/tracking/react/api-reference/eventTrackers/trackHiddenEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useHiddenEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+useHiddenEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,7 +29,16 @@ useHiddenEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
@@ -28,15 +46,43 @@ import { useHiddenEventTracker } from "@objectiv/tracker-react";
 ```
 
 ```tsx title="Scenario: third party component with onHide callback"
+import { ExpandableContextWrapper } from "@objectiv/tracker-react";
+
 const trackHiddenEvent = useHiddenEventTracker();
 
-<ThirdPartyComponent
-  onHide={() => {
-    trackHiddenEvent();
+<ExpandableContextWrapper id={'expandable'}>
+  <ThirdPartyComponent
+    onHide={() => {
+      trackHiddenEvent();
+    }}
+  >
+  ...
+  </ThirdPartyComponent>
+</ExpandableContextWrapper>
+```
+
+```tsx title="Scenario: virtual location at construction, options override and virtual location at callback"
+import { makeContentContext, makeExpandableContext } from "@objectiv/tracker-core";
+
+// Generate a HiddenEvent tracker preconfigured with a ContentContext wrapper 
+const trackHiddenEvent = useHiddenEventTracker({
+  locationStack: [
+    makeContentContext({ id: 'wrapper' })
+  ]
+});
+
+<ThirdPartyExpandableGroupedList
+  onHide={(group, expanded) => {
+    trackHiddenEvent({
+      // Create another virtual location representing which group has been collapsed 
+      locationStack: [
+        makeExpandableContext({ id: group.id })
+      ]
+    });
   }}
 >
-...
-</ThirdPartyComponent>
+  ...
+</ThirdPartyExpandableGroupedList>
 ```
 
 <br />

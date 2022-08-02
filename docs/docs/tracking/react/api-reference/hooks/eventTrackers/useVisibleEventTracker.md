@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackVisibleEvent](/tracking/react/api-reference/eventTrackers/trackVisibleEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useVisibleEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+useVisibleEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,7 +29,16 @@ useVisibleEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
@@ -28,15 +46,43 @@ import { useVisibleEventTracker } from "@objectiv/tracker-react";
 ```
 
 ```tsx title="Scenario: third party component with onShow callback"
+import { ExpandableContextWrapper } from "@objectiv/tracker-react";
+
 const trackVisibleEvent = useVisibleEventTracker();
 
-<ThirdPartyComponent
-  onShow={() => {
-    trackVisibleEvent();
+<ExpandableContextWrapper id={'expandable'}>
+  <ThirdPartyComponent
+    onShow={() => {
+      trackVisibleEvent();
+    }}
+  >
+  ...
+  </ThirdPartyComponent>
+</ExpandableContextWrapper>
+```
+
+```tsx title="Scenario: virtual location at construction, options override and virtual location at callback"
+import { makeContentContext, makeExpandableContext } from "@objectiv/tracker-core";
+
+// Generate a VisibleEvent tracker preconfigured with a ContentContext wrapper 
+const trackVisibleEvent = useVisibleEventTracker({
+  locationStack: [
+    makeContentContext({ id: 'wrapper' })
+  ]
+});
+
+<ThirdPartyExpandableGroupedList
+  onShow={(group, expanded) => {
+    trackVisibleEvent({
+      // Create another virtual location representing which group has been expanded 
+      locationStack: [
+        makeExpandableContext({ id: group.id })
+      ]
+    });
   }}
 >
-...
-</ThirdPartyComponent>
+  ...
+</ThirdPartyExpandableGroupedList>
 ```
 
 <br />
