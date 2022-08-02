@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackPressEvent](/tracking/react/api-reference/eventTrackers/trackPressEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-usePressEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+usePressEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,24 +29,57 @@ usePressEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
 import { usePressEventTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party download button"
+```tsx title="Scenario: declaratively wrapping a third party download button"
+import { PressableContextWrapper } from "@objectiv/tracker-react";
+
 const trackPressEvent = usePressEventTracker();
 
-<DownloadButton
-  onClick={() => {
-    trackPressEvent();
-  }}
->
-  Download
-</DownloadButton>
+<PressableContextWrapper id={'pressable'}>
+  <DownloadButton
+    onClick={() => {
+      trackPressEvent();
+    }}
+  >
+    Download
+  </DownloadButton>
+</PressableContextWrapper>
 ```
+
+```tsx title="Scenario: virtual location wrapper"
+import { makePressableContext } from "@objectiv/tracker-core";
+
+const trackPressEvent = usePressEventTracker();
+
+<ContextualMenu
+  onMenuItemPress={(menuItem) => {
+    trackPressEvent({
+      // Wrap this event in a virtual location representing the clicked menu item
+      locationStack: [
+        makePressableContext({
+          id: menuItem.id
+        })
+      ]
+    });
+  }}
+/>
+```
+
 
 <br />
 

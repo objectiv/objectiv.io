@@ -45,7 +45,7 @@ A callback with the same parameters of the hook itself.
 import { useMediaLoadEventTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party media player with callbacks"
+```tsx title="Scenario: declaratively wrapping a third party media player with callbacks"
 import { MediaPlayerContextWrapper } from "@objectiv/tracker-react";
 
 const trackMediaLoad = useMediaLoadEventTracker();

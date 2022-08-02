@@ -45,7 +45,7 @@ A callback with the same parameters of the hook itself.
 import { useHiddenEventTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party component with onHide callback"
+```tsx title="Scenario: declaratively wrapping a third party component with onHide callback"
 import { ExpandableContextWrapper } from "@objectiv/tracker-react";
 
 const trackHiddenEvent = useHiddenEventTracker();

@@ -45,7 +45,7 @@ A callback with the same parameters of the hook itself.
 import { useVisibleEventTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party component with onShow callback"
+```tsx title="Scenario: declaratively wrapping a third party component with onShow callback"
 import { ExpandableContextWrapper } from "@objectiv/tracker-react";
 
 const trackVisibleEvent = useVisibleEventTracker();

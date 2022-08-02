@@ -3,12 +3,21 @@
 Returns a ready-to-trigger [trackMediaStopEvent](/tracking/react/api-reference/eventTrackers/trackMediaStopEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useMediaStopEventTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => Function
+useMediaStopEventTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent>
 ```
 
 ## Parameters
@@ -20,19 +29,52 @@ useMediaStopEventTracker = (parameters: {
 | optional | globalContexts | GlobalContexts    |               |
 
 ## Returns
-`Function`
+A callback with the same parameters of the hook itself.
+
+```ts
+(callbackParameters: {
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
 
 ## Usage
 ```ts
 import { useMediaStopEventTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party media player with callbacks"
+```tsx title="Scenario: declaratively wrapping a third party media player with callbacks"
+import { MediaPlayerContextWrapper } from "@objectiv/tracker-react";
+
 const trackMediaStop = useMediaStopEventTracker();
 
-<VideoPlayer
-  onStop={() => {
-    trackMediaStop();
+<MediaPlayerContextWrapper id={video.id}>
+  <VideoPlayer
+    video={video}
+    onStop={() => {
+      trackMediaStop();
+    }}
+  />
+</MediaPlayerContextWrapper>
+```
+
+```tsx title="Scenario: virtual location wrapper"
+import { makeMediaPlayerContext } from "@objectiv/tracker-core";
+
+const trackMediaStop = useMediaStopEventTracker();
+
+<RandomVideoPlayer
+  onStop={(randomVideo) => {
+    trackMediaStop({
+      // Wrap this event in a virtual location representing the video
+      locationStack: [
+        makeMediaPlayerContext({
+          id: randomVideo.id
+        })
+      ]
+    });
   }}
 />
 ```

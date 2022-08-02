@@ -3,15 +3,25 @@
 Returns a ready-to-trigger [trackVisibility](/tracking/react/api-reference/eventTrackers/trackVisibility.md) by retrieving ReactTracker instance and LocationStack automatically.
 
 ```ts
-useVisibilityTracker = (parameters: {
-  tracker?: Tracker,
-  options?: TrackEventOptions,
-  locationStack?: LocationStack;
-  globalContexts?: GlobalContexts;
-} = {}) => ({ isVisible: boolean }) => Promise<TrackerEvent>
+useVisibilityTracker = (
+  hookParameters: {
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => (
+  callbackParameters: {
+    isVisible: boolean,
+    tracker?: Tracker,
+    options?: TrackEventOptions,
+    locationStack?: LocationStack;
+    globalContexts?: GlobalContexts;
+  } = {}
+) => Promise<TrackerEvent> 
 ```
 
-## Parameters
+## Hook Parameters
 |          |                | type              | default value |
 |:--------:|:---------------|:------------------|:--------------|
 | optional | tracker        | ReactTracker      |               |
@@ -19,7 +29,29 @@ useVisibilityTracker = (parameters: {
 | optional | locationStack  | LocationStack     |               |
 | optional | globalContexts | GlobalContexts    |               |
 
+## Callback Parameters
+|          |                | type              | default value |
+|:--------:|:---------------|:------------------|:--------------|
+| required | **isVisible**  | boolean           |               |
+| optional | tracker        | ReactTracker      |               |
+| optional | options        | TrackEventOptions |               |
+| optional | locationStack  | LocationStack     |               |
+| optional | globalContexts | GlobalContexts    |               |
+
+
 ## Returns
+A callback with the same parameters of the hook itself and an extra `isVisible` parameter to determine whether a Visible or Hidden Event is triggered.  
+
+```ts
+(callbackParameters: {
+  isVisible: boolean,
+  tracker?: Tracker,
+  options?: TrackEventOptions,
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+} = {}) => Promise<TrackerEvent>
+```
+
 ```ts
 ({ isVisible: boolean }) => Promise<TrackerEvent>
 ```
@@ -29,12 +61,34 @@ useVisibilityTracker = (parameters: {
 import { useVisibilityTracker } from "@objectiv/tracker-react";
 ```
 
-```tsx title="Scenario: third party drawer with onChange callback carrying the latest state"
+```tsx title="Scenario: declaratively wrapping a third party drawer with onChange callback carrying the latest state"
+import { OverlayContextWrapper } from "@objectiv/tracker-react";
+
 const trackVisibility = useVisibilityTracker();
 
-<Drawer
-  onChange={(isOpen) => {
-    trackVisibility({ isVisible: isOpen });
+<OverlayContextWrapper id={'expandable'}>
+  <Drawer
+    onChange={(isOpen) => {
+      trackVisibility({ isVisible: isOpen });
+    }}
+  />
+</OverlayContextWrapper>
+```
+
+```tsx title="Scenario: virtual location wrapper"
+import { makeOverlayContext } from "@objectiv/tracker-core";
+
+const trackVisibility = useVisibilityTracker();
+
+<LayoutWithSidebars
+  onSidebarToggle={(sidebar, isOpen) => {
+    trackVisibility({ 
+      isVisible: isOpen,
+      // Create a virtual location representing which sidebar has been expanded 
+      locationStack: [
+        makeOverlayContext({ id: sidebar.id })
+      ]
+    });
   }}
 />
 ```
