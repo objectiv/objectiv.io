@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # useFailureEventTracker
 
 Returns a ready-to-trigger [trackFailureEvent](/tracking/react/api-reference/eventTrackers/trackFailureEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
@@ -84,8 +87,8 @@ submitFormData(formData)
   });
 ```
 
-```tsx title="Scenario: additional global contexts representing form fields validation errors"
-import { makeContentContext, makeInputValueContext } from "@objectiv/tracker-core";
+```tsx title="Scenario: additional global contexts representing form fields that did not validate"
+import { makeInputValueContext } from "@objectiv/tracker-core";
 import { useFailureEventTracker } from "@objectiv/tracker-react";
 
 const trackFailureEvent = useFailureEventTracker();
@@ -93,16 +96,12 @@ const trackFailureEvent = useFailureEventTracker();
 validateForm(formData)
   .catch((errors) => {
     trackFailureEvent({
-      locationStack: [
-        makeContentContext({
-          id: 'subscribe-form'
-        })
-      ],
       globalContexts: [
-        errors.map(error => {
+        errors.map(({ fieldName, fieldValue }) => {
           makeInputValueContext({
-            id: error.fieldName,
-            value:  error.fieldValue
+            id: fieldName,
+            // obfuscateFormField is a hypotethical function to obfuscate sensitive data
+            value: obfuscateFormField(fieldName, formData.get(fieldValue))
           })
         })
       ],
@@ -114,15 +113,15 @@ validateForm(formData)
 <br />
 
 :::info See also
-- [useApplicationLoadedEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useApplicationLoadedEventTracker.md)
-- [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
-- [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
-- [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
-- [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
-- [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
-- [useMediaStopEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStopEventTracker.md)
-- [usePressEventTracker](/tracking/react/api-reference/hooks/eventTrackers/usePressEventTracker.md)
-- [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
-- [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
-- [useVisibleEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibleEventTracker.md)
+- [useApplicationLoadedEventTracker](/tracking/react/api-reference/eventTrackers/useApplicationLoadedEventTracker.md)
+- [useHiddenEventTracker](/tracking/react/api-reference/eventTrackers/useHiddenEventTracker.md)
+- [useInputChangeEventTracker](/tracking/react/api-reference/eventTrackers/useInputChangeEventTracker.md)
+- [useMediaLoadEventTracker](/tracking/react/api-reference/eventTrackers/useMediaLoadEventTracker.md)
+- [useMediaPauseEventTracker](/tracking/react/api-reference/eventTrackers/useMediaPauseEventTracker.md)
+- [useMediaStartEventTracker](/tracking/react/api-reference/eventTrackers/useMediaStartEventTracker.md)
+- [useMediaStopEventTracker](/tracking/react/api-reference/eventTrackers/useMediaStopEventTracker.md)
+- [usePressEventTracker](/tracking/react/api-reference/eventTrackers/usePressEventTracker.md)
+- [useSuccessEventTracker](/tracking/react/api-reference/eventTrackers/useSuccessEventTracker.md)
+- [useVisibilityTracker](/tracking/react/api-reference/eventTrackers/useVisibilityTracker.md)
+- [useVisibleEventTracker](/tracking/react/api-reference/eventTrackers/useVisibleEventTracker.md)
 :::

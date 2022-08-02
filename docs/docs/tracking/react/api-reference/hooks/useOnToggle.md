@@ -41,7 +41,5 @@ useOnToggle(
 - [useOnUnmount](/tracking/react/api-reference/hooks/useOnUnmount.md)
 - [useTrackOnMount](/tracking/react/api-reference/hooks/useTrackOnMount.md)
 - [useTrackOnUnmount](/tracking/react/api-reference/hooks/useTrackOnUnmount.md)
-- [useOnChange](/tracking/react/api-reference/hooks/useOnChange.md)
-- [useTrackOnChange](/tracking/react/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react/api-reference/hooks/useTrackOnToggle.md)
 :::

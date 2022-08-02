@@ -4,20 +4,13 @@ title: Hooks
 sidebar_position: 1
 ---
 
-import ConsumersOverview from './consumers/overview.md'
-import EventTrackersOverview from './eventTrackers/overview.md'
-
-A range of hooks that we use for most of the tracking. All hooks are stable and perform deep comparisons on their deps.  
-
-#### Event trackers
-<EventTrackersOverview />
+A collection of hooks the SDK uses internally for event instrumentation.
 
 #### Consumers
-<ConsumersOverview />
-
-<br />
-
-The hooks the SDK uses internally for event instrumentation are also available publicly.
+- [useTrackingContext](/tracking/react/api-reference/hooks/useTrackingContext.md)
+- [useLocationStack](/tracking/react/api-reference/hooks/useLocationStack.md)
+- [useTracker](/tracking/react/api-reference/hooks/useTracker.md)
+- [useParentLocationContext](/tracking/react/api-reference/hooks/useParentLocationContext.md)
 
 #### Lifecycle
 

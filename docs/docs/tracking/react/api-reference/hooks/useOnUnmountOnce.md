@@ -32,8 +32,6 @@ useOnUnmountOnce(() => {
 - [useTrackOnMountOnce](/tracking/react/api-reference/hooks/useTrackOnMountOnce.md)
 - [useTrackOnUnmount](/tracking/react/api-reference/hooks/useTrackOnUnmount.md)
 - [useTrackOnUnmountOnce](/tracking/react/api-reference/hooks/useTrackOnUnmountOnce.md)
-- [useOnChange](/tracking/react/api-reference/hooks/useOnChange.md)
 - [useOnToggle](/tracking/react/api-reference/hooks/useOnToggle.md)
-- [useTrackOnChange](/tracking/react/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react/api-reference/hooks/useTrackOnToggle.md)
 :::

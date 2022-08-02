@@ -7,7 +7,7 @@ type TrackingContext = TrackerProviderContext & LocationProviderContext;
 ```
 
 :::tip
-Use the [useTrackingContext](/tracking/react/api-reference/hooks/consumers/useTrackingContext.md) consumer hook to easily retrieve this Context.
+Use the [useTrackingContext](/tracking/react/api-reference/hooks/useTrackingContext.md) consumer hook to easily retrieve this Context.
 :::
 
 :::info

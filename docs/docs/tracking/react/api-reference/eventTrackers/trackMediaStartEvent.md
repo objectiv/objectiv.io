@@ -1,3 +1,6 @@
+---
+sidebar_position: 100
+---
 # trackMediaStartEvent
 
 Tracks a [MediaStartEvent](/taxonomy/reference/events/MediaStartEvent.md).
@@ -14,7 +17,7 @@ trackMediaStartEvent = (parameters: {
 :::caution
 This is a lower-level API.
 
-[Event Tracking Hooks](/tracking/react/api-reference/hooks/eventTrackers/overview.md) are preferable as they automate retrieving both the Tracker instance and LocationStack. In fact, the do use these lower-level APIs internally.
+[Event Tracking Hooks](/tracking/react/api-reference/eventTrackers/overview.md) are preferable as they automate retrieving both the Tracker instance and LocationStack. In fact, the do use these lower-level APIs internally.
 :::
 
 ## Parameters

@@ -9,7 +9,7 @@ LocationProviderContext = {
 ```
 
 :::tip
-LocationStacks can be accessed easily via the [useLocationStack](/tracking/react/api-reference/hooks/consumers/useLocationStack.md) consumer hook.
+LocationStacks can be accessed easily via the [useLocationStack](/tracking/react/api-reference/hooks/useLocationStack.md) consumer hook.
 :::
 
 <br />

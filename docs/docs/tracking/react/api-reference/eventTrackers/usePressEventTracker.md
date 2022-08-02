@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # usePressEventTracker
 
 Returns a ready-to-trigger [trackPressEvent](/tracking/react/api-reference/eventTrackers/trackPressEvent.md) by retrieving ReactTracker instance and LocationStack automatically.
@@ -80,20 +83,48 @@ const trackPressEvent = usePressEventTracker();
 />
 ```
 
-// TODO example with waitUntilTracked
+```tsx title="Scenario: synchronous PressEvent callback"
+import { makePressableContext } from "@objectiv/tracker-core";
+
+const trackPressEvent = usePressEventTracker();
+
+const trackSynchronousPressEvent = usePressEventTracker({
+  options: {
+    waitForQueue: true
+  }
+});
+
+// We can use a regular callback and specify the necessary options ad-hoc for this button
+<Button
+  onClick={async () => {
+    await trackPressEvent({
+      options: {
+        waitForQueue: true
+      }
+    });
+  }}
+/>
+
+// Or use the pre-configured callback to keep event handlers leaner
+<Button
+  onClick={async () => {
+    await trackSynchronousPressEvent();
+  }}
+/>
+```
 
 <br />
 
 :::info See also
-- [useApplicationLoadedEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useApplicationLoadedEventTracker.md)
-- [useFailureEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useFailureEventTracker.md)
-- [useHiddenEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useHiddenEventTracker.md)
-- [useInputChangeEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useInputChangeEventTracker.md)
-- [useMediaLoadEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaLoadEventTracker.md)
-- [useMediaPauseEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaPauseEventTracker.md)
-- [useMediaStartEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStartEventTracker.md)
-- [useMediaStopEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useMediaStopEventTracker.md)
-- [useSuccessEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useSuccessEventTracker.md)
-- [useVisibilityTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibilityTracker.md)
-- [useVisibleEventTracker](/tracking/react/api-reference/hooks/eventTrackers/useVisibleEventTracker.md)
+- [useApplicationLoadedEventTracker](/tracking/react/api-reference/eventTrackers/useApplicationLoadedEventTracker.md)
+- [useFailureEventTracker](/tracking/react/api-reference/eventTrackers/useFailureEventTracker.md)
+- [useHiddenEventTracker](/tracking/react/api-reference/eventTrackers/useHiddenEventTracker.md)
+- [useInputChangeEventTracker](/tracking/react/api-reference/eventTrackers/useInputChangeEventTracker.md)
+- [useMediaLoadEventTracker](/tracking/react/api-reference/eventTrackers/useMediaLoadEventTracker.md)
+- [useMediaPauseEventTracker](/tracking/react/api-reference/eventTrackers/useMediaPauseEventTracker.md)
+- [useMediaStartEventTracker](/tracking/react/api-reference/eventTrackers/useMediaStartEventTracker.md)
+- [useMediaStopEventTracker](/tracking/react/api-reference/eventTrackers/useMediaStopEventTracker.md)
+- [useSuccessEventTracker](/tracking/react/api-reference/eventTrackers/useSuccessEventTracker.md)
+- [useVisibilityTracker](/tracking/react/api-reference/eventTrackers/useVisibilityTracker.md)
+- [useVisibleEventTracker](/tracking/react/api-reference/eventTrackers/useVisibleEventTracker.md)
 :::

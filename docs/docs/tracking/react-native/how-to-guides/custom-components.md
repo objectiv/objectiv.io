@@ -54,7 +54,7 @@ const TrackedImage = ({ id, ...imageProps }: TrackedImageProps) => (
 
 ## Handling Press Events
 Next we are going to add a press handler.  
-React Native Tracker SDK offers both [Hook based Event Trackers](/tracking/react-native/api-reference/hooks/eventTrackers/overview.md) and [Low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md).
+React Native Tracker SDK offers both [Hook based Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md) and [Low-level Event Trackers](/tracking/react-native/api-reference/eventTrackers/overview.md).
 
 
 ### Hooks vs Low-level

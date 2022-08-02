@@ -14,6 +14,6 @@ None.
 <br />
 
 :::info see also
-- [useTracker](/tracking/react/api-reference/hooks/consumers/useTracker.md)
-- [useLocationStack](/tracking/react/api-reference/hooks/consumers/useLocationStack.md)
+- [useTracker](/tracking/react/api-reference/hooks/useTracker.md)
+- [useLocationStack](/tracking/react/api-reference/hooks/useLocationStack.md)
 :::

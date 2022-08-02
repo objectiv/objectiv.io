@@ -13,7 +13,7 @@ Tracking a Component means wrapping it in the correct Location Context and, if i
 There are three ways of doing so:
 - Basic HTML Semantic Elements can be swapped with [TrackedElements](/tracking/react/api-reference/trackedElements/overview.md)
 - HTML-like custom Components can be swapped with [TrackedContexts](/tracking/react/api-reference/trackedContexts/overview.md)
-- Complex Components can be manually instrumented with [LocationWrappers](/tracking/react/api-reference/locationWrappers/overview.md) and Event Tracking [Hooks](/tracking/react/api-reference/hooks/eventTrackers/overview.md) or [Functions](/tracking/react/api-reference/eventTrackers/overview.md)  
+- Complex Components can be manually instrumented with [LocationWrappers](/tracking/react/api-reference/locationWrappers/overview.md) and Event Tracking [Hooks](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-hooks) or [Functions](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-functions)  
 
 ### TrackedElements
 High level Components designed to match HTML Semantic Elements. These components are the least effort to instrument; simply swap the original HTML Semantic Element with their Tracked Element counterparts.
@@ -90,11 +90,11 @@ Location Wrappers don't track interactions, instead they are usually used to eit
 There are two ways of tracking events. Which one to use depends on how the target Component has been wrapped and whether we have access to its internals or not.
 
 #### Hooks
-[EventTrackers hooks](/tracking/react/api-reference/hooks/eventTrackers/overview.md) can be invoked to generate a tracking callback that's already configured with the correct TrackingContext.
+[Event tracking hooks](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-hooks) can be invoked to generate a tracking callback that's already configured with the correct TrackingContext.
 
 #### Functions
-[EventTrackers functions](/tracking/react/api-reference/eventTrackers/overview.md) are the lowest level APIs to track Events, and they require developers to specify the correct Tracking Context. 
-This can be retrieved from LocationWrappers / TrackedContexts render-props, or by invoking the [useTrackingContext](/tracking/react/api-reference/hooks/consumers/useTrackingContext.md) hook. 
+[Event tracking functions](/tracking/react/api-reference/eventTrackers/overview.md#event-tracking-functions) are the lowest level APIs to track Events, and they require developers to specify the correct Tracking Context. 
+This can be retrieved from LocationWrappers / TrackedContexts render-props, or by invoking the [useTrackingContext](/tracking/react/api-reference/hooks/useTrackingContext.md) hook. 
 
 :::info
 Check out the [Custom Components](/tracking/react/how-to-guides/custom-components.md) how to for more information and a practical example of how that works.

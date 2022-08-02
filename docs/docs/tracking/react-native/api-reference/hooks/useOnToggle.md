@@ -41,7 +41,5 @@ useOnToggle(
 - [useOnUnmount](/tracking/react-native/api-reference/hooks/useOnUnmount.md)
 - [useTrackOnMount](/tracking/react-native/api-reference/hooks/useTrackOnMount.md)
 - [useTrackOnUnmount](/tracking/react-native/api-reference/hooks/useTrackOnUnmount.md)
-- [useOnChange](/tracking/react-native/api-reference/hooks/useOnChange.md)
-- [useTrackOnChange](/tracking/react-native/api-reference/hooks/useTrackOnChange.md)
 - [useTrackOnToggle](/tracking/react-native/api-reference/hooks/useTrackOnToggle.md)
 :::
